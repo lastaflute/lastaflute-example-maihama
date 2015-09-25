@@ -42,7 +42,8 @@ public class SigninAction extends HangarBaseAction {
         validate(body, messages -> {});
         String email = body.email;
         String password = body.password;
-        hangarLoginAssist.login(email, password, op -> op.rememberMe(true));
+        boolean rememberMe = false; // #simple_for_example no remember for now
+        hangarLoginAssist.login(email, password, op -> op.rememberMe(rememberMe));
         return JsonResponse.asEmptyBody();
     }
 }
