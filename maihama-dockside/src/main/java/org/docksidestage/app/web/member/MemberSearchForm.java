@@ -24,11 +24,16 @@ public class MemberSearchForm implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
+    // --------------------------------------------------
+    //                                          Condition
+    //                                          ---------
     public String memberName;
     public String memberStatus;
     public String purchaseProductName;
     public boolean unpaid;
-
     public String formalizedDateFrom;
     public String formalizedDateTo;
 }
