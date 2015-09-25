@@ -682,6 +682,7 @@
       "methodName": "index",
       "methodComment": null,
       "annotationList": [
+        "login.AllowAnyoneAccess",
         "Execute"
       ],
       "formTypeDocMeta": null,

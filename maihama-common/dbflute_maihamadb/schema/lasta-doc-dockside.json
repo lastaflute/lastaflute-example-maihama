@@ -241,10 +241,10 @@
       }
     },
     {
-      "url": "/member/edit/doUpdate",
+      "url": "/member/edit/doDelete",
       "type": "org.docksidestage.app.web.member.MemberEditAction",
       "typeComment": "/**\n * @author jflute\n */\n",
-      "methodName": "doUpdate",
+      "methodName": "doDelete",
       "methodComment": null,
       "annotationList": [
         "Execute"
@@ -352,10 +352,10 @@
       }
     },
     {
-      "url": "/member/edit/doDelete",
+      "url": "/member/edit/doUpdate",
       "type": "org.docksidestage.app.web.member.MemberEditAction",
       "typeComment": "/**\n * @author jflute\n */\n",
-      "methodName": "doDelete",
+      "methodName": "doUpdate",
       "methodComment": null,
       "annotationList": [
         "Execute"
@@ -480,7 +480,7 @@
           {
             "name": "memberName",
             "type": "String",
-            "comment": null,
+            "comment": "//                                          ---------\n",
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
@@ -547,7 +547,7 @@
           {
             "name": "memberName",
             "type": "String",
-            "comment": null,
+            "comment": "//                                          ---------\n",
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
@@ -1093,10 +1093,10 @@
       }
     },
     {
-      "url": "/withdrawal/confirm",
+      "url": "/withdrawal/done",
       "type": "org.docksidestage.app.web.withdrawal.WithdrawalAction",
       "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */\n",
-      "methodName": "confirm",
+      "methodName": "done",
       "methodComment": null,
       "annotationList": [
         "Execute"
@@ -1134,10 +1134,10 @@
       }
     },
     {
-      "url": "/withdrawal/done",
+      "url": "/withdrawal/confirm",
       "type": "org.docksidestage.app.web.withdrawal.WithdrawalAction",
       "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */\n",
-      "methodName": "done",
+      "methodName": "confirm",
       "methodComment": null,
       "annotationList": [
         "Execute"
