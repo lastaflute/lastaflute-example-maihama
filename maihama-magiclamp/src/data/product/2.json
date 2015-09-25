@@ -1,0 +1,26 @@
+[
+  {
+    "productId": 7,
+    "productName": "Glass House",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 1700
+  },
+  {
+    "productId": 16,
+    "productName": "Gold Flute",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 4000000
+  },
+  {
+    "productId": 12,
+    "productName": "Grand Piano",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 1400000
+  },
+  {
+    "productId": 20,
+    "productName": "Hatomugi (100g)",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 340
+  }
+]

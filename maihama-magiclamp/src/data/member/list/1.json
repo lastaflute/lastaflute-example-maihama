@@ -1,0 +1,17 @@
+{
+  "itemsPerPage": 4,
+  "currentPage": 1,
+  "totalPages": 5,
+  "totalItems": 21,
+  "items": [
+    {
+      "memberId": 21,
+      "memberName": "saw",
+      "memberStatusName": "Provisional",
+      "formalizedDate": null,
+      "updateDatetime": "2015/07/09 21:45:39",
+      "withdrawalMember": false,
+      "purchaseCount": 0
+    }
+  ]
+}

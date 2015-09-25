@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE logback>
+<!-- _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_ -->
+<!-- Maihama logging settings for Unit Test -->
+<!-- _/_/_/_/_/_/_/_/_/_/_ -->
+<configuration>
+  <include resource="logparts/logback_property.xml" />
+  <include resource="logparts/logback_appender.xml" />
+  <include resource="logparts/logback_logger.xml" />
+</configuration>

@@ -1,0 +1,26 @@
+[
+  {
+    "productId": 3,
+    "productName": "Streetlife Serenade",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 1300
+  },
+  {
+    "productId": 5,
+    "productName": "The Stranger",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 1500
+  },
+  {
+    "productId": 4,
+    "productName": "Turnstiles",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 1400
+  },
+  {
+    "productId": 13,
+    "productName": "Upright Piano",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 1100000
+  }
+]

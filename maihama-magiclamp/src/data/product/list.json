@@ -1,0 +1,26 @@
+[
+  {
+    "productId": 6,
+    "productName": "52nd Street",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 1600
+  },
+  {
+    "productId": 9,
+    "productName": "Bridge",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 1900
+  },
+  {
+    "productId": 19,
+    "productName": "Camomile (100g)",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 380
+  },
+  {
+    "productId": 1,
+    "productName": "Cold Spring Harbor",
+    "productStatusName": "ProductionStop",
+    "regularPrice": 1100
+  }
+]

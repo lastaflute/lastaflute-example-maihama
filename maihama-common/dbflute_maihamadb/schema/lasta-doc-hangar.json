@@ -1,0 +1,848 @@
+{
+  "actionDocMetaList": [
+    {
+      "url": "/following/follow",
+      "type": "org.docksidestage.app.web.following.FollowingAction",
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
+      "methodName": "follow",
+      "methodComment": "//                                                                             \u003d\u003d\u003d\u003d\u003d\u003d\u003d\n",
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "type": "org.docksidestage.app.web.following.FollowingBody",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "myMemberId",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "yourMemberId",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003cVoid\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      }
+    },
+    {
+      "url": "/member/update",
+      "type": "org.docksidestage.app.web.member.MemberAction",
+      "typeComment": "/**\n * @author iwamatsu0430\n */\n",
+      "methodName": "update",
+      "methodComment": "//                                                                             \u003d\u003d\u003d\u003d\u003d\u003d\u003d\n",
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "type": "org.docksidestage.app.web.member.MemberBody",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "memberId",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberName",
+            "type": "String",
+            "comment": null,
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberAccount",
+            "type": "String",
+            "comment": null,
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberStatusCode",
+            "type": "String",
+            "comment": null,
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "birthdate",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003cVoid\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      }
+    },
+    {
+      "url": "/member/info",
+      "type": "org.docksidestage.app.web.member.MemberAction",
+      "typeComment": "/**\n * @author iwamatsu0430\n */\n",
+      "methodName": "info",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003corg.docksidestage.app.web.member.MemberInfoBean\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "memberId",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberName",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberStatusName",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      }
+    },
+    {
+      "url": "/member/list/{pageNumber:Integer?}",
+      "type": "org.docksidestage.app.web.member.MemberListAction",
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "methodName": "index",
+      "methodComment": "//                                                                             \u003d\u003d\u003d\u003d\u003d\u003d\u003d\n",
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "type": "org.docksidestage.app.web.member.MemberSearchBody",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "memberName",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberStatus",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "purchaseProductName",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "unpaid",
+            "type": "boolean",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "formalizedDateFrom",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "formalizedDateTo",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.member.MemberSearchRowBean\u003e\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "currentPage",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "itemsPerPage",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "totalItems",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "totalPages",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "items",
+            "type": "List",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      }
+    },
+    {
+      "url": "/member/purchase/list/{memberId:Integer}/{pageNumber:Integer?}",
+      "type": "org.docksidestage.app.web.member.purchase.MemberPurchaseListAction",
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "methodName": "index",
+      "methodComment": "//                                                                             \u003d\u003d\u003d\u003d\u003d\u003d\u003d\n",
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "type": "org.docksidestage.app.web.member.purchase.MemberPurchaseListBody",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "memberId",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [
+              "NotNull"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "purchaseId",
+            "type": "Long",
+            "comment": null,
+            "annotationList": [
+              "NotNull"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean\u003e\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "currentPage",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "itemsPerPage",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "totalItems",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "totalPages",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "items",
+            "type": "List",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      }
+    },
+    {
+      "url": "/member/purchase/list/delete",
+      "type": "org.docksidestage.app.web.member.purchase.MemberPurchaseListAction",
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "methodName": "delete",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "type": "org.docksidestage.app.web.member.purchase.MemberPurchaseListBody",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "memberId",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [
+              "NotNull"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "purchaseId",
+            "type": "Long",
+            "comment": null,
+            "annotationList": [
+              "NotNull"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003cVoid\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      }
+    },
+    {
+      "url": "/mypage/",
+      "type": "org.docksidestage.app.web.mypage.MypageAction",
+      "typeComment": "/**\n * @author shunsuke.tadokoro\n */\n",
+      "methodName": "index",
+      "methodComment": "//                                                                             \u003d\u003d\u003d\u003d\u003d\u003d\u003d\n",
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003corg.docksidestage.app.web.mypage.MypageBean\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "memberId",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberName",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberStatusCode",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberServiceName",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberPassword",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberAddress",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      }
+    },
+    {
+      "url": "/product/detail/{productId:Integer}",
+      "type": "org.docksidestage.app.web.product.ProductDetailAction",
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "methodName": "index",
+      "methodComment": "//                                                                             \u003d\u003d\u003d\u003d\u003d\u003d\u003d\n",
+      "annotationList": [
+        "login.AllowAnyoneAccess",
+        "Execute"
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003corg.docksidestage.app.web.product.ProductDetailBean\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "productId",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "productName",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "categoryName",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "regularPrice",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "productHandleCode",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      }
+    },
+    {
+      "url": "/product/list/{pageNumber:Integer?}",
+      "type": "org.docksidestage.app.web.product.ProductListAction",
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "methodName": "index",
+      "methodComment": "//                                                                             \u003d\u003d\u003d\u003d\u003d\u003d\u003d\n",
+      "annotationList": [
+        "login.AllowAnyoneAccess",
+        "Execute"
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "type": "org.docksidestage.app.web.product.ProductSearchBody",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "productName",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "productStatus",
+            "type": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "purchaseMemberName",
+            "type": "String",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.product.ProductRowBean\u003e\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "currentPage",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "itemsPerPage",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "totalItems",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "totalPages",
+            "type": "int",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "items",
+            "type": "List",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      }
+    },
+    {
+      "url": "/purchase/count",
+      "type": "org.docksidestage.app.web.purchase.PurchaseAction",
+      "typeComment": "/**\n * @author iwamatsu0430\n */\n",
+      "methodName": "count",
+      "methodComment": "//                                                                             \u003d\u003d\u003d\u003d\u003d\u003d\u003d\n",
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "type": "org.docksidestage.app.web.purchase.PurchaseProductBody",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "productId",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [
+              "NotNull"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "purchaseCount",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [
+              "NotNull",
+              "Min"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003corg.docksidestage.app.web.purchase.PriceBean\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "price",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      }
+    },
+    {
+      "url": "/purchase/contract",
+      "type": "org.docksidestage.app.web.purchase.PurchaseAction",
+      "typeComment": "/**\n * @author iwamatsu0430\n */\n",
+      "methodName": "contract",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "type": "org.docksidestage.app.web.purchase.PurchaseProductBody",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "productId",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [
+              "NotNull"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "purchaseCount",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [
+              "NotNull",
+              "Min"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003corg.docksidestage.app.web.purchase.PriceBean\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "price",
+            "type": "Integer",
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      }
+    },
+    {
+      "url": "/root/",
+      "type": "org.docksidestage.app.web.RootAction",
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "methodName": "index",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003cVoid\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      }
+    },
+    {
+      "url": "/root/signout",
+      "type": "org.docksidestage.app.web.RootAction",
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "methodName": "signout",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003cVoid\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      }
+    },
+    {
+      "url": "/signin/",
+      "type": "org.docksidestage.app.web.signin.SigninAction",
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
+      "methodName": "index",
+      "methodComment": "//                                                                             \u003d\u003d\u003d\u003d\u003d\u003d\u003d\n",
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "type": "org.docksidestage.app.web.signin.SigninBody",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "email",
+            "type": "String",
+            "comment": null,
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "password",
+            "type": "String",
+            "comment": null,
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003cVoid\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      }
+    },
+    {
+      "url": "/signup/",
+      "type": "org.docksidestage.app.web.signup.SignupAction",
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
+      "methodName": "index",
+      "methodComment": "//                                                                             \u003d\u003d\u003d\u003d\u003d\u003d\u003d\n",
+      "annotationList": [
+        "login.AllowAnyoneAccess",
+        "Execute"
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "type": "org.docksidestage.app.web.signup.SignupBody",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "memberName",
+            "type": "String",
+            "comment": "// Member\n",
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberAccount",
+            "type": "String",
+            "comment": null,
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "password",
+            "type": "String",
+            "comment": "// Member Security\n",
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "reminderQuestion",
+            "type": "String",
+            "comment": null,
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "reminderAnswer",
+            "type": "String",
+            "comment": null,
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003cVoid\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      }
+    },
+    {
+      "url": "/signup/confirm",
+      "type": "org.docksidestage.app.web.signup.SignupAction",
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
+      "methodName": "confirm",
+      "methodComment": null,
+      "annotationList": [
+        "login.AllowAnyoneAccess",
+        "Execute"
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "type": "JsonResponse\u003cVoid\u003e",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      }
+    }
+  ]
+}

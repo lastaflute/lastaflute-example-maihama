@@ -1,0 +1,26 @@
+[
+  {
+    "productId": 18,
+    "productName": "Lemon Grass (100g)",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 380
+  },
+  {
+    "productId": 14,
+    "productName": "Low Price Flute",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 50000
+  },
+  {
+    "productId": 8,
+    "productName": "Nylon Curtain",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 1800
+  },
+  {
+    "productId": 2,
+    "productName": "Piano Man",
+    "productStatusName": "OnSaleProduction",
+    "regularPrice": 1200
+  }
+]

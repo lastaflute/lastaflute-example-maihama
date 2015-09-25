@@ -1,0 +1,79 @@
+<signin>
+  <h2 class="pg-content-title">Sign In</h2>
+  <section class="sign-in-box">
+    <div class="signin-form">
+      <form name="signin_signinAction_index_Form" onsubmit={doSignin}>
+        <dl>
+          <dt><label>Account</label></dt>
+          <dd><input type="text" name="email" value="" placeholder="input Pixy"></dd>
+        </dl>
+        <dl>
+          <dt><label>Password</label></dt>
+          <dd><input type="password" name="password" value="" placeholder="input sea"></dd>
+        </dl>
+        <dl>
+          <dd><label><input type="checkbox" name="autoLogin" value="on"> Remember Account</label></dd>
+        </dl>
+        <div>
+          <button type="submit" class="btn btn-success">Sign in</button>
+        </div>
+      </form>
+    </div>
+    
+    <style scoped>
+      :scope .sign-in-box {
+        width: 320px;
+        margin: 32px auto;
+        border: solid 4px #E5E5E5;
+        padding: 24px 64px;
+      }
+      :scope .signin-form li {
+        padding: 6px 0;
+      }
+      :scope .signin-form li p {
+        padding-bottom: 6px;
+        color: #444;
+      }
+      :scope .signin-form input[type="text"],.signin-form input[type="password"] {
+        padding: 6px 8px;
+        width: 80%;
+      }
+      :scope .signin-form input[type="submit"] {
+        margin-top: 8px;
+        padding: 10px 32px;
+        height: 36px;
+        background-color: #660032;
+        border: 1px solid #660032;
+        color: #FFF;
+        line-height: 1;
+        font-size: 14px;
+        font-weight: bold;
+        vertical-align: top;
+        cursor: pointer;
+      }
+    </style>
+
+    <script>
+      var RC = window.RC || {};
+      var sa = window.superagent || {};
+      var obs = window.observable || {};
+
+      this.doSignin = function(e) {
+        e.preventDefault();
+        var email = this.email;
+        var password = this.password;
+        sa
+          .post(RC.API.auth.signin)
+          .send({email: email.value, password: password.value})
+          .withCredentials()
+          .end(function(error, response) {
+            if (response.ok) {
+              email.value = "";
+              password.value = "";
+              obs.trigger(window.RC.EVENT.auth.check);
+            }
+          });
+      };
+    </script>
+  </section>
+</signin>

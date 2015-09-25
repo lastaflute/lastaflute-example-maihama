@@ -1,0 +1,33 @@
+{
+  "name": "maihama-magiclamp",
+  "version": "0.0.1",
+  "description": "Front-end for LastaFlute.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbflute-session/lastaflute-example-maihama.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://github.com/dbflute-session/lastaflute-example-maihama",
+  "dependencies": {
+    "browser-sync": "^2.3.1",
+    "gulp": "^3.8.11",
+    "gulp-rename": "^1.2.0",
+    "gulp-webserver": "^0.9.0",
+    "rimraf": "^2.3.2",
+    "run-sequence": "^1.0.2",
+    "gulp-riot": "^0.2.16",
+    "gulp-clone": "^1.0.0",
+    "gulp-concat": "^2.6.0"
+  },
+  "devDependencies": {
+    
+  }
+}

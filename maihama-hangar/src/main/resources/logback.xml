@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE logback>
+<!-- _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_ -->
+<!-- Hanger logging settings for All Environments -->
+<!-- _/_/_/_/_/_/_/_/_/_/_ -->
+<configuration>
+  <include resource="logparts/logback_property.xml" />
+  <property resource="hanger_env.properties" />
+  <property resource="hanger_env_${lasta.env}.properties" />
+  <property resource="hanger_config.properties" />
+
+  <!-- define your properties here
+  e.g. <property name="sea.land" value="${iks.bonvo:-amba}"/> -->
+
+  <include resource="logparts/logback_appender.xml" />
+
+  <!-- define your additional appenders here
+  e.g. <appender name="sea" class="land.IksAppender">... -->
+
+  <include resource="logparts/logback_logger.xml" />
+
+  <!-- define your additional loggers here
+  e.g. <logger name="sea.land.iks.bonvo" additivity="false" level="${log.level}">... -->
+</configuration>
