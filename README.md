@@ -8,7 +8,7 @@ https://github.com/lastaflute/lastaflute
 # Quick Trial
 Can boot it by example of LastaFlute:
 
-1. git clone https://github.com/dbflute-session/lastaflute-example-maihama.git
+1. git clone https://github.com/lastaflute/lastaflute-example-maihama.git
 2. prepare MySQL on 3306 port as empty root password or using *system-password.txt  
 and execute by *ReplaceSchema at DBFlute client directory 'dbflute_maihamadb'  
 3. compile it by Java8, on e.g. Eclipse or IntelliJ or ... as Maven project
