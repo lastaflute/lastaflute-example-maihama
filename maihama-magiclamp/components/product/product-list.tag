@@ -1,10 +1,14 @@
 <product-list>
   <div class="wrap">
     <form class="form" onsubmit={searchProductList} oninput={searchProductListIncremental}>
-      <label>product name search</label>
-      <input type="text" name="word">
-      <input type="checkbox" onchange={switchIncremental}> incremental search
-      <button class="btn btn-success">Search</button>
+      <dl>
+        <dt><label>product name search</label></dt>
+        <dd><input type="text" name="word" placeholder="keyword..."></dd>
+      </dl>
+      <div class="btnBox">
+        <input type="checkbox" onchange={switchIncremental}> incremental search
+        <button class="btn btn-success">Search</button>
+      </div>
     </form>
     <table class="table table-stripe">
       <thead>
