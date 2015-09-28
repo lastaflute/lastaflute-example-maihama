@@ -12,26 +12,31 @@ body {
     font-family: Verdana, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Meiryo, "メイリオ", "MS P Gothic", "MS Pゴシック", sans-serif;
     font-size: 80%;
     margin: 10px 5px 5px 15px;
-    background-color: #ffffe0;
+    background-color: #F9FCEB;
 }
 
 /* heading */
 h1 {
     font-size: 1.5em;
-    border-bottom: 2px solid #af0000;
-    border-top: 2px solid #af0000;
+    margin-bottom: 10px;
+    padding: 3px 0;
+    background-color: #882255;
+    color: #F9FCEB;
+    text-indent: 2em;
+    letter-spacing: 0.2em;
 }
 h2 {
-    margin: 30px 0 5px 0;
+    margin: 2em 0 0.5em 0;
     font-size: 1.8em;
-    border-bottom: 2px solid #af0000;
-    border-left: 10px solid #af0000;
-    text-indent: 10px;
+    border-left: 0.5em solid #882255;
+    background-color: #CFA7BB;
+    text-indent: 0.3em;
+    line-height: 1.5em;
 }
 h3 {
     padding: 0 0 0 10px;
     margin: 1em 10% 0 0;
-    border-top: double 3px #af0000;
+    border-top: double 3px #882255;
     border-bottom: solid 1px #333333;
     font-size: 1.5em;
     color: #333333;
@@ -39,67 +44,27 @@ h3 {
 h4 {
     padding: 0 0 0 10px;
     margin: 1em 10% 0 1em;
-    border-top: solid 1px #af0000;
-    border-bottom: solid 1px #af0000;
+    border-top: solid 1px #882255;
+    border-bottom: solid 1px #882255;
     font-size: 1.4em;
     color: #333333;
 }
 
 /* total info */
-.updatedate {
-    text-align: right;
-}
-.mainschema {
-    text-align: right;
-}
 .navilinkarea {
     text-align: right;
-}
-.sublink {
-    margin-top: 0.1em;
-}
-.sisterlink {
-    margin-top: 0.6em;
-    font-size: 120%;
-}
-.sistersublink {
-    margin-top: 0.6em;
-    font-size: 85%;
-}
-.sisterneighborlink {
-    margin-top: 0.6em;
-    font-size: 100%;
-}
-
-/* keyword search */
-.keywordsearch {
-    padding: 0.7em 0 0.7em 0;
-}
-.searchmemo {
-    font-size: 0.9em;
-    color: #114488;
-}
-.suggestionarea {
-    padding: 0 0.2em 0.2em 0.2em;
-    margin: 0;
-    position: absolute;
-    zindex: 100;
-    background-color: #DDFFDD;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #CCCCCC;
-    list-style-type: none;
 }
 
 /* table */
 table {
     border-collapse:collapse;
+    margin: 0.3em 0 1em 0;
 }
 table, th {
     border: 1px solid #555;
 }
 th {
-    background-color: #cc9;
+    background-color: #E4AAA4;
     font-size: 0.8em;
 }
 td {
@@ -110,69 +75,16 @@ td {
 .tablecomment {
     font-size: 0.8em;
     color: #3F7E5E;
-    padding:0 0 0.2em 1em;
-}
-.rownumhead {
-    text-align: center;
-    font-size: 0.4em;
+    padding:0.5em 0 0.5em 1em;
+    margin-bottom: 1em;
 }
 .rownumcell {
     text-align: center;
     font-size: 0.4em;
     color: #444;
 }
-.schemacell {
-    font-size: 0.8em;
-    white-space: nowrap;
-}
 .aliascell {
     white-space: nowrap;
-}
-.flgcell {
-    text-align: center;
-}
-.flgplus {
-    font-size: 0.7em;
-}
-.typecell {
-    font-size: 0.6em;
-}
-.sizecell {
-    text-align: center;
-    font-size: 0.8em;
-}
-.defvalcell {
-    text-align: center;
-    font-size: 0.6em;
-}
-.relcell {
-    font-size: 0.7em;
-}
-.commentcell {
-    font-size: 0.7em;
-    color: #3F7E5E;
-}
-.subcell {
-    font-size: 0.6em;
-}
-.comcolcell {
-    color: #666;
-}
-.optcell {
-    font-style: italic;
-}
-.additionalpk {
-    font-style: italic;
-}
-.additionalfk {
-    font-style: italic;
-}
-.clstypecell {
-    text-align: center;
-    font-size: 0.8em;
-}
-.commentdesc {
-    color: #3F7E5E;
 }
 
 /* inner table */
@@ -192,78 +104,6 @@ table.child, table.child td, table.child th {
     font-size: 1.2em;
     padding-left: 4px;
     padding-right: 4px;
-}
-
-/* table supplementary info */
-span.tableschema {
-    font-size: 0.6em;
-}
-span.bqpcount {
-    font-size: 0.5em;
-}
-dl.bqplist {
-    padding-left: 2em;
-}
-dl.bqplist dt {
-    display: list-item;
-    font-size: 1.3em;
-    margin-top: 0.3em;
-}
-dl.bqplist dd {
-    padding-left: 1em;
-}
-dl.bqplist dd pre {
-    font-size: 1.1em;
-}
-dl.bqplist dd.subinfo {
-    padding-left: 2em;
-}
-dl.bqplist dd.subinfo span.sqlap {
-    font-style: italic;
-    color: #002266;
-}
-dl.bqplist dd.subinfo span.file {
-    font-style: italic;
-    color: #002266;
-}
-dl.bqplist dd.subinfo span.ctet {
-    color: green;
-}
-dl.bqplist dd.subinfo span.pmb {
-    color: green;
-}
-dl.procedurelist {
-    padding-left: 2em;
-}
-dl.procedurelist dt {
-    display: list-item;
-    font-size: 1.3em;
-    margin-top: 0.3em;
-}
-dl.procedurelist dt span.type {
-    font-size: 0.7em;
-    color: green;
-}
-dl.procedurelist dd {
-    padding-left: 1em;
-}
-dl.procedurelist dd pre {
-    font-size: 1.1em;
-}
-dl.procedurelist dd.column {
-    font-style: italic;
-    padding-left: 2em;
-}
-dl.procedurelist dd.column span.attrs {
-    font-size: 0.7em;
-    color: #125699;
-}
-dl.procedurelist dd.column span.type {
-    font-size: 0.9em;
-    color: green;
-}
-dl.procedurelist dd.column pre {
-    padding-left: 1em;
 }
     </style>
 </head>
@@ -385,7 +225,7 @@ dl.procedurelist dd.column pre {
 /following/follow
 </h2>
 <p>
-org.docksidestage.app.web.following.FollowingAction#follow
+Execute Method: org.docksidestage.app.web.following.FollowingAction#follow()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
@@ -394,7 +234,7 @@ org.docksidestage.app.web.following.FollowingAction#follow
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">//                                                                             =======
 </p>
-org.docksidestage.app.web.following.FollowingBody
+Form or Body: org.docksidestage.app.web.following.FollowingBody
 <table>
     <thead>
     <tr>
@@ -431,13 +271,13 @@ org.docksidestage.app.web.following.FollowingBody
     </tr>
 </table>
 
-JsonResponse&lt;Void&gt;
+Return as: JsonResponse&lt;Void&gt;
 
 <h2 id="/member/update">
 /member/update
 </h2>
 <p>
-org.docksidestage.app.web.member.MemberAction#update
+Execute Method: org.docksidestage.app.web.member.MemberAction#update()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
@@ -445,7 +285,7 @@ org.docksidestage.app.web.member.MemberAction#update
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">//                                                                             =======
 </p>
-org.docksidestage.app.web.member.MemberBody
+Form or Body: org.docksidestage.app.web.member.MemberBody
 <table>
     <thead>
     <tr>
@@ -517,19 +357,19 @@ org.docksidestage.app.web.member.MemberBody
     </tr>
 </table>
 
-JsonResponse&lt;Void&gt;
+Return as: JsonResponse&lt;Void&gt;
 
 <h2 id="/member/info">
 /member/info
 </h2>
 <p>
-org.docksidestage.app.web.member.MemberAction#info
+Execute Method: org.docksidestage.app.web.member.MemberAction#info()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  */
 </p>
-JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoBean&gt;
+Return as: JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoBean&gt;
 <table>
     <thead>
     <tr>
@@ -580,7 +420,7 @@ JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoBean&gt;
 /member/list/{pageNumber:Integer?}
 </h2>
 <p>
-org.docksidestage.app.web.member.MemberListAction#index
+Execute Method: org.docksidestage.app.web.member.MemberListAction#index()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
@@ -589,7 +429,7 @@ org.docksidestage.app.web.member.MemberListAction#index
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">//                                                                             =======
 </p>
-org.docksidestage.app.web.member.MemberSearchBody
+Form or Body: org.docksidestage.app.web.member.MemberSearchBody
 <table>
     <thead>
     <tr>
@@ -669,7 +509,7 @@ org.docksidestage.app.web.member.MemberSearchBody
     </tr>
 </table>
 
-JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.MemberSearchRowBean&gt;&gt;
+Return as: JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.MemberSearchRowBean&gt;&gt;
 <table>
     <thead>
     <tr>
@@ -742,7 +582,7 @@ JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.do
 /member/purchase/list/{memberId:Integer}/{pageNumber:Integer?}
 </h2>
 <p>
-org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#index
+Execute Method: org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#index()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
@@ -751,7 +591,7 @@ org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#index
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">//                                                                             =======
 </p>
-org.docksidestage.app.web.member.purchase.MemberPurchaseListBody
+Form or Body: org.docksidestage.app.web.member.purchase.MemberPurchaseListBody
 <table>
     <thead>
     <tr>
@@ -789,7 +629,7 @@ org.docksidestage.app.web.member.purchase.MemberPurchaseListBody
     </tr>
 </table>
 
-JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean&gt;&gt;
+Return as: JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean&gt;&gt;
 <table>
     <thead>
     <tr>
@@ -862,14 +702,14 @@ JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.do
 /member/purchase/list/delete
 </h2>
 <p>
-org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#delete
+Execute Method: org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#delete()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  * @author iwamatsu0430
  */
 </p>
-org.docksidestage.app.web.member.purchase.MemberPurchaseListBody
+Form or Body: org.docksidestage.app.web.member.purchase.MemberPurchaseListBody
 <table>
     <thead>
     <tr>
@@ -907,13 +747,13 @@ org.docksidestage.app.web.member.purchase.MemberPurchaseListBody
     </tr>
 </table>
 
-JsonResponse&lt;Void&gt;
+Return as: JsonResponse&lt;Void&gt;
 
 <h2 id="/mypage/">
 /mypage/
 </h2>
 <p>
-org.docksidestage.app.web.mypage.MypageAction#index
+Execute Method: org.docksidestage.app.web.mypage.MypageAction#index()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author shunsuke.tadokoro
@@ -921,7 +761,7 @@ org.docksidestage.app.web.mypage.MypageAction#index
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">//                                                                             =======
 </p>
-JsonResponse&lt;org.docksidestage.app.web.mypage.MypageBean&gt;
+Return as: JsonResponse&lt;org.docksidestage.app.web.mypage.MypageBean&gt;
 <table>
     <thead>
     <tr>
@@ -1005,7 +845,7 @@ JsonResponse&lt;org.docksidestage.app.web.mypage.MypageBean&gt;
 /product/detail/{productId:Integer}
 </h2>
 <p>
-org.docksidestage.app.web.product.ProductDetailAction#index
+Execute Method: org.docksidestage.app.web.product.ProductDetailAction#index()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
@@ -1014,7 +854,7 @@ org.docksidestage.app.web.product.ProductDetailAction#index
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">//                                                                             =======
 </p>
-JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;
+Return as: JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;
 <table>
     <thead>
     <tr>
@@ -1087,7 +927,7 @@ JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;
 /product/list/{pageNumber:Integer?}
 </h2>
 <p>
-org.docksidestage.app.web.product.ProductListAction#index
+Execute Method: org.docksidestage.app.web.product.ProductListAction#index()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
@@ -1096,7 +936,7 @@ org.docksidestage.app.web.product.ProductListAction#index
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">//                                                                             =======
 </p>
-org.docksidestage.app.web.product.ProductSearchBody
+Form or Body: org.docksidestage.app.web.product.ProductSearchBody
 <table>
     <thead>
     <tr>
@@ -1143,7 +983,7 @@ org.docksidestage.app.web.product.ProductSearchBody
     </tr>
 </table>
 
-JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.product.ProductRowBean&gt;&gt;
+Return as: JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.product.ProductRowBean&gt;&gt;
 <table>
     <thead>
     <tr>
@@ -1216,7 +1056,7 @@ JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.do
 /purchase/count
 </h2>
 <p>
-org.docksidestage.app.web.purchase.PurchaseAction#count
+Execute Method: org.docksidestage.app.web.purchase.PurchaseAction#count()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
@@ -1224,7 +1064,7 @@ org.docksidestage.app.web.purchase.PurchaseAction#count
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">//                                                                             =======
 </p>
-org.docksidestage.app.web.purchase.PurchaseProductBody
+Form or Body: org.docksidestage.app.web.purchase.PurchaseProductBody
 <table>
     <thead>
     <tr>
@@ -1264,7 +1104,7 @@ org.docksidestage.app.web.purchase.PurchaseProductBody
     </tr>
 </table>
 
-JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;
+Return as: JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;
 <table>
     <thead>
     <tr>
@@ -1293,13 +1133,13 @@ JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;
 /purchase/contract
 </h2>
 <p>
-org.docksidestage.app.web.purchase.PurchaseAction#contract
+Execute Method: org.docksidestage.app.web.purchase.PurchaseAction#contract()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  */
 </p>
-org.docksidestage.app.web.purchase.PurchaseProductBody
+Form or Body: org.docksidestage.app.web.purchase.PurchaseProductBody
 <table>
     <thead>
     <tr>
@@ -1339,7 +1179,7 @@ org.docksidestage.app.web.purchase.PurchaseProductBody
     </tr>
 </table>
 
-JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;
+Return as: JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;
 <table>
     <thead>
     <tr>
@@ -1368,33 +1208,33 @@ JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;
 /root/
 </h2>
 <p>
-org.docksidestage.app.web.RootAction#index
+Execute Method: org.docksidestage.app.web.RootAction#index()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  * @author iwamatsu0430
  */
 </p>
-JsonResponse&lt;Void&gt;
+Return as: JsonResponse&lt;Void&gt;
 
 <h2 id="/root/signout">
 /root/signout
 </h2>
 <p>
-org.docksidestage.app.web.RootAction#signout
+Execute Method: org.docksidestage.app.web.RootAction#signout()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  * @author iwamatsu0430
  */
 </p>
-JsonResponse&lt;Void&gt;
+Return as: JsonResponse&lt;Void&gt;
 
 <h2 id="/signin/">
 /signin/
 </h2>
 <p>
-org.docksidestage.app.web.signin.SigninAction#index
+Execute Method: org.docksidestage.app.web.signin.SigninAction#index()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
@@ -1403,7 +1243,7 @@ org.docksidestage.app.web.signin.SigninAction#index
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">//                                                                             =======
 </p>
-org.docksidestage.app.web.signin.SigninBody
+Form or Body: org.docksidestage.app.web.signin.SigninBody
 <table>
     <thead>
     <tr>
@@ -1441,13 +1281,13 @@ org.docksidestage.app.web.signin.SigninBody
     </tr>
 </table>
 
-JsonResponse&lt;Void&gt;
+Return as: JsonResponse&lt;Void&gt;
 
 <h2 id="/signup/">
 /signup/
 </h2>
 <p>
-org.docksidestage.app.web.signup.SignupAction#index
+Execute Method: org.docksidestage.app.web.signup.SignupAction#index()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
@@ -1456,7 +1296,7 @@ org.docksidestage.app.web.signup.SignupAction#index
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">//                                                                             =======
 </p>
-org.docksidestage.app.web.signup.SignupBody
+Form or Body: org.docksidestage.app.web.signup.SignupBody
 <table>
     <thead>
     <tr>
@@ -1532,20 +1372,20 @@ org.docksidestage.app.web.signup.SignupBody
     </tr>
 </table>
 
-JsonResponse&lt;Void&gt;
+Return as: JsonResponse&lt;Void&gt;
 
 <h2 id="/signup/confirm">
 /signup/confirm
 </h2>
 <p>
-org.docksidestage.app.web.signup.SignupAction#confirm
+Execute Method: org.docksidestage.app.web.signup.SignupAction#confirm()
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  * @author jflute
  */
 </p>
-JsonResponse&lt;Void&gt;
+Return as: JsonResponse&lt;Void&gt;
 
 </body>
 </html>
