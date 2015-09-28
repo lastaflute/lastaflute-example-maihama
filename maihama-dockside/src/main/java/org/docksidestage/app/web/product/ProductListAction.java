@@ -49,7 +49,7 @@ public class ProductListAction extends DocksideBaseAction {
     //                                                                             =======
     @Execute
     public HtmlResponse index(OptionalThing<Integer> pageNumber, ProductSearchForm form) {
-        validate(form, messages -> {}, () -> {
+        validate(form, messages -> {} , () -> {
             return asHtml(path_Product_ProductListJsp);
         });
         PagingResultBean<Product> page = selectProductPage(pageNumber.orElse(1), form);
@@ -73,7 +73,7 @@ public class ProductListAction extends DocksideBaseAction {
             cb.setupSelect_ProductCategory();
             cb.specify().derivedPurchase().count(purchaseCB -> {
                 purchaseCB.specify().columnPurchaseId();
-            }, Product.ALIAS_purchaseCount);
+            } , Product.ALIAS_purchaseCount);
             cb.query().setProductName_LikeSearch(form.productName, op -> op.likeContain());
             final String purchaseMemberName = form.purchaseMemberName;
             if (isNotEmpty(purchaseMemberName)) {
