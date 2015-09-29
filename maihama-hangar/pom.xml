@@ -121,8 +121,8 @@
 		</dependency>
 
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-		<!--                                                                       Testing -->
-		<!--                                                                       = = = = -->
+		<!--                                                               Partner Library -->
+		<!--                                                               = = = = = = = = -->
 		<!-- jetty -->
 		<dependency>
 			<groupId>org.dbflute.jetty</groupId>
