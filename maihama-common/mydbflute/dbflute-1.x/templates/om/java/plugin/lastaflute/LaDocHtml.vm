@@ -158,7 +158,7 @@ Execute Method: $manager.htmlEscape($actionDocMeta.type)#${actionDocMeta.methodN
 </p>
 #if ($actionDocMeta.annotationList)
 <p>
-AnnotationList: ${actionDocMeta.annotationList}
+Annotations: ${actionDocMeta.annotationList}
 </p>
 #end
 #if ($actionDocMeta.typeComment)
