@@ -119,6 +119,8 @@ table.child, table.child td, table.child th {
         <th>URL</th>
         <th>class</th>
         <th>method</th>
+        <th>Form or Body</th>
+        <th>return</th>
     </tr>
     </thead>
     <tbody id="table-list-body">
@@ -127,96 +129,186 @@ table.child, table.child td, table.child th {
         <td class="aliascell"><a href="#/following/follow">/following/follow</a></td>
         <td class="aliascell">org.docksidestage.app.web.following.FollowingAction</td>
         <td class="aliascell">follow</td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">FollowingBody</span>
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">2</td>
         <td class="aliascell"><a href="#/member/update">/member/update</a></td>
         <td class="aliascell">org.docksidestage.app.web.member.MemberAction</td>
         <td class="aliascell">update</td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">MemberBody</span>
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">3</td>
         <td class="aliascell"><a href="#/member/info">/member/info</a></td>
         <td class="aliascell">org.docksidestage.app.web.member.MemberAction</td>
         <td class="aliascell">info</td>
+        <td class="aliascell">
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoBean&gt;">JsonResponse&lt;MemberInfoBean&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">4</td>
         <td class="aliascell"><a href="#/member/list/{pageNumber:Integer?}">/member/list/{pageNumber:Integer?}</a></td>
         <td class="aliascell">org.docksidestage.app.web.member.MemberListAction</td>
         <td class="aliascell">index</td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.MemberSearchRowBean&gt;&gt;">MemberSearchBody</span>
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.MemberSearchRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;MemberSearchRowBean&gt;&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">5</td>
         <td class="aliascell"><a href="#/member/purchase/list/{memberId:Integer}/{pageNumber:Integer?}">/member/purchase/list/{memberId:Integer}/{pageNumber:Integer?}</a></td>
         <td class="aliascell">org.docksidestage.app.web.member.purchase.MemberPurchaseListAction</td>
         <td class="aliascell">index</td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean&gt;&gt;">MemberPurchaseListBody</span>
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;MemberPurchaseSearchRowBean&gt;&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">6</td>
         <td class="aliascell"><a href="#/member/purchase/list/delete">/member/purchase/list/delete</a></td>
         <td class="aliascell">org.docksidestage.app.web.member.purchase.MemberPurchaseListAction</td>
         <td class="aliascell">delete</td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">MemberPurchaseListBody</span>
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">7</td>
         <td class="aliascell"><a href="#/mypage/">/mypage/</a></td>
         <td class="aliascell">org.docksidestage.app.web.mypage.MypageAction</td>
         <td class="aliascell">index</td>
+        <td class="aliascell">
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.mypage.MypageBean&gt;">JsonResponse&lt;MypageBean&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">8</td>
         <td class="aliascell"><a href="#/product/detail/{productId:Integer}">/product/detail/{productId:Integer}</a></td>
         <td class="aliascell">org.docksidestage.app.web.product.ProductDetailAction</td>
         <td class="aliascell">index</td>
+        <td class="aliascell">
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;">JsonResponse&lt;ProductDetailBean&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">9</td>
         <td class="aliascell"><a href="#/product/list/{pageNumber:Integer?}">/product/list/{pageNumber:Integer?}</a></td>
         <td class="aliascell">org.docksidestage.app.web.product.ProductListAction</td>
         <td class="aliascell">index</td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.product.ProductRowBean&gt;&gt;">ProductSearchBody</span>
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.product.ProductRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;ProductRowBean&gt;&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">10</td>
         <td class="aliascell"><a href="#/purchase/count">/purchase/count</a></td>
         <td class="aliascell">org.docksidestage.app.web.purchase.PurchaseAction</td>
         <td class="aliascell">count</td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">PurchaseProductBody</span>
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">JsonResponse&lt;PriceBean&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">11</td>
         <td class="aliascell"><a href="#/purchase/contract">/purchase/contract</a></td>
         <td class="aliascell">org.docksidestage.app.web.purchase.PurchaseAction</td>
         <td class="aliascell">contract</td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">PurchaseProductBody</span>
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">JsonResponse&lt;PriceBean&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">12</td>
         <td class="aliascell"><a href="#/root/">/root/</a></td>
         <td class="aliascell">org.docksidestage.app.web.RootAction</td>
         <td class="aliascell">index</td>
+        <td class="aliascell">
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">13</td>
         <td class="aliascell"><a href="#/root/signout">/root/signout</a></td>
         <td class="aliascell">org.docksidestage.app.web.RootAction</td>
         <td class="aliascell">signout</td>
+        <td class="aliascell">
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">14</td>
         <td class="aliascell"><a href="#/signin/">/signin/</a></td>
         <td class="aliascell">org.docksidestage.app.web.signin.SigninAction</td>
         <td class="aliascell">index</td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">SigninBody</span>
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">15</td>
         <td class="aliascell"><a href="#/signup/">/signup/</a></td>
         <td class="aliascell">org.docksidestage.app.web.signup.SignupAction</td>
         <td class="aliascell">index</td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">SignupBody</span>
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
     </tr>
     <tr>
         <td class="rownumcell">16</td>
         <td class="aliascell"><a href="#/signup/confirm">/signup/confirm</a></td>
         <td class="aliascell">org.docksidestage.app.web.signup.SignupAction</td>
         <td class="aliascell">confirm</td>
+        <td class="aliascell">
+        </td>
+        <td class="aliascell">
+            <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
     </tr>
     </tbody>
 </table>
@@ -228,7 +320,7 @@ table.child, table.child td, table.child th {
 Execute Method: org.docksidestage.app.web.following.FollowingAction#follow()
 </p>
 <p>
-AnnotationList: [Execute]
+Annotations: [Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
@@ -244,7 +336,7 @@ Form or Body: <span title="JsonResponse&lt;Void&gt;">FollowingBody</span>
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -282,7 +374,7 @@ Return as: <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span
 Execute Method: org.docksidestage.app.web.member.MemberAction#update()
 </p>
 <p>
-AnnotationList: [Execute]
+Annotations: [Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
@@ -297,7 +389,7 @@ Form or Body: <span title="JsonResponse&lt;Void&gt;">MemberBody</span>
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -370,13 +462,13 @@ Return as: <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span
 Execute Method: org.docksidestage.app.web.member.MemberAction#info()
 </p>
 <p>
-AnnotationList: [Execute]
+Annotations: [Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  */
 </p>
-Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoBean&gt;">JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoBean&gt;</span>
+Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoBean&gt;">JsonResponse&lt;MemberInfoBean&gt;</span>
 <table>
     <thead>
     <tr>
@@ -384,7 +476,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.member.MemberI
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -430,7 +522,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.member.MemberI
 Execute Method: org.docksidestage.app.web.member.MemberListAction#index()
 </p>
 <p>
-AnnotationList: [Execute]
+Annotations: [Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
@@ -446,7 +538,7 @@ Form or Body: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -518,7 +610,7 @@ Form or Body: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging
     </tr>
 </table>
 
-Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.MemberSearchRowBean&gt;&gt;">JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.MemberSearchRowBean&gt;&gt;</span>
+Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.MemberSearchRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;MemberSearchRowBean&gt;&gt;</span>
 <table>
     <thead>
     <tr>
@@ -526,7 +618,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.Se
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -594,7 +686,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.Se
 Execute Method: org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#index()
 </p>
 <p>
-AnnotationList: [Execute]
+Annotations: [Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
@@ -610,7 +702,7 @@ Form or Body: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -640,7 +732,7 @@ Form or Body: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging
     </tr>
 </table>
 
-Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean&gt;&gt;">JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean&gt;&gt;</span>
+Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;MemberPurchaseSearchRowBean&gt;&gt;</span>
 <table>
     <thead>
     <tr>
@@ -648,7 +740,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.Se
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -716,7 +808,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.Se
 Execute Method: org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#delete()
 </p>
 <p>
-AnnotationList: [Execute]
+Annotations: [Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
@@ -731,7 +823,7 @@ Form or Body: <span title="JsonResponse&lt;Void&gt;">MemberPurchaseListBody</spa
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -770,14 +862,14 @@ Return as: <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span
 Execute Method: org.docksidestage.app.web.mypage.MypageAction#index()
 </p>
 <p>
-AnnotationList: [Execute]
+Annotations: [Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author shunsuke.tadokoro
  */
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;"></p>
-Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.mypage.MypageBean&gt;">JsonResponse&lt;org.docksidestage.app.web.mypage.MypageBean&gt;</span>
+Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.mypage.MypageBean&gt;">JsonResponse&lt;MypageBean&gt;</span>
 <table>
     <thead>
     <tr>
@@ -785,7 +877,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.mypage.MypageB
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -864,7 +956,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.mypage.MypageB
 Execute Method: org.docksidestage.app.web.product.ProductDetailAction#index()
 </p>
 <p>
-AnnotationList: [AllowAnyoneAccess, Execute]
+Annotations: [AllowAnyoneAccess, Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
@@ -872,7 +964,7 @@ AnnotationList: [AllowAnyoneAccess, Execute]
  */
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;"></p>
-Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;">JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;</span>
+Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;">JsonResponse&lt;ProductDetailBean&gt;</span>
 <table>
     <thead>
     <tr>
@@ -880,7 +972,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.product.Produc
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -948,7 +1040,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.product.Produc
 Execute Method: org.docksidestage.app.web.product.ProductListAction#index()
 </p>
 <p>
-AnnotationList: [AllowAnyoneAccess, Execute]
+Annotations: [AllowAnyoneAccess, Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
@@ -964,7 +1056,7 @@ Form or Body: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -1003,7 +1095,7 @@ Form or Body: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging
     </tr>
 </table>
 
-Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.product.ProductRowBean&gt;&gt;">JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.product.ProductRowBean&gt;&gt;</span>
+Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.product.ProductRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;ProductRowBean&gt;&gt;</span>
 <table>
     <thead>
     <tr>
@@ -1011,7 +1103,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.Se
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -1079,7 +1171,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.base.paging.Se
 Execute Method: org.docksidestage.app.web.purchase.PurchaseAction#count()
 </p>
 <p>
-AnnotationList: [Execute]
+Annotations: [Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
@@ -1094,7 +1186,7 @@ Form or Body: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.Pr
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -1126,7 +1218,7 @@ Form or Body: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.Pr
     </tr>
 </table>
 
-Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;</span>
+Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">JsonResponse&lt;PriceBean&gt;</span>
 <table>
     <thead>
     <tr>
@@ -1134,7 +1226,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.Price
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -1158,7 +1250,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.Price
 Execute Method: org.docksidestage.app.web.purchase.PurchaseAction#contract()
 </p>
 <p>
-AnnotationList: [Execute]
+Annotations: [Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
@@ -1172,7 +1264,7 @@ Form or Body: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.Pr
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -1204,7 +1296,7 @@ Form or Body: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.Pr
     </tr>
 </table>
 
-Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;</span>
+Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">JsonResponse&lt;PriceBean&gt;</span>
 <table>
     <thead>
     <tr>
@@ -1212,7 +1304,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.Price
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -1236,7 +1328,7 @@ Return as: <span title="JsonResponse&lt;org.docksidestage.app.web.purchase.Price
 Execute Method: org.docksidestage.app.web.RootAction#index()
 </p>
 <p>
-AnnotationList: [AllowAnyoneAccess, Execute]
+Annotations: [AllowAnyoneAccess, Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
@@ -1252,7 +1344,7 @@ Return as: <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span
 Execute Method: org.docksidestage.app.web.RootAction#signout()
 </p>
 <p>
-AnnotationList: [Execute]
+Annotations: [Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
@@ -1268,7 +1360,7 @@ Return as: <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span
 Execute Method: org.docksidestage.app.web.signin.SigninAction#index()
 </p>
 <p>
-AnnotationList: [Execute]
+Annotations: [Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
@@ -1284,7 +1376,7 @@ Form or Body: <span title="JsonResponse&lt;Void&gt;">SigninBody</span>
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -1323,7 +1415,7 @@ Return as: <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span
 Execute Method: org.docksidestage.app.web.signup.SignupAction#index()
 </p>
 <p>
-AnnotationList: [AllowAnyoneAccess, Execute]
+Annotations: [AllowAnyoneAccess, Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
@@ -1339,7 +1431,7 @@ Form or Body: <span title="JsonResponse&lt;Void&gt;">SignupBody</span>
         <th>name</th>
         <th>class</th>
         <th>comment</th>
-        <th>annotationList</th>
+        <th>annotations</th>
         <th>nestTypeDocMetaList</th>
     </tr>
     </thead>
@@ -1414,7 +1506,7 @@ Return as: <span title="JsonResponse&lt;Void&gt;">JsonResponse&lt;Void&gt;</span
 Execute Method: org.docksidestage.app.web.signup.SignupAction#confirm()
 </p>
 <p>
-AnnotationList: [AllowAnyoneAccess, Execute]
+Annotations: [AllowAnyoneAccess, Execute]
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430

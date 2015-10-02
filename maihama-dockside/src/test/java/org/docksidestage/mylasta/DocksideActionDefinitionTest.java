@@ -24,7 +24,7 @@ import org.docksidestage.unit.UnitDocksideTestCase;
 /**
  * @author jflute
  */
-public class ActionDefinitionTest extends UnitDocksideTestCase {
+public class DocksideActionDefinitionTest extends UnitDocksideTestCase {
 
     public void test_definition() throws Exception {
         // ## Arrange ##

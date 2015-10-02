@@ -134,7 +134,7 @@
       "returnTypeDocMeta": {
         "name": null,
         "typeName": "JsonResponse\u003corg.docksidestage.app.web.member.MemberInfoBean\u003e",
-        "simpleTypeName": "JsonResponse\u003corg.docksidestage.app.web.member.MemberInfoBean\u003e",
+        "simpleTypeName": "JsonResponse\u003cMemberInfoBean\u003e",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -235,7 +235,7 @@
       "returnTypeDocMeta": {
         "name": null,
         "typeName": "JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.member.MemberSearchRowBean\u003e\u003e",
-        "simpleTypeName": "JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.member.MemberSearchRowBean\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cSearchPagingBean\u003cMemberSearchRowBean\u003e\u003e",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -324,7 +324,7 @@
       "returnTypeDocMeta": {
         "name": null,
         "typeName": "JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean\u003e\u003e",
-        "simpleTypeName": "JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cSearchPagingBean\u003cMemberPurchaseSearchRowBean\u003e\u003e",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -433,7 +433,7 @@
       "returnTypeDocMeta": {
         "name": null,
         "typeName": "JsonResponse\u003corg.docksidestage.app.web.mypage.MypageBean\u003e",
-        "simpleTypeName": "JsonResponse\u003corg.docksidestage.app.web.mypage.MypageBean\u003e",
+        "simpleTypeName": "JsonResponse\u003cMypageBean\u003e",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -503,7 +503,7 @@
       "returnTypeDocMeta": {
         "name": null,
         "typeName": "JsonResponse\u003corg.docksidestage.app.web.product.ProductDetailBean\u003e",
-        "simpleTypeName": "JsonResponse\u003corg.docksidestage.app.web.product.ProductDetailBean\u003e",
+        "simpleTypeName": "JsonResponse\u003cProductDetailBean\u003e",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -597,7 +597,7 @@
       "returnTypeDocMeta": {
         "name": null,
         "typeName": "JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.product.ProductRowBean\u003e\u003e",
-        "simpleTypeName": "JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.product.ProductRowBean\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cSearchPagingBean\u003cProductRowBean\u003e\u003e",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -687,7 +687,7 @@
       "returnTypeDocMeta": {
         "name": null,
         "typeName": "JsonResponse\u003corg.docksidestage.app.web.purchase.PriceBean\u003e",
-        "simpleTypeName": "JsonResponse\u003corg.docksidestage.app.web.purchase.PriceBean\u003e",
+        "simpleTypeName": "JsonResponse\u003cPriceBean\u003e",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -745,7 +745,7 @@
       "returnTypeDocMeta": {
         "name": null,
         "typeName": "JsonResponse\u003corg.docksidestage.app.web.purchase.PriceBean\u003e",
-        "simpleTypeName": "JsonResponse\u003corg.docksidestage.app.web.purchase.PriceBean\u003e",
+        "simpleTypeName": "JsonResponse\u003cPriceBean\u003e",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [

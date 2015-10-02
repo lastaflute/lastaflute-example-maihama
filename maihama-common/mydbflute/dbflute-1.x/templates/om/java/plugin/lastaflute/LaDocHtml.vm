@@ -135,6 +135,8 @@ table.child, table.child td, table.child th {
         <th>URL</th>
         <th>class</th>
         <th>method</th>
+        <th>Form or Body</th>
+        <th>return</th>
     </tr>
     </thead>
     <tbody id="table-list-body">
@@ -144,6 +146,16 @@ table.child, table.child td, table.child th {
         <td class="aliascell"><a href="#${actionDocMeta.url}">${actionDocMeta.url}</a></td>
         <td class="aliascell">$manager.htmlEscape($actionDocMeta.typeName)</td>
         <td class="aliascell">${actionDocMeta.methodName}</td>
+        <td class="aliascell">
+#if ($actionDocMeta.formTypeDocMeta)
+            <span title="$manager.htmlEscape($actionDocMeta.returnTypeDocMeta.typeName)">$manager.htmlEscape($actionDocMeta.formTypeDocMeta.simpleTypeName)</span>
+#end
+        </td>
+        <td class="aliascell">
+#if ($actionDocMeta.returnTypeDocMeta)
+            <span title="$manager.htmlEscape($actionDocMeta.returnTypeDocMeta.typeName)">$manager.htmlEscape($actionDocMeta.returnTypeDocMeta.simpleTypeName)</span>
+#end
+        </td>
     </tr>
 #end
     </tbody>
