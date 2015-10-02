@@ -289,7 +289,7 @@
 				<artifactId>utflute-lastaflute</artifactId>
 				<version>${utflute.version}</version>
 			</dependency>
-        	<dependency>
+        	<dependency> <!-- for lastadoc -->
             	<groupId>com.github.javaparser</groupId>
             	<artifactId>javaparser-core</artifactId>
             	<version>${javaparser.version}</version>

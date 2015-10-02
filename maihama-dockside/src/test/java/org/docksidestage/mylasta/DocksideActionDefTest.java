@@ -15,18 +15,20 @@
  */
 package org.docksidestage.mylasta;
 
-import java.io.File;
 import java.lang.reflect.Modifier;
 
 import org.dbflute.utflute.core.document.DocumentGenerator;
-import org.docksidestage.unit.UnitHangarTestCase;
+import org.docksidestage.unit.UnitDocksideTestCase;
 
 /**
  * @author jflute
  */
-public class HangarActionDefinitionTest extends UnitHangarTestCase {
+public class DocksideActionDefTest extends UnitDocksideTestCase {
 
-    public void test_definition() throws Exception {
+    // ===================================================================================
+    //                                                                           Component
+    //                                                                           =========
+    public void test_component() throws Exception {
         // ## Arrange ##
         String appWebPkg = ".app.web.";
         String actionSuffix = "Action";
@@ -40,16 +42,15 @@ public class HangarActionDefinitionTest extends UnitHangarTestCase {
             if (className.contains(appWebPkg) && className.endsWith(actionSuffix)) {
                 // ## Assert ##
                 markHere("exists");
-                assertActionDefinition(srcFile, clazz);
+                getComponent(clazz); // expect no exception
             }
         });
         assertMarked("exists");
     }
 
-    protected void assertActionDefinition(File srcFile, Class<?> clazz) {
-        getComponent(clazz); // expect no exception
-    }
-
+    // ===================================================================================
+    //                                                                            Document
+    //                                                                            ========
     public void test_document() throws Exception {
         DocumentGenerator documentGenerator = new DocumentGenerator();
         documentGenerator.saveLastaDocMeta();
