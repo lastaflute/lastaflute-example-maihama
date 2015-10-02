@@ -51,7 +51,6 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
         return DBMetaInstanceHandler.getProvider();
     }
 
-    @Override
     public String asTableDbName() {
         return "member_login";
     }
@@ -392,7 +391,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
     /**
      * Equal(=). As Flg. And NullIgnored, OnlyOnceRegistered. <br>
      * (モバイルログインフラグ)MOBILE_LOGIN_FLG: {NotNull, INT(10), classification=Flg} <br>
-     * フラグを示す
+     * general boolean classification for every flg-column
      * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
      */
     public void setMobileLoginFlg_Equal_AsFlg(CDef.Flg cdef) {
@@ -402,7 +401,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
     /**
      * Equal(=). As boolean for Flg. <br>
      * (モバイルログインフラグ)MOBILE_LOGIN_FLG: {NotNull, INT(10), classification=Flg} <br>
-     * フラグを示す
+     * general boolean classification for every flg-column
      * @param determination The determination, true or false. (basically NotNull: error as default, or no condition as option)
      */
     public void setMobileLoginFlg_Equal_AsBoolean(Boolean determination) {
@@ -411,7 +410,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * Equal(=). As True (1). And NullIgnored, OnlyOnceRegistered. <br>
-     * はい: 有効を示す
+     * Checked: means yes
      */
     public void setMobileLoginFlg_Equal_True() {
         setMobileLoginFlg_Equal_AsFlg(CDef.Flg.True);
@@ -419,7 +418,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * Equal(=). As False (0). And NullIgnored, OnlyOnceRegistered. <br>
-     * いいえ: 無効を示す
+     * Unchecked: means no
      */
     public void setMobileLoginFlg_Equal_False() {
         setMobileLoginFlg_Equal_AsFlg(CDef.Flg.False);
@@ -441,7 +440,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). As Flg. And NullIgnored, OnlyOnceRegistered. <br>
      * (モバイルログインフラグ)MOBILE_LOGIN_FLG: {NotNull, INT(10), classification=Flg} <br>
-     * フラグを示す
+     * general boolean classification for every flg-column
      * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
      */
     public void setMobileLoginFlg_NotEqual_AsFlg(CDef.Flg cdef) {
@@ -450,7 +449,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * NotEqual(&lt;&gt;). As True (1). And NullIgnored, OnlyOnceRegistered. <br>
-     * はい: 有効を示す
+     * Checked: means yes
      */
     public void setMobileLoginFlg_NotEqual_True() {
         setMobileLoginFlg_NotEqual_AsFlg(CDef.Flg.True);
@@ -458,7 +457,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * NotEqual(&lt;&gt;). As False (0). And NullIgnored, OnlyOnceRegistered. <br>
-     * いいえ: 無効を示す
+     * Unchecked: means no
      */
     public void setMobileLoginFlg_NotEqual_False() {
         setMobileLoginFlg_NotEqual_AsFlg(CDef.Flg.False);
@@ -480,7 +479,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. As Flg. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * (モバイルログインフラグ)MOBILE_LOGIN_FLG: {NotNull, INT(10), classification=Flg} <br>
-     * フラグを示す
+     * general boolean classification for every flg-column
      * @param cdefList The list of classification definition (as ENUM type). (NullAllowed: if null (or empty), no condition)
      */
     public void setMobileLoginFlg_InScope_AsFlg(Collection<CDef.Flg> cdefList) {
@@ -503,7 +502,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. As Flg. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * (モバイルログインフラグ)MOBILE_LOGIN_FLG: {NotNull, INT(10), classification=Flg} <br>
-     * フラグを示す
+     * general boolean classification for every flg-column
      * @param cdefList The list of classification definition (as ENUM type). (NullAllowed: if null (or empty), no condition)
      */
     public void setMobileLoginFlg_NotInScope_AsFlg(Collection<CDef.Flg> cdefList) {
@@ -529,7 +528,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
     /**
      * Equal(=). As MemberStatus. And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * (ログイン会員ステータスコード)LOGIN_MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status, classification=MemberStatus} <br>
-     * 入会から退会までの会員のステータスを示す
+     * status of member from entry to withdrawal
      * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
      */
     public void setLoginMemberStatusCode_Equal_AsMemberStatus(CDef.MemberStatus cdef) {
@@ -576,7 +575,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). As MemberStatus. And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * (ログイン会員ステータスコード)LOGIN_MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status, classification=MemberStatus} <br>
-     * 入会から退会までの会員のステータスを示す
+     * status of member from entry to withdrawal
      * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
      */
     public void setLoginMemberStatusCode_NotEqual_AsMemberStatus(CDef.MemberStatus cdef) {
@@ -623,7 +622,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. As MemberStatus. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * (ログイン会員ステータスコード)LOGIN_MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status, classification=MemberStatus} <br>
-     * 入会から退会までの会員のステータスを示す
+     * status of member from entry to withdrawal
      * @param cdefList The list of classification definition (as ENUM type). (NullAllowed: if null (or empty), no condition)
      */
     public void setLoginMemberStatusCode_InScope_AsMemberStatus(Collection<CDef.MemberStatus> cdefList) {
@@ -632,8 +631,8 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * InScope {in ('a', 'b')}. As MemberStatus. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
-     * 入会から退会までの会員のステータスを示す <br>
-     * Members that can use the service, can sign in <br>
+     * status of member from entry to withdrawal <br>
+     * means member that can use services <br>
      * The group elements:[Formalized, Provisional]
      */
     public void setLoginMemberStatusCode_InScope_ServiceAvailable() {
@@ -642,7 +641,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * InScope {in ('a', 'b')}. As MemberStatus. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
-     * 入会から退会までの会員のステータスを示す <br>
+     * status of member from entry to withdrawal <br>
      * Members are not formalized yet <br>
      * The group elements:[Provisional]
      */
@@ -666,7 +665,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. As MemberStatus. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * (ログイン会員ステータスコード)LOGIN_MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status, classification=MemberStatus} <br>
-     * 入会から退会までの会員のステータスを示す
+     * status of member from entry to withdrawal
      * @param cdefList The list of classification definition (as ENUM type). (NullAllowed: if null (or empty), no condition)
      */
     public void setLoginMemberStatusCode_NotInScope_AsMemberStatus(Collection<CDef.MemberStatus> cdefList) {
@@ -777,7 +776,6 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
         return xcreateSLCFunction(CK_LE, MemberLoginCB.class);
     }
 
-    @Override
     @SuppressWarnings("unchecked")
     protected <CB extends ConditionBean> void xscalarCondition(String fn, SubQuery<CB> sq, String rd, HpSLCCustomized<CB> cs, ScalarConditionOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -814,7 +812,6 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
     public HpQDRFunction<MemberLoginCB> myselfDerived() {
         return xcreateQDRFunctionMyselfDerived(MemberLoginCB.class);
     }
-    @Override
     @SuppressWarnings("unchecked")
     protected <CB extends ConditionBean> void xqderiveMyselfDerived(String fn, SubQuery<CB> sq, String rd, Object vl, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);

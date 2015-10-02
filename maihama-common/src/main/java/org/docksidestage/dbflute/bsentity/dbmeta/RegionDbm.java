@@ -43,13 +43,9 @@ public class RegionDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
-    @Override
     public String getProjectName() { return DBCurrent.getInstance().projectName(); }
-    @Override
     public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
-    @Override
     public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
-    @Override
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -72,7 +68,6 @@ public class RegionDbm extends AbstractDBMeta {
         }, "regionId");
         setupEpg(_epgMap, et -> ((Region)et).getRegionName(), (et, vl) -> ((Region)et).setRegionName((String)vl), "regionName");
     }
-    @Override
     public PropertyGateway findPropertyGateway(String prop)
     { return doFindEpg(_epgMap, prop); }
 
@@ -84,16 +79,11 @@ public class RegionDbm extends AbstractDBMeta {
     protected final String _tablePropertyName = "region";
     protected final TableSqlName _tableSqlName = new TableSqlName("REGION", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
-    @Override
     public String getTableDbName() { return _tableDbName; }
-    @Override
     public String getTableDispName() { return _tableDispName; }
-    @Override
     public String getTablePropertyName() { return _tablePropertyName; }
-    @Override
     public TableSqlName getTableSqlName() { return _tableSqlName; }
     protected final String _tableAlias = "地域";
-    @Override
     public String getTableAlias() { return _tableAlias; }
 
     // ===================================================================================
@@ -113,7 +103,6 @@ public class RegionDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnRegionName() { return _columnRegionName; }
 
-    @Override
     protected List<ColumnInfo> ccil() {
         List<ColumnInfo> ls = newArrayList();
         ls.add(columnRegionId());
@@ -129,11 +118,8 @@ public class RegionDbm extends AbstractDBMeta {
     // -----------------------------------------------------
     //                                       Primary Element
     //                                       ---------------
-    @Override
     protected UniqueInfo cpui() { return hpcpui(columnRegionId()); }
-    @Override
     public boolean hasPrimaryKey() { return true; }
-    @Override
     public boolean hasCompoundPrimaryKey() { return false; }
 
     // ===================================================================================
@@ -164,36 +150,27 @@ public class RegionDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                           Type Name
     //                                                                           =========
-    @Override
     public String getEntityTypeName() { return "org.docksidestage.dbflute.exentity.Region"; }
-    @Override
     public String getConditionBeanTypeName() { return "org.docksidestage.dbflute.cbean.RegionCB"; }
-    @Override
     public String getBehaviorTypeName() { return "org.docksidestage.dbflute.exbhv.RegionBhv"; }
 
     // ===================================================================================
     //                                                                         Object Type
     //                                                                         ===========
-    @Override
     public Class<Region> getEntityType() { return Region.class; }
 
     // ===================================================================================
     //                                                                     Object Instance
     //                                                                     ===============
-    @Override
     public Region newEntity() { return new Region(); }
 
     // ===================================================================================
     //                                                                   Map Communication
     //                                                                   =================
-    @Override
     public void acceptPrimaryKeyMap(Entity et, Map<String, ? extends Object> mp)
     { doAcceptPrimaryKeyMap((Region)et, mp); }
-    @Override
     public void acceptAllColumnMap(Entity et, Map<String, ? extends Object> mp)
     { doAcceptAllColumnMap((Region)et, mp); }
-    @Override
     public Map<String, Object> extractPrimaryKeyMap(Entity et) { return doExtractPrimaryKeyMap(et); }
-    @Override
     public Map<String, Object> extractAllColumnMap(Entity et) { return doExtractAllColumnMap(et); }
 }

@@ -44,13 +44,9 @@ public class MemberServiceDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
-    @Override
     public String getProjectName() { return DBCurrent.getInstance().projectName(); }
-    @Override
     public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
-    @Override
     public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
-    @Override
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -80,7 +76,6 @@ public class MemberServiceDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((MemberService)et).getUpdateUser(), (et, vl) -> ((MemberService)et).setUpdateUser((String)vl), "updateUser");
         setupEpg(_epgMap, et -> ((MemberService)et).getVersionNo(), (et, vl) -> ((MemberService)et).setVersionNo(ctl(vl)), "versionNo");
     }
-    @Override
     public PropertyGateway findPropertyGateway(String prop)
     { return doFindEpg(_epgMap, prop); }
 
@@ -94,7 +89,6 @@ public class MemberServiceDbm extends AbstractDBMeta {
         setupEfpg(_efpgMap, et -> ((MemberService)et).getMember(), (et, vl) -> ((MemberService)et).setMember((OptionalEntity<Member>)vl), "member");
         setupEfpg(_efpgMap, et -> ((MemberService)et).getServiceRank(), (et, vl) -> ((MemberService)et).setServiceRank((OptionalEntity<ServiceRank>)vl), "serviceRank");
     }
-    @Override
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
 
@@ -106,16 +100,11 @@ public class MemberServiceDbm extends AbstractDBMeta {
     protected final String _tablePropertyName = "memberService";
     protected final TableSqlName _tableSqlName = new TableSqlName("MEMBER_SERVICE", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
-    @Override
     public String getTableDbName() { return _tableDbName; }
-    @Override
     public String getTableDispName() { return _tableDispName; }
-    @Override
     public String getTablePropertyName() { return _tablePropertyName; }
-    @Override
     public TableSqlName getTableSqlName() { return _tableSqlName; }
     protected final String _tableAlias = "会員サービス";
-    @Override
     public String getTableAlias() { return _tableAlias; }
 
     // ===================================================================================
@@ -177,7 +166,6 @@ public class MemberServiceDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnVersionNo() { return _columnVersionNo; }
 
-    @Override
     protected List<ColumnInfo> ccil() {
         List<ColumnInfo> ls = newArrayList();
         ls.add(columnMemberServiceId());
@@ -200,11 +188,8 @@ public class MemberServiceDbm extends AbstractDBMeta {
     // -----------------------------------------------------
     //                                       Primary Element
     //                                       ---------------
-    @Override
     protected UniqueInfo cpui() { return hpcpui(columnMemberServiceId()); }
-    @Override
     public boolean hasPrimaryKey() { return true; }
-    @Override
     public boolean hasCompoundPrimaryKey() { return false; }
 
     // -----------------------------------------------------
@@ -244,57 +229,41 @@ public class MemberServiceDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                        Various Info
     //                                                                        ============
-    @Override
     public boolean hasIdentity() { return true; }
-    @Override
     public boolean hasVersionNo() { return true; }
-    @Override
     public ColumnInfo getVersionNoColumnInfo() { return _columnVersionNo; }
-    @Override
     public boolean hasCommonColumn() { return true; }
-    @Override
     public List<ColumnInfo> getCommonColumnInfoList()
     { return newArrayList(columnRegisterDatetime(), columnRegisterUser(), columnUpdateDatetime(), columnUpdateUser()); }
-    @Override
     public List<ColumnInfo> getCommonColumnInfoBeforeInsertList()
     { return newArrayList(columnRegisterDatetime(), columnRegisterUser(), columnUpdateDatetime(), columnUpdateUser()); }
-    @Override
     public List<ColumnInfo> getCommonColumnInfoBeforeUpdateList()
     { return newArrayList(columnUpdateDatetime(), columnUpdateUser()); }
 
     // ===================================================================================
     //                                                                           Type Name
     //                                                                           =========
-    @Override
     public String getEntityTypeName() { return "org.docksidestage.dbflute.exentity.MemberService"; }
-    @Override
     public String getConditionBeanTypeName() { return "org.docksidestage.dbflute.cbean.MemberServiceCB"; }
-    @Override
     public String getBehaviorTypeName() { return "org.docksidestage.dbflute.exbhv.MemberServiceBhv"; }
 
     // ===================================================================================
     //                                                                         Object Type
     //                                                                         ===========
-    @Override
     public Class<MemberService> getEntityType() { return MemberService.class; }
 
     // ===================================================================================
     //                                                                     Object Instance
     //                                                                     ===============
-    @Override
     public MemberService newEntity() { return new MemberService(); }
 
     // ===================================================================================
     //                                                                   Map Communication
     //                                                                   =================
-    @Override
     public void acceptPrimaryKeyMap(Entity et, Map<String, ? extends Object> mp)
     { doAcceptPrimaryKeyMap((MemberService)et, mp); }
-    @Override
     public void acceptAllColumnMap(Entity et, Map<String, ? extends Object> mp)
     { doAcceptAllColumnMap((MemberService)et, mp); }
-    @Override
     public Map<String, Object> extractPrimaryKeyMap(Entity et) { return doExtractPrimaryKeyMap(et); }
-    @Override
     public Map<String, Object> extractAllColumnMap(Entity et) { return doExtractAllColumnMap(et); }
 }

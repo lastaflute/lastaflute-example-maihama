@@ -79,17 +79,14 @@ public abstract class BsProductStatusBhv extends AbstractBehaviorWritable<Produc
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public ProductStatusDbm asDBMeta() { return ProductStatusDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "product_status"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public ProductStatusCB newConditionBean() { return new ProductStatusCB(); }
 
     // ===================================================================================
@@ -155,7 +152,6 @@ public abstract class BsProductStatusBhv extends AbstractBehaviorWritable<Produc
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -945,10 +941,7 @@ public abstract class BsProductStatusBhv extends AbstractBehaviorWritable<Produc
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends ProductStatus> typeOfSelectedEntity() { return ProductStatus.class; }
-    @Override
     protected Class<ProductStatus> typeOfHandlingEntity() { return ProductStatus.class; }
-    @Override
     protected Class<ProductStatusCB> typeOfHandlingConditionBean() { return ProductStatusCB.class; }
 }

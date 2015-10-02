@@ -105,13 +105,11 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public DBMeta asDBMeta() {
         return DBMetaInstanceHandler.findDBMeta(asTableDbName());
     }
 
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() {
         return "member_login";
     }
@@ -120,7 +118,6 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     //                                                                        Key Handling
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public boolean hasPrimaryKeyValue() {
         if (_memberLoginId == null) { return false; }
         return true;
@@ -145,7 +142,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     /**
      * Get the value of mobileLoginFlg as the classification of Flg. <br>
      * (モバイルログインフラグ)MOBILE_LOGIN_FLG: {NotNull, INT(10), classification=Flg} <br>
-     * フラグを示す
+     * general boolean classification for every flg-column
      * <p>It's treated as case insensitive and if the code value is null, it returns null.</p>
      * @return The instance of classification definition (as ENUM type). (NullAllowed: when the column value is null)
      */
@@ -156,7 +153,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     /**
      * Set the value of mobileLoginFlg as the classification of Flg. <br>
      * (モバイルログインフラグ)MOBILE_LOGIN_FLG: {NotNull, INT(10), classification=Flg} <br>
-     * フラグを示す
+     * general boolean classification for every flg-column
      * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the column)
      */
     public void setMobileLoginFlgAsFlg(CDef.Flg cdef) {
@@ -166,7 +163,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     /**
      * Set the value of mobileLoginFlg as boolean. <br>
      * (モバイルログインフラグ)MOBILE_LOGIN_FLG: {NotNull, INT(10), classification=Flg} <br>
-     * フラグを示す
+     * general boolean classification for every flg-column
      * @param determination The determination, true or false. (NullAllowed: if null, null value is set to the column)
      */
     public void setMobileLoginFlgAsBoolean(Boolean determination) {
@@ -176,7 +173,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     /**
      * Get the value of loginMemberStatusCode as the classification of MemberStatus. <br>
      * (ログイン会員ステータスコード)LOGIN_MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status, classification=MemberStatus} <br>
-     * 入会から退会までの会員のステータスを示す
+     * status of member from entry to withdrawal
      * <p>It's treated as case insensitive and if the code value is null, it returns null.</p>
      * @return The instance of classification definition (as ENUM type). (NullAllowed: when the column value is null)
      */
@@ -187,7 +184,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     /**
      * Set the value of loginMemberStatusCode as the classification of MemberStatus. <br>
      * (ログイン会員ステータスコード)LOGIN_MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status, classification=MemberStatus} <br>
-     * 入会から退会までの会員のステータスを示す
+     * status of member from entry to withdrawal
      * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the column)
      */
     public void setLoginMemberStatusCodeAsMemberStatus(CDef.MemberStatus cdef) {
@@ -199,7 +196,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     //                                                              ======================
     /**
      * Set the value of mobileLoginFlg as True (1). <br>
-     * はい: 有効を示す
+     * Checked: means yes
      */
     public void setMobileLoginFlg_True() {
         setMobileLoginFlgAsFlg(CDef.Flg.True);
@@ -207,7 +204,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
 
     /**
      * Set the value of mobileLoginFlg as False (0). <br>
-     * いいえ: 無効を示す
+     * Unchecked: means no
      */
     public void setMobileLoginFlg_False() {
         setMobileLoginFlgAsFlg(CDef.Flg.False);
@@ -242,7 +239,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     //                                                        ============================
     /**
      * Is the value of mobileLoginFlg True? <br>
-     * はい: 有効を示す
+     * Checked: means yes
      * <p>It's treated as case insensitive and if the code value is null, it returns false.</p>
      * @return The determination, true or false.
      */
@@ -253,7 +250,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
 
     /**
      * Is the value of mobileLoginFlg False? <br>
-     * いいえ: 無効を示す
+     * Unchecked: means no
      * <p>It's treated as case insensitive and if the code value is null, it returns false.</p>
      * @return The determination, true or false.
      */
@@ -296,7 +293,7 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     }
 
     /**
-     * Members that can use the service, can sign in <br>
+     * means member that can use services <br>
      * The group elements:[Formalized, Provisional]
      * @return The determination, true or false.
      */
@@ -384,7 +381,6 @@ public abstract class BsMemberLogin extends AbstractEntity implements DomainEnti
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
-    @Override
     protected <ELEMENT> List<ELEMENT> newReferrerList() {
         return new ArrayList<ELEMENT>();
     }

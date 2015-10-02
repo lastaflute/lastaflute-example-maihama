@@ -52,7 +52,6 @@ public class PurchasePaymentCIQ extends AbstractBsPurchasePaymentCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,39 +76,24 @@ public class PurchasePaymentCIQ extends AbstractBsPurchasePaymentCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValuePurchasePaymentId() { return _myCQ.xdfgetPurchasePaymentId(); }
-    @Override
     protected ConditionValue xgetCValuePurchaseId() { return _myCQ.xdfgetPurchaseId(); }
-    @Override
     protected ConditionValue xgetCValuePaymentAmount() { return _myCQ.xdfgetPaymentAmount(); }
-    @Override
     protected ConditionValue xgetCValuePaymentDatetime() { return _myCQ.xdfgetPaymentDatetime(); }
-    @Override
     protected ConditionValue xgetCValuePaymentMethodCode() { return _myCQ.xdfgetPaymentMethodCode(); }
-    @Override
     protected ConditionValue xgetCValueRegisterDatetime() { return _myCQ.xdfgetRegisterDatetime(); }
-    @Override
     protected ConditionValue xgetCValueRegisterUser() { return _myCQ.xdfgetRegisterUser(); }
-    @Override
     protected ConditionValue xgetCValueUpdateDatetime() { return _myCQ.xdfgetUpdateDatetime(); }
-    @Override
     protected ConditionValue xgetCValueUpdateUser() { return _myCQ.xdfgetUpdateUser(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(PurchasePaymentCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(PurchasePaymentCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(PurchasePaymentCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(PurchasePaymentCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

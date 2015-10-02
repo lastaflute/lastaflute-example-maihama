@@ -84,7 +84,6 @@ public class BsProductCategoryCB extends AbstractConditionBean {
         return DBMetaInstanceHandler.getProvider(); // as default
     }
 
-    @Override
     public String asTableDbName() {
         return "product_category";
     }
@@ -104,13 +103,11 @@ public class BsProductCategoryCB extends AbstractConditionBean {
         return (ProductCategoryCB)this;
     }
 
-    @Override
     public ConditionBean addOrderBy_PK_Asc() {
         query().addOrderBy_ProductCategoryCode_Asc();
         return this;
     }
 
-    @Override
     public ConditionBean addOrderBy_PK_Desc() {
         query().addOrderBy_ProductCategoryCode_Desc();
         return this;
@@ -209,7 +206,6 @@ public class BsProductCategoryCB extends AbstractConditionBean {
     /**
      * {@inheritDoc}
      */
-    @Override
     public ConditionQuery localCQ() {
         return doGetConditionQuery();
     }
@@ -315,12 +311,10 @@ public class BsProductCategoryCB extends AbstractConditionBean {
         return _specification;
     }
 
-    @Override
     public HpColumnSpHandler localSp() {
         return specify();
     }
 
-    @Override
     public boolean hasSpecifiedLocalColumn() {
         return _specification != null && _specification.hasSpecifiedColumn();
     }
@@ -346,9 +340,7 @@ public class BsProductCategoryCB extends AbstractConditionBean {
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnParentCategoryCode() { return doColumn("PARENT_CATEGORY_CODE"); }
-        @Override
         public void everyColumn() { doEveryColumn(); }
-        @Override
         public void exceptRecordMetaColumn() { doExceptRecordMetaColumn(); }
         @Override
         protected void doSpecifyRequiredColumn() {
@@ -435,11 +427,10 @@ public class BsProductCategoryCB extends AbstractConditionBean {
      */
     public ProductCategoryCB dreamCruiseCB() {
         ProductCategoryCB cb = new ProductCategoryCB();
-        cb.xsetupForDreamCruise(this);
+        cb.xsetupForDreamCruise((ProductCategoryCB) this);
         return cb;
     }
 
-    @Override
     protected ConditionBean xdoCreateDreamCruiseCB() {
         return dreamCruiseCB();
     }
@@ -469,7 +460,7 @@ public class BsProductCategoryCB extends AbstractConditionBean {
 
     protected ProductCategoryCB xcreateColumnQueryCB() {
         ProductCategoryCB cb = new ProductCategoryCB();
-        cb.xsetupForColumnQuery(this);
+        cb.xsetupForColumnQuery((ProductCategoryCB)this);
         return cb;
     }
 
@@ -537,7 +528,6 @@ public class BsProductCategoryCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                       Meta Handling
     //                                                                       =============
-    @Override
     public boolean hasUnionQueryOrUnionAllQuery() {
         return query().hasUnionQueryOrUnionAllQuery();
     }

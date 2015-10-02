@@ -44,13 +44,9 @@ public class ProductCategoryDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
-    @Override
     public String getProjectName() { return DBCurrent.getInstance().projectName(); }
-    @Override
     public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
-    @Override
     public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
-    @Override
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -66,7 +62,6 @@ public class ProductCategoryDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((ProductCategory)et).getProductCategoryName(), (et, vl) -> ((ProductCategory)et).setProductCategoryName((String)vl), "productCategoryName");
         setupEpg(_epgMap, et -> ((ProductCategory)et).getParentCategoryCode(), (et, vl) -> ((ProductCategory)et).setParentCategoryCode((String)vl), "parentCategoryCode");
     }
-    @Override
     public PropertyGateway findPropertyGateway(String prop)
     { return doFindEpg(_epgMap, prop); }
 
@@ -79,7 +74,6 @@ public class ProductCategoryDbm extends AbstractDBMeta {
     protected void xsetupEfpg() {
         setupEfpg(_efpgMap, et -> ((ProductCategory)et).getProductCategorySelf(), (et, vl) -> ((ProductCategory)et).setProductCategorySelf((OptionalEntity<ProductCategory>)vl), "productCategorySelf");
     }
-    @Override
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
 
@@ -91,16 +85,11 @@ public class ProductCategoryDbm extends AbstractDBMeta {
     protected final String _tablePropertyName = "productCategory";
     protected final TableSqlName _tableSqlName = new TableSqlName("PRODUCT_CATEGORY", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
-    @Override
     public String getTableDbName() { return _tableDbName; }
-    @Override
     public String getTableDispName() { return _tableDispName; }
-    @Override
     public String getTablePropertyName() { return _tablePropertyName; }
-    @Override
     public TableSqlName getTableSqlName() { return _tableSqlName; }
     protected final String _tableAlias = "商品カテゴリ";
-    @Override
     public String getTableAlias() { return _tableAlias; }
 
     // ===================================================================================
@@ -126,7 +115,6 @@ public class ProductCategoryDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnParentCategoryCode() { return _columnParentCategoryCode; }
 
-    @Override
     protected List<ColumnInfo> ccil() {
         List<ColumnInfo> ls = newArrayList();
         ls.add(columnProductCategoryCode());
@@ -143,11 +131,8 @@ public class ProductCategoryDbm extends AbstractDBMeta {
     // -----------------------------------------------------
     //                                       Primary Element
     //                                       ---------------
-    @Override
     protected UniqueInfo cpui() { return hpcpui(columnProductCategoryCode()); }
-    @Override
     public boolean hasPrimaryKey() { return true; }
-    @Override
     public boolean hasCompoundPrimaryKey() { return false; }
 
     // ===================================================================================
@@ -194,36 +179,27 @@ public class ProductCategoryDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                           Type Name
     //                                                                           =========
-    @Override
     public String getEntityTypeName() { return "org.docksidestage.dbflute.exentity.ProductCategory"; }
-    @Override
     public String getConditionBeanTypeName() { return "org.docksidestage.dbflute.cbean.ProductCategoryCB"; }
-    @Override
     public String getBehaviorTypeName() { return "org.docksidestage.dbflute.exbhv.ProductCategoryBhv"; }
 
     // ===================================================================================
     //                                                                         Object Type
     //                                                                         ===========
-    @Override
     public Class<ProductCategory> getEntityType() { return ProductCategory.class; }
 
     // ===================================================================================
     //                                                                     Object Instance
     //                                                                     ===============
-    @Override
     public ProductCategory newEntity() { return new ProductCategory(); }
 
     // ===================================================================================
     //                                                                   Map Communication
     //                                                                   =================
-    @Override
     public void acceptPrimaryKeyMap(Entity et, Map<String, ? extends Object> mp)
     { doAcceptPrimaryKeyMap((ProductCategory)et, mp); }
-    @Override
     public void acceptAllColumnMap(Entity et, Map<String, ? extends Object> mp)
     { doAcceptAllColumnMap((ProductCategory)et, mp); }
-    @Override
     public Map<String, Object> extractPrimaryKeyMap(Entity et) { return doExtractPrimaryKeyMap(et); }
-    @Override
     public Map<String, Object> extractAllColumnMap(Entity et) { return doExtractAllColumnMap(et); }
 }

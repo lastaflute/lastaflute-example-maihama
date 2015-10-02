@@ -88,13 +88,11 @@ public abstract class BsRegion extends AbstractEntity implements DomainEntity {
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public DBMeta asDBMeta() {
         return DBMetaInstanceHandler.findDBMeta(asTableDbName());
     }
 
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() {
         return "region";
     }
@@ -103,7 +101,6 @@ public abstract class BsRegion extends AbstractEntity implements DomainEntity {
     //                                                                        Key Handling
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public boolean hasPrimaryKeyValue() {
         if (_regionId == null) { return false; }
         return true;
@@ -115,7 +112,7 @@ public abstract class BsRegion extends AbstractEntity implements DomainEntity {
     /**
      * Get the value of regionId as the classification of Region. <br>
      * (地域ID)REGION_ID: {PK, NotNull, INT(10), classification=Region} <br>
-     * 主に会員の住んでいる地域を示す
+     * mainly region of member address
      * <p>It's treated as case insensitive and if the code value is null, it returns null.</p>
      * @return The instance of classification definition (as ENUM type). (NullAllowed: when the column value is null)
      */
@@ -126,7 +123,7 @@ public abstract class BsRegion extends AbstractEntity implements DomainEntity {
     /**
      * Set the value of regionId as the classification of Region. <br>
      * (地域ID)REGION_ID: {PK, NotNull, INT(10), classification=Region} <br>
-     * 主に会員の住んでいる地域を示す
+     * mainly region of member address
      * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the column)
      */
     public void setRegionIdAsRegion(CDef.Region cdef) {
@@ -241,7 +238,6 @@ public abstract class BsRegion extends AbstractEntity implements DomainEntity {
         _memberAddressList = memberAddressList;
     }
 
-    @Override
     protected <ELEMENT> List<ELEMENT> newReferrerList() {
         return new ArrayList<ELEMENT>();
     }

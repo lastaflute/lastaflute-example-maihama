@@ -92,26 +92,20 @@ public class BsProductStatusCQ extends AbstractBsProductStatusCQ {
     public ConditionValue xdfgetProductStatusCode()
     { if (_productStatusCode == null) { _productStatusCode = nCV(); }
       return _productStatusCode; }
-    @Override
     protected ConditionValue xgetCValueProductStatusCode() { return xdfgetProductStatusCode(); }
 
     public Map<String, ProductCQ> xdfgetProductStatusCode_ExistsReferrer_ProductList() { return xgetSQueMap("productStatusCode_ExistsReferrer_ProductList"); }
-    @Override
     public String keepProductStatusCode_ExistsReferrer_ProductList(ProductCQ sq) { return xkeepSQue("productStatusCode_ExistsReferrer_ProductList", sq); }
 
     public Map<String, ProductCQ> xdfgetProductStatusCode_NotExistsReferrer_ProductList() { return xgetSQueMap("productStatusCode_NotExistsReferrer_ProductList"); }
-    @Override
     public String keepProductStatusCode_NotExistsReferrer_ProductList(ProductCQ sq) { return xkeepSQue("productStatusCode_NotExistsReferrer_ProductList", sq); }
 
     public Map<String, ProductCQ> xdfgetProductStatusCode_SpecifyDerivedReferrer_ProductList() { return xgetSQueMap("productStatusCode_SpecifyDerivedReferrer_ProductList"); }
-    @Override
     public String keepProductStatusCode_SpecifyDerivedReferrer_ProductList(ProductCQ sq) { return xkeepSQue("productStatusCode_SpecifyDerivedReferrer_ProductList", sq); }
 
     public Map<String, ProductCQ> xdfgetProductStatusCode_QueryDerivedReferrer_ProductList() { return xgetSQueMap("productStatusCode_QueryDerivedReferrer_ProductList"); }
-    @Override
     public String keepProductStatusCode_QueryDerivedReferrer_ProductList(ProductCQ sq) { return xkeepSQue("productStatusCode_QueryDerivedReferrer_ProductList", sq); }
     public Map<String, Object> xdfgetProductStatusCode_QueryDerivedReferrer_ProductListParameter() { return xgetSQuePmMap("productStatusCode_QueryDerivedReferrer_ProductList"); }
-    @Override
     public String keepProductStatusCode_QueryDerivedReferrer_ProductListParameter(Object pm) { return xkeepSQuePm("productStatusCode_QueryDerivedReferrer_ProductList", pm); }
 
     /** 
@@ -132,7 +126,6 @@ public class BsProductStatusCQ extends AbstractBsProductStatusCQ {
     public ConditionValue xdfgetProductStatusName()
     { if (_productStatusName == null) { _productStatusName = nCV(); }
       return _productStatusName; }
-    @Override
     protected ConditionValue xgetCValueProductStatusName() { return xdfgetProductStatusName(); }
 
     /** 
@@ -153,7 +146,6 @@ public class BsProductStatusCQ extends AbstractBsProductStatusCQ {
     public ConditionValue xdfgetDisplayOrder()
     { if (_displayOrder == null) { _displayOrder = nCV(); }
       return _displayOrder; }
-    @Override
     protected ConditionValue xgetCValueDisplayOrder() { return xdfgetDisplayOrder(); }
 
     /** 
@@ -208,14 +200,12 @@ public class BsProductStatusCQ extends AbstractBsProductStatusCQ {
     // ===================================================================================
     //                                                                         Union Query
     //                                                                         ===========
-    @Override
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }
@@ -224,21 +214,17 @@ public class BsProductStatusCQ extends AbstractBsProductStatusCQ {
     //                                                                     ScalarCondition
     //                                                                     ===============
     public Map<String, ProductStatusCQ> xdfgetScalarCondition() { return xgetSQueMap("scalarCondition"); }
-    @Override
     public String keepScalarCondition(ProductStatusCQ sq) { return xkeepSQue("scalarCondition", sq); }
 
     // ===================================================================================
     //                                                                       MyselfDerived
     //                                                                       =============
     public Map<String, ProductStatusCQ> xdfgetSpecifyMyselfDerived() { return xgetSQueMap("specifyMyselfDerived"); }
-    @Override
     public String keepSpecifyMyselfDerived(ProductStatusCQ sq) { return xkeepSQue("specifyMyselfDerived", sq); }
 
     public Map<String, ProductStatusCQ> xdfgetQueryMyselfDerived() { return xgetSQueMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerived(ProductStatusCQ sq) { return xkeepSQue("queryMyselfDerived", sq); }
     public Map<String, Object> xdfgetQueryMyselfDerivedParameter() { return xgetSQuePmMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerivedParameter(Object pm) { return xkeepSQuePm("queryMyselfDerived", pm); }
 
     // ===================================================================================
@@ -246,7 +232,6 @@ public class BsProductStatusCQ extends AbstractBsProductStatusCQ {
     //                                                                        ============
     protected Map<String, ProductStatusCQ> _myselfExistsMap;
     public Map<String, ProductStatusCQ> xdfgetMyselfExists() { return xgetSQueMap("myselfExists"); }
-    @Override
     public String keepMyselfExists(ProductStatusCQ sq) { return xkeepSQue("myselfExists", sq); }
 
     // ===================================================================================

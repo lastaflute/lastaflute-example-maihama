@@ -78,17 +78,14 @@ public abstract class BsPurchaseBhv extends AbstractBehaviorWritable<Purchase, P
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public PurchaseDbm asDBMeta() { return PurchaseDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "purchase"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public PurchaseCB newConditionBean() { return new PurchaseCB(); }
 
     // ===================================================================================
@@ -154,7 +151,6 @@ public abstract class BsPurchaseBhv extends AbstractBehaviorWritable<Purchase, P
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -1135,10 +1131,7 @@ public abstract class BsPurchaseBhv extends AbstractBehaviorWritable<Purchase, P
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends Purchase> typeOfSelectedEntity() { return Purchase.class; }
-    @Override
     protected Class<Purchase> typeOfHandlingEntity() { return Purchase.class; }
-    @Override
     protected Class<PurchaseCB> typeOfHandlingConditionBean() { return PurchaseCB.class; }
 }

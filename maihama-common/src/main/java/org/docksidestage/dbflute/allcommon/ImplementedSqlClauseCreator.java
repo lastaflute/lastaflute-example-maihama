@@ -35,7 +35,6 @@ public class ImplementedSqlClauseCreator implements SqlClauseCreator {
 	 * @param cb Condition-bean. (NotNull) 
 	 * @return SQL clause. (NotNull)
 	 */
-    @Override
     public SqlClause createSqlClause(ConditionBean cb) {
         String tableDbName = cb.asTableDbName();
 		SqlClause sqlClause = createSqlClause(tableDbName);
@@ -47,7 +46,6 @@ public class ImplementedSqlClauseCreator implements SqlClauseCreator {
 	 * @param tableDbName The DB name of table. (NotNull) 
 	 * @return SQL clause. (NotNull)
 	 */
-    @Override
     public SqlClause createSqlClause(String tableDbName) {
         SqlClause sqlClause = doCreateSqlClause(tableDbName);
         setupSqlClauseOption(sqlClause);

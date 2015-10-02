@@ -78,17 +78,14 @@ public abstract class BsMemberAddressBhv extends AbstractBehaviorWritable<Member
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public MemberAddressDbm asDBMeta() { return MemberAddressDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "member_address"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public MemberAddressCB newConditionBean() { return new MemberAddressCB(); }
 
     // ===================================================================================
@@ -154,7 +151,6 @@ public abstract class BsMemberAddressBhv extends AbstractBehaviorWritable<Member
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -1070,10 +1066,7 @@ public abstract class BsMemberAddressBhv extends AbstractBehaviorWritable<Member
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends MemberAddress> typeOfSelectedEntity() { return MemberAddress.class; }
-    @Override
     protected Class<MemberAddress> typeOfHandlingEntity() { return MemberAddress.class; }
-    @Override
     protected Class<MemberAddressCB> typeOfHandlingConditionBean() { return MemberAddressCB.class; }
 }

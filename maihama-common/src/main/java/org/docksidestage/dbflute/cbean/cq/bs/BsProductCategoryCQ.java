@@ -92,45 +92,34 @@ public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
     public ConditionValue xdfgetProductCategoryCode()
     { if (_productCategoryCode == null) { _productCategoryCode = nCV(); }
       return _productCategoryCode; }
-    @Override
     protected ConditionValue xgetCValueProductCategoryCode() { return xdfgetProductCategoryCode(); }
 
     public Map<String, ProductCQ> xdfgetProductCategoryCode_ExistsReferrer_ProductList() { return xgetSQueMap("productCategoryCode_ExistsReferrer_ProductList"); }
-    @Override
     public String keepProductCategoryCode_ExistsReferrer_ProductList(ProductCQ sq) { return xkeepSQue("productCategoryCode_ExistsReferrer_ProductList", sq); }
 
     public Map<String, ProductCategoryCQ> xdfgetProductCategoryCode_ExistsReferrer_ProductCategorySelfList() { return xgetSQueMap("productCategoryCode_ExistsReferrer_ProductCategorySelfList"); }
-    @Override
     public String keepProductCategoryCode_ExistsReferrer_ProductCategorySelfList(ProductCategoryCQ sq) { return xkeepSQue("productCategoryCode_ExistsReferrer_ProductCategorySelfList", sq); }
 
     public Map<String, ProductCQ> xdfgetProductCategoryCode_NotExistsReferrer_ProductList() { return xgetSQueMap("productCategoryCode_NotExistsReferrer_ProductList"); }
-    @Override
     public String keepProductCategoryCode_NotExistsReferrer_ProductList(ProductCQ sq) { return xkeepSQue("productCategoryCode_NotExistsReferrer_ProductList", sq); }
 
     public Map<String, ProductCategoryCQ> xdfgetProductCategoryCode_NotExistsReferrer_ProductCategorySelfList() { return xgetSQueMap("productCategoryCode_NotExistsReferrer_ProductCategorySelfList"); }
-    @Override
     public String keepProductCategoryCode_NotExistsReferrer_ProductCategorySelfList(ProductCategoryCQ sq) { return xkeepSQue("productCategoryCode_NotExistsReferrer_ProductCategorySelfList", sq); }
 
     public Map<String, ProductCQ> xdfgetProductCategoryCode_SpecifyDerivedReferrer_ProductList() { return xgetSQueMap("productCategoryCode_SpecifyDerivedReferrer_ProductList"); }
-    @Override
     public String keepProductCategoryCode_SpecifyDerivedReferrer_ProductList(ProductCQ sq) { return xkeepSQue("productCategoryCode_SpecifyDerivedReferrer_ProductList", sq); }
 
     public Map<String, ProductCategoryCQ> xdfgetProductCategoryCode_SpecifyDerivedReferrer_ProductCategorySelfList() { return xgetSQueMap("productCategoryCode_SpecifyDerivedReferrer_ProductCategorySelfList"); }
-    @Override
     public String keepProductCategoryCode_SpecifyDerivedReferrer_ProductCategorySelfList(ProductCategoryCQ sq) { return xkeepSQue("productCategoryCode_SpecifyDerivedReferrer_ProductCategorySelfList", sq); }
 
     public Map<String, ProductCQ> xdfgetProductCategoryCode_QueryDerivedReferrer_ProductList() { return xgetSQueMap("productCategoryCode_QueryDerivedReferrer_ProductList"); }
-    @Override
     public String keepProductCategoryCode_QueryDerivedReferrer_ProductList(ProductCQ sq) { return xkeepSQue("productCategoryCode_QueryDerivedReferrer_ProductList", sq); }
     public Map<String, Object> xdfgetProductCategoryCode_QueryDerivedReferrer_ProductListParameter() { return xgetSQuePmMap("productCategoryCode_QueryDerivedReferrer_ProductList"); }
-    @Override
     public String keepProductCategoryCode_QueryDerivedReferrer_ProductListParameter(Object pm) { return xkeepSQuePm("productCategoryCode_QueryDerivedReferrer_ProductList", pm); }
 
     public Map<String, ProductCategoryCQ> xdfgetProductCategoryCode_QueryDerivedReferrer_ProductCategorySelfList() { return xgetSQueMap("productCategoryCode_QueryDerivedReferrer_ProductCategorySelfList"); }
-    @Override
     public String keepProductCategoryCode_QueryDerivedReferrer_ProductCategorySelfList(ProductCategoryCQ sq) { return xkeepSQue("productCategoryCode_QueryDerivedReferrer_ProductCategorySelfList", sq); }
     public Map<String, Object> xdfgetProductCategoryCode_QueryDerivedReferrer_ProductCategorySelfListParameter() { return xgetSQuePmMap("productCategoryCode_QueryDerivedReferrer_ProductCategorySelfList"); }
-    @Override
     public String keepProductCategoryCode_QueryDerivedReferrer_ProductCategorySelfListParameter(Object pm) { return xkeepSQuePm("productCategoryCode_QueryDerivedReferrer_ProductCategorySelfList", pm); }
 
     /** 
@@ -151,7 +140,6 @@ public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
     public ConditionValue xdfgetProductCategoryName()
     { if (_productCategoryName == null) { _productCategoryName = nCV(); }
       return _productCategoryName; }
-    @Override
     protected ConditionValue xgetCValueProductCategoryName() { return xdfgetProductCategoryName(); }
 
     /** 
@@ -172,7 +160,6 @@ public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
     public ConditionValue xdfgetParentCategoryCode()
     { if (_parentCategoryCode == null) { _parentCategoryCode = nCV(); }
       return _parentCategoryCode; }
-    @Override
     protected ConditionValue xgetCValueParentCategoryCode() { return xdfgetParentCategoryCode(); }
 
     /** 
@@ -227,7 +214,6 @@ public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
     // ===================================================================================
     //                                                                         Union Query
     //                                                                         ===========
-    @Override
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         ProductCategoryCQ bq = (ProductCategoryCQ)bqs;
         ProductCategoryCQ uq = (ProductCategoryCQ)uqs;
@@ -259,7 +245,6 @@ public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
     protected void xsetupOuterJoinProductCategorySelf() { xregOutJo("productCategorySelf"); }
     public boolean hasConditionQueryProductCategorySelf() { return xhasQueRlMap("productCategorySelf"); }
 
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }
@@ -268,21 +253,17 @@ public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
     //                                                                     ScalarCondition
     //                                                                     ===============
     public Map<String, ProductCategoryCQ> xdfgetScalarCondition() { return xgetSQueMap("scalarCondition"); }
-    @Override
     public String keepScalarCondition(ProductCategoryCQ sq) { return xkeepSQue("scalarCondition", sq); }
 
     // ===================================================================================
     //                                                                       MyselfDerived
     //                                                                       =============
     public Map<String, ProductCategoryCQ> xdfgetSpecifyMyselfDerived() { return xgetSQueMap("specifyMyselfDerived"); }
-    @Override
     public String keepSpecifyMyselfDerived(ProductCategoryCQ sq) { return xkeepSQue("specifyMyselfDerived", sq); }
 
     public Map<String, ProductCategoryCQ> xdfgetQueryMyselfDerived() { return xgetSQueMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerived(ProductCategoryCQ sq) { return xkeepSQue("queryMyselfDerived", sq); }
     public Map<String, Object> xdfgetQueryMyselfDerivedParameter() { return xgetSQuePmMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerivedParameter(Object pm) { return xkeepSQuePm("queryMyselfDerived", pm); }
 
     // ===================================================================================
@@ -290,7 +271,6 @@ public class BsProductCategoryCQ extends AbstractBsProductCategoryCQ {
     //                                                                        ============
     protected Map<String, ProductCategoryCQ> _myselfExistsMap;
     public Map<String, ProductCategoryCQ> xdfgetMyselfExists() { return xgetSQueMap("myselfExists"); }
-    @Override
     public String keepMyselfExists(ProductCategoryCQ sq) { return xkeepSQue("myselfExists", sq); }
 
     // ===================================================================================

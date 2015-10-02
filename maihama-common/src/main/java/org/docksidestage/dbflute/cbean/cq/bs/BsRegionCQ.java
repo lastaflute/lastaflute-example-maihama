@@ -92,26 +92,20 @@ public class BsRegionCQ extends AbstractBsRegionCQ {
     public ConditionValue xdfgetRegionId()
     { if (_regionId == null) { _regionId = nCV(); }
       return _regionId; }
-    @Override
     protected ConditionValue xgetCValueRegionId() { return xdfgetRegionId(); }
 
     public Map<String, MemberAddressCQ> xdfgetRegionId_ExistsReferrer_MemberAddressList() { return xgetSQueMap("regionId_ExistsReferrer_MemberAddressList"); }
-    @Override
     public String keepRegionId_ExistsReferrer_MemberAddressList(MemberAddressCQ sq) { return xkeepSQue("regionId_ExistsReferrer_MemberAddressList", sq); }
 
     public Map<String, MemberAddressCQ> xdfgetRegionId_NotExistsReferrer_MemberAddressList() { return xgetSQueMap("regionId_NotExistsReferrer_MemberAddressList"); }
-    @Override
     public String keepRegionId_NotExistsReferrer_MemberAddressList(MemberAddressCQ sq) { return xkeepSQue("regionId_NotExistsReferrer_MemberAddressList", sq); }
 
     public Map<String, MemberAddressCQ> xdfgetRegionId_SpecifyDerivedReferrer_MemberAddressList() { return xgetSQueMap("regionId_SpecifyDerivedReferrer_MemberAddressList"); }
-    @Override
     public String keepRegionId_SpecifyDerivedReferrer_MemberAddressList(MemberAddressCQ sq) { return xkeepSQue("regionId_SpecifyDerivedReferrer_MemberAddressList", sq); }
 
     public Map<String, MemberAddressCQ> xdfgetRegionId_QueryDerivedReferrer_MemberAddressList() { return xgetSQueMap("regionId_QueryDerivedReferrer_MemberAddressList"); }
-    @Override
     public String keepRegionId_QueryDerivedReferrer_MemberAddressList(MemberAddressCQ sq) { return xkeepSQue("regionId_QueryDerivedReferrer_MemberAddressList", sq); }
     public Map<String, Object> xdfgetRegionId_QueryDerivedReferrer_MemberAddressListParameter() { return xgetSQuePmMap("regionId_QueryDerivedReferrer_MemberAddressList"); }
-    @Override
     public String keepRegionId_QueryDerivedReferrer_MemberAddressListParameter(Object pm) { return xkeepSQuePm("regionId_QueryDerivedReferrer_MemberAddressList", pm); }
 
     /** 
@@ -132,7 +126,6 @@ public class BsRegionCQ extends AbstractBsRegionCQ {
     public ConditionValue xdfgetRegionName()
     { if (_regionName == null) { _regionName = nCV(); }
       return _regionName; }
-    @Override
     protected ConditionValue xgetCValueRegionName() { return xdfgetRegionName(); }
 
     /** 
@@ -187,14 +180,12 @@ public class BsRegionCQ extends AbstractBsRegionCQ {
     // ===================================================================================
     //                                                                         Union Query
     //                                                                         ===========
-    @Override
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }
@@ -203,21 +194,17 @@ public class BsRegionCQ extends AbstractBsRegionCQ {
     //                                                                     ScalarCondition
     //                                                                     ===============
     public Map<String, RegionCQ> xdfgetScalarCondition() { return xgetSQueMap("scalarCondition"); }
-    @Override
     public String keepScalarCondition(RegionCQ sq) { return xkeepSQue("scalarCondition", sq); }
 
     // ===================================================================================
     //                                                                       MyselfDerived
     //                                                                       =============
     public Map<String, RegionCQ> xdfgetSpecifyMyselfDerived() { return xgetSQueMap("specifyMyselfDerived"); }
-    @Override
     public String keepSpecifyMyselfDerived(RegionCQ sq) { return xkeepSQue("specifyMyselfDerived", sq); }
 
     public Map<String, RegionCQ> xdfgetQueryMyselfDerived() { return xgetSQueMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerived(RegionCQ sq) { return xkeepSQue("queryMyselfDerived", sq); }
     public Map<String, Object> xdfgetQueryMyselfDerivedParameter() { return xgetSQuePmMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerivedParameter(Object pm) { return xkeepSQuePm("queryMyselfDerived", pm); }
 
     // ===================================================================================
@@ -225,7 +212,6 @@ public class BsRegionCQ extends AbstractBsRegionCQ {
     //                                                                        ============
     protected Map<String, RegionCQ> _myselfExistsMap;
     public Map<String, RegionCQ> xdfgetMyselfExists() { return xgetSQueMap("myselfExists"); }
-    @Override
     public String keepMyselfExists(RegionCQ sq) { return xkeepSQue("myselfExists", sq); }
 
     // ===================================================================================

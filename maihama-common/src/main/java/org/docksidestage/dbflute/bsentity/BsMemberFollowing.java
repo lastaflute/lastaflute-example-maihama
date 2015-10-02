@@ -98,13 +98,11 @@ public abstract class BsMemberFollowing extends AbstractEntity implements Domain
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public DBMeta asDBMeta() {
         return DBMetaInstanceHandler.findDBMeta(asTableDbName());
     }
 
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() {
         return "member_following";
     }
@@ -113,7 +111,6 @@ public abstract class BsMemberFollowing extends AbstractEntity implements Domain
     //                                                                        Key Handling
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public boolean hasPrimaryKeyValue() {
         if (_memberFollowingId == null) { return false; }
         return true;
@@ -180,7 +177,6 @@ public abstract class BsMemberFollowing extends AbstractEntity implements Domain
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
-    @Override
     protected <ELEMENT> List<ELEMENT> newReferrerList() {
         return new ArrayList<ELEMENT>();
     }

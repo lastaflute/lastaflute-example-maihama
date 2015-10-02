@@ -92,7 +92,6 @@ public class BsMemberLoginCQ extends AbstractBsMemberLoginCQ {
     public ConditionValue xdfgetMemberLoginId()
     { if (_memberLoginId == null) { _memberLoginId = nCV(); }
       return _memberLoginId; }
-    @Override
     protected ConditionValue xgetCValueMemberLoginId() { return xdfgetMemberLoginId(); }
 
     /** 
@@ -113,7 +112,6 @@ public class BsMemberLoginCQ extends AbstractBsMemberLoginCQ {
     public ConditionValue xdfgetMemberId()
     { if (_memberId == null) { _memberId = nCV(); }
       return _memberId; }
-    @Override
     protected ConditionValue xgetCValueMemberId() { return xdfgetMemberId(); }
 
     /** 
@@ -134,7 +132,6 @@ public class BsMemberLoginCQ extends AbstractBsMemberLoginCQ {
     public ConditionValue xdfgetLoginDatetime()
     { if (_loginDatetime == null) { _loginDatetime = nCV(); }
       return _loginDatetime; }
-    @Override
     protected ConditionValue xgetCValueLoginDatetime() { return xdfgetLoginDatetime(); }
 
     /** 
@@ -155,7 +152,6 @@ public class BsMemberLoginCQ extends AbstractBsMemberLoginCQ {
     public ConditionValue xdfgetMobileLoginFlg()
     { if (_mobileLoginFlg == null) { _mobileLoginFlg = nCV(); }
       return _mobileLoginFlg; }
-    @Override
     protected ConditionValue xgetCValueMobileLoginFlg() { return xdfgetMobileLoginFlg(); }
 
     /** 
@@ -176,7 +172,6 @@ public class BsMemberLoginCQ extends AbstractBsMemberLoginCQ {
     public ConditionValue xdfgetLoginMemberStatusCode()
     { if (_loginMemberStatusCode == null) { _loginMemberStatusCode = nCV(); }
       return _loginMemberStatusCode; }
-    @Override
     protected ConditionValue xgetCValueLoginMemberStatusCode() { return xdfgetLoginMemberStatusCode(); }
 
     /** 
@@ -231,7 +226,6 @@ public class BsMemberLoginCQ extends AbstractBsMemberLoginCQ {
     // ===================================================================================
     //                                                                         Union Query
     //                                                                         ===========
-    @Override
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MemberLoginCQ bq = (MemberLoginCQ)bqs;
         MemberLoginCQ uq = (MemberLoginCQ)uqs;
@@ -286,7 +280,6 @@ public class BsMemberLoginCQ extends AbstractBsMemberLoginCQ {
     protected void xsetupOuterJoinMemberStatus() { xregOutJo("memberStatus"); }
     public boolean hasConditionQueryMemberStatus() { return xhasQueRlMap("memberStatus"); }
 
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }
@@ -295,21 +288,17 @@ public class BsMemberLoginCQ extends AbstractBsMemberLoginCQ {
     //                                                                     ScalarCondition
     //                                                                     ===============
     public Map<String, MemberLoginCQ> xdfgetScalarCondition() { return xgetSQueMap("scalarCondition"); }
-    @Override
     public String keepScalarCondition(MemberLoginCQ sq) { return xkeepSQue("scalarCondition", sq); }
 
     // ===================================================================================
     //                                                                       MyselfDerived
     //                                                                       =============
     public Map<String, MemberLoginCQ> xdfgetSpecifyMyselfDerived() { return xgetSQueMap("specifyMyselfDerived"); }
-    @Override
     public String keepSpecifyMyselfDerived(MemberLoginCQ sq) { return xkeepSQue("specifyMyselfDerived", sq); }
 
     public Map<String, MemberLoginCQ> xdfgetQueryMyselfDerived() { return xgetSQueMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerived(MemberLoginCQ sq) { return xkeepSQue("queryMyselfDerived", sq); }
     public Map<String, Object> xdfgetQueryMyselfDerivedParameter() { return xgetSQuePmMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerivedParameter(Object pm) { return xkeepSQuePm("queryMyselfDerived", pm); }
 
     // ===================================================================================
@@ -317,7 +306,6 @@ public class BsMemberLoginCQ extends AbstractBsMemberLoginCQ {
     //                                                                        ============
     protected Map<String, MemberLoginCQ> _myselfExistsMap;
     public Map<String, MemberLoginCQ> xdfgetMyselfExists() { return xgetSQueMap("myselfExists"); }
-    @Override
     public String keepMyselfExists(MemberLoginCQ sq) { return xkeepSQue("myselfExists", sq); }
 
     // ===================================================================================

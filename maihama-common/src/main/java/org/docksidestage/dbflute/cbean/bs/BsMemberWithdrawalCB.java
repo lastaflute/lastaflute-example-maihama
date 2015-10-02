@@ -84,7 +84,6 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
         return DBMetaInstanceHandler.getProvider(); // as default
     }
 
-    @Override
     public String asTableDbName() {
         return "member_withdrawal";
     }
@@ -104,13 +103,11 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
         return (MemberWithdrawalCB)this;
     }
 
-    @Override
     public ConditionBean addOrderBy_PK_Asc() {
         query().addOrderBy_MemberId_Asc();
         return this;
     }
 
-    @Override
     public ConditionBean addOrderBy_PK_Desc() {
         query().addOrderBy_MemberId_Desc();
         return this;
@@ -209,7 +206,6 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
     /**
      * {@inheritDoc}
      */
-    @Override
     public ConditionQuery localCQ() {
         return doGetConditionQuery();
     }
@@ -332,12 +328,10 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
         return _specification;
     }
 
-    @Override
     public HpColumnSpHandler localSp() {
         return specify();
     }
 
-    @Override
     public boolean hasSpecifiedLocalColumn() {
         return _specification != null && _specification.hasSpecifiedColumn();
     }
@@ -389,9 +383,7 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnUpdateUser() { return doColumn("UPDATE_USER"); }
-        @Override
         public void everyColumn() { doEveryColumn(); }
-        @Override
         public void exceptRecordMetaColumn() { doExceptRecordMetaColumn(); }
         @Override
         protected void doSpecifyRequiredColumn() {
@@ -464,11 +456,10 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
      */
     public MemberWithdrawalCB dreamCruiseCB() {
         MemberWithdrawalCB cb = new MemberWithdrawalCB();
-        cb.xsetupForDreamCruise(this);
+        cb.xsetupForDreamCruise((MemberWithdrawalCB) this);
         return cb;
     }
 
-    @Override
     protected ConditionBean xdoCreateDreamCruiseCB() {
         return dreamCruiseCB();
     }
@@ -498,7 +489,7 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
 
     protected MemberWithdrawalCB xcreateColumnQueryCB() {
         MemberWithdrawalCB cb = new MemberWithdrawalCB();
-        cb.xsetupForColumnQuery(this);
+        cb.xsetupForColumnQuery((MemberWithdrawalCB)this);
         return cb;
     }
 
@@ -566,7 +557,6 @@ public class BsMemberWithdrawalCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                       Meta Handling
     //                                                                       =============
-    @Override
     public boolean hasUnionQueryOrUnionAllQuery() {
         return query().hasUnionQueryOrUnionAllQuery();
     }

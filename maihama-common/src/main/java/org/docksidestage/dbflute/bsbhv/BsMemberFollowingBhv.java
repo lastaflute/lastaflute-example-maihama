@@ -78,17 +78,14 @@ public abstract class BsMemberFollowingBhv extends AbstractBehaviorWritable<Memb
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public MemberFollowingDbm asDBMeta() { return MemberFollowingDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "member_following"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public MemberFollowingCB newConditionBean() { return new MemberFollowingCB(); }
 
     // ===================================================================================
@@ -154,7 +151,6 @@ public abstract class BsMemberFollowingBhv extends AbstractBehaviorWritable<Memb
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -889,10 +885,7 @@ public abstract class BsMemberFollowingBhv extends AbstractBehaviorWritable<Memb
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends MemberFollowing> typeOfSelectedEntity() { return MemberFollowing.class; }
-    @Override
     protected Class<MemberFollowing> typeOfHandlingEntity() { return MemberFollowing.class; }
-    @Override
     protected Class<MemberFollowingCB> typeOfHandlingConditionBean() { return MemberFollowingCB.class; }
 }

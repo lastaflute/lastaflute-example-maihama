@@ -60,7 +60,6 @@ public class ImplementedBehaviorSelector implements BehaviorSelector {
     /**
      * Initialize condition-bean meta data.
      */
-    @Override
     public void initializeConditionBeanMetaData() {
         final Map<String, DBMeta> dbmetaMap = DBMetaInstanceHandler.getUnmodifiableDBMetaMap();
         final Collection<DBMeta> dbmetas = dbmetaMap.values();
@@ -96,7 +95,6 @@ public class ImplementedBehaviorSelector implements BehaviorSelector {
      * @param behaviorType Behavior type. (NotNull)
      * @return The selected instance of the behavior. (NotNull)
      */
-    @Override
     @SuppressWarnings("unchecked")
     public <BEHAVIOR extends BehaviorReadable> BEHAVIOR select(Class<BEHAVIOR> behaviorType) {
         BEHAVIOR bhv = (BEHAVIOR) _behaviorCache.get(behaviorType);
@@ -110,7 +108,7 @@ public class ImplementedBehaviorSelector implements BehaviorSelector {
                 // or reading might failed by same-time writing
                 return bhv;
             }
-            bhv = getComponent(behaviorType);
+            bhv = (BEHAVIOR) getComponent(behaviorType);
             _behaviorCache.put(behaviorType, bhv);
             return bhv;
         }
@@ -123,7 +121,6 @@ public class ImplementedBehaviorSelector implements BehaviorSelector {
      * @throws org.dbflute.exception.DBMetaNotFoundException When the table is not found.
      * @throws org.dbflute.exception.IllegalBehaviorStateException When the behavior class is suppressed.
      */
-    @Override
     public BehaviorReadable byName(String tableFlexibleName) {
         assertStringNotNullAndNotTrimmedEmpty("tableFlexibleName", tableFlexibleName);
         final DBMeta dbmeta = DBMetaInstanceHandler.findDBMeta(tableFlexibleName);

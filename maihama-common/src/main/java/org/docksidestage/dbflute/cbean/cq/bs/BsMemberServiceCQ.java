@@ -92,7 +92,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     public ConditionValue xdfgetMemberServiceId()
     { if (_memberServiceId == null) { _memberServiceId = nCV(); }
       return _memberServiceId; }
-    @Override
     protected ConditionValue xgetCValueMemberServiceId() { return xdfgetMemberServiceId(); }
 
     /** 
@@ -113,7 +112,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     public ConditionValue xdfgetMemberId()
     { if (_memberId == null) { _memberId = nCV(); }
       return _memberId; }
-    @Override
     protected ConditionValue xgetCValueMemberId() { return xdfgetMemberId(); }
 
     /** 
@@ -134,7 +132,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     public ConditionValue xdfgetServicePointCount()
     { if (_servicePointCount == null) { _servicePointCount = nCV(); }
       return _servicePointCount; }
-    @Override
     protected ConditionValue xgetCValueServicePointCount() { return xdfgetServicePointCount(); }
 
     /** 
@@ -155,7 +152,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     public ConditionValue xdfgetServiceRankCode()
     { if (_serviceRankCode == null) { _serviceRankCode = nCV(); }
       return _serviceRankCode; }
-    @Override
     protected ConditionValue xgetCValueServiceRankCode() { return xdfgetServiceRankCode(); }
 
     /** 
@@ -176,7 +172,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     public ConditionValue xdfgetRegisterDatetime()
     { if (_registerDatetime == null) { _registerDatetime = nCV(); }
       return _registerDatetime; }
-    @Override
     protected ConditionValue xgetCValueRegisterDatetime() { return xdfgetRegisterDatetime(); }
 
     /** 
@@ -197,7 +192,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     public ConditionValue xdfgetRegisterUser()
     { if (_registerUser == null) { _registerUser = nCV(); }
       return _registerUser; }
-    @Override
     protected ConditionValue xgetCValueRegisterUser() { return xdfgetRegisterUser(); }
 
     /** 
@@ -218,7 +212,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     public ConditionValue xdfgetUpdateDatetime()
     { if (_updateDatetime == null) { _updateDatetime = nCV(); }
       return _updateDatetime; }
-    @Override
     protected ConditionValue xgetCValueUpdateDatetime() { return xdfgetUpdateDatetime(); }
 
     /** 
@@ -239,7 +232,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     public ConditionValue xdfgetUpdateUser()
     { if (_updateUser == null) { _updateUser = nCV(); }
       return _updateUser; }
-    @Override
     protected ConditionValue xgetCValueUpdateUser() { return xdfgetUpdateUser(); }
 
     /** 
@@ -260,7 +252,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     public ConditionValue xdfgetVersionNo()
     { if (_versionNo == null) { _versionNo = nCV(); }
       return _versionNo; }
-    @Override
     protected ConditionValue xgetCValueVersionNo() { return xdfgetVersionNo(); }
 
     /** 
@@ -315,7 +306,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     // ===================================================================================
     //                                                                         Union Query
     //                                                                         ===========
-    @Override
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MemberServiceCQ bq = (MemberServiceCQ)bqs;
         MemberServiceCQ uq = (MemberServiceCQ)uqs;
@@ -370,7 +360,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     protected void xsetupOuterJoinServiceRank() { xregOutJo("serviceRank"); }
     public boolean hasConditionQueryServiceRank() { return xhasQueRlMap("serviceRank"); }
 
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }
@@ -379,21 +368,17 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     //                                                                     ScalarCondition
     //                                                                     ===============
     public Map<String, MemberServiceCQ> xdfgetScalarCondition() { return xgetSQueMap("scalarCondition"); }
-    @Override
     public String keepScalarCondition(MemberServiceCQ sq) { return xkeepSQue("scalarCondition", sq); }
 
     // ===================================================================================
     //                                                                       MyselfDerived
     //                                                                       =============
     public Map<String, MemberServiceCQ> xdfgetSpecifyMyselfDerived() { return xgetSQueMap("specifyMyselfDerived"); }
-    @Override
     public String keepSpecifyMyselfDerived(MemberServiceCQ sq) { return xkeepSQue("specifyMyselfDerived", sq); }
 
     public Map<String, MemberServiceCQ> xdfgetQueryMyselfDerived() { return xgetSQueMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerived(MemberServiceCQ sq) { return xkeepSQue("queryMyselfDerived", sq); }
     public Map<String, Object> xdfgetQueryMyselfDerivedParameter() { return xgetSQuePmMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerivedParameter(Object pm) { return xkeepSQuePm("queryMyselfDerived", pm); }
 
     // ===================================================================================
@@ -401,7 +386,6 @@ public class BsMemberServiceCQ extends AbstractBsMemberServiceCQ {
     //                                                                        ============
     protected Map<String, MemberServiceCQ> _myselfExistsMap;
     public Map<String, MemberServiceCQ> xdfgetMyselfExists() { return xgetSQueMap("myselfExists"); }
-    @Override
     public String keepMyselfExists(MemberServiceCQ sq) { return xkeepSQue("myselfExists", sq); }
 
     // ===================================================================================

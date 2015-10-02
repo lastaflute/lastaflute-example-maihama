@@ -52,7 +52,6 @@ public class ProductStatusCIQ extends AbstractBsProductStatusCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,42 +76,28 @@ public class ProductStatusCIQ extends AbstractBsProductStatusCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValueProductStatusCode() { return _myCQ.xdfgetProductStatusCode(); }
-    @Override
     public String keepProductStatusCode_ExistsReferrer_ProductList(ProductCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepProductStatusCode_NotExistsReferrer_ProductList(ProductCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepProductStatusCode_SpecifyDerivedReferrer_ProductList(ProductCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepProductStatusCode_QueryDerivedReferrer_ProductList(ProductCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepProductStatusCode_QueryDerivedReferrer_ProductListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     protected ConditionValue xgetCValueProductStatusName() { return _myCQ.xdfgetProductStatusName(); }
-    @Override
     protected ConditionValue xgetCValueDisplayOrder() { return _myCQ.xdfgetDisplayOrder(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(ProductStatusCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(ProductStatusCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(ProductStatusCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(ProductStatusCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

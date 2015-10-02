@@ -92,45 +92,34 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
     public ConditionValue xdfgetMemberStatusCode()
     { if (_memberStatusCode == null) { _memberStatusCode = nCV(); }
       return _memberStatusCode; }
-    @Override
     protected ConditionValue xgetCValueMemberStatusCode() { return xdfgetMemberStatusCode(); }
 
     public Map<String, MemberCQ> xdfgetMemberStatusCode_ExistsReferrer_MemberList() { return xgetSQueMap("memberStatusCode_ExistsReferrer_MemberList"); }
-    @Override
     public String keepMemberStatusCode_ExistsReferrer_MemberList(MemberCQ sq) { return xkeepSQue("memberStatusCode_ExistsReferrer_MemberList", sq); }
 
     public Map<String, MemberLoginCQ> xdfgetMemberStatusCode_ExistsReferrer_MemberLoginList() { return xgetSQueMap("memberStatusCode_ExistsReferrer_MemberLoginList"); }
-    @Override
     public String keepMemberStatusCode_ExistsReferrer_MemberLoginList(MemberLoginCQ sq) { return xkeepSQue("memberStatusCode_ExistsReferrer_MemberLoginList", sq); }
 
     public Map<String, MemberCQ> xdfgetMemberStatusCode_NotExistsReferrer_MemberList() { return xgetSQueMap("memberStatusCode_NotExistsReferrer_MemberList"); }
-    @Override
     public String keepMemberStatusCode_NotExistsReferrer_MemberList(MemberCQ sq) { return xkeepSQue("memberStatusCode_NotExistsReferrer_MemberList", sq); }
 
     public Map<String, MemberLoginCQ> xdfgetMemberStatusCode_NotExistsReferrer_MemberLoginList() { return xgetSQueMap("memberStatusCode_NotExistsReferrer_MemberLoginList"); }
-    @Override
     public String keepMemberStatusCode_NotExistsReferrer_MemberLoginList(MemberLoginCQ sq) { return xkeepSQue("memberStatusCode_NotExistsReferrer_MemberLoginList", sq); }
 
     public Map<String, MemberCQ> xdfgetMemberStatusCode_SpecifyDerivedReferrer_MemberList() { return xgetSQueMap("memberStatusCode_SpecifyDerivedReferrer_MemberList"); }
-    @Override
     public String keepMemberStatusCode_SpecifyDerivedReferrer_MemberList(MemberCQ sq) { return xkeepSQue("memberStatusCode_SpecifyDerivedReferrer_MemberList", sq); }
 
     public Map<String, MemberLoginCQ> xdfgetMemberStatusCode_SpecifyDerivedReferrer_MemberLoginList() { return xgetSQueMap("memberStatusCode_SpecifyDerivedReferrer_MemberLoginList"); }
-    @Override
     public String keepMemberStatusCode_SpecifyDerivedReferrer_MemberLoginList(MemberLoginCQ sq) { return xkeepSQue("memberStatusCode_SpecifyDerivedReferrer_MemberLoginList", sq); }
 
     public Map<String, MemberCQ> xdfgetMemberStatusCode_QueryDerivedReferrer_MemberList() { return xgetSQueMap("memberStatusCode_QueryDerivedReferrer_MemberList"); }
-    @Override
     public String keepMemberStatusCode_QueryDerivedReferrer_MemberList(MemberCQ sq) { return xkeepSQue("memberStatusCode_QueryDerivedReferrer_MemberList", sq); }
     public Map<String, Object> xdfgetMemberStatusCode_QueryDerivedReferrer_MemberListParameter() { return xgetSQuePmMap("memberStatusCode_QueryDerivedReferrer_MemberList"); }
-    @Override
     public String keepMemberStatusCode_QueryDerivedReferrer_MemberListParameter(Object pm) { return xkeepSQuePm("memberStatusCode_QueryDerivedReferrer_MemberList", pm); }
 
     public Map<String, MemberLoginCQ> xdfgetMemberStatusCode_QueryDerivedReferrer_MemberLoginList() { return xgetSQueMap("memberStatusCode_QueryDerivedReferrer_MemberLoginList"); }
-    @Override
     public String keepMemberStatusCode_QueryDerivedReferrer_MemberLoginList(MemberLoginCQ sq) { return xkeepSQue("memberStatusCode_QueryDerivedReferrer_MemberLoginList", sq); }
     public Map<String, Object> xdfgetMemberStatusCode_QueryDerivedReferrer_MemberLoginListParameter() { return xgetSQuePmMap("memberStatusCode_QueryDerivedReferrer_MemberLoginList"); }
-    @Override
     public String keepMemberStatusCode_QueryDerivedReferrer_MemberLoginListParameter(Object pm) { return xkeepSQuePm("memberStatusCode_QueryDerivedReferrer_MemberLoginList", pm); }
 
     /** 
@@ -151,7 +140,6 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
     public ConditionValue xdfgetMemberStatusName()
     { if (_memberStatusName == null) { _memberStatusName = nCV(); }
       return _memberStatusName; }
-    @Override
     protected ConditionValue xgetCValueMemberStatusName() { return xdfgetMemberStatusName(); }
 
     /** 
@@ -172,7 +160,6 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
     public ConditionValue xdfgetDescription()
     { if (_description == null) { _description = nCV(); }
       return _description; }
-    @Override
     protected ConditionValue xgetCValueDescription() { return xdfgetDescription(); }
 
     /** 
@@ -193,7 +180,6 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
     public ConditionValue xdfgetDisplayOrder()
     { if (_displayOrder == null) { _displayOrder = nCV(); }
       return _displayOrder; }
-    @Override
     protected ConditionValue xgetCValueDisplayOrder() { return xdfgetDisplayOrder(); }
 
     /** 
@@ -248,14 +234,12 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
     // ===================================================================================
     //                                                                         Union Query
     //                                                                         ===========
-    @Override
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }
@@ -264,21 +248,17 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
     //                                                                     ScalarCondition
     //                                                                     ===============
     public Map<String, MemberStatusCQ> xdfgetScalarCondition() { return xgetSQueMap("scalarCondition"); }
-    @Override
     public String keepScalarCondition(MemberStatusCQ sq) { return xkeepSQue("scalarCondition", sq); }
 
     // ===================================================================================
     //                                                                       MyselfDerived
     //                                                                       =============
     public Map<String, MemberStatusCQ> xdfgetSpecifyMyselfDerived() { return xgetSQueMap("specifyMyselfDerived"); }
-    @Override
     public String keepSpecifyMyselfDerived(MemberStatusCQ sq) { return xkeepSQue("specifyMyselfDerived", sq); }
 
     public Map<String, MemberStatusCQ> xdfgetQueryMyselfDerived() { return xgetSQueMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerived(MemberStatusCQ sq) { return xkeepSQue("queryMyselfDerived", sq); }
     public Map<String, Object> xdfgetQueryMyselfDerivedParameter() { return xgetSQuePmMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerivedParameter(Object pm) { return xkeepSQuePm("queryMyselfDerived", pm); }
 
     // ===================================================================================
@@ -286,7 +266,6 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
     //                                                                        ============
     protected Map<String, MemberStatusCQ> _myselfExistsMap;
     public Map<String, MemberStatusCQ> xdfgetMyselfExists() { return xgetSQueMap("myselfExists"); }
-    @Override
     public String keepMyselfExists(MemberStatusCQ sq) { return xkeepSQue("myselfExists", sq); }
 
     // ===================================================================================

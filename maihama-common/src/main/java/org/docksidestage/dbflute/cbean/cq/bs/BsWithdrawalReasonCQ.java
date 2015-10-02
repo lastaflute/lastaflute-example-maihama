@@ -92,26 +92,20 @@ public class BsWithdrawalReasonCQ extends AbstractBsWithdrawalReasonCQ {
     public ConditionValue xdfgetWithdrawalReasonCode()
     { if (_withdrawalReasonCode == null) { _withdrawalReasonCode = nCV(); }
       return _withdrawalReasonCode; }
-    @Override
     protected ConditionValue xgetCValueWithdrawalReasonCode() { return xdfgetWithdrawalReasonCode(); }
 
     public Map<String, MemberWithdrawalCQ> xdfgetWithdrawalReasonCode_ExistsReferrer_MemberWithdrawalList() { return xgetSQueMap("withdrawalReasonCode_ExistsReferrer_MemberWithdrawalList"); }
-    @Override
     public String keepWithdrawalReasonCode_ExistsReferrer_MemberWithdrawalList(MemberWithdrawalCQ sq) { return xkeepSQue("withdrawalReasonCode_ExistsReferrer_MemberWithdrawalList", sq); }
 
     public Map<String, MemberWithdrawalCQ> xdfgetWithdrawalReasonCode_NotExistsReferrer_MemberWithdrawalList() { return xgetSQueMap("withdrawalReasonCode_NotExistsReferrer_MemberWithdrawalList"); }
-    @Override
     public String keepWithdrawalReasonCode_NotExistsReferrer_MemberWithdrawalList(MemberWithdrawalCQ sq) { return xkeepSQue("withdrawalReasonCode_NotExistsReferrer_MemberWithdrawalList", sq); }
 
     public Map<String, MemberWithdrawalCQ> xdfgetWithdrawalReasonCode_SpecifyDerivedReferrer_MemberWithdrawalList() { return xgetSQueMap("withdrawalReasonCode_SpecifyDerivedReferrer_MemberWithdrawalList"); }
-    @Override
     public String keepWithdrawalReasonCode_SpecifyDerivedReferrer_MemberWithdrawalList(MemberWithdrawalCQ sq) { return xkeepSQue("withdrawalReasonCode_SpecifyDerivedReferrer_MemberWithdrawalList", sq); }
 
     public Map<String, MemberWithdrawalCQ> xdfgetWithdrawalReasonCode_QueryDerivedReferrer_MemberWithdrawalList() { return xgetSQueMap("withdrawalReasonCode_QueryDerivedReferrer_MemberWithdrawalList"); }
-    @Override
     public String keepWithdrawalReasonCode_QueryDerivedReferrer_MemberWithdrawalList(MemberWithdrawalCQ sq) { return xkeepSQue("withdrawalReasonCode_QueryDerivedReferrer_MemberWithdrawalList", sq); }
     public Map<String, Object> xdfgetWithdrawalReasonCode_QueryDerivedReferrer_MemberWithdrawalListParameter() { return xgetSQuePmMap("withdrawalReasonCode_QueryDerivedReferrer_MemberWithdrawalList"); }
-    @Override
     public String keepWithdrawalReasonCode_QueryDerivedReferrer_MemberWithdrawalListParameter(Object pm) { return xkeepSQuePm("withdrawalReasonCode_QueryDerivedReferrer_MemberWithdrawalList", pm); }
 
     /** 
@@ -132,14 +126,12 @@ public class BsWithdrawalReasonCQ extends AbstractBsWithdrawalReasonCQ {
     public ConditionValue xdfgetWithdrawalReasonText()
     { if (_withdrawalReasonText == null) { _withdrawalReasonText = nCV(); }
       return _withdrawalReasonText; }
-    @Override
     protected ConditionValue xgetCValueWithdrawalReasonText() { return xdfgetWithdrawalReasonText(); }
 
     protected ConditionValue _displayOrder;
     public ConditionValue xdfgetDisplayOrder()
     { if (_displayOrder == null) { _displayOrder = nCV(); }
       return _displayOrder; }
-    @Override
     protected ConditionValue xgetCValueDisplayOrder() { return xdfgetDisplayOrder(); }
 
     /** 
@@ -194,14 +186,12 @@ public class BsWithdrawalReasonCQ extends AbstractBsWithdrawalReasonCQ {
     // ===================================================================================
     //                                                                         Union Query
     //                                                                         ===========
-    @Override
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }
@@ -210,21 +200,17 @@ public class BsWithdrawalReasonCQ extends AbstractBsWithdrawalReasonCQ {
     //                                                                     ScalarCondition
     //                                                                     ===============
     public Map<String, WithdrawalReasonCQ> xdfgetScalarCondition() { return xgetSQueMap("scalarCondition"); }
-    @Override
     public String keepScalarCondition(WithdrawalReasonCQ sq) { return xkeepSQue("scalarCondition", sq); }
 
     // ===================================================================================
     //                                                                       MyselfDerived
     //                                                                       =============
     public Map<String, WithdrawalReasonCQ> xdfgetSpecifyMyselfDerived() { return xgetSQueMap("specifyMyselfDerived"); }
-    @Override
     public String keepSpecifyMyselfDerived(WithdrawalReasonCQ sq) { return xkeepSQue("specifyMyselfDerived", sq); }
 
     public Map<String, WithdrawalReasonCQ> xdfgetQueryMyselfDerived() { return xgetSQueMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerived(WithdrawalReasonCQ sq) { return xkeepSQue("queryMyselfDerived", sq); }
     public Map<String, Object> xdfgetQueryMyselfDerivedParameter() { return xgetSQuePmMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerivedParameter(Object pm) { return xkeepSQuePm("queryMyselfDerived", pm); }
 
     // ===================================================================================
@@ -232,7 +218,6 @@ public class BsWithdrawalReasonCQ extends AbstractBsWithdrawalReasonCQ {
     //                                                                        ============
     protected Map<String, WithdrawalReasonCQ> _myselfExistsMap;
     public Map<String, WithdrawalReasonCQ> xdfgetMyselfExists() { return xgetSQueMap("myselfExists"); }
-    @Override
     public String keepMyselfExists(WithdrawalReasonCQ sq) { return xkeepSQue("myselfExists", sq); }
 
     // ===================================================================================

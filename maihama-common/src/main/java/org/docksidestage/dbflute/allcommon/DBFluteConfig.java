@@ -835,7 +835,6 @@ public class DBFluteConfig {
     //                                   -------------------
     public static class ImplementedPhysicalConnectionDigger implements PhysicalConnectionDigger {
 
-        @Override
         public Connection digUp(Connection conn) throws SQLException {
             Connection digged = unwrap(conn);
             digged = resolveLaDBCP(digged);
@@ -879,7 +878,6 @@ public class DBFluteConfig {
     //                                          ------------
     public static class ImplementedSQLExceptionDigger implements SQLExceptionDigger {
 
-        @Override
         public SQLException digUp(Throwable cause) {
             SQLException s2found = resolveLaDBCP(cause);
             if (s2found != null) {

@@ -52,7 +52,6 @@ public class MemberCIQ extends AbstractBsMemberCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,118 +76,76 @@ public class MemberCIQ extends AbstractBsMemberCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValueMemberId() { return _myCQ.xdfgetMemberId(); }
-    @Override
     public String keepMemberId_ExistsReferrer_MemberAddressList(MemberAddressCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepMemberId_ExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepMemberId_ExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepMemberId_ExistsReferrer_MemberLoginList(MemberLoginCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepMemberId_ExistsReferrer_PurchaseList(PurchaseCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepMemberId_NotExistsReferrer_MemberAddressList(MemberAddressCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepMemberId_NotExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepMemberId_NotExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepMemberId_NotExistsReferrer_MemberLoginList(MemberLoginCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepMemberId_NotExistsReferrer_PurchaseList(PurchaseCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepMemberId_SpecifyDerivedReferrer_MemberAddressList(MemberAddressCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_SpecifyDerivedReferrer_MemberLoginList(MemberLoginCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_SpecifyDerivedReferrer_PurchaseList(PurchaseCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_QueryDerivedReferrer_MemberAddressList(MemberAddressCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_QueryDerivedReferrer_MemberAddressListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_QueryDerivedReferrer_MemberLoginList(MemberLoginCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_QueryDerivedReferrer_MemberLoginListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_QueryDerivedReferrer_PurchaseList(PurchaseCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepMemberId_QueryDerivedReferrer_PurchaseListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     protected ConditionValue xgetCValueMemberName() { return _myCQ.xdfgetMemberName(); }
-    @Override
     protected ConditionValue xgetCValueMemberAccount() { return _myCQ.xdfgetMemberAccount(); }
-    @Override
     protected ConditionValue xgetCValueMemberStatusCode() { return _myCQ.xdfgetMemberStatusCode(); }
-    @Override
     protected ConditionValue xgetCValueFormalizedDatetime() { return _myCQ.xdfgetFormalizedDatetime(); }
-    @Override
     protected ConditionValue xgetCValueBirthdate() { return _myCQ.xdfgetBirthdate(); }
-    @Override
     protected ConditionValue xgetCValueRegisterDatetime() { return _myCQ.xdfgetRegisterDatetime(); }
-    @Override
     protected ConditionValue xgetCValueRegisterUser() { return _myCQ.xdfgetRegisterUser(); }
-    @Override
     protected ConditionValue xgetCValueUpdateDatetime() { return _myCQ.xdfgetUpdateDatetime(); }
-    @Override
     protected ConditionValue xgetCValueUpdateUser() { return _myCQ.xdfgetUpdateUser(); }
-    @Override
     protected ConditionValue xgetCValueVersionNo() { return _myCQ.xdfgetVersionNo(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(MemberCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(MemberCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(MemberCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(MemberCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

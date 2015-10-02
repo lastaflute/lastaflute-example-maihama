@@ -44,13 +44,9 @@ public class MemberFollowingDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
-    @Override
     public String getProjectName() { return DBCurrent.getInstance().projectName(); }
-    @Override
     public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
-    @Override
     public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
-    @Override
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -67,7 +63,6 @@ public class MemberFollowingDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((MemberFollowing)et).getYourMemberId(), (et, vl) -> ((MemberFollowing)et).setYourMemberId(cti(vl)), "yourMemberId");
         setupEpg(_epgMap, et -> ((MemberFollowing)et).getFollowDatetime(), (et, vl) -> ((MemberFollowing)et).setFollowDatetime(ctldt(vl)), "followDatetime");
     }
-    @Override
     public PropertyGateway findPropertyGateway(String prop)
     { return doFindEpg(_epgMap, prop); }
 
@@ -81,7 +76,6 @@ public class MemberFollowingDbm extends AbstractDBMeta {
         setupEfpg(_efpgMap, et -> ((MemberFollowing)et).getMemberByMyMemberId(), (et, vl) -> ((MemberFollowing)et).setMemberByMyMemberId((OptionalEntity<Member>)vl), "memberByMyMemberId");
         setupEfpg(_efpgMap, et -> ((MemberFollowing)et).getMemberByYourMemberId(), (et, vl) -> ((MemberFollowing)et).setMemberByYourMemberId((OptionalEntity<Member>)vl), "memberByYourMemberId");
     }
-    @Override
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
 
@@ -93,16 +87,11 @@ public class MemberFollowingDbm extends AbstractDBMeta {
     protected final String _tablePropertyName = "memberFollowing";
     protected final TableSqlName _tableSqlName = new TableSqlName("MEMBER_FOLLOWING", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
-    @Override
     public String getTableDbName() { return _tableDbName; }
-    @Override
     public String getTableDispName() { return _tableDispName; }
-    @Override
     public String getTablePropertyName() { return _tablePropertyName; }
-    @Override
     public TableSqlName getTableSqlName() { return _tableSqlName; }
     protected final String _tableAlias = "会員フォローイング";
-    @Override
     public String getTableAlias() { return _tableAlias; }
 
     // ===================================================================================
@@ -134,7 +123,6 @@ public class MemberFollowingDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnFollowDatetime() { return _columnFollowDatetime; }
 
-    @Override
     protected List<ColumnInfo> ccil() {
         List<ColumnInfo> ls = newArrayList();
         ls.add(columnMemberFollowingId());
@@ -152,11 +140,8 @@ public class MemberFollowingDbm extends AbstractDBMeta {
     // -----------------------------------------------------
     //                                       Primary Element
     //                                       ---------------
-    @Override
     protected UniqueInfo cpui() { return hpcpui(columnMemberFollowingId()); }
-    @Override
     public boolean hasPrimaryKey() { return true; }
-    @Override
     public boolean hasCompoundPrimaryKey() { return false; }
 
     // -----------------------------------------------------
@@ -201,42 +186,32 @@ public class MemberFollowingDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                        Various Info
     //                                                                        ============
-    @Override
     public boolean hasIdentity() { return true; }
 
     // ===================================================================================
     //                                                                           Type Name
     //                                                                           =========
-    @Override
     public String getEntityTypeName() { return "org.docksidestage.dbflute.exentity.MemberFollowing"; }
-    @Override
     public String getConditionBeanTypeName() { return "org.docksidestage.dbflute.cbean.MemberFollowingCB"; }
-    @Override
     public String getBehaviorTypeName() { return "org.docksidestage.dbflute.exbhv.MemberFollowingBhv"; }
 
     // ===================================================================================
     //                                                                         Object Type
     //                                                                         ===========
-    @Override
     public Class<MemberFollowing> getEntityType() { return MemberFollowing.class; }
 
     // ===================================================================================
     //                                                                     Object Instance
     //                                                                     ===============
-    @Override
     public MemberFollowing newEntity() { return new MemberFollowing(); }
 
     // ===================================================================================
     //                                                                   Map Communication
     //                                                                   =================
-    @Override
     public void acceptPrimaryKeyMap(Entity et, Map<String, ? extends Object> mp)
     { doAcceptPrimaryKeyMap((MemberFollowing)et, mp); }
-    @Override
     public void acceptAllColumnMap(Entity et, Map<String, ? extends Object> mp)
     { doAcceptAllColumnMap((MemberFollowing)et, mp); }
-    @Override
     public Map<String, Object> extractPrimaryKeyMap(Entity et) { return doExtractPrimaryKeyMap(et); }
-    @Override
     public Map<String, Object> extractAllColumnMap(Entity et) { return doExtractAllColumnMap(et); }
 }

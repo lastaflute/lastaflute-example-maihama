@@ -52,7 +52,6 @@ public class ServiceRankCIQ extends AbstractBsServiceRankCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,48 +76,31 @@ public class ServiceRankCIQ extends AbstractBsServiceRankCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValueServiceRankCode() { return _myCQ.xdfgetServiceRankCode(); }
-    @Override
     public String keepServiceRankCode_ExistsReferrer_MemberServiceList(MemberServiceCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepServiceRankCode_NotExistsReferrer_MemberServiceList(MemberServiceCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepServiceRankCode_SpecifyDerivedReferrer_MemberServiceList(MemberServiceCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepServiceRankCode_QueryDerivedReferrer_MemberServiceList(MemberServiceCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepServiceRankCode_QueryDerivedReferrer_MemberServiceListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     protected ConditionValue xgetCValueServiceRankName() { return _myCQ.xdfgetServiceRankName(); }
-    @Override
     protected ConditionValue xgetCValueServicePointIncidence() { return _myCQ.xdfgetServicePointIncidence(); }
-    @Override
     protected ConditionValue xgetCValueNewAcceptableFlg() { return _myCQ.xdfgetNewAcceptableFlg(); }
-    @Override
     protected ConditionValue xgetCValueDescription() { return _myCQ.xdfgetDescription(); }
-    @Override
     protected ConditionValue xgetCValueDisplayOrder() { return _myCQ.xdfgetDisplayOrder(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(ServiceRankCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(ServiceRankCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(ServiceRankCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(ServiceRankCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

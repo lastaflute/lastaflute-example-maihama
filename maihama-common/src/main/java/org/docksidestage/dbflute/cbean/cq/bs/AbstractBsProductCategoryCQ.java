@@ -51,7 +51,6 @@ public abstract class AbstractBsProductCategoryCQ extends AbstractConditionQuery
         return DBMetaInstanceHandler.getProvider();
     }
 
-    @Override
     public String asTableDbName() {
         return "product_category";
     }
@@ -590,7 +589,6 @@ public abstract class AbstractBsProductCategoryCQ extends AbstractConditionQuery
         return xcreateSLCFunction(CK_LE, ProductCategoryCB.class);
     }
 
-    @Override
     @SuppressWarnings("unchecked")
     protected <CB extends ConditionBean> void xscalarCondition(String fn, SubQuery<CB> sq, String rd, HpSLCCustomized<CB> cs, ScalarConditionOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -627,7 +625,6 @@ public abstract class AbstractBsProductCategoryCQ extends AbstractConditionQuery
     public HpQDRFunction<ProductCategoryCB> myselfDerived() {
         return xcreateQDRFunctionMyselfDerived(ProductCategoryCB.class);
     }
-    @Override
     @SuppressWarnings("unchecked")
     protected <CB extends ConditionBean> void xqderiveMyselfDerived(String fn, SubQuery<CB> sq, String rd, Object vl, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);

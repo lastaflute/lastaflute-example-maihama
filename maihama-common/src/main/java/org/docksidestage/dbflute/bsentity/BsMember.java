@@ -137,13 +137,11 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public DBMeta asDBMeta() {
         return DBMetaInstanceHandler.findDBMeta(asTableDbName());
     }
 
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() {
         return "member";
     }
@@ -152,7 +150,6 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
     //                                                                        Key Handling
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public boolean hasPrimaryKeyValue() {
         if (_memberId == null) { return false; }
         return true;
@@ -175,7 +172,7 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
     /**
      * Get the value of memberStatusCode as the classification of MemberStatus. <br>
      * (会員ステータスコード)MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status, classification=MemberStatus} <br>
-     * 入会から退会までの会員のステータスを示す
+     * status of member from entry to withdrawal
      * <p>It's treated as case insensitive and if the code value is null, it returns null.</p>
      * @return The instance of classification definition (as ENUM type). (NullAllowed: when the column value is null)
      */
@@ -186,7 +183,7 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
     /**
      * Set the value of memberStatusCode as the classification of MemberStatus. <br>
      * (会員ステータスコード)MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status, classification=MemberStatus} <br>
-     * 入会から退会までの会員のステータスを示す
+     * status of member from entry to withdrawal
      * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the column)
      */
     public void setMemberStatusCodeAsMemberStatus(CDef.MemberStatus cdef) {
@@ -257,7 +254,7 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
     }
 
     /**
-     * Members that can use the service, can sign in <br>
+     * means member that can use services <br>
      * The group elements:[Formalized, Provisional]
      * @return The determination, true or false.
      */
@@ -510,7 +507,6 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
         _purchaseList = purchaseList;
     }
 
-    @Override
     protected <ELEMENT> List<ELEMENT> newReferrerList() {
         return new ArrayList<ELEMENT>();
     }
@@ -762,7 +758,6 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
      * レコードが登録された日時
      * @return The value of the column 'REGISTER_DATETIME'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public java.time.LocalDateTime getRegisterDatetime() {
         checkSpecifiedProperty("registerDatetime");
         return _registerDatetime;
@@ -773,7 +768,6 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
      * レコードが登録された日時
      * @param registerDatetime The value of the column 'REGISTER_DATETIME'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setRegisterDatetime(java.time.LocalDateTime registerDatetime) {
         registerModifiedProperty("registerDatetime");
         _registerDatetime = registerDatetime;
@@ -784,7 +778,6 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
      * レコードを登録したユーザー
      * @return The value of the column 'REGISTER_USER'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public String getRegisterUser() {
         checkSpecifiedProperty("registerUser");
         return convertEmptyToNull(_registerUser);
@@ -795,7 +788,6 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
      * レコードを登録したユーザー
      * @param registerUser The value of the column 'REGISTER_USER'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setRegisterUser(String registerUser) {
         registerModifiedProperty("registerUser");
         _registerUser = registerUser;
@@ -806,7 +798,6 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
      * レコードが(最後に)更新された日時
      * @return The value of the column 'UPDATE_DATETIME'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public java.time.LocalDateTime getUpdateDatetime() {
         checkSpecifiedProperty("updateDatetime");
         return _updateDatetime;
@@ -817,7 +808,6 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
      * レコードが(最後に)更新された日時
      * @param updateDatetime The value of the column 'UPDATE_DATETIME'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setUpdateDatetime(java.time.LocalDateTime updateDatetime) {
         registerModifiedProperty("updateDatetime");
         _updateDatetime = updateDatetime;
@@ -828,7 +818,6 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
      * レコードを(最後に)更新したユーザー
      * @return The value of the column 'UPDATE_USER'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public String getUpdateUser() {
         checkSpecifiedProperty("updateUser");
         return convertEmptyToNull(_updateUser);
@@ -839,7 +828,6 @@ public abstract class BsMember extends AbstractEntity implements DomainEntity, E
      * レコードを(最後に)更新したユーザー
      * @param updateUser The value of the column 'UPDATE_USER'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setUpdateUser(String updateUser) {
         registerModifiedProperty("updateUser");
         _updateUser = updateUser;

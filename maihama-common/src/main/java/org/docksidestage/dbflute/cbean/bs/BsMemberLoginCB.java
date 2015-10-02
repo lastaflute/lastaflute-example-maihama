@@ -84,7 +84,6 @@ public class BsMemberLoginCB extends AbstractConditionBean {
         return DBMetaInstanceHandler.getProvider(); // as default
     }
 
-    @Override
     public String asTableDbName() {
         return "member_login";
     }
@@ -117,13 +116,11 @@ public class BsMemberLoginCB extends AbstractConditionBean {
         return (MemberLoginCB)this;
     }
 
-    @Override
     public ConditionBean addOrderBy_PK_Asc() {
         query().addOrderBy_MemberLoginId_Asc();
         return this;
     }
 
-    @Override
     public ConditionBean addOrderBy_PK_Desc() {
         query().addOrderBy_MemberLoginId_Desc();
         return this;
@@ -222,7 +219,6 @@ public class BsMemberLoginCB extends AbstractConditionBean {
     /**
      * {@inheritDoc}
      */
-    @Override
     public ConditionQuery localCQ() {
         return doGetConditionQuery();
     }
@@ -348,12 +344,10 @@ public class BsMemberLoginCB extends AbstractConditionBean {
         return _specification;
     }
 
-    @Override
     public HpColumnSpHandler localSp() {
         return specify();
     }
 
-    @Override
     public boolean hasSpecifiedLocalColumn() {
         return _specification != null && _specification.hasSpecifiedColumn();
     }
@@ -390,9 +384,7 @@ public class BsMemberLoginCB extends AbstractConditionBean {
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnLoginMemberStatusCode() { return doColumn("LOGIN_MEMBER_STATUS_CODE"); }
-        @Override
         public void everyColumn() { doEveryColumn(); }
-        @Override
         public void exceptRecordMetaColumn() { doExceptRecordMetaColumn(); }
         @Override
         protected void doSpecifyRequiredColumn() {
@@ -469,11 +461,10 @@ public class BsMemberLoginCB extends AbstractConditionBean {
      */
     public MemberLoginCB dreamCruiseCB() {
         MemberLoginCB cb = new MemberLoginCB();
-        cb.xsetupForDreamCruise(this);
+        cb.xsetupForDreamCruise((MemberLoginCB) this);
         return cb;
     }
 
-    @Override
     protected ConditionBean xdoCreateDreamCruiseCB() {
         return dreamCruiseCB();
     }
@@ -503,7 +494,7 @@ public class BsMemberLoginCB extends AbstractConditionBean {
 
     protected MemberLoginCB xcreateColumnQueryCB() {
         MemberLoginCB cb = new MemberLoginCB();
-        cb.xsetupForColumnQuery(this);
+        cb.xsetupForColumnQuery((MemberLoginCB)this);
         return cb;
     }
 
@@ -571,7 +562,6 @@ public class BsMemberLoginCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                       Meta Handling
     //                                                                       =============
-    @Override
     public boolean hasUnionQueryOrUnionAllQuery() {
         return query().hasUnionQueryOrUnionAllQuery();
     }

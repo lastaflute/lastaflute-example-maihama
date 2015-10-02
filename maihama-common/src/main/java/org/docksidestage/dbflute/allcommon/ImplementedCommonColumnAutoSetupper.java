@@ -40,7 +40,6 @@ public class ImplementedCommonColumnAutoSetupper implements CommonColumnAutoSetu
     //                                                                                Set up
     //                                                                                ======
     /** {@inheritDoc} */
-    @Override
     public void handleCommonColumnOfInsertIfNeeds(Entity targetEntity) {
         final EntityDefinedCommonColumn entity = askIfEntitySetup(targetEntity);
         if (entity == null) {
@@ -64,7 +63,6 @@ public class ImplementedCommonColumnAutoSetupper implements CommonColumnAutoSetu
     }
 
     /** {@inheritDoc} */
-    @Override
     public void handleCommonColumnOfUpdateIfNeeds(Entity targetEntity) {
         final EntityDefinedCommonColumn entity = askIfEntitySetup(targetEntity);
         if (entity == null) {

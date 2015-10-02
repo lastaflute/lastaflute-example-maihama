@@ -52,7 +52,6 @@ public class MemberWithdrawalCIQ extends AbstractBsMemberWithdrawalCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,37 +76,23 @@ public class MemberWithdrawalCIQ extends AbstractBsMemberWithdrawalCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValueMemberId() { return _myCQ.xdfgetMemberId(); }
-    @Override
     protected ConditionValue xgetCValueWithdrawalReasonCode() { return _myCQ.xdfgetWithdrawalReasonCode(); }
-    @Override
     protected ConditionValue xgetCValueWithdrawalReasonInputText() { return _myCQ.xdfgetWithdrawalReasonInputText(); }
-    @Override
     protected ConditionValue xgetCValueWithdrawalDatetime() { return _myCQ.xdfgetWithdrawalDatetime(); }
-    @Override
     protected ConditionValue xgetCValueRegisterDatetime() { return _myCQ.xdfgetRegisterDatetime(); }
-    @Override
     protected ConditionValue xgetCValueRegisterUser() { return _myCQ.xdfgetRegisterUser(); }
-    @Override
     protected ConditionValue xgetCValueUpdateDatetime() { return _myCQ.xdfgetUpdateDatetime(); }
-    @Override
     protected ConditionValue xgetCValueUpdateUser() { return _myCQ.xdfgetUpdateUser(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(MemberWithdrawalCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(MemberWithdrawalCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(MemberWithdrawalCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(MemberWithdrawalCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

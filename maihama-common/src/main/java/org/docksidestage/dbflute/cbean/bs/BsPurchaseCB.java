@@ -84,7 +84,6 @@ public class BsPurchaseCB extends AbstractConditionBean {
         return DBMetaInstanceHandler.getProvider(); // as default
     }
 
-    @Override
     public String asTableDbName() {
         return "purchase";
     }
@@ -118,13 +117,11 @@ public class BsPurchaseCB extends AbstractConditionBean {
         return (PurchaseCB)this;
     }
 
-    @Override
     public ConditionBean addOrderBy_PK_Asc() {
         query().addOrderBy_PurchaseId_Asc();
         return this;
     }
 
-    @Override
     public ConditionBean addOrderBy_PK_Desc() {
         query().addOrderBy_PurchaseId_Desc();
         return this;
@@ -223,7 +220,6 @@ public class BsPurchaseCB extends AbstractConditionBean {
     /**
      * {@inheritDoc}
      */
-    @Override
     public ConditionQuery localCQ() {
         return doGetConditionQuery();
     }
@@ -358,12 +354,10 @@ public class BsPurchaseCB extends AbstractConditionBean {
         return _specification;
     }
 
-    @Override
     public HpColumnSpHandler localSp() {
         return specify();
     }
 
-    @Override
     public boolean hasSpecifiedLocalColumn() {
         return _specification != null && _specification.hasSpecifiedColumn();
     }
@@ -435,9 +429,7 @@ public class BsPurchaseCB extends AbstractConditionBean {
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnVersionNo() { return doColumn("VERSION_NO"); }
-        @Override
         public void everyColumn() { doEveryColumn(); }
-        @Override
         public void exceptRecordMetaColumn() { doExceptRecordMetaColumn(); }
         @Override
         protected void doSpecifyRequiredColumn() {
@@ -531,11 +523,10 @@ public class BsPurchaseCB extends AbstractConditionBean {
      */
     public PurchaseCB dreamCruiseCB() {
         PurchaseCB cb = new PurchaseCB();
-        cb.xsetupForDreamCruise(this);
+        cb.xsetupForDreamCruise((PurchaseCB) this);
         return cb;
     }
 
-    @Override
     protected ConditionBean xdoCreateDreamCruiseCB() {
         return dreamCruiseCB();
     }
@@ -565,7 +556,7 @@ public class BsPurchaseCB extends AbstractConditionBean {
 
     protected PurchaseCB xcreateColumnQueryCB() {
         PurchaseCB cb = new PurchaseCB();
-        cb.xsetupForColumnQuery(this);
+        cb.xsetupForColumnQuery((PurchaseCB)this);
         return cb;
     }
 
@@ -633,7 +624,6 @@ public class BsPurchaseCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                       Meta Handling
     //                                                                       =============
-    @Override
     public boolean hasUnionQueryOrUnionAllQuery() {
         return query().hasUnionQueryOrUnionAllQuery();
     }

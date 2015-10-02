@@ -78,17 +78,14 @@ public abstract class BsMemberWithdrawalBhv extends AbstractBehaviorWritable<Mem
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public MemberWithdrawalDbm asDBMeta() { return MemberWithdrawalDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "member_withdrawal"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public MemberWithdrawalCB newConditionBean() { return new MemberWithdrawalCB(); }
 
     // ===================================================================================
@@ -154,7 +151,6 @@ public abstract class BsMemberWithdrawalBhv extends AbstractBehaviorWritable<Mem
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -863,10 +859,7 @@ public abstract class BsMemberWithdrawalBhv extends AbstractBehaviorWritable<Mem
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends MemberWithdrawal> typeOfSelectedEntity() { return MemberWithdrawal.class; }
-    @Override
     protected Class<MemberWithdrawal> typeOfHandlingEntity() { return MemberWithdrawal.class; }
-    @Override
     protected Class<MemberWithdrawalCB> typeOfHandlingConditionBean() { return MemberWithdrawalCB.class; }
 }

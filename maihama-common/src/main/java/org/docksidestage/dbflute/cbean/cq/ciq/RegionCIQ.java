@@ -52,7 +52,6 @@ public class RegionCIQ extends AbstractBsRegionCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,40 +76,27 @@ public class RegionCIQ extends AbstractBsRegionCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValueRegionId() { return _myCQ.xdfgetRegionId(); }
-    @Override
     public String keepRegionId_ExistsReferrer_MemberAddressList(MemberAddressCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepRegionId_NotExistsReferrer_MemberAddressList(MemberAddressCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepRegionId_SpecifyDerivedReferrer_MemberAddressList(MemberAddressCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepRegionId_QueryDerivedReferrer_MemberAddressList(MemberAddressCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepRegionId_QueryDerivedReferrer_MemberAddressListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     protected ConditionValue xgetCValueRegionName() { return _myCQ.xdfgetRegionName(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(RegionCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(RegionCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(RegionCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(RegionCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

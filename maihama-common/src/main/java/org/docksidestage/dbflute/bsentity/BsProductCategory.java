@@ -93,13 +93,11 @@ public abstract class BsProductCategory extends AbstractEntity implements Domain
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public DBMeta asDBMeta() {
         return DBMetaInstanceHandler.findDBMeta(asTableDbName());
     }
 
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() {
         return "product_category";
     }
@@ -108,7 +106,6 @@ public abstract class BsProductCategory extends AbstractEntity implements Domain
     //                                                                        Key Handling
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public boolean hasPrimaryKeyValue() {
         if (_productCategoryCode == null) { return false; }
         return true;
@@ -181,7 +178,6 @@ public abstract class BsProductCategory extends AbstractEntity implements Domain
         _productCategorySelfList = productCategorySelfList;
     }
 
-    @Override
     protected <ELEMENT> List<ELEMENT> newReferrerList() {
         return new ArrayList<ELEMENT>();
     }

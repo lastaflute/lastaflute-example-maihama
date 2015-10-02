@@ -78,17 +78,14 @@ public abstract class BsMemberSecurityBhv extends AbstractBehaviorWritable<Membe
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public MemberSecurityDbm asDBMeta() { return MemberSecurityDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "member_security"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public MemberSecurityCB newConditionBean() { return new MemberSecurityCB(); }
 
     // ===================================================================================
@@ -154,7 +151,6 @@ public abstract class BsMemberSecurityBhv extends AbstractBehaviorWritable<Membe
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -1036,10 +1032,7 @@ public abstract class BsMemberSecurityBhv extends AbstractBehaviorWritable<Membe
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends MemberSecurity> typeOfSelectedEntity() { return MemberSecurity.class; }
-    @Override
     protected Class<MemberSecurity> typeOfHandlingEntity() { return MemberSecurity.class; }
-    @Override
     protected Class<MemberSecurityCB> typeOfHandlingConditionBean() { return MemberSecurityCB.class; }
 }

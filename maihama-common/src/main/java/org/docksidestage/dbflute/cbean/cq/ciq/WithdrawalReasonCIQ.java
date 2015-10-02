@@ -52,7 +52,6 @@ public class WithdrawalReasonCIQ extends AbstractBsWithdrawalReasonCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,42 +76,28 @@ public class WithdrawalReasonCIQ extends AbstractBsWithdrawalReasonCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValueWithdrawalReasonCode() { return _myCQ.xdfgetWithdrawalReasonCode(); }
-    @Override
     public String keepWithdrawalReasonCode_ExistsReferrer_MemberWithdrawalList(MemberWithdrawalCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepWithdrawalReasonCode_NotExistsReferrer_MemberWithdrawalList(MemberWithdrawalCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepWithdrawalReasonCode_SpecifyDerivedReferrer_MemberWithdrawalList(MemberWithdrawalCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepWithdrawalReasonCode_QueryDerivedReferrer_MemberWithdrawalList(MemberWithdrawalCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepWithdrawalReasonCode_QueryDerivedReferrer_MemberWithdrawalListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     protected ConditionValue xgetCValueWithdrawalReasonText() { return _myCQ.xdfgetWithdrawalReasonText(); }
-    @Override
     protected ConditionValue xgetCValueDisplayOrder() { return _myCQ.xdfgetDisplayOrder(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(WithdrawalReasonCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(WithdrawalReasonCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(WithdrawalReasonCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(WithdrawalReasonCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

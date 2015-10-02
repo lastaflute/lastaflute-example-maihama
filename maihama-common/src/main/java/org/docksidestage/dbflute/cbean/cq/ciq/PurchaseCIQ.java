@@ -52,7 +52,6 @@ public class PurchaseCIQ extends AbstractBsPurchaseCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,60 +76,37 @@ public class PurchaseCIQ extends AbstractBsPurchaseCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValuePurchaseId() { return _myCQ.xdfgetPurchaseId(); }
-    @Override
     public String keepPurchaseId_ExistsReferrer_PurchasePaymentList(PurchasePaymentCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepPurchaseId_NotExistsReferrer_PurchasePaymentList(PurchasePaymentCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepPurchaseId_SpecifyDerivedReferrer_PurchasePaymentList(PurchasePaymentCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepPurchaseId_QueryDerivedReferrer_PurchasePaymentList(PurchasePaymentCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepPurchaseId_QueryDerivedReferrer_PurchasePaymentListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     protected ConditionValue xgetCValueMemberId() { return _myCQ.xdfgetMemberId(); }
-    @Override
     protected ConditionValue xgetCValueProductId() { return _myCQ.xdfgetProductId(); }
-    @Override
     protected ConditionValue xgetCValuePurchaseDatetime() { return _myCQ.xdfgetPurchaseDatetime(); }
-    @Override
     protected ConditionValue xgetCValuePurchaseCount() { return _myCQ.xdfgetPurchaseCount(); }
-    @Override
     protected ConditionValue xgetCValuePurchasePrice() { return _myCQ.xdfgetPurchasePrice(); }
-    @Override
     protected ConditionValue xgetCValuePaymentCompleteFlg() { return _myCQ.xdfgetPaymentCompleteFlg(); }
-    @Override
     protected ConditionValue xgetCValueRegisterDatetime() { return _myCQ.xdfgetRegisterDatetime(); }
-    @Override
     protected ConditionValue xgetCValueRegisterUser() { return _myCQ.xdfgetRegisterUser(); }
-    @Override
     protected ConditionValue xgetCValueUpdateDatetime() { return _myCQ.xdfgetUpdateDatetime(); }
-    @Override
     protected ConditionValue xgetCValueUpdateUser() { return _myCQ.xdfgetUpdateUser(); }
-    @Override
     protected ConditionValue xgetCValueVersionNo() { return _myCQ.xdfgetVersionNo(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(PurchaseCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(PurchaseCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(PurchaseCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(PurchaseCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

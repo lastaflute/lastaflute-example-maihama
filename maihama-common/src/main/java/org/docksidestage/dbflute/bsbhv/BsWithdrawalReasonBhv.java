@@ -79,17 +79,14 @@ public abstract class BsWithdrawalReasonBhv extends AbstractBehaviorWritable<Wit
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public WithdrawalReasonDbm asDBMeta() { return WithdrawalReasonDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "withdrawal_reason"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public WithdrawalReasonCB newConditionBean() { return new WithdrawalReasonCB(); }
 
     // ===================================================================================
@@ -155,7 +152,6 @@ public abstract class BsWithdrawalReasonBhv extends AbstractBehaviorWritable<Wit
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -945,10 +941,7 @@ public abstract class BsWithdrawalReasonBhv extends AbstractBehaviorWritable<Wit
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends WithdrawalReason> typeOfSelectedEntity() { return WithdrawalReason.class; }
-    @Override
     protected Class<WithdrawalReason> typeOfHandlingEntity() { return WithdrawalReason.class; }
-    @Override
     protected Class<WithdrawalReasonCB> typeOfHandlingConditionBean() { return WithdrawalReasonCB.class; }
 }

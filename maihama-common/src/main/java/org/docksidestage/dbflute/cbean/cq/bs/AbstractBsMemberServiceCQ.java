@@ -51,7 +51,6 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
         return DBMetaInstanceHandler.getProvider();
     }
 
-    @Override
     public String asTableDbName() {
         return "member_service";
     }
@@ -434,7 +433,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * Equal(=). As ServiceRank. And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {IX, NotNull, CHAR(3), FK to service_rank, classification=ServiceRank} <br>
-     * 会員が受けられるサービスのランクを示す
+     * rank of service member gets
      * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
      */
     public void setServiceRankCode_Equal_AsServiceRank(CDef.ServiceRank cdef) {
@@ -497,7 +496,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). As ServiceRank. And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {IX, NotNull, CHAR(3), FK to service_rank, classification=ServiceRank} <br>
-     * 会員が受けられるサービスのランクを示す
+     * rank of service member gets
      * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
      */
     public void setServiceRankCode_NotEqual_AsServiceRank(CDef.ServiceRank cdef) {
@@ -560,7 +559,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. As ServiceRank. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {IX, NotNull, CHAR(3), FK to service_rank, classification=ServiceRank} <br>
-     * 会員が受けられるサービスのランクを示す
+     * rank of service member gets
      * @param cdefList The list of classification definition (as ENUM type). (NullAllowed: if null (or empty), no condition)
      */
     public void setServiceRankCode_InScope_AsServiceRank(Collection<CDef.ServiceRank> cdefList) {
@@ -583,7 +582,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. As ServiceRank. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {IX, NotNull, CHAR(3), FK to service_rank, classification=ServiceRank} <br>
-     * 会員が受けられるサービスのランクを示す
+     * rank of service member gets
      * @param cdefList The list of classification definition (as ENUM type). (NullAllowed: if null (or empty), no condition)
      */
     public void setServiceRankCode_NotInScope_AsServiceRank(Collection<CDef.ServiceRank> cdefList) {
@@ -846,7 +845,6 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
         return xcreateSLCFunction(CK_LE, MemberServiceCB.class);
     }
 
-    @Override
     @SuppressWarnings("unchecked")
     protected <CB extends ConditionBean> void xscalarCondition(String fn, SubQuery<CB> sq, String rd, HpSLCCustomized<CB> cs, ScalarConditionOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -883,7 +881,6 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     public HpQDRFunction<MemberServiceCB> myselfDerived() {
         return xcreateQDRFunctionMyselfDerived(MemberServiceCB.class);
     }
-    @Override
     @SuppressWarnings("unchecked")
     protected <CB extends ConditionBean> void xqderiveMyselfDerived(String fn, SubQuery<CB> sq, String rd, Object vl, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);

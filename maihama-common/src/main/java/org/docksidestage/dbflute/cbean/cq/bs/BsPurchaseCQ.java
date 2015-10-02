@@ -92,26 +92,20 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetPurchaseId()
     { if (_purchaseId == null) { _purchaseId = nCV(); }
       return _purchaseId; }
-    @Override
     protected ConditionValue xgetCValuePurchaseId() { return xdfgetPurchaseId(); }
 
     public Map<String, PurchasePaymentCQ> xdfgetPurchaseId_ExistsReferrer_PurchasePaymentList() { return xgetSQueMap("purchaseId_ExistsReferrer_PurchasePaymentList"); }
-    @Override
     public String keepPurchaseId_ExistsReferrer_PurchasePaymentList(PurchasePaymentCQ sq) { return xkeepSQue("purchaseId_ExistsReferrer_PurchasePaymentList", sq); }
 
     public Map<String, PurchasePaymentCQ> xdfgetPurchaseId_NotExistsReferrer_PurchasePaymentList() { return xgetSQueMap("purchaseId_NotExistsReferrer_PurchasePaymentList"); }
-    @Override
     public String keepPurchaseId_NotExistsReferrer_PurchasePaymentList(PurchasePaymentCQ sq) { return xkeepSQue("purchaseId_NotExistsReferrer_PurchasePaymentList", sq); }
 
     public Map<String, PurchasePaymentCQ> xdfgetPurchaseId_SpecifyDerivedReferrer_PurchasePaymentList() { return xgetSQueMap("purchaseId_SpecifyDerivedReferrer_PurchasePaymentList"); }
-    @Override
     public String keepPurchaseId_SpecifyDerivedReferrer_PurchasePaymentList(PurchasePaymentCQ sq) { return xkeepSQue("purchaseId_SpecifyDerivedReferrer_PurchasePaymentList", sq); }
 
     public Map<String, PurchasePaymentCQ> xdfgetPurchaseId_QueryDerivedReferrer_PurchasePaymentList() { return xgetSQueMap("purchaseId_QueryDerivedReferrer_PurchasePaymentList"); }
-    @Override
     public String keepPurchaseId_QueryDerivedReferrer_PurchasePaymentList(PurchasePaymentCQ sq) { return xkeepSQue("purchaseId_QueryDerivedReferrer_PurchasePaymentList", sq); }
     public Map<String, Object> xdfgetPurchaseId_QueryDerivedReferrer_PurchasePaymentListParameter() { return xgetSQuePmMap("purchaseId_QueryDerivedReferrer_PurchasePaymentList"); }
-    @Override
     public String keepPurchaseId_QueryDerivedReferrer_PurchasePaymentListParameter(Object pm) { return xkeepSQuePm("purchaseId_QueryDerivedReferrer_PurchasePaymentList", pm); }
 
     /** 
@@ -132,7 +126,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetMemberId()
     { if (_memberId == null) { _memberId = nCV(); }
       return _memberId; }
-    @Override
     protected ConditionValue xgetCValueMemberId() { return xdfgetMemberId(); }
 
     /** 
@@ -153,7 +146,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetProductId()
     { if (_productId == null) { _productId = nCV(); }
       return _productId; }
-    @Override
     protected ConditionValue xgetCValueProductId() { return xdfgetProductId(); }
 
     /** 
@@ -174,7 +166,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetPurchaseDatetime()
     { if (_purchaseDatetime == null) { _purchaseDatetime = nCV(); }
       return _purchaseDatetime; }
-    @Override
     protected ConditionValue xgetCValuePurchaseDatetime() { return xdfgetPurchaseDatetime(); }
 
     /** 
@@ -195,7 +186,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetPurchaseCount()
     { if (_purchaseCount == null) { _purchaseCount = nCV(); }
       return _purchaseCount; }
-    @Override
     protected ConditionValue xgetCValuePurchaseCount() { return xdfgetPurchaseCount(); }
 
     /** 
@@ -216,7 +206,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetPurchasePrice()
     { if (_purchasePrice == null) { _purchasePrice = nCV(); }
       return _purchasePrice; }
-    @Override
     protected ConditionValue xgetCValuePurchasePrice() { return xdfgetPurchasePrice(); }
 
     /** 
@@ -237,7 +226,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetPaymentCompleteFlg()
     { if (_paymentCompleteFlg == null) { _paymentCompleteFlg = nCV(); }
       return _paymentCompleteFlg; }
-    @Override
     protected ConditionValue xgetCValuePaymentCompleteFlg() { return xdfgetPaymentCompleteFlg(); }
 
     /** 
@@ -258,7 +246,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetRegisterDatetime()
     { if (_registerDatetime == null) { _registerDatetime = nCV(); }
       return _registerDatetime; }
-    @Override
     protected ConditionValue xgetCValueRegisterDatetime() { return xdfgetRegisterDatetime(); }
 
     /** 
@@ -279,7 +266,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetRegisterUser()
     { if (_registerUser == null) { _registerUser = nCV(); }
       return _registerUser; }
-    @Override
     protected ConditionValue xgetCValueRegisterUser() { return xdfgetRegisterUser(); }
 
     /** 
@@ -300,7 +286,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetUpdateDatetime()
     { if (_updateDatetime == null) { _updateDatetime = nCV(); }
       return _updateDatetime; }
-    @Override
     protected ConditionValue xgetCValueUpdateDatetime() { return xdfgetUpdateDatetime(); }
 
     /** 
@@ -321,7 +306,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetUpdateUser()
     { if (_updateUser == null) { _updateUser = nCV(); }
       return _updateUser; }
-    @Override
     protected ConditionValue xgetCValueUpdateUser() { return xdfgetUpdateUser(); }
 
     /** 
@@ -342,7 +326,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     public ConditionValue xdfgetVersionNo()
     { if (_versionNo == null) { _versionNo = nCV(); }
       return _versionNo; }
-    @Override
     protected ConditionValue xgetCValueVersionNo() { return xdfgetVersionNo(); }
 
     /** 
@@ -397,7 +380,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     // ===================================================================================
     //                                                                         Union Query
     //                                                                         ===========
-    @Override
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         PurchaseCQ bq = (PurchaseCQ)bqs;
         PurchaseCQ uq = (PurchaseCQ)uqs;
@@ -452,7 +434,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     protected void xsetupOuterJoinProduct() { xregOutJo("product"); }
     public boolean hasConditionQueryProduct() { return xhasQueRlMap("product"); }
 
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }
@@ -461,21 +442,17 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     //                                                                     ScalarCondition
     //                                                                     ===============
     public Map<String, PurchaseCQ> xdfgetScalarCondition() { return xgetSQueMap("scalarCondition"); }
-    @Override
     public String keepScalarCondition(PurchaseCQ sq) { return xkeepSQue("scalarCondition", sq); }
 
     // ===================================================================================
     //                                                                       MyselfDerived
     //                                                                       =============
     public Map<String, PurchaseCQ> xdfgetSpecifyMyselfDerived() { return xgetSQueMap("specifyMyselfDerived"); }
-    @Override
     public String keepSpecifyMyselfDerived(PurchaseCQ sq) { return xkeepSQue("specifyMyselfDerived", sq); }
 
     public Map<String, PurchaseCQ> xdfgetQueryMyselfDerived() { return xgetSQueMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerived(PurchaseCQ sq) { return xkeepSQue("queryMyselfDerived", sq); }
     public Map<String, Object> xdfgetQueryMyselfDerivedParameter() { return xgetSQuePmMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerivedParameter(Object pm) { return xkeepSQuePm("queryMyselfDerived", pm); }
 
     // ===================================================================================
@@ -483,7 +460,6 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
     //                                                                        ============
     protected Map<String, PurchaseCQ> _myselfExistsMap;
     public Map<String, PurchaseCQ> xdfgetMyselfExists() { return xgetSQueMap("myselfExists"); }
-    @Override
     public String keepMyselfExists(PurchaseCQ sq) { return xkeepSQue("myselfExists", sq); }
 
     // ===================================================================================

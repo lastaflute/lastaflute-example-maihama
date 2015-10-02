@@ -51,7 +51,6 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
         return DBMetaInstanceHandler.getProvider();
     }
 
-    @Override
     public String asTableDbName() {
         return "member_following";
     }
@@ -594,7 +593,6 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
         return xcreateSLCFunction(CK_LE, MemberFollowingCB.class);
     }
 
-    @Override
     @SuppressWarnings("unchecked")
     protected <CB extends ConditionBean> void xscalarCondition(String fn, SubQuery<CB> sq, String rd, HpSLCCustomized<CB> cs, ScalarConditionOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -631,7 +629,6 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
     public HpQDRFunction<MemberFollowingCB> myselfDerived() {
         return xcreateQDRFunctionMyselfDerived(MemberFollowingCB.class);
     }
-    @Override
     @SuppressWarnings("unchecked")
     protected <CB extends ConditionBean> void xqderiveMyselfDerived(String fn, SubQuery<CB> sq, String rd, Object vl, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);

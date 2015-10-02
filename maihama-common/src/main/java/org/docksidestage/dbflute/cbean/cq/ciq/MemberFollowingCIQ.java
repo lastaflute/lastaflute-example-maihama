@@ -52,7 +52,6 @@ public class MemberFollowingCIQ extends AbstractBsMemberFollowingCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,29 +76,19 @@ public class MemberFollowingCIQ extends AbstractBsMemberFollowingCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValueMemberFollowingId() { return _myCQ.xdfgetMemberFollowingId(); }
-    @Override
     protected ConditionValue xgetCValueMyMemberId() { return _myCQ.xdfgetMyMemberId(); }
-    @Override
     protected ConditionValue xgetCValueYourMemberId() { return _myCQ.xdfgetYourMemberId(); }
-    @Override
     protected ConditionValue xgetCValueFollowDatetime() { return _myCQ.xdfgetFollowDatetime(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(MemberFollowingCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(MemberFollowingCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(MemberFollowingCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(MemberFollowingCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

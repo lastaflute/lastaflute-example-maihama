@@ -78,17 +78,14 @@ public abstract class BsPurchasePaymentBhv extends AbstractBehaviorWritable<Purc
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public PurchasePaymentDbm asDBMeta() { return PurchasePaymentDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "purchase_payment"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public PurchasePaymentCB newConditionBean() { return new PurchasePaymentCB(); }
 
     // ===================================================================================
@@ -154,7 +151,6 @@ public abstract class BsPurchasePaymentBhv extends AbstractBehaviorWritable<Purc
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -855,10 +851,7 @@ public abstract class BsPurchasePaymentBhv extends AbstractBehaviorWritable<Purc
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends PurchasePayment> typeOfSelectedEntity() { return PurchasePayment.class; }
-    @Override
     protected Class<PurchasePayment> typeOfHandlingEntity() { return PurchasePayment.class; }
-    @Override
     protected Class<PurchasePaymentCB> typeOfHandlingConditionBean() { return PurchasePaymentCB.class; }
 }

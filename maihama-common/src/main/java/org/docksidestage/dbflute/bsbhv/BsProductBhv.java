@@ -78,17 +78,14 @@ public abstract class BsProductBhv extends AbstractBehaviorWritable<Product, Pro
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public ProductDbm asDBMeta() { return ProductDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "product"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public ProductCB newConditionBean() { return new ProductCB(); }
 
     // ===================================================================================
@@ -154,7 +151,6 @@ public abstract class BsProductBhv extends AbstractBehaviorWritable<Product, Pro
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -1141,10 +1137,7 @@ public abstract class BsProductBhv extends AbstractBehaviorWritable<Product, Pro
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends Product> typeOfSelectedEntity() { return Product.class; }
-    @Override
     protected Class<Product> typeOfHandlingEntity() { return Product.class; }
-    @Override
     protected Class<ProductCB> typeOfHandlingConditionBean() { return ProductCB.class; }
 }

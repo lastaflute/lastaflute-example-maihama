@@ -115,22 +115,18 @@ public class DBMetaInstanceHandler implements DBMetaProvider {
         return _provider;
     }
 
-    @Override
     public DBMeta provideDBMeta(String tableFlexibleName) {
         return byTableFlexibleName(tableFlexibleName);
     }
 
-    @Override
     public DBMeta provideDBMeta(Class<?> entityType) {
         return byEntityType(entityType);
     }
 
-    @Override
     public DBMeta provideDBMetaChecked(String tableFlexibleName) {
         return findDBMeta(tableFlexibleName);
     }
 
-    @Override
     public DBMeta provideDBMetaChecked(Class<?> entityType) {
         return findDBMeta(entityType);
     }

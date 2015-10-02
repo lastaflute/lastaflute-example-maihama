@@ -52,7 +52,6 @@ public class MemberLoginCIQ extends AbstractBsMemberLoginCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,31 +76,20 @@ public class MemberLoginCIQ extends AbstractBsMemberLoginCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValueMemberLoginId() { return _myCQ.xdfgetMemberLoginId(); }
-    @Override
     protected ConditionValue xgetCValueMemberId() { return _myCQ.xdfgetMemberId(); }
-    @Override
     protected ConditionValue xgetCValueLoginDatetime() { return _myCQ.xdfgetLoginDatetime(); }
-    @Override
     protected ConditionValue xgetCValueMobileLoginFlg() { return _myCQ.xdfgetMobileLoginFlg(); }
-    @Override
     protected ConditionValue xgetCValueLoginMemberStatusCode() { return _myCQ.xdfgetLoginMemberStatusCode(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(MemberLoginCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(MemberLoginCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(MemberLoginCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(MemberLoginCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

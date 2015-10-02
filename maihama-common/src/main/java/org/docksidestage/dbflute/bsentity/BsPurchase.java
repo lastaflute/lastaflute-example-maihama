@@ -141,13 +141,11 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public DBMeta asDBMeta() {
         return DBMetaInstanceHandler.findDBMeta(asTableDbName());
     }
 
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() {
         return "purchase";
     }
@@ -156,7 +154,6 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
     //                                                                        Key Handling
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public boolean hasPrimaryKeyValue() {
         if (_purchaseId == null) { return false; }
         return true;
@@ -183,7 +180,7 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
     /**
      * Get the value of paymentCompleteFlg as the classification of Flg. <br>
      * (支払完了フラグ)PAYMENT_COMPLETE_FLG: {NotNull, INT(10), classification=Flg} <br>
-     * フラグを示す
+     * general boolean classification for every flg-column
      * <p>It's treated as case insensitive and if the code value is null, it returns null.</p>
      * @return The instance of classification definition (as ENUM type). (NullAllowed: when the column value is null)
      */
@@ -194,7 +191,7 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
     /**
      * Set the value of paymentCompleteFlg as the classification of Flg. <br>
      * (支払完了フラグ)PAYMENT_COMPLETE_FLG: {NotNull, INT(10), classification=Flg} <br>
-     * フラグを示す
+     * general boolean classification for every flg-column
      * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the column)
      */
     public void setPaymentCompleteFlgAsFlg(CDef.Flg cdef) {
@@ -204,7 +201,7 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
     /**
      * Set the value of paymentCompleteFlg as boolean. <br>
      * (支払完了フラグ)PAYMENT_COMPLETE_FLG: {NotNull, INT(10), classification=Flg} <br>
-     * フラグを示す
+     * general boolean classification for every flg-column
      * @param determination The determination, true or false. (NullAllowed: if null, null value is set to the column)
      */
     public void setPaymentCompleteFlgAsBoolean(Boolean determination) {
@@ -216,7 +213,7 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
     //                                                              ======================
     /**
      * Set the value of paymentCompleteFlg as True (1). <br>
-     * はい: 有効を示す
+     * Checked: means yes
      */
     public void setPaymentCompleteFlg_True() {
         setPaymentCompleteFlgAsFlg(CDef.Flg.True);
@@ -224,7 +221,7 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
 
     /**
      * Set the value of paymentCompleteFlg as False (0). <br>
-     * いいえ: 無効を示す
+     * Unchecked: means no
      */
     public void setPaymentCompleteFlg_False() {
         setPaymentCompleteFlgAsFlg(CDef.Flg.False);
@@ -235,7 +232,7 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
     //                                                        ============================
     /**
      * Is the value of paymentCompleteFlg True? <br>
-     * はい: 有効を示す
+     * Checked: means yes
      * <p>It's treated as case insensitive and if the code value is null, it returns false.</p>
      * @return The determination, true or false.
      */
@@ -246,7 +243,7 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
 
     /**
      * Is the value of paymentCompleteFlg False? <br>
-     * いいえ: 無効を示す
+     * Unchecked: means no
      * <p>It's treated as case insensitive and if the code value is null, it returns false.</p>
      * @return The determination, true or false.
      */
@@ -344,7 +341,6 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
         _purchasePaymentList = purchasePaymentList;
     }
 
-    @Override
     protected <ELEMENT> List<ELEMENT> newReferrerList() {
         return new ArrayList<ELEMENT>();
     }
@@ -581,7 +577,6 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
      * レコードが登録された日時
      * @return The value of the column 'REGISTER_DATETIME'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public java.time.LocalDateTime getRegisterDatetime() {
         checkSpecifiedProperty("registerDatetime");
         return _registerDatetime;
@@ -592,7 +587,6 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
      * レコードが登録された日時
      * @param registerDatetime The value of the column 'REGISTER_DATETIME'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setRegisterDatetime(java.time.LocalDateTime registerDatetime) {
         registerModifiedProperty("registerDatetime");
         _registerDatetime = registerDatetime;
@@ -603,7 +597,6 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
      * レコードを登録したユーザー
      * @return The value of the column 'REGISTER_USER'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public String getRegisterUser() {
         checkSpecifiedProperty("registerUser");
         return convertEmptyToNull(_registerUser);
@@ -614,7 +607,6 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
      * レコードを登録したユーザー
      * @param registerUser The value of the column 'REGISTER_USER'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setRegisterUser(String registerUser) {
         registerModifiedProperty("registerUser");
         _registerUser = registerUser;
@@ -625,7 +617,6 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
      * レコードが(最後に)更新された日時
      * @return The value of the column 'UPDATE_DATETIME'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public java.time.LocalDateTime getUpdateDatetime() {
         checkSpecifiedProperty("updateDatetime");
         return _updateDatetime;
@@ -636,7 +627,6 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
      * レコードが(最後に)更新された日時
      * @param updateDatetime The value of the column 'UPDATE_DATETIME'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setUpdateDatetime(java.time.LocalDateTime updateDatetime) {
         registerModifiedProperty("updateDatetime");
         _updateDatetime = updateDatetime;
@@ -647,7 +637,6 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
      * レコードを(最後に)更新したユーザー
      * @return The value of the column 'UPDATE_USER'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public String getUpdateUser() {
         checkSpecifiedProperty("updateUser");
         return convertEmptyToNull(_updateUser);
@@ -658,7 +647,6 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
      * レコードを(最後に)更新したユーザー
      * @param updateUser The value of the column 'UPDATE_USER'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setUpdateUser(String updateUser) {
         registerModifiedProperty("updateUser");
         _updateUser = updateUser;

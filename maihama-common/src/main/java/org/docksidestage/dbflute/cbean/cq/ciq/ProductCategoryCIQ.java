@@ -52,7 +52,6 @@ public class ProductCategoryCIQ extends AbstractBsProductCategoryCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,57 +76,38 @@ public class ProductCategoryCIQ extends AbstractBsProductCategoryCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValueProductCategoryCode() { return _myCQ.xdfgetProductCategoryCode(); }
-    @Override
     public String keepProductCategoryCode_ExistsReferrer_ProductList(ProductCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepProductCategoryCode_ExistsReferrer_ProductCategorySelfList(ProductCategoryCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    @Override
     public String keepProductCategoryCode_NotExistsReferrer_ProductList(ProductCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepProductCategoryCode_NotExistsReferrer_ProductCategorySelfList(ProductCategoryCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    @Override
     public String keepProductCategoryCode_SpecifyDerivedReferrer_ProductList(ProductCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepProductCategoryCode_SpecifyDerivedReferrer_ProductCategorySelfList(ProductCategoryCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    @Override
     public String keepProductCategoryCode_QueryDerivedReferrer_ProductList(ProductCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepProductCategoryCode_QueryDerivedReferrer_ProductListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepProductCategoryCode_QueryDerivedReferrer_ProductCategorySelfList(ProductCategoryCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     public String keepProductCategoryCode_QueryDerivedReferrer_ProductCategorySelfListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    @Override
     protected ConditionValue xgetCValueProductCategoryName() { return _myCQ.xdfgetProductCategoryName(); }
-    @Override
     protected ConditionValue xgetCValueParentCategoryCode() { return _myCQ.xdfgetParentCategoryCode(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(ProductCategoryCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(ProductCategoryCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(ProductCategoryCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(ProductCategoryCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

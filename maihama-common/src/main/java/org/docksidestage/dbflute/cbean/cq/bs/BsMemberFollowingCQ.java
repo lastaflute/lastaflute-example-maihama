@@ -92,7 +92,6 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
     public ConditionValue xdfgetMemberFollowingId()
     { if (_memberFollowingId == null) { _memberFollowingId = nCV(); }
       return _memberFollowingId; }
-    @Override
     protected ConditionValue xgetCValueMemberFollowingId() { return xdfgetMemberFollowingId(); }
 
     /** 
@@ -113,7 +112,6 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
     public ConditionValue xdfgetMyMemberId()
     { if (_myMemberId == null) { _myMemberId = nCV(); }
       return _myMemberId; }
-    @Override
     protected ConditionValue xgetCValueMyMemberId() { return xdfgetMyMemberId(); }
 
     /** 
@@ -134,7 +132,6 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
     public ConditionValue xdfgetYourMemberId()
     { if (_yourMemberId == null) { _yourMemberId = nCV(); }
       return _yourMemberId; }
-    @Override
     protected ConditionValue xgetCValueYourMemberId() { return xdfgetYourMemberId(); }
 
     /** 
@@ -155,7 +152,6 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
     public ConditionValue xdfgetFollowDatetime()
     { if (_followDatetime == null) { _followDatetime = nCV(); }
       return _followDatetime; }
-    @Override
     protected ConditionValue xgetCValueFollowDatetime() { return xdfgetFollowDatetime(); }
 
     /** 
@@ -210,7 +206,6 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
     // ===================================================================================
     //                                                                         Union Query
     //                                                                         ===========
-    @Override
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MemberFollowingCQ bq = (MemberFollowingCQ)bqs;
         MemberFollowingCQ uq = (MemberFollowingCQ)uqs;
@@ -265,7 +260,6 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
     protected void xsetupOuterJoinMemberByYourMemberId() { xregOutJo("memberByYourMemberId"); }
     public boolean hasConditionQueryMemberByYourMemberId() { return xhasQueRlMap("memberByYourMemberId"); }
 
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }
@@ -274,21 +268,17 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
     //                                                                     ScalarCondition
     //                                                                     ===============
     public Map<String, MemberFollowingCQ> xdfgetScalarCondition() { return xgetSQueMap("scalarCondition"); }
-    @Override
     public String keepScalarCondition(MemberFollowingCQ sq) { return xkeepSQue("scalarCondition", sq); }
 
     // ===================================================================================
     //                                                                       MyselfDerived
     //                                                                       =============
     public Map<String, MemberFollowingCQ> xdfgetSpecifyMyselfDerived() { return xgetSQueMap("specifyMyselfDerived"); }
-    @Override
     public String keepSpecifyMyselfDerived(MemberFollowingCQ sq) { return xkeepSQue("specifyMyselfDerived", sq); }
 
     public Map<String, MemberFollowingCQ> xdfgetQueryMyselfDerived() { return xgetSQueMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerived(MemberFollowingCQ sq) { return xkeepSQue("queryMyselfDerived", sq); }
     public Map<String, Object> xdfgetQueryMyselfDerivedParameter() { return xgetSQuePmMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerivedParameter(Object pm) { return xkeepSQuePm("queryMyselfDerived", pm); }
 
     // ===================================================================================
@@ -296,7 +286,6 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
     //                                                                        ============
     protected Map<String, MemberFollowingCQ> _myselfExistsMap;
     public Map<String, MemberFollowingCQ> xdfgetMyselfExists() { return xgetSQueMap("myselfExists"); }
-    @Override
     public String keepMyselfExists(MemberFollowingCQ sq) { return xkeepSQue("myselfExists", sq); }
 
     // ===================================================================================

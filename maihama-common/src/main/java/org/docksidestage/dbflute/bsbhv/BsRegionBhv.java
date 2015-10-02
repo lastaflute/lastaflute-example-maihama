@@ -79,17 +79,14 @@ public abstract class BsRegionBhv extends AbstractBehaviorWritable<Region, Regio
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public RegionDbm asDBMeta() { return RegionDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "region"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public RegionCB newConditionBean() { return new RegionCB(); }
 
     // ===================================================================================
@@ -155,7 +152,6 @@ public abstract class BsRegionBhv extends AbstractBehaviorWritable<Region, Regio
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -912,10 +908,7 @@ public abstract class BsRegionBhv extends AbstractBehaviorWritable<Region, Regio
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends Region> typeOfSelectedEntity() { return Region.class; }
-    @Override
     protected Class<Region> typeOfHandlingEntity() { return Region.class; }
-    @Override
     protected Class<RegionCB> typeOfHandlingConditionBean() { return RegionCB.class; }
 }

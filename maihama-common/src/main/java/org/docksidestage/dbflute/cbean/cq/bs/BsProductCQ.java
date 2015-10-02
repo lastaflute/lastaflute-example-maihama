@@ -92,26 +92,20 @@ public class BsProductCQ extends AbstractBsProductCQ {
     public ConditionValue xdfgetProductId()
     { if (_productId == null) { _productId = nCV(); }
       return _productId; }
-    @Override
     protected ConditionValue xgetCValueProductId() { return xdfgetProductId(); }
 
     public Map<String, PurchaseCQ> xdfgetProductId_ExistsReferrer_PurchaseList() { return xgetSQueMap("productId_ExistsReferrer_PurchaseList"); }
-    @Override
     public String keepProductId_ExistsReferrer_PurchaseList(PurchaseCQ sq) { return xkeepSQue("productId_ExistsReferrer_PurchaseList", sq); }
 
     public Map<String, PurchaseCQ> xdfgetProductId_NotExistsReferrer_PurchaseList() { return xgetSQueMap("productId_NotExistsReferrer_PurchaseList"); }
-    @Override
     public String keepProductId_NotExistsReferrer_PurchaseList(PurchaseCQ sq) { return xkeepSQue("productId_NotExistsReferrer_PurchaseList", sq); }
 
     public Map<String, PurchaseCQ> xdfgetProductId_SpecifyDerivedReferrer_PurchaseList() { return xgetSQueMap("productId_SpecifyDerivedReferrer_PurchaseList"); }
-    @Override
     public String keepProductId_SpecifyDerivedReferrer_PurchaseList(PurchaseCQ sq) { return xkeepSQue("productId_SpecifyDerivedReferrer_PurchaseList", sq); }
 
     public Map<String, PurchaseCQ> xdfgetProductId_QueryDerivedReferrer_PurchaseList() { return xgetSQueMap("productId_QueryDerivedReferrer_PurchaseList"); }
-    @Override
     public String keepProductId_QueryDerivedReferrer_PurchaseList(PurchaseCQ sq) { return xkeepSQue("productId_QueryDerivedReferrer_PurchaseList", sq); }
     public Map<String, Object> xdfgetProductId_QueryDerivedReferrer_PurchaseListParameter() { return xgetSQuePmMap("productId_QueryDerivedReferrer_PurchaseList"); }
-    @Override
     public String keepProductId_QueryDerivedReferrer_PurchaseListParameter(Object pm) { return xkeepSQuePm("productId_QueryDerivedReferrer_PurchaseList", pm); }
 
     /** 
@@ -132,7 +126,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     public ConditionValue xdfgetProductName()
     { if (_productName == null) { _productName = nCV(); }
       return _productName; }
-    @Override
     protected ConditionValue xgetCValueProductName() { return xdfgetProductName(); }
 
     /** 
@@ -153,7 +146,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     public ConditionValue xdfgetProductHandleCode()
     { if (_productHandleCode == null) { _productHandleCode = nCV(); }
       return _productHandleCode; }
-    @Override
     protected ConditionValue xgetCValueProductHandleCode() { return xdfgetProductHandleCode(); }
 
     /** 
@@ -174,7 +166,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     public ConditionValue xdfgetProductCategoryCode()
     { if (_productCategoryCode == null) { _productCategoryCode = nCV(); }
       return _productCategoryCode; }
-    @Override
     protected ConditionValue xgetCValueProductCategoryCode() { return xdfgetProductCategoryCode(); }
 
     /** 
@@ -195,7 +186,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     public ConditionValue xdfgetProductStatusCode()
     { if (_productStatusCode == null) { _productStatusCode = nCV(); }
       return _productStatusCode; }
-    @Override
     protected ConditionValue xgetCValueProductStatusCode() { return xdfgetProductStatusCode(); }
 
     /** 
@@ -216,7 +206,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     public ConditionValue xdfgetRegularPrice()
     { if (_regularPrice == null) { _regularPrice = nCV(); }
       return _regularPrice; }
-    @Override
     protected ConditionValue xgetCValueRegularPrice() { return xdfgetRegularPrice(); }
 
     /** 
@@ -237,7 +226,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     public ConditionValue xdfgetRegisterDatetime()
     { if (_registerDatetime == null) { _registerDatetime = nCV(); }
       return _registerDatetime; }
-    @Override
     protected ConditionValue xgetCValueRegisterDatetime() { return xdfgetRegisterDatetime(); }
 
     /** 
@@ -258,7 +246,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     public ConditionValue xdfgetRegisterUser()
     { if (_registerUser == null) { _registerUser = nCV(); }
       return _registerUser; }
-    @Override
     protected ConditionValue xgetCValueRegisterUser() { return xdfgetRegisterUser(); }
 
     /** 
@@ -279,7 +266,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     public ConditionValue xdfgetUpdateDatetime()
     { if (_updateDatetime == null) { _updateDatetime = nCV(); }
       return _updateDatetime; }
-    @Override
     protected ConditionValue xgetCValueUpdateDatetime() { return xdfgetUpdateDatetime(); }
 
     /** 
@@ -300,7 +286,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     public ConditionValue xdfgetUpdateUser()
     { if (_updateUser == null) { _updateUser = nCV(); }
       return _updateUser; }
-    @Override
     protected ConditionValue xgetCValueUpdateUser() { return xdfgetUpdateUser(); }
 
     /** 
@@ -321,7 +306,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     public ConditionValue xdfgetVersionNo()
     { if (_versionNo == null) { _versionNo = nCV(); }
       return _versionNo; }
-    @Override
     protected ConditionValue xgetCValueVersionNo() { return xdfgetVersionNo(); }
 
     /** 
@@ -376,7 +360,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     // ===================================================================================
     //                                                                         Union Query
     //                                                                         ===========
-    @Override
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         ProductCQ bq = (ProductCQ)bqs;
         ProductCQ uq = (ProductCQ)uqs;
@@ -431,7 +414,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     protected void xsetupOuterJoinProductStatus() { xregOutJo("productStatus"); }
     public boolean hasConditionQueryProductStatus() { return xhasQueRlMap("productStatus"); }
 
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }
@@ -440,21 +422,17 @@ public class BsProductCQ extends AbstractBsProductCQ {
     //                                                                     ScalarCondition
     //                                                                     ===============
     public Map<String, ProductCQ> xdfgetScalarCondition() { return xgetSQueMap("scalarCondition"); }
-    @Override
     public String keepScalarCondition(ProductCQ sq) { return xkeepSQue("scalarCondition", sq); }
 
     // ===================================================================================
     //                                                                       MyselfDerived
     //                                                                       =============
     public Map<String, ProductCQ> xdfgetSpecifyMyselfDerived() { return xgetSQueMap("specifyMyselfDerived"); }
-    @Override
     public String keepSpecifyMyselfDerived(ProductCQ sq) { return xkeepSQue("specifyMyselfDerived", sq); }
 
     public Map<String, ProductCQ> xdfgetQueryMyselfDerived() { return xgetSQueMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerived(ProductCQ sq) { return xkeepSQue("queryMyselfDerived", sq); }
     public Map<String, Object> xdfgetQueryMyselfDerivedParameter() { return xgetSQuePmMap("queryMyselfDerived"); }
-    @Override
     public String keepQueryMyselfDerivedParameter(Object pm) { return xkeepSQuePm("queryMyselfDerived", pm); }
 
     // ===================================================================================
@@ -462,7 +440,6 @@ public class BsProductCQ extends AbstractBsProductCQ {
     //                                                                        ============
     protected Map<String, ProductCQ> _myselfExistsMap;
     public Map<String, ProductCQ> xdfgetMyselfExists() { return xgetSQueMap("myselfExists"); }
-    @Override
     public String keepMyselfExists(ProductCQ sq) { return xkeepSQue("myselfExists", sq); }
 
     // ===================================================================================

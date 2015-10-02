@@ -126,13 +126,11 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public DBMeta asDBMeta() {
         return DBMetaInstanceHandler.findDBMeta(asTableDbName());
     }
 
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() {
         return "member_service";
     }
@@ -141,7 +139,6 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
     //                                                                        Key Handling
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public boolean hasPrimaryKeyValue() {
         if (_memberServiceId == null) { return false; }
         return true;
@@ -164,7 +161,7 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
     /**
      * Get the value of serviceRankCode as the classification of ServiceRank. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {IX, NotNull, CHAR(3), FK to service_rank, classification=ServiceRank} <br>
-     * 会員が受けられるサービスのランクを示す
+     * rank of service member gets
      * <p>It's treated as case insensitive and if the code value is null, it returns null.</p>
      * @return The instance of classification definition (as ENUM type). (NullAllowed: when the column value is null)
      */
@@ -175,7 +172,7 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
     /**
      * Set the value of serviceRankCode as the classification of ServiceRank. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {IX, NotNull, CHAR(3), FK to service_rank, classification=ServiceRank} <br>
-     * 会員が受けられるサービスのランクを示す
+     * rank of service member gets
      * @param cdef The instance of classification definition (as ENUM type). (NullAllowed: if null, null value is set to the column)
      */
     public void setServiceRankCodeAsServiceRank(CDef.ServiceRank cdef) {
@@ -331,7 +328,6 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
-    @Override
     protected <ELEMENT> List<ELEMENT> newReferrerList() {
         return new ArrayList<ELEMENT>();
     }
@@ -497,7 +493,6 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
      * レコードが登録された日時
      * @return The value of the column 'REGISTER_DATETIME'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public java.time.LocalDateTime getRegisterDatetime() {
         checkSpecifiedProperty("registerDatetime");
         return _registerDatetime;
@@ -508,7 +503,6 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
      * レコードが登録された日時
      * @param registerDatetime The value of the column 'REGISTER_DATETIME'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setRegisterDatetime(java.time.LocalDateTime registerDatetime) {
         registerModifiedProperty("registerDatetime");
         _registerDatetime = registerDatetime;
@@ -519,7 +513,6 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
      * レコードを登録したユーザー
      * @return The value of the column 'REGISTER_USER'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public String getRegisterUser() {
         checkSpecifiedProperty("registerUser");
         return convertEmptyToNull(_registerUser);
@@ -530,7 +523,6 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
      * レコードを登録したユーザー
      * @param registerUser The value of the column 'REGISTER_USER'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setRegisterUser(String registerUser) {
         registerModifiedProperty("registerUser");
         _registerUser = registerUser;
@@ -541,7 +533,6 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
      * レコードが(最後に)更新された日時
      * @return The value of the column 'UPDATE_DATETIME'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public java.time.LocalDateTime getUpdateDatetime() {
         checkSpecifiedProperty("updateDatetime");
         return _updateDatetime;
@@ -552,7 +543,6 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
      * レコードが(最後に)更新された日時
      * @param updateDatetime The value of the column 'UPDATE_DATETIME'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setUpdateDatetime(java.time.LocalDateTime updateDatetime) {
         registerModifiedProperty("updateDatetime");
         _updateDatetime = updateDatetime;
@@ -563,7 +553,6 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
      * レコードを(最後に)更新したユーザー
      * @return The value of the column 'UPDATE_USER'. (basically NotNull if selected: for the constraint)
      */
-    @Override
     public String getUpdateUser() {
         checkSpecifiedProperty("updateUser");
         return convertEmptyToNull(_updateUser);
@@ -574,7 +563,6 @@ public abstract class BsMemberService extends AbstractEntity implements DomainEn
      * レコードを(最後に)更新したユーザー
      * @param updateUser The value of the column 'UPDATE_USER'. (basically NotNull if update: for the constraint)
      */
-    @Override
     public void setUpdateUser(String updateUser) {
         registerModifiedProperty("updateUser");
         _updateUser = updateUser;

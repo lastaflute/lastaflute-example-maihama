@@ -51,7 +51,6 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
         return DBMetaInstanceHandler.getProvider();
     }
 
-    @Override
     public String asTableDbName() {
         return "member_security";
     }
@@ -851,7 +850,6 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
         return xcreateSLCFunction(CK_LE, MemberSecurityCB.class);
     }
 
-    @Override
     @SuppressWarnings("unchecked")
     protected <CB extends ConditionBean> void xscalarCondition(String fn, SubQuery<CB> sq, String rd, HpSLCCustomized<CB> cs, ScalarConditionOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -888,7 +886,6 @@ public abstract class AbstractBsMemberSecurityCQ extends AbstractConditionQuery 
     public HpQDRFunction<MemberSecurityCB> myselfDerived() {
         return xcreateQDRFunctionMyselfDerived(MemberSecurityCB.class);
     }
-    @Override
     @SuppressWarnings("unchecked")
     protected <CB extends ConditionBean> void xqderiveMyselfDerived(String fn, SubQuery<CB> sq, String rd, Object vl, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);

@@ -84,7 +84,6 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
         return DBMetaInstanceHandler.getProvider(); // as default
     }
 
-    @Override
     public String asTableDbName() {
         return "purchase_payment";
     }
@@ -104,13 +103,11 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
         return (PurchasePaymentCB)this;
     }
 
-    @Override
     public ConditionBean addOrderBy_PK_Asc() {
         query().addOrderBy_PurchasePaymentId_Asc();
         return this;
     }
 
-    @Override
     public ConditionBean addOrderBy_PK_Desc() {
         query().addOrderBy_PurchasePaymentId_Desc();
         return this;
@@ -209,7 +206,6 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
     /**
      * {@inheritDoc}
      */
-    @Override
     public ConditionQuery localCQ() {
         return doGetConditionQuery();
     }
@@ -315,12 +311,10 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
         return _specification;
     }
 
-    @Override
     public HpColumnSpHandler localSp() {
         return specify();
     }
 
-    @Override
     public boolean hasSpecifiedLocalColumn() {
         return _specification != null && _specification.hasSpecifiedColumn();
     }
@@ -352,7 +346,7 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
          */
         public SpecifiedColumn columnPaymentDatetime() { return doColumn("PAYMENT_DATETIME"); }
         /**
-         * (支払方法コード)PAYMENT_METHOD_CODE: {NotNull, CHAR(3)}
+         * (支払方法コード)PAYMENT_METHOD_CODE: {NotNull, CHAR(3), classification=PaymentMethod}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnPaymentMethodCode() { return doColumn("PAYMENT_METHOD_CODE"); }
@@ -376,9 +370,7 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnUpdateUser() { return doColumn("UPDATE_USER"); }
-        @Override
         public void everyColumn() { doEveryColumn(); }
-        @Override
         public void exceptRecordMetaColumn() { doExceptRecordMetaColumn(); }
         @Override
         protected void doSpecifyRequiredColumn() {
@@ -431,11 +423,10 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
      */
     public PurchasePaymentCB dreamCruiseCB() {
         PurchasePaymentCB cb = new PurchasePaymentCB();
-        cb.xsetupForDreamCruise(this);
+        cb.xsetupForDreamCruise((PurchasePaymentCB) this);
         return cb;
     }
 
-    @Override
     protected ConditionBean xdoCreateDreamCruiseCB() {
         return dreamCruiseCB();
     }
@@ -465,7 +456,7 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
 
     protected PurchasePaymentCB xcreateColumnQueryCB() {
         PurchasePaymentCB cb = new PurchasePaymentCB();
-        cb.xsetupForColumnQuery(this);
+        cb.xsetupForColumnQuery((PurchasePaymentCB)this);
         return cb;
     }
 
@@ -533,7 +524,6 @@ public class BsPurchasePaymentCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                       Meta Handling
     //                                                                       =============
-    @Override
     public boolean hasUnionQueryOrUnionAllQuery() {
         return query().hasUnionQueryOrUnionAllQuery();
     }

@@ -52,7 +52,6 @@ public class MemberSecurityCIQ extends AbstractBsMemberSecurityCQ {
     // ===================================================================================
     //                                                             Override about Register
     //                                                             =======================
-    @Override
     protected void reflectRelationOnUnionQuery(ConditionQuery bq, ConditionQuery uq)
     { throw new IllegalConditionBeanOperationException("InlineView cannot use Union: " + bq + " : " + uq); }
 
@@ -77,41 +76,25 @@ public class MemberSecurityCIQ extends AbstractBsMemberSecurityCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    @Override
     protected ConditionValue xgetCValueMemberId() { return _myCQ.xdfgetMemberId(); }
-    @Override
     protected ConditionValue xgetCValueLoginPassword() { return _myCQ.xdfgetLoginPassword(); }
-    @Override
     protected ConditionValue xgetCValueReminderQuestion() { return _myCQ.xdfgetReminderQuestion(); }
-    @Override
     protected ConditionValue xgetCValueReminderAnswer() { return _myCQ.xdfgetReminderAnswer(); }
-    @Override
     protected ConditionValue xgetCValueReminderUseCount() { return _myCQ.xdfgetReminderUseCount(); }
-    @Override
     protected ConditionValue xgetCValueRegisterDatetime() { return _myCQ.xdfgetRegisterDatetime(); }
-    @Override
     protected ConditionValue xgetCValueRegisterUser() { return _myCQ.xdfgetRegisterUser(); }
-    @Override
     protected ConditionValue xgetCValueUpdateDatetime() { return _myCQ.xdfgetUpdateDatetime(); }
-    @Override
     protected ConditionValue xgetCValueUpdateUser() { return _myCQ.xdfgetUpdateUser(); }
-    @Override
     protected ConditionValue xgetCValueVersionNo() { return _myCQ.xdfgetVersionNo(); }
-    @Override
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
-    @Override
     public String keepScalarCondition(MemberSecurityCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }
-    @Override
     public String keepSpecifyMyselfDerived(MemberSecurityCQ sq)
     { throwIICBOE("(Specify)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerived(MemberSecurityCQ sq)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepQueryMyselfDerivedParameter(Object vl)
     { throwIICBOE("(Query)MyselfDerived"); return null;}
-    @Override
     public String keepMyselfExists(MemberSecurityCQ sq)
     { throwIICBOE("MyselfExists"); return null;}
 

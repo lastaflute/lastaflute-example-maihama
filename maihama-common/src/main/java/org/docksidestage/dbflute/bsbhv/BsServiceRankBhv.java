@@ -79,17 +79,14 @@ public abstract class BsServiceRankBhv extends AbstractBehaviorWritable<ServiceR
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public ServiceRankDbm asDBMeta() { return ServiceRankDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "service_rank"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public ServiceRankCB newConditionBean() { return new ServiceRankCB(); }
 
     // ===================================================================================
@@ -155,7 +152,6 @@ public abstract class BsServiceRankBhv extends AbstractBehaviorWritable<ServiceR
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -945,10 +941,7 @@ public abstract class BsServiceRankBhv extends AbstractBehaviorWritable<ServiceR
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends ServiceRank> typeOfSelectedEntity() { return ServiceRank.class; }
-    @Override
     protected Class<ServiceRank> typeOfHandlingEntity() { return ServiceRank.class; }
-    @Override
     protected Class<ServiceRankCB> typeOfHandlingConditionBean() { return ServiceRankCB.class; }
 }

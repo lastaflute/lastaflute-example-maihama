@@ -78,17 +78,14 @@ public abstract class BsMemberLoginBhv extends AbstractBehaviorWritable<MemberLo
     //                                                                             DB Meta
     //                                                                             =======
     /** {@inheritDoc} */
-    @Override
     public MemberLoginDbm asDBMeta() { return MemberLoginDbm.getInstance(); }
     /** {@inheritDoc} */
-    @Override
     public String asTableDbName() { return "member_login"; }
 
     // ===================================================================================
     //                                                                        New Instance
     //                                                                        ============
     /** {@inheritDoc} */
-    @Override
     public MemberLoginCB newConditionBean() { return new MemberLoginCB(); }
 
     // ===================================================================================
@@ -154,7 +151,6 @@ public abstract class BsMemberLoginBhv extends AbstractBehaviorWritable<MemberLo
         return createOptionalEntity(doSelectEntity(cb, tp), cb);
     }
 
-    @Override
     protected Entity doReadEntity(ConditionBean cb) { return facadeSelectEntity(downcast(cb)).orElse(null); }
 
     /**
@@ -889,10 +885,7 @@ public abstract class BsMemberLoginBhv extends AbstractBehaviorWritable<MemberLo
     // ===================================================================================
     //                                                                         Type Helper
     //                                                                         ===========
-    @Override
     protected Class<? extends MemberLogin> typeOfSelectedEntity() { return MemberLogin.class; }
-    @Override
     protected Class<MemberLogin> typeOfHandlingEntity() { return MemberLogin.class; }
-    @Override
     protected Class<MemberLoginCB> typeOfHandlingConditionBean() { return MemberLoginCB.class; }
 }
