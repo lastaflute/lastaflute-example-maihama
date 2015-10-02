@@ -24,7 +24,7 @@ import org.docksidestage.unit.UnitHangarTestCase;
 /**
  * @author jflute
  */
-public class ActionDefinitionTest extends UnitHangarTestCase {
+public class HangarActionDefinitionTest extends UnitHangarTestCase {
 
     public void test_definition() throws Exception {
         // ## Arrange ##
