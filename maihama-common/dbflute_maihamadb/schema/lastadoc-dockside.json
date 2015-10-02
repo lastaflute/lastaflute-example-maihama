@@ -2,19 +2,21 @@
   "actionDocMetaList": [
     {
       "url": "/member/add/",
+      "description": "会員追加アクション。",
       "typeName": "org.docksidestage.app.web.member.MemberAddAction",
       "simpleTypeName": "MemberAddAction",
       "typeComment": "/**\n * 会員追加アクション。\n * @author jflute\n */\n",
       "methodName": "index",
-      "methodComment": "",
+      "methodComment": null,
       "annotationList": [
         "Execute"
       ],
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_Member_MemberAddJsp)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -22,6 +24,7 @@
     },
     {
       "url": "/member/add/doAdd",
+      "description": "会員追加アクション。",
       "typeName": "org.docksidestage.app.web.member.MemberAddAction",
       "simpleTypeName": "MemberAddAction",
       "typeComment": "/**\n * 会員追加アクション。\n * @author jflute\n */\n",
@@ -34,13 +37,15 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.member.MemberForm",
         "simpleTypeName": "MemberForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
             "name": "memberId",
-            "typeName": "Integer",
+            "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -49,8 +54,9 @@
           },
           {
             "name": "memberName",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -59,8 +65,9 @@
           },
           {
             "name": "memberAccount",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -69,8 +76,9 @@
           },
           {
             "name": "memberStatusCode",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -79,24 +87,27 @@
           },
           {
             "name": "birthdate",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "formalizedDate",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "latestLoginDatetime",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -105,8 +116,9 @@
           },
           {
             "name": "updateDatetime",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -115,8 +127,9 @@
           },
           {
             "name": "previousStatusCode",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -125,8 +138,9 @@
           },
           {
             "name": "versionNo",
-            "typeName": "Long",
+            "typeName": "java.lang.Long",
             "simpleTypeName": "Long",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -137,8 +151,9 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "redirect(MemberListAction.class)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -146,19 +161,21 @@
     },
     {
       "url": "/member/edit/{memberId:Integer}",
+      "description": null,
       "typeName": "org.docksidestage.app.web.member.MemberEditAction",
       "simpleTypeName": "MemberEditAction",
       "typeComment": "/**\n * @author jflute\n */\n",
       "methodName": "index",
-      "methodComment": "",
+      "methodComment": null,
       "annotationList": [
         "Execute"
       ],
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_Member_MemberEditJsp)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -166,6 +183,7 @@
     },
     {
       "url": "/member/edit/doUpdate",
+      "description": null,
       "typeName": "org.docksidestage.app.web.member.MemberEditAction",
       "simpleTypeName": "MemberEditAction",
       "typeComment": "/**\n * @author jflute\n */\n",
@@ -178,13 +196,15 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.member.MemberForm",
         "simpleTypeName": "MemberForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
             "name": "memberId",
-            "typeName": "Integer",
+            "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -193,8 +213,9 @@
           },
           {
             "name": "memberName",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -203,8 +224,9 @@
           },
           {
             "name": "memberAccount",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -213,8 +235,9 @@
           },
           {
             "name": "memberStatusCode",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -223,24 +246,27 @@
           },
           {
             "name": "birthdate",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "formalizedDate",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "latestLoginDatetime",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -249,8 +275,9 @@
           },
           {
             "name": "updateDatetime",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -259,8 +286,9 @@
           },
           {
             "name": "previousStatusCode",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -269,8 +297,9 @@
           },
           {
             "name": "versionNo",
-            "typeName": "Long",
+            "typeName": "java.lang.Long",
             "simpleTypeName": "Long",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -281,8 +310,9 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_Member_MemberEditJsp),redirectById(MemberEditAction.class, member.getMemberId()",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -290,6 +320,7 @@
     },
     {
       "url": "/member/edit/doDelete",
+      "description": null,
       "typeName": "org.docksidestage.app.web.member.MemberEditAction",
       "simpleTypeName": "MemberEditAction",
       "typeComment": "/**\n * @author jflute\n */\n",
@@ -302,13 +333,15 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.member.MemberForm",
         "simpleTypeName": "MemberForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
             "name": "memberId",
-            "typeName": "Integer",
+            "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -317,8 +350,9 @@
           },
           {
             "name": "memberName",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -327,8 +361,9 @@
           },
           {
             "name": "memberAccount",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -337,8 +372,9 @@
           },
           {
             "name": "memberStatusCode",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -347,24 +383,27 @@
           },
           {
             "name": "birthdate",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "formalizedDate",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "latestLoginDatetime",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -373,8 +412,9 @@
           },
           {
             "name": "updateDatetime",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -383,8 +423,9 @@
           },
           {
             "name": "previousStatusCode",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -393,8 +434,9 @@
           },
           {
             "name": "versionNo",
-            "typeName": "Long",
+            "typeName": "java.lang.Long",
             "simpleTypeName": "Long",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -405,20 +447,22 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "redirect(MemberListAction.class)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
       }
     },
     {
-      "url": "/member/list/{pageNumber:Integer?}",
+      "url": "/member/list/{pageNumber:OptionalThing\u003cInteger\u003e}",
+      "description": null,
       "typeName": "org.docksidestage.app.web.member.MemberListAction",
       "simpleTypeName": "MemberListAction",
       "typeComment": "/**\n * @author jflute\n */\n",
       "methodName": "index",
-      "methodComment": "",
+      "methodComment": null,
       "annotationList": [
         "Execute"
       ],
@@ -426,29 +470,33 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.member.MemberSearchForm",
         "simpleTypeName": "MemberSearchForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
             "name": "memberName",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
-            "comment": "",
+            "value": null,
+            "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "memberStatus",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "purchaseProductName",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -457,22 +505,25 @@
             "name": "unpaid",
             "typeName": "boolean",
             "simpleTypeName": "boolean",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "formalizedDateFrom",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "formalizedDateTo",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -481,8 +532,9 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asSearchResponse(form, pageNumber.orElse(1)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -490,6 +542,7 @@
     },
     {
       "url": "/member/list/doSearch",
+      "description": null,
       "typeName": "org.docksidestage.app.web.member.MemberListAction",
       "simpleTypeName": "MemberListAction",
       "typeComment": "/**\n * @author jflute\n */\n",
@@ -502,29 +555,33 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.member.MemberSearchForm",
         "simpleTypeName": "MemberSearchForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
             "name": "memberName",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
-            "comment": "",
+            "value": null,
+            "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "memberStatus",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "purchaseProductName",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -533,22 +590,25 @@
             "name": "unpaid",
             "typeName": "boolean",
             "simpleTypeName": "boolean",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "formalizedDateFrom",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "formalizedDateTo",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -557,8 +617,9 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asSearchResponse(form, 1)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -566,11 +627,12 @@
     },
     {
       "url": "/member/purchase/list/{memberId:Integer}/{pageNumber:Integer}",
+      "description": null,
       "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListAction",
       "simpleTypeName": "MemberPurchaseListAction",
       "typeComment": "/**\n * @author jflute\n */\n",
       "methodName": "index",
-      "methodComment": "",
+      "methodComment": null,
       "annotationList": [
         "Execute"
       ],
@@ -578,13 +640,15 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListForm",
         "simpleTypeName": "MemberPurchaseListForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
             "name": "memberId",
-            "typeName": "Integer",
+            "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -593,8 +657,9 @@
           },
           {
             "name": "purchaseId",
-            "typeName": "Long",
+            "typeName": "java.lang.Long",
             "simpleTypeName": "Long",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -605,8 +670,9 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "new MemberPurchaseHeaderBean(member),mappingToBean(purchase),asHtml(path_MemberPurchase_MemberPurchaseListJsp)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -614,6 +680,7 @@
     },
     {
       "url": "/member/purchase/list/doDelete",
+      "description": null,
       "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListAction",
       "simpleTypeName": "MemberPurchaseListAction",
       "typeComment": "/**\n * @author jflute\n */\n",
@@ -626,13 +693,15 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListForm",
         "simpleTypeName": "MemberPurchaseListForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
             "name": "memberId",
-            "typeName": "Integer",
+            "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -641,8 +710,9 @@
           },
           {
             "name": "purchaseId",
-            "typeName": "Long",
+            "typeName": "java.lang.Long",
             "simpleTypeName": "Long",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -653,8 +723,9 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_MemberPurchase_MemberPurchaseListJsp),redirect(getClass()",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -662,6 +733,7 @@
     },
     {
       "url": "/mypage/",
+      "description": null,
       "typeName": "org.docksidestage.app.web.mypage.MypageAction",
       "simpleTypeName": "MypageAction",
       "typeComment": "/**\n * @author jflute\n */\n",
@@ -673,8 +745,9 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "new MypageProductBean(member),asHtml(path_Mypage_MypageJsp)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -682,11 +755,12 @@
     },
     {
       "url": "/product/detail/{productId:Integer}",
+      "description": null,
       "typeName": "org.docksidestage.app.web.product.ProductDetailAction",
       "simpleTypeName": "ProductDetailAction",
       "typeComment": "/**\n * @author jflute\n */\n",
       "methodName": "index",
-      "methodComment": "",
+      "methodComment": null,
       "annotationList": [
         "AllowAnyoneAccess",
         "Execute"
@@ -694,20 +768,22 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_Product_ProductListJsp),asHtml(path_Product_ProductDetailJsp)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
       }
     },
     {
-      "url": "/product/list/{pageNumber:Integer?}",
+      "url": "/product/list/{pageNumber:OptionalThing\u003cInteger\u003e}",
+      "description": null,
       "typeName": "org.docksidestage.app.web.product.ProductListAction",
       "simpleTypeName": "ProductListAction",
       "typeComment": "/**\n * @author jflute\n */\n",
       "methodName": "index",
-      "methodComment": "",
+      "methodComment": null,
       "annotationList": [
         "AllowAnyoneAccess",
         "Execute"
@@ -716,13 +792,15 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.product.ProductSearchForm",
         "simpleTypeName": "ProductSearchForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
             "name": "productName",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -731,14 +809,16 @@
             "name": "productStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
             "simpleTypeName": "ProductStatus",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "purchaseMemberName",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -747,8 +827,9 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_Product_ProductListJsp),mappingToBean(product),asHtml(path_Product_ProductListJsp)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -756,6 +837,7 @@
     },
     {
       "url": "/profile/",
+      "description": null,
       "typeName": "org.docksidestage.app.web.profile.ProfileAction",
       "simpleTypeName": "ProfileAction",
       "typeComment": "/**\n * @author jflute\n */\n",
@@ -767,20 +849,22 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_Profile_ProfileJsp)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
       }
     },
     {
-      "url": "/purchase/list/{pageNumber:Integer?}",
+      "url": "/purchase/list/{pageNumber:OptionalThing\u003cInteger\u003e}",
+      "description": "Action class for purchase list page.",
       "typeName": "org.docksidestage.app.web.purchase.PurchaseListAction",
       "simpleTypeName": "PurchaseListAction",
       "typeComment": "/**\n * Action class for purchase list page.\n * @author toshiaki.arai\n */\n",
       "methodName": "index",
-      "methodComment": "",
+      "methodComment": null,
       "annotationList": [
         "Execute"
       ],
@@ -788,14 +872,16 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.purchase.PurchaseSearchForm",
         "simpleTypeName": "PurchaseSearchForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "mappingToBean(purchase),asHtml(path_Purchase_PurchaseListJsp)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -803,6 +889,7 @@
     },
     {
       "url": "/root/",
+      "description": null,
       "typeName": "org.docksidestage.app.web.RootAction",
       "simpleTypeName": "RootAction",
       "typeComment": "/**\n * @author jflute\n */\n",
@@ -815,8 +902,9 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "redirect(MypageAction.class)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -824,19 +912,21 @@
     },
     {
       "url": "/signin/",
+      "description": null,
       "typeName": "org.docksidestage.app.web.signin.SigninAction",
       "simpleTypeName": "SigninAction",
       "typeComment": "/**\n * @author jflute\n */\n",
       "methodName": "index",
-      "methodComment": "",
+      "methodComment": null,
       "annotationList": [
         "Execute"
       ],
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "redirect(RootAction.class),asHtml(path_Signin_SigninJsp)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -844,6 +934,7 @@
     },
     {
       "url": "/signin/doSignin",
+      "description": null,
       "typeName": "org.docksidestage.app.web.signin.SigninAction",
       "simpleTypeName": "SigninAction",
       "typeComment": "/**\n * @author jflute\n */\n",
@@ -856,13 +947,15 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.signin.SigninForm",
         "simpleTypeName": "SigninForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
             "name": "email",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -871,8 +964,9 @@
           },
           {
             "name": "password",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -881,8 +975,9 @@
           },
           {
             "name": "rememberMe",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -891,8 +986,9 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_Signin_SigninJsp),docksideLoginAssist.loginRedirect(email, password,  op -\u003e op.rememberMe(rememberMe),redirect(RootAction.class)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -900,6 +996,7 @@
     },
     {
       "url": "/signout/",
+      "description": "@author toshiaki.",
       "typeName": "org.docksidestage.app.web.signout.SignoutAction",
       "simpleTypeName": "SignoutAction",
       "typeComment": "/**\n * @author toshiaki.arai\n * @author jflute\n */\n",
@@ -911,8 +1008,9 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "redirect(SigninAction.class)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -920,11 +1018,12 @@
     },
     {
       "url": "/signup/",
+      "description": null,
       "typeName": "org.docksidestage.app.web.signup.SignupAction",
       "simpleTypeName": "SignupAction",
       "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */\n",
       "methodName": "index",
-      "methodComment": "",
+      "methodComment": null,
       "annotationList": [
         "AllowAnyoneAccess",
         "Execute"
@@ -932,87 +1031,9 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/signup/register",
-      "typeName": "org.docksidestage.app.web.signup.SignupAction",
-      "simpleTypeName": "SignupAction",
-      "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */\n",
-      "methodName": "register",
-      "methodComment": null,
-      "annotationList": [
-        "AllowAnyoneAccess",
-        "Execute"
-      ],
-      "formTypeDocMeta": {
-        "name": null,
-        "typeName": "org.docksidestage.app.web.signup.SignupForm",
-        "simpleTypeName": "SignupForm",
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "name",
-            "typeName": "String",
-            "simpleTypeName": "String",
-            "comment": "",
-            "annotationList": [
-              "NotBlank"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "account",
-            "typeName": "String",
-            "simpleTypeName": "String",
-            "comment": null,
-            "annotationList": [
-              "NotBlank"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "password",
-            "typeName": "String",
-            "simpleTypeName": "String",
-            "comment": "",
-            "annotationList": [
-              "NotBlank"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "reminderQuestion",
-            "typeName": "String",
-            "simpleTypeName": "String",
-            "comment": null,
-            "annotationList": [
-              "NotBlank"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "reminderAnswer",
-            "typeName": "String",
-            "simpleTypeName": "String",
-            "comment": null,
-            "annotationList": [
-              "NotBlank"
-            ],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_Signup_SignupJsp)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -1020,6 +1041,7 @@
     },
     {
       "url": "/signup/doSignup",
+      "description": null,
       "typeName": "org.docksidestage.app.web.signup.SignupAction",
       "simpleTypeName": "SignupAction",
       "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */\n",
@@ -1033,14 +1055,16 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.signup.SignupForm",
         "simpleTypeName": "SignupForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
             "name": "name",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
-            "comment": "",
+            "value": null,
+            "comment": null,
             "annotationList": [
               "NotBlank"
             ],
@@ -1048,8 +1072,9 @@
           },
           {
             "name": "account",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -1058,9 +1083,10 @@
           },
           {
             "name": "password",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
-            "comment": "",
+            "value": null,
+            "comment": null,
             "annotationList": [
               "NotBlank"
             ],
@@ -1068,8 +1094,9 @@
           },
           {
             "name": "reminderQuestion",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -1078,8 +1105,9 @@
           },
           {
             "name": "reminderAnswer",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -1090,65 +1118,86 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_Signup_SignupJsp),redirect(MypageAction.class)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
       }
     },
     {
-      "url": "/withdrawal/",
-      "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalAction",
-      "simpleTypeName": "WithdrawalAction",
+      "url": "/signup/register",
+      "description": null,
+      "typeName": "org.docksidestage.app.web.signup.SignupAction",
+      "simpleTypeName": "SignupAction",
       "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */\n",
-      "methodName": "index",
-      "methodComment": "",
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/withdrawal/done",
-      "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalAction",
-      "simpleTypeName": "WithdrawalAction",
-      "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */\n",
-      "methodName": "done",
+      "methodName": "register",
       "methodComment": null,
       "annotationList": [
+        "AllowAnyoneAccess",
         "Execute"
       ],
       "formTypeDocMeta": {
         "name": null,
-        "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalForm",
-        "simpleTypeName": "WithdrawalForm",
+        "typeName": "org.docksidestage.app.web.signup.SignupForm",
+        "simpleTypeName": "SignupForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
-            "name": "reasonCode",
-            "typeName": "org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason",
-            "simpleTypeName": "WithdrawalReason",
+            "name": "name",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "NotBlank"
+            ],
             "nestTypeDocMetaList": []
           },
           {
-            "name": "reasonInput",
-            "typeName": "String",
+            "name": "account",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
-              "Length{max\u003d3}"
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "password",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "comment": null,
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "reminderQuestion",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "comment": null,
+            "annotationList": [
+              "NotBlank"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "reminderAnswer",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "comment": null,
+            "annotationList": [
+              "NotBlank"
             ],
             "nestTypeDocMetaList": []
           }
@@ -1156,8 +1205,31 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "redirect(SigninAction.class)",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      }
+    },
+    {
+      "url": "/withdrawal/",
+      "description": null,
+      "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalAction",
+      "simpleTypeName": "WithdrawalAction",
+      "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */\n",
+      "methodName": "index",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
+        "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_Withdrawal_WithdrawalJsp)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -1165,6 +1237,7 @@
     },
     {
       "url": "/withdrawal/confirm",
+      "description": null,
       "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalAction",
       "simpleTypeName": "WithdrawalAction",
       "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */\n",
@@ -1177,6 +1250,7 @@
         "name": null,
         "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalForm",
         "simpleTypeName": "WithdrawalForm",
+        "value": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -1184,14 +1258,16 @@
             "name": "reasonCode",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason",
             "simpleTypeName": "WithdrawalReason",
+            "value": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "reasonInput",
-            "typeName": "String",
+            "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
             "comment": null,
             "annotationList": [
               "Length{max\u003d3}"
@@ -1202,8 +1278,60 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "HtmlResponse",
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
+        "value": "asHtml(path_Withdrawal_WithdrawalJsp),asHtml(path_Withdrawal_WithdrawalConfirmJsp)",
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      }
+    },
+    {
+      "url": "/withdrawal/done",
+      "description": null,
+      "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalAction",
+      "simpleTypeName": "WithdrawalAction",
+      "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */\n",
+      "methodName": "done",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalForm",
+        "simpleTypeName": "WithdrawalForm",
+        "value": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "reasonCode",
+            "typeName": "org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason",
+            "simpleTypeName": "WithdrawalReason",
+            "value": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "reasonInput",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "comment": null,
+            "annotationList": [
+              "Length{max\u003d3}"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
+        "simpleTypeName": "HtmlResponse",
+        "value": "redirect(SignoutAction.class)",
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []

@@ -133,8 +133,8 @@ table.child, table.child td, table.child th {
     <tr>
         <th>No.</th>
         <th>URL</th>
-        <th>class</th>
-        <th>method</th>
+        <th>description</th>
+        <th>class#method</th>
         <th>Form or Body</th>
         <th>return</th>
     </tr>
@@ -144,11 +144,15 @@ table.child, table.child td, table.child th {
     <tr>
         <td class="rownumcell">${foreach.count}</td>
         <td class="aliascell"><a href="#${actionDocMeta.url}">${actionDocMeta.url}</a></td>
-        <td class="aliascell">$manager.htmlEscape($actionDocMeta.typeName)</td>
-        <td class="aliascell">${actionDocMeta.methodName}</td>
+        <td class="aliascell">
+#if ($actionDocMeta.description)
+            $manager.htmlEscape($actionDocMeta.description)
+#end
+        </td>
+        <td class="aliascell"><span title="$manager.htmlEscape($actionDocMeta.typeName)">$manager.htmlEscape($actionDocMeta.simpleTypeName)</span>#${actionDocMeta.methodName}()</td>
         <td class="aliascell">
 #if ($actionDocMeta.formTypeDocMeta)
-            <span title="$manager.htmlEscape($actionDocMeta.returnTypeDocMeta.typeName)">$manager.htmlEscape($actionDocMeta.formTypeDocMeta.simpleTypeName)</span>
+            <span title="$manager.htmlEscape($actionDocMeta.formTypeDocMeta.typeName)">$manager.htmlEscape($actionDocMeta.formTypeDocMeta.simpleTypeName)</span>
 #end
         </td>
         <td class="aliascell">
@@ -180,11 +184,14 @@ Annotations: ${actionDocMeta.annotationList}
 <p class="tablecomment" style="white-space:pre-wrap;">${actionDocMeta.methodComment}</p>
 #end
 #if ($actionDocMeta.formTypeDocMeta)
-Form or Body: <span title="$manager.htmlEscape($actionDocMeta.returnTypeDocMeta.typeName)">$manager.htmlEscape($actionDocMeta.formTypeDocMeta.simpleTypeName)</span>
+Form or Body: <span title="$manager.htmlEscape($actionDocMeta.formTypeDocMeta.typeName)">$manager.htmlEscape($actionDocMeta.formTypeDocMeta.simpleTypeName)</span>
 $generator.parse("om/java/plugin/lastaflute/LaDocHtmlTypeDocMeta.vm", null, "typeDocMeta", $actionDocMeta.formTypeDocMeta)
 #end
 #if ($actionDocMeta.returnTypeDocMeta)
 Return as: <span title="$manager.htmlEscape($actionDocMeta.returnTypeDocMeta.typeName)">$manager.htmlEscape($actionDocMeta.returnTypeDocMeta.simpleTypeName)</span>
+#if ($actionDocMeta.returnTypeDocMeta.simpleTypeName == 'HtmlResponse' && $actionDocMeta.returnTypeDocMeta.value)
+<p>${actionDocMeta.returnTypeDocMeta.value}</p>
+#end
 $generator.parse("om/java/plugin/lastaflute/LaDocHtmlTypeDocMeta.vm", null, "typeDocMeta", $actionDocMeta.returnTypeDocMeta)
 #end
 #end
