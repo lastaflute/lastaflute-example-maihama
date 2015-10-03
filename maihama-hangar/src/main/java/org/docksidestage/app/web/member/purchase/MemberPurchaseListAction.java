@@ -18,16 +18,11 @@ package org.docksidestage.app.web.member.purchase;
 import javax.annotation.Resource;
 
 import org.dbflute.cbean.result.PagingResultBean;
-import org.dbflute.exception.EntityAlreadyDeletedException;
-import org.dbflute.exception.EntityDuplicatedException;
-import org.dbflute.optional.OptionalEntity;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.paging.SearchPagingBean;
-import org.docksidestage.dbflute.cbean.PurchaseCB;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exbhv.PurchaseBhv;
-import org.docksidestage.dbflute.exentity.Member;
 import org.docksidestage.dbflute.exentity.Purchase;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
@@ -41,12 +36,8 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    // -----------------------------------------------------
-    //                                          DI Component
-    //                                          ------------
     @Resource
     private MemberBhv memberBhv;
-
     @Resource
     private PurchaseBhv purchaseBhv;
 
@@ -56,60 +47,33 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     @Execute
     public JsonResponse<SearchPagingBean<MemberPurchaseSearchRowBean>> index(Integer memberId, OptionalThing<Integer> pageNumber,
             MemberPurchaseListBody body) {
-        Integer pageNumberValue = pageNumber.orElse(1);
-        PagingResultBean<Purchase> page = selectPurchasePage(memberId, pageNumberValue);
-
-        SearchPagingBean<MemberPurchaseSearchRowBean> bean = new SearchPagingBean<>(page);
+        PagingResultBean<Purchase> page = selectPurchasePage(memberId, pageNumber.orElse(1));
+        SearchPagingBean<MemberPurchaseSearchRowBean> bean = createPagingBean(page);
         bean.items = page.mappingList(purchase -> {
             return mappingToBean(purchase);
         });
-
         return asJson(bean);
     }
 
     @Execute
-    public JsonResponse<Void> delete(MemberPurchaseListBody form) {
-        validate(form, messages -> {});
-
-        try {
-            Purchase purchase = new Purchase();
-            purchase.setPurchaseId(form.purchaseId);
-            purchaseBhv.deleteNonstrict(purchase); // no optimistic lock
-        } catch (EntityAlreadyDeletedException e) {
-            // already deleted
-        } catch (EntityDuplicatedException e) {
-            // entity duplicated
-        }
-
+    public JsonResponse<Void> delete(MemberPurchaseListBody body) {
+        validate(body, messages -> {});
+        Purchase purchase = new Purchase();
+        purchase.setPurchaseId(body.purchaseId);
+        purchaseBhv.deleteNonstrict(purchase);
         return JsonResponse.asEmptyBody();
     }
 
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
-    protected OptionalEntity<Member> selectMember(Integer memberId) {
-        return memberBhv.selectEntity(cb -> {
-            cb.query().setMemberId_Equal(memberId);
-        });
-    }
-
     protected PagingResultBean<Purchase> selectPurchasePage(Integer memberId, Integer pageNumber) {
         return purchaseBhv.selectPage(cb -> {
-            setupMemberPurchaseCB(memberId, cb);
+            cb.setupSelect_Product();
+            cb.query().setMemberId_Equal(memberId);
+            cb.query().addOrderBy_PurchaseDatetime_Desc();
             cb.paging(getPagingPageSize(), pageNumber);
         });
-    }
-
-    protected Integer selectCount(Integer memberId, Integer pageNumber) {
-        return purchaseBhv.selectCount(cb -> {
-            setupMemberPurchaseCB(memberId, cb);
-        });
-    }
-
-    private void setupMemberPurchaseCB(Integer memberId, PurchaseCB cb) {
-        cb.setupSelect_Product();
-        cb.query().setMemberId_Equal(memberId);
-        cb.query().addOrderBy_PurchaseDatetime_Desc();
     }
 
     // ===================================================================================
