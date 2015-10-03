@@ -47,7 +47,7 @@ public abstract class MaihamaFwAssistantDirector extends CachedFwAssistantDirect
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    protected MaihamaConfig maihamaConfig;
+    private MaihamaConfig maihamaConfig;
 
     // ===================================================================================
     //                                                                              Assist
