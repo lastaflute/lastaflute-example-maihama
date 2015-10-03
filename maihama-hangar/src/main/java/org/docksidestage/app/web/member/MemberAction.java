@@ -15,24 +15,18 @@
  */
 package org.docksidestage.app.web.member;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import javax.annotation.Resource;
 
-import org.dbflute.cbean.result.ListResultBean;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.dbflute.allcommon.CDef;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
-import org.docksidestage.dbflute.exbhv.MemberStatusBhv;
 import org.docksidestage.dbflute.exentity.Member;
-import org.docksidestage.dbflute.exentity.MemberStatus;
 import org.lastaflute.web.Execute;
-import org.lastaflute.web.callback.ActionRuntime;
 import org.lastaflute.web.response.JsonResponse;
 
 /**
  * @author iwamatsu0430
+ * @author jflute
  */
 public class MemberAction extends HangarBaseAction {
 
@@ -40,9 +34,7 @@ public class MemberAction extends HangarBaseAction {
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    protected MemberBhv memberBhv;
-    @Resource
-    protected MemberStatusBhv memberStatusBhv;
+    private MemberBhv memberBhv;
 
     // ===================================================================================
     //                                                                             Execute
@@ -76,36 +68,6 @@ public class MemberAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
-    protected Member selectMember(Integer memberId) {
-        return memberBhv.selectEntity(cb -> {
-            cb.specify().derivedMemberLogin().max(loginCB -> {
-                loginCB.specify().columnLoginDatetime();
-            } , Member.ALIAS_latestLoginDatetime);
-            cb.query().setMemberId_Equal(memberId);
-            cb.query().setMemberStatusCode_InScope_ServiceAvailable();
-        }).get();
-    }
-
-    protected Map<String, String> prepareMemberStatusMap() {
-        ListResultBean<MemberStatus> statusList = memberStatusBhv.selectList(cb -> {
-            cb.query().addOrderBy_DisplayOrder_Asc();
-        });
-        Map<String, String> statusMap = new LinkedHashMap<String, String>();
-        statusList.forEach(status -> {
-            statusMap.put(status.getMemberStatusCode(), status.getMemberStatusName());
-        });
-        return statusMap;
-    }
-
-    protected String selectMemberStatusCode(Integer memberId) {
-        return memberBhv.selectEntity(cb -> {
-            cb.specify().columnMemberStatusCode();
-            cb.query().setMemberId_Equal(memberId);
-        }).map(member -> {
-            return member.getMemberStatusCode();
-        }).orElse("");
-    }
-
     private String selectMemberStatusName(Integer memberId) {
         return memberBhv.selectEntity(cb -> {
             cb.setupSelect_MemberStatus();
@@ -116,28 +78,5 @@ public class MemberAction extends HangarBaseAction {
                 return status.getMemberStatusName();
             });
         }).orElse("");
-    }
-
-    // ===================================================================================
-    //                                                                            Callback
-    //                                                                            ========
-    @Override
-    public void hookFinally(ActionRuntime runtime) {
-        if (runtime.isForwardToHtml()) {
-            prepareListBox(runtime); // 会員ステータスなどリストボックスの構築
-        }
-        super.hookFinally(runtime);
-    }
-
-    // ===================================================================================
-    //                                                                               Logic
-    //                                                                               =====
-    protected void prepareListBox(ActionRuntime runtime) { // ここはアプリによって色々かと by jflute
-        ListResultBean<MemberStatus> statusList = memberStatusBhv.selectList(cb -> {
-            cb.query().addOrderBy_DisplayOrder_Asc();
-        });
-        Map<String, String> statusMap = new LinkedHashMap<String, String>();
-        statusList.forEach(status -> statusMap.put(status.getMemberStatusCode(), status.getMemberStatusName()));
-        runtime.registerData("memberStatusMap", statusMap);
     }
 }

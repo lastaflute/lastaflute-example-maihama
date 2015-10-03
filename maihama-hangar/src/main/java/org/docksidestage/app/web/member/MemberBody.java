@@ -15,10 +15,9 @@
  */
 package org.docksidestage.app.web.member;
 
-import org.hibernate.validator.constraints.NotBlank;
+import org.lastaflute.web.validation.Required;
 
 /**
- * 会員に対する操作の汎用ActionForm。
  * @author jflute
  * @author iwamatsu0430
  */
@@ -26,13 +25,13 @@ public class MemberBody {
 
     public Integer memberId;
 
-    @NotBlank
+    @Required
     public String memberName;
 
-    @NotBlank
+    @Required
     public String memberAccount;
 
-    @NotBlank
+    @Required
     public String memberStatusCode;
 
     public String birthdate;

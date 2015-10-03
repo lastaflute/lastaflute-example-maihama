@@ -18,16 +18,21 @@ package org.docksidestage.app.web.member;
 import java.time.LocalDate;
 
 import org.docksidestage.dbflute.allcommon.CDef;
+import org.lastaflute.web.validation.Required;
 
 /**
  * @author jflute
  */
-public class MemberSearchForm {
+public class MemberAddForm {
 
+    @Required
     public String memberName;
+
+    @Required
+    public String memberAccount;
+
+    public LocalDate birthdate;
+
+    @Required
     public CDef.MemberStatus memberStatus;
-    public String purchaseProductName;
-    public boolean unpaid;
-    public LocalDate formalizedFrom;
-    public LocalDate formalizedTo;
 }

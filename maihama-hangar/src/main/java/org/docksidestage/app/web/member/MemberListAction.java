@@ -16,12 +16,9 @@
 package org.docksidestage.app.web.member;
 
 import java.time.LocalDateTime;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.dbflute.cbean.result.ListResultBean;
 import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
@@ -31,9 +28,7 @@ import org.docksidestage.dbflute.cbean.MemberCB;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exbhv.MemberStatusBhv;
 import org.docksidestage.dbflute.exentity.Member;
-import org.docksidestage.dbflute.exentity.MemberStatus;
 import org.lastaflute.web.Execute;
-import org.lastaflute.web.callback.ActionRuntime;
 import org.lastaflute.web.response.JsonResponse;
 
 /**
@@ -45,38 +40,10 @@ public class MemberListAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    // -----------------------------------------------------
-    //                                          DI Component
-    //                                          ------------
     @Resource
-    protected MemberBhv memberBhv;
-
+    private MemberBhv memberBhv;
     @Resource
-    protected MemberStatusBhv memberStatusBhv;
-
-    // -----------------------------------------------------
-    //                                          Display Data
-    //                                          ------------
-    public Map<String, String> memberStatusMap;
-
-    // ===================================================================================
-    //                                                                               Hook
-    //                                                                              ======
-    @Override
-    protected void setupHtmlData(ActionRuntime runtime) {
-        super.setupHtmlData(runtime);
-        prepareListBox();
-    }
-
-    protected void prepareListBox() {
-        ListResultBean<MemberStatus> statusList = memberStatusBhv.selectList(cb -> {
-            cb.query().addOrderBy_DisplayOrder_Asc();
-        });
-        Map<String, String> statusMap = new LinkedHashMap<String, String>();
-        statusMap.put("", "select");
-        statusList.forEach(status -> statusMap.put(status.getMemberStatusCode(), status.getMemberStatusName()));
-        memberStatusMap = statusMap;
-    }
+    private MemberStatusBhv memberStatusBhv;
 
     // ===================================================================================
     //                                                                             Execute
