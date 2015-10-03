@@ -39,7 +39,7 @@ map:{
     # settings for common project of all web applications
     ; commonMap = map:{
         ; path = ..
-        ; freeGenList = list:{ env ; config ; label ; message }
+        ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; doc }
         ; propertiesHtmlList = list:{ env ; config ; label ; message }
     }
 

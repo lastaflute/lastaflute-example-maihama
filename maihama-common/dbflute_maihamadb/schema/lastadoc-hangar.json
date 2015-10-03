@@ -56,7 +56,7 @@
       "description": null,
       "typeName": "org.docksidestage.app.web.member.MemberAction",
       "simpleTypeName": "MemberAction",
-      "typeComment": "/**\n * @author iwamatsu0430\n */\n",
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
       "methodName": "update",
       "methodComment": null,
       "annotationList": [
@@ -86,7 +86,7 @@
             "value": null,
             "comment": null,
             "annotationList": [
-              "NotBlank"
+              "Required"
             ],
             "nestTypeDocMetaList": []
           },
@@ -97,7 +97,7 @@
             "value": null,
             "comment": null,
             "annotationList": [
-              "NotBlank"
+              "Required"
             ],
             "nestTypeDocMetaList": []
           },
@@ -108,7 +108,7 @@
             "value": null,
             "comment": null,
             "annotationList": [
-              "NotBlank"
+              "Required"
             ],
             "nestTypeDocMetaList": []
           },
@@ -138,7 +138,7 @@
       "description": null,
       "typeName": "org.docksidestage.app.web.member.MemberAction",
       "simpleTypeName": "MemberAction",
-      "typeComment": "/**\n * @author iwamatsu0430\n */\n",
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
       "methodName": "info",
       "methodComment": null,
       "annotationList": [
