@@ -54,10 +54,7 @@ public class SigninAction extends DocksideBaseAction {
             form.clearSecurityInfo();
             return asHtml(path_Signin_SigninJsp);
         });
-        String email = form.email;
-        String password = form.password;
-        boolean rememberMe = form.isRememberMeTrue();
-        return docksideLoginAssist.loginRedirect(email, password, op -> op.rememberMe(rememberMe), () -> {
+        return docksideLoginAssist.loginRedirect(form.email, form.password, op -> op.rememberMe(form.rememberMe), () -> {
             return redirect(RootAction.class);
         });
     }

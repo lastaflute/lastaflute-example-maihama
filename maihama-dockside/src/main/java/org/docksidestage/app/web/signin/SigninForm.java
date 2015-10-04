@@ -15,8 +15,7 @@
  */
 package org.docksidestage.app.web.signin;
 
-import org.docksidestage.dbflute.allcommon.CDef;
-import org.hibernate.validator.constraints.NotBlank;
+import org.lastaflute.web.validation.Required;
 
 /**
  * The form of member's Login.
@@ -24,17 +23,13 @@ import org.hibernate.validator.constraints.NotBlank;
  */
 public class SigninForm {
 
-    @NotBlank
+    @Required
     public String email;
 
-    @NotBlank
+    @Required
     public String password;
 
-    public String rememberMe;
-
-    public boolean isRememberMeTrue() {
-        return CDef.Flg.True.code().equals(rememberMe);
-    }
+    public boolean rememberMe;
 
     public void clearSecurityInfo() {
         password = null;
