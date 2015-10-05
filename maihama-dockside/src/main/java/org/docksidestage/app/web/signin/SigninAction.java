@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 import org.docksidestage.app.web.RootAction;
 import org.docksidestage.app.web.base.DocksideBaseAction;
 import org.docksidestage.app.web.base.login.DocksideLoginAssist;
-import org.docksidestage.dbflute.exbhv.MemberBhv;
+import org.docksidestage.mylasta.action.DocksideMessages;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
 
@@ -34,8 +34,6 @@ public class SigninAction extends DocksideBaseAction {
     //                                                                           =========
     @Resource
     private DocksideLoginAssist docksideLoginAssist;
-    @Resource
-    private MemberBhv memberBhv;
 
     // ===================================================================================
     //                                                                             Execute
@@ -49,13 +47,21 @@ public class SigninAction extends DocksideBaseAction {
     }
 
     @Execute
-    public HtmlResponse doSignin(SigninForm form) {
-        validate(form, messages -> {} , () -> {
+    public HtmlResponse signin(SigninForm form) {
+        validate(form, messages -> moreValidate(form, messages), () -> {
             form.clearSecurityInfo();
             return asHtml(path_Signin_SigninJsp);
         });
         return docksideLoginAssist.loginRedirect(form.email, form.password, op -> op.rememberMe(form.rememberMe), () -> {
             return redirect(RootAction.class);
         });
+    }
+
+    private void moreValidate(SigninForm form, DocksideMessages messages) {
+        if (isNotEmpty(form.email) && isNotEmpty(form.password)) {
+            if (!docksideLoginAssist.checkUserLoginable(form.email, form.password)) {
+                messages.addErrorsLoginFailure("email");
+            }
+        }
     }
 }

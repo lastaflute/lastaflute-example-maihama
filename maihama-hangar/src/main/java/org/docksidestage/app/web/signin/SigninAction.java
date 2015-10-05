@@ -19,6 +19,7 @@ import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.login.HangarLoginAssist;
+import org.docksidestage.mylasta.action.HangarMessages;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
@@ -39,11 +40,17 @@ public class SigninAction extends HangarBaseAction {
     //                                                                             =======
     @Execute
     public JsonResponse<Void> index(SigninBody body) {
-        validate(body, messages -> {});
-        String email = body.email;
-        String password = body.password;
+        validate(body, messages -> moreValidate(body, messages));
         boolean rememberMe = false; // #simple_for_example no remember for now
-        hangarLoginAssist.login(email, password, op -> op.rememberMe(rememberMe));
+        hangarLoginAssist.login(body.email, body.password, op -> op.rememberMe(rememberMe));
         return JsonResponse.asEmptyBody();
+    }
+
+    private void moreValidate(SigninBody body, HangarMessages messages) {
+        if (isNotEmpty(body.email) && isNotEmpty(body.password)) {
+            if (!hangarLoginAssist.checkUserLoginable(body.email, body.password)) {
+                messages.addErrorsLoginFailure("email");
+            }
+        }
     }
 }
