@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>dockside lasta_doc</title>
+    <title>dockside lastadoc</title>
     <style type="text/css">
 * {
     margin: 0;
@@ -53,6 +53,25 @@ h4 {
 /* total info */
 .navilinkarea {
     text-align: right;
+}
+.actiontitle {
+    font-size: 1.2em;
+    color: #889977;
+}
+.actionsubtitle {
+    font-size: 1.0em;
+    color: #889977;
+}
+.actionmainvalue {
+    font-size: 1.3em;
+    color: #221188;
+}
+.actionsubvalue {
+    font-size: 1.1em;
+    color: #221188;
+}
+p.actionsubitem {
+    padding: 0.2em 0 0 1.5em;
 }
 
 /* table */
@@ -408,32 +427,32 @@ table.child, table.child td, table.child th {
 /member/add/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.MemberAddAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberAddAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Member_MemberAddJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberAddJsp)</span></p>
 
 <h2 id="/member/add/register">
 /member/add/register
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.MemberAddAction#register()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberAddAction#register()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.member.MemberAddForm">MemberAddForm</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberAddForm">MemberAddForm</span></span>
 <table>
     <thead>
     <tr>
@@ -494,39 +513,39 @@ Form or Body: <span title="org.docksidestage.app.web.member.MemberAddForm">Membe
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Member_MemberAddJsp),redirect(MemberListAction.class)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberAddJsp),redirect(MemberListAction.class)</span></p>
 
 <h2 id="/member/edit/{memberId:Integer}">
 /member/edit/{memberId:Integer}
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.MemberEditAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberEditAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Member_MemberEditJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberEditJsp)</span></p>
 
 <h2 id="/member/edit/update">
 /member/edit/update
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.MemberEditAction#update()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberEditAction#update()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.member.MemberEditForm">MemberEditForm</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberEditForm">MemberEditForm</span></span>
 <table>
     <thead>
     <tr>
@@ -658,23 +677,23 @@ Form or Body: <span title="org.docksidestage.app.web.member.MemberEditForm">Memb
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Member_MemberEditJsp),redirectById(MemberEditAction.class, member.getMemberId()</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberEditJsp),redirectById(MemberEditAction.class, member.getMemberId()</span></p>
 
 <h2 id="/member/edit/withdrawal">
 /member/edit/withdrawal
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.MemberEditAction#withdrawal()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberEditAction#withdrawal()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.member.MemberEditForm">MemberEditForm</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberEditForm">MemberEditForm</span></span>
 <table>
     <thead>
     <tr>
@@ -806,23 +825,23 @@ Form or Body: <span title="org.docksidestage.app.web.member.MemberEditForm">Memb
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Member_MemberEditJsp),redirect(MemberListAction.class)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberEditJsp),redirect(MemberListAction.class)</span></p>
 
 <h2 id="/member/list/{pageNumber:OptionalThing<Integer>}">
 /member/list/{pageNumber:OptionalThing<Integer>}
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.MemberListAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberListAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.member.MemberSearchForm">MemberSearchForm</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberSearchForm">MemberSearchForm</span></span>
 <table>
     <thead>
     <tr>
@@ -902,71 +921,71 @@ Form or Body: <span title="org.docksidestage.app.web.member.MemberSearchForm">Me
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Member_MemberListJsp),mappingToBean(member),asHtml(path_Member_MemberListJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberListJsp),mappingToBean(member),asHtml(path_Member_MemberListJsp)</span></p>
 
 <h2 id="/member/purchase/list/{memberId:Integer}/{pageNumber:Integer}">
 /member/purchase/list/{memberId:Integer}/{pageNumber:Integer}
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_MemberPurchase_MemberPurchaseListJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_MemberPurchase_MemberPurchaseListJsp)</span></p>
 
 <h2 id="/mypage/">
 /mypage/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.mypage.MypageAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.mypage.MypageAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>new MypageProductBean(member),asHtml(path_Mypage_MypageJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">new MypageProductBean(member),asHtml(path_Mypage_MypageJsp)</span></p>
 
 <h2 id="/product/detail/{productId:Integer}">
 /product/detail/{productId:Integer}
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.product.ProductDetailAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.product.ProductDetailAction#index()</span>
 </p>
-<p>
-Annotations: [AllowAnyoneAccess, Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Product_ProductListJsp),asHtml(path_Product_ProductDetailJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Product_ProductListJsp),asHtml(path_Product_ProductDetailJsp)</span></p>
 
 <h2 id="/product/list/{pageNumber:OptionalThing<Integer>}">
 /product/list/{pageNumber:OptionalThing<Integer>}
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.product.ProductListAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.product.ProductListAction#index()</span>
 </p>
-<p>
-Annotations: [AllowAnyoneAccess, Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.product.ProductSearchForm">ProductSearchForm</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.product.ProductSearchForm">ProductSearchForm</span></span>
 <table>
     <thead>
     <tr>
@@ -1013,90 +1032,90 @@ Form or Body: <span title="org.docksidestage.app.web.product.ProductSearchForm">
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Product_ProductListJsp),mappingToBean(product),asHtml(path_Product_ProductListJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Product_ProductListJsp),mappingToBean(product),asHtml(path_Product_ProductListJsp)</span></p>
 
 <h2 id="/profile/">
 /profile/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.profile.ProfileAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.profile.ProfileAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Profile_ProfileJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Profile_ProfileJsp)</span></p>
 
 <h2 id="/purchase/list/{pageNumber:OptionalThing<Integer>}">
 /purchase/list/{pageNumber:OptionalThing<Integer>}
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.purchase.PurchaseListAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.purchase.PurchaseListAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * Action class for purchase list page.
  * @author toshiaki.arai
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.purchase.PurchaseSearchForm">PurchaseSearchForm</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.purchase.PurchaseSearchForm">PurchaseSearchForm</span></span>
 
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>mappingToBean(purchase),asHtml(path_Purchase_PurchaseListJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">mappingToBean(purchase),asHtml(path_Purchase_PurchaseListJsp)</span></p>
 
 <h2 id="/root/">
 /root/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.RootAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.RootAction#index()</span>
 </p>
-<p>
-Annotations: [AllowAnyoneAccess, Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>redirect(MypageAction.class)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">redirect(MypageAction.class)</span></p>
 
 <h2 id="/signin/">
 /signin/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.signin.SigninAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signin.SigninAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>redirect(RootAction.class),asHtml(path_Signin_SigninJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">redirect(RootAction.class),asHtml(path_Signin_SigninJsp)</span></p>
 
 <h2 id="/signin/doSignin">
 /signin/doSignin
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.signin.SigninAction#doSignin()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signin.SigninAction#doSignin()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.signin.SigninForm">SigninForm</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signin.SigninForm">SigninForm</span></span>
 <table>
     <thead>
     <tr>
@@ -1145,58 +1164,58 @@ Form or Body: <span title="org.docksidestage.app.web.signin.SigninForm">SigninFo
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Signin_SigninJsp),docksideLoginAssist.loginRedirect(email, password,  op -> op.rememberMe(rememberMe),redirect(RootAction.class)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Signin_SigninJsp),docksideLoginAssist.loginRedirect(email, password,  op -> op.rememberMe(rememberMe),redirect(RootAction.class)</span></p>
 
 <h2 id="/signout/">
 /signout/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.signout.SignoutAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signout.SignoutAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author toshiaki.arai
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>redirect(SigninAction.class)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">redirect(SigninAction.class)</span></p>
 
 <h2 id="/signup/">
 /signup/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.signup.SignupAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#index()</span>
 </p>
-<p>
-Annotations: [AllowAnyoneAccess, Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author annie_pocket
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Signup_SignupJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Signup_SignupJsp)</span></p>
 
 <h2 id="/signup/doSignup">
 /signup/doSignup
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.signup.SignupAction#doSignup()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#doSignup()</span>
 </p>
-<p>
-Annotations: [AllowAnyoneAccess, Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author annie_pocket
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span></span>
 <table>
     <thead>
     <tr>
@@ -1270,24 +1289,24 @@ Form or Body: <span title="org.docksidestage.app.web.signup.SignupForm">SignupFo
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Signup_SignupJsp),redirect(MypageAction.class)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Signup_SignupJsp),redirect(MypageAction.class)</span></p>
 
 <h2 id="/signup/register">
 /signup/register
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.signup.SignupAction#register()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#register()</span>
 </p>
-<p>
-Annotations: [AllowAnyoneAccess, Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author annie_pocket
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span></span>
 <table>
     <thead>
     <tr>
@@ -1361,41 +1380,41 @@ Form or Body: <span title="org.docksidestage.app.web.signup.SignupForm">SignupFo
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>redirect(SigninAction.class)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">redirect(SigninAction.class)</span></p>
 
 <h2 id="/withdrawal/">
 /withdrawal/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.withdrawal.WithdrawalAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.withdrawal.WithdrawalAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author annie_pocket
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Withdrawal_WithdrawalJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Withdrawal_WithdrawalJsp)</span></p>
 
 <h2 id="/withdrawal/confirm">
 /withdrawal/confirm
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.withdrawal.WithdrawalAction#confirm()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.withdrawal.WithdrawalAction#confirm()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author annie_pocket
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.withdrawal.WithdrawalForm">WithdrawalForm</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.withdrawal.WithdrawalForm">WithdrawalForm</span></span>
 <table>
     <thead>
     <tr>
@@ -1432,24 +1451,24 @@ Form or Body: <span title="org.docksidestage.app.web.withdrawal.WithdrawalForm">
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>asHtml(path_Withdrawal_WithdrawalJsp),asHtml(path_Withdrawal_WithdrawalConfirmJsp)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Withdrawal_WithdrawalJsp),asHtml(path_Withdrawal_WithdrawalConfirmJsp)</span></p>
 
 <h2 id="/withdrawal/done">
 /withdrawal/done
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.withdrawal.WithdrawalAction#done()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.withdrawal.WithdrawalAction#done()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author annie_pocket
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.withdrawal.WithdrawalForm">WithdrawalForm</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.withdrawal.WithdrawalForm">WithdrawalForm</span></span>
 <table>
     <thead>
     <tr>
@@ -1486,8 +1505,8 @@ Form or Body: <span title="org.docksidestage.app.web.withdrawal.WithdrawalForm">
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-<p>redirect(SignoutAction.class)</p>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">redirect(SignoutAction.class)</span></p>
 
 </body>
 </html>

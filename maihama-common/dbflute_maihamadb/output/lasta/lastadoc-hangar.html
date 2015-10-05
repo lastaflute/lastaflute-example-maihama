@@ -54,6 +54,25 @@ h4 {
 .navilinkarea {
     text-align: right;
 }
+.actiontitle {
+    font-size: 1.2em;
+    color: #889977;
+}
+.actionsubtitle {
+    font-size: 1.0em;
+    color: #889977;
+}
+.actionmainvalue {
+    font-size: 1.3em;
+    color: #221188;
+}
+.actionsubvalue {
+    font-size: 1.1em;
+    color: #221188;
+}
+p.actionsubitem {
+    padding: 0.2em 0 0 1.5em;
+}
 
 /* table */
 table {
@@ -334,17 +353,17 @@ table.child, table.child td, table.child th {
 /following/follow
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.following.FollowingAction#follow()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.following.FollowingAction#follow()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.following.FollowingBody">FollowingBody</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.following.FollowingBody">FollowingBody</span></span>
 <table>
     <thead>
     <tr>
@@ -381,23 +400,23 @@ Form or Body: <span title="org.docksidestage.app.web.following.FollowingBody">Fo
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
 
 <h2 id="/member/update">
 /member/update
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.MemberAction#update()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberAction#update()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.member.MemberBody">MemberBody</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberBody">MemberBody</span></span>
 <table>
     <thead>
     <tr>
@@ -469,23 +488,23 @@ Form or Body: <span title="org.docksidestage.app.web.member.MemberBody">MemberBo
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
 
 <h2 id="/member/info">
 /member/info
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.MemberAction#info()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberAction#info()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoBean&gt;">JsonResponse&lt;MemberInfoBean&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoBean&gt;">JsonResponse&lt;MemberInfoBean&gt;</span></span>
 <table>
     <thead>
     <tr>
@@ -536,17 +555,17 @@ Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.dockside
 /member/list/{pageNumber:OptionalThing<Integer>}
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.MemberListAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberListAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  * @author iwamatsu0430
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.member.MemberSearchBody">MemberSearchBody</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberSearchBody">MemberSearchBody</span></span>
 <table>
     <thead>
     <tr>
@@ -626,7 +645,7 @@ Form or Body: <span title="org.docksidestage.app.web.member.MemberSearchBody">Me
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.MemberSearchRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;MemberSearchRowBean&gt;&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.MemberSearchRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;MemberSearchRowBean&gt;&gt;</span></span>
 <table>
     <thead>
     <tr>
@@ -699,17 +718,17 @@ Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.dockside
 /member/purchase/list/{memberId:Integer}/{pageNumber:OptionalThing<Integer>}
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  * @author iwamatsu0430
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListBody">MemberPurchaseListBody</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListBody">MemberPurchaseListBody</span></span>
 <table>
     <thead>
     <tr>
@@ -747,7 +766,7 @@ Form or Body: <span title="org.docksidestage.app.web.member.purchase.MemberPurch
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;MemberPurchaseSearchRowBean&gt;&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;MemberPurchaseSearchRowBean&gt;&gt;</span></span>
 <table>
     <thead>
     <tr>
@@ -820,17 +839,17 @@ Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.dockside
 /member/purchase/list/delete
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#delete()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#delete()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  * @author iwamatsu0430
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListBody">MemberPurchaseListBody</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListBody">MemberPurchaseListBody</span></span>
 <table>
     <thead>
     <tr>
@@ -868,22 +887,22 @@ Form or Body: <span title="org.docksidestage.app.web.member.purchase.MemberPurch
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
 
 <h2 id="/mypage/">
 /mypage/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.mypage.MypageAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.mypage.MypageAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author shunsuke.tadokoro
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.mypage.MypageBean&gt;">JsonResponse&lt;MypageBean&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.mypage.MypageBean&gt;">JsonResponse&lt;MypageBean&gt;</span></span>
 <table>
     <thead>
     <tr>
@@ -967,17 +986,17 @@ Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.dockside
 /product/detail/{productId:Integer}
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.product.ProductDetailAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.product.ProductDetailAction#index()</span>
 </p>
-<p>
-Annotations: [AllowAnyoneAccess, Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  * @author iwamatsu0430
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;">JsonResponse&lt;ProductDetailBean&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;">JsonResponse&lt;ProductDetailBean&gt;</span></span>
 <table>
     <thead>
     <tr>
@@ -1050,17 +1069,17 @@ Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.dockside
 /product/list/{pageNumber:OptionalThing<Integer>}
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.product.ProductListAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.product.ProductListAction#index()</span>
 </p>
-<p>
-Annotations: [AllowAnyoneAccess, Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  * @author iwamatsu0430
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.product.ProductSearchBody">ProductSearchBody</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.product.ProductSearchBody">ProductSearchBody</span></span>
 <table>
     <thead>
     <tr>
@@ -1107,7 +1126,7 @@ Form or Body: <span title="org.docksidestage.app.web.product.ProductSearchBody">
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.product.ProductRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;ProductRowBean&gt;&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingBean&lt;org.docksidestage.app.web.product.ProductRowBean&gt;&gt;">JsonResponse&lt;SearchPagingBean&lt;ProductRowBean&gt;&gt;</span></span>
 <table>
     <thead>
     <tr>
@@ -1180,16 +1199,16 @@ Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.dockside
 /purchase/count
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.purchase.PurchaseAction#count()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.purchase.PurchaseAction#count()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.purchase.PurchaseProductBody">PurchaseProductBody</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.purchase.PurchaseProductBody">PurchaseProductBody</span></span>
 <table>
     <thead>
     <tr>
@@ -1229,7 +1248,7 @@ Form or Body: <span title="org.docksidestage.app.web.purchase.PurchaseProductBod
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">JsonResponse&lt;PriceBean&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">JsonResponse&lt;PriceBean&gt;</span></span>
 <table>
     <thead>
     <tr>
@@ -1258,16 +1277,16 @@ Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.dockside
 /purchase/contract
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.purchase.PurchaseAction#contract()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.purchase.PurchaseAction#contract()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.purchase.PurchaseProductBody">PurchaseProductBody</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.purchase.PurchaseProductBody">PurchaseProductBody</span></span>
 <table>
     <thead>
     <tr>
@@ -1307,7 +1326,7 @@ Form or Body: <span title="org.docksidestage.app.web.purchase.PurchaseProductBod
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">JsonResponse&lt;PriceBean&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.purchase.PriceBean&gt;">JsonResponse&lt;PriceBean&gt;</span></span>
 <table>
     <thead>
     <tr>
@@ -1336,49 +1355,49 @@ Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;org.dockside
 /root/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.RootAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.RootAction#index()</span>
 </p>
-<p>
-Annotations: [AllowAnyoneAccess, Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  * @author iwamatsu0430
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
 
 <h2 id="/root/signout">
 /root/signout
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.RootAction#signout()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.RootAction#signout()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author jflute
  * @author iwamatsu0430
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
 
 <h2 id="/signin/">
 /signin/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.signin.SigninAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signin.SigninAction#index()</span>
 </p>
-<p>
-Annotations: [Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.signin.SigninBody">SigninBody</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signin.SigninBody">SigninBody</span></span>
 <table>
     <thead>
     <tr>
@@ -1416,23 +1435,23 @@ Form or Body: <span title="org.docksidestage.app.web.signin.SigninBody">SigninBo
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
 
 <h2 id="/signup/">
 /signup/
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.signup.SignupAction#index()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#index()</span>
 </p>
-<p>
-Annotations: [AllowAnyoneAccess, Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  * @author jflute
  */
 </p>
-Form or Body: <span title="org.docksidestage.app.web.signup.SignupBody">SignupBody</span>
+<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signup.SignupBody">SignupBody</span></span>
 <table>
     <thead>
     <tr>
@@ -1506,23 +1525,23 @@ Form or Body: <span title="org.docksidestage.app.web.signup.SignupBody">SignupBo
     </tr>
 </table>
 
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
 
 <h2 id="/signup/confirm">
 /signup/confirm
 </h2>
 <p>
-Execute Method: org.docksidestage.app.web.signup.SignupAction#confirm()
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#confirm()</span>
 </p>
-<p>
-Annotations: [AllowAnyoneAccess, Execute]
+<p class="actionsubitem">
+<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**
  * @author iwamatsu0430
  * @author jflute
  */
 </p>
-Return as: <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+<span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
 
 </body>
 </html>

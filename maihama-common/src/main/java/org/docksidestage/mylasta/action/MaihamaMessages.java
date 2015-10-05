@@ -126,7 +126,7 @@ public class MaihamaMessages extends MaihamaLabels {
     /** The key of the message: is required */
     public static final String CONSTRAINTS_Required_MESSAGE = "{constraints.Required.message}";
 
-    /** The key of the message: invalid mail address or password */
+    /** The key of the message: could not login */
     public static final String ERRORS_LOGIN_FAILURE = "{errors.login.failure}";
 
     /** The key of the message: retry because of illegal transition */
@@ -630,7 +630,7 @@ public class MaihamaMessages extends MaihamaLabels {
     /**
      * Add the created action message for the key 'errors.login.failure' with parameters.
      * <pre>
-     * message: invalid mail address or password
+     * message: could not login
      * comment: - - - - - - - - - -/
      * </pre>
      * @param property The property name for the message. (NotNull)

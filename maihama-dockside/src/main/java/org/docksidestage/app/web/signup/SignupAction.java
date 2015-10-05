@@ -121,7 +121,7 @@ public class SignupAction extends DocksideBaseAction {
     }
 
     private String deriveMemberMailAddress(SignupForm form) {
-        return form.account + "@docksidestage.org"; // simple for example
+        return form.account + "@docksidestage.org"; // #simple_for_example
     }
 
     private String generateToken() {
