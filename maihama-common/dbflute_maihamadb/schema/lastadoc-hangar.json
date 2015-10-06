@@ -2,10 +2,10 @@
   "actionDocMetaList": [
     {
       "url": "/following/follow",
-      "description": null,
       "typeName": "org.docksidestage.app.web.following.FollowingAction",
       "simpleTypeName": "FollowingAction",
-      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */",
       "methodName": "follow",
       "methodComment": null,
       "annotationList": [
@@ -16,6 +16,7 @@
         "typeName": "org.docksidestage.app.web.following.FollowingBody",
         "simpleTypeName": "FollowingBody",
         "value": null,
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -24,6 +25,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -33,6 +35,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "Required"
@@ -46,6 +49,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
         "simpleTypeName": "JsonResponse\u003cVoid\u003e",
         "value": "JsonResponse.asEmptyBody()",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -53,10 +57,10 @@
     },
     {
       "url": "/member/update",
-      "description": null,
       "typeName": "org.docksidestage.app.web.member.MemberAction",
       "simpleTypeName": "MemberAction",
-      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */",
       "methodName": "update",
       "methodComment": null,
       "annotationList": [
@@ -67,6 +71,7 @@
         "typeName": "org.docksidestage.app.web.member.MemberBody",
         "simpleTypeName": "MemberBody",
         "value": null,
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -75,6 +80,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -84,6 +90,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "Required"
@@ -95,6 +102,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "Required"
@@ -106,6 +114,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "Required"
@@ -117,6 +126,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -128,6 +138,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
         "simpleTypeName": "JsonResponse\u003cVoid\u003e",
         "value": "JsonResponse.asEmptyBody()",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -135,10 +146,10 @@
     },
     {
       "url": "/member/info",
-      "description": null,
       "typeName": "org.docksidestage.app.web.member.MemberAction",
       "simpleTypeName": "MemberAction",
-      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */",
       "methodName": "info",
       "methodComment": null,
       "annotationList": [
@@ -150,6 +161,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.member.MemberInfoBean\u003e",
         "simpleTypeName": "JsonResponse\u003cMemberInfoBean\u003e",
         "value": "asJson(bean)",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -158,6 +170,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -167,6 +180,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -176,6 +190,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -185,10 +200,10 @@
     },
     {
       "url": "/member/list/{pageNumber:OptionalThing\u003cInteger\u003e}",
-      "description": null,
       "typeName": "org.docksidestage.app.web.member.MemberListAction",
       "simpleTypeName": "MemberListAction",
-      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */",
       "methodName": "index",
       "methodComment": null,
       "annotationList": [
@@ -199,6 +214,7 @@
         "typeName": "org.docksidestage.app.web.member.MemberSearchBody",
         "simpleTypeName": "MemberSearchBody",
         "value": null,
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -207,6 +223,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -216,6 +233,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -225,6 +243,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -234,6 +253,7 @@
             "typeName": "boolean",
             "simpleTypeName": "boolean",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -243,6 +263,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -252,6 +273,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -263,6 +285,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.member.MemberSearchRowBean\u003e\u003e",
         "simpleTypeName": "JsonResponse\u003cSearchPagingBean\u003cMemberSearchRowBean\u003e\u003e",
         "value": "mappingToBean(product),asJson(bean)",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -271,6 +294,7 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -280,6 +304,7 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -289,6 +314,7 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -298,28 +324,101 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "items",
-            "typeName": "java.util.List",
-            "simpleTypeName": "List",
+            "typeName": "java.util.List\u003corg.docksidestage.app.web.member.MemberSearchRowBean\u003e",
+            "simpleTypeName": "List\u003cMemberSearchRowBean\u003e",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
-            "nestTypeDocMetaList": []
+            "nestTypeDocMetaList": [
+              {
+                "name": "memberId",
+                "typeName": "java.lang.Integer",
+                "simpleTypeName": "Integer",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "memberName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "memberStatusName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "formalizedDate",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "updateDatetime",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "withdrawalMember",
+                "typeName": "boolean",
+                "simpleTypeName": "boolean",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "purchaseCount",
+                "typeName": "java.lang.Integer",
+                "simpleTypeName": "Integer",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              }
+            ]
           }
         ]
       }
     },
     {
       "url": "/member/purchase/list/{memberId:Integer}/{pageNumber:OptionalThing\u003cInteger\u003e}",
-      "description": null,
       "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListAction",
       "simpleTypeName": "MemberPurchaseListAction",
-      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */",
       "methodName": "index",
       "methodComment": null,
       "annotationList": [
@@ -330,6 +429,7 @@
         "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListBody",
         "simpleTypeName": "MemberPurchaseListBody",
         "value": null,
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -338,6 +438,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -349,6 +450,7 @@
             "typeName": "java.lang.Long",
             "simpleTypeName": "Long",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -362,6 +464,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean\u003e\u003e",
         "simpleTypeName": "JsonResponse\u003cSearchPagingBean\u003cMemberPurchaseSearchRowBean\u003e\u003e",
         "value": "mappingToBean(purchase),asJson(bean)",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -370,6 +473,7 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -379,6 +483,7 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -388,6 +493,7 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -397,28 +503,91 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "items",
-            "typeName": "java.util.List",
-            "simpleTypeName": "List",
+            "typeName": "java.util.List\u003corg.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean\u003e",
+            "simpleTypeName": "List\u003cMemberPurchaseSearchRowBean\u003e",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
-            "nestTypeDocMetaList": []
+            "nestTypeDocMetaList": [
+              {
+                "name": "purchaseId",
+                "typeName": "java.lang.Long",
+                "simpleTypeName": "Long",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "purchaseDatetime",
+                "typeName": "java.time.LocalDateTime",
+                "simpleTypeName": "LocalDateTime",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "productName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "purchasePrice",
+                "typeName": "java.lang.Integer",
+                "simpleTypeName": "Integer",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "purchaseCount",
+                "typeName": "java.lang.Integer",
+                "simpleTypeName": "Integer",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "paymentComplete",
+                "typeName": "boolean",
+                "simpleTypeName": "boolean",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              }
+            ]
           }
         ]
       }
     },
     {
       "url": "/member/purchase/list/delete",
-      "description": null,
       "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListAction",
       "simpleTypeName": "MemberPurchaseListAction",
-      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */",
       "methodName": "delete",
       "methodComment": null,
       "annotationList": [
@@ -429,6 +598,7 @@
         "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListBody",
         "simpleTypeName": "MemberPurchaseListBody",
         "value": null,
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -437,6 +607,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -448,6 +619,7 @@
             "typeName": "java.lang.Long",
             "simpleTypeName": "Long",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -461,6 +633,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
         "simpleTypeName": "JsonResponse\u003cVoid\u003e",
         "value": "JsonResponse.asEmptyBody()",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -468,10 +641,10 @@
     },
     {
       "url": "/mypage/",
-      "description": "@author shunsuke.",
       "typeName": "org.docksidestage.app.web.mypage.MypageAction",
       "simpleTypeName": "MypageAction",
-      "typeComment": "/**\n * @author shunsuke.tadokoro\n */\n",
+      "description": "@author shunsuke.",
+      "typeComment": "/**\n * @author shunsuke.tadokoro\n */",
       "methodName": "index",
       "methodComment": null,
       "annotationList": [
@@ -483,6 +656,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.mypage.MypageBean\u003e",
         "simpleTypeName": "JsonResponse\u003cMypageBean\u003e",
         "value": "getUserBean(),asJson(bean),JsonResponse.asEmptyBody()",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -491,6 +665,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -500,6 +675,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -509,6 +685,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -518,6 +695,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -527,6 +705,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -536,6 +715,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -545,10 +725,10 @@
     },
     {
       "url": "/product/detail/{productId:Integer}",
-      "description": null,
       "typeName": "org.docksidestage.app.web.product.ProductDetailAction",
       "simpleTypeName": "ProductDetailAction",
-      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */",
       "methodName": "index",
       "methodComment": null,
       "annotationList": [
@@ -561,6 +741,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.product.ProductDetailBean\u003e",
         "simpleTypeName": "JsonResponse\u003cProductDetailBean\u003e",
         "value": "selectProduct(productId),asJson(mappingToBean(product)",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -569,6 +750,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -578,6 +760,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -587,6 +770,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -596,6 +780,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -605,6 +790,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -614,10 +800,10 @@
     },
     {
       "url": "/product/list/{pageNumber:OptionalThing\u003cInteger\u003e}",
-      "description": null,
       "typeName": "org.docksidestage.app.web.product.ProductListAction",
       "simpleTypeName": "ProductListAction",
-      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */",
       "methodName": "index",
       "methodComment": null,
       "annotationList": [
@@ -629,6 +815,7 @@
         "typeName": "org.docksidestage.app.web.product.ProductSearchBody",
         "simpleTypeName": "ProductSearchBody",
         "value": null,
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -637,6 +824,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -646,6 +834,7 @@
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
             "simpleTypeName": "ProductStatus",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -655,6 +844,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -666,6 +856,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.product.ProductRowBean\u003e\u003e",
         "simpleTypeName": "JsonResponse\u003cSearchPagingBean\u003cProductRowBean\u003e\u003e",
         "value": "mappingToBean(product),asJson(bean)",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -674,6 +865,7 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -683,6 +875,7 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -692,6 +885,7 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -701,28 +895,71 @@
             "typeName": "int",
             "simpleTypeName": "int",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "items",
-            "typeName": "java.util.List",
-            "simpleTypeName": "List",
+            "typeName": "java.util.List\u003corg.docksidestage.app.web.product.ProductRowBean\u003e",
+            "simpleTypeName": "List\u003cProductRowBean\u003e",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
-            "nestTypeDocMetaList": []
+            "nestTypeDocMetaList": [
+              {
+                "name": "productId",
+                "typeName": "java.lang.Integer",
+                "simpleTypeName": "Integer",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "productName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "productStatusName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "regularPrice",
+                "typeName": "java.lang.Integer",
+                "simpleTypeName": "Integer",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              }
+            ]
           }
         ]
       }
     },
     {
       "url": "/purchase/count",
-      "description": null,
       "typeName": "org.docksidestage.app.web.purchase.PurchaseAction",
       "simpleTypeName": "PurchaseAction",
-      "typeComment": "/**\n * @author iwamatsu0430\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author iwamatsu0430\n */",
       "methodName": "count",
       "methodComment": null,
       "annotationList": [
@@ -733,6 +970,7 @@
         "typeName": "org.docksidestage.app.web.purchase.PurchaseProductBody",
         "simpleTypeName": "PurchaseProductBody",
         "value": null,
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -741,6 +979,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -752,6 +991,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotNull",
@@ -766,6 +1006,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.purchase.PriceBean\u003e",
         "simpleTypeName": "JsonResponse\u003cPriceBean\u003e",
         "value": "mappingToBean(price),asJson(bean)",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -774,6 +1015,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -783,10 +1025,10 @@
     },
     {
       "url": "/purchase/contract",
-      "description": null,
       "typeName": "org.docksidestage.app.web.purchase.PurchaseAction",
       "simpleTypeName": "PurchaseAction",
-      "typeComment": "/**\n * @author iwamatsu0430\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author iwamatsu0430\n */",
       "methodName": "contract",
       "methodComment": null,
       "annotationList": [
@@ -797,6 +1039,7 @@
         "typeName": "org.docksidestage.app.web.purchase.PurchaseProductBody",
         "simpleTypeName": "PurchaseProductBody",
         "value": null,
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -805,6 +1048,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotNull"
@@ -816,6 +1060,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotNull",
@@ -830,6 +1075,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.purchase.PriceBean\u003e",
         "simpleTypeName": "JsonResponse\u003cPriceBean\u003e",
         "value": "mappingToBean(price),asJson(bean)",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -838,6 +1084,7 @@
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [],
             "nestTypeDocMetaList": []
@@ -847,10 +1094,10 @@
     },
     {
       "url": "/root/",
-      "description": null,
       "typeName": "org.docksidestage.app.web.RootAction",
       "simpleTypeName": "RootAction",
-      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */",
       "methodName": "index",
       "methodComment": null,
       "annotationList": [
@@ -863,6 +1110,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
         "simpleTypeName": "JsonResponse\u003cVoid\u003e",
         "value": "JsonResponse.asEmptyBody()",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -870,10 +1118,10 @@
     },
     {
       "url": "/root/signout",
-      "description": null,
       "typeName": "org.docksidestage.app.web.RootAction",
       "simpleTypeName": "RootAction",
-      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author jflute\n * @author iwamatsu0430\n */",
       "methodName": "signout",
       "methodComment": null,
       "annotationList": [
@@ -885,6 +1133,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
         "simpleTypeName": "JsonResponse\u003cVoid\u003e",
         "value": "JsonResponse.asEmptyBody()",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -892,10 +1141,10 @@
     },
     {
       "url": "/signin/",
-      "description": null,
       "typeName": "org.docksidestage.app.web.signin.SigninAction",
       "simpleTypeName": "SigninAction",
-      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */",
       "methodName": "index",
       "methodComment": null,
       "annotationList": [
@@ -906,6 +1155,7 @@
         "typeName": "org.docksidestage.app.web.signin.SigninBody",
         "simpleTypeName": "SigninBody",
         "value": null,
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -914,9 +1164,10 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
-              "NotBlank"
+              "Required"
             ],
             "nestTypeDocMetaList": []
           },
@@ -925,9 +1176,10 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
-              "NotBlank"
+              "Required"
             ],
             "nestTypeDocMetaList": []
           }
@@ -938,6 +1190,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
         "simpleTypeName": "JsonResponse\u003cVoid\u003e",
         "value": "JsonResponse.asEmptyBody()",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -945,10 +1198,10 @@
     },
     {
       "url": "/signup/",
-      "description": null,
       "typeName": "org.docksidestage.app.web.signup.SignupAction",
       "simpleTypeName": "SignupAction",
-      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */",
       "methodName": "index",
       "methodComment": null,
       "annotationList": [
@@ -960,6 +1213,7 @@
         "typeName": "org.docksidestage.app.web.signup.SignupBody",
         "simpleTypeName": "SignupBody",
         "value": null,
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
@@ -968,6 +1222,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -979,6 +1234,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -990,6 +1246,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -1001,6 +1258,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -1012,6 +1270,7 @@
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
+            "description": null,
             "comment": null,
             "annotationList": [
               "NotBlank"
@@ -1025,6 +1284,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
         "simpleTypeName": "JsonResponse\u003cVoid\u003e",
         "value": "JsonResponse.asEmptyBody()",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
@@ -1032,10 +1292,10 @@
     },
     {
       "url": "/signup/confirm",
-      "description": null,
       "typeName": "org.docksidestage.app.web.signup.SignupAction",
       "simpleTypeName": "SignupAction",
-      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */\n",
+      "description": null,
+      "typeComment": "/**\n * @author iwamatsu0430\n * @author jflute\n */",
       "methodName": "confirm",
       "methodComment": null,
       "annotationList": [
@@ -1048,6 +1308,7 @@
         "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
         "simpleTypeName": "JsonResponse\u003cVoid\u003e",
         "value": "JsonResponse.asEmptyBody()",
+        "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
