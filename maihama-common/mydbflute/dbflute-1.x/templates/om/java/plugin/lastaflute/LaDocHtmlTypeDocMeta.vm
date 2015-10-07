@@ -31,7 +31,9 @@
 #if ($nestTypeDocMeta.nestTypeDocMetaList.size() > 0)
     <tr>
         <td colspan="4">
+            <div class="nestedbean">
 $generator.parse("om/java/plugin/lastaflute/LaDocHtmlTypeDocMeta.vm", null, "typeDocMeta", $nestTypeDocMeta)
+            </div>
         </td>
     </tr>
 #end
