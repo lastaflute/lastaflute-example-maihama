@@ -17,7 +17,6 @@ package org.docksidestage.mylasta;
 
 import java.lang.reflect.Modifier;
 
-import org.dbflute.utflute.core.document.DocumentGenerator;
 import org.docksidestage.unit.UnitHangarTestCase;
 
 /**
@@ -25,9 +24,6 @@ import org.docksidestage.unit.UnitHangarTestCase;
  */
 public class HangarActionDefTest extends UnitHangarTestCase {
 
-    // ===================================================================================
-    //                                                                           Component
-    //                                                                           =========
     public void test_component() throws Exception {
         // ## Arrange ##
         String appWebPkg = ".app.web.";
@@ -46,13 +42,5 @@ public class HangarActionDefTest extends UnitHangarTestCase {
             }
         });
         assertMarked("exists");
-    }
-
-    // ===================================================================================
-    //                                                                            Document
-    //                                                                            ========
-    public void test_document() throws Exception {
-        DocumentGenerator documentGenerator = new DocumentGenerator();
-        documentGenerator.saveLastaDocMeta();
     }
 }
