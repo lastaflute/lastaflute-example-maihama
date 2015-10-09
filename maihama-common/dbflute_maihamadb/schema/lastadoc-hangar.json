@@ -219,16 +219,6 @@
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
-            "name": "serialVersionUID",
-            "typeName": "long",
-            "simpleTypeName": "long",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
             "name": "memberName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
@@ -444,16 +434,6 @@
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
-            "name": "serialVersionUID",
-            "typeName": "long",
-            "simpleTypeName": "long",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
             "name": "memberId",
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
@@ -622,16 +602,6 @@
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
-          {
-            "name": "serialVersionUID",
-            "typeName": "long",
-            "simpleTypeName": "long",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
           {
             "name": "memberId",
             "typeName": "java.lang.Integer",
