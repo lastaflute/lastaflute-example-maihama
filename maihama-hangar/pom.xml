@@ -69,8 +69,35 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack-boot</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
+							<includeArtifactIds>
+								javax.servlet-api, javax.servlet.jsp, javax.servlet.jsp-api
+								, jetty-boot, jetty-all, javax.el, jetty-jsp, jetty-schemas, javax.websocket-api
+							</includeArtifactIds>
+							<overWriteReleases>true</overWriteReleases>
+							<overWriteSnapshots>true</overWriteSnapshots>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
+					<packagingExcludes>
+						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar
+						, WEB-INF/lib/jetty-*.jar, WEB-INF/lib/javax.el-*.jar, WEB-INF/lib/javax.websocket-*.jar
+						, WEB-INF/lib/org.eclipse.jdt.core-*.jar
+					</packagingExcludes>
 					<webResources>
 						<resource>
 							<directory>${project.build.outputDirectory}</directory>
@@ -85,26 +112,6 @@
 						</manifest>
 					</archive>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>unpack-provided</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>unpack-dependencies</goal>
-						</goals>
-						<configuration>
-							<includeScope>provided</includeScope>
-							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
-							<includes>**/*</includes>
-							<overWriteReleases>true</overWriteReleases>
-							<overWriteSnapshots>true</overWriteSnapshots>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
