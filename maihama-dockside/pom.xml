@@ -103,6 +103,7 @@
 						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar
 						, WEB-INF/lib/jetty-*.jar, WEB-INF/lib/javax.el-*.jar, WEB-INF/lib/javax.websocket-*.jar
 						, WEB-INF/lib/org.eclipse.jdt.core-*.jar
+						, WEB-INF/lib/tomcat-*.jar
 					</packagingExcludes>
 					<webResources>
 						<resource>
@@ -147,7 +148,6 @@
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
 			<version>${jsp.version}</version>
-			<scope>provided</scope> <!-- servlet container provides -->
 		</dependency>
 		<dependency> <!-- tomcat does not provides, jetty's two jar files so here -->
 			<groupId>javax.servlet</groupId>
@@ -161,7 +161,6 @@
 		<dependency>
 			<groupId>org.dbflute.tomcat</groupId>
 			<artifactId>tomcat-boot</artifactId>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
