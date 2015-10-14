@@ -109,7 +109,7 @@
 						<resource>
 							<directory>${project.build.outputDirectory}</directory>
 							<includes>
-								<include>**/*Boot.class</include>
+								<include>**/*Boot*.class</include>
 							</includes>
 						</resource>
 					</webResources>
