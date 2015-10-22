@@ -80,9 +80,7 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
 							<includeArtifactIds>
-								javax.servlet-api, javax.servlet.jsp, javax.servlet.jsp-api
-								, jetty-boot, jetty-all, javax.el, jetty-jsp, jetty-schemas, javax.websocket-api
-								, tomcat-boot, tomcat-embed-core, tomcat-embed-logging-juli, tomcat-jasper
+								javax.servlet-api, jetty-boot, jetty-all
 							</includeArtifactIds>
 							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
@@ -95,10 +93,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<packagingExcludes>
-						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar
-						, WEB-INF/lib/jetty-*.jar, WEB-INF/lib/javax.el-*.jar, WEB-INF/lib/javax.websocket-*.jar
-						, WEB-INF/lib/org.eclipse.jdt.core-*.jar
-						, WEB-INF/lib/tomcat-*.jar
+						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar, WEB-INF/lib/jetty-*.jar
 					</packagingExcludes>
 					<webResources>
 						<resource>
@@ -136,7 +131,6 @@
 		<dependency>
 			<groupId>org.dbflute.jetty</groupId>
 			<artifactId>jetty-boot</artifactId>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>
