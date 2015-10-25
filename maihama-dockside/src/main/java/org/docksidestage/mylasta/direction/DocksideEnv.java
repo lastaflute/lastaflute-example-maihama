@@ -23,11 +23,11 @@ import org.lastaflute.core.direction.exception.ConfigPropertyNotFoundException;
  */
 public interface DocksideEnv extends MaihamaConfig {
 
-    /** The key of the configuration. e.g. localhost:8091 */
-    String SERVER_DOMAIN = "server.domain";
-
     /** The key of the configuration. e.g. dockside-support@annie.example.com */
     String MAIL_ADDRESS_SUPPORT = "mail.address.support";
+
+    /** The key of the configuration. e.g. localhost:8091 */
+    String SERVER_DOMAIN = "server.domain";
 
     /**
      * Get the value of property as {@link String}.
@@ -46,20 +46,20 @@ public interface DocksideEnv extends MaihamaConfig {
     boolean is(String propertyKey);
 
     /**
-     * Get the value for the key 'server.domain'. <br>
-     * The value is, e.g. localhost:8091 <br>
-     * comment: domain to access this application from internet, e.g. for registration mail
-     * @return The value of found property. (NotNull: if not found, exception but basically no way)
-     */
-    String getServerDomain();
-
-    /**
      * Get the value for the key 'mail.address.support'. <br>
      * The value is, e.g. dockside-support@annie.example.com <br>
      * comment: Mail Address for Dockside Support
      * @return The value of found property. (NotNull: if not found, exception but basically no way)
      */
     String getMailAddressSupport();
+
+    /**
+     * Get the value for the key 'server.domain'. <br>
+     * The value is, e.g. localhost:8091 <br>
+     * comment: domain to access this application from internet, e.g. for registration mail
+     * @return The value of found property. (NotNull: if not found, exception but basically no way)
+     */
+    String getServerDomain();
 
     /**
      * The simple implementation for configuration.
@@ -70,12 +70,12 @@ public interface DocksideEnv extends MaihamaConfig {
         /** The serial version UID for object serialization. (Default) */
         private static final long serialVersionUID = 1L;
 
-        public String getServerDomain() {
-            return get(DocksideEnv.SERVER_DOMAIN);
-        }
-
         public String getMailAddressSupport() {
             return get(DocksideEnv.MAIL_ADDRESS_SUPPORT);
+        }
+
+        public String getServerDomain() {
+            return get(DocksideEnv.SERVER_DOMAIN);
         }
     }
 }

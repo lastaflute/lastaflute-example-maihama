@@ -210,13 +210,13 @@ table.child, table.child td, table.child th {
 	</thead>
 	<tbody>
 		<tr>
-			<td class="filecell">../src/main/resources/maihama_env_production.properties</td>
+			<td class="filecell"><strong>../src/main/resources/maihama_env.properties</strong></td>
 			<td class="envtypecell">-</td>
 			<td class="langtypecell">-</td>
 			<td class="sizecell">17</td>
 			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td class="markcell">-</td>
+			<td class="markcell">-</td>
 		</tr>
 		<tr>
 			<td class="filecell">../src/main/resources/maihama_env_integration.properties</td>
@@ -258,7 +258,7 @@ table.child, table.child td, table.child th {
 			<td class="envtypecell">-</td>
 			<td class="langtypecell">-</td>
 			<td class="sizecell">8</td>
-			<td class="extendsfilecell">../src/main/resources/maihama_env_production.properties</td>
+			<td class="extendsfilecell">../src/main/resources/maihama_env.properties</td>
 			<td>&nbsp;</td>
 			<td class="markcell">-</td>
 			<td class="markcell">-</td>
@@ -309,7 +309,7 @@ table.child, table.child td, table.child th {
 			<td class="filecell"><strong>../src/main/resources/maihama_message.properties</strong></td>
 			<td class="envtypecell">-</td>
 			<td class="langtypecell">-</td>
-			<td class="sizecell">38</td>
+			<td class="sizecell">39</td>
 			<td class="extendsfilecell">../src/main/resources/maihama_label.properties</td>
 			<td>&nbsp;</td>
 			<td class="markcell">-</td>
@@ -333,8 +333,18 @@ table.child, table.child td, table.child th {
 	</thead>
 	<tbody>
 		<tr>
-			<td class="filecell">../../maihama-dockside/src/main/resources/dockside_env_production.properties</td>
+			<td class="filecell"><strong>../../maihama-dockside/src/main/resources/dockside_env.properties</strong></td>
 			<td class="envtypecell">-</td>
+			<td class="langtypecell">-</td>
+			<td class="sizecell">2</td>
+			<td class="extendsfilecell">../src/main/resources/maihama_config.properties</td>
+			<td>&nbsp;</td>
+			<td class="markcell">-</td>
+			<td class="markcell">-</td>
+		</tr>
+		<tr>
+			<td class="filecell">../../maihama-dockside/src/main/resources/dockside_env_integration.properties</td>
+			<td class="envtypecell">integration</td>
 			<td class="langtypecell">-</td>
 			<td class="sizecell">1</td>
 			<td class="extendsfilecell">../src/main/resources/maihama_config.properties</td>
@@ -345,16 +355,6 @@ table.child, table.child td, table.child th {
 			</td>
 		</tr>
 		<tr>
-			<td class="filecell">../../maihama-dockside/src/main/resources/dockside_env_integration.properties</td>
-			<td class="envtypecell">integration</td>
-			<td class="langtypecell">-</td>
-			<td class="sizecell">1</td>
-			<td class="extendsfilecell">../src/main/resources/maihama_config.properties</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
 			<td class="filecell">../../maihama-dockside/src/main/resources/dockside_env_production.properties</td>
 			<td class="envtypecell">production</td>
 			<td class="langtypecell">-</td>
@@ -362,7 +362,9 @@ table.child, table.child td, table.child th {
 			<td class="extendsfilecell">../src/main/resources/maihama_config.properties</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td class="keylistcell">
+				<p class="diffprop">mail.address.support</p>
+			</td>
 		</tr>
 	</tbody>
 </table>
@@ -386,7 +388,7 @@ table.child, table.child td, table.child th {
 			<td class="envtypecell">-</td>
 			<td class="langtypecell">-</td>
 			<td class="sizecell">3</td>
-			<td class="extendsfilecell">../../maihama-dockside/src/main/resources/dockside_env_production.properties</td>
+			<td class="extendsfilecell">../../maihama-dockside/src/main/resources/dockside_env.properties</td>
 			<td>&nbsp;</td>
 			<td class="markcell">-</td>
 			<td class="markcell">-</td>
@@ -463,17 +465,14 @@ table.child, table.child td, table.child th {
 	</thead>
 	<tbody>
 		<tr>
-			<td class="filecell">../../maihama-hangar/src/main/resources/hangar_env_production.properties</td>
+			<td class="filecell"><strong>../../maihama-hangar/src/main/resources/hangar_env.properties</strong></td>
 			<td class="envtypecell">-</td>
 			<td class="langtypecell">-</td>
-			<td class="sizecell">0</td>
+			<td class="sizecell">2</td>
 			<td class="extendsfilecell">../src/main/resources/maihama_config.properties</td>
 			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td class="keylistcell">
-				<p class="diffprop">server.domain</p>
-				<p class="diffprop">mail.address.support</p>
-			</td>
+			<td class="markcell">-</td>
+			<td class="markcell">-</td>
 		</tr>
 		<tr>
 			<td class="filecell">../../maihama-hangar/src/main/resources/hangar_env_integration.properties</td>
@@ -483,7 +482,10 @@ table.child, table.child td, table.child th {
 			<td class="extendsfilecell">../src/main/resources/maihama_config.properties</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td class="keylistcell">
+				<p class="diffprop">mail.address.support</p>
+				<p class="diffprop">server.domain</p>
+			</td>
 		</tr>
 		<tr>
 			<td class="filecell">../../maihama-hangar/src/main/resources/hangar_env_production.properties</td>
@@ -493,7 +495,10 @@ table.child, table.child td, table.child th {
 			<td class="extendsfilecell">../src/main/resources/maihama_config.properties</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td class="keylistcell">
+				<p class="diffprop">mail.address.support</p>
+				<p class="diffprop">server.domain</p>
+			</td>
 		</tr>
 	</tbody>
 </table>
@@ -517,7 +522,7 @@ table.child, table.child td, table.child th {
 			<td class="envtypecell">-</td>
 			<td class="langtypecell">-</td>
 			<td class="sizecell">3</td>
-			<td class="extendsfilecell">../../maihama-hangar/src/main/resources/hangar_env_production.properties</td>
+			<td class="extendsfilecell">../../maihama-hangar/src/main/resources/hangar_env.properties</td>
 			<td>&nbsp;</td>
 			<td class="markcell">-</td>
 			<td class="markcell">-</td>
@@ -604,8 +609,8 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell">cool</td>
-					<td class="uniquenocell">2</td>
+					<td class="valuecell">hot</td>
+					<td class="uniquenocell">1</td>
 					<td class="commentcell">The&nbsp;mode&nbsp;of&nbsp;Lasta&nbsp;Di's&nbsp;smart-deploy,&nbsp;should&nbsp;be&nbsp;cool&nbsp;in&nbsp;production&nbsp;(e.g.&nbsp;hot,&nbsp;cool,&nbsp;warm)</td>
 				</tr>
 				<tr>
@@ -640,8 +645,8 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell">false</td>
-					<td class="uniquenocell">2</td>
+					<td class="valuecell">true</td>
+					<td class="uniquenocell">1</td>
 					<td class="commentcell">Is&nbsp;development&nbsp;environment&nbsp;here?&nbsp;(used&nbsp;for&nbsp;various&nbsp;purpose,&nbsp;you&nbsp;should&nbsp;set&nbsp;false&nbsp;if&nbsp;unknown)</td>
 				</tr>
 				<tr>
@@ -676,8 +681,8 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell">Production</td>
-					<td class="uniquenocell">3</td>
+					<td class="valuecell">Local&nbsp;Development</td>
+					<td class="uniquenocell">1</td>
 					<td class="commentcell">The&nbsp;title&nbsp;of&nbsp;environment&nbsp;(e.g.&nbsp;local&nbsp;or&nbsp;integartion&nbsp;or&nbsp;production)</td>
 				</tr>
 				<tr>
@@ -750,7 +755,7 @@ table.child, table.child td, table.child th {
 					<td class="langtypecell">-</td>
 					<td class="valuecell">0</td>
 					<td class="uniquenocell">1</td>
-					<td class="commentcell">The&nbsp;milliseconds&nbsp;for&nbsp;(relative&nbsp;or&nbsp;absolute)&nbsp;adjust&nbsp;time&nbsp;(set&nbsp;only&nbsp;when&nbsp;test)&nbsp;@LongType</td>
+					<td class="commentcell">The&nbsp;milliseconds&nbsp;for&nbsp;(relative&nbsp;or&nbsp;absolute)&nbsp;adjust&nbsp;time&nbsp;(set&nbsp;only&nbsp;when&nbsp;test)&nbsp;@LongType&nbsp;*dynamic&nbsp;in&nbsp;development</td>
 				</tr>
 				<tr>
 					<td class="envtypecell">integration</td>
@@ -784,8 +789,8 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell">info</td>
-					<td class="uniquenocell">2</td>
+					<td class="valuecell">debug</td>
+					<td class="uniquenocell">1</td>
 					<td class="commentcell">The&nbsp;log&nbsp;level&nbsp;for&nbsp;logback</td>
 				</tr>
 				<tr>
@@ -820,8 +825,8 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell">off</td>
-					<td class="uniquenocell">2</td>
+					<td class="valuecell">debug</td>
+					<td class="uniquenocell">1</td>
 					<td class="commentcell">The&nbsp;log&nbsp;console&nbsp;level&nbsp;for&nbsp;logback</td>
 				</tr>
 				<tr>
@@ -892,8 +897,8 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell">false</td>
-					<td class="uniquenocell">2</td>
+					<td class="valuecell">true</td>
+					<td class="uniquenocell">1</td>
 					<td class="commentcell">Does&nbsp;it&nbsp;send&nbsp;mock&nbsp;mail?&nbsp;(true:&nbsp;no&nbsp;send&nbsp;actually,&nbsp;logging&nbsp;only)</td>
 				</tr>
 				<tr>
@@ -964,8 +969,8 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell"> &nbsp;</td>
-					<td class="uniquenocell">2</td>
+					<td class="valuecell">[Test]</td>
+					<td class="uniquenocell">1</td>
 					<td class="commentcell">The&nbsp;prefix&nbsp;of&nbsp;subject&nbsp;to&nbsp;show&nbsp;test&nbsp;environment&nbsp;or&nbsp;not</td>
 				</tr>
 				<tr>
@@ -1144,9 +1149,9 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell">maihamadb</td>
-					<td class="uniquenocell">2</td>
-					<td class="commentcell">The&nbsp;password&nbsp;of&nbsp;database&nbsp;connection&nbsp;for&nbsp;JDBC</td>
+					<td class="valuecell">********</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Secure&nbsp;The&nbsp;password&nbsp;of&nbsp;database&nbsp;connection&nbsp;for&nbsp;JDBC</td>
 				</tr>
 				<tr>
 					<td class="envtypecell">integration</td>
@@ -2983,7 +2988,7 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell">invalid&nbsp;mail&nbsp;address&nbsp;or&nbsp;password</td>
+					<td class="valuecell">could&nbsp;not&nbsp;login</td>
 					<td class="uniquenocell">1</td>
 					<td class="commentcell">-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-/</td>
 				</tr>
@@ -3070,6 +3075,26 @@ table.child, table.child td, table.child th {
 			</table>
 		</td>
 	</tr>
+	<tr>
+		<td class="rownumcell">39</td>
+		<td class="keycell">errors.app.double.submit.request</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">double&nbsp;submit&nbsp;might&nbsp;be&nbsp;requested</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
 	</tbody>
 </table>
 <p class="tablesupplement">*uq: Unique No (same value, same No)</p>
@@ -3085,42 +3110,6 @@ table.child, table.child td, table.child th {
 	<tbody>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="keycell">server.domain</td>
-		<td>
-			<table class="child">
-				<tr>
-					<th>Env</th>
-					<th>Lang</th>
-					<th>Property</th>
-					<th><span title="Unique No (same value, same No)">uq</span></th>
-					<th>Comment</th>
-				</tr>
-				<tr>
-					<td class="envtypecell">-</td>
-					<td class="langtypecell">-</td>
-					<td class="valuecell">docksidestage.org</td>
-					<td class="uniquenocell">2</td>
-					<td class="commentcell">domain&nbsp;to&nbsp;access&nbsp;this&nbsp;application&nbsp;from&nbsp;internet,&nbsp;e.g.&nbsp;for&nbsp;registration&nbsp;mail&nbsp;#change_it_first</td>
-				</tr>
-				<tr>
-					<td class="envtypecell">integration</td>
-					<td class="langtypecell">-</td>
-					<td class="valuecell">docksidestage.org</td>
-					<td class="uniquenocell">2</td>
-					<td class="commentcell">domain&nbsp;to&nbsp;access&nbsp;this&nbsp;application&nbsp;from&nbsp;internet,&nbsp;e.g.&nbsp;for&nbsp;registration&nbsp;mail&nbsp;#change_it_first</td>
-				</tr>
-				<tr>
-					<td class="envtypecell">production</td>
-					<td class="langtypecell">-</td>
-					<td class="valuecell">docksidestage.org</td>
-					<td class="uniquenocell">2</td>
-					<td class="commentcell">domain&nbsp;to&nbsp;access&nbsp;this&nbsp;application&nbsp;from&nbsp;internet,&nbsp;e.g.&nbsp;for&nbsp;registration&nbsp;mail&nbsp;#change_it_first</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">2</td>
 		<td class="keycell">mail.address.support</td>
 		<td>
 			<table class="child">
@@ -3137,6 +3126,42 @@ table.child, table.child td, table.child th {
 					<td class="valuecell">dockside-support@annie.example.com</td>
 					<td class="uniquenocell">1</td>
 					<td class="commentcell">Mail&nbsp;Address&nbsp;for&nbsp;Dockside&nbsp;Support</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="keycell">server.domain</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">localhost:8091</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">domain&nbsp;to&nbsp;access&nbsp;this&nbsp;application&nbsp;from&nbsp;internet,&nbsp;e.g.&nbsp;for&nbsp;registration&nbsp;mail</td>
+				</tr>
+				<tr>
+					<td class="envtypecell">integration</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">docksidestage.org</td>
+					<td class="uniquenocell">2</td>
+					<td class="commentcell">domain&nbsp;to&nbsp;access&nbsp;this&nbsp;application&nbsp;from&nbsp;internet,&nbsp;e.g.&nbsp;for&nbsp;registration&nbsp;mail&nbsp;#change_it_first</td>
+				</tr>
+				<tr>
+					<td class="envtypecell">production</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">docksidestage.org</td>
+					<td class="uniquenocell">2</td>
+					<td class="commentcell">domain&nbsp;to&nbsp;access&nbsp;this&nbsp;application&nbsp;from&nbsp;internet,&nbsp;e.g.&nbsp;for&nbsp;registration&nbsp;mail&nbsp;#change_it_first</td>
 				</tr>
 			</table>
 		</td>
@@ -3445,28 +3470,6 @@ table.child, table.child td, table.child th {
 	<tbody>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="keycell">server.domain</td>
-		<td>
-			<table class="child">
-				<tr>
-					<th>Env</th>
-					<th>Lang</th>
-					<th>Property</th>
-					<th><span title="Unique No (same value, same No)">uq</span></th>
-					<th>Comment</th>
-				</tr>
-				<tr>
-					<td class="envtypecell">-</td>
-					<td class="langtypecell">-</td>
-					<td class="valuecell">localhost:8092</td>
-					<td class="uniquenocell">1</td>
-					<td class="commentcell">domain&nbsp;to&nbsp;access&nbsp;this&nbsp;application&nbsp;from&nbsp;internet,&nbsp;e.g.&nbsp;for&nbsp;registration&nbsp;mail</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">2</td>
 		<td class="keycell">mail.address.support</td>
 		<td>
 			<table class="child">
@@ -3483,6 +3486,28 @@ table.child, table.child td, table.child th {
 					<td class="valuecell">hangar-support@saw.example.com</td>
 					<td class="uniquenocell">1</td>
 					<td class="commentcell">Mail&nbsp;Address&nbsp;for&nbsp;Hangar&nbsp;Support</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="keycell">server.domain</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">localhost:8092</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">domain&nbsp;to&nbsp;access&nbsp;this&nbsp;application&nbsp;from&nbsp;internet,&nbsp;e.g.&nbsp;for&nbsp;registration&nbsp;mail</td>
 				</tr>
 			</table>
 		</td>

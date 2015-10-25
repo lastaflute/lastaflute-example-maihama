@@ -141,6 +141,9 @@ public class MaihamaMessages extends MaihamaLabels {
     /** The key of the message: already existing data, so retry */
     public static final String ERRORS_APP_DB_ALREADY_EXISTS = "{errors.app.db.already.exists}";
 
+    /** The key of the message: double submit might be requested */
+    public static final String ERRORS_APP_DOUBLE_SUBMIT_REQUEST = "{errors.app.double.submit.request}";
+
     /**
      * Add the created action message for the key 'errors.header' with parameters.
      * <pre>
@@ -695,6 +698,20 @@ public class MaihamaMessages extends MaihamaLabels {
     public MaihamaMessages addErrorsAppDbAlreadyExists(String property) {
         assertPropertyNotNull(property);
         add(property, new ActionMessage(ERRORS_APP_DB_ALREADY_EXISTS));
+        return this;
+    }
+
+    /**
+     * Add the created action message for the key 'errors.app.double.submit.request' with parameters.
+     * <pre>
+     * message: double submit might be requested
+     * </pre>
+     * @param property The property name for the message. (NotNull)
+     * @return this. (NotNull)
+     */
+    public MaihamaMessages addErrorsAppDoubleSubmitRequest(String property) {
+        assertPropertyNotNull(property);
+        add(property, new ActionMessage(ERRORS_APP_DOUBLE_SUBMIT_REQUEST));
         return this;
     }
 }
