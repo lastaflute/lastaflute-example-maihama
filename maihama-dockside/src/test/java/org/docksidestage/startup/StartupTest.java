@@ -43,8 +43,12 @@ public class StartupTest extends UnitDocksideTestCase {
         refresh(serviceName, appName); // for retry
     }
 
-    protected void refresh(String serviceName, String appName) throws IOException {
-        final List<String> projectNameList = Arrays.asList(serviceName + "-base", serviceName + "-common", serviceName + "-" + appName);
-        new DfRefreshResourceRequest(projectNameList, "http://localhost:8386/").refreshResources();
+    protected void refresh(String serviceName, String appName) {
+        try {
+            final List<String> projectNameList = Arrays.asList(serviceName + "-base", serviceName + "-common", serviceName + "-" + appName);
+            new DfRefreshResourceRequest(projectNameList, "http://localhost:8386/").refreshResources();
+        } catch (IOException | RuntimeException continued) {
+            log("*Cannot refresh for Eclipse, but no problem so continue: " + continued.getMessage());
+        }
     }
 }
