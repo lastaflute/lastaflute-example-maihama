@@ -15,23 +15,67 @@
  */
 package org.docksidestage.app.web.profile;
 
+import java.util.stream.Collectors;
+
 import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.DocksideBaseAction;
-import org.docksidestage.dbflute.exbhv.ProductBhv;
+import org.docksidestage.app.web.profile.ProfileBean.PurchasedProductBean;
+import org.docksidestage.dbflute.exbhv.MemberBhv;
+import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
 
 /**
  * @author jflute
+ * @author deco
  */
 public class ProfileAction extends DocksideBaseAction {
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
     @Resource
-    protected ProductBhv productBhv;
+    protected MemberBhv memberBhv;
 
+    // ===================================================================================
+    //                                                                             Execute
+    //                                                                             =======
     @Execute
     public HtmlResponse index() {
-        return asHtml(path_Profile_ProfileJsp);
+        Member member = selectMember();
+        ProfileBean bean = mappingToBean(member);
+
+        return asHtml(path_Profile_ProfileHtml).renderWith(data -> {
+            data.register("bean", bean);
+        });
+    }
+
+    // ===================================================================================
+    //                                                                              Select
+    //                                                                              ======
+    private Member selectMember() {
+        Integer memberId = getUserBean().get().getMemberId();
+        Member member = memberBhv.selectEntity(cb -> {
+            cb.setupSelect_MemberStatus();
+            cb.setupSelect_MemberServiceAsOne().withServiceRank();
+            cb.query().setMemberId_Equal(memberId);
+        }).get();
+        memberBhv.loadPurchase(member, purCB -> {
+            purCB.setupSelect_Product();
+            purCB.query().addOrderBy_PurchaseDatetime_Desc();
+        });
+        return member;
+    }
+
+    // ===================================================================================
+    //                                                                             Mapping
+    //                                                                             =======
+    private ProfileBean mappingToBean(Member member) {
+        ProfileBean bean = new ProfileBean(member);
+        bean.purchaseList = member.getPurchaseList().stream().map(purchase -> {
+            return new PurchasedProductBean(purchase);
+        }).collect(Collectors.toList());
+        return bean;
     }
 }

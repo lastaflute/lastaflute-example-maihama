@@ -17,15 +17,21 @@ package org.docksidestage.mylasta.direction;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.docksidestage.mylasta.direction.sponsor.DocksideMultipartRequestHandler;
+import org.lastaflute.thymeleaf.ThymeleafRenderingProvider;
 import org.lastaflute.web.direction.FwWebDirection;
-import org.lastaflute.web.ruts.multipart.MultipartRequestHandler;
 import org.lastaflute.web.ruts.multipart.MultipartResourceProvider;
+import org.lastaflute.web.ruts.renderer.HtmlRenderingProvider;
 
 /**
  * @author jflute
  */
 public class DocksideFwAssistantDirector extends MaihamaFwAssistantDirector {
+
+    @Resource
+    private DocksideConfig docksideConfig;
 
     @Override
     protected void setupAppConfig(List<String> nameList) {
@@ -42,11 +48,15 @@ public class DocksideFwAssistantDirector extends MaihamaFwAssistantDirector {
     @Override
     protected void prepareWebDirection(FwWebDirection direction) {
         super.prepareWebDirection(direction);
-        direction.directMultipart(new MultipartResourceProvider() {
-            @Override
-            public MultipartRequestHandler createHandler() {
-                return new DocksideMultipartRequestHandler();
-            }
-        });
+        direction.directHtmlRendering(createHtmlRenderingProvider());
+        direction.directMultipart(createMultipartResourceProvider());
+    }
+
+    protected HtmlRenderingProvider createHtmlRenderingProvider() {
+        return new ThymeleafRenderingProvider().asDevelopment(docksideConfig.isDevelopmentHere());
+    }
+
+    protected MultipartResourceProvider createMultipartResourceProvider() {
+        return () -> new DocksideMultipartRequestHandler();
     }
 }

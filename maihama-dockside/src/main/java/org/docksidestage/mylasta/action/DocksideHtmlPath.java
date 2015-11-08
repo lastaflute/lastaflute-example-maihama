@@ -47,6 +47,9 @@ public interface DocksideHtmlPath {
     /** The path of the HTML: /product/product_list.jsp */
     HtmlNext path_Product_ProductListJsp = new HtmlNext("/product/product_list.jsp");
 
+    /** The path of the HTML: /profile/profile.html */
+    HtmlNext path_Profile_ProfileHtml = new HtmlNext("/profile/profile.html");
+
     /** The path of the HTML: /profile/profile.jsp */
     HtmlNext path_Profile_ProfileJsp = new HtmlNext("/profile/profile.jsp");
 

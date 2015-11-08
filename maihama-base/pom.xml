@@ -215,11 +215,6 @@
 				<artifactId>lastaflute</artifactId>
 				<version>${lastaflute.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>org.lastaflute</groupId>
-				<artifactId>lasta-taglib</artifactId>
-				<version>${lasta.taglib.version}</version>
-			</dependency>
 
 			<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 			<!--                                                           Partner Library -->
