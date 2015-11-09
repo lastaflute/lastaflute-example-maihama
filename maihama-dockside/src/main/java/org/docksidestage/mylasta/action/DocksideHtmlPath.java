@@ -38,20 +38,17 @@ public interface DocksideHtmlPath {
     /** The path of the HTML: /member/purchase/member_purchase_list.jsp */
     HtmlNext path_MemberPurchase_MemberPurchaseListJsp = new HtmlNext("/member/purchase/member_purchase_list.jsp");
 
-    /** The path of the HTML: /mypage/mypage.jsp */
-    HtmlNext path_Mypage_MypageJsp = new HtmlNext("/mypage/mypage.jsp");
+    /** The path of the HTML: /mypage/mypage.html */
+    HtmlNext path_Mypage_MypageHtml = new HtmlNext("/mypage/mypage.html");
 
-    /** The path of the HTML: /product/product_detail.jsp */
-    HtmlNext path_Product_ProductDetailJsp = new HtmlNext("/product/product_detail.jsp");
+    /** The path of the HTML: /product/product_detail.html */
+    HtmlNext path_Product_ProductDetailHtml = new HtmlNext("/product/product_detail.html");
 
-    /** The path of the HTML: /product/product_list.jsp */
-    HtmlNext path_Product_ProductListJsp = new HtmlNext("/product/product_list.jsp");
+    /** The path of the HTML: /product/product_list.html */
+    HtmlNext path_Product_ProductListHtml = new HtmlNext("/product/product_list.html");
 
     /** The path of the HTML: /profile/profile.html */
     HtmlNext path_Profile_ProfileHtml = new HtmlNext("/profile/profile.html");
-
-    /** The path of the HTML: /profile/profile.jsp */
-    HtmlNext path_Profile_ProfileJsp = new HtmlNext("/profile/profile.jsp");
 
     /** The path of the HTML: /purchase/purchase_list.jsp */
     HtmlNext path_Purchase_PurchaseListJsp = new HtmlNext("/purchase/purchase_list.jsp");
