@@ -29,11 +29,17 @@ public interface DocksideHtmlPath {
     /** The path of the HTML: /member/member_add.jsp */
     HtmlNext path_Member_MemberAddJsp = new HtmlNext("/member/member_add.jsp");
 
+    /** The path of the HTML: /member/member_add.jsp */
+    HtmlNext path_Member_MemberAddHtml = new HtmlNext("/member/member_add.html");
+
     /** The path of the HTML: /member/member_edit.jsp */
     HtmlNext path_Member_MemberEditJsp = new HtmlNext("/member/member_edit.jsp");
 
     /** The path of the HTML: /member/member_list.jsp */
     HtmlNext path_Member_MemberListJsp = new HtmlNext("/member/member_list.jsp");
+
+    /** The path of the HTML: /member/member_list.jsp */
+    HtmlNext path_Member_MemberListHtml = new HtmlNext("/member/member_list.html");
 
     /** The path of the HTML: /member/purchase/member_purchase_list.jsp */
     HtmlNext path_MemberPurchase_MemberPurchaseListJsp = new HtmlNext("/member/purchase/member_purchase_list.jsp");

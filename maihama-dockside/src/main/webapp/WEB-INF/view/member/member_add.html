@@ -36,68 +36,47 @@
 </header>
 <main>
 <!--/* main contents */-->
-
 <div class="contents">
-	<h2 class="sg-content-title" th:text="#{labels.product.list.title}">labels.product.list.title</h2>
-	<section class="product-search-box">
-		<h3 class="sg-content-title-second">Search Condition</h3>
-		<form class="product-search-form" action="#" th:action="@{/product/list/}" method="get">
+	<h2 class="sg-content-title" th:text="#{labels.member.add.title}">labels.member.add.title</h2>
+	<section class="member-input-box">
+		<form>
 			<ul th:unless="${errors.empty}" style="display: none" th:style="'color : red;'">
 				<li th:each="er : ${errors.all}" th:text="${er.isResource()} ? #{${er.key}(${er.values})} : ${er.key}"></li>
 			</ul>
-			<ul class="product-search-condition-list">
-				<li>
-					<span>Product Name</span><input type="text" name="productName" th:value="${productName}"/>
-					<span th:unless="${errors.empty}" style="display: none" th:style="'color : red;'"
-					      th:each="er : ${errors.part('seaInteger')}"
-			    	      th:text="${er.isResource()} ? #{${er.key}(${er.values})} : ${er.key}"></span>
-				</li>
-				<li><span>Purchased Member</span><input type="text" name="purchaseMemberName" th:value="${purchaseMemberName}"/></li>
-				<li>
-					<span th:text="#{labels.product.status}">labels.product.status</span>
-					<select la:property="productStatus">
-						<option value="" th:text="#{labels.listbox.caption.tell}"></option>
-						<option la:optionCls="ProductStatus"></option>
-					</select>
-				</li>
-			</ul>
-			<input type="submit" th:value="#{labels.search}" value="search"/>
-		</form>
-	</section>
-	<section class="product-result-box">
-		<h3 class="sg-content-title-second">Search Results</h3>
-		<table class="product-list-tbl">
-			<thead>
+			<table>
 				<tr>
-					<th>ID</th>
-					<th>Name</th>
-					<th>Price</th>
-					<th>Category</th>
-					<th>Registration</th>
+					<td>Member Name</td>
+					<td><input type="text" name="memberName"/></td>
 				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="bean : ${beans}">
-					<td th:text="${bean.productId}">${f:h(bean.productId)}</td>
-					<td><a href="product_detail.html" th:href="@{/product/detail/{productId}(productId=${bean.productId})}" th:text="${bean.productName}">${f:h(bean.productName)}</a></td>
-					<td th:text="${bean.regularPrice}">${f:h(bean.regularPrice)}</td>
-					<td th:text="${bean.productCategoryName}">${f:h(bean.productCategoryName)}</td>
-					<td th:text="${bean.registerDatetime}">${f:h(bean.registerDatetime)}</td>
+				<tr>
+					<td>Member Account</td>
+					<td><input type="text" name="memberAccount"/></td>
 				</tr>
-			</tbody>
-		</table>
-		<section class="product-list-paging-box">
-			<div th:replace="/common/layout.html :: paging-navi (pagingNavi=${pagingNavi})">
-			<!--
-			<c:import url="${viewPrefix}/common/paging_navi.jsp"/>
-			 -->
-			</div>
-		</section>
+				<tr>
+					<td>Birthdate</td>
+					<td><input type="text" name="birthdate"/></td>
+				</tr>
+				<tr>
+					<td>Member Status</td>
+					<td>
+						<select name="memberStatus">
+							<option th:text="#{labels.listbox.caption.tell}"></option>
+							<option th:each="memberStatus : ${MemberStatus}"
+			                	    th:value="#{labels.listbox.caption.tell}"
+			                        th:text="#{labels.listbox.caption.tell}">#{labels.listbox.caption.tell}</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<input type="submit" name="register" th:value="#{labels.register}"/>
+		</form>
+		<div class="listback">
+			<a th:href="@{/member/list/}" href="member_list.html">back to Member list</a>
+		</div>
 	</section>
 </div>
-
-
 </main>
+<!-- </main> end of main content -->
 <footer th:replace="/common/layout.html :: footer">
 	<div class="wrap">
 		<ul class="footer-link">

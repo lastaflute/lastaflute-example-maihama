@@ -50,7 +50,7 @@ public class MemberListAction extends DocksideBaseAction {
         PagingResultBean<MemberSearchRowBean> beans = page.mappingList(member -> {
             return mappingToBean(member);
         });
-        return asHtml(path_Member_MemberListJsp).renderWith(data -> {
+        return asHtml(path_Member_MemberListHtml).renderWith(data -> {
             data.register("beans", beans);
             registerPagingNavi(data, page, form);
         });

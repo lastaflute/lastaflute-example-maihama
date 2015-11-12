@@ -23,7 +23,9 @@
 					<td>Member Status</td>
 					<td>
 						<la:select property="memberStatus">
-							<la:option value="" key="labels.listbox.caption.tell"/>
+							 <option th:each="category : #{labels.listbox.caption.tell}"
+			                    th:value="#{labels.listbox.caption.tell}"
+			                    th:text="#{labels.listbox.caption.tell}">hoge</option>
 							<la:optionsCls name="MemberStatus"/>
 						</la:select>
 					</td>
