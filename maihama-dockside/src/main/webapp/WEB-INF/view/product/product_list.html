@@ -9,7 +9,6 @@
 	<title>Preview Title</title>
 <!--/*/ </th:block> /*/-->
 <!--/* individual Css write to after */-->
-
 </head>
 <body>
 <header th:replace="/common/layout.html :: header">
@@ -85,16 +84,10 @@
 			</tbody>
 		</table>
 		<section class="product-list-paging-box">
-			<div th:replace="/common/layout.html :: paging-navi (pagingNavi=${pagingNavi})">
-			<!--
-			<c:import url="${viewPrefix}/common/paging_navi.jsp"/>
-			 -->
-			</div>
+			<div th:replace="/common/layout.html :: paging-navi (pagingNavi=${pagingNavi})"></div>
 		</section>
 	</section>
 </div>
-
-
 </main>
 <footer th:replace="/common/layout.html :: footer">
 	<div class="wrap">
