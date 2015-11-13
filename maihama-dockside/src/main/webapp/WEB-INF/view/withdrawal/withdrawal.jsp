@@ -2,9 +2,9 @@
 <c:param name="contents">
 <!-- <main> start main content -->
 <div class="contents">
-	<h2 class="pg-content-title"><la:caption key="labels.withdrawal.title"/></h2>
+	<h2 class="content-title"><la:caption key="labels.withdrawal.title"/></h2>
 	<section class="select-withdrawal-reason">
-		<h3 class="pg-content-title-second">Select Withdrawal Reason</h3>
+		<h3 class="content-title-second">Select Withdrawal Reason</h3>
 		<la:form styleClass="withdrawal-form">
 			<ul class="withdrawal-reason-list">
 				<li class="withdrawal-reason-element">
