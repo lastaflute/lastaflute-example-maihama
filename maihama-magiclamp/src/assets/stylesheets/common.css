@@ -77,7 +77,7 @@ hr {
 	background-color: #882255;
 	color: #FAFAFA;
 }
-.pg-main-title {
+.sg-main-title {
 	height: 54px;
 	line-height: 54px;
 	padding: 0 16px 0 8px;
@@ -85,7 +85,7 @@ hr {
 	float: left;
 	font-size: 32px;
 }
-.pg-main-title span {
+.sg-main-title span {
 	font-size: 12px;
 }
 .nav-home > li:HOVER {
@@ -104,6 +104,14 @@ hr {
 }
 
 /* dropdown menu */
+ul.nav-user li{
+	float: right;
+	position: relative;
+	width: 120px;
+	margin: 0;
+	padding: 5px;
+	background-color: #882255;
+}
 ul.child{
 	display: none;
 	position: absolute;
@@ -119,11 +127,14 @@ ul.child li a{
 	color: #fff;
 	background-color: #9D004D;
 }
+ul.nav-user li a:hover{
+	opacity: 0.8;
+}
 
 /* -------------------------------------------------
                                              Main
 ------------------------------------------------- */
-.pg-content-title {
+.sg-content-title {
 	width: 936px;
 	height: 40px;
 	line-height: 40px;
@@ -133,7 +144,7 @@ ul.child li a{
 	font-size: 32px;
 	font-weight: bold;
 }
-.pg-content-title-second {
+.sg-content-title-second {
 	border-left: solid 6px #888;
 	padding-left: 8px;
 	font-size: 24px;

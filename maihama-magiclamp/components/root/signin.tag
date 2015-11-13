@@ -1,5 +1,5 @@
 <signin>
-  <h2 class="pg-content-title">Sign In</h2>
+  <h2 class="sg-content-title">Sign In</h2>
   <section class="sign-in-box">
     <div class="signin-form">
       <form name="signin_signinAction_index_Form" onsubmit={doSignin}>
