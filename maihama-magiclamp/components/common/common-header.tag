@@ -2,7 +2,7 @@
   <header>
     <section class="nav-main cf">
       <div class="wrap">
-        <h1 class="pg-main-title"><a href="/" onclick={goRoot}>Maihama<span> (LastaFlute Example)</span></a></h1>
+        <h1 class="sg-main-title"><a href="/" onclick={goRoot}>Maihama<span> (LastaFlute Example)</span></a></h1>
         <ul class="nav-home">
           <li><a href="/product/list/" onclick={goProductList}><span class="link-block">Product</span></a></li>
           <li><a href="/member/list/" onclick={goMemberList}><span class="link-block">Member</span></a></li>

@@ -37,7 +37,7 @@
 <div class="contents">
 	<h2 class="sg-content-title" th:text="#{labels.member.list.title}">labels.member.list.title</h2>
 	<section class="member-search-box">
-		<h3 class="pg-content-title-second">Search Condition</h3>
+		<h3 class="sg-content-title-second">Search Condition</h3>
 		<form class="member-search-form">
 			<ul th:unless="${errors.empty}" style="display: none" th:style="'color : red;'">
 				<li th:each="er : ${errors.all}" th:text="${er.isResource()} ? #{${er.key}(${er.values})} : ${er.key}"></li>
@@ -64,9 +64,9 @@
 		</form>
 	</section>
 	<section class="member-result-box">
-		<h3 class="pg-content-title-second">Search Results</h3>
+		<h3 class="sg-content-title-second">Search Results</h3>
 		<a href="member_add.html" th:href="@{/member/add/}">add Member</a>
-		<table class="member-list-tbl">
+		<table class="sg-list-tbl">
 			<thead>
 				<tr>
 					<th>Member Id</th>
@@ -82,6 +82,7 @@
 				<tr th:each="bean : ${beans}">
 					<td th:text="${bean.memberId}">bean.memberId</td>
 					<td th:text="${bean.memberName}">bean.memberName</td>
+					<td th:text="${bean.memberStatusName}">bean.memberStatusName</td>
 					<td th:text="${bean.formalizedDate}">bean.formalizedDate</td>
 					<td th:text="${bean.updateDatetime}">bean.updateDatetime</td>
 					<td>

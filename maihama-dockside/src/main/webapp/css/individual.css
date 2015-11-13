@@ -69,6 +69,7 @@
 ------------------------------------------------- */
 .product-search-box {
 	margin: 32px auto 0;
+	width: 960px;
 }
 .product-search-condition-list {
 	width: 100%;
@@ -99,21 +100,7 @@
 }
 .product-result-box {
 	margin: 32px auto 0;
-}
-.product-list-tbl {
-	width: 100%;
-	margin: 12px auto 0;
-}
-.product-list-tbl th {
-	border: solid 1px #CCC;
-	padding: 6px 0;
-	background-color: #888;
-	color: #FAFCF2;
-}
-.product-list-tbl td {
-	padding: 6px 0;
-	border: solid 1px #CCC;
-	text-align: center;
+	width: 960px;
 }
 .product-list-paging-box {
 	text-align: right;
@@ -125,6 +112,7 @@
                                            My Page
 ------------------------------------------------- */
 .recent-purchase-box {
+	width: 960px;
 	margin: 32px auto 0;
 }
 .follow-box {
@@ -145,4 +133,22 @@
 }
 .withdrawal-write-reason{
 	margin:5px 0px;
+}
+
+/* -------------------------------------------------
+                                        member list
+------------------------------------------------- */
+.member-search-box {
+	width: 960px;
+	margin: 20px auto;
+}
+
+.member-result-box {
+	width: 960px;
+	margin: 20px auto;
+}
+
+.profile-contents-box {
+	width: 960px;
+	margin: 20px auto;
 }
