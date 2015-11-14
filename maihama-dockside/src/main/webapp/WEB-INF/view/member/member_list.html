@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
-<!--/*/ <th:block th:include="/common/layout.html :: head (#{labels.member.list.title})"> /*/-->
+<!--/*/ <th:block th:include="/common/layout.html :: head ('Members')"> /*/-->
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
@@ -34,37 +34,45 @@
 </header>
 <main>
 <div class="contents">
-	<h2 class="content-title" th:text="#{labels.member.list.title}">labels.member.list.title</h2>
+	<h2 class="content-title">List of Member</h2>
 	<section class="member-search-box">
 		<h3 class="content-title-second">Search Condition</h3>
-		<form class="member-search-form">
-			<ul th:unless="${errors.empty}" style="display: none" th:style="'color : red;'">
-				<li th:each="er : ${errors.all}" th:text="${er.isResource()} ? #{${er.key}(${er.values})} : ${er.key}"></li>
-			</ul>
+		<form class="member-search-form" action="#" th:action="@{/member/list/}" method="post">
 			<ul class="member-search-condition-list">
-				<li><span>Member Name</span><span th:text="memberName">memberName</span></li>
-				<li><span>Purchase Product</span><span th:text="purchaseProductName">purchaseProductName</span></li>
+				<li>
+					<span>Member Name</span>
+					<input type="text" name="memberName" th:value="${memberName}"/>
+					<span th:style="'color : red;'" th:each="er : ${errors.part('productName')}" th:text="${er.message}"/>
+				</li>
+				<li>
+					<span>Purchase Product</span>
+					<input type="text" name="purchaseProductName" th:value="${purchaseProductName}"/>
+					<span th:style="'color : red;'" th:each="er : ${errors.part('purchaseProductName')}" th:text="${er.message}"/>
+				</li>
 				<li>
 					<span>Member Status</span>
 					<select>
 						<option th:text="#{labels.listbox.caption.tell}">labels.listbox.caption.tell</option>
-						<option th:text="MemberStatus">MemberStatus</option>
+						<option la:optionCls="MemberStatus"></option>
 					</select>
 				</li>
-				<li><span>has unpaid?</span><input type="checkbox" th:value="unpaid"/></li>
-				<li><span>Formalized Date</span><span th:text="#{formalizedFrom}" size="10"></span>ï½<span th:text="#{formalizedTo}" size="10"></span></li>
+				<li>
+					<span>has unpaid?</span><input type="checkbox" th:value="unpaid"/>
+				</li>
+				<li>
+					<span>Formalized Date</span>
+					<input type="text" name="formalizedFrom" th:value="${formalizedFrom}" size="10"/>
+					- <input type="text" name="formalizedTo" th:value="${formalizedTo}" size="10"/>
+				</li>
+				<li>
+					<input type="submit" th:value="#{labels.search}" value="search"/>
+				</li>
 			</ul>
-		</form>
-		<form>
-			<ul th:unless="${errors.empty}" style="display: none" th:style="'color : red;'">
-				<li th:each="er : ${errors.all}" th:text="${er.isResource()} ? #{${er.key}(${er.values})} : ${er.key}"></li>
-			</ul>
-			<input type="submit" th:value="#{labels.search}"/>
 		</form>
 	</section>
 	<section class="member-result-box">
-		<h3 class="content-title-second">Search Results</h3>
-		<a href="member_add.html" th:href="@{/member/add/}">add Member</a>
+		<h3 class="content-title-second">Search Result</h3>
+		<a th:href="@{/member/add/}" href="member_add.html">add Member</a>
 		<table class="list-tbl">
 			<thead>
 				<tr>
@@ -85,10 +93,7 @@
 					<td th:text="${bean.formalizedDate}">bean.formalizedDate</td>
 					<td th:text="${bean.updateDatetime}">bean.updateDatetime</td>
 					<td>
-						<div th:if="${togashi != null}">
-							<a th:href="@{/member/edit/${bean.memberId}}">Edit</a>>
-						</div>
-						<span th:if="${!bean.withdrawalMember}"></span>
+						<span th:if="${!bean.withdrawalMember}"><a th:href="@{/member/edit/${bean.memberId}}">Edit</a></span>
 						<span th:if="${bean.withdrawalMember}">Cannot</span>
 					</td>
 					<td th:if="${bean.purchaseCount &gt; 0}">
@@ -99,9 +104,6 @@
 		</table>
 		<section class="product-list-paging-box">
 			<div th:replace="/common/layout.html :: paging-navi (pagingNavi=${pagingNavi})">
-			<!--
-			<c:import url="${viewPrefix}/common/paging_navi.jsp"/>
-			 -->
 			</div>
 		</section>
 	</section>
