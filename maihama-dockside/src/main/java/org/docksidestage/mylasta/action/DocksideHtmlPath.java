@@ -74,11 +74,14 @@ public interface DocksideHtmlPath {
     /** The path of the HTML: /purchase/purchase_list.jsp */
     HtmlNext path_Purchase_PurchaseListJsp = new HtmlNext("/purchase/purchase_list.jsp");
 
+    /** The path of the HTML: /signin/signin.html */
+    HtmlNext path_Signin_SigninHtml = new HtmlNext("/signin/signin.html");
+
     /** The path of the HTML: /signin/signin.jsp */
     HtmlNext path_Signin_SigninJsp = new HtmlNext("/signin/signin.jsp");
 
-    /** The path of the HTML: /signin/signin_reminder.jsp */
-    HtmlNext path_Signin_SigninReminderJsp = new HtmlNext("/signin/signin_reminder.jsp");
+    /** The path of the HTML: /signin/signin_reminder.html */
+    HtmlNext path_Signin_SigninReminderHtml = new HtmlNext("/signin/signin_reminder.html");
 
     /** The path of the HTML: /signup/signup.html */
     HtmlNext path_Signup_SignupHtml = new HtmlNext("/signup/signup.html");

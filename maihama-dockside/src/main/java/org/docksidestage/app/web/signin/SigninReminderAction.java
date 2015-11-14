@@ -6,11 +6,12 @@ import org.lastaflute.web.response.HtmlResponse;
 
 /**
  * @author masaki.kamachi
+ * @author jflute
  */
 public class SigninReminderAction extends DocksideBaseAction {
 
     @Execute
     public HtmlResponse index() {
-        return asHtml(path_Signin_SigninReminderJsp);
+        return asHtml(path_Signin_SigninReminderHtml);
     }
 }

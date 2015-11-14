@@ -32,6 +32,9 @@ public class MaihamaLabels extends ActionMessages {
     /** The key of the message: Name */
     public static final String LABELS_NAME = "{labels.name}";
 
+    /** The key of the message: Account */
+    public static final String LABELS_ACCOUNT = "{labels.account}";
+
     /** The key of the message: Count */
     public static final String LABELS_COUNT = "{labels.count}";
 
@@ -113,8 +116,14 @@ public class MaihamaLabels extends ActionMessages {
     /** The key of the message: @[labels.member] @[labels.name] */
     public static final String LABELS_MEMBER_NAME = "{labels.memberName}";
 
-    /** The key of the message: @[labels.member] Account */
+    /** The key of the message: @[labels.member] @[labels.account] */
     public static final String LABELS_MEMBER_ACCOUNT = "{labels.memberAccount}";
+
+    /** The key of the message: Reminder Question */
+    public static final String LABELS_REMINDER_QUESTION = "{labels.reminderQuestion}";
+
+    /** The key of the message: Reminder Answer */
+    public static final String LABELS_REMINDER_ANSWER = "{labels.reminderAnswer}";
 
     /** The key of the message: @[labels.purchase] @[labels.price] */
     public static final String LABELS_PURCHASE_PRICE = "{labels.purchasePrice}";

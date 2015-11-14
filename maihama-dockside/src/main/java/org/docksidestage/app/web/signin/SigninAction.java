@@ -43,23 +43,23 @@ public class SigninAction extends DocksideBaseAction {
         if (getUserBean().isPresent()) {
             return redirect(RootAction.class);
         }
-        return asHtml(path_Signin_SigninJsp).useForm(SigninForm.class);
+        return asHtml(path_Signin_SigninHtml).useForm(SigninForm.class);
     }
 
     @Execute
     public HtmlResponse signin(SigninForm form) {
         validate(form, messages -> moreValidate(form, messages), () -> {
             form.clearSecurityInfo();
-            return asHtml(path_Signin_SigninJsp);
+            return asHtml(path_Signin_SigninHtml);
         });
-        return docksideLoginAssist.loginRedirect(form.email, form.password, op -> op.rememberMe(form.rememberMe), () -> {
+        return docksideLoginAssist.loginRedirect(form.account, form.password, op -> op.rememberMe(form.rememberMe), () -> {
             return redirect(RootAction.class);
         });
     }
 
     private void moreValidate(SigninForm form, DocksideMessages messages) {
-        if (isNotEmpty(form.email) && isNotEmpty(form.password)) {
-            if (!docksideLoginAssist.checkUserLoginable(form.email, form.password)) {
+        if (isNotEmpty(form.account) && isNotEmpty(form.password)) {
+            if (!docksideLoginAssist.checkUserLoginable(form.account, form.password)) {
                 messages.addErrorsLoginFailure("email");
             }
         }

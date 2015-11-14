@@ -59,6 +59,9 @@ public class HangarLabels extends MaihamaMessages {
     /** The key of the message: input sea */
     public static final String LABELS_SIGNIN_INPUT_PASSWORD = "{labels.signin.input.password}";
 
+    /** The key of the message: Remember me? */
+    public static final String LABELS_SIGNIN_REMEMBER_ME = "{labels.signin.rememberMe}";
+
     /** The key of the message: @[labels.list] of @[labels.product] */
     public static final String LABELS_PRODUCT_LIST_TITLE = "{labels.product.list.title}";
 
@@ -101,6 +104,6 @@ public class HangarLabels extends MaihamaMessages {
     /** The key of the message: @[labels.confirm] @[labels.withdrawal] Reason */
     public static final String LABELS_WITHDRAWAL_CONFIRM_TITLE = "{labels.withdrawal.confirm.title}";
 
-    /** The key of the message: Hangar Support */
+    /** The key of the message: Dockside Support */
     public static final String LABELS_MAIL_SUPPORT_PERSONAL = "{labels.mail.support.personal}";
 }
