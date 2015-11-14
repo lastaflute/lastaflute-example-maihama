@@ -27,8 +27,8 @@ import org.docksidestage.app.logic.i18n.I18nDateLogic;
 import org.lastaflute.db.dbflute.accesscontext.AccessContextArranger;
 import org.lastaflute.db.dbflute.accesscontext.AccessContextResource;
 import org.lastaflute.web.TypicalAction;
-import org.lastaflute.web.callback.ActionRuntime;
 import org.lastaflute.web.response.ActionResponse;
+import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.servlet.request.RequestManager;
 
 /**

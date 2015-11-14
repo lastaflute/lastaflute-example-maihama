@@ -27,9 +27,9 @@ import org.docksidestage.mylasta.action.DocksideHtmlPath;
 import org.docksidestage.mylasta.action.DocksideMessages;
 import org.docksidestage.mylasta.action.DocksideUserBean;
 import org.docksidestage.mylasta.direction.DocksideConfig;
-import org.lastaflute.web.callback.ActionRuntime;
 import org.lastaflute.web.login.LoginManager;
 import org.lastaflute.web.response.render.RenderData;
+import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
 import org.lastaflute.web.validation.LaValidatable;
 
