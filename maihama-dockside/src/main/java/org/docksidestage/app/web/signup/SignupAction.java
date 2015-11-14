@@ -89,9 +89,9 @@ public class SignupAction extends DocksideBaseAction {
     }
 
     @Execute
-    public HtmlResponse register(SignupForm form) { // from mail link
+    public HtmlResponse register(String account, String token) { // from mail link
         Member member = new Member();
-        member.setMemberAccount(form.memberAccount);
+        member.setMemberAccount(account);
         member.setMemberStatusCode_Formalized();
         memberBhv.update(member);
         return redirect(SigninAction.class);

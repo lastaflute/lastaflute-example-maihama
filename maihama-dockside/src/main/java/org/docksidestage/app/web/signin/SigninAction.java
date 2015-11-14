@@ -60,7 +60,7 @@ public class SigninAction extends DocksideBaseAction {
     private void moreValidate(SigninForm form, DocksideMessages messages) {
         if (isNotEmpty(form.account) && isNotEmpty(form.password)) {
             if (!docksideLoginAssist.checkUserLoginable(form.account, form.password)) {
-                messages.addErrorsLoginFailure("email");
+                messages.addErrorsLoginFailure("account");
             }
         }
     }
