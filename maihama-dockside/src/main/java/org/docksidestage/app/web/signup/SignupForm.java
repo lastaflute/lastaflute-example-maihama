@@ -1,23 +1,24 @@
 package org.docksidestage.app.web.signup;
 
-import org.hibernate.validator.constraints.NotBlank;
+import org.lastaflute.web.validation.Required;
 
 /**
  * @author annie_pocket
+ * @author jflute
  */
 public class SignupForm {
 
-    // Member
-    @NotBlank
+    // member
+    @Required
     public String memberName;
-    @NotBlank
+    @Required
     public String memberAccount;
 
-    // Member Security
-    @NotBlank
+    // security
+    @Required
     public String password;
-    @NotBlank
+    @Required
     public String reminderQuestion;
-    @NotBlank
+    @Required
     public String reminderAnswer;
 }

@@ -100,4 +100,7 @@ public class DocksideLabels extends MaihamaMessages {
 
     /** The key of the message: @[labels.confirm] @[labels.withdrawal] Reason */
     public static final String LABELS_WITHDRAWAL_CONFIRM_TITLE = "{labels.withdrawal.confirm.title}";
+
+    /** The key of the message: Hangar Support */
+    public static final String LABELS_MAIL_SUPPORT_PERSONAL = "{labels.mail.support.personal}";
 }

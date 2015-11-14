@@ -80,8 +80,8 @@ public interface DocksideHtmlPath {
     /** The path of the HTML: /signin/signin_reminder.jsp */
     HtmlNext path_Signin_SigninReminderJsp = new HtmlNext("/signin/signin_reminder.jsp");
 
-    /** The path of the HTML: /signup/signup.jsp */
-    HtmlNext path_Signup_SignupJsp = new HtmlNext("/signup/signup.jsp");
+    /** The path of the HTML: /signup/signup.html */
+    HtmlNext path_Signup_SignupHtml = new HtmlNext("/signup/signup.html");
 
     /** The path of the HTML: /startup/startup.html */
     HtmlNext path_Startup_StartupHtml = new HtmlNext("/startup/startup.html");

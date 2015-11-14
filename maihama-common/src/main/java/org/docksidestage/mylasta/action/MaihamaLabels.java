@@ -26,36 +26,6 @@ public class MaihamaLabels extends ActionMessages {
     /** The serial version UID for object serialization. (Default) */
     private static final long serialVersionUID = 1L;
 
-    /** The key of the message: Member */
-    public static final String LABELS_MEMBER = "{labels.member}";
-
-    /** The key of the message: Product */
-    public static final String LABELS_PRODUCT = "{labels.product}";
-
-    /** The key of the message: Purchase */
-    public static final String LABELS_PURCHASE = "{labels.purchase}";
-
-    /** The key of the message: Withdrawal */
-    public static final String LABELS_WITHDRAWAL = "{labels.withdrawal}";
-
-    /** The key of the message: Payment */
-    public static final String LABELS_PAYMENT = "{labels.payment}";
-
-    /** The key of the message: Status */
-    public static final String LABELS_STATUS = "{labels.status}";
-
-    /** The key of the message: Category */
-    public static final String LABELS_CATEGORY = "{labels.category}";
-
-    /** The key of the message: @[labels.member] @[labels.status] */
-    public static final String LABELS_MEMBER_STATUS = "{labels.memberStatus}";
-
-    /** The key of the message: @[labels.product] @[labels.status] */
-    public static final String LABELS_PRODUCT_STATUS = "{labels.productStatus}";
-
-    /** The key of the message: @[labels.product] @[labels.category] */
-    public static final String LABELS_PRODUCT_CATEGORY = "{labels.productCategory}";
-
     /** The key of the message: ID */
     public static final String LABELS_ID = "{labels.id}";
 
@@ -68,41 +38,11 @@ public class MaihamaLabels extends ActionMessages {
     /** The key of the message: Price */
     public static final String LABELS_PRICE = "{labels.price}";
 
-    /** The key of the message: @[labels.member] @[labels.id] */
-    public static final String LABELS_MEMBER_ID = "{labels.memberId}";
-
-    /** The key of the message: @[labels.member] @[labels.name] */
-    public static final String LABELS_MEMBER_NAME = "{labels.memberName}";
-
-    /** The key of the message: @[labels.member] Account */
-    public static final String LABELS_MEMBER_ACCOUNT = "{labels.memberAccount}";
-
-    /** The key of the message: @[labels.purchase] @[labels.price] */
-    public static final String LABELS_PURCHASE_PRICE = "{labels.purchasePrice}";
-
-    /** The key of the message: @[labels.purchase] @[labels.count] */
-    public static final String LABELS_PURCHASE_COUNT = "{labels.purchaseCount}";
-
-    /** The key of the message: @[labels.product] @[labels.name] */
-    public static final String LABELS_PRODUCT_NAME = "{labels.productName}";
-
-    /** The key of the message: Regular @[labels.price] */
-    public static final String LABELS_REGULAR_PRICE = "{labels.regularPrice}";
-
-    /** The key of the message: Mail Address */
+    /** The key of the message: EMail */
     public static final String LABELS_EMAIL = "{labels.email}";
 
     /** The key of the message: Password */
     public static final String LABELS_PASSWORD = "{labels.password}";
-
-    /** The key of the message: Version No */
-    public static final String LABELS_VERSION_NO = "{labels.versionNo}";
-
-    /** The key of the message: Register Datetime */
-    public static final String LABELS_REGISTER_DATETIME = "{labels.registerDatetime}";
-
-    /** The key of the message: Register Datetime */
-    public static final String LABELS_UPDATE_DATETIME = "{labels.updateDatetime}";
 
     /** The key of the message: List */
     public static final String LABELS_LIST = "{labels.list}";
@@ -136,6 +76,66 @@ public class MaihamaLabels extends ActionMessages {
 
     /** The key of the message: Finish */
     public static final String LABELS_FINISH = "{labels.finish}";
+
+    /** The key of the message: Member */
+    public static final String LABELS_MEMBER = "{labels.member}";
+
+    /** The key of the message: Product */
+    public static final String LABELS_PRODUCT = "{labels.product}";
+
+    /** The key of the message: Purchase */
+    public static final String LABELS_PURCHASE = "{labels.purchase}";
+
+    /** The key of the message: Withdrawal */
+    public static final String LABELS_WITHDRAWAL = "{labels.withdrawal}";
+
+    /** The key of the message: Payment */
+    public static final String LABELS_PAYMENT = "{labels.payment}";
+
+    /** The key of the message: Status */
+    public static final String LABELS_STATUS = "{labels.status}";
+
+    /** The key of the message: Category */
+    public static final String LABELS_CATEGORY = "{labels.category}";
+
+    /** The key of the message: @[labels.member] @[labels.status] */
+    public static final String LABELS_MEMBER_STATUS = "{labels.memberStatus}";
+
+    /** The key of the message: @[labels.product] @[labels.status] */
+    public static final String LABELS_PRODUCT_STATUS = "{labels.productStatus}";
+
+    /** The key of the message: @[labels.product] @[labels.category] */
+    public static final String LABELS_PRODUCT_CATEGORY = "{labels.productCategory}";
+
+    /** The key of the message: @[labels.member] @[labels.id] */
+    public static final String LABELS_MEMBER_ID = "{labels.memberId}";
+
+    /** The key of the message: @[labels.member] @[labels.name] */
+    public static final String LABELS_MEMBER_NAME = "{labels.memberName}";
+
+    /** The key of the message: @[labels.member] Account */
+    public static final String LABELS_MEMBER_ACCOUNT = "{labels.memberAccount}";
+
+    /** The key of the message: @[labels.purchase] @[labels.price] */
+    public static final String LABELS_PURCHASE_PRICE = "{labels.purchasePrice}";
+
+    /** The key of the message: @[labels.purchase] @[labels.count] */
+    public static final String LABELS_PURCHASE_COUNT = "{labels.purchaseCount}";
+
+    /** The key of the message: @[labels.product] @[labels.name] */
+    public static final String LABELS_PRODUCT_NAME = "{labels.productName}";
+
+    /** The key of the message: Regular @[labels.price] */
+    public static final String LABELS_REGULAR_PRICE = "{labels.regularPrice}";
+
+    /** The key of the message: Version No */
+    public static final String LABELS_VERSION_NO = "{labels.versionNo}";
+
+    /** The key of the message: Register Datetime */
+    public static final String LABELS_REGISTER_DATETIME = "{labels.registerDatetime}";
+
+    /** The key of the message: Register Datetime */
+    public static final String LABELS_UPDATE_DATETIME = "{labels.updateDatetime}";
 
     /** The key of the message: Notice */
     public static final String LABELS_ERROR_MESSAGE_TITLE = "{labels.error.message.title}";

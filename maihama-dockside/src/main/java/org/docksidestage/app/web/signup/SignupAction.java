@@ -14,6 +14,7 @@ import org.docksidestage.dbflute.exbhv.MemberServiceBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.docksidestage.dbflute.exentity.MemberSecurity;
 import org.docksidestage.dbflute.exentity.MemberService;
+import org.docksidestage.mylasta.action.DocksideMessages;
 import org.docksidestage.mylasta.direction.DocksideConfig;
 import org.docksidestage.mylasta.mail.member.WelcomeMemberPostcard;
 import org.lastaflute.core.mail.Postbox;
@@ -32,9 +33,6 @@ public class SignupAction extends DocksideBaseAction {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    // -----------------------------------------------------
-    //                                          DI Component
-    //                                          ------------
     @Resource
     private MemberBhv memberBhv;
     @Resource
@@ -55,23 +53,18 @@ public class SignupAction extends DocksideBaseAction {
     //                                                                             =======
     @Execute
     public HtmlResponse index() {
-        return asHtml(path_Signup_SignupJsp).useForm(SignupForm.class);
+        return asHtml(path_Signup_SignupHtml).useForm(SignupForm.class);
     }
 
     @Execute
     public HtmlResponse signup(SignupForm form) {
         validate(form, messages -> {
-            int count = memberBhv.selectCount(cb -> {
-                cb.query().setMemberAccount_Equal(form.memberAccount);
-            });
-            if (count > 0) {
-                messages.addErrorsSignupAccountAlreadyExists("account");
-            }
+            moreValidate(form, messages);
         } , () -> {
-            return asHtml(path_Signup_SignupJsp);
+            return asHtml(path_Signup_SignupHtml);
         });
         Integer memberId = newMember(form);
-        docksideLoginAssist.identityLogin(memberId.longValue(), op -> {}); // no remember-me here
+        docksideLoginAssist.identityLogin(memberId, op -> {}); // no remember-me here
 
         WelcomeMemberPostcard.droppedInto(postbox, postcard -> {
             postcard.setFrom(docksideConfig.getMailAddressSupport(), "Dockside Support");
@@ -84,13 +77,23 @@ public class SignupAction extends DocksideBaseAction {
         return redirect(MypageAction.class);
     }
 
+    private void moreValidate(SignupForm form, DocksideMessages messages) {
+        if (isNotEmpty(form.memberAccount)) {
+            int count = memberBhv.selectCount(cb -> {
+                cb.query().setMemberAccount_Equal(form.memberAccount);
+            });
+            if (count > 0) {
+                messages.addErrorsSignupAccountAlreadyExists("memberAccount");
+            }
+        }
+    }
+
     @Execute
-    public HtmlResponse register(SignupForm form) {
+    public HtmlResponse register(SignupForm form) { // from mail link
         Member member = new Member();
         member.setMemberAccount(form.memberAccount);
         member.setMemberStatusCode_Formalized();
         memberBhv.update(member);
-
         return redirect(SigninAction.class);
     }
 
