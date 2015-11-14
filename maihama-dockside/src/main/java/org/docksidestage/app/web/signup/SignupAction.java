@@ -59,10 +59,10 @@ public class SignupAction extends DocksideBaseAction {
     }
 
     @Execute
-    public HtmlResponse doSignup(SignupForm form) {
+    public HtmlResponse signup(SignupForm form) {
         validate(form, messages -> {
             int count = memberBhv.selectCount(cb -> {
-                cb.query().setMemberAccount_Equal(form.account);
+                cb.query().setMemberAccount_Equal(form.memberAccount);
             });
             if (count > 0) {
                 messages.addErrorsSignupAccountAlreadyExists("account");
@@ -77,8 +77,8 @@ public class SignupAction extends DocksideBaseAction {
             postcard.setFrom(docksideConfig.getMailAddressSupport(), "Dockside Support");
             postcard.addTo(deriveMemberMailAddress(form));
             postcard.setDomain(docksideConfig.getServerDomain());
-            postcard.setMemberName(form.name);
-            postcard.setAccount(form.account);
+            postcard.setMemberName(form.memberName);
+            postcard.setAccount(form.memberAccount);
             postcard.setToken(generateToken());
         });
         return redirect(MypageAction.class);
@@ -87,7 +87,7 @@ public class SignupAction extends DocksideBaseAction {
     @Execute
     public HtmlResponse register(SignupForm form) {
         Member member = new Member();
-        member.setMemberAccount(form.account);
+        member.setMemberAccount(form.memberAccount);
         member.setMemberStatusCode_Formalized();
         memberBhv.update(member);
 
@@ -99,8 +99,8 @@ public class SignupAction extends DocksideBaseAction {
     //                                                                        ============
     private Integer newMember(SignupForm form) {
         Member member = new Member();
-        member.setMemberAccount(form.account);
-        member.setMemberName(form.name);
+        member.setMemberName(form.memberName);
+        member.setMemberAccount(form.memberAccount);
         member.setMemberStatusCode_Provisional();
         memberBhv.insert(member);
 
@@ -121,7 +121,7 @@ public class SignupAction extends DocksideBaseAction {
     }
 
     private String deriveMemberMailAddress(SignupForm form) {
-        return form.account + "@docksidestage.org"; // #simple_for_example
+        return form.memberAccount + "@docksidestage.org"; // #simple_for_example
     }
 
     private String generateToken() {

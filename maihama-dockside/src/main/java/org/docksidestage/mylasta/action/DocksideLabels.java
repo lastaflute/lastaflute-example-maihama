@@ -46,4 +46,58 @@ public class DocksideLabels extends MaihamaMessages {
 
     /** The key of the message: Sign up */
     public static final String LABELS_SIGNUP_BUTTON = "{labels.signup.button}";
+
+    /** The key of the message: Sign In */
+    public static final String LABELS_SIGNIN_TITLE = "{labels.signin.title}";
+
+    /** The key of the message: Sign in */
+    public static final String LABELS_SIGNIN_BUTTON = "{labels.signin.button}";
+
+    /** The key of the message: input Pixy */
+    public static final String LABELS_SIGNIN_INPUT_ACCOUNT = "{labels.signin.input.account}";
+
+    /** The key of the message: input sea */
+    public static final String LABELS_SIGNIN_INPUT_PASSWORD = "{labels.signin.input.password}";
+
+    /** The key of the message: @[labels.list] of @[labels.product] */
+    public static final String LABELS_PRODUCT_LIST_TITLE = "{labels.product.list.title}";
+
+    /** The key of the message: Latest Purchase */
+    public static final String LABELS_PRODUCT_LIST_LATEST_PURCHASE_DATE = "{labels.product.list.latestPurchaseDate}";
+
+    /** The key of the message: @[labels.detail] of @[labels.product] */
+    public static final String LABELS_PRODUCT_DETAIL_TITLE = "{labels.product.detail.title}";
+
+    /** The key of the message: @[labels.list] of @[labels.purchase] */
+    public static final String LABELS_PURCHASE_LIST_TITLE = "{labels.purchase.list.title}";
+
+    /** The key of the message: @[labels.list] of @[labels.purchase] */
+    public static final String LABELS_PURCHASE_DETAIL_TITLE = "{labels.purchase.detail.title}";
+
+    /** The key of the message: @[labels.list] of @[labels.member] */
+    public static final String LABELS_MEMBER_LIST_TITLE = "{labels.member.list.title}";
+
+    /** The key of the message: @[labels.add] @[labels.member] */
+    public static final String LABELS_MEMBER_ADD_TITLE = "{labels.member.add.title}";
+
+    /** The key of the message: @[labels.edit] @[labels.member] */
+    public static final String LABELS_MEMBER_EDIT_TITLE = "{labels.member.edit.title}";
+
+    /** The key of the message: input keyword to search */
+    public static final String LABELS_MEMBER_INPUT_KEYWORD = "{labels.member.input.keyword}";
+
+    /** The key of the message: e.g. 153-0051 */
+    public static final String LABELS_MEMBER_INPUT_ZIP_CODE = "{labels.member.input.zipCode}";
+
+    /** The key of the message: My Page */
+    public static final String LABELS_MYPAGE_TITLE = "{labels.mypage.title}";
+
+    /** The key of the message: Profile */
+    public static final String LABELS_PROFILE_TITLE = "{labels.profile.title}";
+
+    /** The key of the message: @[labels.withdrawal] @[labels.account] */
+    public static final String LABELS_WITHDRAWAL_TITLE = "{labels.withdrawal.title}";
+
+    /** The key of the message: @[labels.confirm] @[labels.withdrawal] Reason */
+    public static final String LABELS_WITHDRAWAL_CONFIRM_TITLE = "{labels.withdrawal.confirm.title}";
 }

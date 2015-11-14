@@ -9,9 +9,9 @@ public class SignupForm {
 
     // Member
     @NotBlank
-    public String name;
+    public String memberName;
     @NotBlank
-    public String account;
+    public String memberAccount;
 
     // Member Security
     @NotBlank
