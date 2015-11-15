@@ -30,7 +30,7 @@ public interface OrleansConfig extends OrleansEnv {
     String DOMAIN_TITLE = "domain.title";
 
     /** The key of the configuration. e.g. DCK */
-    String COOKIE_REMEMBER_ME_DOCKSIDE_KEY = "cookie.remember.me.orleans.key";
+    String COOKIE_REMEMBER_ME_ORLEANS_KEY = "cookie.remember.me.orleans.key";
 
     /**
      * Get the value of property as {@link String}.
@@ -92,7 +92,7 @@ public interface OrleansConfig extends OrleansEnv {
         }
 
         public String getCookieRememberMeOrleansKey() {
-            return get(OrleansConfig.COOKIE_REMEMBER_ME_DOCKSIDE_KEY);
+            return get(OrleansConfig.COOKIE_REMEMBER_ME_ORLEANS_KEY);
         }
     }
 }
