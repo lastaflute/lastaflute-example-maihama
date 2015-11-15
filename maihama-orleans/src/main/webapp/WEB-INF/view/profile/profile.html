@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
-<!--/*/ <th:block th:include="/common/layout.html :: head (title=#{labels.signin.title})"> /*/-->
+<!--/*/ <th:block th:include="/common/layout.html :: head (title='Profile')"> /*/-->
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
@@ -14,7 +14,7 @@
 <header th:replace="/common/layout.html :: header">
 	<section class="nav-main cf">
 		<div class="wrap">
-			<h1 class="main-title"><a href="#">Maihama Dockside<span> (LastaFlute Example)</span></a></h1>
+			<h1 class="main-title"><a href="#">Maihama Orleans<span> (LastaFlute Example)</span></a></h1>
 			<ul class="nav-home">
 				<li><a href="../product/product_list.html" ><span class="link-block">Products</span></a></li>
 				<li><a href="../member/member_list.html" ><span class="link-block">Members</span></a></li>
@@ -34,29 +34,36 @@
 </header>
 <main>
 <div class="contents">
-	<h2 class="content-title" th:text="#{labels.signin.title}">labels.signin.title</h2>
-	<section class="sign-in-box">
-		<form class="signin-form" th:action="@{/signin/}" action="#" method="post">
-			<ul>
-				<li>
-					<span th:text="#{labels.account}">labels.account</span>
-					<input type="text" name="account" th:value="${account}" th:placeholder="#{labels.signin.input.account}"/>
-					<span th:style="'color : red;'" th:each="er : ${errors.part('account')}" th:text="${er.message}"/>
-				</li>
-				<li>
-					<span th:text="#{labels.password}">labels.password</span>
-					<input type="password" name="password" th:value="${password}" th:placeholder="#{labels.signin.input.password}"/>
-					<span th:style="'color : red;'" th:each="er : ${errors.part('password')}" th:text="${er.message}"/>
-				</li>
-				<li>
-					<label><input type="checkbox" name="rememberMe" th:text="#{labels.signin.rememberMe}"/></label>
-				</li>
-				<li>
-					<input type="submit" name="signin" th:value="#{labels.signin.button}" value="labels.signin.button"/>
-				</li>
+	<h2 class="content-title" th:text="#{labels.product.list.title}"></h2>
+	<article class="profile-contents-box">
+		<section class="profile-info-box">
+			<h3 class="content-title-second" th:text="${bean.memberName}"></h3>
+			<ul class="profile-info-detail">
+				<li>MemberStatus : <span th:text="${bean.memberStatusName}"></span></li>
+				<li>PointCount : <span th:text="${bean.servicePointCount}"></span></li>
+				<li>ServiceRank : <span th:text="${bean.serviceRankName}"></span></li>
 			</ul>
-		</form>
-	</section>
+		</section>
+		<section class="profile-product-box">
+			<h3 class="content-title-second">PurchaseHistory</h3>
+			<table class="list-tbl">
+				<thead>
+					<tr>
+						<th>ProductName</th>
+						<th>Price</th>
+						<th>PurchaseDateTime</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="bean : ${bean.purchaseList}">
+						<td th:text="${bean.productName}"></td>
+						<td th:text="${bean.regularPrice}"></td>
+						<td th:text="${bean.purchaseDateTime}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</article>
 </div>
 </main>
 <footer th:replace="/common/layout.html :: footer">

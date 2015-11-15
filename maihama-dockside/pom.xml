@@ -12,7 +12,7 @@
 	<packaging>war</packaging>
 
 	<name>Dockside Application in Maihama</name>
-	<description>example web project, HTML style, for LastaFlute as multi-project</description>
+	<description>example web project, HTML style, for LastaFlute with Thymeleaf</description>
 	<url>http://dbflute.org/lastaflute</url>
 	<inceptionYear>2015</inceptionYear>
 

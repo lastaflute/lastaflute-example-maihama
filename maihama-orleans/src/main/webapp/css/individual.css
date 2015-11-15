@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+/* -------------------------------------------------
+                                 Individual Style
+------------------------------------------------- */
+
+/* -------------------------------------------------
+                                          Sign In
+------------------------------------------------- */
+.sign-in-box {
+	width: 420px;
+	margin: 32px auto;
+	border: solid 4px #E5E5E5;
+	padding: 24px 64px;
+}
+.signin-form {
+}
+.signin-form li {
+	padding: 6px 0;
+}
+.signin-form li p {
+	padding-bottom: 6px;
+	color: #444;
+}
+.signin-form input[type="text"],.signin-form input[type="password"] {
+	padding: 6px 8px;
+	width: 80%;
+}
+.signin-form input[type="submit"] {
+	margin-top: 8px;
+	padding: 10px 32px;
+	height: 36px;
+	background-color: #660032;
+	border: 1px solid #660032;
+	color: #FFF;
+	line-height: 1;
+	font-size: 14px;
+	font-weight: bold;
+	vertical-align: top;
+	cursor: pointer;
+}
+
+
+/* -------------------------------------------------
+                                          Sign Up 
+------------------------------------------------- */
+
+.signup-form input[type="text"],.signup-form input[type="password"] {
+	margin-top: 4px;
+	padding: 6px 8px;
+	width: 80%;
+}
+.signup-form input[type="submit"] {
+	margin-top: 8px;
+	padding: 10px 32px;
+	height: 36px;
+	background-color: #882255;
+	border: 1px solid #882255;
+	color: #FFF;
+	line-height: 1;
+	font-size: 14px;
+	font-weight: bold;
+	vertical-align: top;
+	cursor: pointer;
+}
+
+/* -------------------------------------------------
+                                         Products
+------------------------------------------------- */
+.product-search-box {
+	width: 960px;
+	margin: 32px auto 0;
+}
+.product-search-condition-list {
+	width: 100%;
+	margin-top: 12px;
+}
+.product-search-condition-list li {
+	height: 32px;
+}
+.product-search-condition-list li span {
+	display: inline-block;
+	padding-right: 8px;
+}
+.product-search-form input[type="text"] {
+	padding: 2px 6px;	
+}
+.product-search-form input[type="submit"] {
+	margin-top: 8px;
+	padding: 10px 32px;
+	height: 36px;
+	background-color: #882255;
+	border: 1px solid #882255;
+	color: #FFF;
+	line-height: 1;
+	font-size: 14px;
+	font-weight: bold;
+	vertical-align: top;
+	cursor: pointer;
+}
+.product-result-box {
+	margin: 32px auto 0;
+	width: 960px;
+}
+.product-list-paging-box {
+	text-align: right;
+	margin: 10px 10px 20px 0;
+	font-size: 18px;
+}
+
+/* -------------------------------------------------
+                                          My Page
+------------------------------------------------- */
+.recent-purchase-box {
+	width: 960px;
+	margin: 32px auto 0;
+}
+.follow-box {
+	margin: 32px auto 0;
+}
+
+/* -------------------------------------------------
+                                       Withdrawal
+------------------------------------------------- */
+.select-withdrawal-reason {
+	margin: 32px auto 0;
+}
+.withdrawal-reason-list{
+	margin: 8px auto 0;
+}
+.withdrawal-reason-element{
+	padding: 5px;
+}
+.withdrawal-write-reason{
+	margin:5px 0px;
+}
+
+/* -------------------------------------------------
+                                         Memmbers
+------------------------------------------------- */
+.member-search-box {
+	width: 960px;
+	margin: 20px auto;
+}
+
+.member-result-box {
+	width: 960px;
+	margin: 20px auto;
+}
+
+.profile-contents-box {
+	width: 960px;
+	margin: 20px auto;
+}

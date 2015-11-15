@@ -8,13 +8,20 @@
 		<relativePath>../maihama-base/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>maihama-hangar</artifactId>
+	<artifactId>maihama-orleans</artifactId>
 	<packaging>war</packaging>
 
-	<name>Hangar Application in Maihama</name>
-	<description>example web project, JSON API style, for LastaFlute</description>
+	<name>Orleans Application in Maihama</name>
+	<description>example web project, HTML style, for LastaFlute with Mixer2</description>
 	<url>http://dbflute.org/lastaflute</url>
 	<inceptionYear>2015</inceptionYear>
+
+	<properties>
+		<lasta.thymeleaf.version>0.2.1</lasta.thymeleaf.version>
+		<lasta.mixer2.version>0.2.0-RC3</lasta.mixer2.version>
+		<jsp.version>2.3.1</jsp.version>
+		<commons.fileupload.version>1.3.1</commons.fileupload.version>
+	</properties>
 
 	<licenses>
 		<license>
@@ -80,7 +87,10 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
 							<includeArtifactIds>
-								javax.servlet-api, jetty-boot, jetty-all
+								javax.servlet-api, javax.servlet.jsp, javax.servlet.jsp-api
+								, jetty-boot, jetty-all, jetty-jsp, jetty-schemas, javax.el, javax.websocket-api
+								, tomcat-boot, tomcat-embed-core, tomcat-embed-logging-juli
+								, tomcat-jasper, tomcat-jasper-el, tomcat-el-api, tomcat-jsp-api, ecj
 							</includeArtifactIds>
 							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
@@ -93,7 +103,10 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<packagingExcludes>
-						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar, WEB-INF/lib/jetty-*.jar
+						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar
+						, WEB-INF/lib/jetty-*.jar, WEB-INF/lib/javax.el-*.jar, WEB-INF/lib/javax.websocket-*.jar
+						, WEB-INF/lib/org.eclipse.jdt.core-*.jar
+						, WEB-INF/lib/tomcat-*.jar, WEB-INF/lib/ecj-*.jar
 					</packagingExcludes>
 					<webResources>
 						<resource>
@@ -105,7 +118,7 @@
 					</webResources>
 					<archive>
 						<manifest>
-							<mainClass>org.docksidestage.HangarBoot</mainClass>
+							<mainClass>org.docksidestage.DocksideBoot</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -124,13 +137,35 @@
 			<version>${app.version}</version>
 		</dependency>
 
+		<!-- lastaflute -->
+		<dependency>
+			<groupId>org.lastaflute.html</groupId>
+			<artifactId>lasta-thymeleaf</artifactId>
+			<version>${lasta.thymeleaf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.lastaflute.html</groupId>
+			<artifactId>lasta-mixer2</artifactId>
+			<version>${lasta.mixer2.version}</version>
+		</dependency>
+
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 		<!--                                                               Partner Library -->
 		<!--                                                               = = = = = = = = -->
-		<!-- jetty -->
+		<!-- tomcat -->
 		<dependency>
 			<groupId>org.dbflute.jetty</groupId>
 			<artifactId>jetty-boot</artifactId>
+		</dependency>
+
+		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+		<!--                                                          GoodNeighbor Library -->
+		<!--                                                           = = = = = = = = = = -->
+		<!-- commons -->
+		<dependency> <!-- used for multipart request -->
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons.fileupload.version}</version>
 		</dependency>
 	</dependencies>
 </project>
