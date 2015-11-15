@@ -17,9 +17,7 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.thymeleaf.version>0.2.1-RC2</lasta.thymeleaf.version>
-		<lasta.taglib.version>0.6.1-RC2</lasta.taglib.version> <!-- will be deleted -->
-		<jsp.version>2.3.1</jsp.version>
+		<lasta.thymeleaf.version>0.2.1</lasta.thymeleaf.version>
 		<commons.fileupload.version>1.3.1</commons.fileupload.version>
 	</properties>
 
@@ -88,7 +86,6 @@
 							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
 							<includeArtifactIds>
 								javax.servlet-api, javax.servlet.jsp, javax.servlet.jsp-api
-								, jetty-boot, jetty-all, jetty-jsp, jetty-schemas, javax.el, javax.websocket-api
 								, tomcat-boot, tomcat-embed-core, tomcat-embed-logging-juli
 								, tomcat-jasper, tomcat-jasper-el, tomcat-el-api, tomcat-jsp-api, ecj
 							</includeArtifactIds>
@@ -104,8 +101,6 @@
 				<configuration>
 					<packagingExcludes>
 						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar
-						, WEB-INF/lib/jetty-*.jar, WEB-INF/lib/javax.el-*.jar, WEB-INF/lib/javax.websocket-*.jar
-						, WEB-INF/lib/org.eclipse.jdt.core-*.jar
 						, WEB-INF/lib/tomcat-*.jar, WEB-INF/lib/ecj-*.jar
 					</packagingExcludes>
 					<webResources>
@@ -143,29 +138,10 @@
 			<artifactId>lasta-thymeleaf</artifactId>
 			<version>${lasta.thymeleaf.version}</version>
 		</dependency>
-		<dependency> <!-- will be deleted -->
-			<groupId>org.lastaflute</groupId>
-			<artifactId>lasta-taglib</artifactId>
-			<version>${lasta.taglib.version}</version>
-		</dependency>
 
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 		<!--                                                               Partner Library -->
 		<!--                                                               = = = = = = = = -->
-		<!-- servlet -->
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>javax.servlet.jsp-api</artifactId>
-			<version>${jsp.version}</version>
-		</dependency>
-		<dependency> <!-- tomcat does not provides, jetty's two jar files so here -->
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version> <!-- contains taglibs.standard -->
-			<!-- should be as jar file in executable war to detect tld files -->
-			<scope>runtime</scope> 
-		</dependency>
-
 		<!-- tomcat -->
 		<dependency>
 			<groupId>org.dbflute.tomcat</groupId>
