@@ -26,7 +26,7 @@ import org.mixer2.xhtml.exception.TagTypeUnmatchException;
  */
 public class SigninView extends OrleansBaseView {
 
-    private SigninForm form;
+    private final SigninForm form;
 
     public SigninView(SigninForm form) {
         this.form = form;
@@ -34,8 +34,9 @@ public class SigninView extends OrleansBaseView {
 
     @Override
     protected void render(Html html, RequestManager requestManager) throws TagTypeUnmatchException {
-        // #pending Validation Error
-        Input input = html.getBody().getById("account", Input.class);
-        input.setValue(form.account);
+        if (isNotEmpty(form.account)) {
+            // #thinking registerInputValue("account", form.account);
+            html.getBody().getById("account", Input.class).setValue(form.account);
+        }
     }
 }
