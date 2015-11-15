@@ -29,6 +29,10 @@ import org.mixer2.xhtml.exception.TagTypeUnmatchException;
  */
 public abstract class OrleansBaseView implements Mixer2View {
 
+    static { // #pending framework embedded?
+        System.setProperty("com.sun.xml.internal.bind.v2.runtime.JAXBContextImpl.fastBoot", "true");
+    }
+
     @Override
     public Html toDynamicHtml(Html html) throws TagTypeUnmatchException {
         RequestManager requestManager = ContainerUtil.getComponent(RequestManager.class); // #pending DI
