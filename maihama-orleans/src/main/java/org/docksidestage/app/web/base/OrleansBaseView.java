@@ -30,15 +30,11 @@ import org.mixer2.xhtml.exception.TagTypeUnmatchException;
 public abstract class OrleansBaseView implements Mixer2View {
 
     @Override
-    public Html toDynamicHtml(Html html) {
+    public Html toDynamicHtml(Html html) throws TagTypeUnmatchException {
         RequestManager requestManager = ContainerUtil.getComponent(RequestManager.class); // #pending DI
-        try {
-            adjustCssPath(html, requestManager);
-            render(html, requestManager);
-            return html; // #pending return unneeded?
-        } catch (TagTypeUnmatchException e) { // #pending needs to be embedded?
-            throw new IllegalStateException("Failed to render the HTML: staticHtml=" + html, e);
-        }
+        adjustCssPath(html, requestManager);
+        render(html, requestManager);
+        return html; // #pending return unneeded?
     }
 
     protected void adjustCssPath(Html html, RequestManager requestManager) {

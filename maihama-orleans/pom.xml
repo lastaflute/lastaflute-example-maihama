@@ -18,7 +18,7 @@
 
 	<properties>
 		<lasta.thymeleaf.version>0.2.1</lasta.thymeleaf.version>
-		<lasta.mixer2.version>0.2.0-RC3</lasta.mixer2.version>
+		<lasta.mixer2.version>0.2.0-F-SNAPSHOT</lasta.mixer2.version>
 		<jsp.version>2.3.1</jsp.version>
 		<commons.fileupload.version>1.3.1</commons.fileupload.version>
 	</properties>
