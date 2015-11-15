@@ -62,6 +62,9 @@ public class DocksideLabels extends MaihamaMessages {
     /** The key of the message: Remember me? */
     public static final String LABELS_SIGNIN_REMEMBER_ME = "{labels.signin.rememberMe}";
 
+    /** The key of the message: Sign In Reminder */
+    public static final String LABELS_SIGNIN_REMINDER_TITLE = "{labels.signin.reminder.title}";
+
     /** The key of the message: @[labels.list] of @[labels.product] */
     public static final String LABELS_PRODUCT_LIST_TITLE = "{labels.product.list.title}";
 
