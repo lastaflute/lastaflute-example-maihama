@@ -33,7 +33,7 @@ public class WithdrawalAction extends DocksideBaseAction {
     //                                                                             =======
     @Execute
     public HtmlResponse index() {
-        return asHtml(path_Withdrawal_WithdrawalJsp).useForm(WithdrawalForm.class);
+        return asHtml(path_Withdrawal_WithdrawalHtml).useForm(WithdrawalForm.class);
     }
 
     @Execute
@@ -43,13 +43,16 @@ public class WithdrawalAction extends DocksideBaseAction {
                 messages.addConstraintsRequiredMessage("reasonCode");
             }
         } , () -> {
-            return asHtml(path_Withdrawal_WithdrawalJsp);
+            return asHtml(path_Withdrawal_WithdrawalHtml);
         });
-        return asHtml(path_Withdrawal_WithdrawalConfirmJsp);
+        return asHtml(path_Withdrawal_WithdrawalConfirmHtml);
     }
 
     @Execute
     public HtmlResponse done(WithdrawalForm form) {
+        validate(form, message -> {} , () -> {
+            return asHtml(path_Withdrawal_WithdrawalConfirmHtml);
+        });
         Integer memberId = getUserBean().get().getMemberId();
 
         MemberWithdrawal withdrawal = new MemberWithdrawal();

@@ -66,8 +66,8 @@ public interface DocksideHtmlPath {
     HtmlNext path_Startup_StartupJsp = new HtmlNext("/startup/startup.jsp");
 
     /** The path of the HTML: /withdrawal/withdrawal.jsp */
-    HtmlNext path_Withdrawal_WithdrawalJsp = new HtmlNext("/withdrawal/withdrawal.jsp");
+    HtmlNext path_Withdrawal_WithdrawalHtml = new HtmlNext("/withdrawal/withdrawal.html");
 
-    /** The path of the HTML: /withdrawal/withdrawal_confirm.jsp */
-    HtmlNext path_Withdrawal_WithdrawalConfirmJsp = new HtmlNext("/withdrawal/withdrawal_confirm.jsp");
+    /** The path of the HTML: /withdrawal/withdrawal_confirm.html */
+    HtmlNext path_Withdrawal_WithdrawalConfirmHtml = new HtmlNext("/withdrawal/withdrawal_confirm.html");
 }
