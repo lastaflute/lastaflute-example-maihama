@@ -23,7 +23,7 @@ import org.dbflute.jetty.JettyBoot;
 public class OrleansBoot { // #change_it_first
 
     public static void main(String[] args) { // e.g. java -Dlasta.env=production -jar maihama-orleans.war
-        new JettyBoot(8093, "/orleans").asDevelopment(isNoneEnv()).bootAwait();
+        new JettyBoot(8094, "/orleans").asDevelopment(isNoneEnv()).bootAwait();
     }
 
     private static boolean isNoneEnv() {
