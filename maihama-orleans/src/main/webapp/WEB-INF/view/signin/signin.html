@@ -29,17 +29,19 @@
 	</section>
 </header>
 <div class="contents">
-	<h2 class="content-title">signup.title</h2>
+	<h2 class="content-title">Sign In</h2>
 	<section class="sign-in-box">
 		<form class="signin-form" method="post">
 			<ul>
 				<li>
 					<span>Account</span>
 					<input id="account" type="text" name="account" placeholder="input Pixy"/>
+					<span id="errors-account" style="color : red;"/>
 				</li>
 				<li>
 					<span>Password</span>
 					<input type="password" name="password" placeholder="input sea"/>
+					<span id="errors-password" style="color : red;"/>
 				</li>
 				<li>
 					<label>Remember Me? <input type="checkbox" name="rememberMe"/></label>

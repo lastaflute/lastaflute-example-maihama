@@ -15,36 +15,10 @@
  */
 package org.docksidestage.app.web.base;
 
-import java.util.regex.Pattern;
-
-import org.lastaflute.core.util.ContainerUtil;
-import org.lastaflute.mixer2.view.Mixer2View;
-import org.lastaflute.web.servlet.request.RequestManager;
-import org.mixer2.jaxb.xhtml.Html;
-import org.mixer2.xhtml.PathAdjuster;
-import org.mixer2.xhtml.exception.TagTypeUnmatchException;
+import org.lastaflute.mixer2.view.TypicalMixView;
 
 /**
  * @author jflute
  */
-public abstract class OrleansBaseView implements Mixer2View {
-
-    static { // #pending framework embedded?
-        System.setProperty("com.sun.xml.internal.bind.v2.runtime.JAXBContextImpl.fastBoot", "true");
-    }
-
-    @Override
-    public Html toDynamicHtml(Html html) throws TagTypeUnmatchException {
-        RequestManager requestManager = ContainerUtil.getComponent(RequestManager.class); // #pending DI
-        adjustCssPath(html, requestManager);
-        render(html, requestManager);
-        return html; // #pending return unneeded?
-    }
-
-    protected void adjustCssPath(Html html, RequestManager requestManager) {
-        final Pattern pattern = Pattern.compile("^\\.+/.*css/(.*)$");
-        PathAdjuster.replacePath(html, pattern, requestManager.getContextPath() + "/css/$1");
-    }
-
-    protected abstract void render(Html html, RequestManager requestManager) throws TagTypeUnmatchException;
+public abstract class OrleansBaseView extends TypicalMixView {
 }
