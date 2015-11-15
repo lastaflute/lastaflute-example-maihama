@@ -93,11 +93,11 @@
 					<td th:text="${bean.formalizedDate}">bean.formalizedDate</td>
 					<td th:text="${bean.updateDatetime}">bean.updateDatetime</td>
 					<td>
-						<span th:if="${!bean.withdrawalMember}"><a th:href="@{/member/edit/${bean.memberId}}">Edit</a></span>
+						<span th:if="${!bean.withdrawalMember}"><a th:href="@{'/member/edit/' + ${bean.memberId}}">Edit</a></span>
 						<span th:if="${bean.withdrawalMember}">Cannot</span>
 					</td>
 					<td th:if="${bean.purchaseCount &gt; 0}">
-						<a href="member_detail.html" th:href="@{/member/purchase/list/${bean.memberId}}">has Purchases</a>
+						<a href="member_detail.html" th:href="@{'/member/purchase/list/' + ${bean.memberId}}">has Purchases</a>
 					</td>
 				</tr>
 			</tbody>

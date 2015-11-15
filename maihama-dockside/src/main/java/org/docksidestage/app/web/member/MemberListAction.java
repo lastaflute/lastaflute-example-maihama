@@ -44,7 +44,7 @@ public class MemberListAction extends DocksideBaseAction {
     @Execute
     public HtmlResponse index(OptionalThing<Integer> pageNumber, MemberSearchForm form) {
         validate(form, messages -> {} , () -> {
-            return asHtml(path_Member_MemberListJsp);
+            return asHtml(path_Member_MemberListHtml);
         });
         PagingResultBean<Member> page = selectMemberPage(pageNumber.orElse(1), form);
         PagingResultBean<MemberSearchRowBean> beans = page.mappingList(member -> {

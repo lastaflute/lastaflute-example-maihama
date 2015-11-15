@@ -28,8 +28,8 @@ public class MemberPurchaseListAction extends DocksideBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public HtmlResponse index(Integer memberId, Integer pageNumber) {
+    public HtmlResponse index(Integer memberId) {
         throw404("now making...");
-        return asHtml(path_MemberPurchase_MemberPurchaseListJsp);
+        return null;
     }
 }

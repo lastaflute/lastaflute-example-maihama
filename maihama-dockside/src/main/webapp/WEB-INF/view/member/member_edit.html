@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
-<!--/*/ <th:block th:include="/common/layout.html :: head (title='Member Add')"> /*/-->
+<!--/*/ <th:block th:include="/common/layout.html :: head (title='Member Edit')"> /*/-->
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
@@ -34,9 +34,9 @@
 </header>
 <main>
 <div class="contents">
-	<h2 class="content-title" th:text="#{labels.member.add.title}">labels.member.add.title</h2>
+	<h2 class="content-title" th:text="#{labels.member.edit.title}">labels.member.edit.title</h2>
 	<section class="member-input-box">
-		<form th:action="@{/member/add/}" action="#" method="post">
+		<form th:action="@{/member/edit/}" action="#" method="post">
 			<table>
 				<tr>
 					<td>Member Name</td>
@@ -53,14 +53,17 @@
 				<tr>
 					<td>Member Status</td>
 					<td>
-						<select name="memberStatus" th:class="${errors.exists('memberStatus')} ? 'valid-error'">
+						<select la:property="memberStatus" th:class="${errors.exists('memberStatus')} ? 'valid-error'">
 							<option value="" th:text="#{labels.listbox.caption.tell}"></option>
 							<option la:optionCls="MemberStatus"></option>
 						</select>
 					</td>
 				</tr>
 			</table>
-			<input type="submit" name="register" th:value="#{labels.register}" value="register" />
+			<input type="hidden" name="memberId" th:value="${memberId}"/>
+			<input type="hidden" name="previousStatus" th:value="${previousStatus}"/>
+			<input type="hidden" name="versionNo" th:value="${versionNo}"/>
+			<input type="submit" name="update" th:value="#{labels.update}" value="update" />
 		</form>
 		<div class="listback">
 			<a th:href="@{/member/list/}" href="member_list.html">back to Member list</a>

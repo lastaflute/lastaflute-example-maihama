@@ -45,6 +45,7 @@ public class ProductListAction extends DocksideBaseAction {
     //                                                                             =======
     @Execute
     public HtmlResponse index(OptionalThing<Integer> pageNumber, ProductSearchForm form) {
+        throwIllegalTransition("a");
         validate(form, messages -> {} , () -> {
             return asHtml(path_Product_ProductListHtml);
         });
