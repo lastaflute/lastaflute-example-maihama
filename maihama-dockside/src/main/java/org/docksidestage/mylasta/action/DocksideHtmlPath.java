@@ -47,8 +47,8 @@ public interface DocksideHtmlPath {
     /** The path of the HTML: /profile/profile.html */
     HtmlNext path_Profile_ProfileHtml = new HtmlNext("/profile/profile.html");
 
-    /** The path of the HTML: /purchase/purchase_list.jsp */
-    HtmlNext path_Purchase_PurchaseListJsp = new HtmlNext("/purchase/purchase_list.jsp");
+    /** The path of the HTML: /purchase/purchase_list.html */
+    HtmlNext path_Purchase_PurchaseListHtml = new HtmlNext("/purchase/purchase_list.html");
 
     /** The path of the HTML: /signin/signin.html */
     HtmlNext path_Signin_SigninHtml = new HtmlNext("/signin/signin.html");
@@ -62,10 +62,7 @@ public interface DocksideHtmlPath {
     /** The path of the HTML: /startup/startup.html */
     HtmlNext path_Startup_StartupHtml = new HtmlNext("/startup/startup.html");
 
-    /** The path of the HTML: /startup/startup.jsp */
-    HtmlNext path_Startup_StartupJsp = new HtmlNext("/startup/startup.jsp");
-
-    /** The path of the HTML: /withdrawal/withdrawal.jsp */
+    /** The path of the HTML: /withdrawal/withdrawal.html */
     HtmlNext path_Withdrawal_WithdrawalHtml = new HtmlNext("/withdrawal/withdrawal.html");
 
     /** The path of the HTML: /withdrawal/withdrawal_confirm.html */

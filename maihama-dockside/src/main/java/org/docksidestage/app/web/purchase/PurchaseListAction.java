@@ -36,7 +36,7 @@ public class PurchaseListAction extends DocksideBaseAction {
         List<PurchaseBean> beans = page.mappingList(purchase -> {
             return mappingToBean(purchase);
         });
-        return asHtml(path_Purchase_PurchaseListJsp).renderWith(data -> {
+        return asHtml(path_Purchase_PurchaseListHtml).renderWith(data -> {
             data.register("beans", beans);
             registerPagingNavi(data, page, form);
         });
