@@ -33,7 +33,7 @@ import org.lastaflute.web.response.HtmlResponse;
 public class MypageAction extends DocksideBaseAction {
 
     @Resource
-    protected ProductBhv productBhv;
+    private ProductBhv productBhv;
 
     @Execute
     public HtmlResponse index() {
