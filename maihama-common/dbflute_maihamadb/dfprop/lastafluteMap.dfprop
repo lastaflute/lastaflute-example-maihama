@@ -39,7 +39,7 @@ map:{
     ; appMap = map:{
         ; dockside = map:{
             ; path = ../../maihama-dockside
-            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; html ; jsp ; doc }
+            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; html ; doc }
             ; propertiesHtmlList = list:{ env ; config ; label ; message }
         }
         ; hangar = map:{
