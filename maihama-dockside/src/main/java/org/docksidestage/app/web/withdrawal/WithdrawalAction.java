@@ -51,7 +51,7 @@ public class WithdrawalAction extends DocksideBaseAction {
     @Execute
     public HtmlResponse done(WithdrawalForm form) {
         validate(form, message -> {} , () -> {
-            return asHtml(path_Withdrawal_WithdrawalConfirmHtml);
+            return asHtml(path_Withdrawal_WithdrawalHtml);
         });
         Integer memberId = getUserBean().get().getMemberId();
 
