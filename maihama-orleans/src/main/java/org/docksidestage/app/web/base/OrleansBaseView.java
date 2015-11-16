@@ -38,53 +38,61 @@ public abstract class OrleansBaseView extends TypicalMixView {
             Consumer<TableDataResource<ENTITY>> oneArgLambda) throws TagTypeUnmatchException {
         final Body body = html.getBody();
         final Tbody tbody = body.getById(tbodyId, Tbody.class);
-        final Tr baseTr = tbody.getTr().get(0).copy(Tr.class);
+        final Tr baseTr = tbody.getTr().get(0).copy(Tr.class); // #pending check out of bounds
         tbody.unsetTr();
         for (ENTITY product : entityList) {
             final Tr tr = baseTr.copy(Tr.class);
-            final List<Td> tdList = tr.getThOrTd().stream().map(flow -> (Td) flow).collect(Collectors.toList());
-            oneArgLambda.accept(new TableDataResource<ENTITY>(tr, tdList, product));
+            final List<Td> tdList = tr.getThOrTd().stream().map(flow -> {
+                return (Td) flow; // #pending check class cast
+            }).collect(Collectors.toList());
+            oneArgLambda.accept(new TableDataResource<ENTITY>(tbody, tr, tdList, product));
             tbody.getTr().add(tr);
         }
     }
 
     public static class TableDataResource<ENTITY> {
 
-        protected final Tr row;
-        protected final List<Td> dataList;
+        protected final Tbody tbody;
+        protected final Tr tr;
+        protected final List<Td> tdList;
         protected final ENTITY entity;
         protected int index;
 
-        public TableDataResource(Tr currentRow, List<Td> dataList, ENTITY entity) {
-            this.row = currentRow;
-            this.dataList = dataList;
+        public TableDataResource(Tbody tbody, Tr tr, List<Td> tdList, ENTITY entity) {
+            this.tbody = tbody;
+            this.tr = tr;
+            this.tdList = tdList;
             this.entity = entity;
         }
 
         public void reflectTag(AbstractJaxb tag) {
-            dataList.get(index).replaceInner(tag);
+            tdList.get(index).replaceInner(tag); // #pending check out of bounds
             ++index;
         }
 
         public void reflectText(Object text) {
-            dataList.get(index).replaceInner(text.toString());
+            tdList.get(index).replaceInner(text.toString()); // #pending check out of bounds
             ++index;
         }
 
-        public Tr getRow() {
-            return row;
+        public Tbody getTbody() {
+            return tbody;
         }
 
-        public List<Td> getDataList() {
-            return dataList;
+        public Tr getTr() {
+            return tr;
+        }
+
+        public Td getCurrentTd() {
+            return tdList.get(index); // #pending check out of bounds
+        }
+
+        public List<Td> getTdList() {
+            return tdList;
         }
 
         public ENTITY getEntity() {
             return entity;
-        }
-
-        public int getIndex() {
-            return index;
         }
     }
 }
