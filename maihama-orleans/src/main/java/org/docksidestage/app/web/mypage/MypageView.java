@@ -15,17 +15,11 @@
  */
 package org.docksidestage.app.web.mypage;
 
-import java.util.List;
-
 import org.dbflute.cbean.result.ListResultBean;
 import org.docksidestage.app.web.base.OrleansBaseView;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.mixer2.view.Mixer2Supporter;
-import org.mixer2.jaxb.xhtml.Body;
-import org.mixer2.jaxb.xhtml.Flow;
 import org.mixer2.jaxb.xhtml.Html;
-import org.mixer2.jaxb.xhtml.Tbody;
-import org.mixer2.jaxb.xhtml.Tr;
 import org.mixer2.xhtml.exception.TagTypeUnmatchException;
 
 /**
@@ -41,16 +35,23 @@ public class MypageView extends OrleansBaseView {
 
     @Override
     protected void render(Html html, Mixer2Supporter supporter) throws TagTypeUnmatchException {
-        Body body = html.getBody();
-        Tbody productTBody = body.getById("products", Tbody.class);
-        Tr baseTr = productTBody.getTr().get(0).copy(Tr.class);
-        productTBody.unsetTr();
-        for (Product product : productList) {
-            Tr tr = baseTr.copy(Tr.class);
-            List<Flow> tdList = tr.getThOrTd();
-            tdList.get(0).replaceInner(product.getProductName());
-            tdList.get(1).replaceInner(String.valueOf(product.getRegularPrice()));
-            productTBody.getTr().add(tr);
-        }
+        // beta beta
+        //Body body = html.getBody();
+        //Tbody productTBody = body.getById("products", Tbody.class);
+        //Tr baseTr = productTBody.getTr().get(0).copy(Tr.class);
+        //productTBody.unsetTr();
+        //for (Product product : productList) {
+        //    Tr tr = baseTr.copy(Tr.class);
+        //    List<Flow> tdList = tr.getThOrTd();
+        //    tdList.get(0).replaceInner(product.getProductName());
+        //    tdList.get(1).replaceInner(String.valueOf(product.getRegularPrice()));
+        //    productTBody.getTr().add(tr);
+        //}
+        // #thinking use TableBuilder?
+        reflectDataToTBody(html, productList, "products", res -> {
+            Product product = res.getEntity();
+            res.reflectText(product.getProductName());
+            res.reflectText(product.getRegularPrice());
+        });
     }
 }
