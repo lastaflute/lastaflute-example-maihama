@@ -37,8 +37,12 @@ public class SigninView extends OrleansBaseView {
     protected void render(Html html, Mixer2Supporter supporter) throws TagTypeUnmatchException {
         Body body = html.getBody();
         if (isNotEmpty(form.account)) {
-            body.getById("account", Input.class).setValue(form.account);
+            supporter.getById(body, "account", Input.class).alwaysPresent(input -> {
+                input.setValue(form.account);
+            });
         }
-        body.getById("rememberMe", Input.class).setChecked(form.rememberMe ? "on" : null);
+        supporter.getById(body, "rememberMe", Input.class).alwaysPresent(input -> {
+            input.setChecked(form.rememberMe ? "on" : null);
+        });
     }
 }
