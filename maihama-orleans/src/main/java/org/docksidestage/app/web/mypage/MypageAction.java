@@ -15,9 +15,6 @@
  */
 package org.docksidestage.app.web.mypage;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import javax.annotation.Resource;
 
 import org.dbflute.cbean.result.ListResultBean;
@@ -37,15 +34,10 @@ public class MypageAction extends OrleansBaseAction {
 
     @Execute
     public HtmlResponse index() {
-        ListResultBean<Product> memberList = productBhv.selectList(cb -> {
+        ListResultBean<Product> productList = productBhv.selectList(cb -> {
             cb.query().addOrderBy_RegularPrice_Desc();
             cb.fetchFirst(3);
         });
-        List<MypageProductBean> beans = memberList.stream().map(member -> {
-            return new MypageProductBean(member);
-        }).collect(Collectors.toList());
-        return asHtml(path_Mypage_MypageHtml).renderWith(data -> {
-            data.register("beans", beans);
-        });
+        return asHtml(path_Mypage_MypageHtml).withView(new MypageView(productList));
     }
 }
