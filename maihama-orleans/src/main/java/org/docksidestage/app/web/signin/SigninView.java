@@ -16,7 +16,7 @@
 package org.docksidestage.app.web.signin;
 
 import org.docksidestage.app.web.base.OrleansBaseView;
-import org.lastaflute.web.servlet.request.RequestManager;
+import org.lastaflute.mixer2.view.Mixer2Supporter;
 import org.mixer2.jaxb.xhtml.Body;
 import org.mixer2.jaxb.xhtml.Html;
 import org.mixer2.jaxb.xhtml.Input;
@@ -34,7 +34,7 @@ public class SigninView extends OrleansBaseView {
     }
 
     @Override
-    protected void render(Html html, RequestManager requestManager) throws TagTypeUnmatchException {
+    protected void render(Html html, Mixer2Supporter supporter) throws TagTypeUnmatchException {
         Body body = html.getBody();
         if (isNotEmpty(form.account)) {
             // #thinking registerInputValue("account", form.account);
