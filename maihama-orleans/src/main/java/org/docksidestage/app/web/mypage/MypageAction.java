@@ -19,19 +19,28 @@ import javax.annotation.Resource;
 
 import org.dbflute.cbean.result.ListResultBean;
 import org.docksidestage.app.web.base.OrleansBaseAction;
+import org.docksidestage.app.web.base.OrleansBaseView;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
 import org.docksidestage.dbflute.exentity.Product;
+import org.lastaflute.mixer2.view.Mixer2Supporter;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
+import org.mixer2.jaxb.xhtml.Html;
 
 /**
  * @author jflute
  */
 public class MypageAction extends OrleansBaseAction {
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
     @Resource
     private ProductBhv productBhv;
 
+    // ===================================================================================
+    //                                                                             Execute
+    //                                                                             =======
     @Execute
     public HtmlResponse index() {
         ListResultBean<Product> productList = productBhv.selectList(cb -> {
@@ -39,5 +48,39 @@ public class MypageAction extends OrleansBaseAction {
             cb.fetchFirst(3);
         });
         return asHtml(path_Mypage_MypageHtml).withView(new MypageView(productList));
+    }
+
+    // ===================================================================================
+    //                                                                               View
+    //                                                                              ======
+    public class MypageView extends OrleansBaseView {
+
+        private final ListResultBean<Product> productList;
+
+        public MypageView(ListResultBean<Product> productList) {
+            this.productList = productList;
+        }
+
+        @Override
+        protected void render(Html html, Mixer2Supporter supporter) {
+            // beta beta
+            //Body body = html.getBody();
+            //Tbody productTBody = body.getById("products", Tbody.class);
+            //Tr baseTr = productTBody.getTr().get(0).copy(Tr.class);
+            //productTBody.unsetTr();
+            //for (Product product : productList) {
+            //    Tr tr = baseTr.copy(Tr.class);
+            //    List<Flow> tdList = tr.getThOrTd();
+            //    tdList.get(0).replaceInner(product.getProductName());
+            //    tdList.get(1).replaceInner(String.valueOf(product.getRegularPrice()));
+            //    productTBody.getTr().add(tr);
+            //}
+            // #thinking use TableBuilder?
+            reflectDataToTBody(html, productList, "products", res -> {
+                Product product = res.getEntity();
+                res.reflectText(product.getProductName());
+                res.reflectText(product.getRegularPrice());
+            });
+        }
     }
 }

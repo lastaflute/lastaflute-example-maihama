@@ -32,6 +32,9 @@ import org.mixer2.xhtml.AbstractJaxb;
  */
 public abstract class OrleansBaseView extends TypicalMixView {
 
+    // ===================================================================================
+    //                                                                             Reflect
+    //                                                                             =======
     // #pending embed this to supporter
     protected <ENTITY> void reflectDataToTBody(Html html, List<ENTITY> entityList, String tbodyId,
             Consumer<TableDataResource<ENTITY>> oneArgLambda) {

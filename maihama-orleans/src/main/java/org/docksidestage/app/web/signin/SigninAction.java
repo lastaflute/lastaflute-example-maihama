@@ -19,10 +19,15 @@ import javax.annotation.Resource;
 
 import org.docksidestage.app.web.RootAction;
 import org.docksidestage.app.web.base.OrleansBaseAction;
+import org.docksidestage.app.web.base.OrleansBaseView;
 import org.docksidestage.app.web.base.login.OrleansLoginAssist;
 import org.docksidestage.mylasta.action.OrleansMessages;
+import org.lastaflute.mixer2.view.Mixer2Supporter;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
+import org.mixer2.jaxb.xhtml.Body;
+import org.mixer2.jaxb.xhtml.Html;
+import org.mixer2.jaxb.xhtml.Input;
 
 /**
  * @author jflute
@@ -62,6 +67,33 @@ public class SigninAction extends OrleansBaseAction {
             if (!orleansLoginAssist.checkUserLoginable(form.account, form.password)) {
                 messages.addErrorsLoginFailure("account");
             }
+        }
+    }
+
+    // ===================================================================================
+    //                                                                               View
+    //                                                                              ======
+    public class SigninView extends OrleansBaseView {
+
+        private final SigninForm form;
+
+        public SigninView(SigninForm form) {
+            this.form = form;
+        }
+
+        @Override
+        protected void render(Html html, Mixer2Supporter supporter) {
+            Body body = html.getBody();
+            if (isNotEmpty(form.account)) {
+                // #pending supporter.registerInputValue(body, "account", form.account).
+                supporter.findById(body, "account", Input.class).alwaysPresent(input -> {
+                    input.setValue(form.account);
+                });
+            }
+            // #pending supporter.registerInputValue(body, "rememberMe", form.rememberMe).
+            supporter.findById(body, "rememberMe", Input.class).alwaysPresent(input -> {
+                input.setChecked(form.rememberMe ? "on" : null);
+            });
         }
     }
 }
