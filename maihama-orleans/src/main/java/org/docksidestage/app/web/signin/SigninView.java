@@ -20,7 +20,6 @@ import org.lastaflute.mixer2.view.Mixer2Supporter;
 import org.mixer2.jaxb.xhtml.Body;
 import org.mixer2.jaxb.xhtml.Html;
 import org.mixer2.jaxb.xhtml.Input;
-import org.mixer2.xhtml.exception.TagTypeUnmatchException;
 
 /**
  * @author jflute
@@ -34,7 +33,7 @@ public class SigninView extends OrleansBaseView {
     }
 
     @Override
-    protected void render(Html html, Mixer2Supporter supporter) throws TagTypeUnmatchException {
+    protected void render(Html html, Mixer2Supporter supporter) {
         Body body = html.getBody();
         if (isNotEmpty(form.account)) {
             supporter.getById(body, "account", Input.class).alwaysPresent(input -> {

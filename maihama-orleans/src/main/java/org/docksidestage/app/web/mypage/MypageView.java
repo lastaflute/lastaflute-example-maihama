@@ -20,7 +20,6 @@ import org.docksidestage.app.web.base.OrleansBaseView;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.mixer2.view.Mixer2Supporter;
 import org.mixer2.jaxb.xhtml.Html;
-import org.mixer2.xhtml.exception.TagTypeUnmatchException;
 
 /**
  * @author jflute
@@ -34,7 +33,7 @@ public class MypageView extends OrleansBaseView {
     }
 
     @Override
-    protected void render(Html html, Mixer2Supporter supporter) throws TagTypeUnmatchException {
+    protected void render(Html html, Mixer2Supporter supporter) {
         // beta beta
         //Body body = html.getBody();
         //Tbody productTBody = body.getById("products", Tbody.class);
