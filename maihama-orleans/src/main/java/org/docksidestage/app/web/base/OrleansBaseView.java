@@ -15,11 +15,19 @@
  */
 package org.docksidestage.app.web.base;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import javax.annotation.Resource;
+
+import org.dbflute.optional.OptionalThing;
+import org.docksidestage.app.logic.i18n.I18nDateLogic;
 import org.lastaflute.mixer2.view.TypicalMixView;
+import org.lastaflute.web.servlet.request.RequestManager;
 import org.mixer2.jaxb.xhtml.Body;
 import org.mixer2.jaxb.xhtml.Html;
 import org.mixer2.jaxb.xhtml.Tbody;
@@ -31,6 +39,52 @@ import org.mixer2.xhtml.AbstractJaxb;
  * @author jflute
  */
 public abstract class OrleansBaseView extends TypicalMixView {
+
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
+    // by everywhere injector
+    @Resource
+    private RequestManager requestManager;
+    @Resource
+    private I18nDateLogic i18nDateLogic;
+
+    // ===================================================================================
+    //                                                                   Conversion Helper
+    //                                                                   =================
+    // #app_customize you can customize the conversion logic
+    // -----------------------------------------------------
+    //                                         to Local Date
+    //                                         -------------
+    protected OptionalThing<LocalDate> toDate(Object exp) { // application may call
+        return i18nDateLogic.toDate(exp, myConvZone());
+    }
+
+    protected OptionalThing<LocalDateTime> toDateTime(Object exp) { // application may call
+        return i18nDateLogic.toDateTime(exp, myConvZone());
+    }
+
+    // -----------------------------------------------------
+    //                                        to String Date
+    //                                        --------------
+    protected OptionalThing<String> toStringDate(LocalDate date) { // application may call
+        return i18nDateLogic.toStringDate(date, myConvZone());
+    }
+
+    protected OptionalThing<String> toStringDate(LocalDateTime dateTime) { // application may call
+        return i18nDateLogic.toStringDate(dateTime, myConvZone());
+    }
+
+    protected OptionalThing<String> toStringDateTime(LocalDateTime dateTime) { // application may call
+        return i18nDateLogic.toStringDateTime(dateTime, myConvZone());
+    }
+
+    // -----------------------------------------------------
+    //                                   Conversion Resource
+    //                                   -------------------
+    protected TimeZone myConvZone() {
+        return requestManager.getUserTimeZone();
+    }
 
     // ===================================================================================
     //                                                                             Reflect
