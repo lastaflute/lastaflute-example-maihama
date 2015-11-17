@@ -26,7 +26,6 @@ import org.mixer2.jaxb.xhtml.Tbody;
 import org.mixer2.jaxb.xhtml.Td;
 import org.mixer2.jaxb.xhtml.Tr;
 import org.mixer2.xhtml.AbstractJaxb;
-import org.mixer2.xhtml.exception.TagTypeUnmatchException;
 
 /**
  * @author jflute
@@ -35,19 +34,19 @@ public abstract class OrleansBaseView extends TypicalMixView {
 
     // #pending embed this to supporter
     protected <ENTITY> void reflectDataToTBody(Html html, List<ENTITY> entityList, String tbodyId,
-            Consumer<TableDataResource<ENTITY>> oneArgLambda) throws TagTypeUnmatchException {
+            Consumer<TableDataResource<ENTITY>> oneArgLambda) {
         final Body body = html.getBody();
         final Tbody tbody = body.getById(tbodyId, Tbody.class);
         final Tr baseTr = tbody.getTr().get(0).copy(Tr.class); // #pending check out of bounds
         tbody.unsetTr();
-        for (ENTITY product : entityList) {
+        entityList.forEach(entity -> {
             final Tr tr = baseTr.copy(Tr.class);
             final List<Td> tdList = tr.getThOrTd().stream().map(flow -> {
                 return (Td) flow; // #pending check class cast
             }).collect(Collectors.toList());
-            oneArgLambda.accept(new TableDataResource<ENTITY>(tbody, tr, tdList, product));
+            oneArgLambda.accept(new TableDataResource<ENTITY>(tbody, tr, tdList, entity));
             tbody.getTr().add(tr);
-        }
+        });
     }
 
     public static class TableDataResource<ENTITY> {
