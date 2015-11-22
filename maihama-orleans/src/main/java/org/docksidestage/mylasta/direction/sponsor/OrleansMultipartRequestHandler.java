@@ -179,7 +179,10 @@ public class OrleansMultipartRequestHandler implements MultipartRequestHandler {
                 addTextParameter(request, item);
             } else {
                 showFileFieldParameter(item);
-                addFileParameter(item);
+                final String itemName = item.getName();
+                if (itemName != null && !itemName.isEmpty()) {
+                    addFileParameter(item);
+                }
             }
         }
     }
