@@ -34,20 +34,7 @@ public class MypageView extends OrleansBaseView {
 
     @Override
     protected void render(Html html, Mixer2Supporter supporter) {
-        // beta beta
-        //Body body = html.getBody();
-        //Tbody productTBody = body.getById("products", Tbody.class);
-        //Tr baseTr = productTBody.getTr().get(0).copy(Tr.class);
-        //productTBody.unsetTr();
-        //for (Product product : productList) {
-        //    Tr tr = baseTr.copy(Tr.class);
-        //    List<Flow> tdList = tr.getThOrTd();
-        //    tdList.get(0).replaceInner(product.getProductName());
-        //    tdList.get(1).replaceInner(String.valueOf(product.getRegularPrice()));
-        //    productTBody.getTr().add(tr);
-        //}
-        // #thinking use TableBuilder?
-        reflectDataToTBody(html, productList, "products", res -> {
+        supporter.reflectDataToTBody(html, productList, "products", res -> {
             Product product = res.getEntity();
             res.reflectText(product.getProductName());
             res.reflectText(product.getRegularPrice());
