@@ -55,6 +55,7 @@ public abstract class OrleansBaseView extends TypicalMixView {
                 header.replaceById("nav-user-name", bean.getMemberName());
             });
         });
+        // TODO jflute mixer2: select box by CDef (2015/11/23)
     }
 
     // ===================================================================================
