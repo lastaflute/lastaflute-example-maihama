@@ -19,7 +19,6 @@ import org.docksidestage.app.web.base.OrleansBaseView;
 import org.lastaflute.mixer2.view.Mixer2Supporter;
 import org.mixer2.jaxb.xhtml.Body;
 import org.mixer2.jaxb.xhtml.Html;
-import org.mixer2.jaxb.xhtml.Input;
 
 /**
  * @author jflute
@@ -37,12 +36,12 @@ public class SigninView extends OrleansBaseView {
         Body body = html.getBody();
         if (isNotEmpty(form.account)) {
             // #pending supporter.registerInputValue(body, "account", form.account).
-            supporter.findById(body, "account", Input.class).alwaysPresent(input -> {
+            supporter.findInput(body, "account").alwaysPresent(input -> {
                 input.setValue(form.account);
             });
         }
         // #pending supporter.registerInputValue(body, "rememberMe", form.rememberMe).
-        supporter.findById(body, "rememberMe", Input.class).alwaysPresent(input -> {
+        supporter.findInput(body, "rememberMe").alwaysPresent(input -> {
             input.setChecked(form.rememberMe ? "on" : null);
         });
     }
