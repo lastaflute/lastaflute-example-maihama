@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-<!--/*/ <th:block th:include="/common/th_layout.html :: head (title=#{labels.product.list.title})"> /*/-->
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="../../../css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="../../../css/common.css" />
 	<link rel="stylesheet" type="text/css" href="../../../css/individual.css" />
-	<title>Preview Title</title>
-<!--/*/ </th:block> /*/-->
-<!--/* individual Css write to after */-->
+	<title>List of Product | Maihama Orleans</title>
 </head>
 <body>
-<header th:replace="/common/th_layout.html :: header">
+<header id="header">
 	<section class="nav-main cf">
 		<div class="wrap">
 			<h1 class="main-title"><a href="#">Maihama Orleans<span> (LastaFlute Example)</span></a></h1>
@@ -22,7 +19,7 @@
 			</ul>
 			<ul class="nav-user">
 				<li>
-					<p class="nameHeader">Welcome, Mr.Guest</p>
+					<p>Welcome, <span id="nav-user-name">Mr.Guest</span></p>
 					<ul class="child">
 						<li><a href="#">Profile</a></li>
 						<li><a href="#">Sign out</a></li>
@@ -34,63 +31,65 @@
 </header>
 <main>
 <div class="contents">
-	<h2 class="content-title" th:text="#{labels.product.list.title}">labels.product.list.title</h2>
+	<h2 class="content-title">List of Product</h2>
 	<section class="product-search-box">
-		<h3 class="content-title-second" th:text="#{labels.search.condition}">labels.search.condition</h3>
-		<form class="product-search-form" action="#" th:action="@{/product/list/}" method="get">
+		<h3 class="content-title-second" >Search Sondition</h3>
+		<form class="product-search-form" method="get">
 			<ul class="product-search-condition-list">
 				<li>
-					<span th:text="#{labels.productName}">labels.productName</span>
-					<input type="text" name="productName" th:value="${productName}"/>
-					<span th:style="'color : red;'" th:each="er : ${errors.part('productName')}" th:text="${er.message}"/>
+					Product Name
+					<input type="text" id="productName" name="productName"/>
+					<span id="errors-productName" class="errors"/>
 				</li>
 				<li>
-					<span th:text="#{labels.productStatus}">labels.productStatus</span>
-					<select la:property="productStatus">
-						<option value="" th:text="#{labels.listbox.caption.tell}"></option>
-						<option la:optionCls="ProductStatus"></option>
+					Product Status
+					<select name="productStatus">
+						<option value="">select</option>
+						<option id="cls-ProductStatus"></option>
 					</select>
 				</li>
 				<li>
-					<span th:text="#{labels.purchase} + ' ' + #{labels.member}">labels.purchase labels.member</span>
-					<input type="text" name="purchaseMemberName" th:value="${purchaseMemberName}"/>
-					<span th:style="'color : red;'" th:each="er : ${errors.part('purchaseMemberName')}" th:text="${er.message}"/>
+					Purchase Member
+					<input type="text" id="purchaseMemberName" name="purchaseMemberName"/>
+					<span id="errors-purchaseMemberName" class="errors"/>
 				</li>
 			</ul>
-			<input type="submit" th:value="#{labels.search}" value="search"/>
+			<input type="submit" name="search" value="Search"/>
 		</form>
 	</section>
 	<section class="product-result-box">
-		<h3 class="content-title-second" th:text="#{labels.search.result}">labels.search.result</h3>
+		<h3 class="content-title-second">Search Result</h3>
 		<table class="list-tbl">
 			<thead>
 				<tr>
-					<th th:text="#{labels.id}">labels.id</th>
-					<th th:text="#{labels.productName}">labels.productName</th>
-					<th th:text="#{labels.status}">labels.status</th>
-					<th th:text="#{labels.category}">labels.category</th>
-					<th th:text="#{labels.price}">labels.price</th>
-					<th th:text="#{labels.product.list.latestPurchaseDate}">labels.product.item.latestPurchaseDate</th>
+					<th>ID</th>
+					<th>Product Name</th>
+					<th>Status</th>
+					<th>Category</th>
+					<th>Price</th>
+					<th>Latest PurchaseDate</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr th:each="bean : ${beans}">
-					<td th:text="${bean.productId}">${f:h(bean.productId)}</td>
-					<td><a th:href="@{/product/detail/{productId}(productId=${bean.productId})}" href="product_detail.html" th:text="${bean.productName}">${f:h(bean.productName)}</a></td>
-					<td th:text="${bean.productStatus}">${f:h(bean.productStatus)}</td>
-					<td th:text="${bean.productCategory}">${f:h(bean.productCategory)}</td>
-					<td th:text="${bean.regularPrice}">${f:h(bean.regularPrice)}</td>
-					<td th:text="${bean.latestPurchaseDate}">${f:h(bean.latestPurchaseDate)}</td>
+			<tbody id="products">
+				<tr>
+					<td>3</td>
+					<td>Silver Flute</td>
+					<td>on Sales</td>
+					<td>Music</td>
+					<td>100</td>
+					<td>2015/11/25</td>
 				</tr>
 			</tbody>
 		</table>
+		<!-- TODO jflute mixer2 for paging
 		<section class="product-list-paging-box">
 			<div th:replace="/common/th_layout.html :: paging-navi (pagingNavi=${pagingNavi})"></div>
 		</section>
+		 -->
 	</section>
 </div>
 </main>
-<footer th:replace="/common/th_layout.html :: footer">
+<footer id="footer">
 	<div class="wrap">
 		<ul class="footer-link">
 			<li><a href="http://dbflute.seasar.org/">DBFlute Top</a></li>
@@ -99,11 +98,7 @@
 		<p class="copyright">&copy; LastaFlute project</p>
 	</div>
 </footer>
-<!--/*/ <th:block th:include="/common/th_layout.html :: afterScript"> /*/-->
-<!-- script contents -->
-<script src="../../../js/jquery-2.1.3.min.js" ></script>
-<script src="../../../js/common.js" ></script>
-<!--/*/ </th:block> /*/-->
-<!--/* individual Script write to after */-->
+<script src="../../../js/jquery-2.1.3.min.js"></script>
+<script src="../../../js/common.js"></script>
 </body>
 </html>

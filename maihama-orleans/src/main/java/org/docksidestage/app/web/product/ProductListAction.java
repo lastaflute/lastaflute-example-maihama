@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.product;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.dbflute.cbean.result.PagingResultBean;
@@ -49,13 +47,7 @@ public class ProductListAction extends OrleansBaseAction {
             return asHtml(path_Product_ProductListHtml);
         });
         PagingResultBean<Product> page = selectProductPage(pageNumber.orElse(1), form);
-        List<ProductSearchRowBean> beans = page.mappingList(product -> {
-            return mappingToBean(product);
-        });
-        return asHtml(path_Product_ProductListHtml).renderWith(data -> {
-            data.register("beans", beans);
-            registerPagingNavi(data, page, form);
-        });
+        return asHtml(path_Product_ProductListHtml).withView(new ProductListView(page));
     }
 
     // ===================================================================================
@@ -82,23 +74,5 @@ public class ProductListAction extends OrleansBaseAction {
             cb.query().addOrderBy_ProductId_Asc();
             cb.paging(getPagingPageSize(), pageNumber);
         });
-    }
-
-    // ===================================================================================
-    //                                                                             Mapping
-    //                                                                             =======
-    private ProductSearchRowBean mappingToBean(Product product) {
-        ProductSearchRowBean bean = new ProductSearchRowBean();
-        bean.productId = product.getProductId();
-        bean.productName = product.getProductName();
-        product.getProductStatus().alwaysPresent(status -> {
-            bean.productStatus = status.getProductStatusName();
-        });
-        product.getProductCategory().alwaysPresent(category -> {
-            bean.productCategory = category.getProductCategoryName();
-        });
-        bean.regularPrice = product.getRegularPrice();
-        bean.latestPurchaseDate = toDate(product.getLatestPurchaseDate()).orElse(null);
-        return bean;
     }
 }
