@@ -27,7 +27,6 @@ import org.docksidestage.mylasta.action.HangarUserBean;
 import org.docksidestage.mylasta.direction.HangarConfig;
 import org.lastaflute.web.login.LoginManager;
 import org.lastaflute.web.ruts.process.ActionRuntime;
-import org.lastaflute.web.servlet.request.RequestManager;
 import org.lastaflute.web.validation.ActionValidator;
 import org.lastaflute.web.validation.LaValidatableApi;
 
@@ -49,8 +48,6 @@ public abstract class HangarBaseAction extends MaihamaBaseAction implements LaVa
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    @Resource
-    private RequestManager requestManager;
     @Resource
     private HangarConfig hangarConfig;
     @Resource
