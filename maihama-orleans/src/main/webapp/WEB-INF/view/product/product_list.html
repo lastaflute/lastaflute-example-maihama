@@ -38,20 +38,20 @@
 			<ul class="product-search-condition-list">
 				<li>
 					Product Name
-					<input type="text" id="productName" name="productName"/>
-					<span id="errors-productName" class="errors"/>
+					<input type="text" name="productName"/>
+					<span data-errors="productName" class="errors"/>
 				</li>
 				<li>
 					Product Status
 					<select name="productStatus">
 						<option value="">select</option>
-						<option id="cls-ProductStatus"></option>
+						<option data-cls="ProductStatus"/>
 					</select>
 				</li>
 				<li>
 					Purchase Member
-					<input type="text" id="purchaseMemberName" name="purchaseMemberName"/>
-					<span id="errors-purchaseMemberName" class="errors"/>
+					<input type="text" name="purchaseMemberName"/>
+					<span data-errors="purchaseMemberName" class="errors"/>
 				</li>
 			</ul>
 			<input type="submit" name="search" value="Search"/>
