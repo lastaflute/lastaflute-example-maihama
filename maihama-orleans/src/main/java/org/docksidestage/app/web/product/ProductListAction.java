@@ -47,7 +47,7 @@ public class ProductListAction extends OrleansBaseAction {
             return asHtml(path_Product_ProductListHtml);
         });
         PagingResultBean<Product> page = selectProductPage(pageNumber.orElse(1), form);
-        return asHtml(path_Product_ProductListHtml).withView(new ProductListView(page));
+        return asHtml(path_Product_ProductListHtml).withView(new ProductListView(form, page));
     }
 
     // ===================================================================================

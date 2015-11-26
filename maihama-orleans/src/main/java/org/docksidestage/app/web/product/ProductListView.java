@@ -15,26 +15,46 @@
  */
 package org.docksidestage.app.web.product;
 
+import java.util.List;
+
 import org.dbflute.cbean.result.PagingResultBean;
 import org.docksidestage.app.web.base.OrleansBaseView;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.mixer2.view.Mixer2Supporter;
+import org.mixer2.jaxb.xhtml.Body;
 import org.mixer2.jaxb.xhtml.Html;
+import org.mixer2.jaxb.xhtml.Option;
+import org.mixer2.xhtml.AbstractJaxb;
 
 /**
  * @author jflute
  */
 public class ProductListView extends OrleansBaseView {
 
+    private final ProductSearchForm form;
     private final PagingResultBean<Product> page;
 
-    public ProductListView(PagingResultBean<Product> page) {
+    public ProductListView(ProductSearchForm form, PagingResultBean<Product> page) {
+        this.form = form;
         this.page = page;
     }
 
     @Override
     protected void render(Html html, Mixer2Supporter supporter) {
-        supporter.reflectDataToTBody(html, page, "products", res -> {
+        Body body = html.getBody();
+        if (form.productStatus != null) {
+            String statusCode = form.productStatus.code();
+            supporter.findSelect(body, "productStatus").alwaysPresent(select -> { // #pending to easy selected
+                List<AbstractJaxb> groupOrOptList = select.getOptgroupOrOption();
+                for (AbstractJaxb groupOrOpt : groupOrOptList) {
+                    Option option = (Option) groupOrOpt;
+                    if (statusCode.equals(option.getValue())) {
+                        option.setSelected("selected");
+                    }
+                }
+            });
+        }
+        supporter.reflectListToTBody(body, page, "products", res -> {
             Product product = res.getEntity();
             res.reflectText(product.getProductId());
             res.reflectText(product.getProductName());
