@@ -54,7 +54,7 @@ public class ProductListView extends OrleansBaseView {
                 }
             });
         }
-        supporter.reflectListToTBody(body, page, "products", res -> {
+        supporter.reflectListToTBody(page, body, "products", res -> {
             Product product = res.getEntity();
             res.reflectText(product.getProductId());
             res.reflectText(product.getProductName());

@@ -34,13 +34,11 @@ public class SigninView extends OrleansBaseView {
     @Override
     protected void render(Html html, Mixer2Supporter supporter) {
         Body body = html.getBody();
-        if (isNotEmpty(form.account)) { // #pending supporter.reflectFormProperty(body)
-            // #pending supporter.registerInputValue(body, "account", form.account).
+        if (isNotEmpty(form.account)) { // #pending supporter.reflectFormValue(form, body)
             supporter.findInput(body, "account").alwaysPresent(input -> {
                 input.setValue(form.account);
             });
         }
-        // #pending supporter.registerInputValue(body, "rememberMe", form.rememberMe).
         supporter.findInput(body, "rememberMe").alwaysPresent(input -> {
             input.setChecked(form.rememberMe ? "on" : null); // #pending to easy setting
         });

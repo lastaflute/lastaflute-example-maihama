@@ -34,7 +34,7 @@ public class MypageView extends OrleansBaseView {
 
     @Override
     protected void render(Html html, Mixer2Supporter supporter) {
-        supporter.reflectListToTBody(html, productList, "products", res -> {
+        supporter.reflectListToTBody(productList, html, "products", res -> {
             Product product = res.getEntity();
             res.reflectText(product.getProductName());
             res.reflectText(product.getRegularPrice());

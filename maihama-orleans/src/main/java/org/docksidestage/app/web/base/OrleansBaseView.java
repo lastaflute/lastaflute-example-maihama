@@ -26,6 +26,7 @@ import org.docksidestage.app.logic.i18n.I18nDateLogic;
 import org.docksidestage.app.web.base.login.OrleansLoginAssist;
 import org.lastaflute.mixer2.view.TypicalMixView;
 import org.lastaflute.mixer2.view.resolver.TypicalMixLayoutResolver;
+import org.lastaflute.mixer2.view.resolver.TypicalMixStyleResolver;
 import org.lastaflute.web.servlet.request.RequestManager;
 
 /**
@@ -55,7 +56,14 @@ public abstract class OrleansBaseView extends TypicalMixView {
                 header.replaceById("nav-user-name", bean.getMemberName());
             });
         });
-        // TODO jflute mixer2: select box by CDef (2015/11/23)
+    }
+
+    // ===================================================================================
+    //                                                                               Style
+    //                                                                               =====
+    @Override
+    protected TypicalMixStyleResolver createTypicalMixStyleResolver() {
+        return super.createTypicalMixStyleResolver().useVersionQuery();
     }
 
     // ===================================================================================
