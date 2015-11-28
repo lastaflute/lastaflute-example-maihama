@@ -17,7 +17,7 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.mixer2.version>0.2.0-R-SNAPSHOT</lasta.mixer2.version>
+		<lasta.mixer2.version>0.2.0-S-SNAPSHOT</lasta.mixer2.version>
 		<lasta.thymeleaf.version>0.2.1</lasta.thymeleaf.version> <!-- will be deleted -->
 		<commons.fileupload.version>1.3.1</commons.fileupload.version>
 	</properties>

@@ -36,8 +36,8 @@ public class MypageView extends OrleansBaseView {
     protected void render(Html html, Mixer2Supporter supporter) {
         supporter.reflectListToTBody(productList, html, "products", res -> {
             Product product = res.getEntity();
-            res.reflectText(product.getProductName());
-            res.reflectText(product.getRegularPrice());
+            res.register(product.getProductName());
+            res.register(product.getRegularPrice());
         });
     }
 }

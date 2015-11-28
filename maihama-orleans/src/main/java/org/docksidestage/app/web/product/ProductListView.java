@@ -15,16 +15,16 @@
  */
 package org.docksidestage.app.web.product;
 
-import java.util.List;
+import javax.annotation.Resource;
 
 import org.dbflute.cbean.result.PagingResultBean;
 import org.docksidestage.app.web.base.OrleansBaseView;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.mixer2.view.Mixer2Supporter;
+import org.lastaflute.web.path.ActionPathResolver;
+import org.mixer2.jaxb.xhtml.A;
 import org.mixer2.jaxb.xhtml.Body;
 import org.mixer2.jaxb.xhtml.Html;
-import org.mixer2.jaxb.xhtml.Option;
-import org.mixer2.xhtml.AbstractJaxb;
 
 /**
  * @author jflute
@@ -33,6 +33,8 @@ public class ProductListView extends OrleansBaseView {
 
     private final ProductSearchForm form;
     private final PagingResultBean<Product> page;
+    @Resource
+    private ActionPathResolver pathResolver;
 
     public ProductListView(ProductSearchForm form, PagingResultBean<Product> page) {
         this.form = form;
@@ -43,25 +45,22 @@ public class ProductListView extends OrleansBaseView {
     protected void render(Html html, Mixer2Supporter supporter) {
         Body body = html.getBody();
         if (form.productStatus != null) {
-            String statusCode = form.productStatus.code();
-            supporter.findSelect(body, "productStatus").alwaysPresent(select -> { // #pending to easy selected
-                List<AbstractJaxb> groupOrOptList = select.getOptgroupOrOption();
-                for (AbstractJaxb groupOrOpt : groupOrOptList) {
-                    Option option = (Option) groupOrOpt;
-                    if (statusCode.equals(option.getValue())) {
-                        option.setSelected("selected");
-                    }
-                }
-            });
+            supporter.reflectSelectSelected(body, "productStatus", form.productStatus.code());
         }
         supporter.reflectListToTBody(page, body, "products", res -> {
             Product product = res.getEntity();
-            res.reflectText(product.getProductId());
-            res.reflectText(product.getProductName());
-            res.reflectText(product.getProductStatus().get().getProductStatusName());
-            res.reflectText(product.getProductCategory().get().getProductCategoryName());
-            res.reflectText(product.getRegularPrice());
-            res.reflectText(toDate(product.getLatestPurchaseDate()).orElse(null));
+            res.register(product.getProductId());
+            res.registerWithInner(inner -> {
+                inner.findFirst(A.class).alwaysPresent(atag -> {
+                    String url = supporter.toLinkUrl(ProductDetailAction.class, moreUrl(product.getProductId()));
+                    supporter.reflectLinkUrl(atag, url);
+                    atag.replaceInner(product.getProductName());
+                });
+            });
+            res.register(product.getProductStatus().get().getProductStatusName());
+            res.register(product.getProductCategory().get().getProductCategoryName());
+            res.register(product.getRegularPrice());
+            res.register(toDate(product.getLatestPurchaseDate()).orElse(null));
         });
     }
 }
