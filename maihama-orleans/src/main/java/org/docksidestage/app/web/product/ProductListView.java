@@ -15,13 +15,10 @@
  */
 package org.docksidestage.app.web.product;
 
-import javax.annotation.Resource;
-
 import org.dbflute.cbean.result.PagingResultBean;
 import org.docksidestage.app.web.base.OrleansBaseView;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.mixer2.view.Mixer2Supporter;
-import org.lastaflute.web.path.ActionPathResolver;
 import org.mixer2.jaxb.xhtml.A;
 import org.mixer2.jaxb.xhtml.Body;
 import org.mixer2.jaxb.xhtml.Html;
@@ -33,8 +30,6 @@ public class ProductListView extends OrleansBaseView {
 
     private final ProductSearchForm form;
     private final PagingResultBean<Product> page;
-    @Resource
-    private ActionPathResolver pathResolver;
 
     public ProductListView(ProductSearchForm form, PagingResultBean<Product> page) {
         this.form = form;
