@@ -11,8 +11,8 @@
 	</page_setting>
 	<category_index>0</category_index>
 	<zoom>1.0</zoom>
-	<x>211</x>
-	<y>487</y>
+	<x>450</x>
+	<y>80</y>
 	<default_color>
 		<r>255</r>
 		<g>251</g>
@@ -115,7 +115,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2013-07-01 19:43:02</creation_date>
-			<updated_date>2014-07-26 16:56:26</updated_date>
+			<updated_date>2015-12-02 23:47:21</updated_date>
 			<model_property>
 				<name>プロジェクト名</name>
 				<value></value>
@@ -362,7 +362,7 @@
 		</word>
 		<word>
 			<id>16</id>
-			<length>200</length>
+			<length>100</length>
 			<decimal>null</decimal>
 			<array>false</array>
 			<array_dimension>null</array_dimension>
@@ -991,7 +991,7 @@
 			<connections>
 				<relation>
 					<id>0</id>
-					<source>8</source>
+					<source>6</source>
 					<target>0</target>
 						<bendpoint>
 							<relative>false</relative>
@@ -1013,7 +1013,7 @@
 				</relation>
 				<relation>
 					<id>1</id>
-					<source>5</source>
+					<source>15</source>
 					<target>0</target>
 					<child_cardinality>0..1</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
@@ -1038,7 +1038,7 @@
 			<columns>
 				<normal_column>
 					<id>5</id>
-					<referenced_column>34</referenced_column>
+					<referenced_column>76</referenced_column>
 					<relation>1</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1071,7 +1071,7 @@
 				</normal_column>
 				<normal_column>
 					<id>6</id>
-					<referenced_column>50</referenced_column>
+					<referenced_column>39</referenced_column>
 					<relation>0</relation>
 					<description>定型的な退会した理由を参照するコード。&#x0D;何も言わずに退会する会員もいるので必須項目ではない。</description>
 					<unique_key_name></unique_key_name>
@@ -1336,7 +1336,7 @@
 			<connections>
 				<relation>
 					<id>2</id>
-					<source>12</source>
+					<source>10</source>
 					<target>1</target>
 					<child_cardinality>0..n</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
@@ -1353,7 +1353,7 @@
 				</relation>
 				<relation>
 					<id>3</id>
-					<source>5</source>
+					<source>15</source>
 					<target>1</target>
 					<child_cardinality>0..n</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
@@ -1410,7 +1410,7 @@
 				</normal_column>
 				<normal_column>
 					<id>14</id>
-					<referenced_column>34</referenced_column>
+					<referenced_column>76</referenced_column>
 					<relation>3</relation>
 					<description>会員を参照するID。&#x0D;期間ごとのデータがあるので、これだけではユニークにはならない。有効開始日と合わせて複合ユニーク制約となるが、厳密には完全な制約にはなっていない。有効期間の概念はRDBでは表現しきれないのである。</description>
 					<unique_key_name></unique_key_name>
@@ -1539,7 +1539,7 @@
 				</normal_column>
 				<normal_column>
 					<id>18</id>
-					<referenced_column>63</referenced_column>
+					<referenced_column>52</referenced_column>
 					<relation>2</relation>
 					<description>地域を参照するID。かなり漠然とした地域。</description>
 					<unique_key_name></unique_key_name>
@@ -1613,7 +1613,7 @@
 			<connections>
 				<relation>
 					<id>4</id>
-					<source>13</source>
+					<source>11</source>
 					<target>2</target>
 					<child_cardinality>0..n</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
@@ -1630,7 +1630,7 @@
 				</relation>
 				<relation>
 					<id>5</id>
-					<source>5</source>
+					<source>15</source>
 					<target>2</target>
 					<child_cardinality>1</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
@@ -1687,7 +1687,7 @@
 				</normal_column>
 				<normal_column>
 					<id>20</id>
-					<referenced_column>34</referenced_column>
+					<referenced_column>76</referenced_column>
 					<relation>5</relation>
 					<description>会員を参照するID。ユニークなので、会員とは one-to-one の関係に。</description>
 					<unique_key_name></unique_key_name>
@@ -1752,7 +1752,7 @@
 				</normal_column>
 				<normal_column>
 					<id>22</id>
-					<referenced_column>65</referenced_column>
+					<referenced_column>54</referenced_column>
 					<relation>4</relation>
 					<description>どんなランクがあるのかドキドキですね。</description>
 					<unique_key_name></unique_key_name>
@@ -1827,7 +1827,7 @@
 			<connections>
 				<relation>
 					<id>6</id>
-					<source>5</source>
+					<source>15</source>
 					<target>3</target>
 					<child_cardinality>1</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
@@ -1852,7 +1852,7 @@
 			<columns>
 				<normal_column>
 					<id>23</id>
-					<referenced_column>34</referenced_column>
+					<referenced_column>76</referenced_column>
 					<relation>6</relation>
 					<description>そのまま one-to-one を構成するためのFKとなる。</description>
 					<unique_key_name></unique_key_name>
@@ -2042,12 +2042,12 @@
 			<connections>
 				<relation>
 					<id>7</id>
-					<source>10</source>
+					<source>7</source>
 					<target>4</target>
 					<child_cardinality>0..n</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
 					<reference_for_pk>true</reference_for_pk>
-					<name>FK_PRODUCT_PRODUCT_STATUS</name>
+					<name>FK_PRODUCT_PRODUCT_CATEGORY</name>
 					<on_delete_action>NO ACTION</on_delete_action>
 					<on_update_action>NO ACTION</on_update_action>
 					<source_xp>-1</source_xp>
@@ -2059,12 +2059,12 @@
 				</relation>
 				<relation>
 					<id>8</id>
-					<source>9</source>
+					<source>8</source>
 					<target>4</target>
 					<child_cardinality>0..n</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
 					<reference_for_pk>true</reference_for_pk>
-					<name>FK_PRODUCT_PRODUCT_CATEGORY</name>
+					<name>FK_PRODUCT_PRODUCT_STATUS</name>
 					<on_delete_action>NO ACTION</on_delete_action>
 					<on_update_action>NO ACTION</on_update_action>
 					<source_xp>-1</source_xp>
@@ -2180,8 +2180,8 @@
 				</normal_column>
 				<normal_column>
 					<id>31</id>
-					<referenced_column>53</referenced_column>
-					<relation>8</relation>
+					<referenced_column>42</referenced_column>
+					<relation>7</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2213,8 +2213,8 @@
 				</normal_column>
 				<normal_column>
 					<id>32</id>
-					<referenced_column>56</referenced_column>
-					<relation>7</relation>
+					<referenced_column>45</referenced_column>
+					<relation>8</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2306,279 +2306,6 @@
 		</table>
 		<table>
 			<id>5</id>
-			<height>-1</height>
-			<width>-1</width>
-				<font_name>Lucida Grande</font_name>
-				<font_size>9</font_size>
-			<x>580</x>
-			<y>254</y>
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-				<relation>
-					<id>9</id>
-					<source>11</source>
-					<target>5</target>
-					<child_cardinality>0..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name>FK_MEMBER_MEMBER_STATUS</name>
-					<on_delete_action>NO ACTION</on_delete_action>
-					<on_update_action>NO ACTION</on_update_action>
-					<source_xp>-1</source_xp>
-					<source_yp>-1</source_yp>
-					<target_xp>-1</target_xp>
-					<target_yp>-1</target_yp>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-			</connections>
-			<physical_name>MEMBER</physical_name>
-			<logical_name>会員</logical_name>
-			<description>会員のプロフィールやアカウントなどの基本情報を保持する。&#x0D;基本的に物理削除はなく、退会したらステータスが退会会員になる。&#x0D;ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。</description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<word_id>14</word_id>
-					<id>34</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>integer</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>true</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>16</word_id>
-					<id>35</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>11</word_id>
-					<id>36</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>true</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>37</id>
-					<referenced_column>59</referenced_column>
-					<relation>9</relation>
-					<description>会員ステータスを参照するコード。&#x0D;ステータスが変わるたびに、このカラムが更新される。</description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>character(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>8</word_id>
-					<id>38</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>datetime</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>1</word_id>
-					<id>39</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>date</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<column_group>0</column_group>
-				<column_group>1</column_group>
-			</columns>
-			<indexes>
-				<inidex>
-					<full_text>false</full_text>
-					<non_unique>true</non_unique>
-					<name>IX_MEMBER_MEMBER_NAME</name>
-					<type>BTREE</type>
-					<description></description>
-					<columns>
-						<column>
-							<id>35</id>
-							<desc>false</desc>
-						</column>
-					</columns>
-				</inidex>
-				<inidex>
-					<full_text>false</full_text>
-					<non_unique>true</non_unique>
-					<name>IX_MEMBER_FORMALIZED_DATETIME</name>
-					<type>BTREE</type>
-					<description></description>
-					<columns>
-						<column>
-							<id>38</id>
-							<desc>false</desc>
-						</column>
-					</columns>
-				</inidex>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-			<id>6</id>
 			<height>230</height>
 			<width>271</width>
 				<font_name>Lucida Grande</font_name>
@@ -2592,9 +2319,9 @@
 			</color>
 			<connections>
 				<relation>
-					<id>10</id>
-					<source>14</source>
-					<target>6</target>
+					<id>9</id>
+					<source>12</source>
+					<target>5</target>
 					<child_cardinality>0..n</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
 					<reference_for_pk>true</reference_for_pk>
@@ -2618,7 +2345,7 @@
 			<columns>
 				<normal_column>
 					<word_id>36</word_id>
-					<id>40</id>
+					<id>34</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2649,9 +2376,9 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>41</id>
-					<referenced_column>71</referenced_column>
-					<relation>10</relation>
+					<id>35</id>
+					<referenced_column>60</referenced_column>
+					<relation>9</relation>
 					<description>支払い対象の購入へのID</description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2683,7 +2410,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>22</word_id>
-					<id>42</id>
+					<id>36</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2715,7 +2442,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>24</word_id>
-					<id>43</id>
+					<id>37</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2747,7 +2474,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>25</word_id>
-					<id>44</id>
+					<id>38</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2788,11 +2515,11 @@
 					<description></description>
 					<columns>
 						<column>
-							<id>43</id>
+							<id>37</id>
 							<desc>false</desc>
 						</column>
 						<column>
-							<id>42</id>
+							<id>36</id>
 							<desc>false</desc>
 						</column>
 					</columns>
@@ -2809,263 +2536,7 @@
 			</table_properties>
 		</table>
 		<table>
-			<id>7</id>
-			<height>-1</height>
-			<width>-1</width>
-				<font_name>Lucida Grande</font_name>
-				<font_size>9</font_size>
-			<x>82</x>
-			<y>192</y>
-			<color>
-				<r>128</r>
-				<g>128</g>
-				<b>192</b>
-			</color>
-			<connections>
-				<relation>
-					<id>11</id>
-					<source>5</source>
-					<target>7</target>
-					<child_cardinality>0..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name>FK_MEMBER_LOGIN_MEMBER</name>
-					<on_delete_action>NO ACTION</on_delete_action>
-					<on_update_action>NO ACTION</on_update_action>
-					<source_xp>-1</source_xp>
-					<source_yp>-1</source_yp>
-					<target_xp>-1</target_xp>
-					<target_yp>-1</target_yp>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-				<relation>
-					<id>12</id>
-					<source>11</source>
-					<target>7</target>
-					<child_cardinality>0..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name>FK_MEMBER_LOGIN_MEMBER_STATUS</name>
-					<on_delete_action>NO ACTION</on_delete_action>
-					<on_update_action>NO ACTION</on_update_action>
-					<source_xp>-1</source_xp>
-					<source_yp>-1</source_yp>
-					<target_xp>-1</target_xp>
-					<target_yp>-1</target_yp>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
-			</connections>
-			<physical_name>MEMBER_LOGIN</physical_name>
-			<logical_name>会員ログイン</logical_name>
-			<description>ログインするたびに登録されるログイン履歴。&#x0D;登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<word_id>15</word_id>
-					<id>45</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>bigint</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>true</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>46</id>
-					<referenced_column>34</referenced_column>
-					<relation>11</relation>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>integer</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>9</word_id>
-					<id>47</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>datetime</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>20</word_id>
-					<id>48</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>integer</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<id>49</id>
-					<referenced_column>59</referenced_column>
-					<relation>12</relation>
-					<description>ログイン時の会員ステータス</description>
-					<unique_key_name></unique_key_name>
-					<logical_name>ログイン会員ステータスコード</logical_name>
-					<physical_name>LOGIN_MEMBER_STATUS_CODE</physical_name>
-					<type>character(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-			</columns>
-			<indexes>
-				<inidex>
-					<full_text>false</full_text>
-					<non_unique>true</non_unique>
-					<name>IX_MEMBER_LOGIN_DATETIME</name>
-					<type>BTREE</type>
-					<description></description>
-					<columns>
-						<column>
-							<id>47</id>
-							<desc>false</desc>
-						</column>
-					</columns>
-				</inidex>
-			</indexes>
-			<complex_unique_key_list>
-				<complex_unique_key>
-					<id>1</id>
-					<name>UQ_MEMBER_LOGIN</name>
-					<columns>
-						<column>
-							<id>46</id>
-						</column>
-						<column>
-							<id>47</id>
-						</column>
-					</columns>
-				</complex_unique_key>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-			<id>8</id>
+			<id>6</id>
 			<height>-1</height>
 			<width>-1</width>
 				<font_name>Lucida Grande</font_name>
@@ -3088,7 +2559,7 @@
 			<columns>
 				<normal_column>
 					<word_id>60</word_id>
-					<id>50</id>
+					<id>39</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3120,7 +2591,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>62</word_id>
-					<id>51</id>
+					<id>40</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3152,7 +2623,292 @@
 				</normal_column>
 				<normal_column>
 					<word_id>6</word_id>
-					<id>52</id>
+					<id>41</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>integer</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>true</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+			</columns>
+			<indexes>
+			</indexes>
+			<complex_unique_key_list>
+			</complex_unique_key_list>
+			<table_properties>
+				<schema></schema>
+				<character_set></character_set>
+				<collation></collation>
+				<storage_engine></storage_engine>
+				<primary_key_length_of_text>null</primary_key_length_of_text>
+			</table_properties>
+		</table>
+		<table>
+			<id>7</id>
+			<height>-1</height>
+			<width>-1</width>
+				<font_name>Lucida Grande</font_name>
+				<font_size>9</font_size>
+			<x>934</x>
+			<y>1010</y>
+			<color>
+				<r>255</r>
+				<g>251</g>
+				<b>143</b>
+			</color>
+			<connections>
+				<relation>
+					<id>10</id>
+					<source>7</source>
+					<target>7</target>
+						<bendpoint>
+							<relative>true</relative>
+							<x>100</x>
+							<y>100</y>
+						</bendpoint>
+					<child_cardinality>0..n</child_cardinality>
+					<parent_cardinality>1</parent_cardinality>
+					<reference_for_pk>true</reference_for_pk>
+					<name>FK_PRODUCT_CATEGORY_PARENT</name>
+					<on_delete_action>NO ACTION</on_delete_action>
+					<on_update_action>NO ACTION</on_update_action>
+					<source_xp>100</source_xp>
+					<source_yp>50</source_yp>
+					<target_xp>50</target_xp>
+					<target_yp>100</target_yp>
+					<referenced_column>null</referenced_column>
+					<referenced_complex_unique_key>null</referenced_complex_unique_key>
+				</relation>
+			</connections>
+			<physical_name>PRODUCT_CATEGORY</physical_name>
+			<logical_name>商品カテゴリ</logical_name>
+			<description>商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</description>
+			<constraint></constraint>
+			<primary_key_name></primary_key_name>
+			<option></option>
+			<columns>
+				<normal_column>
+					<word_id>26</word_id>
+					<id>42</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>character(n)</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>true</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>27</word_id>
+					<id>43</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>varchar(n)</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<id>44</id>
+					<referenced_column>42</referenced_column>
+					<relation>10</relation>
+					<description>最上位の場合はデータなし。まさひく自己参照FKカラム！</description>
+					<unique_key_name></unique_key_name>
+					<logical_name>親カテゴリコード</logical_name>
+					<physical_name>PARENT_CATEGORY_CODE</physical_name>
+					<type>character(n)</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>true</foreign_key>
+					<not_null>false</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+			</columns>
+			<indexes>
+			</indexes>
+			<complex_unique_key_list>
+			</complex_unique_key_list>
+			<table_properties>
+				<schema></schema>
+				<character_set></character_set>
+				<collation></collation>
+				<storage_engine></storage_engine>
+				<primary_key_length_of_text>null</primary_key_length_of_text>
+			</table_properties>
+		</table>
+		<table>
+			<id>8</id>
+			<height>-1</height>
+			<width>-1</width>
+				<font_name>Lucida Grande</font_name>
+				<font_size>9</font_size>
+			<x>46</x>
+			<y>1084</y>
+			<color>
+				<r>255</r>
+				<g>251</g>
+				<b>143</b>
+			</color>
+			<connections>
+			</connections>
+			<physical_name>PRODUCT_STATUS</physical_name>
+			<logical_name>商品ステータス</logical_name>
+			<description>商品のステータスを表現する固定的なマスタ。</description>
+			<constraint></constraint>
+			<primary_key_name></primary_key_name>
+			<option></option>
+			<columns>
+				<normal_column>
+					<word_id>31</word_id>
+					<id>45</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>character(n)</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>true</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>32</word_id>
+					<id>46</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>varchar(n)</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>6</word_id>
+					<id>47</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3201,47 +2957,25 @@
 			<width>-1</width>
 				<font_name>Lucida Grande</font_name>
 				<font_size>9</font_size>
-			<x>934</x>
-			<y>1010</y>
+			<x>568</x>
+			<y>14</y>
 			<color>
 				<r>255</r>
 				<g>251</g>
 				<b>143</b>
 			</color>
 			<connections>
-				<relation>
-					<id>13</id>
-					<source>9</source>
-					<target>9</target>
-						<bendpoint>
-							<relative>true</relative>
-							<x>100</x>
-							<y>100</y>
-						</bendpoint>
-					<child_cardinality>0..n</child_cardinality>
-					<parent_cardinality>1</parent_cardinality>
-					<reference_for_pk>true</reference_for_pk>
-					<name>FK_PRODUCT_CATEGORY_PARENT</name>
-					<on_delete_action>NO ACTION</on_delete_action>
-					<on_update_action>NO ACTION</on_update_action>
-					<source_xp>100</source_xp>
-					<source_yp>50</source_yp>
-					<target_xp>50</target_xp>
-					<target_yp>100</target_yp>
-					<referenced_column>null</referenced_column>
-					<referenced_complex_unique_key>null</referenced_complex_unique_key>
-				</relation>
 			</connections>
-			<physical_name>PRODUCT_CATEGORY</physical_name>
-			<logical_name>商品カテゴリ</logical_name>
-			<description>商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</description>
+			<physical_name>MEMBER_STATUS</physical_name>
+			<logical_name>会員ステータス</logical_name>
+			<description>会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！&#x0D;業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。&#x0D;&#x0D;こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。</description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>26</word_id>
-					<id>53</id>
+					<word_id>18</word_id>
+					<id>48</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3272,8 +3006,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>27</word_id>
-					<id>54</id>
+					<word_id>19</word_id>
+					<id>49</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3304,108 +3038,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>55</id>
-					<referenced_column>53</referenced_column>
-					<relation>13</relation>
-					<description>最上位の場合はデータなし。まさひく自己参照FKカラム！</description>
-					<unique_key_name></unique_key_name>
-					<logical_name>親カテゴリコード</logical_name>
-					<physical_name>PARENT_CATEGORY_CODE</physical_name>
-					<type>character(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>true</foreign_key>
-					<not_null>false</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-			</columns>
-			<indexes>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-			<id>10</id>
-			<height>-1</height>
-			<width>-1</width>
-				<font_name>Lucida Grande</font_name>
-				<font_size>9</font_size>
-			<x>46</x>
-			<y>1084</y>
-			<color>
-				<r>255</r>
-				<g>251</g>
-				<b>143</b>
-			</color>
-			<connections>
-			</connections>
-			<physical_name>PRODUCT_STATUS</physical_name>
-			<logical_name>商品ステータス</logical_name>
-			<description>商品のステータスを表現する固定的なマスタ。</description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<word_id>31</word_id>
-					<id>56</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>character(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>32</word_id>
-					<id>57</id>
+					<word_id>3</word_id>
+					<id>50</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3436,8 +3070,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>6</word_id>
-					<id>58</id>
+					<word_id>4</word_id>
+					<id>51</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3481,13 +3115,13 @@
 			</table_properties>
 		</table>
 		<table>
-			<id>11</id>
+			<id>10</id>
 			<height>-1</height>
 			<width>-1</width>
 				<font_name>Lucida Grande</font_name>
 				<font_size>9</font_size>
-			<x>568</x>
-			<y>14</y>
+			<x>1304</x>
+			<y>25</y>
 			<color>
 				<r>255</r>
 				<g>251</g>
@@ -3495,16 +3129,115 @@
 			</color>
 			<connections>
 			</connections>
-			<physical_name>MEMBER_STATUS</physical_name>
-			<logical_name>会員ステータス</logical_name>
-			<description>会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！&#x0D;業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。&#x0D;&#x0D;こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。</description>
+			<physical_name>REGION</physical_name>
+			<logical_name>地域</logical_name>
+			<description>主に会員の住所に対応する漠然とした地域。&#x0D;かなりざっくりした感じではある。唯一の業務的one-to-oneの親テーブルのケース。</description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>18</word_id>
-					<id>59</id>
+					<word_id>38</word_id>
+					<id>52</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>integer</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>true</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>39</word_id>
+					<id>53</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>varchar(n)</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+			</columns>
+			<indexes>
+			</indexes>
+			<complex_unique_key_list>
+			</complex_unique_key_list>
+			<table_properties>
+				<schema></schema>
+				<character_set></character_set>
+				<collation></collation>
+				<storage_engine></storage_engine>
+				<primary_key_length_of_text>null</primary_key_length_of_text>
+			</table_properties>
+		</table>
+		<table>
+			<id>11</id>
+			<height>-1</height>
+			<width>-1</width>
+				<font_name>Lucida Grande</font_name>
+				<font_size>9</font_size>
+			<x>1165</x>
+			<y>669</y>
+			<color>
+				<r>255</r>
+				<g>251</g>
+				<b>143</b>
+			</color>
+			<connections>
+			</connections>
+			<physical_name>SERVICE_RANK</physical_name>
+			<logical_name>サービスランク</logical_name>
+			<description>会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</description>
+			<constraint></constraint>
+			<primary_key_name></primary_key_name>
+			<option></option>
+			<columns>
+				<normal_column>
+					<word_id>50</word_id>
+					<id>54</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3535,8 +3268,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>19</word_id>
-					<id>60</id>
+					<word_id>51</word_id>
+					<id>55</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3567,8 +3300,72 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>3</word_id>
-					<id>61</id>
+					<word_id>49</word_id>
+					<id>56</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>decimal(p,s)</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>21</word_id>
+					<id>57</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>integer</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>2</word_id>
+					<id>58</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3599,8 +3396,8 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>4</word_id>
-					<id>62</id>
+					<word_id>5</word_id>
+					<id>59</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -3649,332 +3446,6 @@
 			<width>-1</width>
 				<font_name>Lucida Grande</font_name>
 				<font_size>9</font_size>
-			<x>1304</x>
-			<y>25</y>
-			<color>
-				<r>255</r>
-				<g>251</g>
-				<b>143</b>
-			</color>
-			<connections>
-			</connections>
-			<physical_name>REGION</physical_name>
-			<logical_name>地域</logical_name>
-			<description>主に会員の住所に対応する漠然とした地域。&#x0D;かなりざっくりした感じではある。唯一の業務的one-to-oneの親テーブルのケース。</description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<word_id>38</word_id>
-					<id>63</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>integer</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>39</word_id>
-					<id>64</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-			</columns>
-			<indexes>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-			<id>13</id>
-			<height>-1</height>
-			<width>-1</width>
-				<font_name>Lucida Grande</font_name>
-				<font_size>9</font_size>
-			<x>1165</x>
-			<y>669</y>
-			<color>
-				<r>255</r>
-				<g>251</g>
-				<b>143</b>
-			</color>
-			<connections>
-			</connections>
-			<physical_name>SERVICE_RANK</physical_name>
-			<logical_name>サービスランク</logical_name>
-			<description>会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</description>
-			<constraint></constraint>
-			<primary_key_name></primary_key_name>
-			<option></option>
-			<columns>
-				<normal_column>
-					<word_id>50</word_id>
-					<id>65</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>character(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>true</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>51</word_id>
-					<id>66</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>49</word_id>
-					<id>67</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>decimal(p,s)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>21</word_id>
-					<id>68</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>integer</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>2</word_id>
-					<id>69</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>varchar(n)</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>false</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-				<normal_column>
-					<word_id>5</word_id>
-					<id>70</id>
-					<description></description>
-					<unique_key_name></unique_key_name>
-					<logical_name></logical_name>
-					<physical_name></physical_name>
-					<type>integer</type>
-					<constraint></constraint>
-					<default_value></default_value>
-					<auto_increment>false</auto_increment>
-					<foreign_key>false</foreign_key>
-					<not_null>true</not_null>
-					<primary_key>false</primary_key>
-					<unique_key>true</unique_key>
-					<character_set></character_set>
-					<collation></collation>
-					<sequence>
-						<name></name>
-						<schema></schema>
-						<increment></increment>
-						<min_value></min_value>
-						<max_value></max_value>
-						<start></start>
-						<cache></cache>
-						<cycle>false</cycle>
-						<order>false</order>
-						<description></description>
-						<data_type></data_type>
-						<decimal_size>0</decimal_size>
-					</sequence>
-				</normal_column>
-			</columns>
-			<indexes>
-			</indexes>
-			<complex_unique_key_list>
-			</complex_unique_key_list>
-			<table_properties>
-				<schema></schema>
-				<character_set></character_set>
-				<collation></collation>
-				<storage_engine></storage_engine>
-				<primary_key_length_of_text>null</primary_key_length_of_text>
-			</table_properties>
-		</table>
-		<table>
-			<id>14</id>
-			<height>-1</height>
-			<width>-1</width>
-				<font_name>Lucida Grande</font_name>
-				<font_size>9</font_size>
 			<x>53</x>
 			<y>388</y>
 			<color>
@@ -3984,9 +3455,9 @@
 			</color>
 			<connections>
 				<relation>
-					<id>14</id>
-					<source>5</source>
-					<target>14</target>
+					<id>11</id>
+					<source>15</source>
+					<target>12</target>
 					<child_cardinality>0..n</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
 					<reference_for_pk>true</reference_for_pk>
@@ -4001,9 +3472,9 @@
 					<referenced_complex_unique_key>null</referenced_complex_unique_key>
 				</relation>
 				<relation>
-					<id>15</id>
+					<id>12</id>
 					<source>4</source>
-					<target>14</target>
+					<target>12</target>
 						<bendpoint>
 							<relative>false</relative>
 							<x>410</x>
@@ -4037,7 +3508,7 @@
 			<columns>
 				<normal_column>
 					<word_id>35</word_id>
-					<id>71</id>
+					<id>60</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4068,9 +3539,9 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>72</id>
-					<referenced_column>34</referenced_column>
-					<relation>14</relation>
+					<id>61</id>
+					<referenced_column>76</referenced_column>
+					<relation>11</relation>
 					<description>会員を参照するID。&#x0D;購入を識別する自然キー(複合ユニーク制約)の筆頭要素。</description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4101,9 +3572,9 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>73</id>
+					<id>62</id>
 					<referenced_column>28</referenced_column>
-					<relation>15</relation>
+					<relation>12</relation>
 					<description>あなたは何を買ったのか？</description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4135,7 +3606,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>34</word_id>
-					<id>74</id>
+					<id>63</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4167,7 +3638,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>33</word_id>
-					<id>75</id>
+					<id>64</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4199,7 +3670,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>37</word_id>
-					<id>76</id>
+					<id>65</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4231,7 +3702,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>23</word_id>
-					<id>77</id>
+					<id>66</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4273,7 +3744,7 @@
 					<description></description>
 					<columns>
 						<column>
-							<id>72</id>
+							<id>61</id>
 							<desc>false</desc>
 						</column>
 					</columns>
@@ -4286,7 +3757,7 @@
 					<description></description>
 					<columns>
 						<column>
-							<id>73</id>
+							<id>62</id>
 							<desc>false</desc>
 						</column>
 					</columns>
@@ -4299,11 +3770,11 @@
 					<description></description>
 					<columns>
 						<column>
-							<id>73</id>
+							<id>62</id>
 							<desc>false</desc>
 						</column>
 						<column>
-							<id>74</id>
+							<id>63</id>
 							<desc>false</desc>
 						</column>
 					</columns>
@@ -4316,11 +3787,11 @@
 					<description></description>
 					<columns>
 						<column>
-							<id>74</id>
+							<id>63</id>
 							<desc>false</desc>
 						</column>
 						<column>
-							<id>72</id>
+							<id>61</id>
 							<desc>false</desc>
 						</column>
 					</columns>
@@ -4333,7 +3804,7 @@
 					<description></description>
 					<columns>
 						<column>
-							<id>76</id>
+							<id>65</id>
 							<desc>false</desc>
 						</column>
 					</columns>
@@ -4341,17 +3812,17 @@
 			</indexes>
 			<complex_unique_key_list>
 				<complex_unique_key>
-					<id>2</id>
+					<id>1</id>
 					<name>UQ_PURCHASE</name>
 					<columns>
 						<column>
-							<id>72</id>
+							<id>61</id>
 						</column>
 						<column>
-							<id>73</id>
+							<id>62</id>
 						</column>
 						<column>
-							<id>74</id>
+							<id>63</id>
 						</column>
 					</columns>
 				</complex_unique_key>
@@ -4365,7 +3836,7 @@
 			</table_properties>
 		</table>
 		<table>
-			<id>15</id>
+			<id>13</id>
 			<height>156</height>
 			<width>311</width>
 				<font_name>Lucida Grande</font_name>
@@ -4379,18 +3850,18 @@
 			</color>
 			<connections>
 				<relation>
-					<id>16</id>
-					<source>5</source>
-					<target>15</target>
+					<id>13</id>
+					<source>15</source>
+					<target>13</target>
 						<bendpoint>
 							<relative>false</relative>
-							<x>613</x>
-							<y>606</y>
+							<x>556</x>
+							<y>571</y>
 						</bendpoint>
 					<child_cardinality>0..n</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
 					<reference_for_pk>true</reference_for_pk>
-					<name>FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID</name>
+					<name>FK_MEMBER_FLLOWING_MY_MEMBER_ID</name>
 					<on_delete_action>RESTRICT</on_delete_action>
 					<on_update_action>RESTRICT</on_update_action>
 					<source_xp>-1</source_xp>
@@ -4401,18 +3872,18 @@
 					<referenced_complex_unique_key>null</referenced_complex_unique_key>
 				</relation>
 				<relation>
-					<id>17</id>
-					<source>5</source>
-					<target>15</target>
+					<id>14</id>
+					<source>15</source>
+					<target>13</target>
 						<bendpoint>
 							<relative>false</relative>
-							<x>556</x>
-							<y>571</y>
+							<x>613</x>
+							<y>606</y>
 						</bendpoint>
 					<child_cardinality>0..n</child_cardinality>
 					<parent_cardinality>1</parent_cardinality>
 					<reference_for_pk>true</reference_for_pk>
-					<name>FK_MEMBER_FLLOWING_MY_MEMBER_ID</name>
+					<name>FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID</name>
 					<on_delete_action>RESTRICT</on_delete_action>
 					<on_update_action>RESTRICT</on_update_action>
 					<source_xp>-1</source_xp>
@@ -4432,7 +3903,7 @@
 			<columns>
 				<normal_column>
 					<word_id>13</word_id>
-					<id>78</id>
+					<id>67</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4463,9 +3934,9 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>79</id>
-					<referenced_column>34</referenced_column>
-					<relation>17</relation>
+					<id>68</id>
+					<referenced_column>76</referenced_column>
+					<relation>13</relation>
 					<description>気になった人がいて...勇気を振り絞った会員のID。</description>
 					<unique_key_name></unique_key_name>
 					<logical_name>わたし</logical_name>
@@ -4496,9 +3967,9 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<id>80</id>
-					<referenced_column>34</referenced_column>
-					<relation>16</relation>
+					<id>69</id>
+					<referenced_column>76</referenced_column>
+					<relation>14</relation>
 					<description>いきなりのアクションに...ちょっと心揺らいだ会員のID。</description>
 					<unique_key_name></unique_key_name>
 					<logical_name>あなた</logical_name>
@@ -4530,7 +4001,7 @@
 				</normal_column>
 				<normal_column>
 					<word_id>7</word_id>
-					<id>81</id>
+					<id>70</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -4570,7 +4041,7 @@
 					<description></description>
 					<columns>
 						<column>
-							<id>80</id>
+							<id>69</id>
 							<desc>false</desc>
 						</column>
 					</columns>
@@ -4583,7 +4054,263 @@
 					<description></description>
 					<columns>
 						<column>
-							<id>81</id>
+							<id>70</id>
+							<desc>false</desc>
+						</column>
+					</columns>
+				</inidex>
+			</indexes>
+			<complex_unique_key_list>
+				<complex_unique_key>
+					<id>2</id>
+					<name>UQ_MEMBER_FOLLOWING</name>
+					<columns>
+						<column>
+							<id>68</id>
+						</column>
+						<column>
+							<id>69</id>
+						</column>
+					</columns>
+				</complex_unique_key>
+			</complex_unique_key_list>
+			<table_properties>
+				<schema></schema>
+				<character_set></character_set>
+				<collation></collation>
+				<storage_engine></storage_engine>
+				<primary_key_length_of_text>null</primary_key_length_of_text>
+			</table_properties>
+		</table>
+		<table>
+			<id>14</id>
+			<height>-1</height>
+			<width>-1</width>
+				<font_name>Lucida Grande</font_name>
+				<font_size>9</font_size>
+			<x>82</x>
+			<y>192</y>
+			<color>
+				<r>128</r>
+				<g>128</g>
+				<b>192</b>
+			</color>
+			<connections>
+				<relation>
+					<id>15</id>
+					<source>15</source>
+					<target>14</target>
+					<child_cardinality>0..n</child_cardinality>
+					<parent_cardinality>1</parent_cardinality>
+					<reference_for_pk>true</reference_for_pk>
+					<name>FK_MEMBER_LOGIN_MEMBER</name>
+					<on_delete_action>NO ACTION</on_delete_action>
+					<on_update_action>NO ACTION</on_update_action>
+					<source_xp>-1</source_xp>
+					<source_yp>-1</source_yp>
+					<target_xp>-1</target_xp>
+					<target_yp>-1</target_yp>
+					<referenced_column>null</referenced_column>
+					<referenced_complex_unique_key>null</referenced_complex_unique_key>
+				</relation>
+				<relation>
+					<id>16</id>
+					<source>9</source>
+					<target>14</target>
+					<child_cardinality>0..n</child_cardinality>
+					<parent_cardinality>1</parent_cardinality>
+					<reference_for_pk>true</reference_for_pk>
+					<name>FK_MEMBER_LOGIN_MEMBER_STATUS</name>
+					<on_delete_action>NO ACTION</on_delete_action>
+					<on_update_action>NO ACTION</on_update_action>
+					<source_xp>-1</source_xp>
+					<source_yp>-1</source_yp>
+					<target_xp>-1</target_xp>
+					<target_yp>-1</target_yp>
+					<referenced_column>null</referenced_column>
+					<referenced_complex_unique_key>null</referenced_complex_unique_key>
+				</relation>
+			</connections>
+			<physical_name>MEMBER_LOGIN</physical_name>
+			<logical_name>会員ログイン</logical_name>
+			<description>ログインするたびに登録されるログイン履歴。&#x0D;登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</description>
+			<constraint></constraint>
+			<primary_key_name></primary_key_name>
+			<option></option>
+			<columns>
+				<normal_column>
+					<word_id>15</word_id>
+					<id>71</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>bigint</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>true</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>true</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<id>72</id>
+					<referenced_column>76</referenced_column>
+					<relation>15</relation>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>integer</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>true</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>9</word_id>
+					<id>73</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>datetime</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>20</word_id>
+					<id>74</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>integer</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<id>75</id>
+					<referenced_column>48</referenced_column>
+					<relation>16</relation>
+					<description>ログイン時の会員ステータス</description>
+					<unique_key_name></unique_key_name>
+					<logical_name>ログイン会員ステータスコード</logical_name>
+					<physical_name>LOGIN_MEMBER_STATUS_CODE</physical_name>
+					<type>character(n)</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>true</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+			</columns>
+			<indexes>
+				<inidex>
+					<full_text>false</full_text>
+					<non_unique>true</non_unique>
+					<name>IX_MEMBER_LOGIN_DATETIME</name>
+					<type>BTREE</type>
+					<description></description>
+					<columns>
+						<column>
+							<id>73</id>
 							<desc>false</desc>
 						</column>
 					</columns>
@@ -4592,16 +4319,289 @@
 			<complex_unique_key_list>
 				<complex_unique_key>
 					<id>3</id>
-					<name>UQ_MEMBER_FOLLOWING</name>
+					<name>UQ_MEMBER_LOGIN</name>
 					<columns>
 						<column>
-							<id>79</id>
+							<id>72</id>
 						</column>
 						<column>
-							<id>80</id>
+							<id>73</id>
 						</column>
 					</columns>
 				</complex_unique_key>
+			</complex_unique_key_list>
+			<table_properties>
+				<schema></schema>
+				<character_set></character_set>
+				<collation></collation>
+				<storage_engine></storage_engine>
+				<primary_key_length_of_text>null</primary_key_length_of_text>
+			</table_properties>
+		</table>
+		<table>
+			<id>15</id>
+			<height>-1</height>
+			<width>-1</width>
+				<font_name>Lucida Grande</font_name>
+				<font_size>9</font_size>
+			<x>580</x>
+			<y>254</y>
+			<color>
+				<r>128</r>
+				<g>128</g>
+				<b>192</b>
+			</color>
+			<connections>
+				<relation>
+					<id>17</id>
+					<source>9</source>
+					<target>15</target>
+					<child_cardinality>0..n</child_cardinality>
+					<parent_cardinality>1</parent_cardinality>
+					<reference_for_pk>true</reference_for_pk>
+					<name>FK_MEMBER_MEMBER_STATUS</name>
+					<on_delete_action>NO ACTION</on_delete_action>
+					<on_update_action>NO ACTION</on_update_action>
+					<source_xp>-1</source_xp>
+					<source_yp>-1</source_yp>
+					<target_xp>-1</target_xp>
+					<target_yp>-1</target_yp>
+					<referenced_column>null</referenced_column>
+					<referenced_complex_unique_key>null</referenced_complex_unique_key>
+				</relation>
+			</connections>
+			<physical_name>MEMBER</physical_name>
+			<logical_name>会員</logical_name>
+			<description>会員のプロフィールやアカウントなどの基本情報を保持する。&#x0D;基本的に物理削除はなく、退会したらステータスが退会会員になる。&#x0D;ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。</description>
+			<constraint></constraint>
+			<primary_key_name></primary_key_name>
+			<option></option>
+			<columns>
+				<normal_column>
+					<word_id>14</word_id>
+					<id>76</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>integer</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>true</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>true</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>16</word_id>
+					<id>77</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>varchar(n)</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>11</word_id>
+					<id>78</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>varchar(n)</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>true</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<id>79</id>
+					<referenced_column>48</referenced_column>
+					<relation>17</relation>
+					<description>会員ステータスを参照するコード。&#x0D;ステータスが変わるたびに、このカラムが更新される。</description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>character(n)</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>true</foreign_key>
+					<not_null>true</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>8</word_id>
+					<id>80</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>datetime</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>false</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<normal_column>
+					<word_id>1</word_id>
+					<id>81</id>
+					<description></description>
+					<unique_key_name></unique_key_name>
+					<logical_name></logical_name>
+					<physical_name></physical_name>
+					<type>date</type>
+					<constraint></constraint>
+					<default_value></default_value>
+					<auto_increment>false</auto_increment>
+					<foreign_key>false</foreign_key>
+					<not_null>false</not_null>
+					<primary_key>false</primary_key>
+					<unique_key>false</unique_key>
+					<character_set></character_set>
+					<collation></collation>
+					<sequence>
+						<name></name>
+						<schema></schema>
+						<increment></increment>
+						<min_value></min_value>
+						<max_value></max_value>
+						<start></start>
+						<cache></cache>
+						<cycle>false</cycle>
+						<order>false</order>
+						<description></description>
+						<data_type></data_type>
+						<decimal_size>0</decimal_size>
+					</sequence>
+				</normal_column>
+				<column_group>0</column_group>
+				<column_group>1</column_group>
+			</columns>
+			<indexes>
+				<inidex>
+					<full_text>false</full_text>
+					<non_unique>true</non_unique>
+					<name>IX_MEMBER_MEMBER_NAME</name>
+					<type>BTREE</type>
+					<description></description>
+					<columns>
+						<column>
+							<id>77</id>
+							<desc>false</desc>
+						</column>
+					</columns>
+				</inidex>
+				<inidex>
+					<full_text>false</full_text>
+					<non_unique>true</non_unique>
+					<name>IX_MEMBER_FORMALIZED_DATETIME</name>
+					<type>BTREE</type>
+					<description></description>
+					<columns>
+						<column>
+							<id>80</id>
+							<desc>false</desc>
+						</column>
+					</columns>
+				</inidex>
+			</indexes>
+			<complex_unique_key_list>
 			</complex_unique_key_list>
 			<table_properties>
 				<schema></schema>
