@@ -1,3 +1,5 @@
 /target
 /bin
 /tomcat.*
+/*.iml
+/.idea
