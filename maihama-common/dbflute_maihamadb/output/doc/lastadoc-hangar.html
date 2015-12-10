@@ -85,6 +85,9 @@ h4 {
 p.actionsubitem {
     padding: 0.2em 0 0 1.5em;
 }
+.actionannotations {
+    color: #666666;
+}
 
 /* table */
 table {
@@ -97,6 +100,7 @@ table, th {
 th {
     background-color: #E4AAA4;
     font-size: 0.8em;
+    padding: 0 0.2em 0 0.2em;
 }
 td {
     border-bottom: 1px dotted #aaa;
@@ -111,6 +115,14 @@ td {
     color: #3F7E5E;
     padding:0.5em 0 0.5em 1em;
     margin-bottom: 1em;
+}
+.fieldcomment {
+    font-size: 0.9em;
+    color: #3F7E5E;
+}
+.fieldannotations {
+    font-size: 0.9em;
+    color: #666666;
 }
 .rownumcell {
     text-align: center;
@@ -366,7 +378,8 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.following.FollowingAction#follow()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.following.FollowingBody">FollowingBody</span></span>
@@ -376,7 +389,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -385,23 +398,23 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>myMemberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>yourMemberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
 </table>
@@ -416,7 +429,8 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberAction#update()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberBody">MemberBody</span></span>
@@ -426,7 +440,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -435,58 +449,58 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>memberAccount</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>memberStatusCode</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>birthdate</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -501,7 +515,8 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberAction#info()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoBean&gt;">JsonResponse&lt;MemberInfoBean&gt;</span></span>
@@ -511,7 +526,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -520,33 +535,33 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>memberStatusName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -558,7 +573,8 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberListAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberSearchBody">MemberSearchBody</span></span>
@@ -568,7 +584,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -577,66 +593,66 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberStatus</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>purchaseProductName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>unpaid</td>
         <td><p title="boolean">boolean</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>formalizedDateFrom</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">6</td>
         <td>formalizedDateTo</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -648,7 +664,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -657,55 +673,55 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>currentPage</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>itemsPerPage</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>totalItems</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>totalPages</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="2">5</td>
         <td>items</td>
         <td><p title="java.util.List&lt;org.docksidestage.app.web.member.MemberSearchRowBean&gt;">List&lt;MemberSearchRowBean&gt;</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
@@ -716,7 +732,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -725,77 +741,77 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>memberStatusName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>formalizedDate</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>updateDatetime</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">6</td>
         <td>withdrawalMember</td>
         <td><p title="boolean">boolean</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">7</td>
         <td>purchaseCount</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -812,7 +828,8 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListBody">MemberPurchaseListBody</span></span>
@@ -822,7 +839,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -831,24 +848,24 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotNull
+        <td class="fieldannotations">
+            &#64;NotNull
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>purchaseId</td>
         <td><p title="java.lang.Long">Long</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotNull
+        <td class="fieldannotations">
+            &#64;NotNull
         </td>
     </tr>
 </table>
@@ -860,7 +877,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -869,55 +886,55 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>currentPage</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>itemsPerPage</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>totalItems</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>totalPages</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="2">5</td>
         <td>items</td>
         <td><p title="java.util.List&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean&gt;">List&lt;MemberPurchaseSearchRowBean&gt;</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
@@ -928,7 +945,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -937,66 +954,66 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>purchaseId</td>
         <td><p title="java.lang.Long">Long</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>purchaseDatetime</td>
         <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>productName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>purchasePrice</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>purchaseCount</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">6</td>
         <td>paymentComplete</td>
         <td><p title="boolean">boolean</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -1013,7 +1030,8 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#delete()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListBody">MemberPurchaseListBody</span></span>
@@ -1023,7 +1041,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1032,24 +1050,24 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotNull
+        <td class="fieldannotations">
+            &#64;NotNull
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>purchaseId</td>
         <td><p title="java.lang.Long">Long</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotNull
+        <td class="fieldannotations">
+            &#64;NotNull
         </td>
     </tr>
 </table>
@@ -1064,7 +1082,8 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.mypage.MypageAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;shunsuke.tadokoro<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.mypage.MypageBean&gt;">JsonResponse&lt;MypageBean&gt;</span></span>
@@ -1074,7 +1093,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1083,66 +1102,66 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>memberStatusCode</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>memberServiceName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>memberPassword</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">6</td>
         <td>memberAddress</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -1154,7 +1173,9 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.product.ProductDetailAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;">JsonResponse&lt;ProductDetailBean&gt;</span></span>
@@ -1164,7 +1185,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1173,55 +1194,55 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>productId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>productName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>categoryName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>regularPrice</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>productHandleCode</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -1233,7 +1254,9 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.product.ProductListAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.product.ProductSearchBody">ProductSearchBody</span></span>
@@ -1243,7 +1266,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1252,33 +1275,33 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>productName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>productStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$ProductStatus">ProductStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>purchaseMemberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -1290,7 +1313,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1299,55 +1322,55 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>currentPage</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>itemsPerPage</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>totalItems</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>totalPages</td>
         <td><p title="int">int</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="2">5</td>
         <td>items</td>
         <td><p title="java.util.List&lt;org.docksidestage.app.web.product.ProductRowBean&gt;">List&lt;ProductRowBean&gt;</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
@@ -1358,7 +1381,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1367,44 +1390,44 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>productId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>productName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>productStatusName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>regularPrice</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -1421,7 +1444,8 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.purchase.PurchaseAction#count()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.purchase.PurchaseProductBody">PurchaseProductBody</span></span>
@@ -1431,7 +1455,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1440,26 +1464,26 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>productId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotNull
+        <td class="fieldannotations">
+            &#64;NotNull
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>purchaseCount</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotNull
+        <td class="fieldannotations">
+            &#64;NotNull
 ,
-            Min{value=1}
+            &#64;Min{value=1}
         </td>
     </tr>
 </table>
@@ -1471,7 +1495,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1480,11 +1504,11 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>price</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -1496,7 +1520,8 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.purchase.PurchaseAction#contract()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.purchase.PurchaseProductBody">PurchaseProductBody</span></span>
@@ -1506,7 +1531,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1515,26 +1540,26 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>productId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotNull
+        <td class="fieldannotations">
+            &#64;NotNull
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>purchaseCount</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotNull
+        <td class="fieldannotations">
+            &#64;NotNull
 ,
-            Min{value=1}
+            &#64;Min{value=1}
         </td>
     </tr>
 </table>
@@ -1546,7 +1571,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1555,11 +1580,11 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>price</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -1571,7 +1596,9 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.RootAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
@@ -1584,7 +1611,8 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.RootAction#signout()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
@@ -1597,7 +1625,8 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signin.SigninAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signin.SigninBody">SigninBody</span></span>
@@ -1607,7 +1636,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1616,24 +1645,24 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>email</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>password</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
 </table>
@@ -1648,7 +1677,9 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signup.SignupBody">SignupBody</span></span>
@@ -1658,7 +1689,7 @@ to hangar
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1667,60 +1698,60 @@ to hangar
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberAccount</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>password</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>reminderQuestion</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>reminderAnswer</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
 </table>
@@ -1735,7 +1766,9 @@ to hangar
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#confirm()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>

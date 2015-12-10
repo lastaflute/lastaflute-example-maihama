@@ -40,6 +40,7 @@ public class MemberEditForm {
 
     public LocalDate formalizedDate;
 
+    /** new status */
     @Required
     public CDef.MemberStatus memberStatus;
 

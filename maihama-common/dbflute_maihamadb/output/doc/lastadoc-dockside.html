@@ -85,6 +85,9 @@ h4 {
 p.actionsubitem {
     padding: 0.2em 0 0 1.5em;
 }
+.actionannotations {
+    color: #666666;
+}
 
 /* table */
 table {
@@ -97,6 +100,7 @@ table, th {
 th {
     background-color: #E4AAA4;
     font-size: 0.8em;
+    padding: 0 0.2em 0 0.2em;
 }
 td {
     border-bottom: 1px dotted #aaa;
@@ -111,6 +115,14 @@ td {
     color: #3F7E5E;
     padding:0.5em 0 0.5em 1em;
     margin-bottom: 1em;
+}
+.fieldcomment {
+    font-size: 0.9em;
+    color: #3F7E5E;
+}
+.fieldannotations {
+    font-size: 0.9em;
+    color: #666666;
 }
 .rownumcell {
     text-align: center;
@@ -242,7 +254,7 @@ to dockside
     </tr>
     <tr>
         <td class="rownumcell">7</td>
-        <td class="aliascell"><a href="#/member/purchase/list/{memberId:Integer}/{pageNumber:Integer}">/member/purchase/list/{memberId:Integer}/{pageNumber:Integer}</a></td>
+        <td class="aliascell"><a href="#/member/purchase/list/{memberId:Integer}">/member/purchase/list/{memberId:Integer}</a></td>
         <td class="aliascell">@author&nbsp;jflute</td>
         <td class="aliascell"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListAction">MemberPurchaseListAction</span>#index()</td>
         <td class="aliascell">
@@ -377,9 +389,9 @@ to dockside
     </tr>
     <tr>
         <td class="rownumcell">19</td>
-        <td class="aliascell"><a href="#/signup/doSignup">/signup/doSignup</a></td>
+        <td class="aliascell"><a href="#/signup/signup">/signup/signup</a></td>
         <td class="aliascell">@author&nbsp;annie_pocket</td>
-        <td class="aliascell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#doSignup()</td>
+        <td class="aliascell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#signup()</td>
         <td class="aliascell">
             <span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span>
         </td>
@@ -389,11 +401,10 @@ to dockside
     </tr>
     <tr>
         <td class="rownumcell">20</td>
-        <td class="aliascell"><a href="#/signup/register">/signup/register</a></td>
+        <td class="aliascell"><a href="#/signup/register/{account:String}/{token:String}">/signup/register/{account:String}/{token:String}</a></td>
         <td class="aliascell">@author&nbsp;annie_pocket</td>
         <td class="aliascell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#register()</td>
         <td class="aliascell">
-            <span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span>
         </td>
         <td class="aliascell">
             <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
@@ -444,12 +455,13 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberAddAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberAddJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberAddHtml)</span></p>
 
 <h2 id="/member/add/register">
 /member/add/register
@@ -458,17 +470,18 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberAddAction#register()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberAddForm">MemberAddForm</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">@author&nbsp;jflute</p>
 <table>
     <thead>
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -477,54 +490,54 @@ to dockside
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberAccount</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>birthdate</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>memberStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
-        	<p></p>
+        	<p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
 </table>
 
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberAddJsp),redirect(MemberListAction.class)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberAddHtml),redirect(MemberListAction.class)</span></p>
 
 <h2 id="/member/edit/{memberId:Integer}">
 /member/edit/{memberId:Integer}
@@ -533,12 +546,13 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberEditAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberEditJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberEditHtml)</span></p>
 
 <h2 id="/member/edit/update">
 /member/edit/update
@@ -547,17 +561,18 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberEditAction#update()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberEditForm">MemberEditForm</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">@author&nbsp;jflute</p>
 <table>
     <thead>
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -566,125 +581,123 @@ to dockside
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>memberAccount</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>birthdate</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>formalizedDate</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">6</td>
         <td>memberStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
-        	<p title=""></p>
-        	<p></p>
+        <td class="fieldcomment">
+        	<p title="/**&nbsp;new&nbsp;status&nbsp;*/">new&nbsp;status&nbsp;</p>
+        	<p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">7</td>
         <td>latestLoginDatetime</td>
         <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">8</td>
         <td>updateDatetime</td>
         <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">9</td>
         <td>previousStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
-        	<p></p>
+        	<p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">10</td>
         <td>versionNo</td>
         <td><p title="java.lang.Long">Long</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
 </table>
 
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberEditJsp),redirectById(MemberEditAction.class, member.getMemberId()</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberEditHtml),redirectById(MemberEditAction.class, member.getMemberId()</span></p>
 
 <h2 id="/member/edit/withdrawal">
 /member/edit/withdrawal
@@ -693,17 +706,18 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberEditAction#withdrawal()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberEditForm">MemberEditForm</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">@author&nbsp;jflute</p>
 <table>
     <thead>
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -712,125 +726,123 @@ to dockside
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>memberAccount</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>birthdate</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>formalizedDate</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">6</td>
         <td>memberStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
-        	<p title=""></p>
-        	<p></p>
+        <td class="fieldcomment">
+        	<p title="/**&nbsp;new&nbsp;status&nbsp;*/">new&nbsp;status&nbsp;</p>
+        	<p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">7</td>
         <td>latestLoginDatetime</td>
         <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">8</td>
         <td>updateDatetime</td>
         <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">9</td>
         <td>previousStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
-        	<p></p>
+        	<p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">10</td>
         <td>versionNo</td>
         <td><p title="java.lang.Long">Long</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
 </table>
 
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberEditJsp),redirect(MemberListAction.class)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberEditHtml),redirect(MemberListAction.class)</span></p>
 
 <h2 id="/member/list/{pageNumber:OptionalThing&lt;Integer&gt;}">
 /member/list/{pageNumber:OptionalThing&lt;Integer&gt;}
@@ -839,17 +851,18 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberListAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberSearchForm">MemberSearchForm</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">@author&nbsp;jflute</p>
 <table>
     <thead>
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -858,87 +871,88 @@ to dockside
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
-        	<p></p>
+        	<p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>purchaseProductName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>unpaid</td>
         <td><p title="boolean">boolean</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>formalizedFrom</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">6</td>
         <td>formalizedTo</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
 
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberListJsp),mappingToBean(member),asHtml(path_Member_MemberListJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Member_MemberListHtml),mappingToBean(member),asHtml(path_Member_MemberListHtml)</span></p>
 
-<h2 id="/member/purchase/list/{memberId:Integer}/{pageNumber:Integer}">
-/member/purchase/list/{memberId:Integer}/{pageNumber:Integer}
+<h2 id="/member/purchase/list/{memberId:Integer}">
+/member/purchase/list/{memberId:Integer}
 </h2>
 <p>
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_MemberPurchase_MemberPurchaseListJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">##unanalyzable##</span></p>
 
 <h2 id="/mypage/">
 /mypage/
@@ -947,12 +961,13 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.mypage.MypageAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">new MypageProductBean(member),asHtml(path_Mypage_MypageJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">new MypageProductBean(member),asHtml(path_Mypage_MypageHtml)</span></p>
 
 <h2 id="/product/detail/{productId:Integer}">
 /product/detail/{productId:Integer}
@@ -961,12 +976,14 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.product.ProductDetailAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Product_ProductListJsp),asHtml(path_Product_ProductDetailJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Product_ProductListHtml),asHtml(path_Product_ProductDetailHtml)</span></p>
 
 <h2 id="/product/list/{pageNumber:OptionalThing&lt;Integer&gt;}">
 /product/list/{pageNumber:OptionalThing&lt;Integer&gt;}
@@ -975,17 +992,19 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.product.ProductListAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.product.ProductSearchForm">ProductSearchForm</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">@author&nbsp;jflute</p>
 <table>
     <thead>
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -994,40 +1013,42 @@ to dockside
         <td class="rownumcell" rowspan="1">1</td>
         <td>productName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
+            &#64;Length{max=10}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>productStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$ProductStatus">ProductStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
-        	<p></p>
+        	<p>{PST=ProductionStop,&nbsp;SST=SaleStop,&nbsp;ONS=OnSaleProduction}</p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>purchaseMemberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
+            &#64;Length{max=5}
         </td>
     </tr>
 </table>
 
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Product_ProductListJsp),mappingToBean(product),asHtml(path_Product_ProductListJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Product_ProductListHtml),mappingToBean(product),asHtml(path_Product_ProductListHtml)</span></p>
 
 <h2 id="/profile/">
 /profile/
@@ -1036,12 +1057,13 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.profile.ProfileAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
+<p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;deco<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Profile_ProfileJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Profile_ProfileHtml)</span></p>
 
 <h2 id="/purchase/list/{pageNumber:OptionalThing&lt;Integer&gt;}">
 /purchase/list/{pageNumber:OptionalThing&lt;Integer&gt;}
@@ -1050,15 +1072,16 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.purchase.PurchaseListAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;Action&nbsp;class&nbsp;for&nbsp;purchase&nbsp;list&nbsp;page.<br>&nbsp;*&nbsp;@author&nbsp;toshiaki.arai<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.purchase.PurchaseSearchForm">PurchaseSearchForm</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;<br>&nbsp;*&nbsp;@author&nbsp;toshiaki.arai<br>&nbsp;*/">@author&nbsp;toshiaki.arai</p>
 
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">mappingToBean(purchase),asHtml(path_Purchase_PurchaseListJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">mappingToBean(purchase),asHtml(path_Purchase_PurchaseListHtml)</span></p>
 
 <h2 id="/root/">
 /root/
@@ -1067,7 +1090,9 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.RootAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -1081,12 +1106,13 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signin.SigninAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">redirect(RootAction.class),asHtml(path_Signin_SigninJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">redirect(RootAction.class),asHtml(path_Signin_SigninHtml)</span></p>
 
 <h2 id="/signin/signin">
 /signin/signin
@@ -1095,61 +1121,62 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signin.SigninAction#signin()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signin.SigninForm">SigninForm</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;The&nbsp;form&nbsp;of&nbsp;member's&nbsp;Login.<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">The&nbsp;form&nbsp;of&nbsp;member's&nbsp;Login.</p>
 <table>
     <thead>
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
     </thead>
     <tr>
         <td class="rownumcell" rowspan="1">1</td>
-        <td>email</td>
+        <td>account</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>password</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>rememberMe</td>
         <td><p title="boolean">boolean</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
 
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Signin_SigninJsp),docksideLoginAssist.loginRedirect(form.email, form.password,  op -> op.rememberMe(form.rememberMe),redirect(RootAction.class)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Signin_SigninHtml),docksideLoginAssist.loginRedirect(form.account, form.password,  op -> op.rememberMe(form.rememberMe),redirect(RootAction.class)</span></p>
 
 <h2 id="/signin/reminder/">
 /signin/reminder/
@@ -1158,12 +1185,13 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signin.SigninReminderAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;masaki.kamachi<br>&nbsp;*/</p>
+<p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;masaki.kamachi<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Signin_SigninReminderJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Signin_SigninReminderHtml)</span></p>
 
 <h2 id="/signout/">
 /signout/
@@ -1172,7 +1200,8 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signout.SignoutAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;toshiaki.arai<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -1186,185 +1215,117 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Signup_SignupJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Signup_SignupHtml)</span></p>
 
-<h2 id="/signup/doSignup">
-/signup/doSignup
+<h2 id="/signup/signup">
+/signup/signup
 </h2>
 <p>
-<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#doSignup()</span>
+<span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#signup()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">@author&nbsp;annie_pocket</p>
 <table>
     <thead>
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
     </thead>
     <tr>
         <td class="rownumcell" rowspan="1">1</td>
-        <td>name</td>
+        <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
-        <td>account</td>
+        <td>memberAccount</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>password</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>reminderQuestion</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>reminderAnswer</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
 </table>
 
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Signup_SignupJsp),redirect(MypageAction.class)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Signup_SignupHtml),redirect(MypageAction.class)</span></p>
 
-<h2 id="/signup/register">
-/signup/register
+<h2 id="/signup/register/{account:String}/{token:String}">
+/signup/register/{account:String}/{token:String}
 </h2>
 <p>
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#register()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
-<span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span></span>
-<p class="tablecomment" title=""></p>
-<table>
-    <thead>
-    <tr>
-        <th class="rownumhead">No.</th>
-        <th>name</th>
-        <th>class</th>
-        <th>comment</th>
-        <th>annotations</th>
-    </tr>
-    </thead>
-    <tr>
-        <td class="rownumcell" rowspan="1">1</td>
-        <td>name</td>
-        <td><p title="java.lang.String">String</p></td>
-        <td>
-        	<p title=""></p>
-        	<p></p>
-        </td>
-        <td>
-            NotBlank
-        </td>
-    </tr>
-    <tr>
-        <td class="rownumcell" rowspan="1">2</td>
-        <td>account</td>
-        <td><p title="java.lang.String">String</p></td>
-        <td>
-        	<p title=""></p>
-        	<p></p>
-        </td>
-        <td>
-            NotBlank
-        </td>
-    </tr>
-    <tr>
-        <td class="rownumcell" rowspan="1">3</td>
-        <td>password</td>
-        <td><p title="java.lang.String">String</p></td>
-        <td>
-        	<p title=""></p>
-        	<p></p>
-        </td>
-        <td>
-            NotBlank
-        </td>
-    </tr>
-    <tr>
-        <td class="rownumcell" rowspan="1">4</td>
-        <td>reminderQuestion</td>
-        <td><p title="java.lang.String">String</p></td>
-        <td>
-        	<p title=""></p>
-        	<p></p>
-        </td>
-        <td>
-            NotBlank
-        </td>
-    </tr>
-    <tr>
-        <td class="rownumcell" rowspan="1">5</td>
-        <td>reminderAnswer</td>
-        <td><p title="java.lang.String">String</p></td>
-        <td>
-        	<p title=""></p>
-        	<p></p>
-        </td>
-        <td>
-            NotBlank
-        </td>
-    </tr>
-</table>
-
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
 <p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">redirect(SigninAction.class)</span></p>
@@ -1376,12 +1337,13 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.withdrawal.WithdrawalAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Withdrawal_WithdrawalJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Withdrawal_WithdrawalHtml)</span></p>
 
 <h2 id="/withdrawal/confirm">
 /withdrawal/confirm
@@ -1390,17 +1352,18 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.withdrawal.WithdrawalAction#confirm()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.withdrawal.WithdrawalForm">WithdrawalForm</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">@author&nbsp;annie_pocket</p>
 <table>
     <thead>
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1409,30 +1372,30 @@ to dockside
         <td class="rownumcell" rowspan="1">1</td>
         <td>reasonCode</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason">WithdrawalReason</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
-        	<p></p>
+        	<p>{OTH=OTH,&nbsp;PRD=PRD,&nbsp;FRT=FRT,&nbsp;SIT=SIT}</p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>reasonInput</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Length{max=3}
+        <td class="fieldannotations">
+            &#64;Length{max=3}
         </td>
     </tr>
 </table>
 
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Withdrawal_WithdrawalJsp),asHtml(path_Withdrawal_WithdrawalConfirmJsp)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Withdrawal_WithdrawalHtml),asHtml(path_Withdrawal_WithdrawalConfirmHtml)</span></p>
 
 <h2 id="/withdrawal/done">
 /withdrawal/done
@@ -1441,17 +1404,18 @@ to dockside
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.withdrawal.WithdrawalAction#done()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.withdrawal.WithdrawalForm">WithdrawalForm</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">@author&nbsp;annie_pocket</p>
 <table>
     <thead>
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1460,30 +1424,30 @@ to dockside
         <td class="rownumcell" rowspan="1">1</td>
         <td>reasonCode</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason">WithdrawalReason</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
-        	<p></p>
+        	<p>{OTH=OTH,&nbsp;PRD=PRD,&nbsp;FRT=FRT,&nbsp;SIT=SIT}</p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>reasonInput</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Length{max=3}
+        <td class="fieldannotations">
+            &#64;Length{max=3}
         </td>
     </tr>
 </table>
 
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
-<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">redirect(SignoutAction.class)</span></p>
+<p class="actionsubitem"><span class="actionsubtitle">implementations:</span> <span class="actionsubvalue">asHtml(path_Withdrawal_WithdrawalHtml),redirect(SignoutAction.class)</span></p>
 
 </body>
 </html>

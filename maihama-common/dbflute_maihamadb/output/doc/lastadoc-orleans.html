@@ -85,6 +85,9 @@ h4 {
 p.actionsubitem {
     padding: 0.2em 0 0 1.5em;
 }
+.actionannotations {
+    color: #666666;
+}
 
 /* table */
 table {
@@ -97,6 +100,7 @@ table, th {
 th {
     background-color: #E4AAA4;
     font-size: 0.8em;
+    padding: 0 0.2em 0 0.2em;
 }
 td {
     border-bottom: 1px dotted #aaa;
@@ -111,6 +115,14 @@ td {
     color: #3F7E5E;
     padding:0.5em 0 0.5em 1em;
     margin-bottom: 1em;
+}
+.fieldcomment {
+    font-size: 0.9em;
+    color: #3F7E5E;
+}
+.fieldannotations {
+    font-size: 0.9em;
+    color: #666666;
 }
 .rownumcell {
     text-align: center;
@@ -444,7 +456,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberAddAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -458,7 +471,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberAddAction#register()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberAddForm">MemberAddForm</span></span>
@@ -468,7 +482,7 @@ to orleans
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -477,47 +491,47 @@ to orleans
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberAccount</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>birthdate</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>memberStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
 </table>
@@ -533,7 +547,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberEditAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -547,7 +562,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberEditAction#update()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberEditForm">MemberEditForm</span></span>
@@ -557,7 +573,7 @@ to orleans
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -566,118 +582,118 @@ to orleans
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>memberAccount</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>birthdate</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>formalizedDate</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">6</td>
         <td>memberStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">7</td>
         <td>latestLoginDatetime</td>
         <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">8</td>
         <td>updateDatetime</td>
         <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">9</td>
         <td>previousStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">10</td>
         <td>versionNo</td>
         <td><p title="java.lang.Long">Long</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
 </table>
@@ -693,7 +709,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberEditAction#withdrawal()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberEditForm">MemberEditForm</span></span>
@@ -703,7 +720,7 @@ to orleans
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -712,118 +729,118 @@ to orleans
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberId</td>
         <td><p title="java.lang.Integer">Integer</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>memberAccount</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>birthdate</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>formalizedDate</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">6</td>
         <td>memberStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">7</td>
         <td>latestLoginDatetime</td>
         <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">8</td>
         <td>updateDatetime</td>
         <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">9</td>
         <td>previousStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">10</td>
         <td>versionNo</td>
         <td><p title="java.lang.Long">Long</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required{groups=[ClientError]}
+        <td class="fieldannotations">
+            &#64;Required{groups=[ClientError]}
         </td>
     </tr>
 </table>
@@ -839,7 +856,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.MemberListAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberSearchForm">MemberSearchForm</span></span>
@@ -849,7 +867,7 @@ to orleans
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -858,66 +876,66 @@ to orleans
         <td class="rownumcell" rowspan="1">1</td>
         <td>memberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>purchaseProductName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>unpaid</td>
         <td><p title="boolean">boolean</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>formalizedFrom</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">6</td>
         <td>formalizedTo</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -933,7 +951,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.member.purchase.MemberPurchaseListAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -947,7 +966,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.mypage.MypageAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -961,7 +981,9 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.product.ProductDetailAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -975,7 +997,9 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.product.ProductListAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.product.ProductSearchForm">ProductSearchForm</span></span>
@@ -985,7 +1009,7 @@ to orleans
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -994,33 +1018,33 @@ to orleans
         <td class="rownumcell" rowspan="1">1</td>
         <td>productName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>productStatus</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$ProductStatus">ProductStatus</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>purchaseMemberName</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -1036,7 +1060,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.profile.ProfileAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -1050,7 +1075,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.purchase.PurchaseListAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;Action&nbsp;class&nbsp;for&nbsp;purchase&nbsp;list&nbsp;page.<br>&nbsp;*&nbsp;@author&nbsp;toshiaki.arai<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.purchase.PurchaseSearchForm">PurchaseSearchForm</span></span>
@@ -1067,7 +1093,9 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.RootAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -1081,7 +1109,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signin.SigninAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -1095,7 +1124,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signin.SigninAction#signin()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signin.SigninForm">SigninForm</span></span>
@@ -1105,7 +1135,7 @@ to orleans
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1114,35 +1144,35 @@ to orleans
         <td class="rownumcell" rowspan="1">1</td>
         <td>email</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>password</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Required
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>rememberMe</td>
         <td><p title="boolean">boolean</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -1158,7 +1188,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signin.SigninReminderAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;masaki.kamachi<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -1172,7 +1203,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signout.SignoutAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;toshiaki.arai<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -1186,7 +1218,9 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -1200,7 +1234,9 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#doSignup()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span></span>
@@ -1210,7 +1246,7 @@ to orleans
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1219,60 +1255,60 @@ to orleans
         <td class="rownumcell" rowspan="1">1</td>
         <td>name</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>account</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>password</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>reminderQuestion</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>reminderAnswer</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
 </table>
@@ -1288,7 +1324,9 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.signup.SignupAction#register()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[AllowAnyoneAccess, Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span></span>
@@ -1298,7 +1336,7 @@ to orleans
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1307,60 +1345,60 @@ to orleans
         <td class="rownumcell" rowspan="1">1</td>
         <td>name</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>account</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>password</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>reminderQuestion</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">5</td>
         <td>reminderAnswer</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            NotBlank
+        <td class="fieldannotations">
+            &#64;NotBlank
         </td>
     </tr>
 </table>
@@ -1376,7 +1414,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.withdrawal.WithdrawalAction#index()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Return as:</span> <span class="actionsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
@@ -1390,7 +1429,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.withdrawal.WithdrawalAction#confirm()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.withdrawal.WithdrawalForm">WithdrawalForm</span></span>
@@ -1400,7 +1440,7 @@ to orleans
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1409,23 +1449,23 @@ to orleans
         <td class="rownumcell" rowspan="1">1</td>
         <td>reasonCode</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason">WithdrawalReason</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>reasonInput</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Length{max=3}
+        <td class="fieldannotations">
+            &#64;Length{max=3}
         </td>
     </tr>
 </table>
@@ -1441,7 +1481,8 @@ to orleans
 <span class="actiontitle">Execute Method:</span> <span class="actionmainvalue">org.docksidestage.app.web.withdrawal.WithdrawalAction#done()</span>
 </p>
 <p class="actionsubitem">
-<span class="actionsubtitle">annotations:</span> <span class="actionsubvalue">[Execute]</span>
+<span class="actionsubtitle">annotations:</span>
+<span class="actionannotations actionsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.withdrawal.WithdrawalForm">WithdrawalForm</span></span>
@@ -1451,7 +1492,7 @@ to orleans
     <tr>
         <th class="rownumhead">No.</th>
         <th>name</th>
-        <th>class</th>
+        <th>type</th>
         <th>comment</th>
         <th>annotations</th>
     </tr>
@@ -1460,23 +1501,23 @@ to orleans
         <td class="rownumcell" rowspan="1">1</td>
         <td>reasonCode</td>
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason">WithdrawalReason</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
+        <td class="fieldannotations">
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>reasonInput</td>
         <td><p title="java.lang.String">String</p></td>
-        <td>
+        <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
-        <td>
-            Length{max=3}
+        <td class="fieldannotations">
+            &#64;Length{max=3}
         </td>
     </tr>
 </table>
