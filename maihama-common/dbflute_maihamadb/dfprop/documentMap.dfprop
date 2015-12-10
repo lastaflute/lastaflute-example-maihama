@@ -53,11 +53,6 @@
 # *The line that starts with '#' means comment-out.
 #
 map:{
-    ; neighborhoodSchemaHtmlMap = map:{
-        ; dockside = map:{ path = ../lasta/dockside-lastadoc.html }
-        ; hangar = map:{ path = ../lasta/hangar-lastadoc.html }
-    }
-
     ; schemaDiagramMap = map:{
         ; maihamadb_erd = map:{ path = ../../../../maihama-base/modeling/maihamadb.png ; width = 100% ; height = 100% }
     }
