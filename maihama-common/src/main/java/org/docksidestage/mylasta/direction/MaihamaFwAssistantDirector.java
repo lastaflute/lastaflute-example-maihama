@@ -23,6 +23,7 @@ import org.docksidestage.mylasta.direction.sponsor.MaihamaActionAdjustmentProvid
 import org.docksidestage.mylasta.direction.sponsor.MaihamaApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaCookieResourceProvider;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaCurtainBeforeHook;
+import org.docksidestage.mylasta.direction.sponsor.MaihamaJsonResourceProvider;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaListedClassificationProvider;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaMailDeliveryDepartmentCreator;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaSecurityResourceProvider;
@@ -79,6 +80,7 @@ public abstract class MaihamaFwAssistantDirector extends CachedFwAssistantDirect
 
         direction.directSecurity(createSecurityResourceProvider());
         direction.directTime(createTimeResourceProvider());
+        direction.directJson(createJsonResourceProvider());
         direction.directMail(createMailDeliveryDepartmentCreator().create());
     }
 
@@ -94,6 +96,10 @@ public abstract class MaihamaFwAssistantDirector extends CachedFwAssistantDirect
 
     protected MaihamaTimeResourceProvider createTimeResourceProvider() {
         return new MaihamaTimeResourceProvider(maihamaConfig);
+    }
+
+    protected MaihamaJsonResourceProvider createJsonResourceProvider() {
+        return new MaihamaJsonResourceProvider();
     }
 
     protected MaihamaMailDeliveryDepartmentCreator createMailDeliveryDepartmentCreator() {
