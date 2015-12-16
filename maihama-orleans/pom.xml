@@ -141,7 +141,7 @@
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 		<!--                                                               Partner Library -->
 		<!--                                                               = = = = = = = = -->
-		<!-- tomcat -->
+		<!-- boot -->
 		<dependency>
 			<groupId>org.dbflute.jetty</groupId>
 			<artifactId>jetty-boot</artifactId>

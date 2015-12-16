@@ -28,7 +28,7 @@
 		<logback.version>1.1.3</logback.version>
 		<servlet.version>3.1.0</servlet.version>
 		<jetty.boot.version>0.4.1</jetty.boot.version>
-		<tomcat.boot.version>0.4.1</tomcat.boot.version>
+		<tomcat.boot.version>0.4.2</tomcat.boot.version>
 
 		<!-- GoodNeighbor Library -->
 		<commons.lang.version>3.4</commons.lang.version>
@@ -231,14 +231,12 @@
 				<version>${servlet.version}</version>
 			</dependency>
 
-			<!-- jetty -->
+			<!-- boot -->
 			<dependency>
 				<groupId>org.dbflute.jetty</groupId>
 				<artifactId>jetty-boot</artifactId>
 				<version>${jetty.boot.version}</version>
 			</dependency>
-
-			<!-- tomcat -->
 			<dependency>
 				<groupId>org.dbflute.tomcat</groupId>
 				<artifactId>tomcat-boot</artifactId>

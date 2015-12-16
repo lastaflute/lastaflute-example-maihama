@@ -142,7 +142,7 @@
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 		<!--                                                               Partner Library -->
 		<!--                                                               = = = = = = = = -->
-		<!-- tomcat -->
+		<!-- boot -->
 		<dependency>
 			<groupId>org.dbflute.tomcat</groupId>
 			<artifactId>tomcat-boot</artifactId>
