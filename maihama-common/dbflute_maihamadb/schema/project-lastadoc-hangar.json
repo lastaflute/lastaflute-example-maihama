@@ -16,8 +16,8 @@
         "typeName": "org.docksidestage.app.web.following.FollowingBody",
         "simpleTypeName": "FollowingBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "@author iwamatsu0430",
+        "comment": "/**\n * @author iwamatsu0430\n * @author jflute\n */",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
@@ -71,8 +71,8 @@
         "typeName": "org.docksidestage.app.web.member.MemberBody",
         "simpleTypeName": "MemberBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "@author jflute",
+        "comment": "/**\n * @author jflute\n * @author iwamatsu0430\n */",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
@@ -214,8 +214,8 @@
         "typeName": "org.docksidestage.app.web.member.MemberSearchBody",
         "simpleTypeName": "MemberSearchBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "@author jflute",
+        "comment": "/**\n * @author jflute\n * @author iwamatsu0430\n */",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
@@ -230,9 +230,9 @@
           },
           {
             "name": "memberStatus",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
+            "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
+            "simpleTypeName": "MemberStatus",
+            "value": "{FML\u003dFormalized, PRV\u003dProvisional, WDL\u003dWithdrawal}",
             "description": null,
             "comment": null,
             "annotationList": [],
@@ -284,49 +284,57 @@
         "name": null,
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.member.MemberSearchRowBean\u003e\u003e",
         "simpleTypeName": "JsonResponse\u003cSearchPagingBean\u003cMemberSearchRowBean\u003e\u003e",
-        "value": "mappingToBean(product),asJson(bean)",
+        "value": "asJson(bean)",
         "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
-            "name": "currentPage",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "name": "itemsPerPage",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "page size ",
+            "comment": "/** page size */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
-            "name": "itemsPerPage",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "name": "currentPage",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "current page number ",
+            "comment": "/** current page number */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "totalItems",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "count of total items (records) ",
+            "comment": "/** count of total items (records) */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "totalPages",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "count of total pages ",
+            "comment": "/** count of total pages */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
@@ -334,9 +342,11 @@
             "typeName": "java.util.List\u003corg.docksidestage.app.web.member.MemberSearchRowBean\u003e",
             "simpleTypeName": "List\u003cMemberSearchRowBean\u003e",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "paging data ",
+            "comment": "/** paging data */",
+            "annotationList": [
+              "NotNull"
+            ],
             "nestTypeDocMetaList": [
               {
                 "name": "memberId",
@@ -429,8 +439,8 @@
         "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListBody",
         "simpleTypeName": "MemberPurchaseListBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "@author jflute",
+        "comment": "/**\n * @author jflute\n */",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
@@ -463,49 +473,57 @@
         "name": null,
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean\u003e\u003e",
         "simpleTypeName": "JsonResponse\u003cSearchPagingBean\u003cMemberPurchaseSearchRowBean\u003e\u003e",
-        "value": "mappingToBean(purchase),asJson(bean)",
+        "value": "asJson(bean)",
         "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
-            "name": "currentPage",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "name": "itemsPerPage",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "page size ",
+            "comment": "/** page size */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
-            "name": "itemsPerPage",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "name": "currentPage",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "current page number ",
+            "comment": "/** current page number */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "totalItems",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "count of total items (records) ",
+            "comment": "/** count of total items (records) */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "totalPages",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "count of total pages ",
+            "comment": "/** count of total pages */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
@@ -513,9 +531,11 @@
             "typeName": "java.util.List\u003corg.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean\u003e",
             "simpleTypeName": "List\u003cMemberPurchaseSearchRowBean\u003e",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "paging data ",
+            "comment": "/** paging data */",
+            "annotationList": [
+              "NotNull"
+            ],
             "nestTypeDocMetaList": [
               {
                 "name": "purchaseId",
@@ -524,7 +544,9 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -534,7 +556,9 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -544,7 +568,9 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -554,7 +580,9 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -564,17 +592,21 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
                 "name": "paymentComplete",
-                "typeName": "boolean",
-                "simpleTypeName": "boolean",
+                "typeName": "java.lang.Boolean",
+                "simpleTypeName": "Boolean",
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               }
             ]
@@ -598,8 +630,8 @@
         "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListBody",
         "simpleTypeName": "MemberPurchaseListBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "@author jflute",
+        "comment": "/**\n * @author jflute\n */",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
@@ -815,8 +847,8 @@
         "typeName": "org.docksidestage.app.web.product.ProductSearchBody",
         "simpleTypeName": "ProductSearchBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "@author jflute",
+        "comment": "/**\n * @author jflute\n * @author iwamatsu0430\n */",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
@@ -826,14 +858,16 @@
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "Length{max\u003d10}"
+            ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "productStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
             "simpleTypeName": "ProductStatus",
-            "value": null,
+            "value": "{PST\u003dProductionStop, SST\u003dSaleStop, ONS\u003dOnSaleProduction}",
             "description": null,
             "comment": null,
             "annotationList": [],
@@ -846,7 +880,9 @@
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "Length{max\u003d5}"
+            ],
             "nestTypeDocMetaList": []
           }
         ]
@@ -855,49 +891,57 @@
         "name": null,
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingBean\u003corg.docksidestage.app.web.product.ProductRowBean\u003e\u003e",
         "simpleTypeName": "JsonResponse\u003cSearchPagingBean\u003cProductRowBean\u003e\u003e",
-        "value": "mappingToBean(product),asJson(bean)",
+        "value": "asJson(bean)",
         "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
-            "name": "currentPage",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "name": "itemsPerPage",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "page size ",
+            "comment": "/** page size */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
-            "name": "itemsPerPage",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "name": "currentPage",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "current page number ",
+            "comment": "/** current page number */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "totalItems",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "count of total items (records) ",
+            "comment": "/** count of total items (records) */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "totalPages",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "count of total pages ",
+            "comment": "/** count of total pages */",
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
@@ -905,9 +949,11 @@
             "typeName": "java.util.List\u003corg.docksidestage.app.web.product.ProductRowBean\u003e",
             "simpleTypeName": "List\u003cProductRowBean\u003e",
             "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
+            "description": "paging data ",
+            "comment": "/** paging data */",
+            "annotationList": [
+              "NotNull"
+            ],
             "nestTypeDocMetaList": [
               {
                 "name": "productId",
@@ -916,7 +962,9 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -926,7 +974,9 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -934,9 +984,11 @@
                 "typeName": "java.lang.String",
                 "simpleTypeName": "String",
                 "value": null,
-                "description": null,
-                "comment": null,
-                "annotationList": [],
+                "description": "e.g. ProductionStop ",
+                "comment": "/** e.g. ProductionStop */",
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -946,7 +998,9 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               }
             ]
@@ -970,8 +1024,8 @@
         "typeName": "org.docksidestage.app.web.purchase.PurchaseProductBody",
         "simpleTypeName": "PurchaseProductBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "@author iwamatsu0430",
+        "comment": "/**\n * @author iwamatsu0430\n */",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
@@ -1039,8 +1093,8 @@
         "typeName": "org.docksidestage.app.web.purchase.PurchaseProductBody",
         "simpleTypeName": "PurchaseProductBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "@author iwamatsu0430",
+        "comment": "/**\n * @author iwamatsu0430\n */",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
@@ -1155,8 +1209,8 @@
         "typeName": "org.docksidestage.app.web.signin.SigninBody",
         "simpleTypeName": "SigninBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "The form of member\u0027s Login.",
+        "comment": "/**\n * The form of member\u0027s Login.\n * @author jflute\n * @author iwamatsu0430\n */",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
@@ -1213,8 +1267,8 @@
         "typeName": "org.docksidestage.app.web.signup.SignupBody",
         "simpleTypeName": "SignupBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "@author annie_pocket",
+        "comment": "/**\n * @author annie_pocket\n */",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {

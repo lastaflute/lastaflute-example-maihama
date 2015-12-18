@@ -17,16 +17,23 @@ package org.docksidestage.app.web.member.purchase;
 
 import java.time.LocalDateTime;
 
+import org.lastaflute.web.validation.Required;
+
 /**
- * 会員購入一覧で利用する画面項目DTO。
  * @author jflute
  */
 public class MemberPurchaseSearchRowBean {
 
+    @Required
     public Long purchaseId;
+    @Required
     public LocalDateTime purchaseDatetime;
+    @Required
     public String productName;
+    @Required
     public Integer purchasePrice;
+    @Required
     public Integer purchaseCount;
-    public boolean paymentComplete;
+    @Required
+    public Boolean paymentComplete;
 }

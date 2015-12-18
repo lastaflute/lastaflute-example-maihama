@@ -15,14 +15,21 @@
  */
 package org.docksidestage.app.web.product;
 
+import org.lastaflute.web.validation.Required;
+
 /**
  * @author jflute
  * @author iwamatsu0430
  */
 public class ProductRowBean {
 
+    @Required
     public Integer productId;
+    @Required
     public String productName;
+    /** e.g. ProductionStop */
+    @Required
     public String productStatusName;
+    @Required
     public Integer regularPrice;
 }

@@ -22,7 +22,6 @@ import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.paging.SearchPagingBean;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
-import org.docksidestage.dbflute.exbhv.ProductStatusBhv;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
@@ -40,8 +39,6 @@ public class ProductListAction extends HangarBaseAction {
     //                                                                           =========
     @Resource
     private ProductBhv productBhv;
-    @Resource
-    private ProductStatusBhv productStatusBhv;
 
     // ===================================================================================
     //                                                                             Execute
@@ -50,10 +47,7 @@ public class ProductListAction extends HangarBaseAction {
     public JsonResponse<SearchPagingBean<ProductRowBean>> index(OptionalThing<Integer> pageNumber, ProductSearchBody body) {
         validate(body, messages -> {});
         PagingResultBean<Product> page = selectProductPage(pageNumber.orElse(1), body);
-        SearchPagingBean<ProductRowBean> bean = createPagingBean(page);
-        bean.items = page.mappingList(product -> {
-            return mappingToBean(product);
-        });
+        SearchPagingBean<ProductRowBean> bean = mappingToBean(page);
         return asJson(bean);
     }
 
@@ -88,7 +82,13 @@ public class ProductListAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private ProductRowBean mappingToBean(Product product) {
+    private SearchPagingBean<ProductRowBean> mappingToBean(PagingResultBean<Product> page) {
+        return createPagingBean(page, page.mappingList(product -> {
+            return convertToRowBean(product);
+        }));
+    }
+
+    private ProductRowBean convertToRowBean(Product product) {
         ProductRowBean bean = new ProductRowBean();
         bean.productId = product.getProductId();
         bean.productName = product.getProductName();

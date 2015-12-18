@@ -383,7 +383,7 @@ to hangar
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.following.FollowingBody">FollowingBody</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">@author&nbsp;iwamatsu0430</p>
 <table>
     <thead>
     <tr>
@@ -434,7 +434,7 @@ to hangar
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberBody">MemberBody</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/">@author&nbsp;jflute</p>
 <table>
     <thead>
     <tr>
@@ -578,7 +578,7 @@ to hangar
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.MemberSearchBody">MemberSearchBody</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/">@author&nbsp;jflute</p>
 <table>
     <thead>
     <tr>
@@ -603,10 +603,10 @@ to hangar
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
         <td>memberStatus</td>
-        <td><p title="java.lang.String">String</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
         <td class="fieldcomment">
         	<p title=""></p>
-        	<p></p>
+        	<p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
         </td>
         <td class="fieldannotations">
         </td>
@@ -671,46 +671,50 @@ to hangar
     </thead>
     <tr>
         <td class="rownumcell" rowspan="1">1</td>
-        <td>currentPage</td>
-        <td><p title="int">int</p></td>
+        <td>itemsPerPage</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;page&nbsp;size&nbsp;*/">page&nbsp;size&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
-        <td>itemsPerPage</td>
-        <td><p title="int">int</p></td>
+        <td>currentPage</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;current&nbsp;page&nbsp;number&nbsp;*/">current&nbsp;page&nbsp;number&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>totalItems</td>
-        <td><p title="int">int</p></td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;count&nbsp;of&nbsp;total&nbsp;items&nbsp;(records)&nbsp;*/">count&nbsp;of&nbsp;total&nbsp;items&nbsp;(records)&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>totalPages</td>
-        <td><p title="int">int</p></td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;count&nbsp;of&nbsp;total&nbsp;pages&nbsp;*/">count&nbsp;of&nbsp;total&nbsp;pages&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
@@ -718,10 +722,11 @@ to hangar
         <td>items</td>
         <td><p title="java.util.List&lt;org.docksidestage.app.web.member.MemberSearchRowBean&gt;">List&lt;MemberSearchRowBean&gt;</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;paging&nbsp;data&nbsp;*/">paging&nbsp;data&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;NotNull
         </td>
     </tr>
     <tr>
@@ -833,7 +838,7 @@ to hangar
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListBody">MemberPurchaseListBody</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">@author&nbsp;jflute</p>
 <table>
     <thead>
     <tr>
@@ -884,46 +889,50 @@ to hangar
     </thead>
     <tr>
         <td class="rownumcell" rowspan="1">1</td>
-        <td>currentPage</td>
-        <td><p title="int">int</p></td>
+        <td>itemsPerPage</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;page&nbsp;size&nbsp;*/">page&nbsp;size&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
-        <td>itemsPerPage</td>
-        <td><p title="int">int</p></td>
+        <td>currentPage</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;current&nbsp;page&nbsp;number&nbsp;*/">current&nbsp;page&nbsp;number&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>totalItems</td>
-        <td><p title="int">int</p></td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;count&nbsp;of&nbsp;total&nbsp;items&nbsp;(records)&nbsp;*/">count&nbsp;of&nbsp;total&nbsp;items&nbsp;(records)&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>totalPages</td>
-        <td><p title="int">int</p></td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;count&nbsp;of&nbsp;total&nbsp;pages&nbsp;*/">count&nbsp;of&nbsp;total&nbsp;pages&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
@@ -931,10 +940,11 @@ to hangar
         <td>items</td>
         <td><p title="java.util.List&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowBean&gt;">List&lt;MemberPurchaseSearchRowBean&gt;</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;paging&nbsp;data&nbsp;*/">paging&nbsp;data&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;NotNull
         </td>
     </tr>
     <tr>
@@ -959,6 +969,7 @@ to hangar
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
@@ -970,6 +981,7 @@ to hangar
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
@@ -981,6 +993,7 @@ to hangar
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
@@ -992,6 +1005,7 @@ to hangar
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
@@ -1003,17 +1017,19 @@ to hangar
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">6</td>
         <td>paymentComplete</td>
-        <td><p title="boolean">boolean</p></td>
+        <td><p title="java.lang.Boolean">Boolean</p></td>
         <td class="fieldcomment">
         	<p title=""></p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
 </table>
@@ -1035,7 +1051,7 @@ to hangar
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListBody">MemberPurchaseListBody</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/">@author&nbsp;jflute</p>
 <table>
     <thead>
     <tr>
@@ -1260,7 +1276,7 @@ to hangar
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.product.ProductSearchBody">ProductSearchBody</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/">@author&nbsp;jflute</p>
 <table>
     <thead>
     <tr>
@@ -1280,6 +1296,7 @@ to hangar
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Length{max=10}
         </td>
     </tr>
     <tr>
@@ -1288,7 +1305,7 @@ to hangar
         <td><p title="org.docksidestage.dbflute.allcommon.CDef$ProductStatus">ProductStatus</p></td>
         <td class="fieldcomment">
         	<p title=""></p>
-        	<p></p>
+        	<p>{PST=ProductionStop,&nbsp;SST=SaleStop,&nbsp;ONS=OnSaleProduction}</p>
         </td>
         <td class="fieldannotations">
         </td>
@@ -1302,6 +1319,7 @@ to hangar
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Length{max=5}
         </td>
     </tr>
 </table>
@@ -1320,46 +1338,50 @@ to hangar
     </thead>
     <tr>
         <td class="rownumcell" rowspan="1">1</td>
-        <td>currentPage</td>
-        <td><p title="int">int</p></td>
+        <td>itemsPerPage</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;page&nbsp;size&nbsp;*/">page&nbsp;size&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">2</td>
-        <td>itemsPerPage</td>
-        <td><p title="int">int</p></td>
+        <td>currentPage</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;current&nbsp;page&nbsp;number&nbsp;*/">current&nbsp;page&nbsp;number&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">3</td>
         <td>totalItems</td>
-        <td><p title="int">int</p></td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;count&nbsp;of&nbsp;total&nbsp;items&nbsp;(records)&nbsp;*/">count&nbsp;of&nbsp;total&nbsp;items&nbsp;(records)&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rownumcell" rowspan="1">4</td>
         <td>totalPages</td>
-        <td><p title="int">int</p></td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;count&nbsp;of&nbsp;total&nbsp;pages&nbsp;*/">count&nbsp;of&nbsp;total&nbsp;pages&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
@@ -1367,10 +1389,11 @@ to hangar
         <td>items</td>
         <td><p title="java.util.List&lt;org.docksidestage.app.web.product.ProductRowBean&gt;">List&lt;ProductRowBean&gt;</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;paging&nbsp;data&nbsp;*/">paging&nbsp;data&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;NotNull
         </td>
     </tr>
     <tr>
@@ -1395,6 +1418,7 @@ to hangar
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
@@ -1406,6 +1430,7 @@ to hangar
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
@@ -1413,10 +1438,11 @@ to hangar
         <td>productStatusName</td>
         <td><p title="java.lang.String">String</p></td>
         <td class="fieldcomment">
-        	<p title=""></p>
+        	<p title="/**&nbsp;e.g.&nbsp;ProductionStop&nbsp;*/">e.g.&nbsp;ProductionStop&nbsp;</p>
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
@@ -1428,6 +1454,7 @@ to hangar
         	<p></p>
         </td>
         <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
 </table>
@@ -1449,7 +1476,7 @@ to hangar
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.purchase.PurchaseProductBody">PurchaseProductBody</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/">@author&nbsp;iwamatsu0430</p>
 <table>
     <thead>
     <tr>
@@ -1525,7 +1552,7 @@ to hangar
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.purchase.PurchaseProductBody">PurchaseProductBody</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/">@author&nbsp;iwamatsu0430</p>
 <table>
     <thead>
     <tr>
@@ -1630,7 +1657,7 @@ to hangar
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signin.SigninBody">SigninBody</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;The&nbsp;form&nbsp;of&nbsp;member's&nbsp;Login.<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*/">The&nbsp;form&nbsp;of&nbsp;member's&nbsp;Login.</p>
 <table>
     <thead>
     <tr>
@@ -1683,7 +1710,7 @@ to hangar
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">/**<br>&nbsp;*&nbsp;@author&nbsp;iwamatsu0430<br>&nbsp;*&nbsp;@author&nbsp;jflute<br>&nbsp;*/</p>
 <span class="actiontitle">Form or Body:</span> <span class="actionsubvalue"><span title="org.docksidestage.app.web.signup.SignupBody">SignupBody</span></span>
-<p class="tablecomment" title=""></p>
+<p class="tablecomment" title="/**<br>&nbsp;*&nbsp;@author&nbsp;annie_pocket<br>&nbsp;*/">@author&nbsp;annie_pocket</p>
 <table>
     <thead>
     <tr>

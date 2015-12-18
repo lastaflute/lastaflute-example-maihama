@@ -16,6 +16,7 @@
 package org.docksidestage.app.web.product;
 
 import org.docksidestage.dbflute.allcommon.CDef;
+import org.hibernate.validator.constraints.Length;
 
 /**
  * @author jflute
@@ -23,7 +24,11 @@ import org.docksidestage.dbflute.allcommon.CDef;
  */
 public class ProductSearchBody {
 
+    @Length(max = 10)
     public String productName;
+
     public CDef.ProductStatus productStatus;
+
+    @Length(max = 5)
     public String purchaseMemberName;
 }

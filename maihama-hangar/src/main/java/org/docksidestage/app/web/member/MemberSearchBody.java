@@ -17,6 +17,8 @@ package org.docksidestage.app.web.member;
 
 import java.io.Serializable;
 
+import org.docksidestage.dbflute.allcommon.CDef;
+
 /**
  * @author jflute
  * @author iwamatsu0430
@@ -26,7 +28,7 @@ public class MemberSearchBody implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public String memberName;
-    public String memberStatus;
+    public CDef.MemberStatus memberStatus;
     public String purchaseProductName;
     public boolean unpaid;
 

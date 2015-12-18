@@ -48,10 +48,7 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     public JsonResponse<SearchPagingBean<MemberPurchaseSearchRowBean>> index(Integer memberId, OptionalThing<Integer> pageNumber,
             MemberPurchaseListBody body) {
         PagingResultBean<Purchase> page = selectPurchasePage(memberId, pageNumber.orElse(1));
-        SearchPagingBean<MemberPurchaseSearchRowBean> bean = createPagingBean(page);
-        bean.items = page.mappingList(purchase -> {
-            return mappingToBean(purchase);
-        });
+        SearchPagingBean<MemberPurchaseSearchRowBean> bean = mappingToBean(page);
         return asJson(bean);
     }
 
@@ -79,7 +76,13 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    protected MemberPurchaseSearchRowBean mappingToBean(Purchase purchase) {
+    private SearchPagingBean<MemberPurchaseSearchRowBean> mappingToBean(PagingResultBean<Purchase> page) {
+        return createPagingBean(page, page.mappingList(purchase -> {
+            return convertToRowBean(purchase);
+        }));
+    }
+
+    protected MemberPurchaseSearchRowBean convertToRowBean(Purchase purchase) {
         MemberPurchaseSearchRowBean bean = new MemberPurchaseSearchRowBean();
         bean.purchaseId = purchase.getPurchaseId();
         bean.purchaseDatetime = purchase.getPurchaseDatetime();

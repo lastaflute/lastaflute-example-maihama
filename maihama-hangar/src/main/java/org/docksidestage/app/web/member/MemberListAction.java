@@ -23,10 +23,7 @@ import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.paging.SearchPagingBean;
-import org.docksidestage.dbflute.allcommon.CDef;
-import org.docksidestage.dbflute.cbean.MemberCB;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
-import org.docksidestage.dbflute.exbhv.MemberStatusBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
@@ -42,8 +39,6 @@ public class MemberListAction extends HangarBaseAction {
     //                                                                           =========
     @Resource
     private MemberBhv memberBhv;
-    @Resource
-    private MemberStatusBhv memberStatusBhv;
 
     // ===================================================================================
     //                                                                             Execute
@@ -51,61 +46,55 @@ public class MemberListAction extends HangarBaseAction {
     @Execute
     public JsonResponse<SearchPagingBean<MemberSearchRowBean>> index(OptionalThing<Integer> pageNumber, MemberSearchBody body) {
         validate(body, messages -> {});
-
-        Integer pageNumberValue = pageNumber.orElse(1);
-        PagingResultBean<Member> page = selectMemberPage(pageNumberValue, body);
-
-        SearchPagingBean<MemberSearchRowBean> bean = new SearchPagingBean<>(page);
-        bean.items = page.mappingList(product -> {
-            return mappingToBean(product);
-        });
-
+        PagingResultBean<Member> page = selectMemberPage(pageNumber.orElse(1), body);
+        SearchPagingBean<MemberSearchRowBean> bean = mappingToBean(page);
         return asJson(bean);
     }
 
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
-    protected PagingResultBean<Member> selectMemberPage(int pageNumber, MemberSearchBody body) {
+    private PagingResultBean<Member> selectMemberPage(int pageNumber, MemberSearchBody body) {
         return memberBhv.selectPage(cb -> {
-            setupMemberCB(body, cb);
+            cb.ignoreNullOrEmptyQuery();
+            cb.setupSelect_MemberStatus();
+            cb.specify().derivedPurchase().count(purchaseCB -> {
+                purchaseCB.specify().columnPurchaseId();
+            } , Member.ALIAS_purchaseCount);
+
+            cb.query().setMemberName_LikeSearch(body.memberName, op -> op.likeContain());
+            String purchaseProductName = body.purchaseProductName;
+            boolean unpaid = body.unpaid;
+            if ((purchaseProductName != null && purchaseProductName.trim().length() > 0) || unpaid) {
+                cb.query().existsPurchase(purchaseCB -> {
+                    purchaseCB.query().queryProduct().setProductName_LikeSearch(purchaseProductName, op -> op.likeContain());
+                    if (unpaid) {
+                        purchaseCB.query().setPaymentCompleteFlg_Equal_False();
+                    }
+                });
+            }
+            cb.query().setMemberStatusCode_Equal_AsMemberStatus(body.memberStatus);
+            LocalDateTime formalizedDateFrom = toDateTime(body.formalizedDateFrom).orElse(null);
+            LocalDateTime formalizedDateTo = toDateTime(body.formalizedDateTo).orElse(null);
+            cb.query().setFormalizedDatetime_FromTo(formalizedDateFrom, formalizedDateTo, op -> op.compareAsDate());
 
             cb.query().addOrderBy_UpdateDatetime_Desc();
             cb.query().addOrderBy_MemberId_Asc();
 
-            int pageSize = getPagingPageSize();
-            cb.paging(pageSize, pageNumber);
+            cb.paging(getPagingPageSize(), pageNumber);
         });
-    }
-
-    private void setupMemberCB(MemberSearchBody form, MemberCB cb) {
-        cb.ignoreNullOrEmptyQuery();
-        cb.setupSelect_MemberStatus();
-        cb.specify().derivedPurchase().count(purchaseCB -> {
-            purchaseCB.specify().columnPurchaseId();
-        } , Member.ALIAS_purchaseCount);
-
-        cb.query().setMemberName_LikeSearch(form.memberName, op -> op.likeContain());
-        final String purchaseProductName = form.purchaseProductName;
-        final boolean unpaid = form.unpaid;
-        if ((purchaseProductName != null && purchaseProductName.trim().length() > 0) || unpaid) {
-            cb.query().existsPurchase(purchaseCB -> {
-                purchaseCB.query().queryProduct().setProductName_LikeSearch(purchaseProductName, op -> op.likeContain());
-                if (unpaid) {
-                    purchaseCB.query().setPaymentCompleteFlg_Equal_False();
-                }
-            });
-        }
-        cb.query().setMemberStatusCode_Equal_AsMemberStatus(CDef.MemberStatus.codeOf(form.memberStatus));
-        LocalDateTime formalizedDateFrom = toDateTime(form.formalizedDateFrom).orElse(null);
-        LocalDateTime formalizedDateTo = toDateTime(form.formalizedDateTo).orElse(null);
-        cb.query().setFormalizedDatetime_FromTo(formalizedDateFrom, formalizedDateTo, op -> op.compareAsDate());
     }
 
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private MemberSearchRowBean mappingToBean(Member member) {
+    private SearchPagingBean<MemberSearchRowBean> mappingToBean(PagingResultBean<Member> page) {
+        return createPagingBean(page, page.mappingList(product -> {
+            return convertToRowBean(product);
+        }));
+    }
+
+    private MemberSearchRowBean convertToRowBean(Member member) {
         MemberSearchRowBean bean = new MemberSearchRowBean();
         bean.memberId = member.getMemberId();
         bean.memberName = member.getMemberName();

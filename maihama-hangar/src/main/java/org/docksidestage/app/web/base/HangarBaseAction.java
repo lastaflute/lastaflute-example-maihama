@@ -15,6 +15,8 @@
  */
 package org.docksidestage.app.web.base;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.dbflute.Entity;
@@ -105,10 +107,11 @@ public abstract class HangarBaseAction extends MaihamaBaseAction implements LaVa
     /**
      * Create paging bean for JSON.
      * @param page The selected result bean of paging. (NotNull)
+     * @param beans The list of bean as paging data.
      * @return The new-created bean of paging. (NotNull)
      */
-    protected <ENTITY extends Entity, BEAN> SearchPagingBean<BEAN> createPagingBean(PagingResultBean<ENTITY> page) {
-        return new SearchPagingBean<BEAN>(page);
+    protected <ENTITY extends Entity, BEAN> SearchPagingBean<BEAN> createPagingBean(PagingResultBean<ENTITY> page, List<BEAN> beans) {
+        return new SearchPagingBean<BEAN>(page, beans);
     }
 
     /**
