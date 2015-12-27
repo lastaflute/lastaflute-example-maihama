@@ -15,20 +15,15 @@
  */
 package org.docksidestage.mylasta;
 
-import org.dbflute.utflute.lastaflute.police.ActionComponentPolice;
 import org.dbflute.utflute.lastaflute.police.NonActionExtendsActionPolice;
 import org.dbflute.utflute.lastaflute.police.NonWebHasWebReferencePolice;
 import org.dbflute.utflute.lastaflute.police.WebPackageNinjaReferencePolice;
-import org.docksidestage.unit.UnitOrleansTestCase;
+import org.docksidestage.unit.UnitCommonPjTestCase;
 
 /**
  * @author jflute
  */
-public class OrleansActionDefTest extends UnitOrleansTestCase {
-
-    public void test_component() throws Exception {
-        policeStoryOfJavaClassChase(new ActionComponentPolice(tp -> getComponent(tp)));
-    }
+public class MaihamaActionDefTest extends UnitCommonPjTestCase {
 
     public void test_nonActionExtendsAction() throws Exception {
         policeStoryOfJavaClassChase(new NonActionExtendsActionPolice());
