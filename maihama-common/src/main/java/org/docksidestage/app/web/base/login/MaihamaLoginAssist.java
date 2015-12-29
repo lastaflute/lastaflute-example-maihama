@@ -16,7 +16,7 @@
 package org.docksidestage.app.web.base.login;
 
 import org.docksidestage.mylasta.action.MaihamaUserBean;
-import org.lastaflute.web.login.LoginManager;
+import org.lastaflute.web.login.PrimaryLoginManager;
 import org.lastaflute.web.login.TypicalLoginAssist;
 
 /**
@@ -26,7 +26,7 @@ import org.lastaflute.web.login.TypicalLoginAssist;
  */
 public abstract class MaihamaLoginAssist<USER_BEAN extends MaihamaUserBean, USER_ENTITY> // project common
         extends TypicalLoginAssist<Integer, USER_BEAN, USER_ENTITY> // #change_it also UserBean
-        implements LoginManager { // interface for framework control
+        implements PrimaryLoginManager { // interface for framework control
 
     @Override
     protected Integer toTypedUserId(String userKey) {
