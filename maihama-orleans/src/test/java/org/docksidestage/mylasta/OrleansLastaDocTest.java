@@ -15,7 +15,6 @@
  */
 package org.docksidestage.mylasta;
 
-import org.dbflute.utflute.core.document.DocumentGenerator;
 import org.docksidestage.unit.UnitOrleansTestCase;
 
 /**
@@ -24,7 +23,6 @@ import org.docksidestage.unit.UnitOrleansTestCase;
 public class OrleansLastaDocTest extends UnitOrleansTestCase {
 
     public void test_document() throws Exception {
-        DocumentGenerator generator = new DocumentGenerator();
-        generator.saveLastaDocMeta();
+        saveLastaDocMeta();
     }
 }
