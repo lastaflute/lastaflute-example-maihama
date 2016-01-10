@@ -21,11 +21,11 @@ import java.util.TimeZone;
 
 import javax.annotation.Resource;
 
-import org.dbflute.hook.AccessContext;
 import org.dbflute.optional.OptionalThing;
+import org.docksidestage.app.logic.context.AccessContextLogic;
 import org.docksidestage.app.logic.i18n.I18nDateLogic;
+import org.docksidestage.mylasta.action.MaihamaUserBean;
 import org.lastaflute.db.dbflute.accesscontext.AccessContextArranger;
-import org.lastaflute.db.dbflute.accesscontext.AccessContextResource;
 import org.lastaflute.web.TypicalAction;
 import org.lastaflute.web.response.ActionResponse;
 import org.lastaflute.web.ruts.process.ActionRuntime;
@@ -41,6 +41,8 @@ public abstract class MaihamaBaseAction extends TypicalAction {
     //                                                                           =========
     @Resource
     private RequestManager requestManager;
+    @Resource
+    private AccessContextLogic accessContextLogic;
     @Resource
     private I18nDateLogic i18nDateLogic;
 
@@ -81,23 +83,15 @@ public abstract class MaihamaBaseAction extends TypicalAction {
     @Override
     protected AccessContextArranger newAccessContextArranger() { // for framework
         return resource -> {
-            final AccessContext context = new AccessContext();
-            context.setAccessLocalDateTimeProvider(() -> currentDateTime());
-            context.setAccessUserProvider(() -> buildAccessUserTrace(resource));
-            return context;
+            return accessContextLogic.create(resource, () -> myUserType(), () -> getUserBean(), () -> myAppType());
         };
     }
 
-    private String buildAccessUserTrace(AccessContextResource resource) {
-        // #app_customize you can customize the user trace for common column
-        final StringBuilder sb = new StringBuilder();
-        sb.append(myUserType().map(userType -> userType + ":").orElse(""));
-        sb.append(getUserBean().map(bean -> (Object) bean.getUserId()).orElse(-1));
-        sb.append(",").append(myAppType()).append(",").append(resource.getModuleName());
-        final String trace = sb.toString();
-        final int columnSize = 200;
-        return trace.length() > columnSize ? trace.substring(0, columnSize) : trace;
-    }
+    // ===================================================================================
+    //                                                                           User Info
+    //                                                                           =========
+    @Override
+    protected abstract OptionalThing<? extends MaihamaUserBean> getUserBean(); // to be more concrete
 
     // ===================================================================================
     //                                                                   Conversion Helper

@@ -17,21 +17,34 @@ package org.docksidestage.app.job;
 
 import javax.annotation.Resource;
 
+import org.dbflute.optional.OptionalThing;
+import org.docksidestage.app.logic.context.AccessContextLogic;
 import org.docksidestage.mylasta.direction.OrleansConfig;
 import org.lastaflute.job.LaCron;
-import org.lastaflute.job.LaScheduler;
+import org.lastaflute.job.LaJobRunner;
+import org.lastaflute.job.LaJobScheduler;
 
 /**
  * @author jflute
  */
-public class AllJobScheduler implements LaScheduler {
+public class AllJobScheduler implements LaJobScheduler {
+
+    protected static final String APP_TYPE = "JOB";
 
     @Resource
     private OrleansConfig orleansConfig;
+    @Resource
+    private AccessContextLogic accessContextLogic;
 
     @Override
     public void schedule(LaCron cron) {
-        System.out.println("@@@: " + this + " :: " + getClass().getClassLoader() + " :: " + orleansConfig.getDomainName());
         cron.register("* * * * *", () -> SeaJob.class);
+    }
+
+    @Override
+    public LaJobRunner createRunner() {
+        return new LaJobRunner().useAccessContext(resource -> {
+            return accessContextLogic.create(resource, () -> OptionalThing.empty(), () -> OptionalThing.empty(), () -> APP_TYPE);
+        });
     }
 }

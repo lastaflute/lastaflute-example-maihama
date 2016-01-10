@@ -18,8 +18,10 @@ package org.docksidestage.app.job;
 import javax.annotation.Resource;
 
 import org.docksidestage.dbflute.exbhv.MemberBhv;
+import org.docksidestage.dbflute.exentity.Member;
+import org.lastaflute.db.jta.stage.TransactionStage;
 import org.lastaflute.job.LaJob;
-import org.lastaflute.job.LaJobContext;
+import org.lastaflute.job.LaJobRuntime;
 
 /**
  * @author jflute
@@ -27,11 +29,30 @@ import org.lastaflute.job.LaJobContext;
 public class SeaJob implements LaJob {
 
     @Resource
+    private TransactionStage stage;
+    @Resource
     private MemberBhv memberBhv;
 
     @Override
-    public void run(LaJobContext context) {
-        System.out.println("++++sea++++: " + this + " :: " + getClass().getClassLoader());
-        //memberBhv.selectByPK(3);
+    public void run(LaJobRuntime runtime) {
+        stage.required(tx -> {
+            Member before = memberBhv.selectByPK(3).get();
+            updateMember(before.getMemberId());
+            restoreMember(before.getMemberId(), before.getMemberName()); // for test
+        });
+    }
+
+    private void updateMember(Integer memberId) {
+        Member member = new Member();
+        member.setMemberId(memberId);
+        member.setMemberName("byJob");
+        memberBhv.updateNonstrict(member);
+    }
+
+    private void restoreMember(Integer memberId, String memberName) {
+        Member member = new Member();
+        member.setMemberId(memberId);
+        member.setMemberName(memberName);
+        memberBhv.updateNonstrict(member);
     }
 }

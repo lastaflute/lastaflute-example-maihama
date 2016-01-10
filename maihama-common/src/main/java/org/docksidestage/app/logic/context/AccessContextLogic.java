@@ -28,9 +28,15 @@ import org.lastaflute.db.dbflute.accesscontext.AccessContextResource;
  */
 public class AccessContextLogic {
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
     @Resource
     private TimeManager timeManager;
 
+    // ===================================================================================
+    //                                                                  Resource Interface
+    //                                                                  ==================
     @FunctionalInterface
     public static interface UserTypeSupplier {
         OptionalThing<String> supply();
@@ -46,6 +52,9 @@ public class AccessContextLogic {
         String supply();
     }
 
+    // ===================================================================================
+    //                                                                      Create Context
+    //                                                                      ==============
     public AccessContext create(AccessContextResource resource, UserTypeSupplier userTypeSupplier, UserBeanSupplier userBeanSupplier,
             AppTypeSupplier appTypeSupplier) {
         final AccessContext context = new AccessContext();
