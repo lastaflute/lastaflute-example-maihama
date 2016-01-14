@@ -38,7 +38,7 @@ public class AllJobScheduler implements LaJobScheduler {
 
     @Override
     public void schedule(LaCron cron) {
-        cron.register("* * * * *", () -> SeaJob.class);
+        cron.register("* * * * *", SeaJob.class, waitIfConcurrent());
     }
 
     @Override
