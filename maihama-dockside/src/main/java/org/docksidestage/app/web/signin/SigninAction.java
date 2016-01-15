@@ -43,7 +43,7 @@ public class SigninAction extends DocksideBaseAction {
         if (getUserBean().isPresent()) {
             return redirect(RootAction.class);
         }
-        return asHtml(path_Signin_SigninHtml).useForm(SigninForm.class);
+        return asHtml(path_Signin_SigninHtml);
     }
 
     @Execute
