@@ -5,4 +5,5 @@
 	<include path="convention.xml"/>
 	<include path="dbflute.xml"/>
 	<include path="lastaflute.xml"/>
+	<include path="lasta_job.xml"/>
 </components>
