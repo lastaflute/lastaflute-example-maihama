@@ -22,7 +22,6 @@ import javax.annotation.Resource;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaCurtainBeforeHook;
 import org.docksidestage.mylasta.direction.sponsor.OrleansMultipartRequestHandler;
 import org.lastaflute.core.direction.FwAssistantDirector;
-import org.lastaflute.job.LastaJobStarter;
 import org.lastaflute.mixer2.Mixer2RenderingProvider;
 import org.lastaflute.thymeleaf.ThymeleafRenderingProvider;
 import org.lastaflute.web.direction.FwWebDirection;
@@ -59,13 +58,8 @@ public class OrleansFwAssistantDirector extends MaihamaFwAssistantDirector {
             @Override
             public void hook(FwAssistantDirector assistantDirector) {
                 super.hook(assistantDirector);
-                jobStart();
             }
         };
-    }
-
-    protected void jobStart() {
-        new LastaJobStarter().start();
     }
 
     @Override
