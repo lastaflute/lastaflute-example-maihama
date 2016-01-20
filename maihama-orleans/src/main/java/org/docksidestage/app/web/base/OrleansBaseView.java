@@ -84,7 +84,7 @@ public abstract class OrleansBaseView extends TypicalMixView {
     //                                                                            ========
     protected void populateForm(Form form, Object bean, Mixer2Supporter supporter)
             throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        // TODO jflute xxxxxxxx (2015/12/07)
+        // TODO jflute lastaflute: [D] fitting: mixer2, populateForm()
         BeanDesc beanDesc = BeanDescFactory.getBeanDesc(bean.getClass());
         final int propertySize = beanDesc.getPropertyDescSize();
         for (int i = 0; i < propertySize; i++) {
