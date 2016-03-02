@@ -16,6 +16,7 @@
 package org.docksidestage.mylasta.direction.sponsor;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -46,7 +47,7 @@ public class MaihamaApiFailureHook implements ApiFailureHook { // #change_it for
     // } else if (HTTP Status: 404) { // e.g. real not found, invalid parameter
     //     showNotFoundError();
     // } else { // basically 500, server exception
-    //     showSystemError();
+    //     showSystemError();e
     // }
     // _/_/_/_/_/_/_/_/_/_/
 
@@ -103,18 +104,18 @@ public class MaihamaApiFailureHook implements ApiFailureHook { // #change_it for
     }
 
     protected TooSimpleFailureBean createFailureBean(TooSimpleFailureType failureType, ApiFailureResource resource) {
-        return new TooSimpleFailureBean(failureType, resource.getMessageList());
+        return new TooSimpleFailureBean(failureType, resource.getPropertyMessageMap());
     }
 
     public static class TooSimpleFailureBean {
 
         public final String notice = "[Attension] tentative JSON so you should change it: " + MaihamaApiFailureHook.class;
         public final TooSimpleFailureType failureType;
-        public final List<String> messageList;
+        public final Map<String, List<String>> messageMap;
 
-        public TooSimpleFailureBean(TooSimpleFailureType failureType, List<String> messageList) {
+        public TooSimpleFailureBean(TooSimpleFailureType failureType, Map<String, List<String>> messageMap) {
             this.failureType = failureType;
-            this.messageList = messageList;
+            this.messageMap = messageMap;
         }
     }
 
