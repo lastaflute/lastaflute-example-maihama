@@ -25,6 +25,7 @@ import org.docksidestage.dbflute.exbhv.MemberSecurityBhv;
 import org.docksidestage.dbflute.exbhv.MemberServiceBhv;
 import org.docksidestage.dbflute.exbhv.MemberStatusBhv;
 import org.docksidestage.dbflute.exbhv.ServiceRankBhv;
+import org.docksidestage.mylasta.action.HangarUserBean;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
@@ -42,33 +43,30 @@ public class MypageAction extends HangarBaseAction {
     @Resource
     private MemberBhv memberBhv;
     @Resource
-    protected MemberStatusBhv memberStatusBhv;
+    private MemberStatusBhv memberStatusBhv;
     @Resource
-    protected MemberSecurityBhv memberSecurityBhv;
+    private MemberSecurityBhv memberSecurityBhv;
     @Resource
-    protected MemberServiceBhv memberServiceBhv;
+    private MemberServiceBhv memberServiceBhv;
     @Resource
-    protected ServiceRankBhv serviceRankBhv;
+    private ServiceRankBhv serviceRankBhv;
     @Resource
-    protected MemberAddressBhv memberAddressBhv;
+    private MemberAddressBhv memberAddressBhv;
 
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
     @Execute
     public JsonResponse<MypageBean> index() {
+        HangarUserBean userBean = getUserBean().get();
         MypageBean bean = new MypageBean();
-        return getUserBean().map(userBean -> {
-            bean.setMemberId(new Integer(userBean.getMemberId().toString()));
-            bean.setMemberName(userBean.getMemberName());
-            bean.setMemberStatusCode(selectMemberStatusCode(bean.memberId));
-            bean.setMemberServiceName(selectMemberServiseRankNameFromMemberId(bean.memberId));
-            bean.setMemberPassword(selectMemberPassword(bean.memberId));
-            bean.setMemberAddress(selectMemberAddress(bean.memberId));
-            return asJson(bean);
-        }).orElseGet(() -> {
-            return JsonResponse.asEmptyBody();
-        });
+        bean.setMemberId(new Integer(userBean.getMemberId().toString()));
+        bean.setMemberName(userBean.getMemberName());
+        bean.setMemberStatusCode(selectMemberStatusCode(bean.memberId));
+        bean.setMemberServiceName(selectMemberServiseRankNameFromMemberId(bean.memberId));
+        bean.setMemberPassword(selectMemberPassword(bean.memberId));
+        bean.setMemberAddress(selectMemberAddress(bean.memberId));
+        return asJson(bean);
     }
 
     // ===================================================================================
