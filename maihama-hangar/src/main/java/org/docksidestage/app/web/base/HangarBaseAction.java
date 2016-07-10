@@ -42,10 +42,10 @@ public abstract class HangarBaseAction extends MaihamaBaseAction implements LaVa
     //                                                                          Definition
     //                                                                          ==========
     /** The application type for Hangar, e.g. used by access context. */
-    protected static final String APP_TYPE = "HGR";
+    protected static final String APP_TYPE = "HGR"; // #change_it_first
 
     /** The user type for Member, e.g. used by access context. */
-    protected static final String USER_TYPE = "M";
+    protected static final String USER_TYPE = "M"; // #change_it_first
 
     // ===================================================================================
     //                                                                           Attribute
