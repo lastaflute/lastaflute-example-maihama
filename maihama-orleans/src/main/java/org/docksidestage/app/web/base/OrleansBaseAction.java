@@ -17,18 +17,14 @@ package org.docksidestage.app.web.base;
 
 import javax.annotation.Resource;
 
-import org.dbflute.Entity;
-import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalObject;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.OrleansLoginAssist;
-import org.docksidestage.app.web.base.paging.PagingNavi;
 import org.docksidestage.mylasta.action.OrleansHtmlPath;
 import org.docksidestage.mylasta.action.OrleansMessages;
 import org.docksidestage.mylasta.action.OrleansUserBean;
 import org.docksidestage.mylasta.direction.OrleansConfig;
 import org.lastaflute.web.login.LoginManager;
-import org.lastaflute.web.response.render.RenderData;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
 import org.lastaflute.web.validation.LaValidatable;
@@ -42,19 +38,19 @@ public abstract class OrleansBaseAction extends MaihamaBaseAction // has several
     // ===================================================================================
     //                                                                          Definition
     //                                                                          ==========
-    /** The application type for DoCKside, e.g. used by access context. */
-    protected static final String APP_TYPE = "DCK"; // #change_it_first
+    /** The application type for ORLeans, e.g. used by access context. */
+    protected static final String APP_TYPE = "ORL"; // #change_it_first
 
     /** The user type for Member, e.g. used by access context. */
-    protected static final String USER_TYPE = "M"; // #change_it_first
+    protected static final String USER_TYPE = "M"; // #change_it_first (can delete if no login)
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    private OrleansConfig orleansConfig;
+    private OrleansConfig config;
     @Resource
-    private OrleansLoginAssist orleansLoginAssist;
+    private OrleansLoginAssist loginAssist;
 
     // ===================================================================================
     //                                                                               Hook
@@ -73,24 +69,31 @@ public abstract class OrleansBaseAction extends MaihamaBaseAction // has several
     // ===================================================================================
     //                                                                           User Info
     //                                                                           =========
-    @Override
-    protected OptionalThing<OrleansUserBean> getUserBean() { // to return as concrete class
-        return orleansLoginAssist.getSessionUserBean(); // #app_customize return empty if login is unused
-    }
-
+    // -----------------------------------------------------
+    //                                      Application Info
+    //                                      ----------------
     @Override
     protected String myAppType() { // for framework
         return APP_TYPE;
     }
 
+    // -----------------------------------------------------
+    //                                            Login Info
+    //                                            ----------
+    // #app_customize return empty if login is unused
     @Override
-    protected OptionalThing<String> myUserType() { // for framework
-        return OptionalObject.of(USER_TYPE); // #app_customize return empty if login is unused
+    protected OptionalThing<OrleansUserBean> getUserBean() { // application may call, overriding for co-variant
+        return loginAssist.getSavedUserBean();
     }
 
     @Override
-    protected OptionalThing<LoginManager> myLoginManager() {
-        return OptionalThing.of(orleansLoginAssist);
+    protected OptionalThing<String> myUserType() { // for framework
+        return OptionalObject.of(USER_TYPE);
+    }
+
+    @Override
+    protected OptionalThing<LoginManager> myLoginManager() { // for framework
+        return OptionalThing.of(loginAssist);
     }
 
     // ===================================================================================
@@ -105,52 +108,5 @@ public abstract class OrleansBaseAction extends MaihamaBaseAction // has several
     @Override
     public OrleansMessages createMessages() { // application may call
         return new OrleansMessages(); // overriding to change return type to concrete-class
-    }
-
-    // ===================================================================================
-    //                                                                              Paging
-    //                                                                              ======
-    // #app_customize you can customize the paging navigation logic
-    /**
-     * Register the paging navigation as page-range.
-     * @param data The data object to render the HTML. (NotNull)
-     * @param page The selected page as bean of paging result. (NotNull)
-     * @param form The form for query string added to link. (NotNull)
-     */
-    protected void registerPagingNavi(RenderData data, PagingResultBean<? extends Entity> page, Object form) { // application may call
-        data.register("pagingNavi", createPagingNavi(page, form));
-    }
-
-    protected PagingNavi createPagingNavi(PagingResultBean<? extends Entity> page, Object form) { // application may override
-        return new PagingNavi(page, op -> {
-            op.rangeSize(orleansConfig.getPagingPageRangeSizeAsInteger());
-            if (orleansConfig.isPagingPageRangeFillLimit()) {
-                op.fillLimit();
-            }
-        } , form);
-    }
-
-    /**
-     * Get page size (record count of one page) for paging.
-     * @return The integer as page size. (NotZero, NotMinus)
-     */
-    protected int getPagingPageSize() { // application may call
-        return orleansConfig.getPagingPageSizeAsInteger();
-    }
-
-    // ===================================================================================
-    //                                                                            Document
-    //                                                                            ========
-    /**
-     * {@inheritDoc} <br>
-     * <pre>
-     * <span style="font-size: 130%; color: #553000">[Paging]</span>
-     * o registerPagingNavi() <span style="color: #3F7E5E">// register paging navigation to HTML</span>
-     * o getPagingPageSize() <span style="color: #3F7E5E">// get page size: record count per one page</span>
-     * </pre>
-     */
-    @Override
-    public void document1_CallableSuperMethod() {
-        super.document1_CallableSuperMethod();
     }
 }

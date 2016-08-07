@@ -16,6 +16,7 @@
 package org.docksidestage.app.web.member;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import org.docksidestage.dbflute.allcommon.CDef;
 
@@ -32,6 +33,6 @@ public class MemberSearchBody implements Serializable {
     public String purchaseProductName;
     public boolean unpaid;
 
-    public String formalizedDateFrom;
-    public String formalizedDateTo;
+    public LocalDate formalizedDateFrom;
+    public LocalDate formalizedDateTo;
 }

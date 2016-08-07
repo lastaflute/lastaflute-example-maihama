@@ -13,28 +13,25 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.signout;
+package org.docksidestage.app.web.base.paging;
 
-import javax.annotation.Resource;
+import java.util.List;
 
-import org.docksidestage.app.web.base.OrleansBaseAction;
-import org.docksidestage.app.web.base.login.OrleansLoginAssist;
-import org.docksidestage.app.web.signin.SigninAction;
-import org.lastaflute.web.Execute;
-import org.lastaflute.web.response.HtmlResponse;
+import org.dbflute.Entity;
+import org.dbflute.cbean.result.PagingResultBean;
 
 /**
- * @author toshiaki.arai
  * @author jflute
  */
-public class SignoutAction extends OrleansBaseAction {
+public class PagingAssist { // #app_customize
 
-    @Resource
-    private OrleansLoginAssist orleansLoginAssist;
-
-    @Execute
-    public HtmlResponse index() {
-        orleansLoginAssist.logout();
-        return redirect(SigninAction.class);
+    /**
+     * Create paging bean for JSON response.
+     * @param page The selected result bean of paging. (NotNull)
+     * @param items The list of actual data to display. (NotNull)
+     * @return The new-created bean of paging. (NotNull)
+     */
+    public <ENTITY extends Entity, BEAN> SearchPagingBean<BEAN> createPagingBean(PagingResultBean<ENTITY> page, List<BEAN> items) { // application may call
+        return new SearchPagingBean<BEAN>(page, items);
     }
 }

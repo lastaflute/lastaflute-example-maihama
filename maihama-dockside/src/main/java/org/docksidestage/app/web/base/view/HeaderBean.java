@@ -13,34 +13,34 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.base;
+package org.docksidestage.app.web.base.view;
 
 import org.docksidestage.mylasta.action.DocksideUserBean;
 
 /**
  * @author jflute
  */
-public class DocksideHeaderBean {
+public class HeaderBean {
 
-    private static final DocksideHeaderBean EMPTY_INSTANCE = new DocksideHeaderBean();
+    private static final HeaderBean EMPTY_INSTANCE = new HeaderBean();
 
     public final Integer memberId;
     public final String memberName;
     public final boolean isLogin;
 
-    private DocksideHeaderBean() {
+    private HeaderBean() {
         this.memberId = null;
         this.memberName = null;
         this.isLogin = false;
     }
 
-    public DocksideHeaderBean(DocksideUserBean userBean) {
+    public HeaderBean(DocksideUserBean userBean) {
         this.memberId = userBean.getMemberId();
         this.memberName = userBean.getMemberName();
         this.isLogin = true;
     }
 
-    public static DocksideHeaderBean empty() {
+    public static HeaderBean empty() {
         return EMPTY_INSTANCE;
     }
 

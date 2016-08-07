@@ -20,6 +20,7 @@ import javax.annotation.Resource;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.login.HangarLoginAssist;
 import org.docksidestage.mylasta.action.HangarMessages;
+import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
@@ -33,7 +34,7 @@ public class SigninAction extends HangarBaseAction {
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    private HangarLoginAssist hangarLoginAssist;
+    private HangarLoginAssist loginAssist;
 
     // ===================================================================================
     //                                                                             Execute
@@ -42,13 +43,13 @@ public class SigninAction extends HangarBaseAction {
     public JsonResponse<Void> index(SigninBody body) {
         validate(body, messages -> moreValidate(body, messages));
         boolean rememberMe = false; // #simple_for_example no remember for now
-        hangarLoginAssist.login(body.email, body.password, op -> op.rememberMe(rememberMe));
+        loginAssist.login(body.email, body.password, op -> op.rememberMe(rememberMe));
         return JsonResponse.asEmptyBody();
     }
 
     private void moreValidate(SigninBody body, HangarMessages messages) {
-        if (isNotEmpty(body.email) && isNotEmpty(body.password)) {
-            if (!hangarLoginAssist.checkUserLoginable(body.email, body.password)) {
+        if (LaStringUtil.isNotEmpty(body.email) && LaStringUtil.isNotEmpty(body.password)) {
+            if (!loginAssist.checkUserLoginable(body.email, body.password)) {
                 messages.addErrorsLoginFailure("email");
             }
         }

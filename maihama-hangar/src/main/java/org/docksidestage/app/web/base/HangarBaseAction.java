@@ -15,15 +15,11 @@
  */
 package org.docksidestage.app.web.base;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
-import org.dbflute.Entity;
-import org.dbflute.cbean.result.PagingResultBean;
+import org.dbflute.optional.OptionalObject;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.HangarLoginAssist;
-import org.docksidestage.app.web.base.paging.SearchPagingBean;
 import org.docksidestage.mylasta.action.HangarMessages;
 import org.docksidestage.mylasta.action.HangarUserBean;
 import org.docksidestage.mylasta.direction.HangarConfig;
@@ -41,19 +37,19 @@ public abstract class HangarBaseAction extends MaihamaBaseAction implements LaVa
     // ===================================================================================
     //                                                                          Definition
     //                                                                          ==========
-    /** The application type for Hangar, e.g. used by access context. */
+    /** The application type for HanGaR, e.g. used by access context. */
     protected static final String APP_TYPE = "HGR"; // #change_it_first
 
     /** The user type for Member, e.g. used by access context. */
-    protected static final String USER_TYPE = "M"; // #change_it_first
+    protected static final String USER_TYPE = "M"; // #change_it_first (can delete if no login)
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    private HangarConfig hangarConfig;
+    private HangarConfig config;
     @Resource
-    private HangarLoginAssist hangarLoginAssist;
+    private HangarLoginAssist loginAssist;
 
     // ===================================================================================
     //                                                                               Hook
@@ -67,24 +63,31 @@ public abstract class HangarBaseAction extends MaihamaBaseAction implements LaVa
     // ===================================================================================
     //                                                                           User Info
     //                                                                           =========
-    @Override
-    protected OptionalThing<HangarUserBean> getUserBean() { // application may call
-        return hangarLoginAssist.getSessionUserBean(); // #app_customize return empty if login is unused
-    }
-
+    // -----------------------------------------------------
+    //                                      Application Info
+    //                                      ----------------
     @Override
     protected String myAppType() { // for framework
         return APP_TYPE;
     }
 
+    // -----------------------------------------------------
+    //                                            Login Info
+    //                                            ----------
+    // #app_customize return empty if login is unused
+    @Override
+    protected OptionalThing<HangarUserBean> getUserBean() { // application may call, overriding for co-variant
+        return loginAssist.getSavedUserBean();
+    }
+
     @Override
     protected OptionalThing<String> myUserType() { // for framework
-        return OptionalThing.of(USER_TYPE);
+        return OptionalObject.of(USER_TYPE);
     }
 
     @Override
     protected OptionalThing<LoginManager> myLoginManager() { // for framework
-        return OptionalThing.of(hangarLoginAssist);
+        return OptionalThing.of(loginAssist);
     }
 
     // ===================================================================================
@@ -99,26 +102,5 @@ public abstract class HangarBaseAction extends MaihamaBaseAction implements LaVa
     @Override
     public HangarMessages createMessages() { // application may call
         return new HangarMessages(); // overriding to change return type to concrete-class
-    }
-
-    // ===================================================================================
-    //                                                                              Paging
-    //                                                                              ======
-    /**
-     * Create paging bean for JSON.
-     * @param page The selected result bean of paging. (NotNull)
-     * @param beans The list of bean as paging data.
-     * @return The new-created bean of paging. (NotNull)
-     */
-    protected <ENTITY extends Entity, BEAN> SearchPagingBean<BEAN> createPagingBean(PagingResultBean<ENTITY> page, List<BEAN> beans) {
-        return new SearchPagingBean<BEAN>(page, beans);
-    }
-
-    /**
-     * Get page size (record count of one page) for paging.
-     * @return The integer as page size. (NotZero, NotMinus)
-     */
-    protected int getPagingPageSize() { // application may call
-        return hangarConfig.getPagingPageSizeAsInteger();
     }
 }

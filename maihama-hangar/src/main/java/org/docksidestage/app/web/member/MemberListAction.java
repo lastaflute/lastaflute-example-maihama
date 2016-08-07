@@ -22,7 +22,9 @@ import javax.annotation.Resource;
 import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
+import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingBean;
+import org.docksidestage.app.web.base.view.DisplayAssist;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.web.Execute;
@@ -39,6 +41,10 @@ public class MemberListAction extends HangarBaseAction {
     //                                                                           =========
     @Resource
     private MemberBhv memberBhv;
+    @Resource
+    private DisplayAssist displayAssist;
+    @Resource
+    private PagingAssist pagingAssist;
 
     // ===================================================================================
     //                                                                             Execute
@@ -60,7 +66,7 @@ public class MemberListAction extends HangarBaseAction {
             cb.setupSelect_MemberStatus();
             cb.specify().derivedPurchase().count(purchaseCB -> {
                 purchaseCB.specify().columnPurchaseId();
-            } , Member.ALIAS_purchaseCount);
+            }, Member.ALIAS_purchaseCount);
 
             cb.query().setMemberName_LikeSearch(body.memberName, op -> op.likeContain());
             String purchaseProductName = body.purchaseProductName;
@@ -74,14 +80,14 @@ public class MemberListAction extends HangarBaseAction {
                 });
             }
             cb.query().setMemberStatusCode_Equal_AsMemberStatus(body.memberStatus);
-            LocalDateTime formalizedDateFrom = toDateTime(body.formalizedDateFrom).orElse(null);
-            LocalDateTime formalizedDateTo = toDateTime(body.formalizedDateTo).orElse(null);
+            LocalDateTime formalizedDateFrom = displayAssist.toDateTime(body.formalizedDateFrom).orElse(null);
+            LocalDateTime formalizedDateTo = displayAssist.toDateTime(body.formalizedDateTo).orElse(null);
             cb.query().setFormalizedDatetime_FromTo(formalizedDateFrom, formalizedDateTo, op -> op.compareAsDate());
 
             cb.query().addOrderBy_UpdateDatetime_Desc();
             cb.query().addOrderBy_MemberId_Asc();
 
-            cb.paging(getPagingPageSize(), pageNumber);
+            cb.paging(4, pageNumber);
         });
     }
 
@@ -89,7 +95,7 @@ public class MemberListAction extends HangarBaseAction {
     //                                                                             Mapping
     //                                                                             =======
     private SearchPagingBean<MemberSearchRowBean> mappingToBean(PagingResultBean<Member> page) {
-        return createPagingBean(page, page.mappingList(product -> {
+        return pagingAssist.createPagingBean(page, page.mappingList(product -> {
             return convertToRowBean(product);
         }));
     }
@@ -101,8 +107,8 @@ public class MemberListAction extends HangarBaseAction {
         member.getMemberStatus().alwaysPresent(status -> {
             bean.memberStatusName = status.getMemberStatusName();
         });
-        bean.formalizedDate = toStringDate(member.getFormalizedDatetime()).orElse(null);
-        bean.updateDatetime = toStringDate(member.getUpdateDatetime()).get();
+        bean.formalizedDate = displayAssist.toStringDate(member.getFormalizedDatetime()).orElse(null);
+        bean.updateDatetime = displayAssist.toStringDate(member.getUpdateDatetime()).get();
         bean.withdrawalMember = member.isMemberStatusCodeWithdrawal();
         bean.purchaseCount = member.getPurchaseCount();
         return bean;

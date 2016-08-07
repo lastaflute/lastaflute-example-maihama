@@ -19,6 +19,7 @@ import org.docksidestage.mylasta.direction.DocksideConfig;
 import org.docksidestage.mylasta.mail.member.WelcomeMemberPostcard;
 import org.lastaflute.core.mail.Postbox;
 import org.lastaflute.core.security.PrimaryCipher;
+import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.HtmlResponse;
@@ -34,19 +35,19 @@ public class SignupAction extends DocksideBaseAction {
     //                                                                           Attribute
     //                                                                           =========
     @Resource
+    private PrimaryCipher primaryCipher;
+    @Resource
+    private Postbox postbox;
+    @Resource
+    private DocksideConfig config;
+    @Resource
+    private DocksideLoginAssist loginAssist;
+    @Resource
     private MemberBhv memberBhv;
     @Resource
     private MemberSecurityBhv memberSecurityBhv;
     @Resource
     private MemberServiceBhv memberServiceBhv;
-    @Resource
-    private DocksideLoginAssist docksideLoginAssist;
-    @Resource
-    private Postbox postbox;
-    @Resource
-    private DocksideConfig docksideConfig;
-    @Resource
-    private PrimaryCipher primaryCipher;
 
     // ===================================================================================
     //                                                                             Execute
@@ -58,18 +59,16 @@ public class SignupAction extends DocksideBaseAction {
 
     @Execute
     public HtmlResponse signup(SignupForm form) {
-        validate(form, messages -> {
-            moreValidate(form, messages);
-        } , () -> {
+        validate(form, messages -> moreValidate(form, messages), () -> {
             return asHtml(path_Signup_SignupHtml);
         });
         Integer memberId = newMember(form);
-        docksideLoginAssist.identityLogin(memberId, op -> {}); // no remember-me here
+        loginAssist.identityLogin(memberId, op -> {}); // no remember-me here
 
         WelcomeMemberPostcard.droppedInto(postbox, postcard -> {
-            postcard.setFrom(docksideConfig.getMailAddressSupport(), "Dockside Support");
+            postcard.setFrom(config.getMailAddressSupport(), "Harbor Support");
             postcard.addTo(deriveMemberMailAddress(form));
-            postcard.setDomain(docksideConfig.getServerDomain());
+            postcard.setDomain(config.getServerDomain());
             postcard.setMemberName(form.memberName);
             postcard.setAccount(form.memberAccount);
             postcard.setToken(generateToken());
@@ -78,7 +77,7 @@ public class SignupAction extends DocksideBaseAction {
     }
 
     private void moreValidate(SignupForm form, DocksideMessages messages) {
-        if (isNotEmpty(form.memberAccount)) {
+        if (LaStringUtil.isNotEmpty(form.memberAccount)) {
             int count = memberBhv.selectCount(cb -> {
                 cb.query().setMemberAccount_Equal(form.memberAccount);
             });
@@ -109,7 +108,7 @@ public class SignupAction extends DocksideBaseAction {
 
         MemberSecurity security = new MemberSecurity();
         security.setMemberId(member.getMemberId());
-        security.setLoginPassword(docksideLoginAssist.encryptPassword(form.password));
+        security.setLoginPassword(loginAssist.encryptPassword(form.password));
         security.setReminderQuestion(form.reminderQuestion);
         security.setReminderAnswer(form.reminderAnswer);
         security.setReminderUseCount(0);
@@ -124,7 +123,7 @@ public class SignupAction extends DocksideBaseAction {
     }
 
     private String deriveMemberMailAddress(SignupForm form) {
-        return form.memberAccount + "@docksidestage.org"; // #simple_for_example
+        return form.memberAccount + "@harborstage.org"; // #simple_for_example
     }
 
     private String generateToken() {

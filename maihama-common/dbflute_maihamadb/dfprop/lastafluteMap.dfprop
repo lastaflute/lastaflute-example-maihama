@@ -39,17 +39,17 @@ map:{
     ; appMap = map:{
         ; dockside = map:{
             ; path = ../../maihama-dockside
-            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; html ; doc ; webcls }
+            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; html ; doc ; appcls }
             ; propertiesHtmlList = list:{ env ; config ; label ; message }
         }
         ; hangar = map:{
             ; path = ../../maihama-hangar
-            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; doc ; webcls }
+            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; doc ; appcls }
             ; propertiesHtmlList = list:{ env ; config ; label ; message }
         }
         ; orleans = map:{
             ; path = ../../maihama-orleans
-            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; html ; doc ; webcls }
+            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; html ; doc ; appcls }
             ; propertiesHtmlList = list:{ env ; config ; label ; message }
         }
     }

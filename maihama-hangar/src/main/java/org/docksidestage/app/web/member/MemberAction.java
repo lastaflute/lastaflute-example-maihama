@@ -18,7 +18,7 @@ package org.docksidestage.app.web.member;
 import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.HangarBaseAction;
-import org.docksidestage.dbflute.allcommon.CDef;
+import org.docksidestage.app.web.base.view.DisplayAssist;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.web.Execute;
@@ -35,6 +35,8 @@ public class MemberAction extends HangarBaseAction {
     //                                                                           =========
     @Resource
     private MemberBhv memberBhv;
+    @Resource
+    private DisplayAssist displayAssist;
 
     // ===================================================================================
     //                                                                             Execute
@@ -45,8 +47,8 @@ public class MemberAction extends HangarBaseAction {
         Member member = new Member();
         member.setMemberId(body.memberId);
         member.setMemberName(body.memberName);
-        member.setBirthdate(toDate(body.birthdate).orElse(null));
-        member.setMemberStatusCodeAsMemberStatus(toCls(CDef.MemberStatus.class, body.memberStatusCode).get());
+        member.setBirthdate(displayAssist.toDate(body.birthdate).orElse(null));
+        member.setMemberStatusCodeAsMemberStatus(body.memberStatusCode);
         member.setMemberAccount(body.memberAccount);
         memberBhv.update(member);
         return JsonResponse.asEmptyBody();

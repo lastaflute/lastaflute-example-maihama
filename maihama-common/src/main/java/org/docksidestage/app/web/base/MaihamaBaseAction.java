@@ -15,10 +15,6 @@
  */
 package org.docksidestage.app.web.base;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.TimeZone;
-
 import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalThing;
@@ -94,58 +90,19 @@ public abstract class MaihamaBaseAction extends TypicalAction {
     protected abstract OptionalThing<? extends MaihamaUserBean> getUserBean(); // to be more concrete
 
     // ===================================================================================
-    //                                                                   Conversion Helper
-    //                                                                   =================
-    // #app_customize you can customize the conversion logic
-    // -----------------------------------------------------
-    //                                         to Local Date
-    //                                         -------------
-    protected OptionalThing<LocalDate> toDate(Object exp) { // application may call
-        return i18nDateLogic.toDate(exp, myConvZone());
-    }
-
-    protected OptionalThing<LocalDateTime> toDateTime(Object exp) { // application may call
-        return i18nDateLogic.toDateTime(exp, myConvZone());
-    }
-
-    // -----------------------------------------------------
-    //                                        to String Date
-    //                                        --------------
-    protected OptionalThing<String> toStringDate(LocalDate date) { // application may call
-        return i18nDateLogic.toStringDate(date, myConvZone());
-    }
-
-    protected OptionalThing<String> toStringDate(LocalDateTime dateTime) { // application may call
-        return i18nDateLogic.toStringDate(dateTime, myConvZone());
-    }
-
-    protected OptionalThing<String> toStringDateTime(LocalDateTime dateTime) { // application may call
-        return i18nDateLogic.toStringDateTime(dateTime, myConvZone());
-    }
-
-    // -----------------------------------------------------
-    //                                   Conversion Resource
-    //                                   -------------------
-    protected TimeZone myConvZone() {
-        return requestManager.getUserTimeZone();
-    }
-
-    // ===================================================================================
     //                                                                            Document
     //                                                                            ========
-    /**
-     * {@inheritDoc} <br>
-     * Application Origin Methods:
-     * <pre>
-     * <span style="font-size: 130%; color: #553000">[Conversion Helper]</span>
-     * o toDate(exp) <span style="color: #3F7E5E">// convert expression to local date</span>
-     * o toDateTime(exp) <span style="color: #3F7E5E">// convert expression to local date-time</span>
-     * o toStringDate(date) <span style="color: #3F7E5E">// convert local date to display expression</span>
-     * o toStringDateTime(date) <span style="color: #3F7E5E">// convert local date-time to display expression</span>
-     * </pre>
-     */
-    @Override
-    public void document1_CallableSuperMethod() {
-        super.document1_CallableSuperMethod();
-    }
+    // #app_customize you should override javadoc when you add new methods for sub class at super class.
+    ///**
+    // * {@inheritDoc} <br>
+    // * Application Native Methods:
+    // * <pre>
+    // * <span style="font-size: 130%; color: #553000">[xxx]</span>
+    // * o xxx() <span style="color: #3F7E5E">// xxx</span>
+    // * </pre>
+    // */
+    //@Override
+    //public void document1_CallableSuperMethod() {
+    //    super.document1_CallableSuperMethod();
+    //}
 }

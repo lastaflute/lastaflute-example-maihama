@@ -49,7 +49,7 @@ public class ProductDetailAction extends DocksideBaseAction {
     //                                                                             =======
     @Execute
     public HtmlResponse index(Integer productId) {
-        validate(productId, messages -> {} , () -> {
+        validate(productId, messages -> {}, () -> {
             return asHtml(path_Product_ProductListHtml);
         });
         Product product = selectProduct(productId);
@@ -68,9 +68,7 @@ public class ProductDetailAction extends DocksideBaseAction {
         return productBhv.selectEntity(cb -> {
             cb.setupSelect_ProductCategory();
             cb.query().setProductId_Equal(productId);
-        }).orElseThrow(() -> {
-            return of404("Not found the product: " + productId); // mistake or user joke
-        });
+        }).get();
     }
 
     private List<Product> searchRecommendProducdtList(Integer productId) {
@@ -82,7 +80,7 @@ public class ProductDetailAction extends DocksideBaseAction {
             cb.query().setProductStatusCode_InScope_AsProductStatus(Arrays.asList(ProductStatus.OnSaleProduction));
             cb.specify().derivedPurchase().sum(purchseCB -> {
                 purchseCB.specify().columnPurchaseCount();
-            } , Product.ALIAS_purchaseCount);
+            }, Product.ALIAS_purchaseCount);
             cb.query().addSpecifiedDerivedOrderBy_Desc(Product.ALIAS_purchaseCount);
             cb.fetchFirst(5);
         });

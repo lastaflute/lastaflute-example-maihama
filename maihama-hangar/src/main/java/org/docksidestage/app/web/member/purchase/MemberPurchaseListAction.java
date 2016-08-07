@@ -20,6 +20,7 @@ import javax.annotation.Resource;
 import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
+import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingBean;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exbhv.PurchaseBhv;
@@ -40,6 +41,8 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     private MemberBhv memberBhv;
     @Resource
     private PurchaseBhv purchaseBhv;
+    @Resource
+    private PagingAssist pagingAssist;
 
     // ===================================================================================
     //                                                                             Execute
@@ -69,7 +72,7 @@ public class MemberPurchaseListAction extends HangarBaseAction {
             cb.setupSelect_Product();
             cb.query().setMemberId_Equal(memberId);
             cb.query().addOrderBy_PurchaseDatetime_Desc();
-            cb.paging(getPagingPageSize(), pageNumber);
+            cb.paging(4, pageNumber);
         });
     }
 
@@ -77,7 +80,7 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     //                                                                             Mapping
     //                                                                             =======
     private SearchPagingBean<MemberPurchaseSearchRowBean> mappingToBean(PagingResultBean<Purchase> page) {
-        return createPagingBean(page, page.mappingList(purchase -> {
+        return pagingAssist.createPagingBean(page, page.mappingList(purchase -> {
             return convertToRowBean(purchase);
         }));
     }

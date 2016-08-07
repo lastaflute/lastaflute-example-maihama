@@ -17,18 +17,15 @@ package org.docksidestage.app.web.base;
 
 import javax.annotation.Resource;
 
-import org.dbflute.Entity;
-import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalObject;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.DocksideLoginAssist;
-import org.docksidestage.app.web.base.paging.PagingNavi;
+import org.docksidestage.app.web.base.view.HeaderBean;
 import org.docksidestage.mylasta.action.DocksideHtmlPath;
 import org.docksidestage.mylasta.action.DocksideMessages;
 import org.docksidestage.mylasta.action.DocksideUserBean;
 import org.docksidestage.mylasta.direction.DocksideConfig;
 import org.lastaflute.web.login.LoginManager;
-import org.lastaflute.web.response.render.RenderData;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
 import org.lastaflute.web.validation.LaValidatable;
@@ -46,15 +43,15 @@ public abstract class DocksideBaseAction extends MaihamaBaseAction // has severa
     protected static final String APP_TYPE = "DCK"; // #change_it_first
 
     /** The user type for Member, e.g. used by access context. */
-    protected static final String USER_TYPE = "M"; // #change_it_first
+    protected static final String USER_TYPE = "M"; // #change_it_first (can delete if no login)
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    private DocksideConfig docksideConfig;
+    private DocksideConfig config;
     @Resource
-    private DocksideLoginAssist docksideLoginAssist;
+    private DocksideLoginAssist loginAssist;
 
     // ===================================================================================
     //                                                                               Hook
@@ -62,10 +59,10 @@ public abstract class DocksideBaseAction extends MaihamaBaseAction // has severa
     // #app_customize you can customize the action hook
     @Override
     public void hookFinally(ActionRuntime runtime) {
-        if (runtime.isForwardToHtml()) {
+        if (runtime.isForwardToHtml()) { // #delete_ifapi
             runtime.registerData("headerBean", getUserBean().map(userBean -> {
-                return new DocksideHeaderBean(userBean);
-            }).orElse(DocksideHeaderBean.empty()));
+                return new HeaderBean(userBean);
+            }).orElse(HeaderBean.empty()));
         }
         super.hookFinally(runtime);
     }
@@ -73,24 +70,31 @@ public abstract class DocksideBaseAction extends MaihamaBaseAction // has severa
     // ===================================================================================
     //                                                                           User Info
     //                                                                           =========
-    @Override
-    protected OptionalThing<DocksideUserBean> getUserBean() { // to return as concrete class
-        return docksideLoginAssist.getSessionUserBean(); // #app_customize return empty if login is unused
-    }
-
+    // -----------------------------------------------------
+    //                                      Application Info
+    //                                      ----------------
     @Override
     protected String myAppType() { // for framework
         return APP_TYPE;
     }
 
+    // -----------------------------------------------------
+    //                                            Login Info
+    //                                            ----------
+    // #app_customize return empty if login is unused
     @Override
-    protected OptionalThing<String> myUserType() { // for framework
-        return OptionalObject.of(USER_TYPE); // #app_customize return empty if login is unused
+    protected OptionalThing<DocksideUserBean> getUserBean() { // application may call, overriding for co-variant
+        return loginAssist.getSavedUserBean();
     }
 
     @Override
-    protected OptionalThing<LoginManager> myLoginManager() {
-        return OptionalThing.of(docksideLoginAssist);
+    protected OptionalThing<String> myUserType() { // for framework
+        return OptionalObject.of(USER_TYPE);
+    }
+
+    @Override
+    protected OptionalThing<LoginManager> myLoginManager() { // for framework
+        return OptionalThing.of(loginAssist);
     }
 
     // ===================================================================================
@@ -108,49 +112,19 @@ public abstract class DocksideBaseAction extends MaihamaBaseAction // has severa
     }
 
     // ===================================================================================
-    //                                                                              Paging
-    //                                                                              ======
-    // #app_customize you can customize the paging navigation logic
-    /**
-     * Register the paging navigation as page-range.
-     * @param data The data object to render the HTML. (NotNull)
-     * @param page The selected page as bean of paging result. (NotNull)
-     * @param form The form for query string added to link. (NotNull)
-     */
-    protected void registerPagingNavi(RenderData data, PagingResultBean<? extends Entity> page, Object form) { // application may call
-        data.register("pagingNavi", createPagingNavi(page, form));
-    }
-
-    protected PagingNavi createPagingNavi(PagingResultBean<? extends Entity> page, Object form) { // application may override
-        return new PagingNavi(page, op -> {
-            op.rangeSize(docksideConfig.getPagingPageRangeSizeAsInteger());
-            if (docksideConfig.isPagingPageRangeFillLimit()) {
-                op.fillLimit();
-            }
-        } , form);
-    }
-
-    /**
-     * Get page size (record count of one page) for paging.
-     * @return The integer as page size. (NotZero, NotMinus)
-     */
-    protected int getPagingPageSize() { // application may call
-        return docksideConfig.getPagingPageSizeAsInteger();
-    }
-
-    // ===================================================================================
     //                                                                            Document
     //                                                                            ========
-    /**
-     * {@inheritDoc} <br>
-     * <pre>
-     * <span style="font-size: 130%; color: #553000">[Paging]</span>
-     * o registerPagingNavi() <span style="color: #3F7E5E">// register paging navigation to HTML</span>
-     * o getPagingPageSize() <span style="color: #3F7E5E">// get page size: record count per one page</span>
-     * </pre>
-     */
-    @Override
-    public void document1_CallableSuperMethod() {
-        super.document1_CallableSuperMethod();
-    }
+    // #app_customize you should override javadoc when you add new methods for sub class at super class.
+    ///**
+    // * {@inheritDoc} <br>
+    // * Application Native Methods:
+    // * <pre>
+    // * <span style="font-size: 130%; color: #553000">[xxx]</span>
+    // * o xxx() <span style="color: #3F7E5E">// xxx</span>
+    // * </pre>
+    // */
+    //@Override
+    //public void document1_CallableSuperMethod() {
+    //    super.document1_CallableSuperMethod();
+    //}
 }

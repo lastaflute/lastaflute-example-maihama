@@ -33,15 +33,19 @@ public class SearchPagingBean<BEAN> {
     /** page size */
     @Required
     public final Integer itemsPerPage;
+
     /** current page number */
     @Required
     public final Integer currentPage;
+
     /** count of total items (records) */
     @Required
     public final Integer totalItems;
+
     /** count of total pages */
     @Required
     public final Integer totalPages;
+
     /** paging data */
     @NotNull
     public final List<BEAN> items;

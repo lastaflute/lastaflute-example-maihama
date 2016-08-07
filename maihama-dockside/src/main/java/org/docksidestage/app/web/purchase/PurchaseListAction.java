@@ -7,6 +7,8 @@ import javax.annotation.Resource;
 import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.DocksideBaseAction;
+import org.docksidestage.app.web.base.paging.PagingAssist;
+import org.docksidestage.app.web.base.view.DisplayAssist;
 import org.docksidestage.dbflute.exbhv.PurchaseBhv;
 import org.docksidestage.dbflute.exentity.Purchase;
 import org.lastaflute.web.Execute;
@@ -15,6 +17,7 @@ import org.lastaflute.web.response.HtmlResponse;
 /**
  * Action class for purchase list page.
  * @author toshiaki.arai
+ * @author jflute
  */
 public class PurchaseListAction extends DocksideBaseAction {
 
@@ -23,14 +26,17 @@ public class PurchaseListAction extends DocksideBaseAction {
     //                                                                           =========
     @Resource
     private PurchaseBhv purchaseBhv;
+    @Resource
+    private PagingAssist pagingAssist;
+    @Resource
+    private DisplayAssist displayAssist;
 
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
     @Execute
     public HtmlResponse index(OptionalThing<Integer> pageNumber, PurchaseSearchForm form) {
-
-        // TODO toshiaki.arai Purchaseアクションをとりあえず最低限記述 (2015/07/05)
+        // TODO toshiaki.arai anyway, small implementation (2015/07/05)
         Integer memberId = getUserBean().get().getMemberId();
         PagingResultBean<Purchase> page = selectPurchasePage(pageNumber.orElse(1), memberId);
         List<PurchaseBean> beans = page.mappingList(purchase -> {
@@ -38,7 +44,7 @@ public class PurchaseListAction extends DocksideBaseAction {
         });
         return asHtml(path_Purchase_PurchaseListHtml).renderWith(data -> {
             data.register("beans", beans);
-            registerPagingNavi(data, page, form);
+            pagingAssist.registerPagingNavi(data, page, form);
         });
     }
 
@@ -50,7 +56,7 @@ public class PurchaseListAction extends DocksideBaseAction {
             cb.setupSelect_Product();
             cb.query().setMemberId_Equal(memberId);
             cb.query().addOrderBy_PurchaseDatetime_Desc();
-            cb.paging(getPagingPageSize(), pageNumber);
+            cb.paging(4, pageNumber);
         });
     }
 
@@ -61,7 +67,7 @@ public class PurchaseListAction extends DocksideBaseAction {
         PurchaseBean bean = new PurchaseBean();
         bean.purchaseId = purchase.getPurchaseId();
         bean.productId = purchase.getProductId();
-        bean.purchaseDatetime = toStringDate(purchase.getPurchaseDatetime()).get();
+        bean.purchaseDatetime = displayAssist.toStringDate(purchase.getPurchaseDatetime()).get();
         bean.purchaseCount = purchase.getPurchaseCount();
         bean.purchasePrice = purchase.getPurchasePrice();
         purchase.getProduct().alwaysPresent(product -> {

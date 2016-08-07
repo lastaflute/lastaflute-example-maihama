@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalEntity;
 import org.dbflute.optional.OptionalThing;
-import org.docksidestage.app.web.signin.SigninAction;
+import org.docksidestage.app.web.RootAction;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exbhv.MemberLoginBhv;
 import org.docksidestage.dbflute.exentity.Member;
@@ -117,6 +117,6 @@ public class OrleansLoginAssist extends MaihamaLoginAssist<OrleansUserBean, Memb
 
     @Override
     protected Class<?> getLoginActionType() {
-        return SigninAction.class;
+        return RootAction.class;
     }
 }

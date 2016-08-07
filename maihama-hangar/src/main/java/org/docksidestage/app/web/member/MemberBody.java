@@ -15,6 +15,7 @@
  */
 package org.docksidestage.app.web.member;
 
+import org.docksidestage.dbflute.allcommon.CDef;
 import org.lastaflute.web.validation.Required;
 
 /**
@@ -32,7 +33,7 @@ public class MemberBody {
     public String memberAccount;
 
     @Required
-    public String memberStatusCode;
+    public CDef.MemberStatus memberStatusCode;
 
     public String birthdate;
 }

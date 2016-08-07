@@ -17,10 +17,11 @@ package org.docksidestage.app.web.signin;
 
 import javax.annotation.Resource;
 
-import org.docksidestage.app.web.RootAction;
 import org.docksidestage.app.web.base.DocksideBaseAction;
 import org.docksidestage.app.web.base.login.DocksideLoginAssist;
+import org.docksidestage.app.web.mypage.MypageAction;
 import org.docksidestage.mylasta.action.DocksideMessages;
+import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
 
@@ -33,7 +34,7 @@ public class SigninAction extends DocksideBaseAction {
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    private DocksideLoginAssist docksideLoginAssist;
+    private DocksideLoginAssist loginAssist;
 
     // ===================================================================================
     //                                                                             Execute
@@ -41,7 +42,7 @@ public class SigninAction extends DocksideBaseAction {
     @Execute
     public HtmlResponse index() {
         if (getUserBean().isPresent()) {
-            return redirect(RootAction.class);
+            return redirect(MypageAction.class);
         }
         return asHtml(path_Signin_SigninHtml);
     }
@@ -52,16 +53,17 @@ public class SigninAction extends DocksideBaseAction {
             form.clearSecurityInfo();
             return asHtml(path_Signin_SigninHtml);
         });
-        return docksideLoginAssist.loginRedirect(form.account, form.password, op -> op.rememberMe(form.rememberMe), () -> {
-            return redirect(RootAction.class);
+        return loginAssist.loginRedirect(form.account, form.password, op -> op.rememberMe(form.rememberMe), () -> {
+            return redirect(MypageAction.class);
         });
     }
 
     private void moreValidate(SigninForm form, DocksideMessages messages) {
-        if (isNotEmpty(form.account) && isNotEmpty(form.password)) {
-            if (!docksideLoginAssist.checkUserLoginable(form.account, form.password)) {
+        if (LaStringUtil.isNotEmpty(form.account) && LaStringUtil.isNotEmpty(form.password)) {
+            if (!loginAssist.checkUserLoginable(form.account, form.password)) {
                 messages.addErrorsLoginFailure("account");
             }
         }
     }
+
 }

@@ -29,7 +29,7 @@ public interface OrleansConfig extends OrleansEnv {
     /** The key of the configuration. e.g. Orleans */
     String DOMAIN_TITLE = "domain.title";
 
-    /** The key of the configuration. e.g. DCK */
+    /** The key of the configuration. e.g. ORL */
     String COOKIE_REMEMBER_ME_ORLEANS_KEY = "cookie.remember.me.orleans.key";
 
     /**
@@ -66,7 +66,7 @@ public interface OrleansConfig extends OrleansEnv {
 
     /**
      * Get the value for the key 'cookie.remember.me.orleans.key'. <br>
-     * The value is, e.g. DCK <br>
+     * The value is, e.g. ORL <br>
      * comment: The cookie key of remember-me for Orleans #change_it_first
      * @return The value of found property. (NotNull: if not found, exception but basically no way)
      */

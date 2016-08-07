@@ -13,7 +13,7 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.mylasta.webcls;
+package org.docksidestage.mylasta.appcls;
 
 import java.util.*;
 
@@ -25,10 +25,10 @@ import org.dbflute.optional.OptionalThing;
 import org.docksidestage.dbflute.allcommon.*;
 
 /**
- * The definition of web classification.
+ * The definition of application classification.
  * @author FreeGen
  */
-public interface WebCDef extends Classification {
+public interface AppCDef extends Classification {
 
     /** The empty array for no sisters. */
     String[] EMPTY_SISTERS = new String[]{};
@@ -40,7 +40,7 @@ public interface WebCDef extends Classification {
     /**
      * MemberStatus for search condition
      */
-    public enum SearchMemberStatus implements WebCDef {
+    public enum SearchMemberStatus implements AppCDef {
         /** Formalized: as formal member, allowed to use all service */
         Formalized("FML", "Formalized", EMPTY_SISTERS)
         ,
@@ -60,33 +60,13 @@ public interface WebCDef extends Classification {
                 for (String sister : value.sisterSet()) { _codeValueMap.put(sister.toLowerCase(), value); }
             }
         }
-        private static final Map<String, Map<String, Object>> _subItemMapMap = new HashMap<String, Map<String, Object>>();
-        static {
-            {
-                Map<String, Object> subItemMap = new HashMap<String, Object>();
-                _subItemMapMap.put(Formalized.code(), Collections.unmodifiableMap(subItemMap));
-            }
-            {
-                Map<String, Object> subItemMap = new HashMap<String, Object>();
-                _subItemMapMap.put(Withdrawal.code(), Collections.unmodifiableMap(subItemMap));
-            }
-            {
-                Map<String, Object> subItemMap = new HashMap<String, Object>();
-                _subItemMapMap.put(Provisional.code(), Collections.unmodifiableMap(subItemMap));
-            }
-            {
-                Map<String, Object> subItemMap = new HashMap<String, Object>();
-                subItemMap.put("a", "b");
-                _subItemMapMap.put(All.code(), Collections.unmodifiableMap(subItemMap));
-            }
-        }
         private String _code; private String _alias; private Set<String> _sisterSet;
         private SearchMemberStatus(String code, String alias, String[] sisters)
         { _code = code; _alias = alias; _sisterSet = Collections.unmodifiableSet(new LinkedHashSet<String>(Arrays.asList(sisters))); }
         public String code() { return _code; } public String alias() { return _alias; }
         public Set<String> sisterSet() { return _sisterSet; }
-        public Map<String, Object> subItemMap() { return _subItemMapMap.get(code()); }
-        public ClassificationMeta meta() { return WebCDef.DefMeta.SearchMemberStatus; }
+        public Map<String, Object> subItemMap() { return EMPTY_SUB_ITEM_MAP; }
+        public ClassificationMeta meta() { return AppCDef.DefMeta.SearchMemberStatus; }
 
         /**
          * Is the classification in the group? <br>
@@ -176,7 +156,7 @@ public interface WebCDef extends Classification {
 
         /**
          * @param dbCls The DB classification to find. (NullAllowed: if null, returns empty) 
-         * @return The the web classification corresponding to the DB classification. (NotNull, EmptyAllowed: when null specified, not found)
+         * @return The the app classification corresponding to the DB classification. (NotNull, EmptyAllowed: when null specified, not found)
          */
         public static OptionalThing<SearchMemberStatus> fromDBCls(CDef.MemberStatus dbCls) {
             String dbCode = dbCls != null ? dbCls.code() : null;
@@ -186,12 +166,12 @@ public interface WebCDef extends Classification {
         }
 
         /**
-         * @return The DB classification corresponding to the web classification. (NotNull, EmptyAllowed: when no-related to DB)
+         * @return The DB classification corresponding to the app classification. (NotNull, EmptyAllowed: when no-related to DB)
          */
         public OptionalThing<CDef.MemberStatus> toDBCls() {
-            String webCode = code();
-            return OptionalThing.ofNullable(CDef.MemberStatus.codeOf(webCode), () -> {
-                throw new IllegalStateException("Cannot convert SearchMemberStatus to MemberStatus by the web code: " + webCode);
+            String appCode = code();
+            return OptionalThing.ofNullable(CDef.MemberStatus.codeOf(appCode), () -> {
+                throw new IllegalStateException("Cannot convert SearchMemberStatus to MemberStatus by the app code: " + appCode);
             });
         }
 
@@ -207,22 +187,22 @@ public interface WebCDef extends Classification {
         }
 
         public Classification codeOf(Object code) {
-            if ("SearchMemberStatus".equals(name())) { return WebCDef.SearchMemberStatus.codeOf(code); }
+            if ("SearchMemberStatus".equals(name())) { return AppCDef.SearchMemberStatus.codeOf(code); }
             throw new IllegalStateException("Unknown definition: " + this); // basically unreachable
         }
 
         public Classification nameOf(String name) {
-            if ("SearchMemberStatus".equals(name())) { return WebCDef.SearchMemberStatus.valueOf(name); }
+            if ("SearchMemberStatus".equals(name())) { return AppCDef.SearchMemberStatus.valueOf(name); }
             throw new IllegalStateException("Unknown definition: " + this); // basically unreachable
         }
 
         public List<Classification> listAll() {
-            if ("SearchMemberStatus".equals(name())) { return toClassificationList(WebCDef.SearchMemberStatus.listAll()); }
+            if ("SearchMemberStatus".equals(name())) { return toClassificationList(AppCDef.SearchMemberStatus.listAll()); }
             throw new IllegalStateException("Unknown definition: " + this); // basically unreachable
         }
 
         public List<Classification> groupOf(String groupName) {
-            if ("SearchMemberStatus".equals(name())) { return toClassificationList(WebCDef.SearchMemberStatus.groupOf(groupName)); }
+            if ("SearchMemberStatus".equals(name())) { return toClassificationList(AppCDef.SearchMemberStatus.groupOf(groupName)); }
             throw new IllegalStateException("Unknown definition: " + this); // basically unreachable
         }
 
@@ -241,7 +221,7 @@ public interface WebCDef extends Classification {
             return ClassificationUndefinedHandlingType.LOGGING; // as default
         }
 
-        public static WebCDef.DefMeta meta(String classificationName) { // instead of valueOf()
+        public static AppCDef.DefMeta meta(String classificationName) { // instead of valueOf()
             if (classificationName == null) { throw new IllegalArgumentException("The argument 'classificationName' should not be null."); }
             throw new IllegalStateException("Unknown classification: " + classificationName);
         }

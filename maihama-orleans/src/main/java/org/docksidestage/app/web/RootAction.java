@@ -16,7 +16,6 @@
 package org.docksidestage.app.web;
 
 import org.docksidestage.app.web.base.OrleansBaseAction;
-import org.docksidestage.app.web.mypage.MypageAction;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.HtmlResponse;
@@ -29,6 +28,6 @@ public class RootAction extends OrleansBaseAction {
 
     @Execute
     public HtmlResponse index() {
-        return redirect(MypageAction.class);
+        throw new UnsupportedOperationException();
     }
 }
