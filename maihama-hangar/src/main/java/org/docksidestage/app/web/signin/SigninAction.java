@@ -22,6 +22,7 @@ import org.docksidestage.app.web.base.login.HangarLoginAssist;
 import org.docksidestage.mylasta.action.HangarMessages;
 import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
+import org.lastaflute.web.login.credential.UserPasswordCredential;
 import org.lastaflute.web.response.JsonResponse;
 
 /**
@@ -43,15 +44,19 @@ public class SigninAction extends HangarBaseAction {
     public JsonResponse<Void> index(SigninBody body) {
         validate(body, messages -> moreValidate(body, messages));
         boolean rememberMe = false; // #simple_for_example no remember for now
-        loginAssist.login(body.email, body.password, op -> op.rememberMe(rememberMe));
+        loginAssist.login(createCredential(body), op -> op.rememberMe(rememberMe));
         return JsonResponse.asEmptyBody();
     }
 
     private void moreValidate(SigninBody body, HangarMessages messages) {
         if (LaStringUtil.isNotEmpty(body.email) && LaStringUtil.isNotEmpty(body.password)) {
-            if (!loginAssist.checkUserLoginable(body.email, body.password)) {
+            if (!loginAssist.checkUserLoginable(createCredential(body))) {
                 messages.addErrorsLoginFailure("email");
             }
         }
+    }
+
+    private UserPasswordCredential createCredential(SigninBody body) {
+        return new UserPasswordCredential(body.email, body.password);
     }
 }
