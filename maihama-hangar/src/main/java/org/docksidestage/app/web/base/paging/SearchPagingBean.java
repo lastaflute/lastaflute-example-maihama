@@ -17,6 +17,7 @@ package org.docksidestage.app.web.base.paging;
 
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.dbflute.Entity;
@@ -28,7 +29,7 @@ import org.lastaflute.web.validation.Required;
  * @author iwamatsu0430
  * @author jflute
  */
-public class SearchPagingBean<BEAN> {
+public class SearchPagingBean<BEAN> { // #app_customize
 
     /** page size */
     @Required
@@ -48,6 +49,7 @@ public class SearchPagingBean<BEAN> {
 
     /** paging data */
     @NotNull
+    @Valid
     public final List<BEAN> items;
 
     public SearchPagingBean(PagingResultBean<? extends Entity> page, List<BEAN> items) {
