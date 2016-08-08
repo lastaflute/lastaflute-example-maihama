@@ -17,6 +17,8 @@ package org.docksidestage.mylasta.direction;
 
 import java.util.List;
 
+import org.docksidestage.mylasta.direction.sponsor.HangarListedClassificationProvider;
+import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
 import org.lastaflute.web.direction.FwWebDirection;
 import org.lastaflute.web.servlet.filter.cors.CorsHook;
 
@@ -35,6 +37,11 @@ public class HangarFwAssistantDirector extends MaihamaFwAssistantDirector {
     protected void setupAppMessage(List<String> nameList) {
         nameList.add("hangar_message"); // base point
         nameList.add("hangar_label");
+    }
+
+    @Override
+    protected ListedClassificationProvider createListedClassificationProvider() {
+        return new HangarListedClassificationProvider();
     }
 
     @Override

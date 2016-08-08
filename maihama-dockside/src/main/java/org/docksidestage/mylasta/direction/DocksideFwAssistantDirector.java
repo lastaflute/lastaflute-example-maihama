@@ -19,7 +19,9 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.docksidestage.mylasta.direction.sponsor.DocksideListedClassificationProvider;
 import org.docksidestage.mylasta.direction.sponsor.DocksideMultipartRequestHandler;
+import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
 import org.lastaflute.thymeleaf.ThymeleafRenderingProvider;
 import org.lastaflute.web.direction.FwWebDirection;
 import org.lastaflute.web.ruts.multipart.MultipartResourceProvider;
@@ -43,6 +45,11 @@ public class DocksideFwAssistantDirector extends MaihamaFwAssistantDirector {
     protected void setupAppMessage(List<String> nameList) {
         nameList.add("dockside_message"); // base point
         nameList.add("dockside_label");
+    }
+
+    @Override
+    protected ListedClassificationProvider createListedClassificationProvider() {
+        return new DocksideListedClassificationProvider();
     }
 
     @Override
