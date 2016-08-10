@@ -10,6 +10,7 @@ import org.lastaflute.web.response.HtmlResponse;
  */
 public class SigninReminderAction extends DocksideBaseAction {
 
+    // #pending now making...
     @Execute
     public HtmlResponse index() {
         return asHtml(path_Signin_SigninReminderHtml);

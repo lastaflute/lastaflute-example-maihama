@@ -37,23 +37,23 @@
 	<h2 class="content-title" th:text="#{labels.product.list.title}">labels.product.list.title</h2>
 	<section class="product-search-box">
 		<h3 class="content-title-second" th:text="#{labels.search.condition}">labels.search.condition</h3>
-		<form class="product-search-form" action="#" th:action="@{/product/list/}" method="get">
+		<form class="product-search-form" th:action="@{/product/list/}" action="#" method="get">
 			<ul class="product-search-condition-list">
 				<li>
 					<span th:text="#{labels.productName}">labels.productName</span>
-					<input type="text" name="productName" th:value="${productName}"/>
+					<input type="text" la:property="productName"/>
 					<span la:errors="productName"/>
 				</li>
 				<li>
 					<span th:text="#{labels.productStatus}">labels.productStatus</span>
 					<select la:property="productStatus">
 						<option value="" th:text="#{labels.listbox.caption.tell}"></option>
-						<option la:optionCls="SearchMemberStatus"></option>
+						<option la:optionCls="ProductStatus"></option>
 					</select>
 				</li>
 				<li>
 					<span th:text="#{labels.purchase} + ' ' + #{labels.member}">labels.purchase labels.member</span>
-					<input type="text" name="purchaseMemberName" th:value="${purchaseMemberName}"/>
+					<input type="text" la:property="purchaseMemberName"/>
 					<span la:errors="purchaseMemberName"/>
 				</li>
 			</ul>

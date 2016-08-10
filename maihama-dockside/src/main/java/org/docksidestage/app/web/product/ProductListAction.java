@@ -66,6 +66,8 @@ public class ProductListAction extends DocksideBaseAction {
         });
     }
 
+    // #hope showDerived() as JsonResponse by jflute (2016/08/08)
+
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======

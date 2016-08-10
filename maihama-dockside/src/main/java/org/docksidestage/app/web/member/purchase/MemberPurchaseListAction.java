@@ -35,7 +35,6 @@ public class MemberPurchaseListAction extends DocksideBaseAction {
     //                                                                             =======
     @Execute
     public HtmlResponse index(Integer memberId, Integer pageNumber) {
-        responseManager.new404("now making...");
-        return null;
+        throw responseManager.new404("now making...");
     }
 }

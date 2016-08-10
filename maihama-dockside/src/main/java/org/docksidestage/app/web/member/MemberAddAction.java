@@ -42,7 +42,8 @@ public class MemberAddAction extends DocksideBaseAction {
     //                                                                             =======
     @Execute
     public HtmlResponse index() {
-        return asHtml(path_Member_MemberAddHtml).useForm(MemberAddForm.class);
+        saveToken();
+        return asHtml(path_Member_MemberAddHtml);
     }
 
     @Execute
@@ -50,6 +51,17 @@ public class MemberAddAction extends DocksideBaseAction {
         validate(form, messages -> {}, () -> {
             return asHtml(path_Member_MemberAddHtml);
         });
+        verifyToken(() -> {
+            return asHtml(path_Error_ShowErrorsHtml);
+        });
+        insertMember(form);
+        return redirect(MemberListAction.class);
+    }
+
+    // ===================================================================================
+    //                                                                              Update
+    //                                                                              ======
+    private void insertMember(MemberAddForm form) {
         Member member = new Member();
         member.setMemberName(form.memberName);
         member.setMemberAccount(form.memberAccount);
@@ -59,6 +71,5 @@ public class MemberAddAction extends DocksideBaseAction {
             member.setFormalizedDatetime(timeManager.currentDateTime());
         }
         memberBhv.insert(member);
-        return redirect(MemberListAction.class);
     }
 }

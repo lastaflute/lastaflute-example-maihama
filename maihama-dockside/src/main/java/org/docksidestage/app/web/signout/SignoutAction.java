@@ -30,11 +30,11 @@ import org.lastaflute.web.response.HtmlResponse;
 public class SignoutAction extends DocksideBaseAction {
 
     @Resource
-    private DocksideLoginAssist docksideLoginAssist;
+    private DocksideLoginAssist loginAssist;
 
     @Execute
     public HtmlResponse index() {
-        docksideLoginAssist.logout();
+        loginAssist.logout();
         return redirect(SigninAction.class);
     }
 }

@@ -15,14 +15,9 @@
  */
 package org.docksidestage.app.web.product;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.DocksideBaseAction;
-import org.docksidestage.dbflute.allcommon.CDef.ProductStatus;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.web.Execute;
@@ -38,9 +33,6 @@ public class ProductDetailAction extends DocksideBaseAction {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    // -----------------------------------------------------
-    //                                          DI Component
-    //                                          ------------
     @Resource
     private ProductBhv productBhv;
 
@@ -49,15 +41,10 @@ public class ProductDetailAction extends DocksideBaseAction {
     //                                                                             =======
     @Execute
     public HtmlResponse index(Integer productId) {
-        validate(productId, messages -> {}, () -> {
-            return asHtml(path_Product_ProductListHtml);
-        });
         Product product = selectProduct(productId);
-        List<ProductDetailBean> productList =
-                searchRecommendProducdtList(productId).stream().map(this::mappingToBean).collect(Collectors.toList());
+        ProductDetailBean bean = mappingToBean(product);
         return asHtml(path_Product_ProductDetailHtml).renderWith(data -> {
-            data.register("product", mappingToBean(product));
-            data.register("reccomendProductList", productList);
+            data.register("product", bean);
         });
     }
 
@@ -69,21 +56,6 @@ public class ProductDetailAction extends DocksideBaseAction {
             cb.setupSelect_ProductCategory();
             cb.query().setProductId_Equal(productId);
         }).get();
-    }
-
-    private List<Product> searchRecommendProducdtList(Integer productId) {
-        return productBhv.selectList(cb -> {
-            cb.setupSelect_ProductCategory();
-            cb.query().queryProductCategory().existsProduct(prdCb -> {
-                prdCb.query().setProductId_Equal(productId);
-            });
-            cb.query().setProductStatusCode_InScope_AsProductStatus(Arrays.asList(ProductStatus.OnSaleProduction));
-            cb.specify().derivedPurchase().sum(purchseCB -> {
-                purchseCB.specify().columnPurchaseCount();
-            }, Product.ALIAS_purchaseCount);
-            cb.query().addSpecifiedDerivedOrderBy_Desc(Product.ALIAS_purchaseCount);
-            cb.fetchFirst(5);
-        });
     }
 
     // ===================================================================================
@@ -100,5 +72,4 @@ public class ProductDetailAction extends DocksideBaseAction {
         });
         return bean;
     }
-
 }

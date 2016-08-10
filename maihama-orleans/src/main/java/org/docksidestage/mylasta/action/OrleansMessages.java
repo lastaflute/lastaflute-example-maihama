@@ -16,7 +16,7 @@
 package org.docksidestage.mylasta.action;
 
 import org.docksidestage.mylasta.action.OrleansLabels;
-import org.lastaflute.web.ruts.message.ActionMessage;
+import org.lastaflute.core.message.UserMessage;
 
 /**
  * The keys for message.
@@ -43,7 +43,7 @@ public class OrleansMessages extends OrleansLabels {
      */
     public OrleansMessages addErrorsSignupAccountAlreadyExists(String property) {
         assertPropertyNotNull(property);
-        add(property, new ActionMessage(ERRORS_SIGNUP_ACCOUNT_ALREADY_EXISTS));
+        add(property, new UserMessage(ERRORS_SIGNUP_ACCOUNT_ALREADY_EXISTS));
         return this;
     }
 
@@ -57,7 +57,7 @@ public class OrleansMessages extends OrleansLabels {
      */
     public OrleansMessages addErrorsMemberAddAlreadyExist(String property) {
         assertPropertyNotNull(property);
-        add(property, new ActionMessage(ERRORS_MEMBER_ADD_ALREADY_EXIST));
+        add(property, new UserMessage(ERRORS_MEMBER_ADD_ALREADY_EXIST));
         return this;
     }
 }

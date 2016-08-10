@@ -8,6 +8,7 @@ import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exbhv.MemberWithdrawalBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.docksidestage.dbflute.exentity.MemberWithdrawal;
+import org.docksidestage.mylasta.action.DocksideMessages;
 import org.lastaflute.core.time.TimeManager;
 import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
@@ -34,41 +35,61 @@ public class WithdrawalAction extends DocksideBaseAction {
     //                                                                             =======
     @Execute
     public HtmlResponse index() {
-        return asHtml(path_Withdrawal_WithdrawalHtml).useForm(WithdrawalForm.class);
+        return asEntryHtml();
     }
 
     @Execute
     public HtmlResponse confirm(WithdrawalForm form) {
-        validate(form, messages -> {
-            if (form.reasonCode == null && LaStringUtil.isEmpty(form.reasonInput)) {
-                messages.addConstraintsRequiredMessage("reasonCode");
-            }
-        }, () -> {
-            return asHtml(path_Withdrawal_WithdrawalHtml);
+        validate(form, messages -> moreValidation(form, messages), () -> {
+            return asEntryHtml();
         });
-        return asHtml(path_Withdrawal_WithdrawalConfirmHtml);
+        return asConfirmHtml();
+    }
+
+    private void moreValidation(WithdrawalForm form, DocksideMessages messages) {
+        if (form.selectedReason == null && LaStringUtil.isEmpty(form.reasonInput)) {
+            messages.addConstraintsRequiredMessage("selectedReason");
+        }
     }
 
     @Execute
     public HtmlResponse done(WithdrawalForm form) {
         validate(form, message -> {}, () -> {
-            return asHtml(path_Withdrawal_WithdrawalHtml);
+            return asEntryHtml();
         });
         Integer memberId = getUserBean().get().getMemberId();
+        insertWithdrawal(form, memberId);
+        updateStatusWithdrawal(memberId);
+        return redirect(SignoutAction.class);
+    }
 
+    // ===================================================================================
+    //                                                                              Update
+    //                                                                              ======
+    private void insertWithdrawal(WithdrawalForm form, Integer memberId) {
         MemberWithdrawal withdrawal = new MemberWithdrawal();
         withdrawal.setMemberId(memberId);
-        withdrawal.setWithdrawalReasonCodeAsWithdrawalReason(form.reasonCode);
+        withdrawal.setWithdrawalReasonCodeAsWithdrawalReason(form.selectedReason);
         withdrawal.setWithdrawalReasonInputText(form.reasonInput);
         withdrawal.setWithdrawalDatetime(timeManager.currentDateTime());
         memberWithdrawalBhv.insert(withdrawal);
+    }
 
-        // update status of member
+    private void updateStatusWithdrawal(Integer memberId) {
         Member member = new Member();
         member.setMemberId(memberId);
         member.setMemberStatusCode_Withdrawal();
         memberBhv.updateNonstrict(member);
+    }
 
-        return redirect(SignoutAction.class);
+    // ===================================================================================
+    //                                                                        Assist Logic
+    //                                                                        ============
+    private HtmlResponse asEntryHtml() {
+        return asHtml(path_Withdrawal_WithdrawalEntryHtml);
+    }
+
+    private HtmlResponse asConfirmHtml() {
+        return asHtml(path_Withdrawal_WithdrawalConfirmHtml);
     }
 }

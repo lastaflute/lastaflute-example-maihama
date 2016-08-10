@@ -16,7 +16,7 @@
 package org.docksidestage.mylasta.action;
 
 import org.docksidestage.mylasta.action.HangarLabels;
-import org.lastaflute.web.ruts.message.ActionMessage;
+import org.lastaflute.core.message.UserMessage;
 
 /**
  * The keys for message.
@@ -41,7 +41,7 @@ public class HangarMessages extends HangarLabels {
      */
     public HangarMessages addErrorsMemberAddAlreadyExist(String property, String arg0) {
         assertPropertyNotNull(property);
-        add(property, new ActionMessage(ERRORS_MEMBER_ADD_ALREADY_EXIST, arg0));
+        add(property, new UserMessage(ERRORS_MEMBER_ADD_ALREADY_EXIST, arg0));
         return this;
     }
 }

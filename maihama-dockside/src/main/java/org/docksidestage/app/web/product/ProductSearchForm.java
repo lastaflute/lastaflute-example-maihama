@@ -15,6 +15,7 @@
  */
 package org.docksidestage.app.web.product;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.docksidestage.dbflute.allcommon.CDef;
 import org.hibernate.validator.constraints.Length;
 
@@ -23,11 +24,16 @@ import org.hibernate.validator.constraints.Length;
  */
 public class ProductSearchForm {
 
-    @Length(max = 10)
+    @Length(max = 10) // #simple_for_example just for validtion example
     public String productName;
 
     public CDef.ProductStatus productStatus;
 
-    @Length(max = 5)
+    @Length(max = 5) // #simple_for_example just for validtion example
     public String purchaseMemberName;
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
+    }
 }
