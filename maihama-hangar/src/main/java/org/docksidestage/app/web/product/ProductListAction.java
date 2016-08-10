@@ -15,6 +15,9 @@
  */
 package org.docksidestage.app.web.product;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import javax.annotation.Resource;
 
 import org.dbflute.cbean.result.PagingResultBean;
@@ -23,6 +26,7 @@ import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingBean;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
+import org.docksidestage.dbflute.exbhv.ProductStatusBhv;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
@@ -30,8 +34,8 @@ import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;
 
 /**
- * @author jflute
  * @author iwamatsu0430
+ * @author jflute
  */
 @AllowAnyoneAccess
 public class ProductListAction extends HangarBaseAction {
@@ -42,6 +46,8 @@ public class ProductListAction extends HangarBaseAction {
     @Resource
     private ProductBhv productBhv;
     @Resource
+    private ProductStatusBhv productStatusBhv;
+    @Resource
     private PagingAssist pagingAssist;
 
     // ===================================================================================
@@ -50,8 +56,13 @@ public class ProductListAction extends HangarBaseAction {
     @Execute
     public JsonResponse<SearchPagingBean<ProductRowBean>> index(OptionalThing<Integer> pageNumber, ProductSearchBody body) {
         validate(body, messages -> {});
+
         PagingResultBean<Product> page = selectProductPage(pageNumber.orElse(1), body);
-        SearchPagingBean<ProductRowBean> bean = mappingToBean(page);
+        List<ProductRowBean> items = page.stream().map(product -> {
+            return mappingToBean(product);
+        }).collect(Collectors.toList());
+
+        SearchPagingBean<ProductRowBean> bean = pagingAssist.createPagingBean(page, items);
         return asJson(bean);
     }
 
@@ -79,20 +90,14 @@ public class ProductListAction extends HangarBaseAction {
             }
             cb.query().addOrderBy_ProductName_Asc();
             cb.query().addOrderBy_ProductId_Asc();
-            cb.paging(4, pageNumber);
+            cb.paging(Integer.MAX_VALUE, pageNumber); // #later: waiting for client side implementation by jflute
         });
     }
 
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private SearchPagingBean<ProductRowBean> mappingToBean(PagingResultBean<Product> page) {
-        return pagingAssist.createPagingBean(page, page.mappingList(product -> {
-            return convertToRowBean(product);
-        }));
-    }
-
-    private ProductRowBean convertToRowBean(Product product) {
+    private ProductRowBean mappingToBean(Product product) {
         ProductRowBean bean = new ProductRowBean();
         bean.productId = product.getProductId();
         bean.productName = product.getProductName();

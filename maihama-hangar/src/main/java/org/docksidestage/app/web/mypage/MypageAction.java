@@ -37,9 +37,6 @@ public class MypageAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    // -----------------------------------------------------
-    //                                          DI Component
-    //                                          ------------
     @Resource
     private MemberBhv memberBhv;
     @Resource

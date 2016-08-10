@@ -19,16 +19,16 @@ import org.docksidestage.dbflute.allcommon.CDef;
 import org.hibernate.validator.constraints.Length;
 
 /**
- * @author jflute
  * @author iwamatsu0430
+ * @author jflute
  */
 public class ProductSearchBody {
 
-    @Length(max = 10)
+    @Length(max = 10) // #simple_for_example just for validtion example
     public String productName;
 
     public CDef.ProductStatus productStatus;
 
-    @Length(max = 5)
+    @Length(max = 5) // #simple_for_example just for validtion example
     public String purchaseMemberName;
 }

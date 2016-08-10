@@ -18,8 +18,8 @@ package org.docksidestage.app.web.product;
 import org.lastaflute.web.validation.Required;
 
 /**
- * @author jflute
  * @author iwamatsu0430
+ * @author jflute
  */
 public class ProductRowBean {
 
@@ -27,7 +27,6 @@ public class ProductRowBean {
     public Integer productId;
     @Required
     public String productName;
-    /** e.g. ProductionStop */
     @Required
     public String productStatusName;
     @Required

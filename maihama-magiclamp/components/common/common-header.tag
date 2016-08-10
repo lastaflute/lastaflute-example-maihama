@@ -7,7 +7,6 @@
           <li><a href="/product/list/" onclick={goProductList}><span class="link-block">Product</span></a></li>
           <li><a href="/member/list/" onclick={goMemberList}><span class="link-block">Member</span></a></li>
           <li><a href="/purchase/list/" onclick={goPurchaseList}><span class="link-block">Purchase</span></a></li>
-          <li><a href="/various/upload/" onclick={goVariousUpload}><span class="link-block">upload</span></a></li>
         </ul>
         <nav-user></nav-user>
       </div>
