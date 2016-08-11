@@ -49,7 +49,7 @@ map:{
         }
         ; orleans = map:{
             ; path = ../../maihama-orleans
-            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; html ; doc ; appcls }
+            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; doc ; appcls }
             ; propertiesHtmlList = list:{ env ; config ; label ; message }
         }
     }

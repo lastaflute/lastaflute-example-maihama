@@ -20,7 +20,6 @@ import javax.annotation.Resource;
 import org.dbflute.optional.OptionalObject;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.OrleansLoginAssist;
-import org.docksidestage.mylasta.action.OrleansHtmlPath;
 import org.docksidestage.mylasta.action.OrleansMessages;
 import org.docksidestage.mylasta.action.OrleansUserBean;
 import org.docksidestage.mylasta.direction.OrleansConfig;
@@ -33,7 +32,7 @@ import org.lastaflute.web.validation.LaValidatable;
  * @author jflute
  */
 public abstract class OrleansBaseAction extends MaihamaBaseAction // has several interfaces for direct use
-        implements LaValidatable<OrleansMessages>, OrleansHtmlPath {
+        implements LaValidatable<OrleansMessages> {
 
     // ===================================================================================
     //                                                                          Definition
@@ -58,11 +57,6 @@ public abstract class OrleansBaseAction extends MaihamaBaseAction // has several
     // #app_customize you can customize the action hook
     @Override
     public void hookFinally(ActionRuntime runtime) {
-        if (runtime.isForwardToHtml()) {
-            runtime.registerData("headerBean", getUserBean().map(userBean -> {
-                return new OrleansHeaderBean(userBean);
-            }).orElse(OrleansHeaderBean.empty()));
-        }
         super.hookFinally(runtime);
     }
 

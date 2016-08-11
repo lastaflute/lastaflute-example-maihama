@@ -12,15 +12,12 @@
 	<packaging>war</packaging>
 
 	<name>Orleans Application in Maihama</name>
-	<description>example web project, HTML style, for LastaFlute with Mixer2</description>
+	<description>example web project, Rest API style, for LastaFlute with LastaJob</description>
 	<url>http://dbflute.org/lastaflute</url>
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.mixer2.version>0.2.0-S-SNAPSHOT</lasta.mixer2.version>
-		<lasta.thymeleaf.version>0.2.7</lasta.thymeleaf.version> <!-- will be deleted -->
 		<lasta.job.version>0.2.2</lasta.job.version>
-		<commons.fileupload.version>1.3.1</commons.fileupload.version>
 	</properties>
 
 	<licenses>
@@ -129,16 +126,6 @@
 
 		<!-- lastaflute -->
 		<dependency>
-			<groupId>org.lastaflute.html</groupId>
-			<artifactId>lasta-mixer2</artifactId>
-			<version>${lasta.mixer2.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.lastaflute.html</groupId>
-			<artifactId>lasta-thymeleaf</artifactId>
-			<version>${lasta.thymeleaf.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.lastaflute.job</groupId>
 			<artifactId>lasta-job</artifactId>
 			<version>${lasta.job.version}</version>
@@ -151,16 +138,6 @@
 		<dependency>
 			<groupId>org.dbflute.jetty</groupId>
 			<artifactId>jetty-boot</artifactId>
-		</dependency>
-
-		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-		<!--                                                          GoodNeighbor Library -->
-		<!--                                                           = = = = = = = = = = -->
-		<!-- commons -->
-		<dependency> <!-- used for multipart request -->
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>${commons.fileupload.version}</version>
 		</dependency>
 	</dependencies>
 </project>
