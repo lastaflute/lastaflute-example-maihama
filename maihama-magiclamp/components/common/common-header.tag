@@ -2,11 +2,11 @@
   <header>
     <section class="nav-main cf">
       <div class="wrap">
-        <h1 class="sg-main-title"><a href="/" onclick={goRoot}>Maihama<span> (LastaFlute Example)</span></a></h1>
+        <h1 class="sg-main-title"><a href="/" onclick={goRoot}>Maihama, MagicLamp to Hangar<span> (LastaFlute Example)</span></a></h1>
         <ul class="nav-home">
-          <li><a href="/product/list/" onclick={goProductList}><span class="link-block">Product</span></a></li>
-          <li><a href="/member/list/" onclick={goMemberList}><span class="link-block">Member</span></a></li>
-          <li><a href="/purchase/list/" onclick={goPurchaseList}><span class="link-block">Purchase</span></a></li>
+          <li><a href="/product/list/" onclick={goProductList}><span class="link-block">Products</span></a></li>
+          <li><a href="/member/list/" onclick={goMemberList}><span class="link-block">Members</span></a></li>
+          <li><a href="/withdrawal/" onclick={goWithdrawalList}><span class="link-block">Withdrawal</span></a></li>
         </ul>
         <nav-user></nav-user>
       </div>
@@ -32,14 +32,9 @@
       observable.trigger(RC.EVENT.route.change, "/member/list/");
     };
 
-    this.goPurchaseList = function(e) {
+    this.goWithdrawalList = function(e) {
       e.preventDefault();
-      observable.trigger(RC.EVENT.route.change, "/purchase/list/");
-    };
-
-    this.goVariousUpload = function(e) {
-      e.preventDefault();
-      observable.trigger(RC.EVENT.route.change, "/various/upload/");
+      observable.trigger(RC.EVENT.route.change, "/withdrawal/");
     };
   </script>
 </common-header>

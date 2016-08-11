@@ -27,6 +27,7 @@ import org.docksidestage.app.web.base.paging.SearchPagingBean;
 import org.docksidestage.app.web.base.view.DisplayAssist;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
+import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
@@ -61,32 +62,37 @@ public class MemberListAction extends HangarBaseAction {
     //                                                                              Select
     //                                                                              ======
     private PagingResultBean<Member> selectMemberPage(int pageNumber, MemberSearchBody body) {
+        verifyOrIllegalTransition("The pageNumber should be positive number: " + pageNumber, pageNumber > 0);
         return memberBhv.selectPage(cb -> {
-            cb.ignoreNullOrEmptyQuery();
             cb.setupSelect_MemberStatus();
             cb.specify().derivedPurchase().count(purchaseCB -> {
                 purchaseCB.specify().columnPurchaseId();
             }, Member.ALIAS_purchaseCount);
-
-            cb.query().setMemberName_LikeSearch(body.memberName, op -> op.likeContain());
-            String purchaseProductName = body.purchaseProductName;
-            boolean unpaid = body.unpaid;
-            if ((purchaseProductName != null && purchaseProductName.trim().length() > 0) || unpaid) {
+            if (LaStringUtil.isNotEmpty(body.memberName)) {
+                cb.query().setMemberName_LikeSearch(body.memberName, op -> op.likeContain());
+            }
+            if (LaStringUtil.isNotEmpty(body.purchaseProductName) || body.unpaid) {
                 cb.query().existsPurchase(purchaseCB -> {
-                    purchaseCB.query().queryProduct().setProductName_LikeSearch(purchaseProductName, op -> op.likeContain());
-                    if (unpaid) {
+                    if (LaStringUtil.isNotEmpty(body.purchaseProductName)) {
+                        purchaseCB.query().queryProduct().setProductName_LikeSearch(body.purchaseProductName, op -> op.likeContain());
+                    }
+                    if (body.unpaid) {
                         purchaseCB.query().setPaymentCompleteFlg_Equal_False();
                     }
                 });
             }
-            cb.query().setMemberStatusCode_Equal_AsMemberStatus(body.memberStatus);
-            LocalDateTime formalizedDateFrom = displayAssist.toDateTime(body.formalizedDateFrom).orElse(null);
-            LocalDateTime formalizedDateTo = displayAssist.toDateTime(body.formalizedDateTo).orElse(null);
-            cb.query().setFormalizedDatetime_FromTo(formalizedDateFrom, formalizedDateTo, op -> op.compareAsDate());
-
+            if (body.memberStatus != null) {
+                cb.query().setMemberStatusCode_Equal_AsMemberStatus(body.memberStatus);
+            }
+            if (body.formalizedFrom != null || body.formalizedTo != null) {
+                OptionalThing<LocalDateTime> fromDate = displayAssist.toDateTime(body.formalizedFrom);
+                OptionalThing<LocalDateTime> toDate = displayAssist.toDateTime(body.formalizedTo);
+                cb.query().setFormalizedDatetime_FromTo(fromDate.orElse(null), toDate.orElse(null), op -> {
+                    op.compareAsDate().allowOneSide();
+                });
+            }
             cb.query().addOrderBy_UpdateDatetime_Desc();
             cb.query().addOrderBy_MemberId_Asc();
-
             cb.paging(4, pageNumber);
         });
     }

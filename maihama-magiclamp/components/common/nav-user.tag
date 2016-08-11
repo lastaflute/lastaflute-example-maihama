@@ -3,8 +3,8 @@
     <li>
       <p class="nameHeader">Welcome, { memberName }</p>
       <ul class="child">
-        <li><a href="#">setting</a></li>
-        <li><a href="/logout/" onclick={onSignout}>logout</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="/signout/" onclick={onSignout}>Sign Out</a></li>
       </ul>
     </li>
   </ul>

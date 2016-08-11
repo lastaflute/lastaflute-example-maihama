@@ -2,6 +2,6 @@
   <title>LastaFlute Example | {title}</title>
 
   <script>
-    this.title = "signIn";
+    this.title = "Hangar";
   </script>
 </title-reactive>

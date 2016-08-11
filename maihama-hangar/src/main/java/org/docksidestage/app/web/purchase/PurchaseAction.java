@@ -1,10 +1,7 @@
 package org.docksidestage.app.web.purchase;
 
-import java.math.BigDecimal;
-
 import javax.annotation.Resource;
 
-import org.dbflute.optional.OptionalEntity;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
@@ -16,21 +13,17 @@ import org.lastaflute.web.response.JsonResponse;
 
 /**
  * @author iwamatsu0430
+ * @author jflute
  */
 public class PurchaseAction extends HangarBaseAction {
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    // -----------------------------------------------------
-    //                                          DI Component
-    //                                          ------------
     @Resource
     private MemberBhv memberBhv;
-
     @Resource
-    private ProductBhv ProductBhv;
-
+    private ProductBhv productBhv;
     @Resource
     private PurchaseBhv purchaseBhv;
 
@@ -38,29 +31,37 @@ public class PurchaseAction extends HangarBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<PriceBean> count(PurchaseProductBody body) {
+    public JsonResponse<PurchasePriceBean> count(PurchaseProductBody body) {
         validate(body, messages -> {});
-        PriceBean bean = selectProduct(body.productId).map(product -> {
-            Integer price = calculatePrice(product.getRegularPrice(), body.purchaseCount);
-            return mappingToBean(price);
-        }).get();
+        Product product = selectProduct(body.productId);
+        PurchasePriceBean bean = mappingToBean(body, product);
         return asJson(bean);
     }
 
     @Execute
-    public JsonResponse<PriceBean> contract(PurchaseProductBody body) {
+    public JsonResponse<PurchasePriceBean> contract(PurchaseProductBody body) {
         validate(body, messages -> {});
-        PriceBean bean = selectProduct(body.productId).map(product -> {
-            Integer price = calculatePrice(product.getRegularPrice(), body.purchaseCount);
-            insertPurchase(body, product, price);
-            return mappingToBean(price);
-        }).get();
+        Integer memberId = getUserBean().get().getMemberId();
+        Product product = selectProduct(body.productId);
+        Integer price = calculatePrice(product.getRegularPrice(), body.purchaseCount);
+        insertPurchase(body, memberId, product, price);
+        PurchasePriceBean bean = mappingToBean(body, product);
         return asJson(bean);
     }
 
-    private void insertPurchase(PurchaseProductBody body, Product product, Integer price) {
+    // ===================================================================================
+    //                                                                              Select
+    //                                                                              ======
+    private Product selectProduct(Integer productId) {
+        return productBhv.selectEntity(cb -> cb.query().setProductId_Equal(productId)).get();
+    }
+
+    // ===================================================================================
+    //                                                                              Update
+    //                                                                              ======
+    private void insertPurchase(PurchaseProductBody body, Integer memberId, Product product, Integer price) {
         Purchase purchase = new Purchase();
-        purchase.setMemberId(getUserBean().get().getMemberId());
+        purchase.setMemberId(memberId);
         purchase.setProductId(product.getProductId());
         purchase.setPaymentCompleteFlg_False();
         purchase.setPurchaseCount(body.purchaseCount);
@@ -69,27 +70,17 @@ public class PurchaseAction extends HangarBaseAction {
     }
 
     // ===================================================================================
-    //                                                                              Select
-    //                                                                              ======
-    private OptionalEntity<Product> selectProduct(Integer productId) {
-        return ProductBhv.selectEntity(cb -> cb.query().setProductId_Equal(productId));
-    }
-
-    // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private PriceBean mappingToBean(Integer price) {
-        PriceBean bean = new PriceBean();
-        bean.price = price;
-        return bean;
+    private PurchasePriceBean mappingToBean(PurchaseProductBody body, Product product) {
+        Integer price = calculatePrice(product.getRegularPrice(), body.purchaseCount);
+        return new PurchasePriceBean(price);
     }
 
     // ===================================================================================
     //                                                                        Assist Logic
     //                                                                        ============
-    private Integer calculatePrice(Integer unitPrice, Integer count) {
-        BigDecimal unitPriceDecimal = new BigDecimal(unitPrice);
-        BigDecimal countDecimal = new BigDecimal(count);
-        return unitPriceDecimal.multiply(countDecimal).intValue();
+    private Integer calculatePrice(Integer unitPrice, Integer purchaseCount) {
+        return unitPrice * purchaseCount;
     }
 }

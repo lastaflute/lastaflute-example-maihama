@@ -15,24 +15,31 @@
  */
 package org.docksidestage.app.web.member;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import org.docksidestage.dbflute.allcommon.CDef;
+import org.hibernate.validator.constraints.Length;
+import org.lastaflute.web.validation.theme.conversion.ValidateTypeFailure;
 
 /**
  * @author jflute
  * @author iwamatsu0430
  */
-public class MemberSearchBody implements Serializable {
+public class MemberSearchBody {
 
-    private static final long serialVersionUID = 1L;
-
+    @Length(max = 5) // #simple_for_example just for validtion example
     public String memberName;
-    public CDef.MemberStatus memberStatus;
-    public String purchaseProductName;
-    public boolean unpaid;
 
-    public LocalDate formalizedDateFrom;
-    public LocalDate formalizedDateTo;
+    public CDef.MemberStatus memberStatus; // select-box so no validation (client error if invalid code)
+
+    @Length(max = 10) // #simple_for_example just for validtion example
+    public String purchaseProductName;
+
+    public boolean unpaid; // checkbox cannot send 'off' status so primitive here
+
+    @ValidateTypeFailure // you can customize message by "constraints.TypeLocalDate.message"
+    public LocalDate formalizedFrom;
+
+    @ValidateTypeFailure
+    public LocalDate formalizedTo;
 }

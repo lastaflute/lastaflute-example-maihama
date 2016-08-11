@@ -49,7 +49,7 @@ public class SigninAction extends HangarBaseAction {
     }
 
     private void moreValidate(SigninBody body, HangarMessages messages) {
-        if (LaStringUtil.isNotEmpty(body.email) && LaStringUtil.isNotEmpty(body.password)) {
+        if (LaStringUtil.isNotEmpty(body.account) && LaStringUtil.isNotEmpty(body.password)) {
             if (!loginAssist.checkUserLoginable(createCredential(body))) {
                 messages.addErrorsLoginFailure("email");
             }
@@ -57,6 +57,6 @@ public class SigninAction extends HangarBaseAction {
     }
 
     private UserPasswordCredential createCredential(SigninBody body) {
-        return new UserPasswordCredential(body.email, body.password);
+        return new UserPasswordCredential(body.account, body.password);
     }
 }

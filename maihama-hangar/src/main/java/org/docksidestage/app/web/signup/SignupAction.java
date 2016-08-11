@@ -32,12 +32,12 @@ import org.docksidestage.mylasta.direction.HangarConfig;
 import org.docksidestage.mylasta.mail.member.WelcomeMemberPostcard;
 import org.lastaflute.core.mail.Postbox;
 import org.lastaflute.core.security.PrimaryCipher;
+import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;
+import org.lastaflute.web.servlet.request.ResponseManager;
 import org.lastaflute.web.servlet.session.SessionManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author iwamatsu0430
@@ -49,7 +49,7 @@ public class SignupAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                          Definition
     //                                                                          ==========
-    private static final Logger logger = LoggerFactory.getLogger(SignupAction.class);
+    private static final String SIGNUP_TOKEN_KEY = "signupToken";
 
     // ===================================================================================
     //                                                                           Attribute
@@ -57,13 +57,15 @@ public class SignupAction extends HangarBaseAction {
     @Resource
     private PrimaryCipher primaryCipher;
     @Resource
-    private SessionManager sessionManager;
-    @Resource
     private Postbox postbox;
     @Resource
-    private HangarConfig hangarConfig;
+    private ResponseManager responseManager;
     @Resource
-    private HangarLoginAssist docksideLoginAssist;
+    private SessionManager sessionManager;
+    @Resource
+    private HangarConfig config;
+    @Resource
+    private HangarLoginAssist loginAssist;
     @Resource
     private MemberBhv memberBhv;
     @Resource
@@ -76,51 +78,72 @@ public class SignupAction extends HangarBaseAction {
     //                                                                             =======
     @Execute
     public JsonResponse<Void> index(SignupBody body) {
-        validate(body, messages -> {
+        validate(body, messages -> moreValidation(body, messages));
+        Integer memberId = insertProvisionalMember(body);
+        loginAssist.identityLogin(memberId.longValue(), op -> op.rememberMe(true)); // fixedly remember-me here
+
+        String signupToken = saveSignupToken();
+        sendSignupMail(body, signupToken);
+        return JsonResponse.asEmptyBody();
+    }
+
+    private void moreValidation(SignupBody body, HangarMessages messages) {
+        if (LaStringUtil.isNotEmpty(body.memberAccount)) {
             int count = memberBhv.selectCount(cb -> {
                 cb.query().setMemberAccount_Equal(body.memberAccount);
             });
             if (count > 0) {
                 messages.addErrorsMemberAddAlreadyExist("memberAccount", "account");
             }
-        });
-        Integer memberId = newMember(body);
-        docksideLoginAssist.identityLogin(memberId.longValue(), op -> op.rememberMe(true));
+        }
+    }
+
+    private String saveSignupToken() {
+        String token = primaryCipher.encrypt(String.valueOf(new Random().nextInt())); // #simple_for_example
+        sessionManager.setAttribute(SIGNUP_TOKEN_KEY, token);
+        return token;
+    }
+
+    private void sendSignupMail(SignupBody body, String signupToken) {
         WelcomeMemberPostcard.droppedInto(postbox, postcard -> {
-            postcard.setFrom(hangarConfig.getMailAddressSupport(), HangarMessages.LABELS_MAIL_SUPPORT_PERSONAL);
-            postcard.addTo(deriveMemberMailAddress(body));
-            postcard.setDomain(hangarConfig.getServerDomain());
+            postcard.setFrom(config.getMailAddressSupport(), "Hangar Support"); // #simple_for_example
+            postcard.addTo(body.memberAccount + "@docksidestage.org"); // #simple_for_example
+            postcard.setDomain(config.getServerDomain());
             postcard.setMemberName(body.memberName);
             postcard.setAccount(body.memberAccount);
-            postcard.setToken(generateToken());
+            postcard.setToken(signupToken);
         });
-        sessionManager.setAttribute("signupToken", "lasta-flute"); // #simple_for_example
-        return JsonResponse.asEmptyBody();
     }
 
     @Execute
-    public JsonResponse<Void> confirm() { // #simple_for_example
-        sessionManager.getAttribute("signupToken", String.class).ifPresent(token -> {
-            logger.debug("#confirm OK!");
-        }).orElse(() -> {
-            logger.debug("#confirm NG!");
-        });
+    public JsonResponse<Void> formalize(String account, String token) { // from mail link
+        verifySignupTokenMatched(account, token);
+        updateMemberAsFormalized(account);
         return JsonResponse.asEmptyBody();
     }
 
+    private void verifySignupTokenMatched(String account, String token) {
+        String saved = sessionManager.getAttribute(SIGNUP_TOKEN_KEY, String.class).orElseTranslatingThrow(cause -> {
+            return responseManager.new404("Not found the signupToken in session: " + account, op -> op.cause(cause));
+        });
+        if (!saved.equals(token)) {
+            throw responseManager.new404("Unmatched signupToken in session: saved=" + saved + ", requested=" + token);
+        }
+    }
+
     // ===================================================================================
-    //                                                                        Assist Logic
-    //                                                                        ============
-    private Integer newMember(SignupBody body) {
+    //                                                                              Update
+    //                                                                              ======
+    private Integer insertProvisionalMember(SignupBody body) {
         Member member = new Member();
-        member.setMemberAccount(body.memberAccount);
         member.setMemberName(body.memberName);
+        member.setMemberAccount(body.memberAccount);
         member.setMemberStatusCode_Provisional();
         memberBhv.insert(member);
 
         MemberSecurity security = new MemberSecurity();
         security.setMemberId(member.getMemberId());
-        security.setLoginPassword(docksideLoginAssist.encryptPassword(body.password));
+        security.setLoginPassword(loginAssist.encryptPassword(body.password));
         security.setReminderQuestion(body.reminderQuestion);
         security.setReminderAnswer(body.reminderAnswer);
         security.setReminderUseCount(0);
@@ -134,11 +157,10 @@ public class SignupAction extends HangarBaseAction {
         return member.getMemberId();
     }
 
-    private String deriveMemberMailAddress(SignupBody body) {
-        return body.memberAccount + "@docksidestage.org"; // #simple_for_example
-    }
-
-    private String generateToken() {
-        return primaryCipher.encrypt(String.valueOf(new Random().nextInt())); // #simple_for_example
+    private void updateMemberAsFormalized(String account) {
+        Member member = new Member();
+        member.uniqueBy(account);
+        member.setMemberStatusCode_Formalized();
+        memberBhv.updateNonstrict(member);
     }
 }

@@ -18,19 +18,15 @@ package org.docksidestage.app.web.mypage;
 import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.HangarBaseAction;
-import org.docksidestage.dbflute.allcommon.CDef;
-import org.docksidestage.dbflute.exbhv.MemberAddressBhv;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
-import org.docksidestage.dbflute.exbhv.MemberSecurityBhv;
-import org.docksidestage.dbflute.exbhv.MemberServiceBhv;
-import org.docksidestage.dbflute.exbhv.MemberStatusBhv;
-import org.docksidestage.dbflute.exbhv.ServiceRankBhv;
-import org.docksidestage.mylasta.action.HangarUserBean;
+import org.docksidestage.dbflute.exentity.Member;
+import org.lastaflute.core.time.TimeManager;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
 /**
  * @author shunsuke.tadokoro
+ * @author jflute
  */
 public class MypageAction extends HangarBaseAction {
 
@@ -38,88 +34,44 @@ public class MypageAction extends HangarBaseAction {
     //                                                                           Attribute
     //                                                                           =========
     @Resource
+    private TimeManager timeManager;
+    @Resource
     private MemberBhv memberBhv;
-    @Resource
-    private MemberStatusBhv memberStatusBhv;
-    @Resource
-    private MemberSecurityBhv memberSecurityBhv;
-    @Resource
-    private MemberServiceBhv memberServiceBhv;
-    @Resource
-    private ServiceRankBhv serviceRankBhv;
-    @Resource
-    private MemberAddressBhv memberAddressBhv;
 
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
     @Execute
     public JsonResponse<MypageBean> index() {
-        HangarUserBean userBean = getUserBean().get();
-        MypageBean bean = new MypageBean();
-        bean.setMemberId(new Integer(userBean.getMemberId().toString()));
-        bean.setMemberName(userBean.getMemberName());
-        bean.setMemberStatusCode(selectMemberStatusCode(bean.memberId));
-        bean.setMemberServiceName(selectMemberServiseRankNameFromMemberId(bean.memberId));
-        bean.setMemberPassword(selectMemberPassword(bean.memberId));
-        bean.setMemberAddress(selectMemberAddress(bean.memberId));
+        Integer memberId = getUserBean().get().getMemberId();
+        Member member = selectMember(memberId);
+        MypageBean bean = mappingToBean(memberId, member);
         return asJson(bean);
     }
 
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
-    private String selectMemberStatusCode(Integer memberId) {
+    private Member selectMember(Integer memberId) {
         return memberBhv.selectEntity(cb -> {
-            cb.specify().columnMemberStatusCode();
+            cb.setupSelect_MemberAddressAsValid(timeManager.currentDate());
+            cb.setupSelect_MemberSecurityAsOne();
+            cb.setupSelect_MemberServiceAsOne().withServiceRank();
             cb.query().setMemberId_Equal(memberId);
-        }).map(member -> {
-            return member.getMemberStatusCode();
         }).get();
-    }
-
-    private CDef.ServiceRank selectMemberServiceRankCode(Integer memberId) {
-        return memberServiceBhv.selectEntity(cb -> {
-            cb.specify().columnServiceRankCode();
-            cb.query().setMemberId_Equal(memberId);
-        }).map(rankCode -> {
-            return rankCode.getServiceRankCodeAsServiceRank();
-        }).get();
-    }
-
-    private String selectMemberServiceRankName(CDef.ServiceRank rankCode) {
-        return serviceRankBhv.selectEntity(cb -> {
-            cb.specify().columnServiceRankName();
-            cb.query().setServiceRankCode_Equal_AsServiceRank(rankCode);
-        }).map(rank -> {
-            return rank.getServiceRankName();
-        }).get();
-    }
-
-    private String selectMemberPassword(Integer memberId) {
-        return memberSecurityBhv.selectEntity(cb -> {
-            cb.specify().columnLoginPassword();
-            cb.query().setMemberId_Equal(memberId);
-        }).map(security -> {
-            return security.getLoginPassword().toString();
-        }).orElse("");
-    }
-
-    private String selectMemberAddress(Integer memberId) {
-        return memberAddressBhv.selectEntity(cb -> {
-            cb.specify().columnAddress();
-            cb.query().addOrderBy_RegisterDatetime_Desc();
-            cb.query().setMemberId_Equal(memberId);
-            cb.fetchFirst(1);
-        }).map(address -> {
-            return address.getAddress();
-        }).orElse("");
     }
 
     // ===================================================================================
-    //                                                                        Assist Logic
-    //                                                                        ============
-    private String selectMemberServiseRankNameFromMemberId(Integer memberId) {
-        return selectMemberServiceRankName(selectMemberServiceRankCode(memberId));
+    //                                                                             Mapping
+    //                                                                             =======
+    private MypageBean mappingToBean(Integer memberId, Member member) {
+        MypageBean bean = new MypageBean();
+        bean.memberId = memberId;
+        bean.memberName = member.getMemberName();
+        bean.memberStatus = member.getMemberStatusCodeAsMemberStatus().alias();
+        bean.serviceRank = member.getMemberServiceAsOne().get().getServiceRank().get().getServiceRankName();
+        bean.cipheredPassword = member.getMemberSecurityAsOne().get().getLoginPassword();
+        bean.memberAddress = member.getMemberAddressAsValid().map(address -> address.getAddress()).orElse(null);
+        return bean;
     }
 }

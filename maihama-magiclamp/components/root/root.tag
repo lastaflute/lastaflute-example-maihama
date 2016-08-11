@@ -14,23 +14,23 @@
           </colgroup>
           <tbody>
             <tr>
-              <th>お名前</th>
+              <th>Member Name</th>
               <td>{memberName}</td>
             </tr>
             <tr>
-              <th>会員ID</th>
-              <td>{memberId}</td>
-            </tr>
-            <tr>
-              <th>会員ランク</th>
-              <td>{memberServiceName}</td>
+              <th>Member Status</th>
+              <td>{memberStatus}</td>
             </tr>  
             <tr>
-              <th>暗号化された<br>あなたのパスワード</th>
-              <td>{memberPassword}</td><!-- Simple for Example-->
+              <th>Service Rank</th>
+              <td>{serviceRank}</td>
+            </tr>  
+            <tr>
+              <th>Encrypted<br>Password</th>
+              <td>{cipheredPassword}</td> <!-- #simple_for_example-->
             </tr>
             <tr>
-              <th>お住まい</th>
+              <th>Address</th>
               <td>{memberAddress}</td>
             </tr>
           </tbody>
@@ -60,9 +60,9 @@
               var obj = JSON.parse(response.text);
               self.memberId = obj.memberId;
               self.memberName = obj.memberName;
-              self.memberStatusCode = obj.memberStatusCode;
-              self.memberServiceName = obj.memberServiceName;
-              self.memberPassword = obj.memberPassword;
+              self.memberStatus = obj.memberStatus;
+              self.serviceRank = obj.serviceRank;
+              self.cipheredPassword = obj.cipheredPassword;
               self.memberAddress = obj.memberAddress;
               self.update();
             }

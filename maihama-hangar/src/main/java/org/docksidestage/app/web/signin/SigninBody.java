@@ -19,13 +19,13 @@ import org.lastaflute.web.validation.Required;
 
 /**
  * The form of member's Login.
- * @author jflute
  * @author iwamatsu0430
+ * @author jflute
  */
 public class SigninBody {
 
     @Required
-    public String email;
+    public String account;
 
     @Required
     public String password;

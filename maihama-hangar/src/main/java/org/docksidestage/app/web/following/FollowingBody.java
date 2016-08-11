@@ -23,8 +23,6 @@ import org.lastaflute.web.validation.Required;
  */
 public class FollowingBody {
 
-    public Integer myMemberId;
-
     @Required
     public Integer yourMemberId;
 }

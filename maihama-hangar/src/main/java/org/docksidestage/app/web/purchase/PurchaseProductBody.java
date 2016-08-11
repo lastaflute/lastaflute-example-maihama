@@ -1,17 +1,19 @@
 package org.docksidestage.app.web.purchase;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+
+import org.lastaflute.web.validation.Required;
 
 /**
  * @author iwamatsu0430
+ * @author jflute
  */
 public class PurchaseProductBody {
 
-    @NotNull
+    @Required
     public Integer productId;
 
-    @NotNull
+    @Required
     @Min(1)
     public Integer purchaseCount;
 }

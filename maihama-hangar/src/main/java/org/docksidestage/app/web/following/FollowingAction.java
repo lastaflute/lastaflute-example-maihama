@@ -15,11 +15,7 @@
  */
 package org.docksidestage.app.web.following;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.HangarBaseAction;
-import org.docksidestage.dbflute.exbhv.MemberBhv;
-import org.docksidestage.dbflute.exbhv.MemberFollowingBhv;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
@@ -30,24 +26,10 @@ import org.lastaflute.web.response.JsonResponse;
 public class FollowingAction extends HangarBaseAction {
 
     // ===================================================================================
-    //                                                                           Attribute
-    //                                                                           =========
-    // -----------------------------------------------------
-    //                                          DI Component
-    //                                          ------------
-    @Resource
-    protected MemberBhv memberBhv;
-
-    @Resource
-    protected MemberFollowingBhv memberFollowingBhv;
-
-    // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
     @Execute
     public JsonResponse<Void> follow(FollowingBody body) {
-        validate(body, messages -> {});
-
-        return JsonResponse.asEmptyBody();
+        throw new UnsupportedOperationException();
     }
 }

@@ -1,38 +1,23 @@
 package org.docksidestage.app.web.mypage;
 
+import org.lastaflute.web.validation.Required;
+
 /**
  * @author shunsuke.tadokoro
+ * @author jflute
  */
 public class MypageBean {
 
+    @Required
     public Integer memberId;
+    @Required
     public String memberName;
-    public String memberStatusCode;
-    public String memberServiceName;
-    public String memberPassword;
+    @Required
+    public String memberStatus;
+    @Required
+    public String serviceRank;
+    @Required
+    public String cipheredPassword;
+
     public String memberAddress;
-
-    public void setMemberId(Integer memberId) {
-        this.memberId = memberId;
-    }
-
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
-    }
-
-    public void setMemberStatusCode(String memberStatusCode) {
-        this.memberStatusCode = memberStatusCode;
-    }
-
-    public void setMemberServiceName(String memberServiceName) {
-        this.memberServiceName = memberServiceName;
-    }
-
-    public void setMemberPassword(String memberPassword) {
-        this.memberPassword = memberPassword;
-    }
-
-    public void setMemberAddress(String memberAddress) {
-        this.memberAddress = memberAddress;
-    }
 }

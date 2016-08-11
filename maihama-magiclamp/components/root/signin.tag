@@ -5,7 +5,7 @@
       <form name="signin_signinAction_index_Form" onsubmit={doSignin}>
         <dl>
           <dt><label>Account</label></dt>
-          <dd><input type="text" name="email" value="" placeholder="input Pixy"></dd>
+          <dd><input type="text" name="account" value="" placeholder="input Pixy"></dd>
         </dl>
         <dl>
           <dt><label>Password</label></dt>
@@ -60,15 +60,15 @@
 
       this.doSignin = function(e) {
         e.preventDefault();
-        var email = this.email;
+        var account = this.account;
         var password = this.password;
         sa
           .post(RC.API.auth.signin)
-          .send({email: email.value, password: password.value})
+          .send({account: account.value, password: password.value})
           .withCredentials()
           .end(function(error, response) {
             if (response.ok) {
-              email.value = "";
+              account.value = "";
               password.value = "";
               obs.trigger(window.RC.EVENT.auth.check);
             }

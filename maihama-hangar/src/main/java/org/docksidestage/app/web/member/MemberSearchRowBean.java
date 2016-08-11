@@ -16,9 +16,8 @@
 package org.docksidestage.app.web.member;
 
 /**
- * 会員一覧で利用する画面項目DTO。
- * @author jflute
  * @author iwamatsu0430
+ * @author jflute
  */
 public class MemberSearchRowBean {
 
