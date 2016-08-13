@@ -2,4 +2,5 @@
 /bin
 /*.iml
 /.idea
+.DS_Store
 /dbflute-intro.jar

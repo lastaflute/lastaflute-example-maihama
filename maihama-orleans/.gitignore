@@ -1,5 +1,7 @@
 /target
 /bin
-/tomcat.*
 /*.iml
 /.idea
+.DS_Store
+/tomcat.*
+trial_config.ignored
