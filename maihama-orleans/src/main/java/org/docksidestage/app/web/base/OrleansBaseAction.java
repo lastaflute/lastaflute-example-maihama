@@ -26,13 +26,13 @@ import org.docksidestage.mylasta.direction.OrleansConfig;
 import org.lastaflute.web.login.LoginManager;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
-import org.lastaflute.web.validation.LaValidatable;
+import org.lastaflute.web.validation.LaValidatableApi;
 
 /**
  * @author jflute
  */
 public abstract class OrleansBaseAction extends MaihamaBaseAction // has several interfaces for direct use
-        implements LaValidatable<OrleansMessages> {
+        implements LaValidatableApi<OrleansMessages> {
 
     // ===================================================================================
     //                                                                          Definition

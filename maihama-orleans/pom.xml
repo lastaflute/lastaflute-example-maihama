@@ -136,8 +136,8 @@
 		<!--                                                               = = = = = = = = -->
 		<!-- boot -->
 		<dependency>
-			<groupId>org.dbflute.jetty</groupId>
-			<artifactId>jetty-boot</artifactId>
+			<groupId>org.dbflute.tomcat</groupId>
+			<artifactId>tomcat-boot</artifactId>
 		</dependency>
 	</dependencies>
 </project>

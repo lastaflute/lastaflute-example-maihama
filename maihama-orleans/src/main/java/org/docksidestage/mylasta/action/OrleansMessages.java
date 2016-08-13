@@ -27,37 +27,21 @@ public class OrleansMessages extends OrleansLabels {
     /** The serial version UID for object serialization. (Default) */
     private static final long serialVersionUID = 1L;
 
-    /** The key of the message: the account already exists so input others */
-    public static final String ERRORS_SIGNUP_ACCOUNT_ALREADY_EXISTS = "{errors.signup.account.already.exists}";
-
-    /** The key of the message: the member already exists so input others */
+    /** The key of the message: the member {0} already exists so input others */
     public static final String ERRORS_MEMBER_ADD_ALREADY_EXIST = "{errors.member.add.already.exist}";
-
-    /**
-     * Add the created action message for the key 'errors.signup.account.already.exists' with parameters.
-     * <pre>
-     * message: the account already exists so input others
-     * </pre>
-     * @param property The property name for the message. (NotNull)
-     * @return this. (NotNull)
-     */
-    public OrleansMessages addErrorsSignupAccountAlreadyExists(String property) {
-        assertPropertyNotNull(property);
-        add(property, new UserMessage(ERRORS_SIGNUP_ACCOUNT_ALREADY_EXISTS));
-        return this;
-    }
 
     /**
      * Add the created action message for the key 'errors.member.add.already.exist' with parameters.
      * <pre>
-     * message: the member already exists so input others
+     * message: the member {0} already exists so input others
      * </pre>
      * @param property The property name for the message. (NotNull)
+     * @param arg0 The parameter arg0 for message. (NotNull)
      * @return this. (NotNull)
      */
-    public OrleansMessages addErrorsMemberAddAlreadyExist(String property) {
+    public OrleansMessages addErrorsMemberAddAlreadyExist(String property, String arg0) {
         assertPropertyNotNull(property);
-        add(property, new UserMessage(ERRORS_MEMBER_ADD_ALREADY_EXIST));
+        add(property, new UserMessage(ERRORS_MEMBER_ADD_ALREADY_EXIST, arg0));
         return this;
     }
 }
