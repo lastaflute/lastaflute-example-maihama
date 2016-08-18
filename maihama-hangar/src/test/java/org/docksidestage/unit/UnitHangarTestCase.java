@@ -15,7 +15,10 @@
  */
 package org.docksidestage.unit;
 
+import javax.annotation.Resource;
+
 import org.dbflute.utflute.lastaflute.WebContainerTestCase;
+import org.docksidestage.app.web.base.login.HangarLoginAssist;
 
 /**
  * Use like this:
@@ -38,4 +41,21 @@ import org.dbflute.utflute.lastaflute.WebContainerTestCase;
  * @author jflute
  */
 public abstract class UnitHangarTestCase extends WebContainerTestCase {
+
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
+    @Resource
+    private HangarLoginAssist loginAssist;
+
+    // ===================================================================================
+    //                                                                         Test Helper
+    //                                                                         ===========
+    protected void mockLogin() {
+        loginAssist.identityLogin(getMockLoginUserId(), op -> op.silentLogin(true));
+    }
+
+    protected int getMockLoginUserId() {
+        return 1; // always exists in database as test data
+    }
 }
