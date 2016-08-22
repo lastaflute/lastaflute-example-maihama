@@ -15,6 +15,8 @@
  */
 package org.docksidestage.mylasta;
 
+import org.dbflute.utflute.lastaflute.police.InjectedResourceDefinitionPolice;
+import org.dbflute.utflute.lastaflute.police.LastaPresentsSomethingPolice;
 import org.dbflute.utflute.lastaflute.police.NonActionExtendsActionPolice;
 import org.dbflute.utflute.lastaflute.police.NonWebHasWebReferencePolice;
 import org.dbflute.utflute.lastaflute.police.WebPackageNinjaReferencePolice;
@@ -35,5 +37,15 @@ public class MaihamaActionDefTest extends UnitCommonPjTestCase {
 
     public void test_webPackageNinjaReferencePolice() throws Exception {
         policeStoryOfJavaClassChase(new WebPackageNinjaReferencePolice());
+    }
+
+    public void test_injectedResourceDefinitionPolice() throws Exception {
+        policeStoryOfJavaClassChase(new InjectedResourceDefinitionPolice().shouldBePrivateField(field -> {
+            return true; // means all fields
+        }));
+    }
+
+    public void test_lastaPresentsSomethingPolice() throws Exception {
+        policeStoryOfJavaClassChase(new LastaPresentsSomethingPolice());
     }
 }
