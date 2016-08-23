@@ -1,8 +1,8 @@
 {
-  "itemsPerPage": 4,
-  "currentPage": 1,
-  "totalPages": 5,
-  "totalItems": 21,
+  "pageSize": 4,
+  "currentPageNumber": 1,
+  "allRecordCount": 5,
+  "allPageCount": 21,
   "items": [
     {
       "memberId": 21,

@@ -22,7 +22,7 @@ import org.lastaflute.web.validation.Required;
 /**
  * @author jflute
  */
-public class MemberPurchaseSearchRowBean {
+public class MemberPurchaseSearchRowResult {
 
     @Required
     public Long purchaseId;

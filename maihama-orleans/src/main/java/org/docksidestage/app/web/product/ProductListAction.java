@@ -24,7 +24,7 @@ import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.OrleansBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
-import org.docksidestage.app.web.base.paging.SearchPagingBean;
+import org.docksidestage.app.web.base.paging.SearchPagingResult;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
 import org.docksidestage.dbflute.exbhv.ProductStatusBhv;
 import org.docksidestage.dbflute.exentity.Product;
@@ -54,7 +54,7 @@ public class ProductListAction extends OrleansBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<SearchPagingBean<ProductRowBean>> index(OptionalThing<Integer> pageNumber, ProductSearchBody body) {
+    public JsonResponse<SearchPagingResult<ProductRowBean>> index(OptionalThing<Integer> pageNumber, ProductSearchBody body) {
         validate(body, messages -> {});
 
         PagingResultBean<Product> page = selectProductPage(pageNumber.orElse(1), body);
@@ -62,7 +62,7 @@ public class ProductListAction extends OrleansBaseAction {
             return mappingToBean(product);
         }).collect(Collectors.toList());
 
-        SearchPagingBean<ProductRowBean> bean = pagingAssist.createPagingBean(page, items);
+        SearchPagingResult<ProductRowBean> bean = pagingAssist.createPagingBean(page, items);
         return asJson(bean);
     }
 

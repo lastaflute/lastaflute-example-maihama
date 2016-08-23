@@ -42,11 +42,11 @@ public class MypageAction extends HangarBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<MypageBean> index() {
+    public JsonResponse<MypageResult> index() {
         Integer memberId = getUserBean().get().getMemberId();
         Member member = selectMember(memberId);
-        MypageBean bean = mappingToBean(memberId, member);
-        return asJson(bean);
+        MypageResult result = mappingToResult(memberId, member);
+        return asJson(result);
     }
 
     // ===================================================================================
@@ -64,14 +64,14 @@ public class MypageAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private MypageBean mappingToBean(Integer memberId, Member member) {
-        MypageBean bean = new MypageBean();
-        bean.memberId = memberId;
-        bean.memberName = member.getMemberName();
-        bean.memberStatus = member.getMemberStatusCodeAsMemberStatus().alias();
-        bean.serviceRank = member.getMemberServiceAsOne().get().getServiceRank().get().getServiceRankName();
-        bean.cipheredPassword = member.getMemberSecurityAsOne().get().getLoginPassword();
-        bean.memberAddress = member.getMemberAddressAsValid().map(address -> address.getAddress()).orElse(null);
-        return bean;
+    private MypageResult mappingToResult(Integer memberId, Member member) {
+        MypageResult result = new MypageResult();
+        result.memberId = memberId;
+        result.memberName = member.getMemberName();
+        result.memberStatus = member.getMemberStatusCodeAsMemberStatus().alias();
+        result.serviceRank = member.getMemberServiceAsOne().get().getServiceRank().get().getServiceRankName();
+        result.cipheredPassword = member.getMemberSecurityAsOne().get().getLoginPassword();
+        result.memberAddress = member.getMemberAddressAsValid().map(address -> address.getAddress()).orElse(null);
+        return result;
     }
 }

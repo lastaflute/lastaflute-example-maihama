@@ -13,19 +13,22 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.member;
+package org.docksidestage.app.web.product;
+
+import org.lastaflute.web.validation.Required;
 
 /**
  * @author iwamatsu0430
  * @author jflute
  */
-public class MemberSearchRowBean {
+public class ProductRowResult {
 
-    public Integer memberId;
-    public String memberName;
-    public String memberStatusName;
-    public String formalizedDate;
-    public String updateDatetime;
-    public boolean withdrawalMember;
-    public Integer purchaseCount;
+    @Required
+    public Integer productId;
+    @Required
+    public String productName;
+    @Required
+    public String productStatusName;
+    @Required
+    public Integer regularPrice;
 }

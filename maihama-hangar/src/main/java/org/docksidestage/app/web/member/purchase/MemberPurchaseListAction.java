@@ -15,13 +15,16 @@
  */
 package org.docksidestage.app.web.member.purchase;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import javax.annotation.Resource;
 
 import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
-import org.docksidestage.app.web.base.paging.SearchPagingBean;
+import org.docksidestage.app.web.base.paging.SearchPagingResult;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exbhv.PurchaseBhv;
 import org.docksidestage.dbflute.exentity.Purchase;
@@ -48,11 +51,14 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<SearchPagingBean<MemberPurchaseSearchRowBean>> index(Integer memberId, OptionalThing<Integer> pageNumber,
+    public JsonResponse<SearchPagingResult<MemberPurchaseSearchRowResult>> index(Integer memberId, OptionalThing<Integer> pageNumber,
             MemberPurchaseListBody body) {
         PagingResultBean<Purchase> page = selectPurchasePage(memberId, pageNumber.orElse(1));
-        SearchPagingBean<MemberPurchaseSearchRowBean> bean = mappingToBean(page);
-        return asJson(bean);
+        List<MemberPurchaseSearchRowResult> rows = page.stream().map(purchase -> {
+            return convertToRowResult(purchase);
+        }).collect(Collectors.toList());
+        SearchPagingResult<MemberPurchaseSearchRowResult> result = pagingAssist.createPagingResult(page, rows);
+        return asJson(result);
     }
 
     @Execute
@@ -79,20 +85,14 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private SearchPagingBean<MemberPurchaseSearchRowBean> mappingToBean(PagingResultBean<Purchase> page) {
-        return pagingAssist.createPagingBean(page, page.mappingList(purchase -> {
-            return convertToRowBean(purchase);
-        }));
-    }
-
-    protected MemberPurchaseSearchRowBean convertToRowBean(Purchase purchase) {
-        MemberPurchaseSearchRowBean bean = new MemberPurchaseSearchRowBean();
-        bean.purchaseId = purchase.getPurchaseId();
-        bean.purchaseDatetime = purchase.getPurchaseDatetime();
-        bean.productName = purchase.getProduct().get().getProductName();
-        bean.purchasePrice = purchase.getPurchasePrice();
-        bean.purchaseCount = purchase.getPurchaseCount();
-        bean.paymentComplete = purchase.isPaymentCompleteFlgTrue();
-        return bean;
+    private MemberPurchaseSearchRowResult convertToRowResult(Purchase purchase) {
+        MemberPurchaseSearchRowResult result = new MemberPurchaseSearchRowResult();
+        result.purchaseId = purchase.getPurchaseId();
+        result.purchaseDatetime = purchase.getPurchaseDatetime();
+        result.productName = purchase.getProduct().get().getProductName();
+        result.purchasePrice = purchase.getPurchasePrice();
+        result.purchaseCount = purchase.getPurchaseCount();
+        result.paymentComplete = purchase.isPaymentCompleteFlgTrue();
+        return result;
     }
 }

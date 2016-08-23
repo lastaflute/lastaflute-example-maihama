@@ -6,7 +6,7 @@ import org.lastaflute.web.validation.Required;
  * @author shunsuke.tadokoro
  * @author jflute
  */
-public class MypageBean {
+public class MypageResult {
 
     @Required
     public Integer memberId;

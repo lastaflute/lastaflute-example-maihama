@@ -23,7 +23,7 @@ import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
-import org.docksidestage.app.web.base.paging.SearchPagingBean;
+import org.docksidestage.app.web.base.paging.SearchPagingResult;
 import org.docksidestage.app.web.base.view.DisplayAssist;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
@@ -51,11 +51,11 @@ public class MemberListAction extends HangarBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<SearchPagingBean<MemberSearchRowBean>> index(OptionalThing<Integer> pageNumber, MemberSearchBody body) {
+    public JsonResponse<SearchPagingResult<MemberSearchRowResult>> index(OptionalThing<Integer> pageNumber, MemberSearchBody body) {
         validate(body, messages -> {});
         PagingResultBean<Member> page = selectMemberPage(pageNumber.orElse(1), body);
-        SearchPagingBean<MemberSearchRowBean> bean = mappingToBean(page);
-        return asJson(bean);
+        SearchPagingResult<MemberSearchRowResult> result = mappingToResult(page);
+        return asJson(result);
     }
 
     // ===================================================================================
@@ -100,23 +100,23 @@ public class MemberListAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private SearchPagingBean<MemberSearchRowBean> mappingToBean(PagingResultBean<Member> page) {
-        return pagingAssist.createPagingBean(page, page.mappingList(product -> {
-            return convertToRowBean(product);
+    private SearchPagingResult<MemberSearchRowResult> mappingToResult(PagingResultBean<Member> page) {
+        return pagingAssist.createPagingResult(page, page.mappingList(product -> {
+            return convertToRowResult(product);
         }));
     }
 
-    private MemberSearchRowBean convertToRowBean(Member member) {
-        MemberSearchRowBean bean = new MemberSearchRowBean();
-        bean.memberId = member.getMemberId();
-        bean.memberName = member.getMemberName();
+    private MemberSearchRowResult convertToRowResult(Member member) {
+        MemberSearchRowResult result = new MemberSearchRowResult();
+        result.memberId = member.getMemberId();
+        result.memberName = member.getMemberName();
         member.getMemberStatus().alwaysPresent(status -> {
-            bean.memberStatusName = status.getMemberStatusName();
+            result.memberStatusName = status.getMemberStatusName();
         });
-        bean.formalizedDate = displayAssist.toStringDate(member.getFormalizedDatetime()).orElse(null);
-        bean.updateDatetime = displayAssist.toStringDate(member.getUpdateDatetime()).get();
-        bean.withdrawalMember = member.isMemberStatusCodeWithdrawal();
-        bean.purchaseCount = member.getPurchaseCount();
-        return bean;
+        result.formalizedDate = displayAssist.toStringDate(member.getFormalizedDatetime()).orElse(null);
+        result.updateDatetime = displayAssist.toStringDate(member.getUpdateDatetime()).get();
+        result.withdrawalMember = member.isMemberStatusCodeWithdrawal();
+        result.purchaseCount = member.getPurchaseCount();
+        return result;
     }
 }

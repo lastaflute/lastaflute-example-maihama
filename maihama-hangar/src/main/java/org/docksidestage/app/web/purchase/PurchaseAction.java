@@ -31,22 +31,22 @@ public class PurchaseAction extends HangarBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<PurchasePriceBean> count(PurchaseProductBody body) {
+    public JsonResponse<PurchasePriceResult> count(PurchaseProductBody body) {
         validate(body, messages -> {});
         Product product = selectProduct(body.productId);
-        PurchasePriceBean bean = mappingToBean(body, product);
-        return asJson(bean);
+        PurchasePriceResult result = mappingToBean(body, product);
+        return asJson(result);
     }
 
     @Execute
-    public JsonResponse<PurchasePriceBean> contract(PurchaseProductBody body) {
+    public JsonResponse<PurchasePriceResult> contract(PurchaseProductBody body) {
         validate(body, messages -> {});
         Integer memberId = getUserBean().get().getMemberId();
         Product product = selectProduct(body.productId);
         Integer price = calculatePrice(product.getRegularPrice(), body.purchaseCount);
         insertPurchase(body, memberId, product, price);
-        PurchasePriceBean bean = mappingToBean(body, product);
-        return asJson(bean);
+        PurchasePriceResult result = mappingToBean(body, product);
+        return asJson(result);
     }
 
     // ===================================================================================
@@ -72,9 +72,9 @@ public class PurchaseAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private PurchasePriceBean mappingToBean(PurchaseProductBody body, Product product) {
+    private PurchasePriceResult mappingToBean(PurchaseProductBody body, Product product) {
         Integer price = calculatePrice(product.getRegularPrice(), body.purchaseCount);
-        return new PurchasePriceBean(price);
+        return new PurchasePriceResult(price);
     }
 
     // ===================================================================================

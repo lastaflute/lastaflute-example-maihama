@@ -21,12 +21,12 @@ public class MypageActionTest extends UnitHangarTestCase {
         inject(action);
 
         // ## Act ##
-        JsonResponse<MypageBean> response = action.index();
+        JsonResponse<MypageResult> response = action.index();
 
         // ## Assert ##
         showJson(response);
-        TestingJsonData<MypageBean> data = validateJsonData(response);
-        MypageBean bean = data.getJsonBean();
+        TestingJsonData<MypageResult> data = validateJsonData(response);
+        MypageResult bean = data.getJsonBean();
         assertEquals(getMockLoginUserId(), bean.memberId);
     }
 }

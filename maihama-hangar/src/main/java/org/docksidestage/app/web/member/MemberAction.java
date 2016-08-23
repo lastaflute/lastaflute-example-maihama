@@ -56,16 +56,16 @@ public class MemberAction extends HangarBaseAction {
     }
 
     @Execute
-    public JsonResponse<MemberInfoBean> info() {
-        MemberInfoBean bean = new MemberInfoBean();
+    public JsonResponse<MemberInfoResult> info() {
+        MemberInfoResult result = new MemberInfoResult();
         getUserBean().ifPresent(userBean -> {
-            bean.memberId = userBean.getMemberId();
-            bean.memberName = userBean.getMemberName();
-            bean.memberStatusName = selectMemberStatusName(userBean.getMemberId());
+            result.memberId = userBean.getMemberId();
+            result.memberName = userBean.getMemberName();
+            result.memberStatusName = selectMemberStatusName(userBean.getMemberId());
         }).orElse(() -> {
-            bean.memberName = "Guest";
+            result.memberName = "Guest";
         });
-        return asJson(bean);
+        return asJson(result);
     }
 
     // ===================================================================================
