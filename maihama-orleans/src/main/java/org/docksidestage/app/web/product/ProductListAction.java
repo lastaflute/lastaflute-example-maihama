@@ -58,12 +58,12 @@ public class ProductListAction extends OrleansBaseAction {
         validate(body, messages -> {});
 
         PagingResultBean<Product> page = selectProductPage(pageNumber.orElse(1), body);
-        List<ProductRowBean> items = page.stream().map(product -> {
+        List<ProductRowBean> rows = page.stream().map(product -> {
             return mappingToBean(product);
         }).collect(Collectors.toList());
 
-        SearchPagingResult<ProductRowBean> bean = pagingAssist.createPagingBean(page, items);
-        return asJson(bean);
+        SearchPagingResult<ProductRowBean> result = pagingAssist.createPagingResult(page, rows);
+        return asJson(result);
     }
 
     // ===================================================================================
