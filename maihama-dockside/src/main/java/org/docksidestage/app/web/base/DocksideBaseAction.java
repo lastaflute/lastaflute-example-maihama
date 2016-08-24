@@ -17,7 +17,6 @@ package org.docksidestage.app.web.base;
 
 import javax.annotation.Resource;
 
-import org.dbflute.optional.OptionalObject;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.DocksideLoginAssist;
 import org.docksidestage.app.web.base.view.HeaderBean;
@@ -89,7 +88,7 @@ public abstract class DocksideBaseAction extends MaihamaBaseAction // has severa
 
     @Override
     protected OptionalThing<String> myUserType() { // for framework
-        return OptionalObject.of(USER_TYPE);
+        return OptionalThing.of(USER_TYPE);
     }
 
     @Override
