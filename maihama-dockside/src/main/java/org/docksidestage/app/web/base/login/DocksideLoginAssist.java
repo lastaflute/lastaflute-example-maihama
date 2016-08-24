@@ -48,7 +48,7 @@ public class DocksideLoginAssist extends MaihamaLoginAssist<DocksideUserBean, Me
     @Resource
     private TransactionStage transactionStage;
     @Resource
-    private DocksideConfig docksideConfig;
+    private DocksideConfig config;
     @Resource
     private MemberBhv memberBhv;
     @Resource
@@ -92,7 +92,7 @@ public class DocksideLoginAssist extends MaihamaLoginAssist<DocksideUserBean, Me
 
     @Override
     protected OptionalThing<String> getCookieRememberMeKey() {
-        return OptionalThing.of(docksideConfig.getCookieRememberMeDocksideKey());
+        return OptionalThing.of(config.getCookieRememberMeDocksideKey());
     }
 
     @Override

@@ -48,7 +48,7 @@ public class OrleansLoginAssist extends MaihamaLoginAssist<OrleansUserBean, Memb
     @Resource
     private TransactionStage transactionStage;
     @Resource
-    private OrleansConfig orleansConfig;
+    private OrleansConfig config;
     @Resource
     private MemberBhv memberBhv;
     @Resource
@@ -92,7 +92,7 @@ public class OrleansLoginAssist extends MaihamaLoginAssist<OrleansUserBean, Memb
 
     @Override
     protected OptionalThing<String> getCookieRememberMeKey() {
-        return OptionalThing.of(orleansConfig.getCookieRememberMeOrleansKey());
+        return OptionalThing.of(config.getCookieRememberMeOrleansKey());
     }
 
     @Override

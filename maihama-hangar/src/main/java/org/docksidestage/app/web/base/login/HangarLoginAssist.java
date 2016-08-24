@@ -48,7 +48,7 @@ public class HangarLoginAssist extends MaihamaLoginAssist<HangarUserBean, Member
     @Resource
     private TransactionStage transactionStage;
     @Resource
-    private HangarConfig hangarConfig;
+    private HangarConfig config;
     @Resource
     private MemberBhv memberBhv;
     @Resource
@@ -92,7 +92,7 @@ public class HangarLoginAssist extends MaihamaLoginAssist<HangarUserBean, Member
 
     @Override
     protected OptionalThing<String> getCookieRememberMeKey() {
-        return OptionalThing.of(hangarConfig.getCookieRememberMeHangarKey());
+        return OptionalThing.of(config.getCookieRememberMeHangarKey());
     }
 
     @Override
