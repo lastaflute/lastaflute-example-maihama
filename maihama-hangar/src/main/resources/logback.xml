@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE logback>
 <!-- _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_ -->
-<!-- Hanger logging settings for All Environments -->
+<!-- Hangar logging settings for All Environments -->
 <!-- _/_/_/_/_/_/_/_/_/_/_ -->
 <configuration>
   <include resource="logparts/logback_property.xml" />
-  <property resource="hanger_env.properties" />
-  <property resource="hanger_env_${lasta.env}.properties" />
-  <property resource="hanger_config.properties" />
+  <property resource="hangar_env.properties" />
+  <property resource="hangar_env_${lasta.env}.properties" />
+  <property resource="hangar_config.properties" />
 
   <!-- define your properties here
   e.g. <property name="sea.land" value="${piary.bonvo:-amba}"/> -->

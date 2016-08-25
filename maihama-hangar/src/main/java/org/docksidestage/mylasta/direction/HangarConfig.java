@@ -15,7 +15,6 @@
  */
 package org.docksidestage.mylasta.direction;
 
-import org.docksidestage.mylasta.direction.HangarEnv;
 import org.lastaflute.core.direction.exception.ConfigPropertyNotFoundException;
 
 /**
@@ -26,7 +25,7 @@ public interface HangarConfig extends HangarEnv {
     /** The key of the configuration. e.g. hangar */
     String DOMAIN_NAME = "domain.name";
 
-    /** The key of the configuration. e.g. Hanger */
+    /** The key of the configuration. e.g. Hangar */
     String DOMAIN_TITLE = "domain.title";
 
     /** The key of the configuration. e.g. HGR */
