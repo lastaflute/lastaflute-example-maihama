@@ -10,15 +10,15 @@
   <property resource="dockside_config.properties" />
 
   <!-- define your properties here
-  e.g. <property name="sea.land" value="${iks.bonvo:-amba}"/> -->
+  e.g. <property name="sea.land" value="${piary.bonvo:-amba}"/> -->
 
   <include resource="logparts/logback_appender.xml" />
 
   <!-- define your additional appenders here
-  e.g. <appender name="sea" class="land.IksAppender">... -->
+  e.g. <appender name="sea" class="land.PiaryAppender">... -->
 
   <include resource="logparts/logback_logger.xml" />
 
   <!-- define your additional loggers here
-  e.g. <logger name="sea.land.iks.bonvo" additivity="false" level="${log.level}">... -->
+  e.g. <logger name="sea.land.piary.bonvo" additivity="false" level="${log.level}">... -->
 </configuration>
