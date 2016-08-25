@@ -133,7 +133,7 @@
             dbType="DATETIME" javaType="java.time.LocalDateTime"
             name="FOLLOW_DATETIME" required="true" size="19" type="TIMESTAMP"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
-            foreignTable="member" name="FK_MEMBER_FLLOWING_MY_MEMBER_ID">
+            foreignTable="member" name="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">
             <reference foreign="MEMBER_ID" local="MY_MEMBER_ID"/>
         </foreign-key>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"

@@ -168,7 +168,7 @@ public class MemberFollowingDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMemberByMyMemberId() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMyMemberId(), MemberDbm.getInstance().columnMemberId());
-        return cfi("FK_MEMBER_FLLOWING_MY_MEMBER_ID", "memberByMyMemberId", this, MemberDbm.getInstance(), mp, 0, org.dbflute.optional.OptionalEntity.class, false, false, false, false, null, null, false, "memberFollowingByMyMemberIdList", false);
+        return cfi("FK_MEMBER_FOLLOWING_MY_MEMBER_ID", "memberByMyMemberId", this, MemberDbm.getInstance(), mp, 0, org.dbflute.optional.OptionalEntity.class, false, false, false, false, null, null, false, "memberFollowingByMyMemberIdList", false);
     }
     /**
      * (会員)MEMBER by my YOUR_MEMBER_ID, named 'memberByYourMemberId'.

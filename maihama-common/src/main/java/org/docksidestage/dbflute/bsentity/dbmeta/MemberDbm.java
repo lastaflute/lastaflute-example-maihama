@@ -292,7 +292,7 @@ public class MemberDbm extends AbstractDBMeta {
      */
     public ReferrerInfo referrerMemberFollowingByMyMemberIdList() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMemberId(), MemberFollowingDbm.getInstance().columnMyMemberId());
-        return cri("FK_MEMBER_FLLOWING_MY_MEMBER_ID", "memberFollowingByMyMemberIdList", this, MemberFollowingDbm.getInstance(), mp, false, "memberByMyMemberId");
+        return cri("FK_MEMBER_FOLLOWING_MY_MEMBER_ID", "memberFollowingByMyMemberIdList", this, MemberFollowingDbm.getInstance(), mp, false, "memberByMyMemberId");
     }
     /**
      * (会員フォローイング)MEMBER_FOLLOWING by YOUR_MEMBER_ID, named 'memberFollowingByYourMemberIdList'.

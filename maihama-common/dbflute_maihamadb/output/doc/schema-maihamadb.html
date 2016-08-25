@@ -313,7 +313,7 @@ dl.procedurelist dd.column pre {
 		<td><a href="#member" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=6, columnCount=11">MEMBER</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member_status" title="FK_MEMBER_MEMBER_STATUS">MEMBER_STATUS</a>, <a href="#member_address" class="additionalfk" title="FK_MEMBER_MEMBER_ADDRESS_VALID: fixedCondition=&quot;$$foreignAlias$$.VALID_BEGIN_DATE &lt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null\n     and $$foreignAlias$$.VALID_END_DATE &gt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null&quot;, comment=Member's address at the target date.">MEMBER_ADDRESS(AsValid)</a>, <a href="#member_login" class="additionalfk" title="FK_MEMBER_MEMBER_LOGIN_LATEST: fixedCondition=&quot;$$foreignAlias$$.LOGIN_DATETIME = ($$sqbegin$$\nselect max(login.LOGIN_DATETIME)\n  from MEMBER_LOGIN login\n where login.MEMBER_ID = $$foreignAlias$$.MEMBER_ID\n)$$sqend$$&quot;">MEMBER_LOGIN(AsLatest)</a></td>
-		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>, <a href="#member_following" title="FK_MEMBER_FLLOWING_MY_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>, <a href="#member_security" title="FK_MEMBER_SECURITY_MEMBER">MEMBER_SECURITY</a>, <a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>, <a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>, <a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a></td>
+		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>, <a href="#member_security" title="FK_MEMBER_SECURITY_MEMBER">MEMBER_SECURITY</a>, <a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>, <a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>, <a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a></td>
 		<td class="commentcell"> 会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。</td>
 		<td class="subcell">Member</td>
 	</tr>
@@ -332,7 +332,7 @@ dl.procedurelist dd.column pre {
 		<td class="aliascell">会員フォローイング</td>
 		<td><a href="#member_following" title="type=TABLE, primaryKey={MEMBER_FOLLOWING_ID}, nameLength=16, columnCount=4">MEMBER_FOLLOWING</a></td>
 		<td class="typecell">TABLE</td>
-		<td class="relcell"><a href="#member" title="FK_MEMBER_FLLOWING_MY_MEMBER_ID">MEMBER</a>, <a href="#member" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER</a></td>
+		<td class="relcell"><a href="#member" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER</a>, <a href="#member" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER</a></td>
 		<td class="relcell">&nbsp;</td>
 		<td class="commentcell"> とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。</td>
 		<td class="subcell">MemberFollowing</td>
@@ -507,7 +507,7 @@ dl.procedurelist dd.column pre {
 		<td class="typecell">INT</td>
 		<td class="sizecell"> 10 </td>
 		<td class="relcell"><a href="#member_address" class="additionalfk" title="FK_MEMBER_MEMBER_ADDRESS_VALID: fixedCondition=&quot;$$foreignAlias$$.VALID_BEGIN_DATE &lt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null\n     and $$foreignAlias$$.VALID_END_DATE &gt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null&quot;, comment=Member's address at the target date.">MEMBER_ADDRESS(AsValid)</a>,<br><a href="#member_login" class="additionalfk" title="FK_MEMBER_MEMBER_LOGIN_LATEST: fixedCondition=&quot;$$foreignAlias$$.LOGIN_DATETIME = ($$sqbegin$$\nselect max(login.LOGIN_DATETIME)\n  from MEMBER_LOGIN login\n where login.MEMBER_ID = $$foreignAlias$$.MEMBER_ID\n)$$sqend$$&quot;">MEMBER_LOGIN(AsLatest)</a>&nbsp;</td>
-		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>,<br><a href="#member_following" title="FK_MEMBER_FLLOWING_MY_MEMBER_ID">MEMBER_FOLLOWING</a>,<br><a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER_FOLLOWING</a>,<br><a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>,<br><a href="#member_security" title="FK_MEMBER_SECURITY_MEMBER">MEMBER_SECURITY</a>,<br><a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>,<br><a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>,<br><a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a>&nbsp;</td>
+		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>,<br><a href="#member_following" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER_FOLLOWING</a>,<br><a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER_FOLLOWING</a>,<br><a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>,<br><a href="#member_security" title="FK_MEMBER_SECURITY_MEMBER">MEMBER_SECURITY</a>,<br><a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>,<br><a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>,<br><a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a>&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
 		<td class="commentcell"> 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。</td>
 		<td class="subcell">memberId</td>
@@ -972,7 +972,7 @@ dl.procedurelist dd.column pre {
 		<td id="member_following_my_member_id">MY_MEMBER_ID</td>
 		<td class="typecell">INT</td>
 		<td class="sizecell"> 10 </td>
-		<td class="relcell"><a href="#member" title="FK_MEMBER_FLLOWING_MY_MEMBER_ID">MEMBER</a>&nbsp;</td>
+		<td class="relcell"><a href="#member" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER</a>&nbsp;</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"> &nbsp;</td>
 		<td class="commentcell"> 気になった人がいて...勇気を振り絞った会員のID。</td>
