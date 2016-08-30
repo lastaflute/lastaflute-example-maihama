@@ -47,7 +47,7 @@ public abstract class MaihamaFwAssistantDirector extends CachedFwAssistantDirect
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    private MaihamaConfig maihamaConfig;
+    private MaihamaConfig config;
 
     // ===================================================================================
     //                                                                              Assist
@@ -65,14 +65,14 @@ public abstract class MaihamaFwAssistantDirector extends CachedFwAssistantDirect
     @Override
     protected void prepareCoreDirection(FwCoreDirection direction) {
         // this configuration is on maihama_env.properties because this is true only when development
-        direction.directDevelopmentHere(maihamaConfig.isDevelopmentHere());
+        direction.directDevelopmentHere(config.isDevelopmentHere());
 
         // titles of the application for logging are from configurations
-        direction.directLoggingTitle(maihamaConfig.getDomainTitle(), maihamaConfig.getEnvironmentTitle());
+        direction.directLoggingTitle(config.getDomainTitle(), config.getEnvironmentTitle());
 
         // this configuration is on sea_env.properties because it has no influence to production
         // even if you set true manually and forget to set false back
-        direction.directFrameworkDebug(maihamaConfig.isFrameworkDebug()); // basically false
+        direction.directFrameworkDebug(config.isFrameworkDebug()); // basically false
 
         // you can add your own process when your application's curtain before
         direction.directCurtainBefore(createCurtainBeforeHook());
@@ -94,7 +94,7 @@ public abstract class MaihamaFwAssistantDirector extends CachedFwAssistantDirect
     }
 
     protected MaihamaTimeResourceProvider createTimeResourceProvider() {
-        return new MaihamaTimeResourceProvider(maihamaConfig);
+        return new MaihamaTimeResourceProvider(config);
     }
 
     protected MaihamaJsonResourceProvider createJsonResourceProvider() {
@@ -102,7 +102,7 @@ public abstract class MaihamaFwAssistantDirector extends CachedFwAssistantDirect
     }
 
     protected MaihamaMailDeliveryDepartmentCreator createMailDeliveryDepartmentCreator() {
-        return new MaihamaMailDeliveryDepartmentCreator(maihamaConfig);
+        return new MaihamaMailDeliveryDepartmentCreator(config);
     }
 
     // ===================================================================================
@@ -137,7 +137,7 @@ public abstract class MaihamaFwAssistantDirector extends CachedFwAssistantDirect
 
     protected MaihamaCookieResourceProvider createCookieResourceProvider() { // #change_it_first
         final InvertibleCryptographer cr = InvertibleCryptographer.createAesCipher("dockside:maihama");
-        return new MaihamaCookieResourceProvider(maihamaConfig, cr);
+        return new MaihamaCookieResourceProvider(config, cr);
     }
 
     protected MaihamaActionAdjustmentProvider createActionAdjustmentProvider() {

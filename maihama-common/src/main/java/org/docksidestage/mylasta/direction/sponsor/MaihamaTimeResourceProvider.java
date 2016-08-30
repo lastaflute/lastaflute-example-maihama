@@ -28,13 +28,13 @@ public class MaihamaTimeResourceProvider extends TypicalTimeResourceProvider {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected final MaihamaConfig maihamaConfig;
+    protected final MaihamaConfig config;
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public MaihamaTimeResourceProvider(MaihamaConfig maihamaConfig) {
-        this.maihamaConfig = maihamaConfig;
+    public MaihamaTimeResourceProvider(MaihamaConfig config) {
+        this.config = config;
     }
 
     // ===================================================================================
@@ -50,11 +50,11 @@ public class MaihamaTimeResourceProvider extends TypicalTimeResourceProvider {
     //                                                                     ===============
     @Override
     protected String getTimeAdjustTimeMillis() {
-        return maihamaConfig.getTimeAdjustTimeMillis();
+        return config.getTimeAdjustTimeMillis();
     }
 
     @Override
     protected Long getTimeAdjustTimeMillisAsLong() {
-        return maihamaConfig.getTimeAdjustTimeMillisAsLong();
+        return config.getTimeAdjustTimeMillisAsLong();
     }
 }

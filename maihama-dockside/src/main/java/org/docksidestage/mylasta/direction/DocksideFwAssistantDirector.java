@@ -33,7 +33,7 @@ import org.lastaflute.web.ruts.renderer.HtmlRenderingProvider;
 public class DocksideFwAssistantDirector extends MaihamaFwAssistantDirector {
 
     @Resource
-    private DocksideConfig docksideConfig;
+    private DocksideConfig config;
 
     @Override
     protected void setupAppConfig(List<String> nameList) {
@@ -60,7 +60,7 @@ public class DocksideFwAssistantDirector extends MaihamaFwAssistantDirector {
     }
 
     protected HtmlRenderingProvider createHtmlRenderingProvider() {
-        return new ThymeleafRenderingProvider().asDevelopment(docksideConfig.isDevelopmentHere());
+        return new ThymeleafRenderingProvider().asDevelopment(config.isDevelopmentHere());
     }
 
     protected MultipartResourceProvider createMultipartResourceProvider() {

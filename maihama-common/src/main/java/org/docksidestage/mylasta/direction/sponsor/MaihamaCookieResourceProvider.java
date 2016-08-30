@@ -24,22 +24,22 @@ import org.lastaflute.web.servlet.cookie.CookieResourceProvider;
  */
 public class MaihamaCookieResourceProvider implements CookieResourceProvider {
 
-    protected final MaihamaConfig maihamaConfig;
+    protected final MaihamaConfig config;
     protected final InvertibleCryptographer cookieCipher;
 
-    public MaihamaCookieResourceProvider(MaihamaConfig maihamaConfig, InvertibleCryptographer cookieCipher) {
-        this.maihamaConfig = maihamaConfig;
+    public MaihamaCookieResourceProvider(MaihamaConfig config, InvertibleCryptographer cookieCipher) {
+        this.config = config;
         this.cookieCipher = cookieCipher;
     }
 
     @Override
     public String provideDefaultPath() {
-        return maihamaConfig.getCookieDefaultPath();
+        return config.getCookieDefaultPath();
     }
 
     @Override
     public Integer provideDefaultExpire() {
-        return maihamaConfig.getCookieDefaultExpireAsInteger();
+        return config.getCookieDefaultExpireAsInteger();
     }
 
     @Override

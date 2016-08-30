@@ -42,13 +42,13 @@ public class MaihamaMailDeliveryDepartmentCreator {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected final MaihamaConfig maihamaConfig;
+    protected final MaihamaConfig config;
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public MaihamaMailDeliveryDepartmentCreator(MaihamaConfig maihamaConfig) {
-        this.maihamaConfig = maihamaConfig;
+    public MaihamaMailDeliveryDepartmentCreator(MaihamaConfig config) {
+        this.config = config;
     }
 
     // ===================================================================================
@@ -64,10 +64,10 @@ public class MaihamaMailDeliveryDepartmentCreator {
     protected SMailPostalParkingLot createPostalParkingLot() {
         final SMailPostalParkingLot parkingLot = new SMailPostalParkingLot();
         final SMailPostalMotorbike motorbike = new SMailPostalMotorbike();
-        final String hostAndPort = maihamaConfig.getMailSmtpServerMainHostAndPort();
+        final String hostAndPort = config.getMailSmtpServerMainHostAndPort();
         final List<String> hostPortList = Srl.splitListTrimmed(hostAndPort, ":");
         motorbike.registerConnectionInfo(hostPortList.get(0), Integer.parseInt(hostPortList.get(1)));
-        motorbike.registerReturnPath(maihamaConfig.getMailReturnPath());
+        motorbike.registerReturnPath(config.getMailReturnPath());
         parkingLot.registerMotorbikeAsMain(motorbike);
         return parkingLot;
     }
@@ -77,11 +77,11 @@ public class MaihamaMailDeliveryDepartmentCreator {
     //                                      ----------------
     protected SMailPostalPersonnel createPostalPersonnel() {
         final SMailDogmaticPostalPersonnel personnel = newMailDogmaticPostalPersonnel();
-        return maihamaConfig.isMailSendMock() ? personnel.asTraining() : personnel;
+        return config.isMailSendMock() ? personnel.asTraining() : personnel;
     }
 
     protected SMailDogmaticPostalPersonnel newMailDogmaticPostalPersonnel() { // #ext_point e.g. from database
-        final String testPrefix = maihamaConfig.getMailSubjectTestPrefix();
+        final String testPrefix = config.getMailSubjectTestPrefix();
         final AsyncManager asyncManager = getAsyncManager();
         final MessageManager messageManager = getMessageManager();
         return new SMailDogmaticPostalPersonnel() {
