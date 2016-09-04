@@ -79,7 +79,9 @@ public abstract class MaihamaBaseAction extends TypicalAction {
     @Override
     protected AccessContextArranger newAccessContextArranger() { // for framework
         return resource -> {
-            return accessContextLogic.create(resource, () -> myUserType(), () -> getUserBean(), () -> myAppType());
+            return accessContextLogic.create(resource, () -> myUserType(), () -> getUserBean().map(userBean -> {
+                return userBean.getUserId(); // as user expression
+            }), () -> myAppType());
         };
     }
 
