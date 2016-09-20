@@ -154,6 +154,8 @@ public class NewProjectCreator {
                 filtered = textIO.readFilteringLine(canonicalPath, createEnvPropertiesFilter());
             } else if (canonicalPath.endsWith("pom.xml")) {
                 filtered = textIO.readFilteringLine(canonicalPath, createPomXmlFilter());
+            } else if (canonicalPath.endsWith("MypageAction.java")) {
+                filtered = textIO.readFilteringLine(canonicalPath, createMypageActionFilter());
             } else {
                 filtered = textIO.readFilteringLine(canonicalPath, line -> filterServiceName(line));
             }
@@ -279,6 +281,15 @@ public class NewProjectCreator {
 
     protected FileTextLineFilter createPomXmlFilter() {
         return line -> filterServiceName(filterJdbcSettings(line));
+    }
+
+    protected FileTextLineFilter createMypageActionFilter() {
+        return line -> {
+            if (Srl.containsAny(line, "setupSelect_MemberAddressAsValid", "member.getMemberAddressAsValid()")) {
+                return null; // MEMBER_ADDRESS already deleted
+            }
+            return filterServiceName(line);
+        };
     }
 
     // ===================================================================================
