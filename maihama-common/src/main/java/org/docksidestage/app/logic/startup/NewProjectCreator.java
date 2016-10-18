@@ -138,6 +138,8 @@ public class NewProjectCreator {
                 filtered = textIO.readFilteringLine(canonicalPath, createAdditionalForeignKeyFilter());
             } else if (canonicalPath.endsWith("classificationDefinitionMap.dfprop")) {
                 filtered = textIO.readFilteringLine(canonicalPath, createClassificationDefinitionFilter());
+            } else if (canonicalPath.endsWith("classificationDeploymentMap.dfprop")) {
+                filtered = textIO.readFilteringLine(canonicalPath, createClassificationDeploymentFilter());
             } else if (canonicalPath.endsWith("basicInfoMap.dfprop")) {
                 filtered = textIO.readFilteringLine(canonicalPath, createBasicInfoMapFilter());
             } else if (canonicalPath.endsWith("databaseInfoMap.dfprop")) {
@@ -152,6 +154,8 @@ public class NewProjectCreator {
                 filtered = textIO.readFilteringLine(canonicalPath, createEnvPropertiesFilter());
             } else if (canonicalPath.endsWith("pom.xml")) {
                 filtered = textIO.readFilteringLine(canonicalPath, createPomXmlFilter());
+            } else if (canonicalPath.endsWith("MypageAction.java")) {
+                filtered = textIO.readFilteringLine(canonicalPath, createMypageActionFilter());
             } else {
                 filtered = textIO.readFilteringLine(canonicalPath, line -> filterServiceName(line));
             }
@@ -213,6 +217,15 @@ public class NewProjectCreator {
         };
     }
 
+    protected FileTextLineFilter createClassificationDeploymentFilter() {
+        return line -> {
+            if (line.startsWith("    ; PURCHASE_PAYMENT = ")) {
+                return null;
+            }
+            return filterServiceName(line);
+        };
+    }
+
     protected FileTextLineFilter createBasicInfoMapFilter() {
         return line -> filterServiceName(filterJdbcSettings(line));
     }
@@ -268,6 +281,15 @@ public class NewProjectCreator {
 
     protected FileTextLineFilter createPomXmlFilter() {
         return line -> filterServiceName(filterJdbcSettings(line));
+    }
+
+    protected FileTextLineFilter createMypageActionFilter() {
+        return line -> {
+            if (Srl.containsAny(line, "setupSelect_MemberAddressAsValid", "member.getMemberAddressAsValid()")) {
+                return null; // MEMBER_ADDRESS already deleted
+            }
+            return filterServiceName(line);
+        };
     }
 
     // ===================================================================================
