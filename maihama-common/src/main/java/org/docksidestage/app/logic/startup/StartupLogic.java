@@ -16,6 +16,7 @@
 package org.docksidestage.app.logic.startup;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,7 +32,7 @@ public class StartupLogic {
     public void fromDockside(File repositoryDir, String domain, String serviceName, String appName) {
         new NewProjectCreator("dockside", repositoryDir, "maihama-dockside", original -> {
             String filtered = original;
-            filtered = filterCommonItem(domain, serviceName, filtered);
+            filtered = filterCommonItem(repositoryDir, domain, serviceName, filtered);
             filtered = replace(filtered, "Dockside", Srl.initCap(appName));
             filtered = replace(filtered, "dockside", Srl.initUncap(appName));
             filtered = replace(filtered, "new JettyBoot(8091, ", "new JettyBoot(9001, ");
@@ -43,7 +44,7 @@ public class StartupLogic {
     public void fromHangar(File repositoryDir, String domain, String serviceName, String appName) {
         new NewProjectCreator("hangar", repositoryDir, "maihama-hangar", original -> {
             String filtered = original;
-            filtered = filterCommonItem(domain, serviceName, filtered);
+            filtered = filterCommonItem(repositoryDir, domain, serviceName, filtered);
             filtered = replace(filtered, "Hangar", Srl.initCap(appName));
             filtered = replace(filtered, "hangar", Srl.initUncap(appName));
             filtered = replace(filtered, "new JettyBoot(8092, ", "new JettyBoot(9001, "); // as main
@@ -52,9 +53,10 @@ public class StartupLogic {
         }).newProject();
     }
 
-    protected String filterCommonItem(String domain, String serviceName, String filtered) {
+    protected String filterCommonItem(File repositoryDir, String domain, String serviceName, String filtered) {
         String packageName = buildPackageName(domain);
-        filtered = replace(filtered, "lastaflute-example-maihama", Srl.initUncap(serviceName));
+        filtered = replace(filtered, buildProjectDirPureName(repositoryDir), Srl.initUncap(serviceName)); // e.g. lastaflute-example-harbor
+        filtered = replace(filtered, "lastaflute-example-maihama", Srl.initUncap(serviceName)); // just in case
         filtered = replace(filtered, "maihamadb", Srl.initUncap(serviceName) + (!serviceName.endsWith("db") ? "db" : ""));
         filtered = replace(filtered, "org/docksidestage", replace(packageName, ".", "/")); // for file path
         filtered = replace(filtered, "docksidestage.org", domain);
@@ -68,6 +70,14 @@ public class StartupLogic {
         List<String> elementList = new ArrayList<String>(Arrays.asList(domain.split("\\.")));
         Collections.reverse(elementList);
         return elementList.stream().reduce((left, right) -> left + "." + right).get();
+    }
+
+    private String buildProjectDirPureName(File projectDir) { // e.g. /sea/mystic => mystic
+        try {
+            return Srl.substringLastRear(projectDir.getCanonicalPath(), "/"); // thanks oreilly
+        } catch (IOException e) {
+            throw new IllegalStateException("Failed to get canonical path: " + projectDir);
+        }
     }
 
     protected String replace(String str, String fromStr, String toStr) {
