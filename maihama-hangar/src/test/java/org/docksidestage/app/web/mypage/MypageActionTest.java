@@ -26,7 +26,7 @@ public class MypageActionTest extends UnitHangarTestCase {
         // ## Assert ##
         showJson(response);
         TestingJsonData<MypageResult> data = validateJsonData(response);
-        MypageResult bean = data.getJsonBean();
+        MypageResult bean = data.getJsonResult();
         assertEquals(getMockLoginUserId(), bean.memberId);
     }
 }
