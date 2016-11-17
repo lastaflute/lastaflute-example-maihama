@@ -23,10 +23,10 @@ import org.dbflute.tomcat.TomcatBoot;
 public class OrleansBoot { // #change_it_first
 
     public static void main(String[] args) { // e.g. java -Dlasta.env=production -jar maihama-orleans.war
-        new TomcatBoot(8096, "/orleans").asDevelopment(isNoneEnv()).bootAwait();
+        new TomcatBoot(8096, "/orleans").asDevelopment(isDevelopment()).bootAwait();
     }
 
-    private static boolean isNoneEnv() {
+    private static boolean isDevelopment() {
         return System.getProperty("lasta.env") == null;
     }
 }

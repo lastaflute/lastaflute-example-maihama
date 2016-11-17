@@ -23,10 +23,10 @@ import org.dbflute.jetty.JettyBoot;
 public class HangarBoot { // #change_it_first
 
     public static void main(String[] args) { // e.g. java -Dlasta.env=production -jar maihama-hangar.war
-        new JettyBoot(8092, "/hangar").asDevelopment(isNoneEnv()).bootAwait();
+        new JettyBoot(8092, "/hangar").asDevelopment(isDevelopment()).bootAwait();
     }
 
-    private static boolean isNoneEnv() {
+    private static boolean isDevelopment() {
         return System.getProperty("lasta.env") == null;
     }
 }

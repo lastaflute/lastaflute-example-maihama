@@ -23,10 +23,10 @@ import org.dbflute.tomcat.TomcatBoot;
 public class DocksideBoot { // #change_it_first
 
     public static void main(String[] args) { // e.g. java -Dlasta.env=production -jar maihama-dockside.war
-        new TomcatBoot(8091, "/dockside").asDevelopment(isNoneEnv()).bootAwait();
+        new TomcatBoot(8091, "/dockside").asDevelopment(isDevelopment()).bootAwait();
     }
 
-    private static boolean isNoneEnv() {
+    private static boolean isDevelopment() {
         return System.getProperty("lasta.env") == null;
     }
 }
