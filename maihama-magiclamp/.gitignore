@@ -1,5 +1,11 @@
+/target
+/build
+/bin
+/*.iml
+/.idea
+/.gradle
 /dist
 /node_modules
 /src/assets/javascripts/riot-components.js
-*.DS_Store
 riot-components.js
+.DS_Store

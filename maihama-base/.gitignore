@@ -1,5 +1,10 @@
 /target
+/build
 /bin
 /*.iml
 /.idea
+/.gradle
+/tomcat.*
+/dbflute-intro.*
+trial_config.ignored
 .DS_Store
