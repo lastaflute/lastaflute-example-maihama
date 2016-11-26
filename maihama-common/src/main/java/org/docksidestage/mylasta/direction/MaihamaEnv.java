@@ -254,7 +254,7 @@ public interface MaihamaEnv {
     /**
      * Get the value for the key 'jdbc.connection.pooling.size'. <br>
      * The value is, e.g. 10 <br>
-     * comment: The (max) pooling size of Seasar's connection pool
+     * comment: The (max) pooling size of connection pool
      * @return The value of found property. (NotNull: if not found, exception but basically no way)
      */
     String getJdbcConnectionPoolingSize();
@@ -262,7 +262,7 @@ public interface MaihamaEnv {
     /**
      * Get the value for the key 'jdbc.connection.pooling.size' as {@link Integer}. <br>
      * The value is, e.g. 10 <br>
-     * comment: The (max) pooling size of Seasar's connection pool
+     * comment: The (max) pooling size of connection pool
      * @return The value of found property. (NotNull: if not found, exception but basically no way)
      * @throws NumberFormatException When the property is not integer.
      */
