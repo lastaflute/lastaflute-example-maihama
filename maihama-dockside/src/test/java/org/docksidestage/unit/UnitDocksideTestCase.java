@@ -15,7 +15,10 @@
  */
 package org.docksidestage.unit;
 
+import javax.annotation.Resource;
+
 import org.dbflute.utflute.lastaflute.WebContainerTestCase;
+import org.docksidestage.app.web.base.login.DocksideLoginAssist;
 
 /**
  * Use like this:
@@ -38,4 +41,21 @@ import org.dbflute.utflute.lastaflute.WebContainerTestCase;
  * @author jflute
  */
 public abstract class UnitDocksideTestCase extends WebContainerTestCase {
+
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
+    @Resource
+    private DocksideLoginAssist loginAssist;
+
+    // ===================================================================================
+    //                                                                         Test Helper
+    //                                                                         ===========
+    protected void mockLogin() {
+        loginAssist.identityLogin(getMockLoginUserId(), op -> op.silentLogin(true));
+    }
+
+    protected int getMockLoginUserId() {
+        return 1; // always exists in database as test data
+    }
 }
