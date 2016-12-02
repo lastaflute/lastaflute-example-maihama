@@ -112,6 +112,8 @@ public class SignupAction extends HangarBaseAction {
             postcard.setMemberName(body.memberName);
             postcard.setAccount(body.memberAccount);
             postcard.setToken(signupToken);
+            postcard.async();
+            postcard.retry(3, 1000L);
         });
     }
 

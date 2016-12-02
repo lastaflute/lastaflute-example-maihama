@@ -106,6 +106,8 @@ public class SignupAction extends DocksideBaseAction {
             postcard.setMemberName(form.memberName);
             postcard.setAccount(form.memberAccount);
             postcard.setToken(signupToken);
+            postcard.async();
+            postcard.retry(3, 1000L);
         });
     }
 
