@@ -68,11 +68,7 @@ public class MemberEditAction extends DocksideBaseAction {
         validate(form, messages -> {}, () -> {
             return asHtml(path_Member_MemberEditHtml);
         });
-        Member member = new Member();
-        member.setMemberId(form.memberId);
-        member.setMemberStatusCode_Withdrawal();
-        member.setVersionNo(form.versionNo);
-        memberBhv.update(member);
+        updateMemberToWithdrawal(form);
         return redirect(MemberListAction.class);
     }
 
@@ -109,6 +105,14 @@ public class MemberEditAction extends DocksideBaseAction {
         member.setVersionNo(form.versionNo);
         memberBhv.update(member);
         return member;
+    }
+
+    private void updateMemberToWithdrawal(MemberEditForm form) {
+        Member member = new Member();
+        member.setMemberId(form.memberId);
+        member.setMemberStatusCode_Withdrawal();
+        member.setVersionNo(form.versionNo);
+        memberBhv.update(member);
     }
 
     // ===================================================================================
