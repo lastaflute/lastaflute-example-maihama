@@ -29,15 +29,18 @@ import org.dbflute.util.Srl;
  */
 public class StartupLogic {
 
+    // ===================================================================================
+    //                                                                            Dockside
+    //                                                                            ========
     public void fromDockside(File repositoryDir, String domain, String serviceName, String appName) {
-        doFromDockside(repositoryDir, domain, serviceName, appName, false);
+        newProjectFromDockside(repositoryDir, domain, serviceName, appName, false);
     }
 
     public void fromDocksideAppOnly(File repositoryDir, String domain, String serviceName, String appName) {
-        doFromDockside(repositoryDir, domain, serviceName, appName, true);
+        newProjectFromDockside(repositoryDir, domain, serviceName, appName, true);
     }
 
-    private void doFromDockside(File repositoryDir, String domain, String serviceName, String appName, boolean appOnly) {
+    protected void newProjectFromDockside(File repositoryDir, String domain, String serviceName, String appName, boolean appOnly) {
         new NewProjectCreator("dockside", repositoryDir, "maihama-dockside", original -> {
             String filtered = original;
             filtered = filterCommonItem(repositoryDir, domain, serviceName, filtered);
@@ -49,7 +52,18 @@ public class StartupLogic {
         }, appOnly).newProject();
     }
 
+    // ===================================================================================
+    //                                                                              Hangar
+    //                                                                              ======
     public void fromHangar(File repositoryDir, String domain, String serviceName, String appName) {
+        newProjectFromHangar(repositoryDir, domain, serviceName, appName, false);
+    }
+
+    public void fromHangarAppOnly(File repositoryDir, String domain, String serviceName, String appName) {
+        newProjectFromHangar(repositoryDir, domain, serviceName, appName, true);
+    }
+
+    protected void newProjectFromHangar(File repositoryDir, String domain, String serviceName, String appName, boolean appOnly) {
         new NewProjectCreator("hangar", repositoryDir, "maihama-hangar", original -> {
             String filtered = original;
             filtered = filterCommonItem(repositoryDir, domain, serviceName, filtered);
@@ -58,9 +72,12 @@ public class StartupLogic {
             filtered = replace(filtered, "new JettyBoot(8092, ", "new JettyBoot(9001, "); // as main
             filtered = replace(filtered, "new TomcatBoot(8092, ", "new TomcatBoot(9001, "); // as main
             return filtered;
-        }, false).newProject();
+        }, appOnly).newProject();
     }
 
+    // ===================================================================================
+    //                                                                        Assist Logic
+    //                                                                        ============
     protected String filterCommonItem(File repositoryDir, String domain, String serviceName, String filtered) {
         String packageName = buildPackageName(domain);
         filtered = replace(filtered, buildProjectDirPureName(repositoryDir), Srl.initUncap(serviceName)); // e.g. lastaflute-example-harbor
@@ -81,7 +98,7 @@ public class StartupLogic {
         return pkgName.replace("-", ""); // e.g. org.dockside-stage to org.docksidestage
     }
 
-    private String buildProjectDirPureName(File projectDir) { // e.g. /sea/mystic => mystic
+    protected String buildProjectDirPureName(File projectDir) { // e.g. /sea/mystic => mystic
         try {
             return Srl.substringLastRear(projectDir.getCanonicalPath(), "/"); // thanks oreilly
         } catch (IOException e) {

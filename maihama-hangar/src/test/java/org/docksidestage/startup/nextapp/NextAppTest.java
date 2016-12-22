@@ -24,12 +24,12 @@ import javax.annotation.Resource;
 
 import org.dbflute.infra.manage.refresh.DfRefreshResourceRequest;
 import org.docksidestage.app.logic.startup.StartupLogic;
-import org.docksidestage.unit.UnitDocksideTestCase;
+import org.docksidestage.unit.UnitHangarTestCase;
 
 /**
  * @author jflute
  */
-public class NextAppTest extends UnitDocksideTestCase { // tentative way
+public class NextAppTest extends UnitHangarTestCase { // tentative way
 
     @Resource
     private StartupLogic startupLogic;
@@ -37,8 +37,8 @@ public class NextAppTest extends UnitDocksideTestCase { // tentative way
     public void test_createNextApp_actually() throws Exception {
         final File repositoryDir = getProjectDir().getParentFile();
         final String domain = "dancingdb.org"; // should be same as existing project
-        final String serviceName = "showdance"; // should be same as existing project
-        final String appName = "overthewaves"; // new next application name
+        final String serviceName = "showfire"; // should be same as existing project
+        final String appName = "mysticrhythms"; // new next application name
         startupLogic.fromDocksideAppOnly(repositoryDir, domain, serviceName, appName);
         refresh(serviceName, appName); // for retry
     }

@@ -42,7 +42,7 @@ public class NewProjectCreator {
     //                                                                           =========
     protected final String appName;
     protected final File repositoryDir;
-    protected final String sourceProject;
+    protected final String sourceProject; // e.g. maihama-dockside
     protected final ServiceNameFilter serviceNameFilter;
     protected final boolean appOnly;
 
