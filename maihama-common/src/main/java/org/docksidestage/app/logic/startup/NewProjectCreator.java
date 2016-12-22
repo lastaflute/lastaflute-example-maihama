@@ -44,15 +44,18 @@ public class NewProjectCreator {
     protected final File repositoryDir;
     protected final String sourceProject;
     protected final ServiceNameFilter serviceNameFilter;
+    protected final boolean appOnly;
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public NewProjectCreator(String appName, File repositoryDir, String sourceProject, ServiceNameFilter serviceNameFilter) {
+    public NewProjectCreator(String appName, File repositoryDir, String sourceProject, ServiceNameFilter serviceNameFilter,
+            boolean appOnly) {
         this.appName = appName;
         this.repositoryDir = repositoryDir;
         this.sourceProject = sourceProject;
         this.serviceNameFilter = serviceNameFilter;
+        this.appOnly = appOnly;
     }
 
     public static interface ServiceNameFilter {
@@ -64,7 +67,15 @@ public class NewProjectCreator {
     //                                                                         ===========
     public void newProject() {
         final File[] dirs = repositoryDir.listFiles(file -> {
-            return file.isDirectory() && Srl.containsAny(file.getName(), "-base", "-common", sourceProject);
+            if (!file.isDirectory()) {
+                return false;
+            }
+            final String fileName = file.getName();
+            if (appOnly) {
+                return Srl.containsAny(fileName, sourceProject);
+            } else {
+                return Srl.containsAny(fileName, "-base", "-common", sourceProject);
+            }
         });
         if (dirs == null) {
             throw new IllegalStateException("Not found the sub directories: " + repositoryDir);

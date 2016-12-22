@@ -30,6 +30,14 @@ import org.dbflute.util.Srl;
 public class StartupLogic {
 
     public void fromDockside(File repositoryDir, String domain, String serviceName, String appName) {
+        doFromDockside(repositoryDir, domain, serviceName, appName, false);
+    }
+
+    public void fromDocksideAppOnly(File repositoryDir, String domain, String serviceName, String appName) {
+        doFromDockside(repositoryDir, domain, serviceName, appName, true);
+    }
+
+    private void doFromDockside(File repositoryDir, String domain, String serviceName, String appName, boolean appOnly) {
         new NewProjectCreator("dockside", repositoryDir, "maihama-dockside", original -> {
             String filtered = original;
             filtered = filterCommonItem(repositoryDir, domain, serviceName, filtered);
@@ -38,7 +46,7 @@ public class StartupLogic {
             filtered = replace(filtered, "new JettyBoot(8091, ", "new JettyBoot(9001, ");
             filtered = replace(filtered, "new TomcatBoot(8091, ", "new TomcatBoot(9001, ");
             return filtered;
-        }).newProject();
+        }, appOnly).newProject();
     }
 
     public void fromHangar(File repositoryDir, String domain, String serviceName, String appName) {
@@ -50,7 +58,7 @@ public class StartupLogic {
             filtered = replace(filtered, "new JettyBoot(8092, ", "new JettyBoot(9001, "); // as main
             filtered = replace(filtered, "new TomcatBoot(8092, ", "new TomcatBoot(9001, "); // as main
             return filtered;
-        }).newProject();
+        }, false).newProject();
     }
 
     protected String filterCommonItem(File repositoryDir, String domain, String serviceName, String filtered) {
