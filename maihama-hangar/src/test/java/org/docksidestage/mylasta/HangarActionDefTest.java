@@ -56,6 +56,6 @@ public class HangarActionDefTest extends UnitHangarTestCase {
     }
 
     public void test_lastaPresentsSomethingPolice() throws Exception {
-        policeStoryOfJavaClassChase(new LastaPresentsSomethingPolice());
+        policeStoryOfJavaClassChase(new LastaPresentsSomethingPolice().formImmutable());
     }
 }
