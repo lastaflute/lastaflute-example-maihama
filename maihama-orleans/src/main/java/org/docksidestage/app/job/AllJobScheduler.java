@@ -43,7 +43,6 @@ public class AllJobScheduler implements LaJobScheduler {
         cron.register("*/1 * * * *", LandJob.class, quitIfConcurrent(), op -> op.params(() -> {
             return DfCollectionUtil.newHashMap("showbase", "oneman");
         }));
-
     }
 
     @Override
