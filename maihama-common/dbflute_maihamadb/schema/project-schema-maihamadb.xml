@@ -307,7 +307,7 @@
     <table
         comment="会員退会情報 : 退会会員の退会に関する詳細な情報。&#xa;退会会員のみデータが存在し、&quot;1 : 0..1&quot; のパターンの one-to-one である。&#xa;共通カラムがあってバージョンNOがないパターン。&#xa;基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。"
         name="member_withdrawal" schema="maihamadb.$$NoNameSchema$$" type="TABLE">
-        <column comment="メンバーID : 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。"
+        <column comment="会員ID : 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。"
             dbType="INT" javaType="Integer" name="MEMBER_ID"
             pkName="PRIMARY" pkPosition="1" primaryKey="true"
             required="true" size="10" type="INTEGER"/>
@@ -323,16 +323,18 @@
             comment="退会日時 : 退会した瞬間の日時。&#xa;正式会員日時と違い、こっちは one-to-one の別テーブルで管理されている。"
             dbType="DATETIME" javaType="java.time.LocalDateTime"
             name="WITHDRAWAL_DATETIME" required="true" size="19" type="TIMESTAMP"/>
-        <column comment="登録日付時間" dbType="DATETIME"
+        <column comment="登録日時 : レコードが登録された日時" dbType="DATETIME"
             javaType="java.time.LocalDateTime" name="REGISTER_DATETIME"
             required="true" size="19" type="TIMESTAMP"/>
-        <column comment="登録ユーザ" dbType="VARCHAR" javaType="String"
-            name="REGISTER_USER" required="true" size="200" type="VARCHAR"/>
-        <column comment="更新日時" dbType="DATETIME"
+        <column comment="登録ユーザー : レコードを登録したユーザー" dbType="VARCHAR"
+            javaType="String" name="REGISTER_USER" required="true"
+            size="200" type="VARCHAR"/>
+        <column comment="更新日時 : レコードが(最後に)更新された日時" dbType="DATETIME"
             javaType="java.time.LocalDateTime" name="UPDATE_DATETIME"
             required="true" size="19" type="TIMESTAMP"/>
-        <column comment="更新ユーザ" dbType="VARCHAR" javaType="String"
-            name="UPDATE_USER" required="true" size="200" type="VARCHAR"/>
+        <column comment="更新ユーザー : レコードを(最後に)更新したユーザー" dbType="VARCHAR"
+            javaType="String" name="UPDATE_USER" required="true"
+            size="200" type="VARCHAR"/>
         <foreign-key foreignSchema="maihamadb.$$NoNameSchema$$"
             foreignTable="member" name="FK_MEMBER_WITHDRAWAL_MEMBER">
             <reference foreign="MEMBER_ID" local="MEMBER_ID"/>

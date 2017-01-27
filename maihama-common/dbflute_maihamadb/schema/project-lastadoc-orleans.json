@@ -1,784 +1,825 @@
 {
   "actionDocMetaList": [
     {
-      "url": "/member/add/",
-      "typeName": "org.docksidestage.app.web.member.MemberAddAction",
-      "simpleTypeName": "MemberAddAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
-      "methodName": "index",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Member_MemberAddJsp)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/member/add/register",
-      "typeName": "org.docksidestage.app.web.member.MemberAddAction",
-      "simpleTypeName": "MemberAddAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
-      "methodName": "register",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": {
-        "name": null,
-        "typeName": "org.docksidestage.app.web.member.MemberAddForm",
-        "simpleTypeName": "MemberAddForm",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "memberName",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "memberAccount",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "birthdate",
-            "typeName": "java.time.LocalDate",
-            "simpleTypeName": "LocalDate",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "memberStatus",
-            "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required"
-            ],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Member_MemberAddJsp),redirect(MemberListAction.class)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/member/edit/{memberId:Integer}",
-      "typeName": "org.docksidestage.app.web.member.MemberEditAction",
-      "simpleTypeName": "MemberEditAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
-      "methodName": "index",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Member_MemberEditJsp)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/member/edit/update",
-      "typeName": "org.docksidestage.app.web.member.MemberEditAction",
-      "simpleTypeName": "MemberEditAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
-      "methodName": "update",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": {
-        "name": null,
-        "typeName": "org.docksidestage.app.web.member.MemberEditForm",
-        "simpleTypeName": "MemberEditForm",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "memberId",
-            "typeName": "java.lang.Integer",
-            "simpleTypeName": "Integer",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required{groups\u003d[ClientError]}"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "memberName",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "memberAccount",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "birthdate",
-            "typeName": "java.time.LocalDate",
-            "simpleTypeName": "LocalDate",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "formalizedDate",
-            "typeName": "java.time.LocalDate",
-            "simpleTypeName": "LocalDate",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "memberStatus",
-            "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "latestLoginDatetime",
-            "typeName": "java.time.LocalDateTime",
-            "simpleTypeName": "LocalDateTime",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required{groups\u003d[ClientError]}"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "updateDatetime",
-            "typeName": "java.time.LocalDateTime",
-            "simpleTypeName": "LocalDateTime",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required{groups\u003d[ClientError]}"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "previousStatus",
-            "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required{groups\u003d[ClientError]}"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "versionNo",
-            "typeName": "java.lang.Long",
-            "simpleTypeName": "Long",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required{groups\u003d[ClientError]}"
-            ],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Member_MemberEditJsp),redirectById(MemberEditAction.class, member.getMemberId()",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/member/edit/withdrawal",
-      "typeName": "org.docksidestage.app.web.member.MemberEditAction",
-      "simpleTypeName": "MemberEditAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
-      "methodName": "withdrawal",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": {
-        "name": null,
-        "typeName": "org.docksidestage.app.web.member.MemberEditForm",
-        "simpleTypeName": "MemberEditForm",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "memberId",
-            "typeName": "java.lang.Integer",
-            "simpleTypeName": "Integer",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required{groups\u003d[ClientError]}"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "memberName",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "memberAccount",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "birthdate",
-            "typeName": "java.time.LocalDate",
-            "simpleTypeName": "LocalDate",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "formalizedDate",
-            "typeName": "java.time.LocalDate",
-            "simpleTypeName": "LocalDate",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "memberStatus",
-            "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "latestLoginDatetime",
-            "typeName": "java.time.LocalDateTime",
-            "simpleTypeName": "LocalDateTime",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required{groups\u003d[ClientError]}"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "updateDatetime",
-            "typeName": "java.time.LocalDateTime",
-            "simpleTypeName": "LocalDateTime",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required{groups\u003d[ClientError]}"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "previousStatus",
-            "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required{groups\u003d[ClientError]}"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "versionNo",
-            "typeName": "java.lang.Long",
-            "simpleTypeName": "Long",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Required{groups\u003d[ClientError]}"
-            ],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Member_MemberEditJsp),redirect(MemberListAction.class)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/member/list/{pageNumber:OptionalThing\u003cInteger\u003e}",
-      "typeName": "org.docksidestage.app.web.member.MemberListAction",
-      "simpleTypeName": "MemberListAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
-      "methodName": "index",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": {
-        "name": null,
-        "typeName": "org.docksidestage.app.web.member.MemberSearchForm",
-        "simpleTypeName": "MemberSearchForm",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "memberName",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "memberStatus",
-            "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "purchaseProductName",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "unpaid",
-            "typeName": "boolean",
-            "simpleTypeName": "boolean",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "formalizedFrom",
-            "typeName": "java.time.LocalDate",
-            "simpleTypeName": "LocalDate",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "formalizedTo",
-            "typeName": "java.time.LocalDate",
-            "simpleTypeName": "LocalDate",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Member_MemberListJsp),mappingToBean(member),asHtml(path_Member_MemberListJsp)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/member/purchase/list/{memberId:Integer}/{pageNumber:Integer}",
-      "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListAction",
-      "simpleTypeName": "MemberPurchaseListAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
-      "methodName": "index",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_MemberPurchase_MemberPurchaseListJsp)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/mypage/",
-      "typeName": "org.docksidestage.app.web.mypage.MypageAction",
-      "simpleTypeName": "MypageAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
-      "methodName": "index",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "new MypageProductBean(member),asHtml(path_Mypage_MypageJsp)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/product/detail/{productId:Integer}",
+      "url": "/product/detail/{productId}",
+      "type": "org.docksidestage.app.web.product.ProductDetailAction",
       "typeName": "org.docksidestage.app.web.product.ProductDetailAction",
       "simpleTypeName": "ProductDetailAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
+      "description": "@author iwamatsu0430",
+      "typeComment": "@author iwamatsu0430\n@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "productBhv",
+          "type": "org.docksidestage.dbflute.exbhv.ProductBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.ProductBhv",
+          "simpleTypeName": "ProductBhv",
+          "value": null,
+          "description": "The behavior of PRODUCT.",
+          "comment": "The behavior of PRODUCT.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
       "methodName": "index",
       "methodComment": null,
+      "annotationTypeList": [
+        {
+          "h": {
+            "type": "org.lastaflute.web.login.AllowAnyoneAccess",
+            "memberValues": {}
+          }
+        },
+        {
+          "h": {
+            "type": "org.lastaflute.web.Execute",
+            "memberValues": {
+              "suppressValidatorCallCheck": false,
+              "sqlExecutionCountLimit": -1,
+              "urlPattern": "",
+              "suppressTransaction": false
+            }
+          }
+        }
+      ],
       "annotationList": [
         "AllowAnyoneAccess",
         "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "productId",
+          "type": "java.lang.Integer",
+          "typeName": "java.lang.Integer",
+          "simpleTypeName": "Integer",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [],
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
       ],
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Product_ProductListJsp),asHtml(path_Product_ProductDetailJsp)",
+        "type": "org.lastaflute.web.response.JsonResponse",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.product.ProductDetailBean\u003e",
+        "simpleTypeName": "JsonResponse\u003cProductDetailBean\u003e",
+        "value": "asJson(mappingToBean(product)",
         "description": null,
         "comment": null,
+        "annotationTypeList": null,
         "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
+        "nestTypeDocMetaList": [
+          {
+            "name": "productId",
+            "type": "java.lang.Integer",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "productName",
+            "type": "java.lang.String",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "categoryName",
+            "type": "java.lang.String",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "regularPrice",
+            "type": "java.lang.Integer",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "productHandleCode",
+            "type": "java.lang.String",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 42,
+      "methodLineCount": 4
     },
     {
-      "url": "/product/list/{pageNumber:OptionalThing\u003cInteger\u003e}",
+      "url": "/product/list/{pageNumber}",
+      "type": "org.docksidestage.app.web.product.ProductListAction",
       "typeName": "org.docksidestage.app.web.product.ProductListAction",
       "simpleTypeName": "ProductListAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
+      "description": "@author iwamatsu0430",
+      "typeComment": "@author iwamatsu0430\n@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "productBhv",
+          "type": "org.docksidestage.dbflute.exbhv.ProductBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.ProductBhv",
+          "simpleTypeName": "ProductBhv",
+          "value": null,
+          "description": "The behavior of PRODUCT.",
+          "comment": "The behavior of PRODUCT.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "productStatusBhv",
+          "type": "org.docksidestage.dbflute.exbhv.ProductStatusBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.ProductStatusBhv",
+          "simpleTypeName": "ProductStatusBhv",
+          "value": null,
+          "description": "The behavior of PRODUCT_STATUS.",
+          "comment": "The behavior of PRODUCT_STATUS.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "pagingAssist",
+          "type": "org.docksidestage.app.web.base.paging.PagingAssist",
+          "typeName": "org.docksidestage.app.web.base.paging.PagingAssist",
+          "simpleTypeName": "PagingAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
       "methodName": "index",
       "methodComment": null,
+      "annotationTypeList": [
+        {
+          "h": {
+            "type": "org.lastaflute.web.login.AllowAnyoneAccess",
+            "memberValues": {}
+          }
+        },
+        {
+          "h": {
+            "type": "org.lastaflute.web.Execute",
+            "memberValues": {
+              "suppressValidatorCallCheck": false,
+              "sqlExecutionCountLimit": -1,
+              "urlPattern": "",
+              "suppressTransaction": false
+            }
+          }
+        }
+      ],
       "annotationList": [
         "AllowAnyoneAccess",
         "Execute"
       ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "pageNumber",
+          "type": "org.dbflute.optional.OptionalThing",
+          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.Integer\u003e",
+          "simpleTypeName": "OptionalThing\u003cInteger\u003e",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [],
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
       "formTypeDocMeta": {
         "name": null,
-        "typeName": "org.docksidestage.app.web.product.ProductSearchForm",
-        "simpleTypeName": "ProductSearchForm",
+        "type": "org.docksidestage.app.web.product.ProductSearchBody",
+        "typeName": "org.docksidestage.app.web.product.ProductSearchBody",
+        "simpleTypeName": "ProductSearchBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "@author iwamatsu0430",
+        "comment": "@author iwamatsu0430\n@author jflute",
+        "annotationTypeList": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
             "name": "productName",
+            "type": "java.lang.String",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.hibernate.validator.constraints.Length",
+                  "memberValues": {
+                    "groups": [],
+                    "min": 0,
+                    "message": "{org.hibernate.validator.constraints.Length.message}",
+                    "max": 10,
+                    "payload": []
+                  }
+                }
+              }
+            ],
+            "annotationList": [
+              "Length{max\u003d10}"
+            ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "productStatus",
+            "type": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
             "simpleTypeName": "ProductStatus",
-            "value": null,
+            "value": "{PST\u003dProductionStop, SST\u003dSaleStop, ONS\u003dOnSaleProduction}",
             "description": null,
             "comment": null,
+            "annotationTypeList": [],
             "annotationList": [],
             "nestTypeDocMetaList": []
           },
           {
             "name": "purchaseMemberName",
+            "type": "java.lang.String",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.hibernate.validator.constraints.Length",
+                  "memberValues": {
+                    "groups": [],
+                    "min": 0,
+                    "message": "{org.hibernate.validator.constraints.Length.message}",
+                    "max": 5,
+                    "payload": []
+                  }
+                }
+              }
+            ],
+            "annotationList": [
+              "Length{max\u003d5}"
+            ],
             "nestTypeDocMetaList": []
           }
         ]
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Product_ProductListJsp),mappingToBean(product),asHtml(path_Product_ProductListJsp)",
+        "type": "org.lastaflute.web.response.JsonResponse",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingResult\u003corg.docksidestage.app.web.product.ProductRowBean\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cSearchPagingResult\u003cProductRowBean\u003e\u003e",
+        "value": "mappingToBean(product),asJson(result)",
         "description": null,
         "comment": null,
+        "annotationTypeList": null,
         "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/profile/",
-      "typeName": "org.docksidestage.app.web.profile.ProfileAction",
-      "simpleTypeName": "ProfileAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
-      "methodName": "index",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Profile_ProfileJsp)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/purchase/list/{pageNumber:OptionalThing\u003cInteger\u003e}",
-      "typeName": "org.docksidestage.app.web.purchase.PurchaseListAction",
-      "simpleTypeName": "PurchaseListAction",
-      "description": "Action class for purchase list page.",
-      "typeComment": "/**\n * Action class for purchase list page.\n * @author toshiaki.arai\n */",
-      "methodName": "index",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": {
-        "name": null,
-        "typeName": "org.docksidestage.app.web.purchase.PurchaseSearchForm",
-        "simpleTypeName": "PurchaseSearchForm",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
+        "nestTypeDocMetaList": [
+          {
+            "name": "pageSize",
+            "type": "java.lang.Integer",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": "row count per one page",
+            "comment": "row count per one page",
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "currentPageNumber",
+            "type": "java.lang.Integer",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": "number of current page",
+            "comment": "number of current page",
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "allRecordCount",
+            "type": "java.lang.Integer",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": "count of all records",
+            "comment": "count of all records",
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "allPageCount",
+            "type": "java.lang.Integer",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": "count of all pages",
+            "comment": "count of all pages",
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "rows",
+            "type": "java.util.List",
+            "typeName": "java.util.List\u003corg.docksidestage.app.web.product.ProductRowBean\u003e",
+            "simpleTypeName": "List\u003cProductRowBean\u003e",
+            "value": null,
+            "description": "paging data for current page",
+            "comment": "paging data for current page",
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "javax.validation.constraints.NotNull",
+                  "memberValues": {
+                    "message": "{javax.validation.constraints.NotNull.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              },
+              {
+                "h": {
+                  "type": "javax.validation.Valid",
+                  "memberValues": {}
+                }
+              }
+            ],
+            "annotationList": [
+              "NotNull",
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "productId",
+                "type": "java.lang.Integer",
+                "typeName": "java.lang.Integer",
+                "simpleTypeName": "Integer",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationTypeList": [
+                  {
+                    "h": {
+                      "type": "org.lastaflute.web.validation.Required",
+                      "memberValues": {
+                        "message": "{org.lastaflute.validator.constraints.Required.message}",
+                        "groups": [],
+                        "payload": []
+                      }
+                    }
+                  }
+                ],
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "productName",
+                "type": "java.lang.String",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationTypeList": [
+                  {
+                    "h": {
+                      "type": "org.lastaflute.web.validation.Required",
+                      "memberValues": {
+                        "message": "{org.lastaflute.validator.constraints.Required.message}",
+                        "groups": [],
+                        "payload": []
+                      }
+                    }
+                  }
+                ],
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "productStatusName",
+                "type": "java.lang.String",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationTypeList": [
+                  {
+                    "h": {
+                      "type": "org.lastaflute.web.validation.Required",
+                      "memberValues": {
+                        "message": "{org.lastaflute.validator.constraints.Required.message}",
+                        "groups": [],
+                        "payload": []
+                      }
+                    }
+                  }
+                ],
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "regularPrice",
+                "type": "java.lang.Integer",
+                "typeName": "java.lang.Integer",
+                "simpleTypeName": "Integer",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationTypeList": [
+                  {
+                    "h": {
+                      "type": "org.lastaflute.web.validation.Required",
+                      "memberValues": {
+                        "message": "{org.lastaflute.validator.constraints.Required.message}",
+                        "groups": [],
+                        "payload": []
+                      }
+                    }
+                  }
+                ],
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              }
+            ]
+          }
+        ]
       },
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "mappingToBean(purchase),asHtml(path_Purchase_PurchaseListJsp)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
+      "fileLineCount": 70,
+      "methodLineCount": 11
     },
     {
       "url": "/root/",
+      "type": "org.docksidestage.app.web.RootAction",
       "typeName": "org.docksidestage.app.web.RootAction",
       "simpleTypeName": "RootAction",
       "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
       "methodName": "index",
       "methodComment": null,
+      "annotationTypeList": [
+        {
+          "h": {
+            "type": "org.lastaflute.web.login.AllowAnyoneAccess",
+            "memberValues": {}
+          }
+        },
+        {
+          "h": {
+            "type": "org.lastaflute.web.Execute",
+            "memberValues": {
+              "suppressValidatorCallCheck": false,
+              "sqlExecutionCountLimit": -1,
+              "urlPattern": "",
+              "suppressTransaction": false
+            }
+          }
+        }
+      ],
       "annotationList": [
         "AllowAnyoneAccess",
         "Execute"
       ],
+      "parameterTypeDocMetaList": [],
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "type": "org.lastaflute.web.response.HtmlResponse",
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
-        "value": "redirect(MypageAction.class)",
+        "value": null,
         "description": null,
         "comment": null,
+        "annotationTypeList": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
-      }
+      },
+      "fileLineCount": 7,
+      "methodLineCount": 3
     },
     {
       "url": "/signin/",
+      "type": "org.docksidestage.app.web.signin.SigninAction",
       "typeName": "org.docksidestage.app.web.signin.SigninAction",
       "simpleTypeName": "SigninAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
+      "description": "@author iwamatsu0430",
+      "typeComment": "@author iwamatsu0430\n@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "loginAssist",
+          "type": "org.docksidestage.app.web.base.login.OrleansLoginAssist",
+          "typeName": "org.docksidestage.app.web.base.login.OrleansLoginAssist",
+          "simpleTypeName": "OrleansLoginAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
       "methodName": "index",
       "methodComment": null,
+      "annotationTypeList": [
+        {
+          "h": {
+            "type": "org.lastaflute.web.Execute",
+            "memberValues": {
+              "suppressValidatorCallCheck": false,
+              "sqlExecutionCountLimit": -1,
+              "urlPattern": "",
+              "suppressTransaction": false
+            }
+          }
+        }
+      ],
       "annotationList": [
         "Execute"
       ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "redirect(RootAction.class),asHtml(path_Signin_SigninJsp)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/signin/signin",
-      "typeName": "org.docksidestage.app.web.signin.SigninAction",
-      "simpleTypeName": "SigninAction",
-      "description": "@author jflute",
-      "typeComment": "/**\n * @author jflute\n */",
-      "methodName": "signin",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
+      "parameterTypeDocMetaList": [],
       "formTypeDocMeta": {
         "name": null,
-        "typeName": "org.docksidestage.app.web.signin.SigninForm",
-        "simpleTypeName": "SigninForm",
+        "type": "org.docksidestage.app.web.signin.SigninBody",
+        "typeName": "org.docksidestage.app.web.signin.SigninBody",
+        "simpleTypeName": "SigninBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "The form of member\u0027s Login.",
+        "comment": "The form of member\u0027s Login.\n\n@author iwamatsu0430\n@author jflute",
+        "annotationTypeList": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
-            "name": "email",
+            "name": "account",
+            "type": "java.lang.String",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
             "description": null,
             "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
             "annotationList": [
               "Required"
             ],
@@ -786,187 +827,487 @@
           },
           {
             "name": "password",
+            "type": "java.lang.String",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
             "description": null,
             "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
             "annotationList": [
               "Required"
             ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "rememberMe",
-            "typeName": "boolean",
-            "simpleTypeName": "boolean",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
             "nestTypeDocMetaList": []
           }
         ]
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Signin_SigninJsp),docksideLoginAssist.loginRedirect(form.email, form.password,  op -\u003e op.rememberMe(form.rememberMe),redirect(RootAction.class)",
+        "type": "org.lastaflute.web.response.JsonResponse",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
+        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
+        "value": "JsonResponse.asEmptyBody()",
         "description": null,
         "comment": null,
+        "annotationTypeList": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/signin/reminder/",
-      "typeName": "org.docksidestage.app.web.signin.SigninReminderAction",
-      "simpleTypeName": "SigninReminderAction",
-      "description": "@author masaki.kamachi",
-      "typeComment": "/**\n * @author masaki.kamachi\n */",
-      "methodName": "index",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Signin_SigninReminderJsp)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/signout/",
-      "typeName": "org.docksidestage.app.web.signout.SignoutAction",
-      "simpleTypeName": "SignoutAction",
-      "description": "@author toshiaki.arai",
-      "typeComment": "/**\n * @author toshiaki.arai\n * @author jflute\n */",
-      "methodName": "index",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "redirect(SigninAction.class)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
+      },
+      "fileLineCount": 30,
+      "methodLineCount": 6
     },
     {
       "url": "/signup/",
+      "type": "org.docksidestage.app.web.signup.SignupAction",
       "typeName": "org.docksidestage.app.web.signup.SignupAction",
       "simpleTypeName": "SignupAction",
-      "description": "@author annie_pocket",
-      "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */",
+      "description": "@author iwamatsu0430",
+      "typeComment": "@author iwamatsu0430\n@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "SIGNUP_TOKEN_KEY",
+          "type": "java.lang.String",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [],
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "primaryCipher",
+          "type": "org.lastaflute.core.security.PrimaryCipher",
+          "typeName": "org.lastaflute.core.security.PrimaryCipher",
+          "simpleTypeName": "PrimaryCipher",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "postbox",
+          "type": "org.lastaflute.core.mail.Postbox",
+          "typeName": "org.lastaflute.core.mail.Postbox",
+          "simpleTypeName": "Postbox",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "responseManager",
+          "type": "org.lastaflute.web.servlet.request.ResponseManager",
+          "typeName": "org.lastaflute.web.servlet.request.ResponseManager",
+          "simpleTypeName": "ResponseManager",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "sessionManager",
+          "type": "org.lastaflute.web.servlet.session.SessionManager",
+          "typeName": "org.lastaflute.web.servlet.session.SessionManager",
+          "simpleTypeName": "SessionManager",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "config",
+          "type": "org.docksidestage.mylasta.direction.OrleansConfig",
+          "typeName": "org.docksidestage.mylasta.direction.OrleansConfig",
+          "simpleTypeName": "OrleansConfig",
+          "value": null,
+          "description": "@author FreeGen",
+          "comment": "@author FreeGen",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "loginAssist",
+          "type": "org.docksidestage.app.web.base.login.OrleansLoginAssist",
+          "typeName": "org.docksidestage.app.web.base.login.OrleansLoginAssist",
+          "simpleTypeName": "OrleansLoginAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "memberBhv",
+          "type": "org.docksidestage.dbflute.exbhv.MemberBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
+          "simpleTypeName": "MemberBhv",
+          "value": null,
+          "description": "The behavior of MEMBER.",
+          "comment": "The behavior of MEMBER.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "memberSecurityBhv",
+          "type": "org.docksidestage.dbflute.exbhv.MemberSecurityBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.MemberSecurityBhv",
+          "simpleTypeName": "MemberSecurityBhv",
+          "value": null,
+          "description": "The behavior of MEMBER_SECURITY.",
+          "comment": "The behavior of MEMBER_SECURITY.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "memberServiceBhv",
+          "type": "org.docksidestage.dbflute.exbhv.MemberServiceBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.MemberServiceBhv",
+          "simpleTypeName": "MemberServiceBhv",
+          "value": null,
+          "description": "The behavior of MEMBER_SERVICE.",
+          "comment": "The behavior of MEMBER_SERVICE.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
       "methodName": "index",
       "methodComment": null,
+      "annotationTypeList": [
+        {
+          "h": {
+            "type": "org.lastaflute.web.login.AllowAnyoneAccess",
+            "memberValues": {}
+          }
+        },
+        {
+          "h": {
+            "type": "org.lastaflute.web.Execute",
+            "memberValues": {
+              "suppressValidatorCallCheck": false,
+              "sqlExecutionCountLimit": -1,
+              "urlPattern": "",
+              "suppressTransaction": false
+            }
+          }
+        }
+      ],
       "annotationList": [
         "AllowAnyoneAccess",
         "Execute"
       ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Signup_SignupJsp)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/signup/doSignup",
-      "typeName": "org.docksidestage.app.web.signup.SignupAction",
-      "simpleTypeName": "SignupAction",
-      "description": "@author annie_pocket",
-      "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */",
-      "methodName": "doSignup",
-      "methodComment": null,
-      "annotationList": [
-        "AllowAnyoneAccess",
-        "Execute"
-      ],
+      "parameterTypeDocMetaList": [],
       "formTypeDocMeta": {
         "name": null,
-        "typeName": "org.docksidestage.app.web.signup.SignupForm",
-        "simpleTypeName": "SignupForm",
+        "type": "org.docksidestage.app.web.signup.SignupBody",
+        "typeName": "org.docksidestage.app.web.signup.SignupBody",
+        "simpleTypeName": "SignupBody",
         "value": null,
-        "description": null,
-        "comment": null,
+        "description": "@author iwamatsu0430",
+        "comment": "@author iwamatsu0430",
+        "annotationTypeList": null,
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
-            "name": "name",
+            "name": "memberName",
+            "type": "java.lang.String",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
             "description": null,
             "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
             "annotationList": [
-              "NotBlank"
+              "Required"
             ],
             "nestTypeDocMetaList": []
           },
           {
-            "name": "account",
+            "name": "memberAccount",
+            "type": "java.lang.String",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
             "description": null,
             "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
             "annotationList": [
-              "NotBlank"
+              "Required"
             ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "password",
+            "type": "java.lang.String",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
             "description": null,
             "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
             "annotationList": [
-              "NotBlank"
+              "Required"
             ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "reminderQuestion",
+            "type": "java.lang.String",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
             "description": null,
             "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
             "annotationList": [
-              "NotBlank"
+              "Required"
             ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "reminderAnswer",
+            "type": "java.lang.String",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
             "description": null,
             "comment": null,
+            "annotationTypeList": [
+              {
+                "h": {
+                  "type": "org.lastaflute.web.validation.Required",
+                  "memberValues": {
+                    "message": "{org.lastaflute.validator.constraints.Required.message}",
+                    "groups": [],
+                    "payload": []
+                  }
+                }
+              }
+            ],
             "annotationList": [
-              "NotBlank"
+              "Required"
             ],
             "nestTypeDocMetaList": []
           }
@@ -974,241 +1315,367 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Signup_SignupJsp),redirect(MypageAction.class)",
+        "type": "org.lastaflute.web.response.JsonResponse",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
+        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
+        "value": "JsonResponse.asEmptyBody()",
         "description": null,
         "comment": null,
+        "annotationTypeList": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
-      }
+      },
+      "fileLineCount": 120,
+      "methodLineCount": 9
     },
     {
-      "url": "/signup/register",
+      "url": "/signup/formalize/{account}/{token}",
+      "type": "org.docksidestage.app.web.signup.SignupAction",
       "typeName": "org.docksidestage.app.web.signup.SignupAction",
       "simpleTypeName": "SignupAction",
-      "description": "@author annie_pocket",
-      "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */",
-      "methodName": "register",
+      "description": "@author iwamatsu0430",
+      "typeComment": "@author iwamatsu0430\n@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "SIGNUP_TOKEN_KEY",
+          "type": "java.lang.String",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [],
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "primaryCipher",
+          "type": "org.lastaflute.core.security.PrimaryCipher",
+          "typeName": "org.lastaflute.core.security.PrimaryCipher",
+          "simpleTypeName": "PrimaryCipher",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "postbox",
+          "type": "org.lastaflute.core.mail.Postbox",
+          "typeName": "org.lastaflute.core.mail.Postbox",
+          "simpleTypeName": "Postbox",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "responseManager",
+          "type": "org.lastaflute.web.servlet.request.ResponseManager",
+          "typeName": "org.lastaflute.web.servlet.request.ResponseManager",
+          "simpleTypeName": "ResponseManager",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "sessionManager",
+          "type": "org.lastaflute.web.servlet.session.SessionManager",
+          "typeName": "org.lastaflute.web.servlet.session.SessionManager",
+          "simpleTypeName": "SessionManager",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "config",
+          "type": "org.docksidestage.mylasta.direction.OrleansConfig",
+          "typeName": "org.docksidestage.mylasta.direction.OrleansConfig",
+          "simpleTypeName": "OrleansConfig",
+          "value": null,
+          "description": "@author FreeGen",
+          "comment": "@author FreeGen",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "loginAssist",
+          "type": "org.docksidestage.app.web.base.login.OrleansLoginAssist",
+          "typeName": "org.docksidestage.app.web.base.login.OrleansLoginAssist",
+          "simpleTypeName": "OrleansLoginAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "memberBhv",
+          "type": "org.docksidestage.dbflute.exbhv.MemberBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
+          "simpleTypeName": "MemberBhv",
+          "value": null,
+          "description": "The behavior of MEMBER.",
+          "comment": "The behavior of MEMBER.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "memberSecurityBhv",
+          "type": "org.docksidestage.dbflute.exbhv.MemberSecurityBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.MemberSecurityBhv",
+          "simpleTypeName": "MemberSecurityBhv",
+          "value": null,
+          "description": "The behavior of MEMBER_SECURITY.",
+          "comment": "The behavior of MEMBER_SECURITY.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "memberServiceBhv",
+          "type": "org.docksidestage.dbflute.exbhv.MemberServiceBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.MemberServiceBhv",
+          "simpleTypeName": "MemberServiceBhv",
+          "value": null,
+          "description": "The behavior of MEMBER_SERVICE.",
+          "comment": "The behavior of MEMBER_SERVICE.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationTypeList": [
+            {
+              "h": {
+                "type": "javax.annotation.Resource",
+                "memberValues": {
+                  "shareable": true,
+                  "lookup": "",
+                  "name": "",
+                  "description": "",
+                  "authenticationType": "CONTAINER",
+                  "type": "java.lang.Object",
+                  "mappedName": ""
+                }
+              }
+            }
+          ],
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "formalize",
       "methodComment": null,
+      "annotationTypeList": [
+        {
+          "h": {
+            "type": "org.lastaflute.web.login.AllowAnyoneAccess",
+            "memberValues": {}
+          }
+        },
+        {
+          "h": {
+            "type": "org.lastaflute.web.Execute",
+            "memberValues": {
+              "suppressValidatorCallCheck": false,
+              "sqlExecutionCountLimit": -1,
+              "urlPattern": "",
+              "suppressTransaction": false
+            }
+          }
+        }
+      ],
       "annotationList": [
         "AllowAnyoneAccess",
         "Execute"
       ],
-      "formTypeDocMeta": {
-        "name": null,
-        "typeName": "org.docksidestage.app.web.signup.SignupForm",
-        "simpleTypeName": "SignupForm",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "name",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "NotBlank"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "account",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "NotBlank"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "password",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "NotBlank"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "reminderQuestion",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "NotBlank"
-            ],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "reminderAnswer",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "NotBlank"
-            ],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "redirect(SigninAction.class)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/withdrawal/",
-      "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalAction",
-      "simpleTypeName": "WithdrawalAction",
-      "description": "@author annie_pocket",
-      "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */",
-      "methodName": "index",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
+      "parameterTypeDocMetaList": [
+        {
+          "name": "account",
+          "type": "java.lang.String",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [],
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "token",
+          "type": "java.lang.String",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationTypeList": [],
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
       ],
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Withdrawal_WithdrawalJsp)",
+        "type": "org.lastaflute.web.response.JsonResponse",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
+        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
+        "value": "JsonResponse.asEmptyBody()",
         "description": null,
         "comment": null,
+        "annotationTypeList": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/withdrawal/confirm",
-      "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalAction",
-      "simpleTypeName": "WithdrawalAction",
-      "description": "@author annie_pocket",
-      "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */",
-      "methodName": "confirm",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": {
-        "name": null,
-        "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalForm",
-        "simpleTypeName": "WithdrawalForm",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "reasonCode",
-            "typeName": "org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason",
-            "simpleTypeName": "WithdrawalReason",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "reasonInput",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Length{max\u003d3}"
-            ],
-            "nestTypeDocMetaList": []
-          }
-        ]
       },
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "asHtml(path_Withdrawal_WithdrawalJsp),asHtml(path_Withdrawal_WithdrawalConfirmJsp)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
-    },
-    {
-      "url": "/withdrawal/done",
-      "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalAction",
-      "simpleTypeName": "WithdrawalAction",
-      "description": "@author annie_pocket",
-      "typeComment": "/**\n * @author annie_pocket\n * @author jflute\n */",
-      "methodName": "done",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "formTypeDocMeta": {
-        "name": null,
-        "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalForm",
-        "simpleTypeName": "WithdrawalForm",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "reasonCode",
-            "typeName": "org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason",
-            "simpleTypeName": "WithdrawalReason",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "reasonInput",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [
-              "Length{max\u003d3}"
-            ],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": "redirect(SignoutAction.class)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      }
+      "fileLineCount": 120,
+      "methodLineCount": 5
     }
   ]
 }
