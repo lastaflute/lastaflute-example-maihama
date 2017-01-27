@@ -63,8 +63,7 @@ public class PurchasePaymentDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((PurchasePayment)et).getPaymentAmount(), (et, vl) -> ((PurchasePayment)et).setPaymentAmount(ctb(vl)), "paymentAmount");
         setupEpg(_epgMap, et -> ((PurchasePayment)et).getPaymentDatetime(), (et, vl) -> ((PurchasePayment)et).setPaymentDatetime(ctldt(vl)), "paymentDatetime");
         setupEpg(_epgMap, et -> ((PurchasePayment)et).getPaymentMethodCode(), (et, vl) -> {
-            ColumnInfo col = columnPaymentMethodCode();
-            CDef.PaymentMethod cls = (CDef.PaymentMethod)gcls(et, col, vl);
+            CDef.PaymentMethod cls = (CDef.PaymentMethod)gcls(et, columnPaymentMethodCode(), vl);
             if (cls != null) {
                 ((PurchasePayment)et).setPaymentMethodCodeAsPaymentMethod(cls);
             } else {
