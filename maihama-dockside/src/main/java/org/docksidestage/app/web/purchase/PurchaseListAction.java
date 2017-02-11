@@ -36,7 +36,7 @@ public class PurchaseListAction extends DocksideBaseAction {
     //                                                                             =======
     @Execute
     public HtmlResponse index(OptionalThing<Integer> pageNumber, PurchaseSearchForm form) {
-        // TODO toshiaki.arai anyway, small implementation (2015/07/05)
+        // #for_now toshiaki.arai anyway, small implementation (2015/07/05)
         Integer memberId = getUserBean().get().getMemberId();
         PagingResultBean<Purchase> page = selectPurchasePage(pageNumber.orElse(1), memberId);
         List<PurchaseBean> beans = page.mappingList(purchase -> {
