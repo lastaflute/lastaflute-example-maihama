@@ -28,17 +28,27 @@ import org.lastaflute.job.LaJobRuntime;
  */
 public class SeaJob implements LaJob {
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
     @Resource
     private TransactionStage stage;
     @Resource
     private MemberBhv memberBhv;
 
+    // ===================================================================================
+    //                                                                             Job Run
+    //                                                                             =======
     @Override
     public void run(LaJobRuntime runtime) {
+        int memberId = 3; // #simple_for_example
         stage.required(tx -> {
-            Member before = memberBhv.selectByPK(3).get();
+            Member before = memberBhv.selectByPK(memberId).get();
             updateMember(before.getMemberId());
             restoreMember(before.getMemberId(), before.getMemberName()); // for test
+        });
+        runtime.showEndTitleRoll(data -> {
+            data.register("targetMember", memberId);
         });
     }
 
