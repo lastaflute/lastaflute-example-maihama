@@ -29,7 +29,7 @@ public class SeaJobTest extends UnitOrleansTestCase {
         // ## Arrange ##
         SeaJob job = new SeaJob();
         inject(job);
-        MockJobRuntime runtime = MockJobRuntime.of(SeaJob.class);
+        MockJobRuntime runtime = MockJobRuntime.of(job.getClass());
 
         // ## Act ##
         job.run(runtime);
@@ -37,6 +37,6 @@ public class SeaJobTest extends UnitOrleansTestCase {
         // ## Assert ##
         Map<String, Object> rollMap = runtime.getEndTitleRollMap();
         log(rollMap);
-        assertEquals(3, rollMap.get("targetMember"));
+        assertEquals(3, rollMap.get("targetMember")); // #simple_for_example
     }
 }
