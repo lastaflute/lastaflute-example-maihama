@@ -17,7 +17,7 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.thymeleaf.version>0.2.8</lasta.thymeleaf.version>
+		<lasta.thymeleaf.version>0.2.9</lasta.thymeleaf.version>
 		<commons.fileupload.version>1.3.1</commons.fileupload.version>
 	</properties>
 
