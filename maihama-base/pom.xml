@@ -36,7 +36,7 @@
 		<!-- Testing -->
 		<junit.version>4.8.2</junit.version> <!-- is latest version without hamcrest -->
 		<utflute.version>0.6.9</utflute.version>
-		<javaparser.version>3.0.1</javaparser.version>
+		<javaparser.version>3.1.1</javaparser.version>
 	</properties>
 
 	<modules>
