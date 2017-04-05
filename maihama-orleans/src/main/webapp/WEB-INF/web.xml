@@ -42,8 +42,8 @@
     <!-- ================================================================================= -->
     <!--                                                                        Error Page -->
     <!--                                                                        ========== -->
-	<error-page><error-code>400</error-code><location>/error/400.html</location></error-page>
-	<error-page><error-code>404</error-code><location>/error/404.html</location></error-page>
-	<error-page><error-code>500</error-code><location>/error/500.html</location></error-page>
-	<error-page><exception-type>java.lang.Exception</exception-type><location>/error/500.html</location></error-page>
+	<error-page><error-code>400</error-code><location>/error/400.json</location></error-page>
+	<error-page><error-code>404</error-code><location>/error/404.json</location></error-page>
+	<error-page><error-code>500</error-code><location>/error/500.json</location></error-page>
+	<error-page><exception-type>java.lang.Exception</exception-type><location>/error/500.json</location></error-page>
 </web-app>

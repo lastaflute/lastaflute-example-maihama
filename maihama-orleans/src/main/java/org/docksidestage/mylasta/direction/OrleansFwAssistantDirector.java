@@ -17,8 +17,10 @@ package org.docksidestage.mylasta.direction;
 
 import java.util.List;
 
+import org.docksidestage.mylasta.direction.sponsor.OrleansApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.OrleansListedClassificationProvider;
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
+import org.lastaflute.web.api.ApiFailureHook;
 
 /**
  * @author jflute
@@ -40,5 +42,10 @@ public class OrleansFwAssistantDirector extends MaihamaFwAssistantDirector {
     @Override
     protected ListedClassificationProvider createListedClassificationProvider() {
         return new OrleansListedClassificationProvider();
+    }
+
+    @Override
+    protected ApiFailureHook createApiFailureHook() {
+        return new OrleansApiFailureHook(); // for client-managed message
     }
 }

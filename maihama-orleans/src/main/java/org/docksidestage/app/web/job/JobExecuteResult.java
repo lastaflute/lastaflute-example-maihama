@@ -4,6 +4,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
+import java.util.Map;
+
+import javax.validation.constraints.NotNull;
 
 import org.lastaflute.job.LaJobHistory;
 import org.lastaflute.web.validation.Required;
@@ -21,6 +24,8 @@ public class JobExecuteResult {
     public final LocalDateTime activationTime;
     public final LocalDateTime beginTime; // null if e.g. duplicate execution
     public final LocalDateTime endTime; // me too
+    @NotNull
+    public Map<String, String> endTitleRoll;
     @Required
     public final Boolean errorEnding;
     public final String errorMessage; // null if no error e.g. quit, success
@@ -31,6 +36,7 @@ public class JobExecuteResult {
         this.activationTime = history.getActivationTime();
         this.beginTime = history.getBeginTime().orElse(null);
         this.endTime = history.getEndTime().orElse(null);
+        this.endTitleRoll = history.getEndTitleRollSnapshotMap();
         this.errorEnding = history.getExecResultType().isErrorResult(); // want to get detail info?
         this.errorMessage = history.getCause().map(cause -> buildExceptionStackTrace(cause)).orElse(null);
     }

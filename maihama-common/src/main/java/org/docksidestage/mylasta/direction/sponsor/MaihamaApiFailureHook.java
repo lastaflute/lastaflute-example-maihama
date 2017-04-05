@@ -106,8 +106,8 @@ public class MaihamaApiFailureHook implements ApiFailureHook { // #change_it for
     // ===================================================================================
     //                                                                          JSON Logic
     //                                                                          ==========
-    protected JsonResponse<UnifiedFailureResult> asJson(UnifiedFailureResult result) {
-        return new JsonResponse<UnifiedFailureResult>(result);
+    protected <RESULT> JsonResponse<RESULT> asJson(RESULT result) {
+        return new JsonResponse<RESULT>(result);
     }
 
     protected UnifiedFailureResult createFailureResult(UnifiedFailureType failureType, ApiFailureResource resource) {
@@ -156,7 +156,7 @@ public class MaihamaApiFailureHook implements ApiFailureHook { // #change_it for
     }
 
     public static enum UnifiedFailureType {
-        VALIDATION_ERROR // special type
+        VALIDATION_ERROR // big type
         , LOGIN_FAILURE, LOGIN_REQUIRED // specific type of application exception
         // you can add your application exception type if you need it
         //, ALREADY_DELETED, ALREADY_UPDATED

@@ -30,13 +30,22 @@ import org.docksidestage.mylasta.direction.sponsor.MaihamaTimeResourceProvider;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaUserLocaleProcessProvider;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaUserTimeZoneProcessProvider;
 import org.lastaflute.core.direction.CachedFwAssistantDirector;
+import org.lastaflute.core.direction.CurtainBeforeHook;
 import org.lastaflute.core.direction.FwAssistDirection;
 import org.lastaflute.core.direction.FwCoreDirection;
+import org.lastaflute.core.json.JsonResourceProvider;
 import org.lastaflute.core.security.InvertibleCryptographer;
 import org.lastaflute.core.security.OneWayCryptographer;
+import org.lastaflute.core.security.SecurityResourceProvider;
+import org.lastaflute.core.time.TimeResourceProvider;
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
 import org.lastaflute.db.direction.FwDbDirection;
+import org.lastaflute.web.api.ApiFailureHook;
 import org.lastaflute.web.direction.FwWebDirection;
+import org.lastaflute.web.path.ActionAdjustmentProvider;
+import org.lastaflute.web.servlet.cookie.CookieResourceProvider;
+import org.lastaflute.web.servlet.request.UserLocaleProcessProvider;
+import org.lastaflute.web.servlet.request.UserTimeZoneProcessProvider;
 
 /**
  * @author jflute
@@ -83,21 +92,21 @@ public abstract class MaihamaFwAssistantDirector extends CachedFwAssistantDirect
         direction.directMail(createMailDeliveryDepartmentCreator().create());
     }
 
-    protected MaihamaCurtainBeforeHook createCurtainBeforeHook() {
+    protected CurtainBeforeHook createCurtainBeforeHook() {
         return new MaihamaCurtainBeforeHook();
     }
 
-    protected MaihamaSecurityResourceProvider createSecurityResourceProvider() { // #change_it_first
+    protected SecurityResourceProvider createSecurityResourceProvider() { // #change_it_first
         final InvertibleCryptographer inver = InvertibleCryptographer.createAesCipher("maihama:dockside");
         final OneWayCryptographer oneWay = OneWayCryptographer.createSha256Cryptographer();
         return new MaihamaSecurityResourceProvider(inver, oneWay);
     }
 
-    protected MaihamaTimeResourceProvider createTimeResourceProvider() {
+    protected TimeResourceProvider createTimeResourceProvider() {
         return new MaihamaTimeResourceProvider(config);
     }
 
-    protected MaihamaJsonResourceProvider createJsonResourceProvider() {
+    protected JsonResourceProvider createJsonResourceProvider() {
         return new MaihamaJsonResourceProvider();
     }
 
@@ -127,26 +136,26 @@ public abstract class MaihamaFwAssistantDirector extends CachedFwAssistantDirect
         direction.directApiCall(createApiFailureHook());
     }
 
-    protected MaihamaUserLocaleProcessProvider createUserLocaleProcessProvider() {
+    protected UserLocaleProcessProvider createUserLocaleProcessProvider() {
         return new MaihamaUserLocaleProcessProvider();
     }
 
-    protected MaihamaUserTimeZoneProcessProvider createUserTimeZoneProcessProvider() {
+    protected UserTimeZoneProcessProvider createUserTimeZoneProcessProvider() {
         return new MaihamaUserTimeZoneProcessProvider();
     }
 
-    protected MaihamaCookieResourceProvider createCookieResourceProvider() { // #change_it_first
+    protected CookieResourceProvider createCookieResourceProvider() { // #change_it_first
         final InvertibleCryptographer cr = InvertibleCryptographer.createAesCipher("dockside:maihama");
         return new MaihamaCookieResourceProvider(config, cr);
     }
 
-    protected MaihamaActionAdjustmentProvider createActionAdjustmentProvider() {
+    protected ActionAdjustmentProvider createActionAdjustmentProvider() {
         return new MaihamaActionAdjustmentProvider();
     }
 
     protected abstract void setupAppMessage(List<String> nameList);
 
-    protected MaihamaApiFailureHook createApiFailureHook() {
+    protected ApiFailureHook createApiFailureHook() {
         return new MaihamaApiFailureHook();
     }
 }
