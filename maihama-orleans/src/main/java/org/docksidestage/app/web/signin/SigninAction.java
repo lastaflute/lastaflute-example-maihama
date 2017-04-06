@@ -19,14 +19,14 @@ import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.OrleansBaseAction;
 import org.docksidestage.app.web.base.login.OrleansLoginAssist;
+import org.docksidestage.app.web.mypage.MypageAction;
 import org.docksidestage.mylasta.action.OrleansMessages;
 import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.credential.UserPasswordCredential;
-import org.lastaflute.web.response.JsonResponse;
+import org.lastaflute.web.response.HtmlResponse;
 
 /**
- * @author iwamatsu0430
  * @author jflute
  */
 public class SigninAction extends OrleansBaseAction {
@@ -41,22 +41,33 @@ public class SigninAction extends OrleansBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<Void> index(SigninBody body) {
-        validate(body, messages -> moreValidate(body, messages));
-        boolean rememberMe = false; // #simple_for_example no remember for now
-        loginAssist.login(createCredential(body), op -> op.rememberMe(rememberMe));
-        return JsonResponse.asEmptyBody();
+    public HtmlResponse index() {
+        if (getUserBean().isPresent()) {
+            return redirect(MypageAction.class);
+        }
+        return asHtml(path_Signin_SigninHtml);
     }
 
-    private void moreValidate(SigninBody body, OrleansMessages messages) {
-        if (LaStringUtil.isNotEmpty(body.account) && LaStringUtil.isNotEmpty(body.password)) {
-            if (!loginAssist.checkUserLoginable(createCredential(body))) {
-                messages.addErrorsLoginFailure("email");
+    @Execute
+    public HtmlResponse signin(SigninForm form) {
+        validate(form, messages -> moreValidate(form, messages), () -> {
+            form.clearSecurityInfo();
+            return asHtml(path_Signin_SigninHtml);
+        });
+        return loginAssist.loginRedirect(createCredential(form), op -> op.rememberMe(form.rememberMe), () -> {
+            return redirect(MypageAction.class);
+        });
+    }
+
+    private void moreValidate(SigninForm form, OrleansMessages messages) {
+        if (LaStringUtil.isNotEmpty(form.account) && LaStringUtil.isNotEmpty(form.password)) {
+            if (!loginAssist.checkUserLoginable(createCredential(form))) {
+                messages.addErrorsLoginFailure("account");
             }
         }
     }
 
-    private UserPasswordCredential createCredential(SigninBody body) {
-        return new UserPasswordCredential(body.account, body.password);
+    private UserPasswordCredential createCredential(SigninForm form) {
+        return new UserPasswordCredential(form.account, form.password);
     }
 }

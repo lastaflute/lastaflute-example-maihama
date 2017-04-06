@@ -1,18 +1,3 @@
-/*
- * Copyright 2015-2017 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
- * either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
 package org.docksidestage.app.web.signup;
 
 import java.util.Random;
@@ -21,6 +6,8 @@ import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.OrleansBaseAction;
 import org.docksidestage.app.web.base.login.OrleansLoginAssist;
+import org.docksidestage.app.web.mypage.MypageAction;
+import org.docksidestage.app.web.signin.SigninAction;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exbhv.MemberSecurityBhv;
 import org.docksidestage.dbflute.exbhv.MemberServiceBhv;
@@ -35,12 +22,12 @@ import org.lastaflute.core.security.PrimaryCipher;
 import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
-import org.lastaflute.web.response.JsonResponse;
+import org.lastaflute.web.response.HtmlResponse;
 import org.lastaflute.web.servlet.request.ResponseManager;
 import org.lastaflute.web.servlet.session.SessionManager;
 
 /**
- * @author iwamatsu0430
+ * @author annie_pocket
  * @author jflute
  */
 @AllowAnyoneAccess
@@ -59,41 +46,48 @@ public class SignupAction extends OrleansBaseAction {
     @Resource
     private Postbox postbox;
     @Resource
-    private ResponseManager responseManager;
-    @Resource
     private SessionManager sessionManager;
     @Resource
-    private OrleansConfig config;
+    private ResponseManager responseManager;
     @Resource
-    private OrleansLoginAssist loginAssist;
+    private OrleansConfig config;
     @Resource
     private MemberBhv memberBhv;
     @Resource
     private MemberSecurityBhv memberSecurityBhv;
     @Resource
     private MemberServiceBhv memberServiceBhv;
+    @Resource
+    private OrleansLoginAssist loginAssist;
 
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<Void> index(SignupBody body) {
-        validate(body, messages -> moreValidation(body, messages));
-        Integer memberId = insertProvisionalMember(body);
-        loginAssist.identityLogin(memberId.longValue(), op -> op.rememberMe(true)); // fixedly remember-me here
-
-        String signupToken = saveSignupToken();
-        sendSignupMail(body, signupToken);
-        return JsonResponse.asEmptyBody();
+    public HtmlResponse index() {
+        return asHtml(path_Signup_SignupHtml).useForm(SignupForm.class);
     }
 
-    private void moreValidation(SignupBody body, OrleansMessages messages) {
-        if (LaStringUtil.isNotEmpty(body.memberAccount)) {
+    @Execute
+    public HtmlResponse signup(SignupForm form) {
+        validate(form, messages -> moreValidate(form, messages), () -> {
+            return asHtml(path_Signup_SignupHtml);
+        });
+        Integer memberId = newMember(form);
+        loginAssist.identityLogin(memberId, op -> {}); // no remember-me here
+
+        String signupToken = saveSignupToken();
+        sendSignupMail(form, signupToken);
+        return redirect(MypageAction.class);
+    }
+
+    private void moreValidate(SignupForm form, OrleansMessages messages) {
+        if (LaStringUtil.isNotEmpty(form.memberAccount)) {
             int count = memberBhv.selectCount(cb -> {
-                cb.query().setMemberAccount_Equal(body.memberAccount);
+                cb.query().setMemberAccount_Equal(form.memberAccount);
             });
             if (count > 0) {
-                messages.addErrorsMemberAddAlreadyExist("memberAccount", "account");
+                messages.addErrorsSignupAccountAlreadyExists("memberAccount");
             }
         }
     }
@@ -104,22 +98,24 @@ public class SignupAction extends OrleansBaseAction {
         return token;
     }
 
-    private void sendSignupMail(SignupBody body, String signupToken) {
+    private void sendSignupMail(SignupForm form, String signupToken) {
         WelcomeMemberPostcard.droppedInto(postbox, postcard -> {
-            postcard.setFrom(config.getMailAddressSupport(), "Orleans Support"); // #simple_for_example
-            postcard.addTo(body.memberAccount + "@docksidestage.org"); // #simple_for_example
+            postcard.setFrom(config.getMailAddressSupport(), "Harbor Support"); // #simple_for_example
+            postcard.addTo(form.memberAccount + "@docksidestage.org"); // #simple_for_example
             postcard.setDomain(config.getServerDomain());
-            postcard.setMemberName(body.memberName);
-            postcard.setAccount(body.memberAccount);
+            postcard.setMemberName(form.memberName);
+            postcard.setAccount(form.memberAccount);
             postcard.setToken(signupToken);
+            postcard.async();
+            postcard.retry(3, 1000L);
         });
     }
 
     @Execute
-    public JsonResponse<Void> formalize(String account, String token) { // from mail link
+    public HtmlResponse register(String account, String token) { // from mail link
         verifySignupTokenMatched(account, token);
-        updateMemberAsFormalized(account);
-        return JsonResponse.asEmptyBody();
+        updateStatusFormalized(account);
+        return redirect(SigninAction.class);
     }
 
     private void verifySignupTokenMatched(String account, String token) {
@@ -134,18 +130,18 @@ public class SignupAction extends OrleansBaseAction {
     // ===================================================================================
     //                                                                              Update
     //                                                                              ======
-    private Integer insertProvisionalMember(SignupBody body) {
+    private Integer newMember(SignupForm form) {
         Member member = new Member();
-        member.setMemberName(body.memberName);
-        member.setMemberAccount(body.memberAccount);
+        member.setMemberName(form.memberName);
+        member.setMemberAccount(form.memberAccount);
         member.setMemberStatusCode_Provisional();
-        memberBhv.insert(member);
+        memberBhv.insert(member); // #simple_for_example same-name concurrent access as application exception
 
         MemberSecurity security = new MemberSecurity();
         security.setMemberId(member.getMemberId());
-        security.setLoginPassword(loginAssist.encryptPassword(body.password));
-        security.setReminderQuestion(body.reminderQuestion);
-        security.setReminderAnswer(body.reminderAnswer);
+        security.setLoginPassword(loginAssist.encryptPassword(form.password));
+        security.setReminderQuestion(form.reminderQuestion);
+        security.setReminderAnswer(form.reminderAnswer);
         security.setReminderUseCount(0);
         memberSecurityBhv.insert(security);
 
@@ -157,9 +153,9 @@ public class SignupAction extends OrleansBaseAction {
         return member.getMemberId();
     }
 
-    private void updateMemberAsFormalized(String account) {
+    private void updateStatusFormalized(String account) {
         Member member = new Member();
-        member.uniqueBy(account);
+        member.setMemberAccount(account);
         member.setMemberStatusCode_Formalized();
         memberBhv.updateNonstrict(member);
     }

@@ -13,22 +13,25 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.product;
+package org.docksidestage.app.web.signin;
 
 import org.lastaflute.web.validation.Required;
 
 /**
- * @author iwamatsu0430
+ * The form of member's Login.
  * @author jflute
  */
-public class ProductRowBean {
+public class SigninForm {
 
     @Required
-    public Integer productId;
+    public String account;
+
     @Required
-    public String productName;
-    @Required
-    public String productStatusName;
-    @Required
-    public Integer regularPrice;
+    public String password;
+
+    public boolean rememberMe;
+
+    public void clearSecurityInfo() {
+        password = null;
+    }
 }

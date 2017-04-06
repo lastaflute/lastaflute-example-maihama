@@ -19,19 +19,20 @@ import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.OrleansLoginAssist;
+import org.docksidestage.mylasta.action.OrleansHtmlPath;
 import org.docksidestage.mylasta.action.OrleansMessages;
 import org.docksidestage.mylasta.action.OrleansUserBean;
 import org.docksidestage.mylasta.direction.OrleansConfig;
 import org.lastaflute.web.login.LoginManager;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
-import org.lastaflute.web.validation.LaValidatableApi;
+import org.lastaflute.web.validation.LaValidatable;
 
 /**
  * @author jflute
  */
 public abstract class OrleansBaseAction extends MaihamaBaseAction // has several interfaces for direct use
-        implements LaValidatableApi<OrleansMessages> {
+        implements LaValidatable<OrleansMessages>, OrleansHtmlPath {
 
     // ===================================================================================
     //                                                                          Definition

@@ -3,9 +3,10 @@ package org.docksidestage.app.web.signup;
 import org.lastaflute.web.validation.Required;
 
 /**
- * @author iwamatsu0430
+ * @author annie_pocket
+ * @author jflute
  */
-public class SignupBody {
+public class SignupForm {
 
     // member
     @Required

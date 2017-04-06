@@ -21,8 +21,10 @@ import org.dbflute.optional.OptionalThing;
 import org.docksidestage.mylasta.action.ShowbaseMessages;
 import org.docksidestage.mylasta.action.ShowbaseUserBean;
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
+import org.lastaflute.core.message.MessageManager;
 import org.lastaflute.web.login.LoginManager;
 import org.lastaflute.web.ruts.process.ActionRuntime;
+import org.lastaflute.web.servlet.request.RequestManager;
 import org.lastaflute.web.validation.ActionValidator;
 import org.lastaflute.web.validation.LaValidatableApi;
 
@@ -41,6 +43,10 @@ public abstract class ShowbaseBaseAction extends MaihamaBaseAction // has severa
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
+    @Resource
+    private MessageManager messageManager;
+    @Resource
+    private RequestManager requestManager;
     @Resource
     private ShowbaseConfig config;
 
