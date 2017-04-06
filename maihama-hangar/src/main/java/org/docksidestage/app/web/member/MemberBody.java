@@ -15,6 +15,8 @@
  */
 package org.docksidestage.app.web.member;
 
+import java.time.LocalDate;
+
 import org.docksidestage.dbflute.allcommon.CDef;
 import org.lastaflute.web.validation.Required;
 
@@ -35,5 +37,5 @@ public class MemberBody {
     @Required
     public CDef.MemberStatus memberStatusCode;
 
-    public String birthdate;
+    public LocalDate birthdate;
 }

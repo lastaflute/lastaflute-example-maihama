@@ -24,7 +24,6 @@ import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingResult;
-import org.docksidestage.app.web.base.view.DisplayAssist;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.core.util.LaStringUtil;
@@ -42,8 +41,6 @@ public class MemberListAction extends HangarBaseAction {
     //                                                                           =========
     @Resource
     private MemberBhv memberBhv;
-    @Resource
-    private DisplayAssist displayAssist;
     @Resource
     private PagingAssist pagingAssist;
 
@@ -85,11 +82,9 @@ public class MemberListAction extends HangarBaseAction {
                 cb.query().setMemberStatusCode_Equal_AsMemberStatus(body.memberStatus);
             }
             if (body.formalizedFrom != null || body.formalizedTo != null) {
-                OptionalThing<LocalDateTime> fromDate = displayAssist.toDateTime(body.formalizedFrom);
-                OptionalThing<LocalDateTime> toDate = displayAssist.toDateTime(body.formalizedTo);
-                cb.query().setFormalizedDatetime_FromTo(fromDate.orElse(null), toDate.orElse(null), op -> {
-                    op.compareAsDate().allowOneSide();
-                });
+                LocalDateTime fromTime = body.formalizedFrom != null ? body.formalizedFrom.atStartOfDay() : null;
+                LocalDateTime toTime = body.formalizedFrom != null ? body.formalizedFrom.atStartOfDay() : null;
+                cb.query().setFormalizedDatetime_FromTo(fromTime, toTime, op -> op.compareAsDate().allowOneSide());
             }
             cb.query().addOrderBy_UpdateDatetime_Desc();
             cb.query().addOrderBy_MemberId_Asc();
@@ -113,8 +108,11 @@ public class MemberListAction extends HangarBaseAction {
         member.getMemberStatus().alwaysPresent(status -> {
             result.memberStatusName = status.getMemberStatusName();
         });
-        result.formalizedDate = displayAssist.toStringDate(member.getFormalizedDatetime()).orElse(null);
-        result.updateDatetime = displayAssist.toStringDate(member.getUpdateDatetime()).get();
+        LocalDateTime formalizedDatetime = member.getFormalizedDatetime();
+        if (formalizedDatetime != null) {
+            result.formalizedDate = formalizedDatetime.toLocalDate();
+        }
+        result.updateDatetime = member.getUpdateDatetime();
         result.withdrawalMember = member.isMemberStatusCodeWithdrawal();
         result.purchaseCount = member.getPurchaseCount();
         return result;

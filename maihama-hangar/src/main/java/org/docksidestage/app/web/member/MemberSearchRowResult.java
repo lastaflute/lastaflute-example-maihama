@@ -15,17 +15,29 @@
  */
 package org.docksidestage.app.web.member;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import org.lastaflute.web.validation.Required;
+
 /**
  * @author iwamatsu0430
  * @author jflute
  */
 public class MemberSearchRowResult {
 
+    @Required
     public Integer memberId;
+    @Required
     public String memberName;
+    @Required
     public String memberStatusName;
-    public String formalizedDate;
-    public String updateDatetime;
-    public boolean withdrawalMember;
+
+    public LocalDate formalizedDate;
+    @Required
+    public LocalDateTime updateDatetime;
+    @Required
+    public Boolean withdrawalMember;
+    @Required
     public Integer purchaseCount;
 }

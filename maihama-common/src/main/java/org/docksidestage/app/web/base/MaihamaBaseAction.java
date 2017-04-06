@@ -19,7 +19,6 @@ import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.logic.context.AccessContextLogic;
-import org.docksidestage.app.logic.i18n.I18nDateLogic;
 import org.docksidestage.mylasta.action.MaihamaUserBean;
 import org.lastaflute.db.dbflute.accesscontext.AccessContextArranger;
 import org.lastaflute.web.TypicalAction;
@@ -39,8 +38,6 @@ public abstract class MaihamaBaseAction extends TypicalAction {
     private RequestManager requestManager;
     @Resource
     private AccessContextLogic accessContextLogic;
-    @Resource
-    private I18nDateLogic i18nDateLogic;
 
     // ===================================================================================
     //                                                                               Hook
