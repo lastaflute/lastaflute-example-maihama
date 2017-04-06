@@ -8,7 +8,9 @@ import java.util.Map;
 
 import javax.validation.constraints.NotNull;
 
+import org.lastaflute.core.util.Lato;
 import org.lastaflute.job.LaJobHistory;
+import org.lastaflute.job.subsidiary.ExecResultType;
 import org.lastaflute.web.validation.Required;
 
 /**
@@ -16,6 +18,9 @@ import org.lastaflute.web.validation.Required;
  */
 public class JobExecuteResult {
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
     @Required
     public final String jobUnique;
     @Required
@@ -27,9 +32,41 @@ public class JobExecuteResult {
     @NotNull
     public Map<String, String> endTitleRoll;
     @Required
+    public final ExecResultTypePart execResultType;
+
+    public enum ExecResultTypePart { // mapping class not to depend on framework
+
+        SUCCESS // no cause
+        , QUIT_BY_CONCURRENT // no execution as quit
+        , ERROR_BY_CONCURRENT // no execution as error
+        , CAUSED_BY_APPLICATION // exception thrown by application
+        , CAUSED_BY_FRAMEWORK // exception thrown by framework
+        , UNKNOWN; // no way! but just in case
+
+        public static ExecResultTypePart of(ExecResultType nativeType) {
+            if (ExecResultType.SUCCESS.equals(nativeType)) {
+                return SUCCESS;
+            } else if (ExecResultType.QUIT_BY_CONCURRENT.equals(nativeType)) {
+                return QUIT_BY_CONCURRENT;
+            } else if (ExecResultType.ERROR_BY_CONCURRENT.equals(nativeType)) {
+                return ERROR_BY_CONCURRENT;
+            } else if (ExecResultType.CAUSED_BY_APPLICATION.equals(nativeType)) {
+                return CAUSED_BY_APPLICATION;
+            } else if (ExecResultType.CAUSED_BY_FRAMEWORK.equals(nativeType)) {
+                return CAUSED_BY_FRAMEWORK;
+            } else { // no way!
+                return UNKNOWN;
+            }
+        }
+    }
+
+    @Required
     public final Boolean errorEnding;
     public final String errorMessage; // null if no error e.g. quit, success
 
+    // ===================================================================================
+    //                                                                         Constructor
+    //                                                                         ===========
     public JobExecuteResult(LaJobHistory history) {
         this.jobUnique = history.getJobUnique().get().value(); // always present in this action
         this.jobTypeFqcn = history.getJobTypeFqcn();
@@ -37,7 +74,8 @@ public class JobExecuteResult {
         this.beginTime = history.getBeginTime().orElse(null);
         this.endTime = history.getEndTime().orElse(null);
         this.endTitleRoll = history.getEndTitleRollSnapshotMap();
-        this.errorEnding = history.getExecResultType().isErrorResult(); // want to get detail info?
+        this.execResultType = ExecResultTypePart.of(history.getExecResultType());
+        this.errorEnding = history.getExecResultType().isErrorResult(); // facade
         this.errorMessage = history.getCause().map(cause -> buildExceptionStackTrace(cause)).orElse(null);
     }
 
@@ -60,5 +98,13 @@ public class JobExecuteResult {
             }
         }
         return sb.toString();
+    }
+
+    // ===================================================================================
+    //                                                                      Basic Override
+    //                                                                      ==============
+    @Override
+    public String toString() {
+        return Lato.string(this);
     }
 }

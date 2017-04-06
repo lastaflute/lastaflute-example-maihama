@@ -19,6 +19,8 @@ import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalThing;
 import org.dbflute.util.DfCollectionUtil;
+import org.docksidestage.app.job.challenge.BonvoJob;
+import org.docksidestage.app.job.challenge.PiariJob;
 import org.docksidestage.app.logic.context.AccessContextLogic;
 import org.docksidestage.mylasta.direction.OrleansConfig;
 import org.lastaflute.job.LaCron;
@@ -48,6 +50,8 @@ public class AllJobScheduler implements LaJobScheduler {
         cron.register("*/2 * * * *", LandJob.class, quitIfConcurrent(), op -> {
             op.uniqueBy("non_param_unique_land");
         });
+        cron.registerNonCron(PiariJob.class, quitIfConcurrent(), op -> op.uniqueBy("piari"));
+        cron.registerNonCron(BonvoJob.class, errorIfConcurrent(), op -> op.uniqueBy("bonvo"));
     }
 
     @Override
