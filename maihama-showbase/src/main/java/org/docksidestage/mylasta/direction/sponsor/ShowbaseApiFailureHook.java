@@ -19,6 +19,7 @@ import org.docksidestage.mylasta.action.ShowbaseMessages;
 import org.docksidestage.mylasta.direction.sponsor.ShowbaseApiFailureHook.ShowbaseUnifiedFailureResult.ShowbaseFailureErrorPart;
 import org.lastaflute.core.json.JsonManager;
 import org.lastaflute.core.message.UserMessages;
+import org.lastaflute.core.message.exception.MessageKeyNotFoundException;
 import org.lastaflute.web.api.ApiFailureHook;
 import org.lastaflute.web.api.ApiFailureResource;
 import org.lastaflute.web.login.exception.LoginRequiredException;
@@ -102,7 +103,12 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
         final RequestManager requestManager = resource.getRequestManager();
         final Locale userLocale = requestManager.getUserLocale();
         final String key = ShowbaseMessages.ERRORS_APP_LOGIN_REQUIRED; // you should set this in [app]_message.properties
-        final String message = requestManager.getMessageManager().getMessage(userLocale, key);
+        final String message;
+        try {
+            message = requestManager.getMessageManager().getMessage(userLocale, key);
+        } catch (MessageKeyNotFoundException e) {
+            throw new ClientManagedMessageResponseFailureException("Not found the login-required message key: " + key, e);
+        }
         final Map<String, List<String>> map = DfCollectionUtil.newLinkedHashMap();
         map.put(UserMessages.GLOBAL_PROPERTY_KEY, DfCollectionUtil.newArrayList(message));
         return Collections.unmodifiableMap(map);
@@ -158,7 +164,7 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
             br.addItem("Data as JSON");
             br.addElement(json);
             final String msg = br.buildExceptionMessage();
-            throw new IllegalStateException(msg, e);
+            throw new ClientManagedMessageResponseFailureException(msg, e);
         }
     }
 
@@ -192,6 +198,18 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
     //                                         -------------
     protected JsonResponse<ShowbaseUnifiedFailureResult> asJson(ShowbaseUnifiedFailureResult result) {
         return new JsonResponse<ShowbaseUnifiedFailureResult>(result);
+    }
+
+    // -----------------------------------------------------
+    //                                             Exception
+    //                                             ---------
+    public static class ClientManagedMessageResponseFailureException extends RuntimeException {
+
+        private static final long serialVersionUID = 1L;
+
+        public ClientManagedMessageResponseFailureException(String msg, Throwable cause) {
+            super(msg, cause);
+        }
     }
 
     // ===================================================================================

@@ -15,11 +15,14 @@
  */
 package org.docksidestage.app.web.wx.climsg;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.app.web.base.login.ShowbaseLoginAssist;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
+import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
@@ -40,9 +43,11 @@ public class WxClimsgAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<Void> index(WxClimsgForm form) {
+    public JsonResponse<Map<String, Object>> index(WxClimsgForm form) {
         validate(form, messages -> {});
-        return JsonResponse.asEmptyBody();
+        Member member = memberBhv.selectByUniqueOf(form.sea).get();
+        Map<String, Object> columnMap = member.asDBMeta().extractAllColumnMap(member);
+        return asJson(columnMap);
     }
 
     @Execute
