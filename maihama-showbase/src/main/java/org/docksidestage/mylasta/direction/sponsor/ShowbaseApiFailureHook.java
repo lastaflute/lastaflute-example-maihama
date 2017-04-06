@@ -3,7 +3,6 @@ package org.docksidestage.mylasta.direction.sponsor;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -17,9 +16,9 @@ import org.dbflute.util.DfCollectionUtil;
 import org.dbflute.util.Srl;
 import org.docksidestage.mylasta.action.ShowbaseMessages;
 import org.docksidestage.mylasta.direction.sponsor.ShowbaseApiFailureHook.ShowbaseUnifiedFailureResult.ShowbaseFailureErrorPart;
+import org.lastaflute.core.exception.LaApplicationException;
 import org.lastaflute.core.json.JsonManager;
 import org.lastaflute.core.message.UserMessages;
-import org.lastaflute.core.message.exception.MessageKeyNotFoundException;
 import org.lastaflute.web.api.ApiFailureHook;
 import org.lastaflute.web.api.ApiFailureResource;
 import org.lastaflute.web.login.exception.LoginRequiredException;
@@ -91,24 +90,31 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
     protected Map<String, List<String>> extractPropertyMessageMap(ApiFailureResource resource, RuntimeException cause) {
         final Map<String, List<String>> nativeMap = resource.getPropertyMessageMap();
         final Map<String, List<String>> propertyMessageMap;
-        if (cause instanceof LoginRequiredException && nativeMap.isEmpty()) {
-            propertyMessageMap = recoverLoginRequired(resource); // login-required has no message so recovery here
-        } else {
+        if (nativeMap.isEmpty()) {
+            if (cause instanceof LoginRequiredException) {
+                propertyMessageMap = recoverLoginRequired(resource); // has no embedded message so recovery here
+            } else if (cause instanceof LaApplicationException) {
+                propertyMessageMap = recoverUnknownApplicationException(resource); // basically should not be here
+            } else { // e.g. client exception, server exception
+                propertyMessageMap = nativeMap; // no message
+            }
+        } else { // has messages
             propertyMessageMap = nativeMap;
         }
         return propertyMessageMap;
     }
 
     protected Map<String, List<String>> recoverLoginRequired(ApiFailureResource resource) {
+        return doRecoverMessages(resource, ShowbaseMessages.ERRORS_LOGIN_REQUIRED); // should be defined in [app]_message.properties
+    }
+
+    protected Map<String, List<String>> recoverUnknownApplicationException(ApiFailureResource resource) {
+        return doRecoverMessages(resource, ShowbaseMessages.ERRORS_UNKNOWN_BUSINESS_ERROR); // should be defined in [app]_message.properties
+    }
+
+    protected Map<String, List<String>> doRecoverMessages(ApiFailureResource resource, String messageKey) {
         final RequestManager requestManager = resource.getRequestManager();
-        final Locale userLocale = requestManager.getUserLocale();
-        final String key = ShowbaseMessages.ERRORS_APP_LOGIN_REQUIRED; // you should set this in [app]_message.properties
-        final String message;
-        try {
-            message = requestManager.getMessageManager().getMessage(userLocale, key);
-        } catch (MessageKeyNotFoundException e) {
-            throw new ClientManagedMessageResponseFailureException("Not found the login-required message key: " + key, e);
-        }
+        final String message = requestManager.getMessageManager().getMessage(requestManager.getUserLocale(), messageKey);
         final Map<String, List<String>> map = DfCollectionUtil.newLinkedHashMap();
         map.put(UserMessages.GLOBAL_PROPERTY_KEY, DfCollectionUtil.newArrayList(message));
         return Collections.unmodifiableMap(map);
@@ -164,7 +170,16 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
             br.addItem("Data as JSON");
             br.addElement(json);
             final String msg = br.buildExceptionMessage();
-            throw new ClientManagedMessageResponseFailureException(msg, e);
+            throw new ClientManagedMessageBrokenDataException(msg, e);
+        }
+    }
+
+    public static class ClientManagedMessageBrokenDataException extends RuntimeException {
+
+        private static final long serialVersionUID = 1L;
+
+        public ClientManagedMessageBrokenDataException(String msg, Throwable cause) {
+            super(msg, cause);
         }
     }
 
@@ -198,18 +213,6 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
     //                                         -------------
     protected JsonResponse<ShowbaseUnifiedFailureResult> asJson(ShowbaseUnifiedFailureResult result) {
         return new JsonResponse<ShowbaseUnifiedFailureResult>(result);
-    }
-
-    // -----------------------------------------------------
-    //                                             Exception
-    //                                             ---------
-    public static class ClientManagedMessageResponseFailureException extends RuntimeException {
-
-        private static final long serialVersionUID = 1L;
-
-        public ClientManagedMessageResponseFailureException(String msg, Throwable cause) {
-            super(msg, cause);
-        }
     }
 
     // ===================================================================================

@@ -28,10 +28,10 @@ public class ShowbaseMessages extends ShowbaseLabels {
     private static final long serialVersionUID = 1L;
 
     /** The key of the message: LOGIN_REQUIRED */
-    public static final String ERRORS_APP_LOGIN_REQUIRED = "{errors.app.login.required}";
+    public static final String ERRORS_LOGIN_REQUIRED = "{errors.login.required}";
 
     /** The key of the message: UNKNOWN_BUSINESS_ERROR */
-    public static final String ERRORS_APP_UNKNOWN_BUSINESS_ERROR = "{errors.app.unknown.business.error}";
+    public static final String ERRORS_UNKNOWN_BUSINESS_ERROR = "{errors.unknown.business.error}";
 
     /**
      * Add the created action message for the key 'constraints.AssertFalse.message' with parameters.
@@ -712,22 +712,22 @@ public class ShowbaseMessages extends ShowbaseLabels {
     }
 
     /**
-     * Add the created action message for the key 'errors.app.login.required' with parameters.
+     * Add the created action message for the key 'errors.login.required' with parameters.
      * <pre>
      * message: LOGIN_REQUIRED
-     * comment: framework does not have own message so
+     * comment: framework does not have own message so define here, used in your ApiFailureHook
      * </pre>
      * @param property The property name for the message. (NotNull)
      * @return this. (NotNull)
      */
-    public ShowbaseMessages addErrorsAppLoginRequired(String property) {
+    public ShowbaseMessages addErrorsLoginRequired(String property) {
         assertPropertyNotNull(property);
-        add(property, new UserMessage(ERRORS_APP_LOGIN_REQUIRED));
+        add(property, new UserMessage(ERRORS_LOGIN_REQUIRED));
         return this;
     }
 
     /**
-     * Add the created action message for the key 'errors.app.unknown.business.error' with parameters.
+     * Add the created action message for the key 'errors.unknown.business.error' with parameters.
      * <pre>
      * message: UNKNOWN_BUSINESS_ERROR
      * comment: for no-message application exception, basically should not be used
@@ -735,9 +735,9 @@ public class ShowbaseMessages extends ShowbaseLabels {
      * @param property The property name for the message. (NotNull)
      * @return this. (NotNull)
      */
-    public ShowbaseMessages addErrorsAppUnknownBusinessError(String property) {
+    public ShowbaseMessages addErrorsUnknownBusinessError(String property) {
         assertPropertyNotNull(property);
-        add(property, new UserMessage(ERRORS_APP_UNKNOWN_BUSINESS_ERROR));
+        add(property, new UserMessage(ERRORS_UNKNOWN_BUSINESS_ERROR));
         return this;
     }
 }
