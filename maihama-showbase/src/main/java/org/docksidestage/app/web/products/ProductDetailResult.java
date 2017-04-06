@@ -1,4 +1,4 @@
-package org.docksidestage.app.web.product;
+package org.docksidestage.app.web.products;
 
 import org.lastaflute.web.validation.Required;
 
@@ -6,7 +6,7 @@ import org.lastaflute.web.validation.Required;
  * @author iwamatsu0430
  * @author jflute
  */
-public class ProductDetailBean {
+public class ProductDetailResult {
 
     @Required
     public Integer productId;

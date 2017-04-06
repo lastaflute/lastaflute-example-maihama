@@ -13,7 +13,7 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.product;
+package org.docksidestage.app.web.products;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 import javax.annotation.Resource;
 
 import org.dbflute.cbean.result.PagingResultBean;
-import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingResult;
@@ -35,7 +34,7 @@ import org.lastaflute.web.response.JsonResponse;
 /**
  * @author jflute
  */
-public class ProductListAction extends ShowbaseBaseAction {
+public class ProductsAction extends ShowbaseBaseAction {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -51,22 +50,28 @@ public class ProductListAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<SearchPagingResult<ProductRowBean>> index(OptionalThing<Integer> pageNumber, ProductSearchBody body) {
-        validate(body, messages -> {});
+    public JsonResponse<SearchPagingResult<ProductsRowResult>> get$index(ProductsSearchForm form) {
+        validate(form, messages -> {});
 
-        PagingResultBean<Product> page = selectProductPage(pageNumber.orElse(1), body);
-        List<ProductRowBean> rows = page.stream().map(product -> {
-            return mappingToBean(product);
+        PagingResultBean<Product> page = selectProductPage(form);
+        List<ProductsRowResult> rows = page.stream().map(product -> {
+            return mappingToRowResult(product);
         }).collect(Collectors.toList());
 
-        SearchPagingResult<ProductRowBean> result = pagingAssist.createPagingResult(page, rows);
+        SearchPagingResult<ProductsRowResult> result = pagingAssist.createPagingResult(page, rows);
         return asJson(result);
+    }
+
+    protected JsonResponse<ProductDetailResult> doDetail(Integer productId) {
+        Product product = selectProduct(productId);
+        return asJson(mappingToDetailResult(product));
     }
 
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
-    private PagingResultBean<Product> selectProductPage(int pageNumber, ProductSearchBody body) {
+    private PagingResultBean<Product> selectProductPage(ProductsSearchForm form) {
+        final Integer pageNumber = form.pageNumber != null ? form.pageNumber : 1;
         verifyOrClientError("The pageNumber should be positive number: " + pageNumber, pageNumber > 0);
         return productBhv.selectPage(cb -> {
             cb.setupSelect_ProductStatus();
@@ -74,16 +79,16 @@ public class ProductListAction extends ShowbaseBaseAction {
             cb.specify().derivedPurchase().count(purchaseCB -> {
                 purchaseCB.specify().columnPurchaseId();
             }, Product.ALIAS_purchaseCount);
-            if (LaStringUtil.isNotEmpty(body.productName)) {
-                cb.query().setProductName_LikeSearch(body.productName, op -> op.likeContain());
+            if (LaStringUtil.isNotEmpty(form.productName)) {
+                cb.query().setProductName_LikeSearch(form.productName, op -> op.likeContain());
             }
-            if (LaStringUtil.isNotEmpty(body.purchaseMemberName)) {
+            if (LaStringUtil.isNotEmpty(form.purchaseMemberName)) {
                 cb.query().existsPurchase(purchaseCB -> {
-                    purchaseCB.query().queryMember().setMemberName_LikeSearch(body.purchaseMemberName, op -> op.likeContain());
+                    purchaseCB.query().queryMember().setMemberName_LikeSearch(form.purchaseMemberName, op -> op.likeContain());
                 });
             }
-            if (body.productStatus != null) {
-                cb.query().setProductStatusCode_Equal_AsProductStatus(body.productStatus);
+            if (form.productStatus != null) {
+                cb.query().setProductStatusCode_Equal_AsProductStatus(form.productStatus);
             }
             cb.query().addOrderBy_ProductName_Asc();
             cb.query().addOrderBy_ProductId_Asc();
@@ -91,17 +96,36 @@ public class ProductListAction extends ShowbaseBaseAction {
         });
     }
 
+    private Product selectProduct(int productId) {
+        return productBhv.selectEntity(cb -> {
+            cb.setupSelect_ProductCategory();
+            cb.query().setProductId_Equal(productId);
+        }).get();
+    }
+
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private ProductRowBean mappingToBean(Product product) {
-        ProductRowBean bean = new ProductRowBean();
-        bean.productId = product.getProductId();
-        bean.productName = product.getProductName();
+    private ProductsRowResult mappingToRowResult(Product product) {
+        ProductsRowResult result = new ProductsRowResult();
+        result.productId = product.getProductId();
+        result.productName = product.getProductName();
         product.getProductStatus().alwaysPresent(status -> {
-            bean.productStatusName = status.getProductStatusName();
+            result.productStatusName = status.getProductStatusName();
         });
-        bean.regularPrice = product.getRegularPrice();
-        return bean;
+        result.regularPrice = product.getRegularPrice();
+        return result;
+    }
+
+    private ProductDetailResult mappingToDetailResult(Product product) {
+        ProductDetailResult result = new ProductDetailResult();
+        result.productId = product.getProductId();
+        result.productName = product.getProductName();
+        result.regularPrice = product.getRegularPrice();
+        result.productHandleCode = product.getProductHandleCode();
+        product.getProductCategory().alwaysPresent(category -> {
+            result.categoryName = category.getProductCategoryName();
+        });
+        return result;
     }
 }

@@ -13,7 +13,7 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.product;
+package org.docksidestage.app.web.products;
 
 import javax.annotation.Resource;
 
@@ -38,7 +38,7 @@ public class ProductDetailAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<ProductDetailBean> index(Integer productId) {
+    public JsonResponse<ProductDetailResult> index(Integer productId) {
         Product product = selectProduct(productId);
         return asJson(mappingToBean(product));
     }
@@ -56,8 +56,8 @@ public class ProductDetailAction extends ShowbaseBaseAction {
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private ProductDetailBean mappingToBean(Product product) {
-        ProductDetailBean bean = new ProductDetailBean();
+    private ProductDetailResult mappingToBean(Product product) {
+        ProductDetailResult bean = new ProductDetailResult();
         bean.productId = product.getProductId();
         bean.productName = product.getProductName();
         bean.regularPrice = product.getRegularPrice();

@@ -13,22 +13,24 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.product;
+package org.docksidestage.app.web.products;
 
-import org.lastaflute.web.validation.Required;
+import org.docksidestage.dbflute.allcommon.CDef;
+import org.hibernate.validator.constraints.Length;
 
 /**
  * @author iwamatsu0430
  * @author jflute
  */
-public class ProductRowBean {
+public class ProductsSearchForm {
 
-    @Required
-    public Integer productId;
-    @Required
+    @Length(max = 10) // #simple_for_example just for validtion example
     public String productName;
-    @Required
-    public String productStatusName;
-    @Required
-    public Integer regularPrice;
+
+    public CDef.ProductStatus productStatus;
+
+    @Length(max = 5) // #simple_for_example just for validtion example
+    public String purchaseMemberName;
+
+    public Integer pageNumber;
 }
