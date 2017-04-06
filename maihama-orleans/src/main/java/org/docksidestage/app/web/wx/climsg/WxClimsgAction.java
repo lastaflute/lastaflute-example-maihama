@@ -19,6 +19,7 @@ import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.OrleansBaseAction;
 import org.docksidestage.app.web.base.login.OrleansLoginAssist;
+import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;
@@ -34,6 +35,8 @@ public class WxClimsgAction extends OrleansBaseAction {
     //                                                                           =========
     @Resource
     private OrleansLoginAssist loginAssist;
+    @Resource
+    private MemberBhv memberBhv;
 
     // ===================================================================================
     //                                                                             Execute
@@ -41,6 +44,12 @@ public class WxClimsgAction extends OrleansBaseAction {
     @Execute
     public JsonResponse<Void> index(WxClimsgForm form) {
         validate(form, messages -> {});
+        return JsonResponse.asEmptyBody();
+    }
+
+    @Execute
+    public JsonResponse<Void> entity(String account) {
+        memberBhv.selectByUniqueOf(account).get();
         return JsonResponse.asEmptyBody();
     }
 }

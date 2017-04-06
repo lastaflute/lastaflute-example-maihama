@@ -25,6 +25,7 @@ import org.lastaflute.job.key.LaJobUnique;
 import org.lastaflute.job.subsidiary.LaunchedProcess;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
+import org.lastaflute.web.servlet.request.ResponseManager;
 
 /**
  * @author jflute
@@ -33,10 +34,14 @@ public class JobExecuteAction extends OrleansBaseAction {
 
     @Resource
     private JobManager jobManager;
+    @Resource
+    private ResponseManager responseManager;
 
     @Execute
     public JsonResponse<JobExecuteResult> index(String jobUnique) {
-        LaScheduledJob job = jobManager.findJobByUniqueOf(LaJobUnique.of(jobUnique)).get();
+        LaScheduledJob job = jobManager.findJobByUniqueOf(LaJobUnique.of(jobUnique)).orElseTranslatingThrow(cause -> {
+            return responseManager.new400("Not found the job: " + jobUnique, op -> op.cause(cause));
+        });
 
         LaunchedProcess process = job.launchNow();
         LaJobHistory history = process.waitForEnding().get();

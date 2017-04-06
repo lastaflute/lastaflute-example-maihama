@@ -1,6 +1,7 @@
 package org.docksidestage.mylasta.direction.sponsor;
 
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -66,11 +67,11 @@ public class OrleansApiFailureHook implements ApiFailureHook {
     //                                        Failure Result
     //                                        --------------
     protected OrleansUnifiedFailureResult createFailureResult(OrleansUnifiedFailureType failureType, ApiFailureResource resource) {
-        return new OrleansUnifiedFailureResult(failureType, toErrors(resource));
+        return new OrleansUnifiedFailureResult(failureType, toErrors(resource, resource.getPropertyMessageMap()));
     }
 
-    protected List<OrleansFailureErrorPart> toErrors(ApiFailureResource resource) {
-        return resource.getPropertyMessageMap().entrySet().stream().flatMap(entry -> {
+    protected List<OrleansFailureErrorPart> toErrors(ApiFailureResource resource, Map<String, List<String>> propertyMessageMap) {
+        return propertyMessageMap.entrySet().stream().flatMap(entry -> {
             return toFailureErrorPart(resource, entry.getKey(), entry.getValue()).stream();
         }).collect(Collectors.toList());
     }
@@ -78,19 +79,19 @@ public class OrleansApiFailureHook implements ApiFailureHook {
     protected List<OrleansFailureErrorPart> toFailureErrorPart(ApiFailureResource resource, String field, List<String> messageList) {
         final String delimiter = "|";
         return messageList.stream().map(message -> {
-            if (message.contains(delimiter)) { // e.g. Length | min:{min}, max:{max}
+            if (message.contains(delimiter)) { // e.g. LENGTH | min:{min}, max:{max}
                 return createJsonistaError(resource, field, message, delimiter);
-            } else { // e.g. Required
+            } else { // e.g. REQUIRED
                 return createSimpleError(field, message);
             }
         }).collect(Collectors.toList());
     }
 
     protected OrleansFailureErrorPart createJsonistaError(ApiFailureResource resource, String field, String message, String delimiter) {
-        final String code = Srl.substringFirstFront(message, delimiter).trim(); // e.g. Length
+        final String code = Srl.substringFirstFront(message, delimiter).trim(); // e.g. LENGTH
         final String json = "{" + Srl.substringFirstRear(message, delimiter).trim() + "}"; // e.g. {min:{min}, max:{max}}
         final Map<String, Object> data = parseJsonistaData(resource, field, code, json);
-        return new OrleansFailureErrorPart(field, code, data);
+        return new OrleansFailureErrorPart(field, code, filterDataParserHeadache(data));
     }
 
     @SuppressWarnings("unchecked")
@@ -104,8 +105,8 @@ public class OrleansApiFailureHook implements ApiFailureHook {
             br.addItem("Advice");
             br.addElement("Arrange your [app]_message.properties");
             br.addElement("for client-managed message way like this:");
-            br.addElement("  constraints.Length.message = Length | min:{min}, max:{max}");
-            br.addElement("  constraints.Required.message = Required");
+            br.addElement("  constraints.Length.message = LENGTH | min:{min}, max:{max}");
+            br.addElement("  constraints.Required.message = REQUIRED");
             br.addElement("  ...");
             br.addItem("Message List");
             br.addElement(resource.getMessageList());
@@ -118,6 +119,24 @@ public class OrleansApiFailureHook implements ApiFailureHook {
             final String msg = br.buildExceptionMessage();
             throw new IllegalStateException(msg, e);
         }
+    }
+
+    protected Map<String, Object> filterDataParserHeadache(Map<String, Object> data) {
+        if (data.isEmpty()) {
+            return data;
+        }
+        final Map<String, Object> filteredMap = new LinkedHashMap<String, Object>(data.size());
+        data.entrySet().stream().forEach(entry -> {
+            Object value = entry.getValue();
+            if (value instanceof Double) { // Gson already parses number as double in map
+                final Double dble = (Double) value;
+                if (Srl.rtrim(dble.toString(), "0").endsWith(".")) { // might be not decimal
+                    value = dble.intValue();
+                }
+            }
+            filteredMap.put(entry.getKey(), value);
+        });
+        return filteredMap;
     }
 
     protected OrleansFailureErrorPart createSimpleError(String field, String message) {
