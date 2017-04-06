@@ -15,15 +15,15 @@
  */
 package org.docksidestage;
 
-import org.dbflute.jetty.JettyBoot;
+import org.dbflute.tomcat.TomcatBoot;
 
 /**
  * @author jflute
  */
-public class OrleansBoot { // #change_it_first
+public class ShowbaseBoot { // #change_it_first
 
-    public static void main(String[] args) { // e.g. java -Dlasta.env=production -jar maihama-orleans.war
-        new JettyBoot(8096, "/orleans").asDevelopment(isDevelopment()).bootAwait();
+    public static void main(String[] args) { // e.g. java -Dlasta.env=production -jar maihama-showbase.war
+        new TomcatBoot(8098, "/showbase").asDevelopment(isDevelopment()).bootAwait();
     }
 
     private static boolean isDevelopment() {

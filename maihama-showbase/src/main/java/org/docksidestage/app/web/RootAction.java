@@ -9,24 +9,25 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage;
+package org.docksidestage.app.web;
 
-import org.dbflute.jetty.JettyBoot;
+import org.docksidestage.app.web.base.ShowbaseBaseAction;
+import org.lastaflute.web.Execute;
+import org.lastaflute.web.login.AllowAnyoneAccess;
+import org.lastaflute.web.response.HtmlResponse;
 
 /**
  * @author jflute
  */
-public class OrleansBoot { // #change_it_first
+@AllowAnyoneAccess
+public class RootAction extends ShowbaseBaseAction {
 
-    public static void main(String[] args) { // e.g. java -Dlasta.env=production -jar maihama-orleans.war
-        new JettyBoot(8096, "/orleans").asDevelopment(isDevelopment()).bootAwait();
-    }
-
-    private static boolean isDevelopment() {
-        return System.getProperty("lasta.env") == null;
+    @Execute
+    public HtmlResponse index() {
+        throw new UnsupportedOperationException();
     }
 }
