@@ -60,6 +60,9 @@ public class SignupActionTest extends UnitDocksideTestCase {
 
         // ## Act ##
         HtmlResponse response = action.signup(form);
+        response.getAfterTxCommitHook().alwaysPresent(hook -> {
+            hook.hook(); // login
+        });
 
         // ## Assert ##
         TestingHtmlData htmlData = validateHtmlData(response);

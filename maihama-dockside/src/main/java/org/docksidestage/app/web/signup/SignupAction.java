@@ -73,12 +73,13 @@ public class SignupAction extends DocksideBaseAction {
         validate(form, messages -> moreValidate(form, messages), () -> {
             return asHtml(path_Signup_SignupHtml);
         });
-        Integer memberId = newMember(form);
-        loginAssist.identityLogin(memberId, op -> {}); // no remember-me here
+        Integer memberId = insertProvisionalMember(form);
 
         String signupToken = saveSignupToken();
         sendSignupMail(form, signupToken);
-        return redirect(MypageAction.class);
+        return redirect(MypageAction.class).afterTxCommit(() -> { // for asynchronous DB access
+            loginAssist.identityLogin(memberId, op -> {}); // no remember-me here
+        });
     }
 
     private void moreValidate(SignupForm form, DocksideMessages messages) {
@@ -130,7 +131,7 @@ public class SignupAction extends DocksideBaseAction {
     // ===================================================================================
     //                                                                              Update
     //                                                                              ======
-    private Integer newMember(SignupForm form) {
+    private Integer insertProvisionalMember(SignupForm form) {
         Member member = new Member();
         member.setMemberName(form.memberName);
         member.setMemberAccount(form.memberAccount);
