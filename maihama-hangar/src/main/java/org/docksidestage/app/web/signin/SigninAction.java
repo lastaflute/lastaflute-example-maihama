@@ -51,7 +51,7 @@ public class SigninAction extends HangarBaseAction {
     private void moreValidate(SigninBody body, HangarMessages messages) {
         if (LaStringUtil.isNotEmpty(body.account) && LaStringUtil.isNotEmpty(body.password)) {
             if (!loginAssist.checkUserLoginable(createCredential(body))) {
-                messages.addErrorsLoginFailure("email");
+                messages.addErrorsLoginFailure("account");
             }
         }
     }
