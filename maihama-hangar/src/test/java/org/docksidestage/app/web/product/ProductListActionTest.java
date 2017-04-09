@@ -26,7 +26,7 @@ public class ProductListActionTest extends UnitHangarTestCase {
         TestingJsonData<SearchPagingResult<ProductRowResult>> data = validateJsonData(response);
         data.getJsonResult().rows.forEach(bean -> {
             log(bean);
-            assertTrue(bean.productName.contains(body.productName));
+            assertContainsIgnoreCase(bean.productName, body.productName);
         });
     }
 }
