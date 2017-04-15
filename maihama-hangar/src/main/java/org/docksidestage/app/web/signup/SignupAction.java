@@ -31,7 +31,6 @@ import org.docksidestage.mylasta.action.HangarMessages;
 import org.docksidestage.mylasta.direction.HangarConfig;
 import org.docksidestage.mylasta.mail.member.WelcomeMemberPostcard;
 import org.lastaflute.core.mail.Postbox;
-import org.lastaflute.core.security.PrimaryCipher;
 import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
@@ -54,8 +53,6 @@ public class SignupAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    @Resource
-    private PrimaryCipher primaryCipher;
     @Resource
     private Postbox postbox;
     @Resource
@@ -99,7 +96,7 @@ public class SignupAction extends HangarBaseAction {
     }
 
     private String saveSignupToken() {
-        String token = primaryCipher.encrypt(String.valueOf(new Random().nextInt())); // #simple_for_example
+        String token = Integer.toHexString(new Random().nextInt()); // #simple_for_example
         sessionManager.setAttribute(SIGNUP_TOKEN_KEY, token);
         return token;
     }
