@@ -30,13 +30,15 @@ import org.docksidestage.mylasta.direction.HangarConfig;
 import org.lastaflute.core.magic.async.AsyncManager;
 import org.lastaflute.core.time.TimeManager;
 import org.lastaflute.db.jta.stage.TransactionStage;
+import org.lastaflute.web.login.PrimaryLoginManager;
 import org.lastaflute.web.login.credential.UserPasswordCredential;
 import org.lastaflute.web.login.option.LoginSpecifiedOption;
 
 /**
  * @author jflute
  */
-public class HangarLoginAssist extends MaihamaLoginAssist<HangarUserBean, Member> { // #change_it
+public class HangarLoginAssist extends MaihamaLoginAssist<HangarUserBean, Member> // #change_it also UserBean
+        implements PrimaryLoginManager { // #app_customize
 
     // ===================================================================================
     //                                                                           Attribute

@@ -30,13 +30,15 @@ import org.docksidestage.mylasta.direction.DocksideConfig;
 import org.lastaflute.core.magic.async.AsyncManager;
 import org.lastaflute.core.time.TimeManager;
 import org.lastaflute.db.jta.stage.TransactionStage;
+import org.lastaflute.web.login.PrimaryLoginManager;
 import org.lastaflute.web.login.credential.UserPasswordCredential;
 import org.lastaflute.web.login.option.LoginSpecifiedOption;
 
 /**
  * @author jflute
  */
-public class DocksideLoginAssist extends MaihamaLoginAssist<DocksideUserBean, Member> { // #change_it
+public class DocksideLoginAssist extends MaihamaLoginAssist<DocksideUserBean, Member> // #change_it also UserBean
+        implements PrimaryLoginManager { // #app_customize
 
     // ===================================================================================
     //                                                                           Attribute

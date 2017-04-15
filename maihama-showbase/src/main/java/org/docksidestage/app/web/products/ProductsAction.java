@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 import javax.annotation.Resource;
 
 import org.dbflute.cbean.result.PagingResultBean;
+import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingResult;
@@ -29,11 +30,13 @@ import org.docksidestage.dbflute.exbhv.ProductStatusBhv;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
+import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;
 
 /**
  * @author jflute
  */
+@AllowAnyoneAccess
 public class ProductsAction extends ShowbaseBaseAction {
 
     // ===================================================================================
@@ -49,8 +52,21 @@ public class ProductsAction extends ShowbaseBaseAction {
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    @Execute
-    public JsonResponse<SearchPagingResult<ProductsRowResult>> get$index(ProductsSearchForm form) {
+    @Execute(suppressValidatorCallCheck = true) // #hope no option by jflute
+    public JsonResponse<? extends Object> get$index(OptionalThing<Integer> productId, ProductsSearchForm form) {
+        if (productId.isPresent()) {
+            return doDetail(productId.get());
+        } else {
+            return doList(form);
+        }
+    }
+
+    private JsonResponse<ProductDetailResult> doDetail(Integer productId) {
+        Product product = selectProduct(productId);
+        return asJson(mappingToDetailResult(product));
+    }
+
+    private JsonResponse<SearchPagingResult<ProductsRowResult>> doList(ProductsSearchForm form) {
         validate(form, messages -> {});
 
         PagingResultBean<Product> page = selectProductPage(form);
@@ -62,14 +78,16 @@ public class ProductsAction extends ShowbaseBaseAction {
         return asJson(result);
     }
 
-    protected JsonResponse<ProductDetailResult> doDetail(Integer productId) {
-        Product product = selectProduct(productId);
-        return asJson(mappingToDetailResult(product));
-    }
-
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
+    private Product selectProduct(int productId) {
+        return productBhv.selectEntity(cb -> {
+            cb.setupSelect_ProductCategory();
+            cb.query().setProductId_Equal(productId);
+        }).get();
+    }
+
     private PagingResultBean<Product> selectProductPage(ProductsSearchForm form) {
         final Integer pageNumber = form.pageNumber != null ? form.pageNumber : 1;
         verifyOrClientError("The pageNumber should be positive number: " + pageNumber, pageNumber > 0);
@@ -96,27 +114,9 @@ public class ProductsAction extends ShowbaseBaseAction {
         });
     }
 
-    private Product selectProduct(int productId) {
-        return productBhv.selectEntity(cb -> {
-            cb.setupSelect_ProductCategory();
-            cb.query().setProductId_Equal(productId);
-        }).get();
-    }
-
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private ProductsRowResult mappingToRowResult(Product product) {
-        ProductsRowResult result = new ProductsRowResult();
-        result.productId = product.getProductId();
-        result.productName = product.getProductName();
-        product.getProductStatus().alwaysPresent(status -> {
-            result.productStatusName = status.getProductStatusName();
-        });
-        result.regularPrice = product.getRegularPrice();
-        return result;
-    }
-
     private ProductDetailResult mappingToDetailResult(Product product) {
         ProductDetailResult result = new ProductDetailResult();
         result.productId = product.getProductId();
@@ -126,6 +126,17 @@ public class ProductsAction extends ShowbaseBaseAction {
         product.getProductCategory().alwaysPresent(category -> {
             result.categoryName = category.getProductCategoryName();
         });
+        return result;
+    }
+
+    private ProductsRowResult mappingToRowResult(Product product) {
+        ProductsRowResult result = new ProductsRowResult();
+        result.productId = product.getProductId();
+        result.productName = product.getProductName();
+        product.getProductStatus().alwaysPresent(status -> {
+            result.productStatusName = status.getProductStatusName();
+        });
+        result.regularPrice = product.getRegularPrice();
         return result;
     }
 }

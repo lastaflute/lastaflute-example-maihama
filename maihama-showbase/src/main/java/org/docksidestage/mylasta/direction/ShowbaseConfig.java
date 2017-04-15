@@ -29,6 +29,9 @@ public interface ShowbaseConfig extends ShowbaseEnv {
     /** The key of the configuration. e.g. Showbase */
     String DOMAIN_TITLE = "domain.title";
 
+    /** The key of the configuration. e.g. SHB */
+    String COOKIE_REMEMBER_ME_SHOWBASE_KEY = "cookie.remember.me.showbase.key";
+
     /**
      * Get the value of property as {@link String}.
      * @param propertyKey The key of the property. (NotNull)
@@ -62,6 +65,14 @@ public interface ShowbaseConfig extends ShowbaseEnv {
     String getDomainTitle();
 
     /**
+     * Get the value for the key 'cookie.remember.me.showbase.key'. <br>
+     * The value is, e.g. SHB <br>
+     * comment: The cookie key of remember-me for Showbase #change_it_first
+     * @return The value of found property. (NotNull: if not found, exception but basically no way)
+     */
+    String getCookieRememberMeShowbaseKey();
+
+    /**
      * The simple implementation for configuration.
      * @author FreeGen
      */
@@ -78,6 +89,10 @@ public interface ShowbaseConfig extends ShowbaseEnv {
         @Override
         public String getDomainTitle() {
             return get(ShowbaseConfig.DOMAIN_TITLE);
+        }
+
+        public String getCookieRememberMeShowbaseKey() {
+            return get(ShowbaseConfig.COOKIE_REMEMBER_ME_SHOWBASE_KEY);
         }
     }
 }

@@ -67,18 +67,6 @@
             "Resource"
           ],
           "nestTypeDocMetaList": []
-        },
-        {
-          "name": "displayAssist",
-          "typeName": "org.docksidestage.app.web.base.view.DisplayAssist",
-          "simpleTypeName": "DisplayAssist",
-          "value": null,
-          "description": "@author jflute",
-          "comment": "@author jflute",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
         }
       ],
       "methodName": "update",
@@ -144,8 +132,8 @@
           },
           {
             "name": "birthdate",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
+            "typeName": "java.time.LocalDate",
+            "simpleTypeName": "LocalDate",
             "value": null,
             "description": null,
             "comment": null,
@@ -164,7 +152,7 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 54,
+      "fileLineCount": 52,
       "methodLineCount": 11
     },
     {
@@ -181,18 +169,6 @@
           "value": null,
           "description": "The behavior of MEMBER.",
           "comment": "The behavior of MEMBER.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "displayAssist",
-          "typeName": "org.docksidestage.app.web.base.view.DisplayAssist",
-          "simpleTypeName": "DisplayAssist",
-          "value": null,
-          "description": "@author jflute",
-          "comment": "@author jflute",
           "annotationList": [
             "Resource"
           ],
@@ -247,7 +223,7 @@
           }
         ]
       },
-      "fileLineCount": 54,
+      "fileLineCount": 52,
       "methodLineCount": 11
     },
     {
@@ -264,18 +240,6 @@
           "value": null,
           "description": "The behavior of MEMBER.",
           "comment": "The behavior of MEMBER.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "displayAssist",
-          "typeName": "org.docksidestage.app.web.base.view.DisplayAssist",
-          "simpleTypeName": "DisplayAssist",
-          "value": null,
-          "description": "@author jflute",
-          "comment": "@author jflute",
           "annotationList": [
             "Resource"
           ],
@@ -466,7 +430,9 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -476,7 +442,9 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -486,13 +454,15 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
                 "name": "formalizedDate",
-                "typeName": "java.lang.String",
-                "simpleTypeName": "String",
+                "typeName": "java.time.LocalDate",
+                "simpleTypeName": "LocalDate",
                 "value": null,
                 "description": null,
                 "comment": null,
@@ -501,22 +471,26 @@
               },
               {
                 "name": "updateDatetime",
-                "typeName": "java.lang.String",
-                "simpleTypeName": "String",
+                "typeName": "java.time.LocalDateTime",
+                "simpleTypeName": "LocalDateTime",
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
                 "name": "withdrawalMember",
-                "typeName": "boolean",
-                "simpleTypeName": "boolean",
+                "typeName": "java.lang.Boolean",
+                "simpleTypeName": "Boolean",
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -526,14 +500,16 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               }
             ]
           }
         ]
       },
-      "fileLineCount": 84,
+      "fileLineCount": 83,
       "methodLineCount": 6
     },
     {

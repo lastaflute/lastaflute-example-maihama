@@ -13,58 +13,64 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.products;
+package org.docksidestage.app.web.mypage;
 
 import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
-import org.docksidestage.dbflute.exbhv.ProductBhv;
-import org.docksidestage.dbflute.exentity.Product;
+import org.docksidestage.dbflute.exbhv.MemberBhv;
+import org.docksidestage.dbflute.exentity.Member;
+import org.lastaflute.core.time.TimeManager;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
 /**
  * @author jflute
  */
-public class ProductDetailAction extends ShowbaseBaseAction {
+public class MypageAction extends ShowbaseBaseAction {
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    private ProductBhv productBhv;
+    private TimeManager timeManager;
+    @Resource
+    private MemberBhv memberBhv;
 
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<ProductDetailResult> index(Integer productId) {
-        Product product = selectProduct(productId);
-        return asJson(mappingToBean(product));
+    public JsonResponse<MypageResult> index() {
+        Integer memberId = getUserBean().get().getMemberId();
+        Member member = selectMember(memberId);
+        MypageResult result = mappingToResult(memberId, member);
+        return asJson(result);
     }
 
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
-    private Product selectProduct(int productId) {
-        return productBhv.selectEntity(cb -> {
-            cb.setupSelect_ProductCategory();
-            cb.query().setProductId_Equal(productId);
+    private Member selectMember(Integer memberId) {
+        return memberBhv.selectEntity(cb -> {
+            cb.setupSelect_MemberAddressAsValid(timeManager.currentDate());
+            cb.setupSelect_MemberSecurityAsOne();
+            cb.setupSelect_MemberServiceAsOne().withServiceRank();
+            cb.query().setMemberId_Equal(memberId);
         }).get();
     }
 
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private ProductDetailResult mappingToBean(Product product) {
-        ProductDetailResult bean = new ProductDetailResult();
-        bean.productId = product.getProductId();
-        bean.productName = product.getProductName();
-        bean.regularPrice = product.getRegularPrice();
-        bean.productHandleCode = product.getProductHandleCode();
-        product.getProductCategory().alwaysPresent(category -> {
-            bean.categoryName = category.getProductCategoryName();
-        });
-        return bean;
+    private MypageResult mappingToResult(Integer memberId, Member member) {
+        MypageResult result = new MypageResult();
+        result.memberId = memberId;
+        result.memberName = member.getMemberName();
+        result.memberStatus = member.getMemberStatusCodeAsMemberStatus().alias();
+        result.serviceRank = member.getMemberServiceAsOne().get().getServiceRank().get().getServiceRankName();
+        result.cipheredPassword = member.getMemberSecurityAsOne().get().getLoginPassword();
+        result.memberAddress = member.getMemberAddressAsValid().map(address -> address.getAddress()).orElse(null);
+        return result;
     }
 }

@@ -18,13 +18,12 @@ package org.docksidestage.app.web.base;
 import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalThing;
+import org.docksidestage.app.web.base.login.ShowbaseLoginAssist;
 import org.docksidestage.mylasta.action.ShowbaseMessages;
 import org.docksidestage.mylasta.action.ShowbaseUserBean;
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
-import org.lastaflute.core.message.MessageManager;
 import org.lastaflute.web.login.LoginManager;
 import org.lastaflute.web.ruts.process.ActionRuntime;
-import org.lastaflute.web.servlet.request.RequestManager;
 import org.lastaflute.web.validation.ActionValidator;
 import org.lastaflute.web.validation.LaValidatableApi;
 
@@ -40,15 +39,16 @@ public abstract class ShowbaseBaseAction extends MaihamaBaseAction // has severa
     /** The application type for SHowBase, e.g. used by access context. */
     protected static final String APP_TYPE = "SHB"; // #change_it_first
 
+    /** The user type for Member, e.g. used by access context. */
+    protected static final String USER_TYPE = "M"; // #change_it_first (can delete if no login)
+
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    private MessageManager messageManager;
-    @Resource
-    private RequestManager requestManager;
-    @Resource
     private ShowbaseConfig config;
+    @Resource
+    private ShowbaseLoginAssist loginAssist;
 
     // ===================================================================================
     //                                                                               Hook
@@ -76,17 +76,17 @@ public abstract class ShowbaseBaseAction extends MaihamaBaseAction // has severa
     // #app_customize return empty if login is unused
     @Override
     protected OptionalThing<ShowbaseUserBean> getUserBean() { // application may call, overriding for co-variant
-        return OptionalThing.empty();
+        return loginAssist.getSavedUserBean();
     }
 
     @Override
     protected OptionalThing<String> myUserType() { // for framework
-        return OptionalThing.empty();
+        return OptionalThing.of(USER_TYPE);
     }
 
     @Override
     protected OptionalThing<LoginManager> myLoginManager() { // for framework
-        return OptionalThing.empty();
+        return OptionalThing.of(loginAssist);
     }
 
     // ===================================================================================

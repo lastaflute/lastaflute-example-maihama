@@ -15,33 +15,71 @@
  */
 package org.docksidestage.app.web.base.login;
 
+import javax.annotation.Resource;
+
 import org.dbflute.optional.OptionalEntity;
 import org.dbflute.optional.OptionalThing;
+import org.docksidestage.app.web.signin.SigninAction;
+import org.docksidestage.dbflute.cbean.MemberCB;
+import org.docksidestage.dbflute.exbhv.MemberBhv;
+import org.docksidestage.dbflute.exbhv.MemberLoginBhv;
 import org.docksidestage.dbflute.exentity.Member;
+import org.docksidestage.dbflute.exentity.MemberLogin;
 import org.docksidestage.mylasta.action.ShowbaseUserBean;
+import org.docksidestage.mylasta.direction.ShowbaseConfig;
+import org.lastaflute.core.magic.async.AsyncManager;
+import org.lastaflute.core.time.TimeManager;
+import org.lastaflute.db.jta.stage.TransactionStage;
+import org.lastaflute.web.login.PrimaryLoginManager;
+import org.lastaflute.web.login.credential.UserPasswordCredential;
 import org.lastaflute.web.login.option.LoginSpecifiedOption;
 
 /**
  * @author jflute
  */
-public class ShowbaseLoginAssist extends MaihamaLoginAssist<ShowbaseUserBean, Member> { // #change_it
+public class ShowbaseLoginAssist extends MaihamaLoginAssist<ShowbaseUserBean, Member> // #change_it also UserBean
+        implements PrimaryLoginManager { // #app_customize
+
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
+    @Resource
+    private TimeManager timeManager;
+    @Resource
+    private AsyncManager asyncManager;
+    @Resource
+    private TransactionStage transactionStage;
+    @Resource
+    private ShowbaseConfig config;
+    @Resource
+    private MemberBhv memberBhv;
+    @Resource
+    private MemberLoginBhv memberLoginBhv;
 
     // ===================================================================================
     //                                                                           Find User
     //                                                                           =========
     @Override
     protected void checkCredential(CredentialChecker checker) {
-        throw new UnsupportedOperationException("no login in this project");
+        checker.check(UserPasswordCredential.class, credential -> {
+            return memberBhv.selectCount(cb -> arrangeLoginByCredential(cb, credential)) > 0;
+        });
     }
 
     @Override
     protected void resolveCredential(CredentialResolver resolver) {
-        throw new UnsupportedOperationException("no login in this project");
+        resolver.resolve(UserPasswordCredential.class, credential -> {
+            return memberBhv.selectEntity(cb -> arrangeLoginByCredential(cb, credential));
+        });
+    }
+
+    private void arrangeLoginByCredential(MemberCB cb, UserPasswordCredential credential) {
+        cb.query().arrangeLogin(credential.getUser(), encryptPassword(credential.getPassword()));
     }
 
     @Override
     protected OptionalEntity<Member> doFindLoginUser(Integer userId) {
-        throw new UnsupportedOperationException("no login in this project");
+        return memberBhv.selectEntity(cb -> cb.query().arrangeLoginByIdentity(userId));
     }
 
     // ===================================================================================
@@ -49,17 +87,35 @@ public class ShowbaseLoginAssist extends MaihamaLoginAssist<ShowbaseUserBean, Me
     //                                                                       =============
     @Override
     protected ShowbaseUserBean createUserBean(Member userEntity) {
-        throw new UnsupportedOperationException("no login in this project");
+        return new ShowbaseUserBean(userEntity);
     }
 
     @Override
     protected OptionalThing<String> getCookieRememberMeKey() {
-        throw new UnsupportedOperationException("no login in this project");
+        return OptionalThing.of(config.getCookieRememberMeShowbaseKey());
+    }
+
+    @Override
+    protected Integer toTypedUserId(String userKey) {
+        return Integer.valueOf(userKey);
     }
 
     @Override
     protected void saveLoginHistory(Member member, ShowbaseUserBean userBean, LoginSpecifiedOption option) {
-        throw new UnsupportedOperationException("no login in this project");
+        asyncManager.async(() -> {
+            transactionStage.requiresNew(tx -> {
+                insertLogin(member);
+            });
+        });
+    }
+
+    protected void insertLogin(Member member) {
+        MemberLogin login = new MemberLogin();
+        login.setMemberId(member.getMemberId());
+        login.setLoginMemberStatusCodeAsMemberStatus(member.getMemberStatusCodeAsMemberStatus());
+        login.setLoginDatetime(timeManager.currentDateTime());
+        login.setMobileLoginFlg_False(); // mobile unsupported for now
+        memberLoginBhv.insert(login);
     }
 
     // ===================================================================================
@@ -72,6 +128,6 @@ public class ShowbaseLoginAssist extends MaihamaLoginAssist<ShowbaseUserBean, Me
 
     @Override
     protected Class<?> getLoginActionType() {
-        throw new UnsupportedOperationException("no login in this project");
+        return SigninAction.class;
     }
 }

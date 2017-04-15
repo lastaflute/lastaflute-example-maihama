@@ -15,6 +15,8 @@
  */
 package org.docksidestage.mylasta.action;
 
+import org.docksidestage.dbflute.exentity.Member;
+
 /**
  * @author jflute
  */
@@ -27,13 +29,35 @@ public class ShowbaseUserBean extends MaihamaUserBean { // #change_it also Login
     private static final long serialVersionUID = 1L;
 
     // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
+    protected final Integer memberId;
+    protected final String memberName;
+
+    // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    private ShowbaseUserBean() { // unused
+    public ShowbaseUserBean(Member member) {
+        memberId = member.getMemberId();
+        memberName = member.getMemberName();
     }
 
+    // ===================================================================================
+    //                                                                      Implementation
+    //                                                                      ==============
     @Override
     public Integer getUserId() {
-        throw new UnsupportedOperationException("no login in this project");
+        return getMemberId();
+    }
+
+    // ===================================================================================
+    //                                                                            Accessor
+    //                                                                            ========
+    public Integer getMemberId() {
+        return memberId;
+    }
+
+    public String getMemberName() {
+        return memberName;
     }
 }
