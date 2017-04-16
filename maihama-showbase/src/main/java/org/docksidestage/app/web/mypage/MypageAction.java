@@ -41,7 +41,7 @@ public class MypageAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<MypageResult> index() {
+    public JsonResponse<MypageResult> get$index() {
         Integer memberId = getUserBean().get().getMemberId();
         Member member = selectMember(memberId);
         MypageResult result = mappingToResult(memberId, member);

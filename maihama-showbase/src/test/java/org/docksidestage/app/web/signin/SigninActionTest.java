@@ -52,7 +52,7 @@ public class SigninActionTest extends UnitShowbaseTestCase {
         body.password = "sea";
 
         // ## Act ##
-        JsonResponse<SigninResult> response = action.index(body);
+        JsonResponse<SigninResult> response = action.post$index(body);
 
         // ## Assert ##
         TestingJsonData<SigninResult> jsonData = validateJsonData(response);
@@ -74,7 +74,7 @@ public class SigninActionTest extends UnitShowbaseTestCase {
         SigninBody body = new SigninBody();
 
         // ## Act ##
-        assertValidationError(() -> action.index(body)).handle(data -> {
+        assertValidationError(() -> action.post$index(body)).handle(data -> {
             // ## Assert ##
             log(ln() + data.requiredMessages().toDisp());
             data.requiredMessageOf("account", Required.class);
@@ -91,7 +91,7 @@ public class SigninActionTest extends UnitShowbaseTestCase {
         body.password = "land";
 
         // ## Act ##
-        assertValidationError(() -> action.index(body)).handle(data -> {
+        assertValidationError(() -> action.post$index(body)).handle(data -> {
             // ## Assert ##
             log(ln() + data.requiredMessages().toDisp());
             data.requiredMessageOf("account", ShowbaseMessages.ERRORS_LOGIN_FAILURE);

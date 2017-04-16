@@ -63,7 +63,7 @@ public class SignupAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<Void> index(SignupBody body) {
+    public JsonResponse<Void> post$index(SignupBody body) {
         validate(body, messages -> moreValidation(body, messages));
         Member member = insertProvisionalMember(body);
         String signupToken = signupTokenAssist.saveSignupToken(member);
@@ -96,7 +96,7 @@ public class SignupAction extends ShowbaseBaseAction {
     }
 
     @Execute
-    public JsonResponse<Void> register(String account, String token) { // from mail link
+    public JsonResponse<Void> get$register(String account, String token) { // from mail link so cannot be POST
         signupTokenAssist.verifySignupTokenMatched(account, token);
         updateMemberAsFormalized(account);
         return JsonResponse.asEmptyBody();

@@ -12,7 +12,7 @@
 	<packaging>war</packaging>
 
 	<name>Showbase Application in Maihama</name>
-	<description>example web project, Rest(-like) API style (and client-managed message), for LastaFlute</description>
+	<description>example web project, Rest-like? API style (and client-managed message), for LastaFlute</description>
 	<url>http://dbflute.org/lastaflute</url>
 	<inceptionYear>2015</inceptionYear>
 
@@ -80,9 +80,12 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
 							<includeArtifactIds>
-								javax.servlet-api, javax.servlet.jsp, javax.servlet.jsp-api
-								, tomcat-boot, tomcat-embed-core, tomcat-embed-logging-juli
-								, tomcat-jasper, tomcat-jasper-el, tomcat-el-api, tomcat-jsp-api, ecj
+								javax.servlet-api, javax.servlet.jsp,
+								javax.servlet.jsp-api
+								, tomcat-boot, tomcat-embed-core,
+								tomcat-embed-logging-juli
+								, tomcat-jasper, tomcat-jasper-el,
+								tomcat-el-api, tomcat-jsp-api, ecj
 							</includeArtifactIds>
 							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
@@ -95,8 +98,10 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<packagingExcludes>
-						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar
-						, WEB-INF/lib/tomcat-*.jar, WEB-INF/lib/ecj-*.jar
+						WEB-INF/lib/javax.servlet-api-*.jar,
+						WEB-INF/lib/javax.servlet.jsp-*.jar
+						, WEB-INF/lib/tomcat-*.jar,
+						WEB-INF/lib/ecj-*.jar
 					</packagingExcludes>
 					<webResources>
 						<resource>
@@ -117,9 +122,10 @@
 	</build>
 
 	<dependencies>
-		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-		<!--                                                                Main Framework -->
-		<!--                                                                 = = = = = = = -->
+		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+			= = = = = = -->
+		<!-- Main Framework -->
+		<!-- = = = = = = = -->
 		<!-- application -->
 		<dependency>
 			<groupId>org.docksidestage</groupId>
@@ -127,9 +133,10 @@
 			<version>${app.version}</version>
 		</dependency>
 
-		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-		<!--                                                               Partner Library -->
-		<!--                                                               = = = = = = = = -->
+		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+			= = = = = = -->
+		<!-- Partner Library -->
+		<!-- = = = = = = = = -->
 		<!-- boot -->
 		<dependency>
 			<groupId>org.dbflute.tomcat</groupId>

@@ -40,7 +40,7 @@ public class SigninAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<SigninResult> index(SigninBody body) {
+    public JsonResponse<SigninResult> post$index(SigninBody body) {
         validate(body, messages -> moreValidate(body, messages));
         boolean rememberMe = false; // #simple_for_example fixedly no remember for now
         loginAssist.login(createCredential(body), op -> op.rememberMe(rememberMe));
