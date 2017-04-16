@@ -116,6 +116,23 @@ public class HangarLoginAssist extends MaihamaLoginAssist<HangarUserBean, Member
     }
 
     // ===================================================================================
+    //                                                                         Login Check
+    //                                                                         ===========
+    // #app_customize like this if your use header auth token
+    //@Override
+    //protected boolean tryAlreadyLoginOrRememberMe(LoginHandlingResource resource) {
+    //    if (super.tryAlreadyLoginOrRememberMe(resource)) {
+    //        return true;
+    //    }
+    //    return requestManager.getHeader("x-authorization").flatMap(token -> {
+    //        return findByAuthToken(token).map(member -> {
+    //            saveLoginInfoToSession(member);
+    //            return true;
+    //        });
+    //    }).orElse(false);
+    //}
+
+    // ===================================================================================
     //                                                                      Login Resource
     //                                                                      ==============
     @Override

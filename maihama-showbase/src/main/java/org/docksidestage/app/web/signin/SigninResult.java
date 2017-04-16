@@ -18,14 +18,14 @@ package org.docksidestage.app.web.signin;
 import org.lastaflute.web.validation.Required;
 
 /**
- * The form of member's Login.
  * @author jflute
  */
-public class SigninBody {
+public class SigninResult {
 
     @Required
-    public String account;
+    public final String token;
 
-    @Required
-    public String password;
+    public SigninResult(String token) {
+        this.token = token;
+    }
 }

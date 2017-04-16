@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.base.login;
 
-import java.time.LocalDateTime;
-
 import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalEntity;
@@ -36,22 +34,13 @@ import org.lastaflute.web.login.LoginHandlingResource;
 import org.lastaflute.web.login.PrimaryLoginManager;
 import org.lastaflute.web.login.credential.UserPasswordCredential;
 import org.lastaflute.web.login.option.LoginSpecifiedOption;
-import org.lastaflute.web.servlet.cookie.CookieCipher;
-import org.lastaflute.web.servlet.cookie.exception.CookieCipherDecryptFailureException;
 import org.lastaflute.web.servlet.request.RequestManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author jflute
  */
 public class ShowbaseLoginAssist extends MaihamaLoginAssist<ShowbaseUserBean, Member> // #change_it also UserBean
         implements PrimaryLoginManager { // #app_customize
-
-    // ===================================================================================
-    //                                                                          Definition
-    //                                                                          ==========
-    private static final Logger logger = LoggerFactory.getLogger(ShowbaseLoginAssist.class);
 
     // ===================================================================================
     //                                                                           Attribute
@@ -65,13 +54,13 @@ public class ShowbaseLoginAssist extends MaihamaLoginAssist<ShowbaseUserBean, Me
     @Resource
     private RequestManager requestManager;
     @Resource
-    private CookieCipher cookieCipher;
-    @Resource
     private ShowbaseConfig config;
     @Resource
     private MemberBhv memberBhv;
     @Resource
     private MemberLoginBhv memberLoginBhv;
+    @Resource
+    private AuthTokenAssist authTokenAssist;
 
     // ===================================================================================
     //                                                                           Find User
@@ -108,7 +97,7 @@ public class ShowbaseLoginAssist extends MaihamaLoginAssist<ShowbaseUserBean, Me
     }
 
     @Override
-    protected OptionalThing<String> getCookieRememberMeKey() {
+    protected OptionalThing<String> getCookieRememberMeKey() { // #app_customize empty if completely no remember-me
         return OptionalThing.of(config.getCookieRememberMeShowbaseKey());
     }
 
@@ -144,20 +133,22 @@ public class ShowbaseLoginAssist extends MaihamaLoginAssist<ShowbaseUserBean, Me
             return true;
         }
         return requestManager.getHeader("x-authorization").flatMap(token -> {
-            final String decrypted;
-            try {
-                decrypted = cookieCipher.decrypt(token);
-            } catch (CookieCipherDecryptFailureException continued) { // broken token
-                logger.debug("*Failed to decrypt the token: {}, {}", token, continued.getMessage());
-                return OptionalThing.empty(); // because of outer value
-            }
-            return memberBhv.selectEntity(cb -> {
-                cb.query().setRegisterDatetime_Equal(LocalDateTime.parse(decrypted)); // #simple_for_example
-            }).map(member -> {
+            return findByAuthToken(token).map(member -> {
                 saveLoginInfoToSession(member);
                 return true;
             });
         }).orElse(false);
+    }
+
+    // ===================================================================================
+    //                                                                 Authorization Token
+    //                                                                 ===================
+    public String saveAuthToken() { // basically for signin
+        return authTokenAssist.saveMemberToken(getSavedUserBean().get().getMemberAccount());
+    }
+
+    protected OptionalThing<Member> findByAuthToken(String token) {
+        return authTokenAssist.findMemberByToken(token);
     }
 
     // ===================================================================================

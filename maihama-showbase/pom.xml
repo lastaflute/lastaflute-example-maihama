@@ -12,7 +12,7 @@
 	<packaging>war</packaging>
 
 	<name>Showbase Application in Maihama</name>
-	<description>example web project, Rest API style, for LastaFlute</description>
+	<description>example web project, Rest(-like) API style (and client-managed message), for LastaFlute</description>
 	<url>http://dbflute.org/lastaflute</url>
 	<inceptionYear>2015</inceptionYear>
 

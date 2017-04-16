@@ -34,6 +34,7 @@ public class HangarUserBean extends MaihamaUserBean { // #change_it also LoginAs
     //                                                                           =========
     protected final Integer memberId;
     protected final String memberName;
+    protected final String memberAccount;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -41,6 +42,7 @@ public class HangarUserBean extends MaihamaUserBean { // #change_it also LoginAs
     public HangarUserBean(Member member) {
         memberId = member.getMemberId();
         memberName = member.getMemberName();
+        memberAccount = member.getMemberAccount();
     }
 
     // ===================================================================================
@@ -60,5 +62,9 @@ public class HangarUserBean extends MaihamaUserBean { // #change_it also LoginAs
 
     public String getMemberName() {
         return memberName;
+    }
+
+    public String getMemberAccount() {
+        return memberAccount;
     }
 }

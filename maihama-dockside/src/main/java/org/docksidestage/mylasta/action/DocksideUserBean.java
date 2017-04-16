@@ -33,6 +33,7 @@ public class DocksideUserBean extends MaihamaUserBean { // #change_it also Login
     //                                                                           =========
     protected final Integer memberId;
     protected final String memberName;
+    protected final String memberAccount;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -40,6 +41,7 @@ public class DocksideUserBean extends MaihamaUserBean { // #change_it also Login
     public DocksideUserBean(Member member) {
         memberId = member.getMemberId();
         memberName = member.getMemberName();
+        memberAccount = member.getMemberAccount();
     }
 
     // ===================================================================================
@@ -59,5 +61,9 @@ public class DocksideUserBean extends MaihamaUserBean { // #change_it also Login
 
     public String getMemberName() {
         return memberName;
+    }
+
+    public String getMemberAccount() {
+        return memberAccount;
     }
 }

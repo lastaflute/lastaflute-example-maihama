@@ -12,7 +12,7 @@
 	<packaging>war</packaging>
 
 	<name>Hangar Application in Maihama</name>
-	<description>example web project, JSON API style, for LastaFlute</description>
+	<description>example web project, JSON API style (and server-managed message), for LastaFlute</description>
 	<url>http://dbflute.org/lastaflute</url>
 	<inceptionYear>2015</inceptionYear>
 

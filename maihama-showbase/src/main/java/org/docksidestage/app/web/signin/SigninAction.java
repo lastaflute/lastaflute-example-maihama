@@ -40,11 +40,11 @@ public class SigninAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<Void> index(SigninBody body) {
+    public JsonResponse<SigninResult> index(SigninBody body) {
         validate(body, messages -> moreValidate(body, messages));
-        boolean rememberMe = false; // #simple_for_example no remember for now
+        boolean rememberMe = false; // #simple_for_example fixedly no remember for now
         loginAssist.login(createCredential(body), op -> op.rememberMe(rememberMe));
-        return JsonResponse.asEmptyBody();
+        return asJson(new SigninResult(loginAssist.saveAuthToken()));
     }
 
     private void moreValidate(SigninBody body, ShowbaseMessages messages) {
