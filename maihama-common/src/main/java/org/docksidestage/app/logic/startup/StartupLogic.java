@@ -76,6 +76,29 @@ public class StartupLogic {
     }
 
     // ===================================================================================
+    //                                                                            Showbase
+    //                                                                            ========
+    public void fromShowbase(File repositoryDir, String domain, String serviceName, String appName) {
+        newProjectFromShowbase(repositoryDir, domain, serviceName, appName, false);
+    }
+
+    public void fromShowbaseAppOnly(File repositoryDir, String domain, String serviceName, String appName) {
+        newProjectFromShowbase(repositoryDir, domain, serviceName, appName, true);
+    }
+
+    protected void newProjectFromShowbase(File repositoryDir, String domain, String serviceName, String appName, boolean appOnly) {
+        new NewProjectCreator("showbase", repositoryDir, "maihama-showbase", original -> {
+            String filtered = original;
+            filtered = filterCommonItem(repositoryDir, domain, serviceName, filtered);
+            filtered = replace(filtered, "Showbase", Srl.initCap(appName));
+            filtered = replace(filtered, "showbase", Srl.initUncap(appName));
+            filtered = replace(filtered, "new JettyBoot(8098, ", "new JettyBoot(9001, "); // as main
+            filtered = replace(filtered, "new TomcatBoot(8098, ", "new TomcatBoot(9001, "); // as main
+            return filtered;
+        }, appOnly).newProject();
+    }
+
+    // ===================================================================================
     //                                                                        Assist Logic
     //                                                                        ============
     protected String filterCommonItem(File repositoryDir, String domain, String serviceName, String filtered) {

@@ -147,7 +147,7 @@ public class ShowbaseLoginAssist extends MaihamaLoginAssist<ShowbaseUserBean, Me
         return authTokenAssist.saveMemberToken(getSavedUserBean().get().getMemberAccount());
     }
 
-    protected OptionalThing<Member> findByAuthToken(String token) {
+    public OptionalThing<Member> findByAuthToken(String token) {
         return authTokenAssist.findMemberByToken(token);
     }
 

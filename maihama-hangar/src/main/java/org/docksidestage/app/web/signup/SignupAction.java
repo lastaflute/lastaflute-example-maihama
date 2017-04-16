@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.signup;
 
-import java.util.Random;
-
 import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.HangarBaseAction;
@@ -35,8 +33,6 @@ import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;
-import org.lastaflute.web.servlet.request.ResponseManager;
-import org.lastaflute.web.servlet.session.SessionManager;
 
 /**
  * @author iwamatsu0430
@@ -46,19 +42,10 @@ import org.lastaflute.web.servlet.session.SessionManager;
 public class SignupAction extends HangarBaseAction {
 
     // ===================================================================================
-    //                                                                          Definition
-    //                                                                          ==========
-    private static final String SIGNUP_TOKEN_KEY = "signupToken";
-
-    // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
     @Resource
     private Postbox postbox;
-    @Resource
-    private ResponseManager responseManager;
-    @Resource
-    private SessionManager sessionManager;
     @Resource
     private HangarConfig config;
     @Resource
@@ -69,19 +56,21 @@ public class SignupAction extends HangarBaseAction {
     private MemberSecurityBhv memberSecurityBhv;
     @Resource
     private MemberServiceBhv memberServiceBhv;
+    @Resource
+    private SignupTokenAssist signupTokenAssist;
 
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<Void> index(SignupBody body) {
+    public JsonResponse<Object> index(SignupBody body) { // cannot Void generic headache
         validate(body, messages -> moreValidation(body, messages));
-        Integer memberId = insertProvisionalMember(body);
-        loginAssist.identityLogin(memberId.longValue(), op -> op.rememberMe(true)); // fixedly remember-me here
-
-        String signupToken = saveSignupToken();
+        Member member = insertProvisionalMember(body);
+        String signupToken = signupTokenAssist.saveSignupToken(member);
         sendSignupMail(body, signupToken);
-        return JsonResponse.asEmptyBody();
+        return JsonResponse.asEmptyBody().afterTxCommit(() -> { // for asynchronous DB access
+            loginAssist.identityLogin(member.getMemberId(), op -> {}); // #simple_for_example no remember for now
+        });
     }
 
     private void moreValidation(SignupBody body, HangarMessages messages) {
@@ -90,50 +79,35 @@ public class SignupAction extends HangarBaseAction {
                 cb.query().setMemberAccount_Equal(body.memberAccount);
             });
             if (count > 0) {
-                messages.addErrorsMemberAddAlreadyExist("memberAccount", "account");
+                messages.addErrorsSignupAccountAlreadyExists("memberAccount");
             }
         }
     }
 
-    private String saveSignupToken() {
-        String token = Integer.toHexString(new Random().nextInt()); // #simple_for_example
-        sessionManager.setAttribute(SIGNUP_TOKEN_KEY, token);
-        return token;
-    }
-
-    private void sendSignupMail(SignupBody body, String signupToken) {
+    private void sendSignupMail(SignupBody body, String token) {
         WelcomeMemberPostcard.droppedInto(postbox, postcard -> {
             postcard.setFrom(config.getMailAddressSupport(), "Hangar Support"); // #simple_for_example
             postcard.addTo(body.memberAccount + "@docksidestage.org"); // #simple_for_example
             postcard.setDomain(config.getServerDomain());
             postcard.setMemberName(body.memberName);
             postcard.setAccount(body.memberAccount);
-            postcard.setToken(signupToken);
+            postcard.setToken(token);
             postcard.async();
             postcard.retry(3, 1000L);
         });
     }
 
     @Execute
-    public JsonResponse<Void> formalize(String account, String token) { // from mail link
-        verifySignupTokenMatched(account, token);
+    public JsonResponse<Void> register(String account, String token) { // from mail link
+        signupTokenAssist.verifySignupTokenMatched(account, token);
         updateMemberAsFormalized(account);
         return JsonResponse.asEmptyBody();
-    }
-
-    private void verifySignupTokenMatched(String account, String token) {
-        String saved = sessionManager.getAttribute(SIGNUP_TOKEN_KEY, String.class).orElseTranslatingThrow(cause -> {
-            return responseManager.new404("Not found the signupToken in session: " + account, op -> op.cause(cause));
-        });
-        if (!saved.equals(token)) {
-            throw responseManager.new404("Unmatched signupToken in session: saved=" + saved + ", requested=" + token);
-        }
     }
 
     // ===================================================================================
     //                                                                              Update
     //                                                                              ======
-    private Integer insertProvisionalMember(SignupBody body) {
+    private Member insertProvisionalMember(SignupBody body) {
         Member member = new Member();
         member.setMemberName(body.memberName);
         member.setMemberAccount(body.memberAccount);
@@ -153,7 +127,7 @@ public class SignupAction extends HangarBaseAction {
         service.setServicePointCount(0);
         service.setServiceRankCode_Plastic();
         memberServiceBhv.insert(service);
-        return member.getMemberId();
+        return member;
     }
 
     private void updateMemberAsFormalized(String account) {

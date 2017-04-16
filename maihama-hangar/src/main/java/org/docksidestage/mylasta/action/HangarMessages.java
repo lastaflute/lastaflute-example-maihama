@@ -27,21 +27,20 @@ public class HangarMessages extends HangarLabels {
     /** The serial version UID for object serialization. (Default) */
     private static final long serialVersionUID = 1L;
 
-    /** The key of the message: the member {0} already exists so input others */
-    public static final String ERRORS_MEMBER_ADD_ALREADY_EXIST = "{errors.member.add.already.exist}";
+    /** The key of the message: the account already exists so input others */
+    public static final String ERRORS_SIGNUP_ACCOUNT_ALREADY_EXISTS = "{errors.signup.account.already.exists}";
 
     /**
-     * Add the created action message for the key 'errors.member.add.already.exist' with parameters.
+     * Add the created action message for the key 'errors.signup.account.already.exists' with parameters.
      * <pre>
-     * message: the member {0} already exists so input others
+     * message: the account already exists so input others
      * </pre>
      * @param property The property name for the message. (NotNull)
-     * @param arg0 The parameter arg0 for message. (NotNull)
      * @return this. (NotNull)
      */
-    public HangarMessages addErrorsMemberAddAlreadyExist(String property, String arg0) {
+    public HangarMessages addErrorsSignupAccountAlreadyExists(String property) {
         assertPropertyNotNull(property);
-        add(property, new UserMessage(ERRORS_MEMBER_ADD_ALREADY_EXIST, arg0));
+        add(property, new UserMessage(ERRORS_SIGNUP_ACCOUNT_ALREADY_EXISTS));
         return this;
     }
 }

@@ -30,9 +30,6 @@ public class OrleansMessages extends OrleansLabels {
     /** The key of the message: the account already exists so input others */
     public static final String ERRORS_SIGNUP_ACCOUNT_ALREADY_EXISTS = "{errors.signup.account.already.exists}";
 
-    /** The key of the message: the member already exists so input others */
-    public static final String ERRORS_MEMBER_ADD_ALREADY_EXIST = "{errors.member.add.already.exist}";
-
     /**
      * Add the created action message for the key 'errors.signup.account.already.exists' with parameters.
      * <pre>
@@ -44,20 +41,6 @@ public class OrleansMessages extends OrleansLabels {
     public OrleansMessages addErrorsSignupAccountAlreadyExists(String property) {
         assertPropertyNotNull(property);
         add(property, new UserMessage(ERRORS_SIGNUP_ACCOUNT_ALREADY_EXISTS));
-        return this;
-    }
-
-    /**
-     * Add the created action message for the key 'errors.member.add.already.exist' with parameters.
-     * <pre>
-     * message: the member already exists so input others
-     * </pre>
-     * @param property The property name for the message. (NotNull)
-     * @return this. (NotNull)
-     */
-    public OrleansMessages addErrorsMemberAddAlreadyExist(String property) {
-        assertPropertyNotNull(property);
-        add(property, new UserMessage(ERRORS_MEMBER_ADD_ALREADY_EXIST));
         return this;
     }
 }

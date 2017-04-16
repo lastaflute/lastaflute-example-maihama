@@ -33,6 +33,9 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /** The key of the message: UNKNOWN_BUSINESS_ERROR */
     public static final String ERRORS_UNKNOWN_BUSINESS_ERROR = "{errors.unknown.business.error}";
 
+    /** The key of the message: SIGNUP_ACCOUNT_ALREADY_EXISTS */
+    public static final String ERRORS_SIGNUP_ACCOUNT_ALREADY_EXISTS = "{errors.signup.account.already.exists}";
+
     /**
      * Add the created action message for the key 'constraints.AssertFalse.message' with parameters.
      * <pre>
@@ -738,6 +741,20 @@ public class ShowbaseMessages extends ShowbaseLabels {
     public ShowbaseMessages addErrorsUnknownBusinessError(String property) {
         assertPropertyNotNull(property);
         add(property, new UserMessage(ERRORS_UNKNOWN_BUSINESS_ERROR));
+        return this;
+    }
+
+    /**
+     * Add the created action message for the key 'errors.signup.account.already.exists' with parameters.
+     * <pre>
+     * message: SIGNUP_ACCOUNT_ALREADY_EXISTS
+     * </pre>
+     * @param property The property name for the message. (NotNull)
+     * @return this. (NotNull)
+     */
+    public ShowbaseMessages addErrorsSignupAccountAlreadyExists(String property) {
+        assertPropertyNotNull(property);
+        add(property, new UserMessage(ERRORS_SIGNUP_ACCOUNT_ALREADY_EXISTS));
         return this;
     }
 }

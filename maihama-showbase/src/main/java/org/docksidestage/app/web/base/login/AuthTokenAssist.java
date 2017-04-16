@@ -38,7 +38,7 @@ public class AuthTokenAssist { // #change_it
     @Resource
     private MemberBhv memberBhv;
 
-    // #simple_for_example no no no no way, normally use database or KVS
+    // #simple_for_example no no no no way, normally use database or KVS, and prepare time limit
     public String saveMemberToken(String memberAccount) {
         final String token = Integer.toHexString(new Random().nextInt());
         final String path = buildTokenFilePath(token);

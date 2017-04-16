@@ -18,7 +18,7 @@ package org.docksidestage.app.web.signup;
 import org.lastaflute.web.validation.Required;
 
 /**
- * @author iwamatsu0430
+ * @author jflute
  */
 public class SignupBody {
 

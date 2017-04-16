@@ -17,25 +17,26 @@ package org.docksidestage.app.web.signin;
 
 import javax.annotation.Resource;
 
-import org.docksidestage.app.web.base.login.HangarLoginAssist;
+import org.dbflute.utflute.lastaflute.mock.TestingJsonData;
+import org.docksidestage.app.web.base.login.ShowbaseLoginAssist;
 import org.docksidestage.dbflute.exbhv.MemberLoginBhv;
-import org.docksidestage.mylasta.action.HangarMessages;
-import org.docksidestage.mylasta.action.HangarUserBean;
-import org.docksidestage.unit.UnitHangarTestCase;
+import org.docksidestage.mylasta.action.ShowbaseMessages;
+import org.docksidestage.unit.UnitShowbaseTestCase;
 import org.lastaflute.core.time.TimeManager;
+import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.validation.Required;
 
 /**
  * @author jflute
  */
-public class SigninActionTest extends UnitHangarTestCase {
+public class SigninActionTest extends UnitShowbaseTestCase {
 
     @Resource
     private TimeManager timeManager;
     @Resource
     private MemberLoginBhv memberLoginBhv;
     @Resource
-    private HangarLoginAssist loginAssist;
+    private ShowbaseLoginAssist loginAssist;
 
     // ===================================================================================
     //                                                                               Basic
@@ -51,12 +52,13 @@ public class SigninActionTest extends UnitHangarTestCase {
         body.password = "sea";
 
         // ## Act ##
-        action.index(body);
+        JsonResponse<SigninResult> response = action.index(body);
 
         // ## Assert ##
-        HangarUserBean userBean = loginAssist.getSavedUserBean().get();
-        log(userBean);
-        assertEquals(body.account, userBean.getMemberAccount());
+        TestingJsonData<SigninResult> jsonData = validateJsonData(response);
+        SigninResult jsonResult = jsonData.getJsonResult();
+        assertEquals(body.account, loginAssist.findByAuthToken(jsonResult.token).get().getMemberAccount());
+        assertEquals(body.account, loginAssist.getSavedUserBean().get().getMemberAccount());
         assertEquals(1, memberLoginBhv.selectCount(cb -> {
             cb.query().setLoginDatetime_Equal(timeManager.currentDateTime()); // transaction time
         }));
@@ -92,7 +94,7 @@ public class SigninActionTest extends UnitHangarTestCase {
         assertValidationError(() -> action.index(body)).handle(data -> {
             // ## Assert ##
             log(ln() + data.requiredMessages().toDisp());
-            data.requiredMessageOf("account", HangarMessages.ERRORS_LOGIN_FAILURE);
+            data.requiredMessageOf("account", ShowbaseMessages.ERRORS_LOGIN_FAILURE);
         });
     }
 }
