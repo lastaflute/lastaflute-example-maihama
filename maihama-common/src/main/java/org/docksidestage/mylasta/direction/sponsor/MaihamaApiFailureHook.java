@@ -126,8 +126,6 @@ public class MaihamaApiFailureHook implements ApiFailureHook { // #change_it for
     //                                                                         ===========
     public static class UnifiedFailureResult {
 
-        public final String notice = "[Attension] tentative JSON so you should change it: " + MaihamaApiFailureHook.class;
-
         @Required
         public final UnifiedFailureType cause;
 
