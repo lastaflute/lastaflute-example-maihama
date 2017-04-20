@@ -50,7 +50,8 @@ public class SwaggerAction extends ShowbaseBaseAction {
     @Execute
     public HtmlResponse index() {
         verifySwaggerAllowed();
-        return new SwaggerAgent(requestManager).prepareSwaggerUiResponse("/swagger/json/");
+        String swaggerJsonUrl = toActionUrl(SwaggerAction.class, moreUrl("json"));
+        return new SwaggerAgent(requestManager).prepareSwaggerUiResponse(swaggerJsonUrl);
     }
 
     @Execute
@@ -59,7 +60,7 @@ public class SwaggerAction extends ShowbaseBaseAction {
         return asJson(new SwaggerGenerator().generateSwaggerMap());
     }
 
-    private void verifySwaggerAllowed() {
-        verifyOrClientError("Swagger is in development environment only", config.isDevelopmentHere());
+    private void verifySwaggerAllowed() { // also check in ActionAdjustmentProvider
+        verifyOrClientError("Swagger can works in development environment only!", config.isDevelopmentHere());
     }
 }

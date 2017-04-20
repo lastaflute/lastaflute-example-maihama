@@ -17,15 +17,22 @@ package org.docksidestage.mylasta.direction;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
+import org.docksidestage.mylasta.direction.sponsor.ShowbaseActionAdjustmentProvider;
 import org.docksidestage.mylasta.direction.sponsor.ShowbaseApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.ShowbaseListedClassificationProvider;
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
 import org.lastaflute.web.api.ApiFailureHook;
+import org.lastaflute.web.path.ActionAdjustmentProvider;
 
 /**
  * @author jflute
  */
 public class ShowbaseFwAssistantDirector extends MaihamaFwAssistantDirector {
+
+    @Resource
+    private ShowbaseConfig config;
 
     @Override
     protected void setupAppConfig(List<String> nameList) {
@@ -42,6 +49,11 @@ public class ShowbaseFwAssistantDirector extends MaihamaFwAssistantDirector {
     @Override
     protected ListedClassificationProvider createListedClassificationProvider() {
         return new ShowbaseListedClassificationProvider();
+    }
+
+    @Override
+    protected ActionAdjustmentProvider createActionAdjustmentProvider() {
+        return new ShowbaseActionAdjustmentProvider(config);
     }
 
     @Override
