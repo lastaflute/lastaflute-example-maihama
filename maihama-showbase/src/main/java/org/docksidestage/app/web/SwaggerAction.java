@@ -30,6 +30,7 @@ import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.servlet.request.RequestManager;
 
 /**
+ * The action to show swaggar-ui.
  * @author awaawa
  * @author jflute
  */
@@ -60,7 +61,7 @@ public class SwaggerAction extends ShowbaseBaseAction {
         return asJson(new SwaggerGenerator().generateSwaggerMap());
     }
 
-    private void verifySwaggerAllowed() { // also check in ActionAdjustmentProvider
+    private void verifySwaggerAllowed() { // also check in ShowbaseBoot, ShowbaseActionAdjustmentProvider
         verifyOrClientError("Swagger can works in development environment only!", config.isDevelopmentHere());
     }
 }

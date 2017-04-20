@@ -23,7 +23,12 @@ import org.dbflute.tomcat.TomcatBoot;
 public class ShowbaseBoot { // #change_it_first
 
     public static void main(String[] args) { // e.g. java -Dlasta.env=production -jar maihama-showbase.war
-        new TomcatBoot(8098, "/showbase").useWebFragmentsDetect().useMetaInfoResourceDetect().asDevelopment(isDevelopment()).bootAwait();
+        TomcatBoot boot = new TomcatBoot(8098, "/showbase");
+        if (isDevelopment()) {
+            boot.asDevelopment();
+            boot.useMetaInfoResourceDetect().useWebFragmentsDetect(jarName -> jarName.contains("swagger"));
+        }
+        boot.bootAwait();
     }
 
     private static boolean isDevelopment() {
