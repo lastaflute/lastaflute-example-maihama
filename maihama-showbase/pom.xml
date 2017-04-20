@@ -16,6 +16,11 @@
 	<url>http://dbflute.org/lastaflute</url>
 	<inceptionYear>2015</inceptionYear>
 
+	<properties>
+		<lasta.doc.version>0.2.3-RC2</lasta.doc.version>
+		<swagger.ui.version>2.2.8</swagger.ui.version>
+	</properties>
+
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -122,10 +127,9 @@
 	</build>
 
 	<dependencies>
-		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-			= = = = = = -->
-		<!-- Main Framework -->
-		<!-- = = = = = = = -->
+		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+		<!--                                                                Main Framework -->
+		<!--                                                                 = = = = = = = -->
 		<!-- application -->
 		<dependency>
 			<groupId>org.docksidestage</groupId>
@@ -133,14 +137,29 @@
 			<version>${app.version}</version>
 		</dependency>
 
-		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-			= = = = = = -->
-		<!-- Partner Library -->
-		<!-- = = = = = = = = -->
+		<!-- lastaflute -->
+		<dependency> <!-- utflute depends but runtime scope here for swagger -->
+			<groupId>org.lastaflute.doc</groupId>
+			<artifactId>lasta-doc</artifactId>
+			<version>${lasta.doc.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+		<!--                                                               Partner Library -->
+		<!--                                                               = = = = = = = = -->
 		<!-- boot -->
 		<dependency>
 			<groupId>org.dbflute.tomcat</groupId>
 			<artifactId>tomcat-boot</artifactId>
+		</dependency>
+
+		<!-- swagger -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>swagger-ui</artifactId>
+			<version>${swagger.ui.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 </project>
