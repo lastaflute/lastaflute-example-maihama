@@ -17,7 +17,7 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.doc.version>0.2.3-RC2</lasta.doc.version>
+		<lasta.doc.version>0.2.3-RC3</lasta.doc.version>
 		<swagger.ui.version>2.2.8</swagger.ui.version>
 	</properties>
 
