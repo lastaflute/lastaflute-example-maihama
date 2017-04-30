@@ -1,9 +1,9 @@
 <pagination>
-  <p>{currentPage} / {totalPages}</p>
+  <p>{currentPageNumber} / {allPageCount}</p>
   <ul>
     <li if={isFirst}><a href={prevPageParam} onclick={movePage}>prev</a></li>
     <li each={prevPages} class="page"><a href={pageParam} onclick={movePage}>{pageNum}</a></li>
-    <li class="current">{currentPage}</li>
+    <li class="current">{currentPageNumber}</li>
     <li each={nextPages} class="page"><a href={pageParam} onclick={movePage}>{pageNum}</a></li>
     <li if={isEnd}><a href={nextPageParam} onclick={movePage}>next</a></li>
   </ul>
@@ -58,8 +58,8 @@
       obs.trigger(RC.EVENT.route.change, href);
     };
 
-    this.currentPage = 1;
-    this.totalPages = 1;
+    this.currentPageNumber = 1;
+    this.allPageCount = 1;
     this.prevPages = [];
     this.nextPages = [];
     this.isFirst = false;
@@ -68,33 +68,33 @@
     var mappingPagenation = function(data) {
       self.prevPages = [];
       self.nextPages = [];
-      self.currentPage = data.currentPage;
-      self.totalPages = data.totalPages;
+      self.currentPageNumber = data.currentPageNumber;
+      self.allPageCount = data.allPageCount;
       var queryParams = window.helper.mappingQueryParams();
 
       // set prevPages
-      var prevStart = self.currentPage - range;
+      var prevStart = self.currentPageNumber - range;
       prevStart = (prevStart <= 1) ? 1 : prevStart;
-      for (var i = prevStart; i < self.currentPage; i++) {
+      for (var i = prevStart; i < self.currentPageNumber; i++) {
         var q = window.helper.updateOrInsertQueryParams(queryParams, "page", i);
         self.prevPages.push({pageNum: i, pageParam: window.helper.joinQueryParams(q)});
       }
 
       // set nextPages
-      var nextEnd = self.currentPage + range;
-      nextEnd = (nextEnd >= self.totalPages) ? self.totalPages : nextEnd;
-      for (var i = self.currentPage + 1; i <= nextEnd; i++) {
+      var nextEnd = self.currentPageNumber + range;
+      nextEnd = (nextEnd >= self.allPageCount) ? self.allPageCount : nextEnd;
+      for (var i = self.currentPageNumber + 1; i <= nextEnd; i++) {
         var q = window.helper.updateOrInsertQueryParams(queryParams, "page", i);
         self.nextPages.push({pageNum: i, pageParam: window.helper.joinQueryParams(q)});
       }
 
       // is First or End
-      self.isFirst = self.currentPage != 1;
-      var prevQuery = window.helper.updateOrInsertQueryParams(queryParams, "page", self.currentPage - 1);
+      self.isFirst = self.currentPageNumber != 1;
+      var prevQuery = window.helper.updateOrInsertQueryParams(queryParams, "page", self.currentPageNumber - 1);
       self.prevPageParam = window.helper.joinQueryParams(prevQuery);
-      var nextQuery = window.helper.updateOrInsertQueryParams(queryParams, "page", self.currentPage + 1);
+      var nextQuery = window.helper.updateOrInsertQueryParams(queryParams, "page", self.currentPageNumber + 1);
       self.nextPageParam = window.helper.joinQueryParams(nextQuery);
-      self.isEnd = self.currentPage != self.totalPages;
+      self.isEnd = self.currentPageNumber != self.allPageCount;
 
       self.update();
     }

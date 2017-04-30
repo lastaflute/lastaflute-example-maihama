@@ -88,7 +88,7 @@
     });
 
     obs.on(RC.EVENT.route.product.listLoaded, function(data) {
-      self.productList = data.items;
+      self.productList = data.rows;
       self.update();
       obs.trigger(RC.EVENT.pagenation.set, data);
     });
