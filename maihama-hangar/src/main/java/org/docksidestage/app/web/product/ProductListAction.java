@@ -90,7 +90,7 @@ public class ProductListAction extends HangarBaseAction {
             }
             cb.query().addOrderBy_ProductName_Asc();
             cb.query().addOrderBy_ProductId_Asc();
-            cb.paging(Integer.MAX_VALUE, pageNumber); // #later: waiting for client side implementation by jflute
+            cb.paging(4, pageNumber);
         });
     }
 
