@@ -50,7 +50,9 @@ public class AllJobScheduler implements LaJobScheduler {
         cron.register("*/2 * * * *", LandJob.class, quitIfConcurrent(), op -> {
             op.uniqueBy("non_param_unique_land");
         });
-        cron.registerNonCron(PiariJob.class, quitIfConcurrent(), op -> op.uniqueBy("piari"));
+        cron.registerNonCron(PiariJob.class, quitIfConcurrent(), op -> op.uniqueBy("piari").params(() -> {
+            return DfCollectionUtil.newHashMap("sea", "bbb");
+        }));
         cron.registerNonCron(BonvoJob.class, errorIfConcurrent(), op -> op.uniqueBy("bonvo"));
     }
 

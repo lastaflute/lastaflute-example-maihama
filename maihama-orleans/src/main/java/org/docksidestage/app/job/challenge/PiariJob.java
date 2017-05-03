@@ -15,21 +15,34 @@
  */
 package org.docksidestage.app.job.challenge;
 
+import java.time.LocalDateTime;
+
 import org.lastaflute.job.LaJob;
 import org.lastaflute.job.LaJobRuntime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author jflute
  */
 public class PiariJob implements LaJob {
 
+    private static final Logger logger = LoggerFactory.getLogger(PiariJob.class);
+
     // ===================================================================================
     //                                                                             Job Run
     //                                                                             =======
     @Override
     public void run(LaJobRuntime runtime) { // empty job!
+        LocalDateTime execTime = (LocalDateTime) runtime.getParameterMap().get("execTime");
+        if (execTime != null) { // means from launch-now
+            logger.debug("...Accepting execTime: {}", execTime);
+        }
         runtime.showEndTitleRoll(data -> {
             data.register("empty", true);
+            if (execTime != null) {
+                data.register("execTime", execTime);
+            }
         });
     }
 }

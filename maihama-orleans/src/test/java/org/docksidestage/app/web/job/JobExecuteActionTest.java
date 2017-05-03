@@ -29,14 +29,28 @@ import org.lastaflute.web.response.JsonResponse;
  */
 public class JobExecuteActionTest extends UnitOrleansTestCase {
 
+    // ===================================================================================
+    //                                                                            Settings
+    //                                                                            ========
+    @Override
+    protected boolean isUseJobScheduling() {
+        return true;
+    }
+
+    // ===================================================================================
+    //                                                                             Success
+    //                                                                             =======
     public void test_index_success() {
         // ## Arrange ##
         JobExecuteAction action = new JobExecuteAction();
         inject(action);
         LocalDateTime before = currentLocalDateTime();
+        JobExecuteBody body = new JobExecuteBody();
+        body.jobCode = "piari";
+        body.execTime = before;
 
         // ## Act ##
-        JsonResponse<JobExecuteResult> response = action.index("piari");
+        JsonResponse<JobExecuteResult> response = action.index(body);
 
         // ## Assert ##
         showJson(response);
@@ -45,19 +59,26 @@ public class JobExecuteActionTest extends UnitOrleansTestCase {
         assertJobIdentity("piari", PiariJob.class, result);
         assertTimeBeforeAfter(result, before);
         assertEquals("true", result.endTitleRoll.get("empty"));
+        assertEquals(before.toString(), result.endTitleRoll.get("execTime"));
         assertEquals(ExecResultTypePart.SUCCESS, result.execResultType);
         assertFalse(result.errorEnding);
         assertNull(result.errorMessage);
     }
 
+    // ===================================================================================
+    //                                                                           Caused by
+    //                                                                           =========
     public void test_index_causedByApplication() {
         // ## Arrange ##
         JobExecuteAction action = new JobExecuteAction();
         inject(action);
         LocalDateTime before = currentLocalDateTime();
+        JobExecuteBody body = new JobExecuteBody();
+        body.jobCode = "bonvo";
+        body.execTime = before;
 
         // ## Act ##
-        JsonResponse<JobExecuteResult> response = action.index("bonvo");
+        JsonResponse<JobExecuteResult> response = action.index(body);
 
         // ## Assert ##
         showJson(response);
@@ -71,6 +92,9 @@ public class JobExecuteActionTest extends UnitOrleansTestCase {
         assertContains(result.errorMessage, BonvoJob.BOOOOOOOON);
     }
 
+    // ===================================================================================
+    //                                                                        Small Helper
+    //                                                                        ============
     private void assertJobIdentity(String jobUnique, Class<?> jobType, JobExecuteResult result) {
         assertEquals(jobUnique, result.jobUnique);
         assertEquals(jobType.getName(), result.jobTypeFqcn);

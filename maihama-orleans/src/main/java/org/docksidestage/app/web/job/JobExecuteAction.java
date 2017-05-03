@@ -22,6 +22,7 @@ import org.lastaflute.job.JobManager;
 import org.lastaflute.job.LaJobHistory;
 import org.lastaflute.job.LaScheduledJob;
 import org.lastaflute.job.key.LaJobUnique;
+import org.lastaflute.job.subsidiary.LaunchNowOption;
 import org.lastaflute.job.subsidiary.LaunchedProcess;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
@@ -38,15 +39,27 @@ public class JobExecuteAction extends OrleansBaseAction {
     private ResponseManager responseManager;
 
     @Execute
-    public JsonResponse<JobExecuteResult> index(String jobUnique) {
-        LaScheduledJob job = jobManager.findJobByUniqueOf(LaJobUnique.of(jobUnique)).orElseTranslatingThrow(cause -> {
-            return responseManager.new400("Not found the job: " + jobUnique, op -> op.cause(cause));
-        });
+    public JsonResponse<JobExecuteResult> index(JobExecuteBody body) {
+        validateApi(body, messages -> {});
+        LaScheduledJob job = findJob(body);
 
-        LaunchedProcess process = job.launchNow();
+        LaunchedProcess process = job.launchNow(op -> mappingToParams(body, op));
         LaJobHistory history = process.waitForEnding().get();
 
         JobExecuteResult result = new JobExecuteResult(history);
         return asJson(result);
+    }
+
+    private LaScheduledJob findJob(JobExecuteBody body) {
+        return jobManager.findJobByUniqueOf(LaJobUnique.of(body.jobCode)).orElseTranslatingThrow(cause -> {
+            return responseManager.new400("Not found the job: " + body.jobCode, op -> op.cause(cause));
+        });
+    }
+
+    private void mappingToParams(JobExecuteBody body, LaunchNowOption op) {
+        op.param("execTime", body.execTime);
+        if (body.varyingParameter != null) {
+            body.varyingParameter.forEach((key, value) -> op.param(key, value));
+        }
     }
 }
