@@ -39,9 +39,9 @@ public class JobExecuteAction extends OrleansBaseAction {
     private ResponseManager responseManager;
 
     @Execute
-    public JsonResponse<JobExecuteResult> index(JobExecuteBody body) {
+    public JsonResponse<JobExecuteResult> index(String jobCode, JobExecuteBody body) {
         validateApi(body, messages -> {});
-        LaScheduledJob job = findJob(body);
+        LaScheduledJob job = findJob(jobCode);
 
         LaunchedProcess process = job.launchNow(op -> mappingToParams(body, op));
         LaJobHistory history = process.waitForEnding().get();
@@ -50,9 +50,9 @@ public class JobExecuteAction extends OrleansBaseAction {
         return asJson(result);
     }
 
-    private LaScheduledJob findJob(JobExecuteBody body) {
-        return jobManager.findJobByUniqueOf(LaJobUnique.of(body.jobCode)).orElseTranslatingThrow(cause -> {
-            return responseManager.new400("Not found the job: " + body.jobCode, op -> op.cause(cause));
+    private LaScheduledJob findJob(String jobCode) {
+        return jobManager.findJobByUniqueOf(LaJobUnique.of(jobCode)).orElseTranslatingThrow(cause -> {
+            return responseManager.new400("Not found the job: " + jobCode, op -> op.cause(cause));
         });
     }
 

@@ -30,9 +30,8 @@ public class JobExecuteBody {
     //                                                                           Attribute
     //                                                                           =========
     @Required
-    public String jobCode; // means jobUnique in LastaJob
-    @Required
     public LocalDateTime execTime; // business time for job execution
+
     public Map<String, Object> varyingParameter; // as you like it
 
     // ===================================================================================
