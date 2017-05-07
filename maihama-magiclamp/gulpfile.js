@@ -5,7 +5,6 @@ var sequence  = require('run-sequence');
 var riot      = require('gulp-riot');
 var gconcat   = require('gulp-concat');
 var webserver = require('gulp-webserver');
-var sync      = require('browser-sync');
 
 var bower_targets = [
   'bower_components/riot/riot.min.js',
@@ -25,7 +24,7 @@ gulp.task('default', function () {
   return sequence(
     'bower',
     'riot',
-    'sync',
+    'webserver',
     'watch'
   );
 });
@@ -33,8 +32,7 @@ gulp.task('default', function () {
 gulp.task('watch', function () {
   gulp.watch(watch_target, function () {
     sequence(
-      'riot',
-      'reload'
+      'riot'
     );
   });
 });
@@ -69,18 +67,7 @@ gulp.task('webserver', function () {
       port: 3000,
       livereload: true,
       directoryListening: true,
+      fallback: 'index.html',
       open: true
     }));
-});
-
-gulp.task('sync', function () {
-  return sync({
-    server: {
-      baseDir: 'src/'
-    }
-  });
-});
-
-gulp.task('reload', function () {
-  return sync.reload();
 });
