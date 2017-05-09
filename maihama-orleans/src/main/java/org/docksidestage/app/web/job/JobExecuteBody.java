@@ -30,7 +30,7 @@ public class JobExecuteBody {
     //                                                                           Attribute
     //                                                                           =========
     @Required
-    public LocalDateTime execTime; // business time for job execution
+    public LocalDateTime executionDateTime; // business time for job execution
 
     public Map<String, Object> varyingParameter; // as you like it
 

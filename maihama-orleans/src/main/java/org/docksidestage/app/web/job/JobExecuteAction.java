@@ -57,7 +57,7 @@ public class JobExecuteAction extends OrleansBaseAction {
     }
 
     private void mappingToParams(JobExecuteBody body, LaunchNowOption op) {
-        op.param("execTime", body.execTime);
+        op.param("executionDateTime", body.executionDateTime);
         if (body.varyingParameter != null) {
             body.varyingParameter.forEach((key, value) -> op.param(key, value));
         }

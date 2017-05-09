@@ -46,7 +46,7 @@ public class JobExecuteActionTest extends UnitOrleansTestCase {
         inject(action);
         LocalDateTime before = currentLocalDateTime();
         JobExecuteBody body = new JobExecuteBody();
-        body.execTime = before;
+        body.executionDateTime = before;
 
         // ## Act ##
         JsonResponse<JobExecuteResult> response = action.index("piari", body);
@@ -73,7 +73,7 @@ public class JobExecuteActionTest extends UnitOrleansTestCase {
         inject(action);
         LocalDateTime before = currentLocalDateTime();
         JobExecuteBody body = new JobExecuteBody();
-        body.execTime = before;
+        body.executionDateTime = before;
 
         // ## Act ##
         JsonResponse<JobExecuteResult> response = action.index("bonvo", body);
