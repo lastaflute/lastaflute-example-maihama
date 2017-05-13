@@ -8,6 +8,7 @@ var webserver = require('gulp-webserver');
 
 var bower_targets = [
   'bower_components/riot/riot.min.js',
+  'bower_components/riot-route/dist/route.min.js',
   'bower_components/superagent/superagent.min.js'
 ];
 
