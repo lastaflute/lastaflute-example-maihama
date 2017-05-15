@@ -20,7 +20,7 @@
       <tbody>
         <tr each={productList}>
           <td>
-            <a href="/product/detail/?product={productId}" onclick={moveDetail}>{productName}</a>
+            <a href="/product/detail/{productId}">{productName}</a>
           </td>
           <td>¥{window.helper.formatMoneyComma(regularPrice)}</td>
         </tr>
@@ -56,7 +56,7 @@
         self.queryParams = window.helper.deleteKeyFromQueryParams(self.queryParams, searchQueryKey);
       }
       var href = location.pathname + window.helper.joinQueryParams(self.queryParams);
-      obs.trigger(RC.EVENT.route.change, href);
+      obs.trigger(RC.EVENT.route.product.list, self.queryParams);
     };
 
     switchIncremental = function(e) {
