@@ -21,24 +21,24 @@
     </div>
     
     <style scoped>
-      :scope .sign-in-box {
+      .sign-in-box {
         width: 320px;
         margin: 32px auto;
         border: solid 4px #E5E5E5;
         padding: 24px 64px;
       }
-      :scope .signin-form li {
+      .signin-form li {
         padding: 6px 0;
       }
-      :scope .signin-form li p {
+      .signin-form li p {
         padding-bottom: 6px;
         color: #444;
       }
-      :scope .signin-form input[type="text"],.signin-form input[type="password"] {
+      .signin-form input[type="text"],.signin-form input[type="password"] {
         padding: 6px 8px;
         width: 80%;
       }
-      :scope .signin-form input[type="submit"] {
+      .signin-form input[type="submit"] {
         margin-top: 8px;
         padding: 10px 32px;
         height: 36px;
