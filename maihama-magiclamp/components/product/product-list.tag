@@ -3,7 +3,7 @@
     <form class="form" onsubmit={searchProductList} oninput={searchProductListIncremental}>
       <dl>
         <dt><label>product name search</label></dt>
-        <dd><input type="text" name="word" placeholder="keyword..."></dd>
+        <dd><input type="text" ref="word" placeholder="keyword..."></dd>
       </dl>
       <div class="btnBox">
         <input type="checkbox" onchange={switchIncremental}> incremental search
@@ -48,7 +48,7 @@
 
     searchProductList = function(e) {
       e.preventDefault();
-      var searchWord = self.word.value;
+      var searchWord = self.refs.word.value;
       if (searchWord) {
         self.queryParams = window.helper.updateOrInsertQueryParams(self.queryParams, searchQueryKey, searchWord);
         self.queryParams = window.helper.updateOrInsertQueryParams(self.queryParams, "page", 1);
@@ -77,7 +77,7 @@
         .post(RC.API.product.list + page);
       if (word) {
         request = request.send({productName: word});
-        self.word.value = word;
+        self.refs.word.value = word;
       }
       request
         .end(function(error, response) {

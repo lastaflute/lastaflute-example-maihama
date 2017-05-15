@@ -5,14 +5,14 @@
       <form name="signin_signinAction_index_Form" onsubmit={doSignin}>
         <dl>
           <dt><label>Account</label></dt>
-          <dd><input type="text" name="account" value="" placeholder="input Pixy"></dd>
+          <dd><input type="text" ref="account" value="" placeholder="input Pixy"></dd>
         </dl>
         <dl>
           <dt><label>Password</label></dt>
-          <dd><input type="password" name="password" value="" placeholder="input sea"></dd>
+          <dd><input type="password" ref="password" value="" placeholder="input sea"></dd>
         </dl>
         <dl>
-          <dd><label><input type="checkbox" name="autoLogin" value="on"> Remember Account</label></dd>
+          <dd><label><input type="checkbox" ref="autoLogin" value="on"> Remember Account</label></dd>
         </dl>
         <div>
           <button type="submit" class="btn btn-success">Sign in</button>
@@ -60,8 +60,8 @@
 
       this.doSignin = function(e) {
         e.preventDefault();
-        var account = this.account;
-        var password = this.password;
+        var account = this.refs.account;
+        var password = this.refs.password;
         sa
           .post(RC.API.auth.signin)
           .send({account: account.value, password: password.value})
