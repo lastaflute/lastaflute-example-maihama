@@ -31,7 +31,7 @@ map:{
     # settings for common project of all web applications
     ; commonMap = map:{
         ; path = ..
-        ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; doc }
+        ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; doc ; namedcls }
         ; propertiesHtmlList = list:{ env ; config ; label ; message }
     }
 
@@ -39,22 +39,22 @@ map:{
     ; appMap = map:{
         ; dockside = map:{
             ; path = ../../maihama-dockside
-            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; html ; doc ; appcls }
+            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; html ; doc ; appcls ; namedcls }
             ; propertiesHtmlList = list:{ env ; config ; label ; message }
         }
         ; hangar = map:{
             ; path = ../../maihama-hangar
-            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; doc ; appcls }
+            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; doc ; appcls ; namedcls }
             ; propertiesHtmlList = list:{ env ; config ; label ; message }
         }
         ; orleans = map:{
             ; path = ../../maihama-orleans
-            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; html ; doc ; appcls }
+            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; html ; doc ; appcls ; namedcls }
             ; propertiesHtmlList = list:{ env ; config ; label ; message }
         }
         ; showbase = map:{
             ; path = ../../maihama-showbase
-            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; doc ; appcls }
+            ; freeGenList = list:{ env ; config ; label ; message ; mail ; template ; doc ; appcls ; namedcls }
             ; propertiesHtmlList = list:{ env ; config ; label ; message }
         }
     }

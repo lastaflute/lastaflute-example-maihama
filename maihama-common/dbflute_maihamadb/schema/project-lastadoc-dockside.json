@@ -607,18 +607,6 @@
             "Resource"
           ],
           "nestTypeDocMetaList": []
-        },
-        {
-          "name": "displayAssist",
-          "typeName": "org.docksidestage.app.web.base.view.DisplayAssist",
-          "simpleTypeName": "DisplayAssist",
-          "value": null,
-          "description": "@author jflute",
-          "comment": "@author jflute",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
         }
       ],
       "methodName": "index",
@@ -727,7 +715,7 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 87,
+      "fileLineCount": 84,
       "methodLineCount": 13
     },
     {
@@ -1061,18 +1049,6 @@
             "Resource"
           ],
           "nestTypeDocMetaList": []
-        },
-        {
-          "name": "displayAssist",
-          "typeName": "org.docksidestage.app.web.base.view.DisplayAssist",
-          "simpleTypeName": "DisplayAssist",
-          "value": null,
-          "description": "@author jflute",
-          "comment": "@author jflute",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
         }
       ],
       "methodName": "index",
@@ -1112,7 +1088,7 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 56,
+      "fileLineCount": 54,
       "methodLineCount": 12
     },
     {
@@ -1342,55 +1318,9 @@
       "typeComment": "@author annie_pocket\n@author jflute",
       "fieldTypeDocMetaList": [
         {
-          "name": "SIGNUP_TOKEN_KEY",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "primaryCipher",
-          "typeName": "org.lastaflute.core.security.PrimaryCipher",
-          "simpleTypeName": "PrimaryCipher",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
           "name": "postbox",
           "typeName": "org.lastaflute.core.mail.Postbox",
           "simpleTypeName": "Postbox",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "sessionManager",
-          "typeName": "org.lastaflute.web.servlet.session.SessionManager",
-          "simpleTypeName": "SessionManager",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "responseManager",
-          "typeName": "org.lastaflute.web.servlet.request.ResponseManager",
-          "simpleTypeName": "ResponseManager",
           "value": null,
           "description": null,
           "comment": null,
@@ -1458,6 +1388,18 @@
             "Resource"
           ],
           "nestTypeDocMetaList": []
+        },
+        {
+          "name": "signupTokenAssist",
+          "typeName": "org.docksidestage.app.web.signup.SignupTokenAssist",
+          "simpleTypeName": "SignupTokenAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
         }
       ],
       "methodName": "index",
@@ -1478,7 +1420,7 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 129,
+      "fileLineCount": 106,
       "methodLineCount": 3
     },
     {
@@ -1489,55 +1431,9 @@
       "typeComment": "@author annie_pocket\n@author jflute",
       "fieldTypeDocMetaList": [
         {
-          "name": "SIGNUP_TOKEN_KEY",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "primaryCipher",
-          "typeName": "org.lastaflute.core.security.PrimaryCipher",
-          "simpleTypeName": "PrimaryCipher",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
           "name": "postbox",
           "typeName": "org.lastaflute.core.mail.Postbox",
           "simpleTypeName": "Postbox",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "sessionManager",
-          "typeName": "org.lastaflute.web.servlet.session.SessionManager",
-          "simpleTypeName": "SessionManager",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "responseManager",
-          "typeName": "org.lastaflute.web.servlet.request.ResponseManager",
-          "simpleTypeName": "ResponseManager",
           "value": null,
           "description": null,
           "comment": null,
@@ -1598,6 +1494,18 @@
           "name": "loginAssist",
           "typeName": "org.docksidestage.app.web.base.login.DocksideLoginAssist",
           "simpleTypeName": "DocksideLoginAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "signupTokenAssist",
+          "typeName": "org.docksidestage.app.web.signup.SignupTokenAssist",
+          "simpleTypeName": "SignupTokenAssist",
           "value": null,
           "description": "@author jflute",
           "comment": "@author jflute",
@@ -1695,7 +1603,7 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 129,
+      "fileLineCount": 106,
       "methodLineCount": 11
     },
     {
@@ -1706,55 +1614,9 @@
       "typeComment": "@author annie_pocket\n@author jflute",
       "fieldTypeDocMetaList": [
         {
-          "name": "SIGNUP_TOKEN_KEY",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "primaryCipher",
-          "typeName": "org.lastaflute.core.security.PrimaryCipher",
-          "simpleTypeName": "PrimaryCipher",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
           "name": "postbox",
           "typeName": "org.lastaflute.core.mail.Postbox",
           "simpleTypeName": "Postbox",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "sessionManager",
-          "typeName": "org.lastaflute.web.servlet.session.SessionManager",
-          "simpleTypeName": "SessionManager",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "responseManager",
-          "typeName": "org.lastaflute.web.servlet.request.ResponseManager",
-          "simpleTypeName": "ResponseManager",
           "value": null,
           "description": null,
           "comment": null,
@@ -1822,6 +1684,18 @@
             "Resource"
           ],
           "nestTypeDocMetaList": []
+        },
+        {
+          "name": "signupTokenAssist",
+          "typeName": "org.docksidestage.app.web.signup.SignupTokenAssist",
+          "simpleTypeName": "SignupTokenAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
         }
       ],
       "methodName": "register",
@@ -1863,7 +1737,7 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 129,
+      "fileLineCount": 106,
       "methodLineCount": 5
     },
     {
