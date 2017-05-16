@@ -5,14 +5,14 @@
       <form name="signin_signinAction_index_Form" onsubmit={doSignin}>
         <dl>
           <dt><label>Account</label></dt>
-          <dd><input type="text" name="account" value="" placeholder="input Pixy"></dd>
+          <dd><input type="text" ref="account" value="" placeholder="input Pixy"></dd>
         </dl>
         <dl>
           <dt><label>Password</label></dt>
-          <dd><input type="password" name="password" value="" placeholder="input sea"></dd>
+          <dd><input type="password" ref="password" value="" placeholder="input sea"></dd>
         </dl>
         <dl>
-          <dd><label><input type="checkbox" name="autoLogin" value="on"> Remember Account</label></dd>
+          <dd><label><input type="checkbox" ref="autoLogin" value="on"> Remember Account</label></dd>
         </dl>
         <div>
           <button type="submit" class="btn btn-success">Sign in</button>
@@ -21,24 +21,24 @@
     </div>
     
     <style scoped>
-      :scope .sign-in-box {
+      .sign-in-box {
         width: 320px;
         margin: 32px auto;
         border: solid 4px #E5E5E5;
         padding: 24px 64px;
       }
-      :scope .signin-form li {
+      .signin-form li {
         padding: 6px 0;
       }
-      :scope .signin-form li p {
+      .signin-form li p {
         padding-bottom: 6px;
         color: #444;
       }
-      :scope .signin-form input[type="text"],.signin-form input[type="password"] {
+      .signin-form input[type="text"],.signin-form input[type="password"] {
         padding: 6px 8px;
         width: 80%;
       }
-      :scope .signin-form input[type="submit"] {
+      .signin-form input[type="submit"] {
         margin-top: 8px;
         padding: 10px 32px;
         height: 36px;
@@ -60,8 +60,8 @@
 
       this.doSignin = function(e) {
         e.preventDefault();
-        var account = this.account;
-        var password = this.password;
+        var account = this.refs.account;
+        var password = this.refs.password;
         sa
           .post(RC.API.auth.signin)
           .send({account: account.value, password: password.value})

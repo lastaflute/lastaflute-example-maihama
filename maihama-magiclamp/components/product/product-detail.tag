@@ -5,11 +5,17 @@
   <p>¥{window.helper.formatMoneyComma(productDetail.regularPrice)}</p>
 
   <script>
+    var RC = window.RC || {};
     var obs = window.observable || {};
     var sa = window.superagent || {};
     var self = this;
 
     this.productDetail = {};
+    this.productDetail.regularPrice = 0;
+    
+    this.on('mount', () => {
+      obs.trigger(RC.EVENT.route.product.detail, opts.productId);
+    });
 
     obs.on(RC.EVENT.route.product.detail, function(product) {
       sa

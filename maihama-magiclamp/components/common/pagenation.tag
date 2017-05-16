@@ -9,38 +9,38 @@
   </ul>
 
   <style scoped>
-    :scope {
+    /*{
       display: block;
       text-align: center;
       margin-top: 30px;
-    }
-    :scope p {
+    }*/
+    p {
       display: block;
       font-size: 12px;
       color: #888;
     }
-    :scope ul {
+    ul {
       margin-top: 3px;
     }
-    :scope li {
+    li {
       display: inline-block;
       margin: 4px;
     }
-    :scope a,
-    :scope li a {
+    a,
+    li a {
       color: #666;
     }
-    :scope .page a {
+    .page a {
       padding: 2px 6px;
       border: 1px #825 solid;
       background: #fff;
     }
-    :scope .current {
+    .current {
       padding: 3px 7px;
       background:#825;
       color: #fff;
     }
-    :scope a:hover {
+    a:hover {
       text-decoration: none;
       opacity: 0.8;
     }

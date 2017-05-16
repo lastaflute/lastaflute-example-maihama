@@ -1,14 +1,20 @@
 {
   "name": "riot",
-  "version": "2.2.1",
-  "description": "A React- like, 3.5K user interface library",
-  "homepage": "https://muut.com/riotjs/",
+  "version": "3.4.4",
+  "description": "A React-like user interface micro-library",
+  "homepage": "http://riotjs.com/",
   "repository": {
     "type": "git",
     "url": "git://github.com/riot/riot.git"
   },
   "authors": [
-    "Muut, Inc. and other contributors"
+    "Riot maintainers team + smart people from all over the world",
+    "Richard Bondi https://github.com/rsbondi",
+    "Gianluca Guarini https://github.com/GianlucaGuarini",
+    "Tsutomu Kawamura https://github.com/cognitom",
+    "Grant Marvin     https://github.com/rogueg",
+    "Alberto Martínez https://github.com/aMarCruz",
+    "Tero Piirainen  https://github.com/tipiirai"
   ],
   "license": "MIT",
   "keywords": [
@@ -40,20 +46,20 @@
     "**/*",
     "!/riot.js",
     "!/riot.min.js",
-    "!/compiler.js",
-    "!/compiler.min.js",
+    "!/riot.csp.js",
+    "!/riot.csp.min.js",
     "!/riot+compiler.js",
     "!/riot+compiler.min.js"
   ],
   "main": "riot.js",
-  "_release": "2.2.1",
+  "_release": "3.4.4",
   "_resolution": {
     "type": "version",
-    "tag": "v2.2.1",
-    "commit": "a3536dde8c76cb913ac9dbbd47b097755aa0df7c"
+    "tag": "v3.4.4",
+    "commit": "ba053fc8bfdd1c3a9ebe8186d6639133e0a788e6"
   },
-  "_source": "git://github.com/muut/riotjs.git",
-  "_target": "~2.2.1",
+  "_source": "https://github.com/muut/riotjs.git",
+  "_target": "^3.4.4",
   "_originalSource": "riot",
   "_direct": true
 }

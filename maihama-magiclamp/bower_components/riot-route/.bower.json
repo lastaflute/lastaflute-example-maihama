@@ -1,0 +1,32 @@
+{
+  "name": "riot-route",
+  "main": "dist/route.js",
+  "homepage": "https://github.com/riot/route",
+  "authors": [
+    "Muut, Inc. and other contributors"
+  ],
+  "description": "Simple client-side router",
+  "keywords": [
+    "riot",
+    "router"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "3.1.1",
+  "_release": "3.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.1.1",
+    "commit": "7b40bae5a80ee301d0e2d474b85dc37ada22c58b"
+  },
+  "_source": "https://github.com/riot/route.git",
+  "_target": "^3.1.1",
+  "_originalSource": "riot-route",
+  "_direct": true
+}

@@ -10,7 +10,7 @@
   </ul>
 
   <style scoped>
-    :scope .nav-user > li {
+    .nav-user > li {
       float: right;
       position: relative;
       width: 120px;
@@ -19,10 +19,10 @@
       background-color: #660032;
       font-size: 14px;
     }
-    :scope .nav-user:hover .child {
+    .nav-user:hover .child {
       display: block;
     }
-    :scope .nav-user > li > a:hover{
+    .nav-user > li > a:hover{
       opacity: 0.8;
     }
   </style>
