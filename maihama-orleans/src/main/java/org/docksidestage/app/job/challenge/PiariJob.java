@@ -34,14 +34,14 @@ public class PiariJob implements LaJob {
     //                                                                             =======
     @Override
     public void run(LaJobRuntime runtime) { // empty job!
-        LocalDateTime execTime = (LocalDateTime) runtime.getParameterMap().get("execTime");
-        if (execTime != null) { // means from launch-now
-            logger.debug("...Accepting execTime: {}", execTime);
+        LocalDateTime executionDateTime = (LocalDateTime) runtime.getParameterMap().get("executionDateTime");
+        if (executionDateTime != null) { // means from launch-now
+            logger.debug("...Accepting executionDateTime: {}", executionDateTime);
         }
         runtime.showEndTitleRoll(data -> {
             data.register("empty", true);
-            if (execTime != null) {
-                data.register("execTime", execTime);
+            if (executionDateTime != null) {
+                data.register("executionDateTime", executionDateTime);
             }
         });
     }

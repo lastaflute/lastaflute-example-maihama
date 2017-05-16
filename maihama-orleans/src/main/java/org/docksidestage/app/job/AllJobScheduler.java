@@ -41,17 +41,14 @@ public class AllJobScheduler implements LaJobScheduler {
 
     @Override
     public void schedule(LaCron cron) {
+        // basic example
         cron.register("* * * * *", SeaJob.class, waitIfConcurrent(), op -> {});
-        cron.register("*/1 * * * *", LandJob.class, quitIfConcurrent(), op -> {
-            op.title("Parameterized Land Job");
-            op.uniqueBy("parameterized_unique_land");
-            op.params(() -> DfCollectionUtil.newHashMap("showbase", "oneman"));
-        });
-        cron.register("*/2 * * * *", LandJob.class, quitIfConcurrent(), op -> {
-            op.uniqueBy("non_param_unique_land");
-        });
+        cron.register("*/1 * * * *", LandJob.class, quitIfConcurrent(), op -> {});
+        cron.register("*/2 * * * *", LandJob.class, quitIfConcurrent(), op -> {});
+
+        // various challenge
         cron.registerNonCron(PiariJob.class, quitIfConcurrent(), op -> op.uniqueBy("piari").params(() -> {
-            return DfCollectionUtil.newHashMap("sea", "bbb");
+            return DfCollectionUtil.newHashMap("celebration", "plaza");
         }));
         cron.registerNonCron(BonvoJob.class, errorIfConcurrent(), op -> op.uniqueBy("bonvo"));
     }
