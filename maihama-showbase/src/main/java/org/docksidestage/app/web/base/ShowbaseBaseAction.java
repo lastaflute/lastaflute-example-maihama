@@ -15,6 +15,8 @@
  */
 package org.docksidestage.app.web.base;
 
+import java.util.stream.Stream;
+
 import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalThing;
@@ -22,6 +24,8 @@ import org.docksidestage.app.web.base.login.ShowbaseLoginAssist;
 import org.docksidestage.mylasta.action.ShowbaseMessages;
 import org.docksidestage.mylasta.action.ShowbaseUserBean;
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
+import org.lastaflute.core.exception.LaApplicationMessage;
+import org.lastaflute.core.json.JsonManager;
 import org.lastaflute.web.login.LoginManager;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
@@ -46,6 +50,8 @@ public abstract class ShowbaseBaseAction extends MaihamaBaseAction // has severa
     //                                                                           Attribute
     //                                                                           =========
     @Resource
+    private JsonManager jsonManager;
+    @Resource
     private ShowbaseConfig config;
     @Resource
     private ShowbaseLoginAssist loginAssist;
@@ -57,6 +63,11 @@ public abstract class ShowbaseBaseAction extends MaihamaBaseAction // has severa
     @Override
     public void hookFinally(ActionRuntime runtime) {
         super.hookFinally(runtime);
+    }
+
+    @Override
+    protected Object[] filterApplicationExceptionMessageValues(ActionRuntime runtime, LaApplicationMessage msg) {
+        return Stream.of(msg.getValues()).map(vl -> jsonManager.toJson(vl)).toArray(); // for client-managed message
     }
 
     // ===================================================================================
