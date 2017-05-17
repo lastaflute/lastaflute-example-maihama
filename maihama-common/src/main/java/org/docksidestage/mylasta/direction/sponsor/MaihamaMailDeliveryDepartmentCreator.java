@@ -18,6 +18,7 @@ package org.docksidestage.mylasta.direction.sponsor;
 import java.util.List;
 import java.util.Locale;
 
+import org.dbflute.mail.CardView;
 import org.dbflute.mail.send.SMailDeliveryDepartment;
 import org.dbflute.mail.send.SMailPostalMotorbike;
 import org.dbflute.mail.send.SMailPostalParkingLot;
@@ -92,7 +93,17 @@ public class MaihamaMailDeliveryDepartmentCreator {
 
             @Override
             protected OptionalThing<SMailAsyncStrategy> createAsyncStrategy() {
-                return OptionalThing.of((view, runnable) -> async(asyncManager, runnable));
+                return OptionalThing.of(new SMailAsyncStrategy() {
+                    @Override
+                    public void async(CardView view, Runnable runnable) {
+                        asyncRunnable(asyncManager, runnable);
+                    }
+
+                    @Override
+                    public boolean alwaysAsync(CardView view) {
+                        return true; // as default of LastaFlute example 
+                    }
+                });
             }
 
             @Override
@@ -105,7 +116,7 @@ public class MaihamaMailDeliveryDepartmentCreator {
     // ===================================================================================
     //                                                                        Asynchronous
     //                                                                        ============
-    protected void async(AsyncManager asyncManager, Runnable runnable) {
+    protected void asyncRunnable(AsyncManager asyncManager, Runnable runnable) {
         asyncManager.async(new ConcurrentAsyncCall() {
             @Override
             public void callback() {
