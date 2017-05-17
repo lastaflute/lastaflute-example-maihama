@@ -61,13 +61,13 @@ public abstract class ShowbaseBaseAction extends MaihamaBaseAction // has severa
     //                                                                              ======
     // #app_customize you can customize the action hook
     @Override
-    public void hookFinally(ActionRuntime runtime) {
-        super.hookFinally(runtime);
+    protected Object[] filterApplicationExceptionMessageValues(ActionRuntime runtime, LaApplicationMessage msg) {
+        return Stream.of(msg.getValues()).map(vl -> jsonManager.toJson(vl)).toArray(); // for client-managed message
     }
 
     @Override
-    protected Object[] filterApplicationExceptionMessageValues(ActionRuntime runtime, LaApplicationMessage msg) {
-        return Stream.of(msg.getValues()).map(vl -> jsonManager.toJson(vl)).toArray(); // for client-managed message
+    public void hookFinally(ActionRuntime runtime) {
+        super.hookFinally(runtime);
     }
 
     // ===================================================================================
