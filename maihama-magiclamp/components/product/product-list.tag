@@ -34,11 +34,13 @@
     var sa = window.superagent || {};
     var obs = window.observable || {};
     var self = this;
-    var searchQueryKey = "word";
 
-    this.queryParams = [];
     this.incrementalChecked = false;
     this.productList = [];
+
+    this.on('mount', () => {
+      obs.trigger(RC.EVENT.route.product.list, opts);
+    });
 
     moveDetail = function(e) {
       e.preventDefault();
@@ -48,15 +50,13 @@
 
     searchProductList = function(e) {
       e.preventDefault();
-      var searchWord = self.refs.word.value;
-      if (searchWord) {
-        self.queryParams = window.helper.updateOrInsertQueryParams(self.queryParams, searchQueryKey, searchWord);
-        self.queryParams = window.helper.updateOrInsertQueryParams(self.queryParams, "page", 1);
-      } else {
-        self.queryParams = window.helper.deleteKeyFromQueryParams(self.queryParams, searchQueryKey);
-      }
-      var href = location.pathname + window.helper.joinQueryParams(self.queryParams);
-      obs.trigger(RC.EVENT.route.product.list, self.queryParams);
+      queryParams = {
+        "productName": self.refs.word.value,
+        "page": 1
+      };
+      var href = location.pathname + window.helper.joinQueryParams(queryParams);
+      history.pushState(null, null, href);
+      obs.trigger(RC.EVENT.route.product.list, queryParams);
     };
 
     switchIncremental = function(e) {
@@ -70,11 +70,9 @@
     }
 
     obs.on(RC.EVENT.route.product.list, function(queryParams) {
-      self.queryParams = queryParams;
-      var page = helper.fetchQueryParams(queryParams, "page") || 1;
-      var word = helper.fetchQueryParams(queryParams, searchQueryKey) || "";
-      var request = sa
-        .post(RC.API.product.list + page);
+      var page = queryParams.page || 1;
+      var word = queryParams.productName || "";
+      var request = sa.post(RC.API.product.list + page);
       if (word) {
         request = request.send({productName: word});
         self.refs.word.value = word;
@@ -91,6 +89,11 @@
       self.productList = data.rows;
       self.update();
       obs.trigger(RC.EVENT.pagenation.set, data);
+    });
+
+    this.on('unmount', () => {
+      obs.off(RC.EVENT.route.product.list);
+      obs.off(RC.EVENT.route.product.listLoaded);
     });
   </script>
 </product-list>

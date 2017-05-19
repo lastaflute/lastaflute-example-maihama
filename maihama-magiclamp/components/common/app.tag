@@ -16,8 +16,8 @@
     route('', () => {
       riot.mount('content', 'root')
     })
-    route('/product/list', () => {
-      riot.mount('content', 'product-list')
+    route('/product/list..', () => {
+      riot.mount('content', 'product-list', route.query())
     })
 
     route('/product/detail/*', (productId) => {

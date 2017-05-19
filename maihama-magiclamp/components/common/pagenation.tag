@@ -102,5 +102,9 @@
     obs.on(RC.EVENT.pagenation.set, function(data) {
       mappingPagenation(data);
     });
+
+    this.on('unmount', () => {
+      obs.trigger(RC.EVENT.pagenation.set);
+    });
   </script>
 </pagination>

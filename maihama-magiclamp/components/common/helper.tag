@@ -13,9 +13,12 @@
 
     window.helper.joinQueryParams = function(queryParams) {
       var queries = [];
-      queryParams.forEach(function(queryParam) {
-        queries.push(queryParam.key + "=" + queryParam.value);
-      });
+      
+      for (var key in queryParams) {
+        if (queryParams[key] !== "") {
+          queries.push(key + "=" + queryParams[key]);
+        }
+      }      
       if (queries.length > 0) {
         return "?" + queries.join("&");
       } else {
