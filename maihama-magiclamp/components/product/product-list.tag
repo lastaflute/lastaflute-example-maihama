@@ -1,15 +1,32 @@
 <product-list>
   <div class="wrap">
-    <form class="form" onsubmit={searchProductList} oninput={searchProductListIncremental}>
-      <dl>
-        <dt><label>product name search</label></dt>
-        <dd><input type="text" ref="word" placeholder="keyword..."></dd>
-      </dl>
-      <div class="btnBox">
+    <section class="product-search-box">
+      <h3 class="content-title-second">search condition</h3>
+      <form class="product-search-form" oninput={searchProductListIncremental}>
+        <ul class="product-search-condition-list">
+          <li>
+            <span>product name</span>
+            <input type="text" ref="productName" />
+            <!--<span errors="productName"></span>-->
+          </li>
+          <li>
+            <span>product status</span>
+            <select ref="productStatus">
+              <option value=""></option>
+            </select>
+            <!--<span errors="productStatus"></span>-->
+          </li>
+          <li>
+            <span>purchase member</span>
+            <input type="text" ref="purchaseMemberName"/>
+            <!--<span errors="purchaseMemberName"></span>-->
+          </li>
+        </ul>
+
         <input type="checkbox" onchange={switchIncremental}> incremental search
-        <button class="btn btn-success">Search</button>
-      </div>
-    </form>
+        <button class="btn btn-success" onclick={searchProductList}>Search</button>
+      </form>
+    </div>
     <table class="table table-stripe">
       <thead>
         <tr>
@@ -51,7 +68,8 @@
     searchProductList = function(e) {
       e.preventDefault();
       queryParams = {
-        "productName": self.refs.word.value,
+        "productName": self.refs.productName.value,
+        "purchaseMemberName": self.refs.purchaseMemberName.value,
         "page": 1
       };
       var href = location.pathname + window.helper.joinQueryParams(queryParams);
@@ -71,12 +89,10 @@
 
     obs.on(RC.EVENT.route.product.list, function(queryParams) {
       var page = queryParams.page || 1;
-      var word = queryParams.productName || "";
-      var request = sa.post(RC.API.product.list + page);
-      if (word) {
-        request = request.send({productName: word});
-        self.refs.word.value = word;
-      }
+      var productName = queryParams.productName || "";
+      var request = sa.post(RC.API.product.list);
+      request = request.send(queryParams);
+      self.refs.productName.value = productName;
       request
         .end(function(error, response) {
           if (response.ok) {

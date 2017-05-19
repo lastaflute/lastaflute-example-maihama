@@ -4,7 +4,9 @@
   <title-reactive></title-reactive>
   <div class="sg-container">
     <common-header></common-header>
-    <content></content>
+    <div class="contents">
+      <content></content>
+    </div>
     <common-footer></common-footer>
   </div>
 
