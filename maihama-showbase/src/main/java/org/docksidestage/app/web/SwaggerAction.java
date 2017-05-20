@@ -62,6 +62,6 @@ public class SwaggerAction extends ShowbaseBaseAction {
     }
 
     private void verifySwaggerAllowed() { // also check in ShowbaseBoot, ShowbaseActionAdjustmentProvider
-        verifyOrClientError("Swagger can works in development environment only!", config.isDevelopmentHere());
+        verifyOrClientError("Swagger can work in development environment only!", config.isDevelopmentHere());
     }
 }
