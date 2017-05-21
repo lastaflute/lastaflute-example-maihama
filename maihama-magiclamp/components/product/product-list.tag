@@ -73,8 +73,7 @@
         "page": 1
       };
       var href = location.pathname + window.helper.joinQueryParams(queryParams);
-      history.pushState(null, null, href);
-      obs.trigger(RC.EVENT.route.product.list, queryParams);
+      obs.trigger(RC.EVENT.route.change, href);
     };
 
     switchIncremental = function(e) {
@@ -90,7 +89,8 @@
     obs.on(RC.EVENT.route.product.list, function(queryParams) {
       var page = queryParams.page || 1;
       var productName = queryParams.productName || "";
-      var request = sa.post(RC.API.product.list);
+      var request = sa.post(RC.API.product.list + page);
+      delete queryParams.page;
       request = request.send(queryParams);
       self.refs.productName.value = productName;
       request

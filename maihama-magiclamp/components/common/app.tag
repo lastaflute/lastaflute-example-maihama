@@ -4,6 +4,7 @@
   <title-reactive></title-reactive>
   <div class="sg-container">
     <common-header></common-header>
+    <controller></controller>
     <div class="contents">
       <content></content>
     </div>
@@ -12,20 +13,5 @@
 
   <script>
     window.observable = riot.observable();
-
-    route.base('/')
-
-    route('', () => {
-      riot.mount('content', 'root')
-    })
-    route('/product/list..', () => {
-      riot.mount('content', 'product-list', route.query())
-    })
-
-    route('/product/detail/*', (productId) => {
-      riot.mount('content', 'product-detail', {productId})
-    })
-
-    route.start(true)
   </script>
 </app>

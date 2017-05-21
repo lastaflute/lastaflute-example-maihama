@@ -76,24 +76,24 @@
       var prevStart = self.currentPageNumber - range;
       prevStart = (prevStart <= 1) ? 1 : prevStart;
       for (var i = prevStart; i < self.currentPageNumber; i++) {
-        var q = window.helper.updateOrInsertQueryParams(queryParams, "page", i);
-        self.prevPages.push({pageNum: i, pageParam: window.helper.joinQueryParams(q)});
+        queryParams.page = i
+        self.prevPages.push({pageNum: i, pageParam: window.helper.joinQueryParams(queryParams)});
       }
 
       // set nextPages
       var nextEnd = self.currentPageNumber + range;
       nextEnd = (nextEnd >= self.allPageCount) ? self.allPageCount : nextEnd;
       for (var i = self.currentPageNumber + 1; i <= nextEnd; i++) {
-        var q = window.helper.updateOrInsertQueryParams(queryParams, "page", i);
-        self.nextPages.push({pageNum: i, pageParam: window.helper.joinQueryParams(q)});
+        queryParams.page = i
+        self.nextPages.push({pageNum: i, pageParam: window.helper.joinQueryParams(queryParams)});
       }
 
       // is First or End
       self.isFirst = self.currentPageNumber != 1;
-      var prevQuery = window.helper.updateOrInsertQueryParams(queryParams, "page", self.currentPageNumber - 1);
-      self.prevPageParam = window.helper.joinQueryParams(prevQuery);
-      var nextQuery = window.helper.updateOrInsertQueryParams(queryParams, "page", self.currentPageNumber + 1);
-      self.nextPageParam = window.helper.joinQueryParams(nextQuery);
+      queryParams.page = self.currentPageNumber - 1
+      self.prevPageParam = window.helper.joinQueryParams(queryParams);
+      queryParams.page = self.currentPageNumber + 1
+      self.nextPageParam = window.helper.joinQueryParams(queryParams);
       self.isEnd = self.currentPageNumber != self.allPageCount;
 
       self.update();
@@ -104,7 +104,7 @@
     });
 
     this.on('unmount', () => {
-      obs.trigger(RC.EVENT.pagenation.set);
+      obs.off(RC.EVENT.pagenation.set);
     });
   </script>
 </pagination>

@@ -26,32 +26,6 @@
       }
     }
 
-    window.helper.updateOrInsertQueryParams = function(queryParams, key, value) {
-      var newQueryParams = [];
-      var found = false;
-      queryParams.forEach(function(queryParam) {
-        if (queryParam.key == key) {
-          newQueryParams.push({key: key, value: value});
-          found = true;
-        } else {
-          newQueryParams.push(queryParam);
-        }
-      });
-      if (!found) {
-        newQueryParams.push({key: key, value: value});
-      }
-      return newQueryParams;
-    }
-
-    window.helper.deleteKeyFromQueryParams = function(queryParams, key) {
-      var newQueryParams = [];
-      queryParams.forEach(function(q, i) {
-        if (q.key != key) {
-          newQueryParams.push(q);
-        }
-      });
-      return newQueryParams;
-    }
 
     window.helper.mappingQueryParams = function() {
       var raw = location.search;
@@ -59,10 +33,10 @@
         return [];
       }
       var splitParams = raw.replace("?", "").split("&")
-      var queryParams = [];
+      var queryParams = {};
       splitParams.forEach(function(p) {
         var split = p.split("=");
-        queryParams.push({key: split[0], value: split[1]}); // simple for example
+        queryParams[split[0]] = split[1]; // simple for example
       });
       return queryParams;
     }
