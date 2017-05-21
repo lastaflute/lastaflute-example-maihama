@@ -1,23 +1,24 @@
 <product-list>
   <div class="wrap">
+    <h2 class="content-title">List of Product</h2>
     <section class="product-search-box">
-      <h3 class="content-title-second">search condition</h3>
+      <h3 class="content-title-second">Search Condition</h3>
       <form class="product-search-form" oninput={searchProductListIncremental}>
         <ul class="product-search-condition-list">
           <li>
-            <span>product name</span>
+            <span>Product Name</span>
             <input type="text" ref="productName" />
             <!--<span errors="productName"></span>-->
           </li>
           <li>
-            <span>product status</span>
+            <span>Product Status</span>
             <select ref="productStatus">
               <option value=""></option>
             </select>
             <!--<span errors="productStatus"></span>-->
           </li>
           <li>
-            <span>purchase member</span>
+            <span>Purchase Member</span>
             <input type="text" ref="purchaseMemberName"/>
             <!--<span errors="purchaseMemberName"></span>-->
           </li>
@@ -27,32 +28,35 @@
         <button class="btn btn-success" onclick={searchProductList}>Search</button>
       </form>
     </div>
-    <table class="table table-stripe">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Product Name</th>
-          <th>Status</th>
-          <th>Category</th>
-          <th>Price</th>
-          <th>Latest Purchase</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr each={productList}>
-          <td>{productId}</td>
-          <td>
-            <a href="/product/detail/{productId}">{productName}</a>
-          </td>
-          <td>{productStatus}</td>
-          <td>{productCategory}</td>
-          <td>¥{window.helper.formatMoneyComma(regularPrice)}</td>
-          <td>{laßestPurchaseDate}</td>
-        </tr>
-      </tbody>
-    </table>
+    <section class="product-result-box">
+      <h3 class="content-title-second">Search Result</h3>
+      <table class="list-tbl">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Status</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Latest Purchase</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr each={productList}>
+            <td>{productId}</td>
+            <td><a href="/product/detail/{productId}">{productName}</a></td>
+            <td>{productStatus}</td>
+            <td>{productCategory}</td>
+            <td>¥{window.helper.formatMoneyComma(regularPrice)}</td>
+            <td>{latestPurchaseDate}</td>
+          </tr>
+        </tbody>
+      </table>
+      <section class="product-list-paging-box">
+        <pagination></pagination>
+		  </section>
+    </section>
   </div>
-  <pagination></pagination>
 
   <script>
     var RC = window.RC || {};
