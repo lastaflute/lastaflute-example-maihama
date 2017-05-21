@@ -36,6 +36,7 @@ import org.lastaflute.web.response.JsonResponse;
 /**
  * @author iwamatsu0430
  * @author jflute
+ * @author black-trooper
  */
 @AllowAnyoneAccess
 public class ProductListAction extends HangarBaseAction {
@@ -74,9 +75,9 @@ public class ProductListAction extends HangarBaseAction {
         return productBhv.selectPage(cb -> {
             cb.setupSelect_ProductStatus();
             cb.setupSelect_ProductCategory();
-            cb.specify().derivedPurchase().count(purchaseCB -> {
-                purchaseCB.specify().columnPurchaseId();
-            }, Product.ALIAS_purchaseCount);
+            cb.specify().derivedPurchase().max(purchaseCB -> {
+                purchaseCB.specify().columnPurchaseDatetime();
+            }, Product.ALIAS_latestPurchaseDate);
             if (LaStringUtil.isNotEmpty(body.productName)) {
                 cb.query().setProductName_LikeSearch(body.productName, op -> op.likeContain());
             }
@@ -102,9 +103,13 @@ public class ProductListAction extends HangarBaseAction {
         result.productId = product.getProductId();
         result.productName = product.getProductName();
         product.getProductStatus().alwaysPresent(status -> {
-            result.productStatusName = status.getProductStatusName();
+            result.productStatus = status.getProductStatusName();
+        });
+        product.getProductCategory().alwaysPresent(category -> {
+            result.productCategory = category.getProductCategoryName();
         });
         result.regularPrice = product.getRegularPrice();
+        result.latestPurchaseDate = product.getLatestPurchaseDate();
         return result;
     }
 }

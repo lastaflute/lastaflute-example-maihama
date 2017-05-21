@@ -30,16 +30,24 @@
     <table class="table table-stripe">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Product Name</th>
+          <th>Status</th>
+          <th>Category</th>
           <th>Price</th>
+          <th>Latest Purchase</th>
         </tr>
       </thead>
       <tbody>
         <tr each={productList}>
+          <td>{productId}</td>
           <td>
             <a href="/product/detail/{productId}">{productName}</a>
           </td>
+          <td>{productStatus}</td>
+          <td>{productCategory}</td>
           <td>¥{window.helper.formatMoneyComma(regularPrice)}</td>
+          <td>{laßestPurchaseDate}</td>
         </tr>
       </tbody>
     </table>

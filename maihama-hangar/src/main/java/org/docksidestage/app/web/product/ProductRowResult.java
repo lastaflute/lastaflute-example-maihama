@@ -15,11 +15,14 @@
  */
 package org.docksidestage.app.web.product;
 
+import java.time.LocalDate;
+
 import org.lastaflute.web.validation.Required;
 
 /**
  * @author iwamatsu0430
  * @author jflute
+ * @author black-trooper
  */
 public class ProductRowResult {
 
@@ -28,7 +31,11 @@ public class ProductRowResult {
     @Required
     public String productName;
     @Required
-    public String productStatusName;
+    public String productStatus;
+    @Required
+    public String productCategory;
     @Required
     public Integer regularPrice;
+
+    public LocalDate latestPurchaseDate;
 }
