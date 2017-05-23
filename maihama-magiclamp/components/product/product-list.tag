@@ -99,12 +99,13 @@
     }
 
     obs.on(RC.EVENT.route.product.list, function(queryParams) {
+      self.refs.productName.value = queryParams.productName || "";
+      self.refs.purchaseMemberName.value = queryParams.purchaseMemberName || "";
+
       var page = queryParams.page || 1;
-      var productName = queryParams.productName || "";
       var request = sa.post(RC.API.product.list + page);
       delete queryParams.page;
       request = request.send(queryParams);
-      self.refs.productName.value = productName;
       request
         .end(function(error, response) {
           if (response.ok) {
