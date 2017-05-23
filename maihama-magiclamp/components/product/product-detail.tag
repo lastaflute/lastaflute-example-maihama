@@ -14,22 +14,21 @@
     this.productDetail.regularPrice = 0;
     
     this.on('mount', () => {
-      obs.trigger(RC.EVENT.route.product.detail, opts.productId);
+      detailLoad(opts.productId);
     });
 
-    obs.on(RC.EVENT.route.product.detail, function(product) {
-      sa
-        .get(RC.API.product.detail + (product || 1))
+    detailLoad = function(product) {
+      sa.get(RC.API.product.detail + (product || 1))
         .end(function(error, response) {
           if (response.ok) {
-            obs.trigger(RC.EVENT.route.product.detailLoaded, JSON.parse(response.text));
+            detailLoaded(JSON.parse(response.text));
           }
         });
-    });
+    }
 
-    obs.on(RC.EVENT.route.product.detailLoaded, function(data) {
+    detailLoaded = function(data) {
       self.productDetail = data;
       self.update();
-    });
+    }
   </script>
 </product-detail>

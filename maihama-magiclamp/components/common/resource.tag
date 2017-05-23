@@ -34,17 +34,7 @@
 
     window.RC.EVENT = {
       "route": {
-        "change":         "onRounteChange",
-        "product": {
-          "root":         "onRouteChangeProduct",
-          "list":         "onRouteChangeProductList",
-          "listLoaded":   "onRouteChangeProductListLoaded",
-          "detail":       "onRouteChangeProductDetail",
-          "detailLoaded": "onRouteChangeProductdetailLoaded",
-        },
-        "member":         "onRouteChangeMember",
-        "purchase":       "onRouteChangePurchase",
-        "various":        "onRouteChangeVarious"
+        "change":         "onRounteChange"
       },
       "auth": {
         "check":          "onCheckSignin",

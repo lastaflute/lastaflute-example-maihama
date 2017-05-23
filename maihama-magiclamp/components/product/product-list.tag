@@ -3,7 +3,7 @@
     <h2 class="content-title">List of Product</h2>
     <section class="product-search-box">
       <h3 class="content-title-second">Search Condition</h3>
-      <form class="product-search-form" oninput={searchProductListIncremental}>
+      <form class="product-search-form" oninput={onSearchProductListIncremental}>
         <ul class="product-search-condition-list">
           <li>
             <span>Product Name</span>
@@ -25,7 +25,7 @@
         </ul>
 
         <input type="checkbox" onchange={switchIncremental}> incremental search
-        <button class="btn btn-success" onclick={searchProductList}>Search</button>
+        <button class="btn btn-success" onclick={onSearchProductList}>Search</button>
       </form>
     </div>
     <section class="product-result-box">
@@ -68,7 +68,7 @@
     this.productList = [];
 
     this.on('mount', () => {
-      obs.trigger(RC.EVENT.route.product.list, opts);
+      searchProductList(opts);
     });
 
     moveDetail = function(e) {
@@ -77,7 +77,7 @@
       obs.trigger(RC.EVENT.route.change, href);
     };
 
-    searchProductList = function(e) {
+    onSearchProductList = function(e) {
       e.preventDefault();
       queryParams = {
         "productName": self.refs.productName.value,
@@ -92,37 +92,32 @@
       self.incrementalChecked = e.target.checked;
     }
 
-    searchProductListIncremental = function(e) {
+    onSearchProductListIncremental = function(e) {
       if (self.incrementalChecked) {
-        searchProductList(e);
+        onSearchProductList(e);
       }
     }
 
-    obs.on(RC.EVENT.route.product.list, function(queryParams) {
+    searchProductList = function(queryParams) {
       self.refs.productName.value = queryParams.productName || "";
       self.refs.purchaseMemberName.value = queryParams.purchaseMemberName || "";
 
       var page = queryParams.page || 1;
-      var request = sa.post(RC.API.product.list + page);
       delete queryParams.page;
-      request = request.send(queryParams);
-      request
+
+      sa.post(RC.API.product.list + page)
+        .send(queryParams)
         .end(function(error, response) {
           if (response.ok) {
-            obs.trigger(RC.EVENT.route.product.listLoaded, JSON.parse(response.text));
+            searchProductListLoaded(JSON.parse(response.text));
           }
         });
-    });
+    }
 
-    obs.on(RC.EVENT.route.product.listLoaded, function(data) {
+    searchProductListLoaded = function(data) {
       self.productList = data.rows;
       self.update();
       obs.trigger(RC.EVENT.pagenation.set, data);
-    });
-
-    this.on('unmount', () => {
-      obs.off(RC.EVENT.route.product.list);
-      obs.off(RC.EVENT.route.product.listLoaded);
-    });
+    }
   </script>
 </product-list>
