@@ -1,15 +1,6 @@
 <helper>
   <script>
     window.helper = {};
-    window.helper.fetchQueryParams = function(queryParams, key) {
-      var value;
-      queryParams.forEach(function(queryParam) {
-        if (queryParam.key == key) {
-          value = queryParam.value;
-        }
-      });
-      return value;
-    }
 
     window.helper.joinQueryParams = function(queryParams) {
       var queries = [];
@@ -25,7 +16,6 @@
         return "";
       }
     }
-
 
     window.helper.mappingQueryParams = function() {
       var raw = location.search;
