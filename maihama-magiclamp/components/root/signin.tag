@@ -1,5 +1,5 @@
 <signin>
-  <h2 class="sg-content-title">Sign In</h2>
+  <h2 class="content-title">Sign In</h2>
   <section class="sign-in-box">
     <div class="signin-form">
       <form name="signin_signinAction_index_Form" onsubmit={doSignin}>
@@ -20,7 +20,7 @@
       </form>
     </div>
     
-    <style scoped>
+    <style>
       .sign-in-box {
         width: 320px;
         margin: 32px auto;
@@ -70,7 +70,7 @@
             if (response.ok) {
               account.value = "";
               password.value = "";
-              obs.trigger(window.RC.EVENT.auth.check);
+              obs.trigger(RC.EVENT.auth.check);
             }
           });
       };

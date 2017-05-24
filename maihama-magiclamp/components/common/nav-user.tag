@@ -57,7 +57,7 @@
         });
     };
 
-    obs.on(window.RC.EVENT.auth.check, function(state) {
+    obs.on(RC.EVENT.auth.check, function(state) {
       sa
         .get(RC.API.member.info)
         .withCredentials()
@@ -70,7 +70,7 @@
         });
     });
 
-    obs.on(window.RC.EVENT.auth.sign, function(state) {
+    obs.on(RC.EVENT.auth.sign, function(state) {
       self.isLogin = state;
       if (state) {
         self.displayLoginInfo();
@@ -81,9 +81,9 @@
     setTimeout(function() {
       if (sessionStorage[RC.SESSION.member.info]) {
         self.displayLoginInfo();
-        obs.trigger(window.RC.EVENT.auth.sign, true);
+        obs.trigger(RC.EVENT.auth.sign, true);
       } else {
-        obs.trigger(window.RC.EVENT.auth.check);
+        obs.trigger(RC.EVENT.auth.check);
       }
     }, 10);
   </script>

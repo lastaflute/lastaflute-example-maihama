@@ -2,18 +2,6 @@
   <script>
     window.RC = {};
 
-    window.RC.ROUTE = {
-      "root":             "",
-      "product":    {
-        "root":           "product",
-        "list":           "productList",
-        "detail":         "productDetail"
-      },
-      "member":           "member",
-      "purchase":         "purchase",
-      "various":          "various"
-    };
-
     var url = "http://localhost:8092";
     window.RC.API = {
       "member": {
@@ -34,17 +22,7 @@
 
     window.RC.EVENT = {
       "route": {
-        "change":         "onRounteChange",
-        "product": {
-          "root":         "onRouteChangeProduct",
-          "list":         "onRouteChangeProductList",
-          "listLoaded":   "onRouteChangeProductListLoaded",
-          "detail":       "onRouteChangeProductDetail",
-          "detailLoaded": "onRouteChangeProductdetailLoaded",
-        },
-        "member":         "onRouteChangeMember",
-        "purchase":       "onRouteChangePurchase",
-        "various":        "onRouteChangeVarious"
+        "change":         "onRounteChange"
       },
       "auth": {
         "check":          "onCheckSignin",

@@ -1,50 +1,62 @@
 <product-list>
   <div class="wrap">
+    <h2 class="content-title">List of Product</h2>
     <section class="product-search-box">
-      <h3 class="content-title-second">search condition</h3>
-      <form class="product-search-form" oninput={searchProductListIncremental}>
+      <h3 class="content-title-second">Search Condition</h3>
+      <form class="product-search-form" oninput={onSearchProductListIncremental}>
         <ul class="product-search-condition-list">
           <li>
-            <span>product name</span>
+            <span>Product Name</span>
             <input type="text" ref="productName" />
             <!--<span errors="productName"></span>-->
           </li>
           <li>
-            <span>product status</span>
+            <span>Product Status</span>
             <select ref="productStatus">
               <option value=""></option>
             </select>
             <!--<span errors="productStatus"></span>-->
           </li>
           <li>
-            <span>purchase member</span>
+            <span>Purchase Member</span>
             <input type="text" ref="purchaseMemberName"/>
             <!--<span errors="purchaseMemberName"></span>-->
           </li>
         </ul>
 
         <input type="checkbox" onchange={switchIncremental}> incremental search
-        <button class="btn btn-success" onclick={searchProductList}>Search</button>
+        <button class="btn btn-success" onclick={onSearchProductList}>Search</button>
       </form>
     </div>
-    <table class="table table-stripe">
-      <thead>
-        <tr>
-          <th>Product Name</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr each={productList}>
-          <td>
-            <a href="/product/detail/{productId}">{productName}</a>
-          </td>
-          <td>¥{window.helper.formatMoneyComma(regularPrice)}</td>
-        </tr>
-      </tbody>
-    </table>
+    <section class="product-result-box">
+      <h3 class="content-title-second">Search Result</h3>
+      <table class="list-tbl">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Status</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Latest Purchase</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr each={productList}>
+            <td>{productId}</td>
+            <td><a href="/product/detail/{productId}">{productName}</a></td>
+            <td>{productStatus}</td>
+            <td>{productCategory}</td>
+            <td>¥{window.helper.formatMoneyComma(regularPrice)}</td>
+            <td>{latestPurchaseDate}</td>
+          </tr>
+        </tbody>
+      </table>
+      <section class="product-list-paging-box">
+        <pagination></pagination>
+		  </section>
+    </section>
   </div>
-  <pagination></pagination>
 
   <script>
     var RC = window.RC || {};
@@ -56,7 +68,7 @@
     this.productList = [];
 
     this.on('mount', () => {
-      obs.trigger(RC.EVENT.route.product.list, opts);
+      searchProductList(opts);
     });
 
     moveDetail = function(e) {
@@ -65,7 +77,7 @@
       obs.trigger(RC.EVENT.route.change, href);
     };
 
-    searchProductList = function(e) {
+    onSearchProductList = function(e) {
       e.preventDefault();
       queryParams = {
         "productName": self.refs.productName.value,
@@ -73,43 +85,39 @@
         "page": 1
       };
       var href = location.pathname + window.helper.joinQueryParams(queryParams);
-      history.pushState(null, null, href);
-      obs.trigger(RC.EVENT.route.product.list, queryParams);
+      obs.trigger(RC.EVENT.route.change, href);
     };
 
     switchIncremental = function(e) {
       self.incrementalChecked = e.target.checked;
     }
 
-    searchProductListIncremental = function(e) {
+    onSearchProductListIncremental = function(e) {
       if (self.incrementalChecked) {
-        searchProductList(e);
+        onSearchProductList(e);
       }
     }
 
-    obs.on(RC.EVENT.route.product.list, function(queryParams) {
+    searchProductList = function(queryParams) {
+      self.refs.productName.value = queryParams.productName || "";
+      self.refs.purchaseMemberName.value = queryParams.purchaseMemberName || "";
+
       var page = queryParams.page || 1;
-      var productName = queryParams.productName || "";
-      var request = sa.post(RC.API.product.list);
-      request = request.send(queryParams);
-      self.refs.productName.value = productName;
-      request
+      delete queryParams.page;
+
+      sa.post(RC.API.product.list + page)
+        .send(queryParams)
         .end(function(error, response) {
           if (response.ok) {
-            obs.trigger(RC.EVENT.route.product.listLoaded, JSON.parse(response.text));
+            searchProductListLoaded(JSON.parse(response.text));
           }
         });
-    });
+    }
 
-    obs.on(RC.EVENT.route.product.listLoaded, function(data) {
+    searchProductListLoaded = function(data) {
       self.productList = data.rows;
       self.update();
       obs.trigger(RC.EVENT.pagenation.set, data);
-    });
-
-    this.on('unmount', () => {
-      obs.off(RC.EVENT.route.product.list);
-      obs.off(RC.EVENT.route.product.listLoaded);
-    });
+    }
   </script>
 </product-list>
