@@ -48,6 +48,10 @@
     this.isLogin = false;
     this.state = true;
 
+    this.on('mount', function() {
+      obs.trigger(RC.EVENT.auth.check);
+    });
+    
     obs.on(window.RC.EVENT.auth.sign, function(state) {
       self.isLogin = state;
       self.update();
