@@ -18,7 +18,7 @@
 
         route.start(true)
 
-        window.observable.on(RC.EVENT.route.change, function(href) {
+        obs.on(RC.EVENT.route.change, function(href) {
             history.pushState(null, null, href);
             route(href);
         });

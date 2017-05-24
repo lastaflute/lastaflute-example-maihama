@@ -6,7 +6,6 @@
 
   <script>
     var RC = window.RC || {};
-    var obs = window.observable || {};
     var sa = window.superagent || {};
     var self = this;
 

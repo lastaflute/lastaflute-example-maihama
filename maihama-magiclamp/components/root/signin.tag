@@ -20,7 +20,7 @@
       </form>
     </div>
     
-    <style scoped>
+    <style>
       .sign-in-box {
         width: 320px;
         margin: 32px auto;
@@ -70,7 +70,7 @@
             if (response.ok) {
               account.value = "";
               password.value = "";
-              obs.trigger(window.RC.EVENT.auth.check);
+              obs.trigger(RC.EVENT.auth.check);
             }
           });
       };
