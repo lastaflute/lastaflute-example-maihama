@@ -31,10 +31,14 @@ public class ShowbaseActionAdjustmentProvider extends MaihamaActionAdjustmentPro
     }
 
     @Override
-    public boolean isForcedRoutingExcept(HttpServletRequest request, String requestPath) {
-        if (!config.isDevelopmentHere() && requestPath.startsWith("/swagger")) { // e.g. swagger in production
-            return true;
+    public boolean isForced404NotFoundRouting(HttpServletRequest request, String requestPath) {
+        if (!config.isSwaggerEnabled() && isSwaggerRequest(requestPath)) {
+            return true; // to suppress direct access
         }
-        return super.isForcedRoutingExcept(request, requestPath);
+        return super.isForced404NotFoundRouting(request, requestPath);
+    }
+
+    private boolean isSwaggerRequest(String requestPath) {
+        return requestPath.startsWith("/webjars/swagger-ui") || requestPath.startsWith("/swagger");
     }
 }

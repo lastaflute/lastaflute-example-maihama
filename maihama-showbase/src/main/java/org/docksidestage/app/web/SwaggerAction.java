@@ -61,7 +61,7 @@ public class SwaggerAction extends ShowbaseBaseAction {
         return asJson(new SwaggerGenerator().generateSwaggerMap());
     }
 
-    private void verifySwaggerAllowed() { // also check in ShowbaseBoot, ShowbaseActionAdjustmentProvider
-        verifyOrClientError("Swagger can work in development environment only!", config.isDevelopmentHere());
+    private void verifySwaggerAllowed() { // also check in ActionAdjustmentProvider
+        verifyOrClientError("Swagger can work in specified environment only!", config.isSwaggerEnabled());
     }
 }
