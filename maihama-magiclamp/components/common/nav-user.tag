@@ -65,8 +65,8 @@
           if (response.ok) {
             sessionStorage[RC.SESSION.member.info] = response.text;
             console.log("success");
-            obs.trigger(RC.EVENT.auth.sign, true);
-          }
+          } 
+          obs.trigger(RC.EVENT.auth.sign, response.ok);
         });
     });
 
