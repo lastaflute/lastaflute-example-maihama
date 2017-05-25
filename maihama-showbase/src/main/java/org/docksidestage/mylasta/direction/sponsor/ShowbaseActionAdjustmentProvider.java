@@ -32,8 +32,8 @@ public class ShowbaseActionAdjustmentProvider extends MaihamaActionAdjustmentPro
 
     @Override
     public boolean isForced404NotFoundRouting(HttpServletRequest request, String requestPath) {
-        if (!config.isSwaggerEnabled() && isSwaggerRequest(requestPath)) {
-            return true; // to suppress direct access
+        if (!config.isSwaggerEnabled() && isSwaggerRequest(requestPath)) { // e.g. swagger's html, css
+            return true; // to suppress direct access to swagger resources at e.g. production
         }
         return super.isForced404NotFoundRouting(request, requestPath);
     }
