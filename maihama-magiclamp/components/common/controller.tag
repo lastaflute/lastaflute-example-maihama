@@ -8,6 +8,9 @@
         route('', () => {
             riot.mount('content', 'root')
         })
+        route('/product/list/back', () => {
+            riot.mount('content', 'product-list', {back: true})
+        })
         route('/product/list..', () => {
             riot.mount('content', 'product-list', route.query())
         })
