@@ -3,6 +3,7 @@
   <h1>{productDetail.productName}</h1>
   <p>{productDetail.categoryName}</p>
   <p>¥{window.helper.formatMoneyComma(productDetail.regularPrice)}</p>
+  <a href="/product/list/back">一覧に戻る</a>
 
   <script>
     var RC = window.RC || {};

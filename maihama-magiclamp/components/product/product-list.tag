@@ -68,8 +68,18 @@
     this.productList = [];
 
     this.on('mount', () => {
+      if (opts.back) {
+        var queryParams = getSessionSearchCondition()
+        setSearchCondition(queryParams)
+        onSearchProductList()
+        return
+      }
       searchProductList(opts);
     });
+
+    this.on('before-unmount', () => {
+      setSessionSearchCondition()
+    })
 
     moveDetail = function(e) {
       e.preventDefault();
@@ -78,13 +88,11 @@
     };
 
     onSearchProductList = function(e) {
-      e.preventDefault();
-      queryParams = {
-        "productName": self.refs.productName.value,
-        "purchaseMemberName": self.refs.purchaseMemberName.value,
-        "page": 1
-      };
-      var href = location.pathname + window.helper.joinQueryParams(queryParams);
+      if (e) {
+        e.preventDefault();
+      }
+      var queryParams = getSearchCondition()
+      var href = 'product/list' + window.helper.joinQueryParams(queryParams);
       obs.trigger(RC.EVENT.route.change, href);
     };
 
@@ -99,8 +107,7 @@
     }
 
     searchProductList = function(queryParams) {
-      self.refs.productName.value = queryParams.productName || "";
-      self.refs.purchaseMemberName.value = queryParams.purchaseMemberName || "";
+      setSearchCondition(queryParams);
 
       var page = queryParams.page || 1;
       delete queryParams.page;
@@ -118,6 +125,31 @@
       self.productList = data.rows;
       self.update();
       obs.trigger(RC.EVENT.pagenation.set, data);
+    }
+
+    setSearchCondition = (queryParams) => {
+      self.refs.productName.value = queryParams.productName || "";
+      self.refs.purchaseMemberName.value = queryParams.purchaseMemberName || "";
+    }
+
+    getSearchCondition = () => {
+      return {
+        productName: self.refs.productName.value,
+        purchaseMemberName: self.refs.purchaseMemberName.value
+      }
+    }
+
+    getSessionSearchCondition = () => {
+      const paramsString = sessionStorage.getItem('product-list-search-condition')
+      if (!paramsString) {
+        return self.getSearchCondition()
+      }
+      return JSON.parse(paramsString)
+    }
+
+    setSessionSearchCondition = () => {
+      const searchCondition = JSON.stringify(getSearchCondition())
+      sessionStorage.setItem('product-list-search-condition', searchCondition)
     }
   </script>
 </product-list>
