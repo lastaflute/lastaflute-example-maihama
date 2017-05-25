@@ -67,6 +67,9 @@
     this.incrementalChecked = false;
     this.productList = [];
 
+    // ===================================================================================
+    //                                                                               Event
+    //                                                                               =====
     this.on('mount', () => {
       if (opts.back) {
         var queryParams = getSessionSearchCondition()
@@ -107,6 +110,9 @@
     }
 
     searchProductList = function(queryParams) {
+    // ===================================================================================
+    //                                                                               Logic
+    //                                                                               =====
       setSearchCondition(queryParams);
 
       var page = queryParams.page || 1;
@@ -127,6 +133,9 @@
       obs.trigger(RC.EVENT.pagenation.set, data);
     }
 
+    // ===================================================================================
+    //                                                                             Mapping
+    //                                                                             =======
     setSearchCondition = (queryParams) => {
       self.refs.productName.value = queryParams.productName || "";
       self.refs.purchaseMemberName.value = queryParams.purchaseMemberName || "";
@@ -139,6 +148,9 @@
       }
     }
 
+    // ===================================================================================
+    //                                                                     Session Storage
+    //                                                                     ===============
     getSessionSearchCondition = () => {
       const paramsString = sessionStorage.getItem('product-list-search-condition')
       if (!paramsString) {
