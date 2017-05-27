@@ -10,7 +10,8 @@
       },
       "mypage":         "http://localhost:8092/hangar/mypage",
       "product": {
-        "list":           url + "/hangar/product/list/",
+        "status":         url + "/hangar/product/list/status/",
+        "list":           url + "/hangar/product/list/search/",
         "detail":         url + "/hangar/product/detail/"
       },
       "auth": {

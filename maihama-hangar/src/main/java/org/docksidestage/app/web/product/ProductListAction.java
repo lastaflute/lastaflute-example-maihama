@@ -15,6 +15,7 @@
  */
 package org.docksidestage.app.web.product;
 
+import java.util.AbstractMap.SimpleEntry;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,6 +26,7 @@ import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingResult;
+import org.docksidestage.dbflute.allcommon.CDef.ProductStatus;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
 import org.docksidestage.dbflute.exbhv.ProductStatusBhv;
 import org.docksidestage.dbflute.exentity.Product;
@@ -55,7 +57,7 @@ public class ProductListAction extends HangarBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<SearchPagingResult<ProductRowResult>> index(OptionalThing<Integer> pageNumber, ProductSearchBody body) {
+    public JsonResponse<SearchPagingResult<ProductRowResult>> search(OptionalThing<Integer> pageNumber, ProductSearchBody body) {
         validate(body, messages -> {});
 
         PagingResultBean<Product> page = selectProductPage(pageNumber.orElse(1), body);
@@ -65,6 +67,14 @@ public class ProductListAction extends HangarBaseAction {
 
         SearchPagingResult<ProductRowResult> result = pagingAssist.createPagingResult(page, rows);
         return asJson(result);
+    }
+
+    @Execute
+    public JsonResponse<List<SimpleEntry<String, String>>> status() {
+        List<SimpleEntry<String, String>> productStatusList = ProductStatus.listAll().stream().map(m -> {
+            return new SimpleEntry<>(m.code(), m.alias());
+        }).collect(Collectors.toList());
+        return asJson(productStatusList);
     }
 
     // ===================================================================================

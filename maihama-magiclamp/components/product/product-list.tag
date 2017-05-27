@@ -14,6 +14,7 @@
             <span>Product Status</span>
             <select ref="productStatus">
               <option value=""></option>
+              <option each={productStatusList} value={key}>{value}</option>
             </select>
             <!--<span errors="productStatus"></span>-->
           </li>
@@ -77,6 +78,7 @@
         onSearchProductList()
         return
       }
+      selectProductStatus(opts.productStatus);
       searchProductList(opts);
     });
 
@@ -94,7 +96,7 @@
       if (e) {
         e.preventDefault();
       }
-      var queryParams = getSearchCondition()
+      var queryParams = getSearchCondition();
       var href = 'product/list' + window.helper.joinQueryParams(queryParams);
       obs.trigger(RC.EVENT.route.change, href);
     };
@@ -133,17 +135,30 @@
       obs.trigger(RC.EVENT.pagenation.set, data);
     }
 
+    selectProductStatus = function (productStatus) {
+      sa.get(RC.API.product.status)
+        .end(function (error, response) {
+          if (response.ok) {
+            self.productStatusList = JSON.parse(response.text);
+            self.update();
+            self.refs.productStatus.value = productStatus;
+          }
+        })
+    }
+
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
     setSearchCondition = (queryParams) => {
       self.refs.productName.value = queryParams.productName || "";
+      self.refs.productStatus = queryParams.productStatus || "";
       self.refs.purchaseMemberName.value = queryParams.purchaseMemberName || "";
     }
 
     getSearchCondition = () => {
       return {
         productName: self.refs.productName.value,
+        productStatus: self.refs.productStatus.value,
         purchaseMemberName: self.refs.purchaseMemberName.value
       }
     }
