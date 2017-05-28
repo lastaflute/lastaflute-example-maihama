@@ -73,10 +73,13 @@
     //                                                                               =====
     this.on('mount', () => {
       if (opts.back) {
-        routeChangeSearch(getSessionSearchCondition())
+        var queryParams = getSessionSearchCondition();
+        var href = getSearchProductListUrl(queryParams);
+        obs.trigger(RC.EVENT.route.change, href);
         return
       }
       selectProductStatus(opts.productStatus);
+      setSearchCondition(opts);
       searchProductList(opts);
     });
 
@@ -95,7 +98,9 @@
         e.preventDefault();
       }
       var queryParams = getSearchCondition();
-      routeChangeSearch(queryParams);
+      var href = getSearchProductListUrl(queryParams);
+      history.pushState(null, null, href);
+      searchProductList(queryParams);
     };
 
     switchIncremental = function (e) {
@@ -111,14 +116,11 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    routeChangeSearch = function(queryParams) {
-      var href = 'product/list' + window.helper.joinQueryParams(queryParams);
-      obs.trigger(RC.EVENT.route.change, href);
-    };
+    getSearchProductListUrl = function(queryParams) {
+      return '/product/list' + window.helper.joinQueryParams(queryParams);
+    }
 
     searchProductList = function (queryParams) {
-      setSearchCondition(queryParams);
-
       var page = queryParams.page || 1;
       delete queryParams.page;
 
