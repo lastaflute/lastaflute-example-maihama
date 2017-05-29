@@ -5,7 +5,9 @@
       <dl class="product-detail-list">
         <dt>Product Name</dt>
         <dd>{productDetail.productName}</dd>
-        <dt>{productDetail.categoryName}</dt>
+        <dt>Category Name</dt>
+        <dd>{productDetail.categoryName}</dd>
+        <dt>Regular Price</dt>
         <dd>¥{window.helper.formatMoneyComma(productDetail.regularPrice)}</dd>
       </dl>
       <a href="/product/list/back">一覧に戻る</a>
