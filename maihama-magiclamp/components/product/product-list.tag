@@ -87,12 +87,6 @@
       setSessionSearchCondition()
     })
 
-    moveDetail = function(e) {
-      e.preventDefault();
-      var href = e.target.pathname + e.target.search;
-      obs.trigger(RC.EVENT.route.change, href);
-    };
-
     onSearchProductList = function (e) {
       if (e) {
         e.preventDefault();
@@ -113,6 +107,12 @@
       }
     }
 
+    moveDetail = function(e) {
+      e.preventDefault();
+      var href = e.target.pathname + e.target.search;
+      obs.trigger(RC.EVENT.route.change, href);
+    };
+
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
@@ -128,15 +128,12 @@
         .send(queryParams)
         .end(function (error, response) {
           if (response.ok) {
-            searchProductListLoaded(JSON.parse(response.text));
+            var data = JSON.parse(response.text);
+            self.productList = data.rows;
+            self.update();
+            obs.trigger(RC.EVENT.pagenation.set, data);
           }
         });
-    }
-
-    searchProductListLoaded = function (data) {
-      self.productList = data.rows;
-      self.update();
-      obs.trigger(RC.EVENT.pagenation.set, data);
     }
 
     selectProductStatus = function (productStatus) {
