@@ -25,7 +25,7 @@
           </li>
         </ul>
 
-        <input type="checkbox" onchange={switchIncremental}> incremental search
+        <input type="checkbox" ref="incrementalSearch"> incremental search
         <button class="btn btn-success" onclick={onSearchProductList}>Search</button>
       </form>
   </div>
@@ -65,7 +65,6 @@
     var obs = window.observable || {};
     var self = this;
 
-    this.incrementalChecked = false;
     this.productList = [];
 
     // ===================================================================================
@@ -97,12 +96,8 @@
       searchProductList(queryParams);
     };
 
-    switchIncremental = function (e) {
-      self.incrementalChecked = e.target.checked;
-    }
-
     onSearchProductListIncremental = function (e) {
-      if (self.incrementalChecked) {
+      if (self.refs.incrementalSearch.checked) {
         onSearchProductList(e);
       }
     }
@@ -154,13 +149,15 @@
       self.refs.productName.value = queryParams.productName || "";
       self.refs.productStatus = queryParams.productStatus || "";
       self.refs.purchaseMemberName.value = queryParams.purchaseMemberName || "";
+      self.refs.incrementalSearch.checked = queryParams.incrementalSearch || false;
     }
 
     getSearchCondition = () => {
       return {
         productName: self.refs.productName.value,
         productStatus: self.refs.productStatus.value,
-        purchaseMemberName: self.refs.purchaseMemberName.value
+        purchaseMemberName: self.refs.purchaseMemberName.value,
+        incrementalSearch: self.refs.incrementalSearch.checked
       }
     }
 
