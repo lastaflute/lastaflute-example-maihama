@@ -62,6 +62,6 @@ public class SwaggerAction extends ShowbaseBaseAction {
     }
 
     private void verifySwaggerAllowed() { // also check in ActionAdjustmentProvider
-        verifyOrClientError("Swagger can work in specified environment only!", config.isSwaggerEnabled());
+        verifyOrClientError("Swagger is not enabled.", config.isSwaggerEnabled());
     }
 }

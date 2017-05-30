@@ -42,7 +42,7 @@ public class SeaJob implements LaJob {
     @Override
     public void run(LaJobRuntime runtime) {
         int memberId = 3; // #simple_for_example
-        stage.required(tx -> {
+        stage.requiresNew(tx -> {
             Member before = memberBhv.selectByPK(memberId).get();
             updateMember(before.getMemberId());
             restoreMember(before.getMemberId(), before.getMemberName()); // for test

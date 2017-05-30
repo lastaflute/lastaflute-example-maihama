@@ -15,27 +15,39 @@
  */
 package org.docksidestage.unit;
 
-import org.dbflute.utflute.lastaflute.WebContainerTestCase;
+import org.dbflute.utflute.lastadi.ContainerTestCase;
+import org.lastaflute.job.LaJob;
+import org.lastaflute.job.mock.MockJobRuntime;
 
 /**
  * Use like this:
  * <pre>
- * YourTest extends {@link UnitOrleansTestCase} {
+ * YourTest extends {@link UnitOrleansJobTestCase} {
  * 
  *     public void test_yourMethod() {
  *         <span style="color: #3F7E5E">// ## Arrange ##</span>
- *         YourAction action = new YourAction();
- *         <span style="color: #FD4747">inject</span>(action);
+ *         YourJob job = new YourJob();
+ *         <span style="color: #FD4747">inject</span>(job);
+ *         MockJobRuntime runtime = mockRuntime(job);
  * 
  *         <span style="color: #3F7E5E">// ## Act ##</span>
- *         action.submit();
+ *         job.run(runtime);
  * 
  *         <span style="color: #3F7E5E">// ## Assert ##</span>
- *         assertTrue(action...);
+ *         assertTrue(runtime...);
  *     }
  * }
  * </pre>
  * @author jflute
  */
-public abstract class UnitOrleansTestCase extends WebContainerTestCase {
+public abstract class UnitOrleansJobTestCase extends ContainerTestCase {
+
+    /**
+     * Prepare mock of job runtime.
+     * @param job The execution job on the runtime. (NotNull)
+     * @return The mock instance of job runtime for the job. (NotNull) 
+     */
+    protected MockJobRuntime mockRuntime(LaJob job) {
+        return MockJobRuntime.of(job.getClass());
+    }
 }

@@ -22,12 +22,12 @@ import org.dbflute.utflute.lastaflute.police.LastaPresentsSomethingPolice;
 import org.dbflute.utflute.lastaflute.police.NonActionExtendsActionPolice;
 import org.dbflute.utflute.lastaflute.police.NonWebHasWebReferencePolice;
 import org.dbflute.utflute.lastaflute.police.WebPackageNinjaReferencePolice;
-import org.docksidestage.unit.UnitOrleansTestCase;
+import org.docksidestage.unit.UnitOrleansWebTestCase;
 
 /**
  * @author jflute
  */
-public class OrleansActionDefTest extends UnitOrleansTestCase {
+public class OrleansActionDefTest extends UnitOrleansWebTestCase {
 
     public void test_component() throws Exception {
         policeStoryOfJavaClassChase(new ActionComponentPolice(tp -> getComponent(tp)));
@@ -45,17 +45,17 @@ public class OrleansActionDefTest extends UnitOrleansTestCase {
         policeStoryOfJavaClassChase(new NonWebHasWebReferencePolice());
     }
 
-    public void test_webPackageNinjaReferencePolice() throws Exception {
+    public void test_webPackageNinjaReference() throws Exception {
         policeStoryOfJavaClassChase(new WebPackageNinjaReferencePolice());
     }
 
-    public void test_injectedResourceDefinitionPolice() throws Exception {
+    public void test_injectedResourceDefinition() throws Exception {
         policeStoryOfJavaClassChase(new InjectedResourceDefinitionPolice().shouldBePrivateField(field -> {
             return true; // means all fields
         }));
     }
 
-    public void test_lastaPresentsSomethingPolice() throws Exception {
+    public void test_lastaPresentsSomething() throws Exception {
         policeStoryOfJavaClassChase(new LastaPresentsSomethingPolice());
     }
 }

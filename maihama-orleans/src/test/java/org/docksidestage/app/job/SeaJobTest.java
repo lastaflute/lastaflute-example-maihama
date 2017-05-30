@@ -17,19 +17,20 @@ package org.docksidestage.app.job;
 
 import java.util.Map;
 
-import org.docksidestage.unit.UnitOrleansTestCase;
+import org.docksidestage.unit.UnitOrleansJobTestCase;
 import org.lastaflute.job.mock.MockJobRuntime;
 
 /**
  * @author jflute
  */
-public class SeaJobTest extends UnitOrleansTestCase {
+public class SeaJobTest extends UnitOrleansJobTestCase {
 
     public void test_run_basic() {
         // ## Arrange ##
+        changeRequiresNewToRequired();
         SeaJob job = new SeaJob();
         inject(job);
-        MockJobRuntime runtime = MockJobRuntime.of(job.getClass());
+        MockJobRuntime runtime = mockRuntime(job);
 
         // ## Act ##
         job.run(runtime);

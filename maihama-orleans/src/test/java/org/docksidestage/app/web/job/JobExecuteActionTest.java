@@ -21,13 +21,13 @@ import org.dbflute.utflute.lastaflute.mock.TestingJsonData;
 import org.docksidestage.app.job.challenge.BonvoJob;
 import org.docksidestage.app.job.challenge.PiariJob;
 import org.docksidestage.app.web.job.JobExecuteResult.ExecResultTypePart;
-import org.docksidestage.unit.UnitOrleansTestCase;
+import org.docksidestage.unit.UnitOrleansWebTestCase;
 import org.lastaflute.web.response.JsonResponse;
 
 /**
  * @author jflute
  */
-public class JobExecuteActionTest extends UnitOrleansTestCase {
+public class JobExecuteActionTest extends UnitOrleansWebTestCase {
 
     // ===================================================================================
     //                                                                            Settings
@@ -58,7 +58,7 @@ public class JobExecuteActionTest extends UnitOrleansTestCase {
         assertJobIdentity("piari", PiariJob.class, result);
         assertTimeBeforeAfter(result, before);
         assertEquals("true", result.endTitleRoll.get("empty"));
-        assertEquals(before.toString(), result.endTitleRoll.get("execTime"));
+        assertEquals(before.toString(), result.endTitleRoll.get("executionDateTime"));
         assertEquals(ExecResultTypePart.SUCCESS, result.execResultType);
         assertFalse(result.errorEnding);
         assertNull(result.errorMessage);
