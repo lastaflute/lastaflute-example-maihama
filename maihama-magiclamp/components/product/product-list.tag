@@ -157,7 +157,9 @@
       self.refs.productName.value = queryParams.productName || "";
       self.refs.productStatus = queryParams.productStatus || "";
       self.refs.purchaseMemberName.value = queryParams.purchaseMemberName || "";
-      self.refs.incrementalSearch.checked = queryParams.incrementalSearch || false;
+      if (queryParams.incrementalSearch === "true") {
+        self.refs.incrementalSearch.checked = true;
+      }
     }
 
     getSearchCondition = () => {
