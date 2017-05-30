@@ -8,7 +8,7 @@
           <li>
             <span>Product Name</span>
             <input type="text" ref="productName" />
-            <!--<span errors="productName"></span>-->
+            <span if={validationErrors.productName} class="errors"> {validationErrors.productName}</span>
           </li>
           <li>
             <span>Product Status</span>
@@ -16,12 +16,11 @@
               <option value=""></option>
               <option each={productStatusList} value={key}>{value}</option>
             </select>
-            <!--<span errors="productStatus"></span>-->
           </li>
           <li>
             <span>Purchase Member</span>
             <input type="text" ref="purchaseMemberName" />
-            <!--<span errors="purchaseMemberName"></span>-->
+            <span if={validationErrors.purchaseMemberName} class="errors"> {validationErrors.purchaseMemberName}</span>
           </li>
         </ul>
 
@@ -66,6 +65,7 @@
     var self = this;
 
     this.productList = [];
+    this.validationErrors = {};
 
     // ===================================================================================
     //                                                                               Event
@@ -119,6 +119,8 @@
       var page = queryParams.page || 1;
       delete queryParams.page;
 
+      self.validationErrors = {};
+
       sa.post(RC.API.product.list + page)
         .send(queryParams)
         .end(function (error, response) {
@@ -127,6 +129,12 @@
             self.productList = data.rows;
             self.update();
             obs.trigger(RC.EVENT.pagenation.set, data);
+          }
+          else if (response.clientError && response.body.cause === "VALIDATION_ERROR") {
+            response.body.errors.forEach(function(element) {
+              self.validationErrors[element.field] = element.messages;
+            });
+            self.update();
           }
         });
     }
