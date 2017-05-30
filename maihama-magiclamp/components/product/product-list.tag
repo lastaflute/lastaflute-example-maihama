@@ -8,23 +8,23 @@
           <li>
             <span>Product Name</span>
             <input type="text" ref="productName" />
-            <!--<span errors="productName"></span>-->
+            <span if={validationErrors.productName} class="errors"> {validationErrors.productName}</span>
           </li>
           <li>
             <span>Product Status</span>
             <select ref="productStatus">
               <option value=""></option>
+              <option each={productStatusList} value={key}>{value}</option>
             </select>
-            <!--<span errors="productStatus"></span>-->
           </li>
           <li>
             <span>Purchase Member</span>
             <input type="text" ref="purchaseMemberName" />
-            <!--<span errors="purchaseMemberName"></span>-->
+            <span if={validationErrors.purchaseMemberName} class="errors"> {validationErrors.purchaseMemberName}</span>
           </li>
         </ul>
 
-        <input type="checkbox" onchange={switchIncremental}> incremental search
+        <input type="checkbox" ref="incrementalSearch"> incremental search
         <button class="btn btn-success" onclick={onSearchProductList}>Search</button>
       </form>
   </div>
@@ -64,19 +64,21 @@
     var obs = window.observable || {};
     var self = this;
 
-    this.incrementalChecked = false;
     this.productList = [];
+    this.validationErrors = {};
 
     // ===================================================================================
     //                                                                               Event
     //                                                                               =====
     this.on('mount', () => {
       if (opts.back) {
-        var queryParams = getSessionSearchCondition()
-        setSearchCondition(queryParams)
-        onSearchProductList()
+        var queryParams = getSessionSearchCondition();
+        var href = getSearchProductListUrl(queryParams);
+        obs.trigger(RC.EVENT.route.change, href);
         return
       }
+      selectProductStatus(opts.productStatus);
+      setSearchCondition(opts);
       searchProductList(opts);
     });
 
@@ -84,53 +86,68 @@
       setSessionSearchCondition()
     })
 
+    onSearchProductList = function (e) {
+      if (e) {
+        e.preventDefault();
+      }
+      var queryParams = getSearchCondition();
+      var href = getSearchProductListUrl(queryParams);
+      history.pushState(null, null, href);
+      searchProductList(queryParams);
+    };
+
+    onSearchProductListIncremental = function (e) {
+      if (self.refs.incrementalSearch.checked) {
+        onSearchProductList(e);
+      }
+    }
+
     moveDetail = function(e) {
       e.preventDefault();
       var href = e.target.pathname + e.target.search;
       obs.trigger(RC.EVENT.route.change, href);
     };
 
-    onSearchProductList = function (e) {
-      if (e) {
-        e.preventDefault();
-      }
-      var queryParams = getSearchCondition()
-      var href = 'product/list' + window.helper.joinQueryParams(queryParams);
-      obs.trigger(RC.EVENT.route.change, href);
-    };
-
-    switchIncremental = function (e) {
-      self.incrementalChecked = e.target.checked;
-    }
-
-    onSearchProductListIncremental = function (e) {
-      if (self.incrementalChecked) {
-        onSearchProductList(e);
-      }
-    }
-
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    searchProductList = function (queryParams) {
-      setSearchCondition(queryParams);
+    getSearchProductListUrl = function(queryParams) {
+      return '/product/list' + window.helper.joinQueryParams(queryParams);
+    }
 
+    searchProductList = function (queryParams) {
       var page = queryParams.page || 1;
       delete queryParams.page;
+
+      self.validationErrors = {};
 
       sa.post(RC.API.product.list + page)
         .send(queryParams)
         .end(function (error, response) {
           if (response.ok) {
-            searchProductListLoaded(JSON.parse(response.text));
+            var data = JSON.parse(response.text);
+            self.productList = data.rows;
+            self.update();
+            obs.trigger(RC.EVENT.pagenation.set, data);
+          }
+          else if (response.clientError && response.body.cause === "VALIDATION_ERROR") {
+            response.body.errors.forEach(function(element) {
+              self.validationErrors[element.field] = element.messages;
+            });
+            self.update();
           }
         });
     }
 
-    searchProductListLoaded = function (data) {
-      self.productList = data.rows;
-      self.update();
-      obs.trigger(RC.EVENT.pagenation.set, data);
+    selectProductStatus = function (productStatus) {
+      sa.get(RC.API.product.status)
+        .end(function (error, response) {
+          if (response.ok) {
+            self.productStatusList = JSON.parse(response.text);
+            self.update();
+            self.refs.productStatus.value = productStatus;
+          }
+        })
     }
 
     // ===================================================================================
@@ -138,13 +155,19 @@
     //                                                                             =======
     setSearchCondition = (queryParams) => {
       self.refs.productName.value = queryParams.productName || "";
+      self.refs.productStatus = queryParams.productStatus || "";
       self.refs.purchaseMemberName.value = queryParams.purchaseMemberName || "";
+      if (queryParams.incrementalSearch === "true") {
+        self.refs.incrementalSearch.checked = true;
+      }
     }
 
     getSearchCondition = () => {
       return {
         productName: self.refs.productName.value,
-        purchaseMemberName: self.refs.purchaseMemberName.value
+        productStatus: self.refs.productStatus.value,
+        purchaseMemberName: self.refs.purchaseMemberName.value,
+        incrementalSearch: self.refs.incrementalSearch.checked
       }
     }
 

@@ -1,9 +1,18 @@
 <product-detail>
-
-  <h1>{productDetail.productName}</h1>
-  <p>{productDetail.categoryName}</p>
-  <p>¥{window.helper.formatMoneyComma(productDetail.regularPrice)}</p>
-  <a href="/product/list/back">一覧に戻る</a>
+  <div class="contents">
+    <h2 class="content-title">Detail of Product</h2>
+    <section class="product-detail-box">
+      <dl class="product-detail-list">
+        <dt>Product Name</dt>
+        <dd>{productDetail.productName}</dd>
+        <dt>Category Name</dt>
+        <dd>{productDetail.categoryName}</dd>
+        <dt>Regular Price</dt>
+        <dd>¥{window.helper.formatMoneyComma(productDetail.regularPrice)}</dd>
+      </dl>
+      <a href="/product/list/back">back to list</a>
+    </section>
+  </div>
 
   <script>
     var RC = window.RC || {};
