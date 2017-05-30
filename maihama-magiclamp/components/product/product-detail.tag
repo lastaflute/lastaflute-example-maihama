@@ -10,7 +10,7 @@
         <dt>Regular Price</dt>
         <dd>¥{window.helper.formatMoneyComma(productDetail.regularPrice)}</dd>
       </dl>
-      <a href="/product/list/back">一覧に戻る</a>
+      <a href="/product/list/back">back to list</a>
     </section>
   </div>
 
