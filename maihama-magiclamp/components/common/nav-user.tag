@@ -35,13 +35,21 @@
 
     this.isLogin = false;
 
-    this.displayLoginInfo = function() {
-      var json = JSON.parse(sessionStorage[RC.SESSION.member.info]);
-      self.isLogin = true;
-      self.memberName = json.memberName;
-      self.update();
-    };
+    // ===================================================================================
+    //                                                                               Event
+    //                                                                               =====
+    this.on('mount', () => {
+      if (sessionStorage[RC.SESSION.member.info]) {
+        self.displayLoginInfo();
+        obs.trigger(RC.EVENT.auth.sign, true);
+      } else {
+        obs.trigger(RC.EVENT.auth.check);
+      }
+    });
 
+    // ===================================================================================
+    //                                                                             Execute
+    //                                                                             =======
     this.onSignout = function(e) {
       e.preventDefault();
       sa
@@ -51,6 +59,7 @@
           if (response.ok) {
             self.isLogin = false;
             self.update();
+            // self.update();
             obs.trigger(RC.EVENT.auth.sign, false);
             sessionStorage.removeItem(RC.SESSION.member.info);
           }
@@ -78,13 +87,14 @@
       self.update();
     });
 
-    setTimeout(function() {
-      if (sessionStorage[RC.SESSION.member.info]) {
-        self.displayLoginInfo();
-        obs.trigger(RC.EVENT.auth.sign, true);
-      } else {
-        obs.trigger(RC.EVENT.auth.check);
-      }
-    }, 10);
+    // ===================================================================================
+    //                                                                               Logic
+    //                                                                               =====
+    this.displayLoginInfo = function() {
+      var json = JSON.parse(sessionStorage[RC.SESSION.member.info]);
+      self.isLogin = true;
+      self.memberName = json.memberName;
+      self.update();
+    };
   </script>
 </nav-user>
