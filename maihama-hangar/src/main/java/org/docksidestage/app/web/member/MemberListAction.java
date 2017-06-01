@@ -96,7 +96,7 @@ public class MemberListAction extends HangarBaseAction {
             }
             if (body.formalizedFrom != null || body.formalizedTo != null) {
                 LocalDateTime fromTime = body.formalizedFrom != null ? body.formalizedFrom.atStartOfDay() : null;
-                LocalDateTime toTime = body.formalizedFrom != null ? body.formalizedFrom.atStartOfDay() : null;
+                LocalDateTime toTime = body.formalizedTo != null ? body.formalizedTo.atStartOfDay() : null;
                 cb.query().setFormalizedDatetime_FromTo(fromTime, toTime, op -> op.compareAsDate().allowOneSide());
             }
             cb.query().addOrderBy_UpdateDatetime_Desc();

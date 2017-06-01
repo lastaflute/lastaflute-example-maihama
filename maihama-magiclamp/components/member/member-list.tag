@@ -178,8 +178,12 @@
       if (queryParams.unpaid === "true") {
         self.refs.unpaid.checked = true;
       }
-      self.refs.formalizedFrom.value = queryParams.formalizedFrom || "";
-      self.refs.formalizedTo.value = queryParams.formalizedTo || "";
+      if (queryParams.formalizedFrom) {
+        self.refs.formalizedFrom.value = queryParams.formalizedFrom;
+      }
+      if (queryParams.formalizedTo) {
+        self.refs.formalizedTo.value = queryParams.formalizedTo;
+      }
     }
 
     getSearchCondition = () => {
