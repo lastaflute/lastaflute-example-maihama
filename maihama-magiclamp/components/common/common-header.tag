@@ -5,8 +5,8 @@
         <h1 class="main-title"><a href="/">Maihama, MagicLamp to Hangar<span> (LastaFlute Example)</span></a></h1>
         <ul class="nav-home">
           <li><a href="/product/list/"><span class="link-block">Products</span></a></li>
-          <li><a href="/member/list/"><span class="link-block">Members</span></a></li>
-          <li><a href="/withdrawal/"><span class="link-block">Withdrawal</span></a></li>
+          <li if={isLogin}><a href="/member/list/"><span class="link-block">Members</span></a></li>
+          <li if={isLogin}><a href="/withdrawal/"><span class="link-block">Withdrawal</span></a></li>
         </ul>
         <ul if={isLogin} class="nav-user">
           <li>
