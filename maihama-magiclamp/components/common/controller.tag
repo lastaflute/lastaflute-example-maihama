@@ -25,8 +25,8 @@
         route('/member/list..', () => {
             riot.mount('content', 'member-list', route.query())
         })
-        route('/member/detail/*', (memberId) => {
-            riot.mount('content', 'member-detail', {productId})
+        route('/member/edit/*', (memberId) => {
+            riot.mount('content', 'member-detail', {memberId})
         })
 
         route.start(true)

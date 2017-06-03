@@ -17,6 +17,7 @@ package org.docksidestage.app.web.member;
 
 import javax.annotation.Resource;
 
+import org.dbflute.optional.OptionalEntity;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
@@ -39,6 +40,18 @@ public class MemberAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
+    @Execute
+    public JsonResponse<MemberBody> detail(Integer memberId) {
+        MemberBody memberBody = new MemberBody();
+        selectMember(memberId).alwaysPresent(member -> {
+            memberBody.memberId = member.getMemberId();
+            memberBody.memberName = member.getMemberName();
+            memberBody.memberStatusCode = member.getMemberStatusCodeAsMemberStatus();
+            memberBody.memberAccount = member.getMemberAccount();
+        });
+        return asJson(memberBody);
+    }
+
     @Execute
     public JsonResponse<Void> update(MemberBody body) {
         validate(body, messages -> {});
@@ -68,6 +81,16 @@ public class MemberAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
+    private OptionalEntity<Member> selectMember(Integer memberId) {
+        return memberBhv.selectEntity(cb -> {
+            cb.specify().derivedMemberLogin().max(loginCB -> {
+                loginCB.specify().columnLoginDatetime();
+            }, Member.ALIAS_latestLoginDatetime);
+            cb.query().setMemberId_Equal(memberId);
+            cb.query().setMemberStatusCode_InScope_ServiceAvailable();
+        });
+    }
+
     private String selectMemberStatusName(Integer memberId) {
         return memberBhv.selectEntity(cb -> {
             cb.setupSelect_MemberStatus();
