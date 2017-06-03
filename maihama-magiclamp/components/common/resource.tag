@@ -6,6 +6,8 @@
     window.RC.API = {
       "member": {
         "info":           url + "/hangar/member/info",
+        "status":         url + "/hangar/member/list/status/",
+        "list":           url + "/hangar/member/list/search/",
         "add":            url + "/data/member/add.json"
       },
       "mypage":         "http://localhost:8092/hangar/mypage",

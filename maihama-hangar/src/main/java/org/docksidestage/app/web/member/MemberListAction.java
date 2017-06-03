@@ -16,6 +16,9 @@
 package org.docksidestage.app.web.member;
 
 import java.time.LocalDateTime;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 
@@ -24,6 +27,7 @@ import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingResult;
+import org.docksidestage.dbflute.allcommon.CDef.MemberStatus;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.core.util.LaStringUtil;
@@ -33,6 +37,7 @@ import org.lastaflute.web.response.JsonResponse;
 /**
  * @author jflute
  * @author iwamatsu0430
+ * @author black-trooper
  */
 public class MemberListAction extends HangarBaseAction {
 
@@ -48,11 +53,19 @@ public class MemberListAction extends HangarBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<SearchPagingResult<MemberSearchRowResult>> index(OptionalThing<Integer> pageNumber, MemberSearchBody body) {
+    public JsonResponse<SearchPagingResult<MemberSearchRowResult>> search(OptionalThing<Integer> pageNumber, MemberSearchBody body) {
         validate(body, messages -> {});
         PagingResultBean<Member> page = selectMemberPage(pageNumber.orElse(1), body);
         SearchPagingResult<MemberSearchRowResult> result = mappingToResult(page);
         return asJson(result);
+    }
+
+    @Execute
+    public JsonResponse<List<SimpleEntry<String, String>>> status() {
+        List<SimpleEntry<String, String>> memberStatusList = MemberStatus.listAll().stream().map(m -> {
+            return new SimpleEntry<>(m.code(), m.alias());
+        }).collect(Collectors.toList());
+        return asJson(memberStatusList);
     }
 
     // ===================================================================================
@@ -83,7 +96,7 @@ public class MemberListAction extends HangarBaseAction {
             }
             if (body.formalizedFrom != null || body.formalizedTo != null) {
                 LocalDateTime fromTime = body.formalizedFrom != null ? body.formalizedFrom.atStartOfDay() : null;
-                LocalDateTime toTime = body.formalizedFrom != null ? body.formalizedFrom.atStartOfDay() : null;
+                LocalDateTime toTime = body.formalizedTo != null ? body.formalizedTo.atStartOfDay() : null;
                 cb.query().setFormalizedDatetime_FromTo(fromTime, toTime, op -> op.compareAsDate().allowOneSide());
             }
             cb.query().addOrderBy_UpdateDatetime_Desc();

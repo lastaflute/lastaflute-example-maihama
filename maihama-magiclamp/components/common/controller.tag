@@ -8,15 +8,25 @@
         route('', () => {
             riot.mount('content', 'root')
         })
+
         route('/product/list/back', () => {
             riot.mount('content', 'product-list', {back: true})
         })
         route('/product/list..', () => {
             riot.mount('content', 'product-list', route.query())
         })
-
         route('/product/detail/*', (productId) => {
             riot.mount('content', 'product-detail', {productId})
+        })
+
+        route('/member/list/back', () => {
+            riot.mount('content', 'member-list', {back: true})
+        })
+        route('/member/list..', () => {
+            riot.mount('content', 'member-list', route.query())
+        })
+        route('/member/detail/*', (memberId) => {
+            riot.mount('content', 'member-detail', {productId})
         })
 
         route.start(true)
