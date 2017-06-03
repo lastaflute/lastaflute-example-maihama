@@ -19,11 +19,8 @@ import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.OrleansBaseAction;
 import org.lastaflute.job.JobManager;
-import org.lastaflute.job.LaJobHistory;
 import org.lastaflute.job.LaScheduledJob;
 import org.lastaflute.job.key.LaJobUnique;
-import org.lastaflute.job.subsidiary.LaunchNowOption;
-import org.lastaflute.job.subsidiary.LaunchedProcess;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.servlet.request.ResponseManager;
@@ -31,7 +28,7 @@ import org.lastaflute.web.servlet.request.ResponseManager;
 /**
  * @author jflute
  */
-public class JobExecuteAction extends OrleansBaseAction {
+public class JobStopAction extends OrleansBaseAction {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -45,23 +42,9 @@ public class JobExecuteAction extends OrleansBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<JobExecuteResult> index(String jobCode, JobExecuteBody body) {
-        validateApi(body, messages -> {});
+    public JsonResponse<Void> index(String jobCode) {
         LaScheduledJob job = findJob(jobCode);
-
-        LaunchedProcess process = job.launchNow(op -> mappingToParams(body, op));
-        LaJobHistory history = process.waitForEnding().get();
-
-        JobExecuteResult result = new JobExecuteResult(history);
-        return asJson(result);
-    }
-
-    @Execute
-    public JsonResponse<Void> nowait(String jobCode, JobExecuteBody body) {
-        validateApi(body, messages -> {});
-        LaScheduledJob job = findJob(jobCode);
-
-        job.launchNow(op -> mappingToParams(body, op));
+        job.stopNow(); // request only, no waiting for ending (see info logging about stopped)
         return JsonResponse.asEmptyBody();
     }
 
@@ -72,12 +55,5 @@ public class JobExecuteAction extends OrleansBaseAction {
         return jobManager.findJobByUniqueOf(LaJobUnique.of(jobCode)).orElseTranslatingThrow(cause -> {
             return responseManager.new400("Not found the job: " + jobCode, op -> op.cause(cause));
         });
-    }
-
-    private void mappingToParams(JobExecuteBody body, LaunchNowOption op) {
-        op.param("executionDateTime", body.executionDateTime);
-        if (body.varyingParameter != null) {
-            body.varyingParameter.forEach((key, value) -> op.param(key, value));
-        }
     }
 }

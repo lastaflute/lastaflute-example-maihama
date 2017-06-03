@@ -20,6 +20,7 @@ import javax.annotation.Resource;
 import org.dbflute.optional.OptionalThing;
 import org.dbflute.util.DfCollectionUtil;
 import org.docksidestage.app.job.challenge.BonvoJob;
+import org.docksidestage.app.job.challenge.DstoreJob;
 import org.docksidestage.app.job.challenge.PiariJob;
 import org.docksidestage.app.logic.context.AccessContextLogic;
 import org.docksidestage.mylasta.direction.OrleansConfig;
@@ -51,6 +52,7 @@ public class AllJobScheduler implements LaJobScheduler {
             return DfCollectionUtil.newHashMap("celebration", "plaza");
         }));
         cron.registerNonCron(BonvoJob.class, errorIfConcurrent(), op -> op.uniqueBy("bonvo"));
+        cron.registerNonCron(DstoreJob.class, errorIfConcurrent(), op -> op.uniqueBy("dstore"));
     }
 
     @Override

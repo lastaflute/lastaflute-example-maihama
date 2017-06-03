@@ -19,6 +19,7 @@ import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.OrleansLoginAssist;
+import org.docksidestage.app.web.base.view.HeaderBean;
 import org.docksidestage.mylasta.action.OrleansHtmlPath;
 import org.docksidestage.mylasta.action.OrleansMessages;
 import org.docksidestage.mylasta.action.OrleansUserBean;
@@ -57,6 +58,11 @@ public abstract class OrleansBaseAction extends MaihamaBaseAction // has several
     // #app_customize you can customize the action hook
     @Override
     public void hookFinally(ActionRuntime runtime) {
+        if (runtime.isForwardToHtml()) { // #delete_ifapi
+            runtime.registerData("headerBean", getUserBean().map(userBean -> {
+                return new HeaderBean(userBean);
+            }).orElse(HeaderBean.empty()));
+        }
         super.hookFinally(runtime);
     }
 

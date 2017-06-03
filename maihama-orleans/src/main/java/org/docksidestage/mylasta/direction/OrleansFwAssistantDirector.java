@@ -17,15 +17,21 @@ package org.docksidestage.mylasta.direction;
 
 import java.util.List;
 
-import org.docksidestage.mylasta.direction.sponsor.OrleansApiFailureHook;
+import javax.annotation.Resource;
+
 import org.docksidestage.mylasta.direction.sponsor.OrleansListedClassificationProvider;
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
-import org.lastaflute.web.api.ApiFailureHook;
+import org.lastaflute.thymeleaf.ThymeleafRenderingProvider;
+import org.lastaflute.web.direction.FwWebDirection;
+import org.lastaflute.web.ruts.renderer.HtmlRenderingProvider;
 
 /**
  * @author jflute
  */
 public class OrleansFwAssistantDirector extends MaihamaFwAssistantDirector {
+
+    @Resource
+    private OrleansConfig config;
 
     @Override
     protected void setupAppConfig(List<String> nameList) {
@@ -45,7 +51,12 @@ public class OrleansFwAssistantDirector extends MaihamaFwAssistantDirector {
     }
 
     @Override
-    protected ApiFailureHook createApiFailureHook() {
-        return new OrleansApiFailureHook(); // for client-managed message
+    protected void prepareWebDirection(FwWebDirection direction) {
+        super.prepareWebDirection(direction);
+        direction.directHtmlRendering(createHtmlRenderingProvider());
+    }
+
+    protected HtmlRenderingProvider createHtmlRenderingProvider() {
+        return new ThymeleafRenderingProvider().asDevelopment(config.isDevelopmentHere());
     }
 }

@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.job.challenge;
 
-import java.time.LocalDateTime;
-
 import org.lastaflute.job.LaJob;
 import org.lastaflute.job.LaJobRuntime;
 import org.slf4j.Logger;
@@ -25,38 +23,31 @@ import org.slf4j.LoggerFactory;
 /**
  * @author jflute
  */
-public class PiariJob implements LaJob {
+public class DstoreJob implements LaJob {
 
-    private static final Logger logger = LoggerFactory.getLogger(PiariJob.class);
+    private static final Logger logger = LoggerFactory.getLogger(DstoreJob.class);
 
     // ===================================================================================
     //                                                                             Job Run
     //                                                                             =======
     @Override
-    public void run(LaJobRuntime runtime) { // empty job!
-        LocalDateTime executionDateTime = (LocalDateTime) runtime.getParameterMap().get("executionDateTime");
-        if (executionDateTime != null) { // means from launch-now
-            logger.debug("...Accepting executionDateTime: {}", executionDateTime);
-        }
+    public void run(LaJobRuntime runtime) { // long job!
         int count = 0;
         while (true) {
-            if (count > 30) {
+            if (count > 60) {
                 break;
             }
             try {
-                logger.debug("#job ...Sleeping piari: {}", count);
+                logger.debug("#job ...Sleeping dstore: {}", count);
                 Thread.sleep(1000L);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                logger.debug("Interrupeted the sleep: {}", e.getMessage());
             }
             runtime.stopIfNeeds();
             ++count;
         }
         runtime.showEndTitleRoll(data -> {
-            data.register("empty", true);
-            if (executionDateTime != null) {
-                data.register("executionDateTime", executionDateTime);
-            }
+            data.register("long", true);
         });
     }
 }
