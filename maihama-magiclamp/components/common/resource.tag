@@ -9,6 +9,7 @@
         "status":         url + "/hangar/member/list/status/",
         "list":           url + "/hangar/member/list/search/",
         "detail":         url + "/hangar/member/detail/",
+        "update":         url + "/hangar/member/update/",
         "add":            url + "/data/member/add.json"
       },
       "mypage":         "http://localhost:8092/hangar/mypage",

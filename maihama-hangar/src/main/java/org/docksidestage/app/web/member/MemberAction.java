@@ -27,6 +27,7 @@ import org.lastaflute.web.response.JsonResponse;
 /**
  * @author iwamatsu0430
  * @author jflute
+ * @author black-trooper
  */
 public class MemberAction extends HangarBaseAction {
 
@@ -46,8 +47,10 @@ public class MemberAction extends HangarBaseAction {
         selectMember(memberId).alwaysPresent(member -> {
             memberBody.memberId = member.getMemberId();
             memberBody.memberName = member.getMemberName();
+            memberBody.birthdate = member.getBirthdate();
             memberBody.memberStatusCode = member.getMemberStatusCodeAsMemberStatus();
             memberBody.memberAccount = member.getMemberAccount();
+            memberBody.versionNo = member.getVersionNo();
         });
         return asJson(memberBody);
     }
@@ -61,6 +64,7 @@ public class MemberAction extends HangarBaseAction {
         member.setBirthdate(body.birthdate);
         member.setMemberStatusCodeAsMemberStatus(body.memberStatusCode);
         member.setMemberAccount(body.memberAccount);
+        member.setVersionNo(body.versionNo);
         memberBhv.update(member);
         return JsonResponse.asEmptyBody();
     }

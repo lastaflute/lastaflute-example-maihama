@@ -23,6 +23,7 @@ import org.lastaflute.web.validation.Required;
 /**
  * @author jflute
  * @author iwamatsu0430
+ * @author black-trooper
  */
 public class MemberBody {
 
@@ -38,4 +39,7 @@ public class MemberBody {
     public CDef.MemberStatus memberStatusCode;
 
     public LocalDate birthdate;
+
+    @Required
+    public Long versionNo;
 }

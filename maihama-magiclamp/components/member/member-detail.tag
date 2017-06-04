@@ -1,16 +1,26 @@
 <member-detail>
   <div class="contents">
     <h2 class="content-title">Detail of Member</h2>
-    <section class="member-detail-box">
-      <dl class="member-detail-list">
+    <section class="product-detail-box">
+      <dl class="product-detail-list">
         <dt>Member Name</dt>
-        <dd>{memberDetail.memberName}</dd>
-        <dt>Category Name</dt>
-        <dd>{memberDetail.categoryName}</dd>
-        <dt>Regular Price</dt>
-        <dd>¥{window.helper.formatMoneyComma(memberDetail.regularPrice)}</dd>
+        <dd><input type="text" ref="memberName" /></dd>
+        <dt>Member Account</dt>
+        <dd><input type="text" ref="memberAccount" /></dd>
+        <dt>Brithdate</dt>
+        <dd><input type="text" ref="birthdate" /></dd>
+        <dt>Member Status</dt>
+        <dd>
+            <select ref="memberStatus">
+              <option value=""></option>
+              <option each={memberStatusList} value={key}>{value}</option>
+            </select>
+        </dd>
       </dl>
-      <a href="/member/list/back">back to list</a>
+      <button class="btn btn-success" onclick={onUpdate}>update</button>
+      <div class="listback">
+        <a href="/member/list/back">back to list</a>
+      </div>
     </section>
   </div>
 
@@ -20,8 +30,6 @@
     var self = this;
 
     this.memberDetail = {};
-    this.memberDetail.regularPrice = 0;
-
     // ===================================================================================
     //                                                                               Event
     //                                                                               =====
@@ -33,13 +41,35 @@
     //                                                                             Execute
     //                                                                             =======
     detailLoad = function(member) {
-      console.log(RC.API.member.detail + (member || 1));
       sa.get(RC.API.member.detail + (member || 1))
         .withCredentials()
         .end(function(error, response) {
-          console.log(error)
           if (response.ok) {
             detailLoaded(JSON.parse(response.text));
+          }
+        });
+    }
+
+    selectMemberStatus = function (memberStatus) {
+      sa.get(RC.API.member.status)
+        .withCredentials()
+        .end(function (error, response) {
+          if (response.ok) {
+            self.memberStatusList = JSON.parse(response.text);
+            self.update();
+            self.refs.memberStatus.value = memberStatus;
+          }
+        })
+    }
+
+    onUpdate = function() {
+      var queryParams = getQueryParams();
+      sa.post(RC.API.member.update)
+        .send(queryParams)
+        .withCredentials()
+        .end(function(error, response) {
+          if (response.ok) {
+            console.log('success update')
           }
         });
     }
@@ -49,7 +79,31 @@
     //                                                                               =====
     detailLoaded = function(data) {
       self.memberDetail = data;
+      setRefValue(data);
+      selectMemberStatus(data.memberStatusCode);
       self.update();
+    }
+
+    // ===================================================================================
+    //                                                                             Mapping
+    //                                                                             =======
+    setRefValue = function(data) {
+      self.refs.memberName.value = data.memberName || "";
+      self.refs.memberAccount.value = data.memberAccount || "";
+      if (data.birthdate) {
+        self.refs.birthdate.value = data.birthdate;
+      }
+    }
+
+    getQueryParams = () => {
+      return {
+        memberId: self.memberDetail.memberId,
+        versionNo: self.memberDetail.versionNo,        
+        memberName: self.refs.memberName.value,
+        memberStatusCode: self.refs.memberStatus.value,
+        memberAccount: self.refs.memberAccount.value,
+        birthdate: self.refs.birthdate.value
+      }
     }
   </script>
 </member-detail>
