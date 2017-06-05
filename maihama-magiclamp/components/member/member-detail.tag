@@ -4,11 +4,20 @@
     <section class="product-detail-box">
       <dl class="product-detail-list">
         <dt>Member Name</dt>
-        <dd><input type="text" ref="memberName" /></dd>
+        <dd>
+          <input type="text" ref="memberName" />
+          <span if={validationErrors.memberName} class="errors"> {validationErrors.memberName}</span>
+        </dd>
         <dt>Member Account</dt>
-        <dd><input type="text" ref="memberAccount" /></dd>
+        <dd>
+          <input type="text" ref="memberAccount" />
+          <span if={validationErrors.memberAccount} class="errors"> {validationErrors.memberAccount}</span>
+        </dd>
         <dt>Brithdate</dt>
-        <dd><input type="text" ref="birthdate" /></dd>
+        <dd>
+          <input type="text" ref="birthdate" />
+          <span if={validationErrors.birthdate} class="errors"> {validationErrors.birthdate}</span>
+        </dd>
         <dt>Member Status</dt>
         <dd>
             <select ref="memberStatus">
@@ -29,6 +38,7 @@
     var helper = window.helper || {};
     var self = this;
 
+    this.validationErrors = {};
     this.memberDetail = {};
     // ===================================================================================
     //                                                                               Event
@@ -60,6 +70,10 @@
       helper.post(RC.API.member.update, getQueryParams(),
         () => {
           console.log('success update')
+        },
+        (errors) => {
+          self.validationErrors = errors;
+          self.update();
         });
     }
 
