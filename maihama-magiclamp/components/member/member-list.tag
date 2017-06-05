@@ -178,13 +178,18 @@
     }
 
     getSearchCondition = () => {
-      return {
+      var condition =  {
         memberName: self.refs.memberName.value,
         memberStatus: self.refs.memberStatus.value,
         unpaid: self.refs.unpaid.checked,
-        formalizedFrom: self.refs.formalizedFrom.value,
-        formalizedTo: self.refs.formalizedTo.value
       }
+      if (self.refs.formalizedFrom.value) {
+        condition.formalizedFrom = self.refs.formalizedFrom.value;
+      }
+      if (self.refs.formalizedTo.value) {
+        condition.formalizedTo =  self.refs.formalizedTo.value;
+      }
+      return condition;
     }
 
     // ===================================================================================
