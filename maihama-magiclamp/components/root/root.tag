@@ -41,7 +41,7 @@
 
   <script>
     var RC = window.RC || {};
-    var sa = window.superagent || {};
+    var helper = window.helper || {};
     var obs = window.observable || {};
     var self = this;
 
@@ -56,20 +56,16 @@
       self.isLogin = state;
       self.update();
       if(self.isLogin) {
-        sa
-          .get(RC.API.mypage)
-          .withCredentials()
-          .end(function(error, response) {
-            if(response.ok) {
-              var obj = JSON.parse(response.text);
-              self.memberId = obj.memberId;
-              self.memberName = obj.memberName;
-              self.memberStatus = obj.memberStatus;
-              self.serviceRank = obj.serviceRank;
-              self.cipheredPassword = obj.cipheredPassword;
-              self.memberAddress = obj.memberAddress;
-              self.update();
-            }
+        helper.get(RC.API.mypage,
+          (response) => {
+            var obj = JSON.parse(response.text);
+            self.memberId = obj.memberId;
+            self.memberName = obj.memberName;
+            self.memberStatus = obj.memberStatus;
+            self.serviceRank = obj.serviceRank;
+            self.cipheredPassword = obj.cipheredPassword;
+            self.memberAddress = obj.memberAddress;
+            self.update();
           });
       }
     });

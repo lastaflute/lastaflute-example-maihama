@@ -41,7 +41,7 @@
 
   <script>
     var RC = window.RC || {};
-    var sa = window.superagent || {};
+    var helper = window.helper || {};
     var obs = window.observable || {};
     var self = this;
 
@@ -64,29 +64,23 @@
     //                                                                             =======
     this.onSignout = function(e) {
       e.preventDefault();
-      sa
-        .get(RC.API.auth.signout)
-        .withCredentials()
-        .end(function (error, response) {
-          if (response.ok) {
-            self.isLogin = false;
-            self.update();
-            obs.trigger(RC.EVENT.auth.sign, false);
-            sessionStorage.removeItem(RC.SESSION.member.info);
-          }
+      helper.get(RC.API.auth.signout,
+        (response) => {
+          self.isLogin = false;
+          self.update();
+          obs.trigger(RC.EVENT.auth.sign, false);
+          sessionStorage.removeItem(RC.SESSION.member.info);
         });
     };
 
     obs.on(RC.EVENT.auth.check, function(state) {
-      sa
-        .get(RC.API.member.info)
-        .withCredentials()
-        .end(function (error, response) {
-          if (response.ok) {
-            sessionStorage[RC.SESSION.member.info] = response.text;
-            console.log("success");
-          } 
-          obs.trigger(RC.EVENT.auth.sign, response.ok);
+      helper.get(RC.API.member.info,
+        (response) => {
+          sessionStorage[RC.SESSION.member.info] = response.text;
+          obs.trigger(RC.EVENT.auth.sign, true);
+        },
+        (errors) => {
+          obs.trigger(RC.EVENT.auth.sign, false);
         });
     });
 

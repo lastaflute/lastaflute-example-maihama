@@ -16,7 +16,7 @@
 
   <script>
     var RC = window.RC || {};
-    var sa = window.superagent || {};
+    var helper = window.helper || {};
     var self = this;
 
     this.productDetail = {};
@@ -33,12 +33,12 @@
     //                                                                             Execute
     //                                                                             =======
     detailLoad = function(product) {
-      sa.get(RC.API.product.detail + (product || 1))
-        .end(function(error, response) {
-          if (response.ok) {
-            detailLoaded(JSON.parse(response.text));
-          }
-        });
+      helper.get(RC.API.product.detail + (product || 1),
+        (response) => {
+          detailLoaded(JSON.parse(response.text));
+        },
+        (errors) => {},
+        false);
     }
 
     // ===================================================================================

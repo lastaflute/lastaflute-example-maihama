@@ -76,7 +76,7 @@
 
   <script>
     var RC = window.RC || {};
-    var sa = window.superagent || {};
+    var helper = window.helper || {};
     var obs = window.observable || {};
     var self = this;
 
@@ -137,35 +137,26 @@
 
       self.validationErrors = {};
 
-      sa.post(RC.API.member.list + page)
-        .send(queryParams)
-        .withCredentials()
-        .end(function (error, response) {
-          if (response.ok) {
-            var data = JSON.parse(response.text);
-            self.memberList = data.rows;
-            self.update();
-            obs.trigger(RC.EVENT.pagenation.set, data);
-          }
-          else if (response.clientError && response.body.cause === "VALIDATION_ERROR") {
-            response.body.errors.forEach(function(element) {
-              self.validationErrors[element.field] = element.messages;
-            });
-            self.update();
-          }
+      helper.post(RC.API.member.list + page, queryParams,
+        (response) => {
+          var data = JSON.parse(response.text);
+          self.memberList = data.rows;
+          self.update();
+          obs.trigger(RC.EVENT.pagenation.set, data);
+        },
+        (errors) => {
+          self.validationErrors = errors;
+          self.update();
         });
     }
 
     selectMemberStatus = function (memberStatus) {
-      sa.get(RC.API.member.status)
-        .withCredentials()
-        .end(function (error, response) {
-          if (response.ok) {
-            self.memberStatusList = JSON.parse(response.text);
-            self.update();
-            self.refs.memberStatus.value = memberStatus;
-          }
-        })
+      helper.get(RC.API.member.status,
+        (response) => {
+          self.memberStatusList = JSON.parse(response.text);
+          self.update();
+          self.refs.memberStatus.value = memberStatus;
+        });
     }
 
     // ===================================================================================

@@ -55,23 +55,22 @@
 
     <script>
       var RC = window.RC || {};
-      var sa = window.superagent || {};
+      var helper = window.helper || {};
       var obs = window.observable || {};
 
       this.doSignin = function(e) {
         e.preventDefault();
         var account = this.refs.account;
         var password = this.refs.password;
-        sa
-          .post(RC.API.auth.signin)
-          .send({account: account.value, password: password.value})
-          .withCredentials()
-          .end(function(error, response) {
-            if (response.ok) {
-              account.value = "";
-              password.value = "";
-              obs.trigger(RC.EVENT.auth.check);
-            }
+        helper.post(RC.API.auth.signin,
+          {
+            account: account.value,
+            password: password.value
+          },
+          (response) => {
+            account.value = "";
+            password.value = "";
+            obs.trigger(RC.EVENT.auth.check);
           });
       };
     </script>

@@ -60,7 +60,7 @@
 
   <script>
     var RC = window.RC || {};
-    var sa = window.superagent || {};
+    var helper = window.helper || {};
     var obs = window.observable || {};
     var self = this;
 
@@ -121,33 +121,29 @@
 
       self.validationErrors = {};
 
-      sa.post(RC.API.product.list + page)
-        .send(queryParams)
-        .end(function (error, response) {
-          if (response.ok) {
-            var data = JSON.parse(response.text);
-            self.productList = data.rows;
-            self.update();
-            obs.trigger(RC.EVENT.pagenation.set, data);
-          }
-          else if (response.clientError && response.body.cause === "VALIDATION_ERROR") {
-            response.body.errors.forEach(function(element) {
-              self.validationErrors[element.field] = element.messages;
-            });
-            self.update();
-          }
-        });
+      helper.post(RC.API.product.list + page, queryParams,
+        (response) => {
+          var data = JSON.parse(response.text);
+          self.productList = data.rows;
+          self.update();
+          obs.trigger(RC.EVENT.pagenation.set, data);
+        },
+        (errors) => {
+          self.validationErrors = errors;
+          self.update();
+        },
+        false);
     }
 
     selectProductStatus = function (productStatus) {
-      sa.get(RC.API.product.status)
-        .end(function (error, response) {
-          if (response.ok) {
-            self.productStatusList = JSON.parse(response.text);
-            self.update();
-            self.refs.productStatus.value = productStatus;
-          }
-        })
+      helper.get(RC.API.product.status,
+        (response) => {
+          self.productStatusList = JSON.parse(response.text);
+          self.update();
+          self.refs.productStatus.value = productStatus;
+        },
+        (errors) => {},
+        false);
     }
 
     // ===================================================================================
