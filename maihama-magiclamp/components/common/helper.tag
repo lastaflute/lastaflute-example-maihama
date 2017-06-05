@@ -1,5 +1,6 @@
 <helper>
   <script>
+    var sa = window.superagent || {};
     window.helper = {};
 
     window.helper.joinQueryParams = function(queryParams) {
@@ -44,6 +45,44 @@
         }
       };
       return inner(money.toString(), "");
+    }
+
+    window.helper.post = function(url, queryParams, onSuccess, onError, withoutCredentials) {
+      var _sa = sa.post(url).send(queryParams);
+      if (!withoutCredentials) {
+        _sa.withCredentials();
+      }
+      _sa.end(function(error, response) {
+          if (response.ok) {
+            onSuccess(response);
+          }
+          else if (response.clientError && response.body.cause === "VALIDATION_ERROR") {
+            onError(toValidationErros(response.body.errors));
+          }
+        });
+    }
+
+    window.helper.get = function(url, onSuccess, onError, withoutCredentials) {
+      var _sa = sa.get(url);
+      if (!withoutCredentials) {
+        _sa.withCredentials();
+      }
+      _sa.end(function(error, response) {
+          if (response.ok) {
+            onSuccess(response);
+          }
+          else if (response.clientError && response.body.cause === "VALIDATION_ERROR") {
+            onError(toValidationErros(response.body.errors));
+          }
+        });
+    }
+
+    toValidationErros = function(errors) {
+      var validationErrors = {};
+      errors.forEach(function(element) {
+        validationErrors[element.field] = element.messages;
+      });
+      return validationErrors;
     }
   </script>
 </helper>

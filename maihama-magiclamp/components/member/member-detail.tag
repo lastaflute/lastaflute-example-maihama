@@ -26,7 +26,7 @@
 
   <script>
     var RC = window.RC || {};
-    var sa = window.superagent || {};
+    var helper = window.helper || {};
     var self = this;
 
     this.memberDetail = {};
@@ -41,36 +41,25 @@
     //                                                                             Execute
     //                                                                             =======
     detailLoad = function(member) {
-      sa.get(RC.API.member.detail + (member || 1))
-        .withCredentials()
-        .end(function(error, response) {
-          if (response.ok) {
-            detailLoaded(JSON.parse(response.text));
-          }
+      helper.get(RC.API.member.detail + (member || 1),
+        (response) => {
+          detailLoaded(JSON.parse(response.text));
         });
     }
 
     selectMemberStatus = function (memberStatus) {
-      sa.get(RC.API.member.status)
-        .withCredentials()
-        .end(function (error, response) {
-          if (response.ok) {
-            self.memberStatusList = JSON.parse(response.text);
-            self.update();
-            self.refs.memberStatus.value = memberStatus;
-          }
-        })
+      helper.get(RC.API.member.status,
+        (response) => {
+          self.memberStatusList = JSON.parse(response.text);
+          self.update();
+          self.refs.memberStatus.value = memberStatus;
+        });
     }
 
     onUpdate = function() {
-      var queryParams = getQueryParams();
-      sa.post(RC.API.member.update)
-        .send(queryParams)
-        .withCredentials()
-        .end(function(error, response) {
-          if (response.ok) {
-            console.log('success update')
-          }
+      helper.post(RC.API.member.update, getQueryParams(),
+        () => {
+          console.log('success update')
         });
     }
 
