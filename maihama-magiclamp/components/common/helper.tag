@@ -1,5 +1,7 @@
 <helper>
   <script>
+    var RC = window.RC || {};
+    var obs = window.observable || {};
     var sa = window.superagent || {};
     window.helper = {};
 
@@ -59,6 +61,10 @@
           else if (response.clientError && response.body.cause === "VALIDATION_ERROR") {
             onError(toValidationErros(response.body.errors));
           }
+          else if (response.clientError && response.body.cause === "LOGIN_REQUIRED") {
+            obs.trigger(RC.EVENT.route.change, "/");
+            obs.trigger(RC.EVENT.auth.sign, false);
+          }
         });
     }
 
@@ -73,6 +79,10 @@
           }
           else if (response.clientError && response.body.cause === "VALIDATION_ERROR") {
             onError(toValidationErros(response.body.errors));
+          }
+          else if (response.clientError && response.body.cause === "LOGIN_REQUIRED") {
+            obs.trigger(RC.EVENT.route.change, "/");
+            obs.trigger(RC.EVENT.auth.sign, false);
           }
         });
     }
