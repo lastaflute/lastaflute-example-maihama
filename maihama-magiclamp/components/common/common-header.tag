@@ -68,6 +68,7 @@
         (response) => {
           self.isLogin = false;
           self.update();
+          obs.trigger(RC.EVENT.route.change, "/");
           obs.trigger(RC.EVENT.auth.sign, false);
           sessionStorage.removeItem(RC.SESSION.member.info);
         });

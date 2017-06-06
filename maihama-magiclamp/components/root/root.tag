@@ -54,7 +54,6 @@
     
     obs.on(RC.EVENT.auth.sign, function(state) {
       self.isLogin = state;
-      self.update();
       if(self.isLogin) {
         helper.get(RC.API.mypage,
           (response) => {
@@ -67,6 +66,8 @@
             self.memberAddress = obj.memberAddress;
             self.update();
           });
+      } else {
+        self.update();
       }
     });
   </script>
