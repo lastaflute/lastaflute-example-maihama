@@ -26,7 +26,7 @@
             riot.mount('content', 'member-list', route.query())
         })
         route('/member/edit/*', (memberId) => {
-            riot.mount('content', 'member-detail', {memberId})
+            riot.mount('content', 'member-edit', {memberId})
         })
 
         route.start(true)

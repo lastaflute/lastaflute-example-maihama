@@ -1,6 +1,6 @@
-<member-detail>
+<member-edit>
   <div class="contents">
-    <h2 class="content-title">Detail of Member</h2>
+    <h2 class="content-title">Edit Member</h2>
     <section class="product-detail-box">
       <dl class="product-detail-list">
         <dt>Member Name</dt>
@@ -109,4 +109,4 @@
       }
     }
   </script>
-</member-detail>
+</member-edit>

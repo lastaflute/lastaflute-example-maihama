@@ -16,9 +16,6 @@
 package org.docksidestage.app.web.member;
 
 import java.time.LocalDateTime;
-import java.util.AbstractMap.SimpleEntry;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 
@@ -27,7 +24,6 @@ import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingResult;
-import org.docksidestage.dbflute.allcommon.CDef.MemberStatus;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.core.util.LaStringUtil;
@@ -53,19 +49,11 @@ public class MemberListAction extends HangarBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<SearchPagingResult<MemberSearchRowResult>> search(OptionalThing<Integer> pageNumber, MemberSearchBody body) {
+    public JsonResponse<SearchPagingResult<MemberSearchRowResult>> index(OptionalThing<Integer> pageNumber, MemberSearchBody body) {
         validate(body, messages -> {});
         PagingResultBean<Member> page = selectMemberPage(pageNumber.orElse(1), body);
         SearchPagingResult<MemberSearchRowResult> result = mappingToResult(page);
         return asJson(result);
-    }
-
-    @Execute
-    public JsonResponse<List<SimpleEntry<String, String>>> status() {
-        List<SimpleEntry<String, String>> memberStatusList = MemberStatus.listAll().stream().map(m -> {
-            return new SimpleEntry<>(m.code(), m.alias());
-        }).collect(Collectors.toList());
-        return asJson(memberStatusList);
     }
 
     // ===================================================================================

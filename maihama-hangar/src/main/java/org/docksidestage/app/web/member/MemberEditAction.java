@@ -15,15 +15,12 @@
  */
 package org.docksidestage.app.web.member;
 
-import java.util.AbstractMap.SimpleEntry;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import javax.annotation.Resource;
 
+import org.dbflute.optional.OptionalEntity;
 import org.docksidestage.app.web.base.HangarBaseAction;
-import org.docksidestage.dbflute.allcommon.CDef.MemberStatus;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
+import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
@@ -32,7 +29,7 @@ import org.lastaflute.web.response.JsonResponse;
  * @author jflute
  * @author black-trooper
  */
-public class MemberAction extends HangarBaseAction {
+public class MemberEditAction extends HangarBaseAction {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -40,43 +37,47 @@ public class MemberAction extends HangarBaseAction {
     @Resource
     private MemberBhv memberBhv;
 
-    // #pending review later
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<MemberInfoResult> info() {
-        MemberInfoResult result = new MemberInfoResult();
-        getUserBean().ifPresent(userBean -> {
-            result.memberId = userBean.getMemberId();
-            result.memberName = userBean.getMemberName();
-            result.memberStatusName = selectMemberStatusName(userBean.getMemberId());
-        }).orElse(() -> {
-            result.memberName = "Guest";
+    public JsonResponse<MemberEditBody> index(Integer memberId) {
+        MemberEditBody memberEditBody = new MemberEditBody();
+        selectMember(memberId).alwaysPresent(member -> {
+            memberEditBody.memberId = member.getMemberId();
+            memberEditBody.memberName = member.getMemberName();
+            memberEditBody.birthdate = member.getBirthdate();
+            memberEditBody.memberStatusCode = member.getMemberStatusCodeAsMemberStatus();
+            memberEditBody.memberAccount = member.getMemberAccount();
+            memberEditBody.versionNo = member.getVersionNo();
         });
-        return asJson(result);
+        return asJson(memberEditBody);
     }
 
     @Execute
-    public JsonResponse<List<SimpleEntry<String, String>>> status() {
-        List<SimpleEntry<String, String>> memberStatusList = MemberStatus.listAll().stream().map(m -> {
-            return new SimpleEntry<>(m.code(), m.alias());
-        }).collect(Collectors.toList());
-        return asJson(memberStatusList);
+    public JsonResponse<Void> update(MemberEditBody body) {
+        validate(body, messages -> {});
+        Member member = new Member();
+        member.setMemberId(body.memberId);
+        member.setMemberName(body.memberName);
+        member.setBirthdate(body.birthdate);
+        member.setMemberStatusCodeAsMemberStatus(body.memberStatusCode);
+        member.setMemberAccount(body.memberAccount);
+        member.setVersionNo(body.versionNo);
+        memberBhv.update(member);
+        return JsonResponse.asEmptyBody();
     }
 
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
-    private String selectMemberStatusName(Integer memberId) {
+    private OptionalEntity<Member> selectMember(Integer memberId) {
         return memberBhv.selectEntity(cb -> {
-            cb.setupSelect_MemberStatus();
-            cb.specify().specifyMemberStatus().columnMemberStatusName();
+            cb.specify().derivedMemberLogin().max(loginCB -> {
+                loginCB.specify().columnLoginDatetime();
+            }, Member.ALIAS_latestLoginDatetime);
             cb.query().setMemberId_Equal(memberId);
-        }).flatMap(member -> {
-            return member.getMemberStatus().map(status -> {
-                return status.getMemberStatusName();
-            });
-        }).orElse("");
+            cb.query().setMemberStatusCode_InScope_ServiceAvailable();
+        });
     }
 }

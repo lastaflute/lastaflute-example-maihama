@@ -25,7 +25,7 @@ import org.lastaflute.web.validation.Required;
  * @author iwamatsu0430
  * @author black-trooper
  */
-public class MemberBody {
+public class MemberEditBody {
 
     public Integer memberId;
 

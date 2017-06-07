@@ -6,10 +6,10 @@
     window.RC.API = {
       "member": {
         "info":           url + "/hangar/member/info",
-        "status":         url + "/hangar/member/list/status/",
-        "list":           url + "/hangar/member/list/search/",
-        "detail":         url + "/hangar/member/detail/",
-        "update":         url + "/hangar/member/update/",
+        "status":         url + "/hangar/member/status/",
+        "list":           url + "/hangar/member/list/",
+        "detail":         url + "/hangar/member/edit/",
+        "update":         url + "/hangar/member/edit/update/",
         "add":            url + "/data/member/add.json"
       },
       "mypage":         "http://localhost:8092/hangar/mypage",
