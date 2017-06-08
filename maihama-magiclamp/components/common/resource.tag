@@ -10,7 +10,7 @@
         "list":           url + "/hangar/member/list/",
         "detail":         url + "/hangar/member/edit/",
         "update":         url + "/hangar/member/edit/update/",
-        "add":            url + "/data/member/add.json"
+        "add":            url + "/hangar/member/add/register/"
       },
       "mypage":         "http://localhost:8092/hangar/mypage",
       "product": {

@@ -38,7 +38,7 @@
   </div>
   <section class="member-result-box">
     <h3 class="content-title-second">Search Result</h3>
-		<a href="member/add">add Member</a>
+		<a href="/member/add">add Member</a>
     <table class="list-tbl">
       <thead>
         <tr>

@@ -28,6 +28,9 @@
         route('/member/edit/*', (memberId) => {
             riot.mount('content', 'member-edit', {memberId})
         })
+        route('/member/add', () => {
+            riot.mount('content', 'member-add')
+        })
 
         route.start(true)
 
