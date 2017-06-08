@@ -83,7 +83,7 @@
     detailLoaded = function(data) {
       self.memberDetail = data;
       setRefValue(data);
-      selectMemberStatus(data.memberStatusCode);
+      selectMemberStatus(data.memberStatus);
       self.update();
     }
 
@@ -103,7 +103,7 @@
         memberId: self.memberDetail.memberId,
         versionNo: self.memberDetail.versionNo,        
         memberName: self.refs.memberName.value,
-        memberStatusCode: self.refs.memberStatus.value,
+        memberStatus: self.refs.memberStatus.value,
         memberAccount: self.refs.memberAccount.value,
         birthdate: self.refs.birthdate.value
       }

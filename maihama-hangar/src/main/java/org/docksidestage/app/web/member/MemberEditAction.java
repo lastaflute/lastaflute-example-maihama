@@ -47,7 +47,7 @@ public class MemberEditAction extends HangarBaseAction {
             memberEditBody.memberId = member.getMemberId();
             memberEditBody.memberName = member.getMemberName();
             memberEditBody.birthdate = member.getBirthdate();
-            memberEditBody.memberStatusCode = member.getMemberStatusCodeAsMemberStatus();
+            memberEditBody.memberStatus = member.getMemberStatusCodeAsMemberStatus();
             memberEditBody.memberAccount = member.getMemberAccount();
             memberEditBody.versionNo = member.getVersionNo();
         });
@@ -61,7 +61,7 @@ public class MemberEditAction extends HangarBaseAction {
         member.setMemberId(body.memberId);
         member.setMemberName(body.memberName);
         member.setBirthdate(body.birthdate);
-        member.setMemberStatusCodeAsMemberStatus(body.memberStatusCode);
+        member.setMemberStatusCodeAsMemberStatus(body.memberStatus);
         member.setMemberAccount(body.memberAccount);
         member.setVersionNo(body.versionNo);
         memberBhv.update(member);

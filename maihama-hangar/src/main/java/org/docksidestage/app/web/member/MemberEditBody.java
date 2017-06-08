@@ -36,7 +36,7 @@ public class MemberEditBody {
     public String memberAccount;
 
     @Required
-    public CDef.MemberStatus memberStatusCode;
+    public CDef.MemberStatus memberStatus;
 
     public LocalDate birthdate;
 
