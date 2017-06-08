@@ -99,14 +99,17 @@
     }
 
     getQueryParams = () => {
-      return {
+      var params = {
         memberId: self.memberDetail.memberId,
         versionNo: self.memberDetail.versionNo,        
         memberName: self.refs.memberName.value,
         memberStatus: self.refs.memberStatus.value,
         memberAccount: self.refs.memberAccount.value,
-        birthdate: self.refs.birthdate.value
       }
+      if (self.refs.birthdate.value) {
+        params.birthdate = self.refs.birthdate.value;
+      }
+      return params;
     }
   </script>
 </member-edit>
