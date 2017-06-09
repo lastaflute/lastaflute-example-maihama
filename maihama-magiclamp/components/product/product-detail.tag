@@ -37,7 +37,10 @@
         (response) => {
           detailLoaded(JSON.parse(response.text));
         },
-        (errors) => {},
+        (errors) => {
+          self.validationErrors = errors;
+          self.update();
+        },
         false);
     }
 

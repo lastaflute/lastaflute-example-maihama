@@ -55,6 +55,10 @@
       helper.get(RC.API.member.detail + (member || 1),
         (response) => {
           detailLoaded(JSON.parse(response.text));
+        },
+        (errors) => {
+          self.validationErrors = errors;
+          self.update();
         });
     }
 
