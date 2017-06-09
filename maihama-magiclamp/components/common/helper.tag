@@ -58,7 +58,7 @@
           if (response.ok) {
             onSuccess(response);
           }
-          else if (response.clientError && response.body.cause === "VALIDATION_ERROR") {
+          else if (response.clientError && (response.body.cause === "VALIDATION_ERROR" || response.body.cause === "BUSINESS_ERROR")) {
             onError(toValidationErros(response.body.errors));
           }
           else if (response.clientError && response.body.cause === "LOGIN_REQUIRED") {
@@ -77,7 +77,7 @@
           if (response.ok) {
             onSuccess(response);
           }
-          else if (response.clientError && response.body.cause === "VALIDATION_ERROR") {
+          else if (response.clientError && (response.body.cause === "VALIDATION_ERROR" || response.body.cause === "BUSINESS_ERROR")) {
             onError(toValidationErros(response.body.errors));
           }
           else if (response.clientError && response.body.cause === "LOGIN_REQUIRED") {

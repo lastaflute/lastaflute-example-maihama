@@ -2,6 +2,7 @@
   <div class="contents">
     <h2 class="content-title">Edit Member</h2>
     <section class="product-detail-box">
+      <span class="errors" if={validationErrors._global}> {validationErrors._global}</span>
       <dl class="product-detail-list">
         <dt>Member Name</dt>
         <dd>

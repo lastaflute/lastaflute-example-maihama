@@ -3,6 +3,7 @@
     <h2 class="content-title">List of Member</h2>
     <section class="member-search-box">
       <h3 class="content-title-second">Search Condition</h3>
+      <span class="errors" if={validationErrors._global}> {validationErrors._global}</span>
       <form class="member-search-form">
         <ul class="member-search-condition-list">
           <li>

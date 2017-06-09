@@ -3,6 +3,7 @@
     <h2 class="content-title">List of Product</h2>
     <section class="product-search-box">
       <h3 class="content-title-second">Search Condition</h3>
+      <span class="errors" if={validationErrors._global}> {validationErrors._global}</span>
       <form class="product-search-form" oninput={onSearchProductListIncremental}>
         <ul class="product-search-condition-list">
           <li>
