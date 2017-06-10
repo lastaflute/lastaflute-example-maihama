@@ -18,6 +18,7 @@
         "list":           url + "/hangar/product/list/search/",
         "detail":         url + "/hangar/product/detail/"
       },
+      "profile":          url + "/hangar/profile",
       "auth": {
         "signin":         url + "/hangar/signin",
         "signup":         url + "/data/auth/register.json",

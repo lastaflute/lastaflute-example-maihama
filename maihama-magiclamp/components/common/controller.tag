@@ -32,6 +32,10 @@
             riot.mount('content', 'member-add')
         })
 
+        route('/profile', () => {
+            riot.mount('content', 'profile')
+        })
+
         route.start(true)
 
         obs.on(RC.EVENT.route.change, function(href) {
