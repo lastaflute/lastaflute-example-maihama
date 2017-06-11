@@ -36,6 +36,10 @@
             riot.mount('content', 'profile')
         })
 
+        route('/signup', () => {
+            riot.mount('content', 'signup')
+        })
+
         route.start(true)
 
         obs.on(RC.EVENT.route.change, function(href) {

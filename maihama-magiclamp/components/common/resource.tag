@@ -21,7 +21,7 @@
       "profile":          url + "/hangar/profile",
       "auth": {
         "signin":         url + "/hangar/signin",
-        "signup":         url + "/data/auth/register.json",
+        "signup":         url + "/hangar/signup",
         "signout":        url + "/hangar/signout"
       }
     };

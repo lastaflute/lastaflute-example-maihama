@@ -1,7 +1,6 @@
 <root>
   <section if={!isLogin}>
-    <signin if={state}></signin>
-    <signup if={!state}></signup>
+    <signin></signin>
   </section>
   <section if={isLogin}>
     <div class="wrap">
@@ -46,7 +45,6 @@
     var self = this;
 
     this.isLogin = false;
-    this.state = true;
 
     this.on('mount', function() {
       obs.trigger(RC.EVENT.auth.check);
