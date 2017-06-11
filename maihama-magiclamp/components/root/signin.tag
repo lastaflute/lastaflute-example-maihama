@@ -18,6 +18,8 @@
           <button type="submit" class="btn btn-success">Sign in</button>
         </div>
       </form>
+      <hr>
+      <a href="/signup">New here? Sign Up</a>
     </div>
     
     <style>
@@ -50,6 +52,9 @@
         font-weight: bold;
         vertical-align: top;
         cursor: pointer;
+      }
+      hr{
+        margin: 1em 0;
       }
     </style>
 

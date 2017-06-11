@@ -36,7 +36,8 @@
             </ul>
         </form>
         <div if={mailSent}>
-            Mail sent to your account.
+            <p>Email was sent to you with an activation link. </p>
+            <p>Please click the link in that email to activate your account and to verify your email address.</p>
         </div>
     </section>
     <script>
