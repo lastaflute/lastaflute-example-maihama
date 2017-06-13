@@ -94,5 +94,67 @@
       });
       return validationErrors;
     }
+
+    window.helper.validate = function(refs, ...targetRefs){
+        var validationErrors = {}
+        for (var name in refs) {
+            if (!refs.hasOwnProperty(name)) {
+                continue
+            }
+            const ref = refs[name]
+            if (targetRefs.length > 0 && targetRefs.indexOf(ref) < 0) {
+                continue
+            }
+
+            const validationError = []
+            if (ref.attributes.required && validators.required(ref.value)) {
+                validationError.push('REQUIRED')
+            } else {
+                if (ref.attributes.max && validators.max(ref.value, ref.attributes.max.nodeValue)) {
+                    validationError.push(`MAX | max:${ref.attributes.max.nodeValue}`)
+                }
+                if (ref.attributes.min && validators.min(ref.value, ref.attributes.min.nodeValue)) {
+                    validationError.push(`MIN | min:${ref.attributes.min.nodeValue}`)
+                }
+                if (ref.attributes.maxlength && validators.maxlength(ref.value, ref.attributes.maxlength.nodeValue)) {
+                    validationError.push(`MAXLENGTH | max:${ref.attributes.maxlength.nodeValue}`)
+                }
+                if (ref.attributes.minlength && validators.minlength(ref.value, ref.attributes.minlength.nodeValue)) {
+                    validationError.push(`MINLENGTH | min:${ref.attributes.minlength.nodeValue}`)
+                }
+                if (ref.attributes.pattern && validators.pattern(ref.value, ref.attributes.pattern.nodeValue)) {
+                    validationError.push(`PATTERN | regexp:${ref.attributes.pattern.nodeValue}`)
+                }
+            }
+
+            if (validationError.length > 0) {
+                validationErrors[name] = validationError
+            } else {
+                validationErrors[name] = undefined
+            }
+        }
+        return validationErrors
+    };
+
+    validators = {
+        required: (val) => {
+            return val.trim() === ''
+        },
+        max: (val, expected) => {
+            return parseInt(val.trim(), 10) > expected
+        },
+        min: (val, expected) => {
+            return parseInt(val.trim(), 10) < expected
+        },
+        maxlength: (val, expected) => {
+            return val.length > expected
+        },
+        minlength: (val, expected) => {
+            return val.length < expected
+        },
+        pattern: (val, expected) => {
+            return !(new RegExp(expected)).test(val.trim())
+        },
+    }
   </script>
 </helper>
