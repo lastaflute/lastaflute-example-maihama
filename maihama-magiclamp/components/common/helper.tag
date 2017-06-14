@@ -128,13 +128,28 @@
             }
 
             if (validationError.length > 0) {
-                validationErrors[name] = validationError
+                validationErrors[name] = validationError.map((message) => generateMessage(message))
             } else {
                 validationErrors[name] = undefined
             }
         }
         return validationErrors
     };
+
+    generateMessage = function(target){
+        const split = target.split('|')
+        const key = split[0].trim()
+        const values = split.length > 1 ? toValues(split[1].trim()) : {}
+
+        let message = messages[key]
+        for (const k in values) {
+            if (!values.hasOwnProperty(k)) {
+                continue
+            }
+            message = message.replace(`{${k}}`, values[k])
+        }
+        return message
+    }
 
     validators = {
         required: (val) => {
@@ -155,6 +170,16 @@
         pattern: (val, expected) => {
             return !(new RegExp(expected)).test(val.trim())
         },
+    }
+
+    messages = {
+        REQUIRED: 'is required',
+        MAX: 'must be less than or equal to {max}',
+        MIN: 'must be greater than or equal to {min}',
+        LENGTH: 'length must be between {min} and {max}',
+        MAXLENGTH: 'length must be less than or equal to {max}',
+        MINLENGTH: 'length must be greater than or equal to {min}',
+        PATTERN: 'must match "{regexp}"',
     }
   </script>
 </helper>
