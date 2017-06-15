@@ -6,12 +6,12 @@
       <dl class="product-detail-list">
         <dt>Member Name</dt>
         <dd>
-          <input type="text" ref="memberName" />
+          <input type="text" ref="memberName" required />
           <span if={validationErrors.memberName} class="errors"> {validationErrors.memberName}</span>
         </dd>
         <dt>Member Account</dt>
         <dd>
-          <input type="text" ref="memberAccount" />
+          <input type="text" ref="memberAccount" required />
           <span if={validationErrors.memberAccount} class="errors"> {validationErrors.memberAccount}</span>
         </dd>
         <dt>Brithdate</dt>
@@ -21,7 +21,7 @@
         </dd>
         <dt>Member Status</dt>
         <dd>
-            <select ref="memberStatus">
+            <select ref="memberStatus" required>
               <option value=""></option>
               <option each={memberStatusList} value={key}>{value}</option>
             </select>
@@ -54,6 +54,13 @@
     //                                                                             Execute
     //                                                                             =======
     onRegister = function() {
+      self.validationErrors = helper.validate(this.refs)
+      for (const name in self.validationErrors) {
+          if (self.validationErrors[name] !== undefined) {
+              return
+          }
+      }
+
       helper.post(RC.API.member.add, getQueryParams(),
         () => {
           console.log('success add');
