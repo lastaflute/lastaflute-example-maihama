@@ -177,8 +177,8 @@ to orleans
 </p>
 
 <p class="sisterneighborlink">
-    <a href="#lastadoc_action">to action(6)</a>
-    | <a href="#lastadoc_job">to job(3)</a>
+    <a href="#lastadoc_action">to action(9)</a>
+    | <a href="#lastadoc_job">to job(5)</a>
     | <a href="#lastadoc_mail">to mail(1)</a>
     | <a href="#lastadoc_appcls">to appcls(1)</a>
 </p>
@@ -205,32 +205,32 @@ to orleans
     <tbody id="table-list-body">
     <tr>
         <td class="rowcellnum">1</td>
-        <td class="rowcell"><a href="#/product/detail/{productId}">/product/detail/{productId}</a></td>
-        <td class="rowcell">@author&nbsp;iwamatsu0430</td>
-        <td class="rowcell"><span title="org.docksidestage.app.web.product.ProductDetailAction">ProductDetailAction</span>#index()</td>
+        <td class="rowcell"><a href="#/job/execute/{jobCode}">/job/execute/{jobCode}</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.job.JobExecuteAction">JobExecuteAction</span>#index()</td>
         <td class="rowcell">
+            <span title="org.docksidestage.app.web.job.JobExecuteBody">JobExecuteBody</span>
         </td>
         <td class="rowcell">
-            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;">JsonResponse&lt;ProductDetailBean&gt;</span>
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.job.JobExecuteResult&gt;">JsonResponse&lt;JobExecuteResult&gt;</span>
         </td>
-        <td class="rowcellnum">1</td>
-        <td class="rowcellnum">42</td>
-        <td class="rowcellnum">4</td>
+        <td class="rowcellnum">2</td>
+        <td class="rowcellnum">31</td>
+        <td class="rowcellnum">10</td>
     </tr>
     <tr>
         <td class="rowcellnum">2</td>
-        <td class="rowcell"><a href="#/product/list/{pageNumber}">/product/list/{pageNumber}</a></td>
-        <td class="rowcell">@author&nbsp;iwamatsu0430</td>
-        <td class="rowcell"><span title="org.docksidestage.app.web.product.ProductListAction">ProductListAction</span>#index()</td>
+        <td class="rowcell"><a href="#/mypage/">/mypage/</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.mypage.MypageAction">MypageAction</span>#index()</td>
         <td class="rowcell">
-            <span title="org.docksidestage.app.web.product.ProductSearchBody">ProductSearchBody</span>
         </td>
         <td class="rowcell">
-            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingResult&lt;org.docksidestage.app.web.product.ProductRowBean&gt;&gt;">JsonResponse&lt;SearchPagingResult&lt;ProductRowBean&gt;&gt;</span>
+            <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
         </td>
-        <td class="rowcellnum">3</td>
-        <td class="rowcellnum">70</td>
-        <td class="rowcellnum">11</td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">56</td>
+        <td class="rowcellnum">8</td>
     </tr>
     <tr>
         <td class="rowcellnum">3</td>
@@ -249,62 +249,103 @@ to orleans
     <tr>
         <td class="rowcellnum">4</td>
         <td class="rowcell"><a href="#/signin/">/signin/</a></td>
-        <td class="rowcell">@author&nbsp;iwamatsu0430</td>
+        <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signin.SigninAction">SigninAction</span>#index()</td>
         <td class="rowcell">
-            <span title="org.docksidestage.app.web.signin.SigninBody">SigninBody</span>
         </td>
         <td class="rowcell">
-            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+            <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
         </td>
         <td class="rowcellnum">1</td>
-        <td class="rowcellnum">30</td>
+        <td class="rowcellnum">41</td>
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
         <td class="rowcellnum">5</td>
-        <td class="rowcell"><a href="#/signup/">/signup/</a></td>
-        <td class="rowcell">@author&nbsp;iwamatsu0430</td>
-        <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#index()</td>
+        <td class="rowcell"><a href="#/signin/signin">/signin/signin</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.signin.SigninAction">SigninAction</span>#signin()</td>
         <td class="rowcell">
-            <span title="org.docksidestage.app.web.signup.SignupBody">SignupBody</span>
+            <span title="org.docksidestage.app.web.signin.SigninForm">SigninForm</span>
         </td>
         <td class="rowcell">
-            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+            <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
         </td>
-        <td class="rowcellnum">10</td>
-        <td class="rowcellnum">120</td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">41</td>
         <td class="rowcellnum">9</td>
     </tr>
     <tr>
         <td class="rowcellnum">6</td>
-        <td class="rowcell"><a href="#/signup/formalize/{account}/{token}">/signup/formalize/{account}/{token}</a></td>
-        <td class="rowcell">@author&nbsp;iwamatsu0430</td>
-        <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#formalize()</td>
+        <td class="rowcell"><a href="#/signin/reminder/">/signin/reminder/</a></td>
+        <td class="rowcell">@author&nbsp;masaki.kamachi</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.signin.SigninReminderAction">SigninReminderAction</span>#index()</td>
         <td class="rowcell">
         </td>
         <td class="rowcell">
-            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+            <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
         </td>
-        <td class="rowcellnum">10</td>
-        <td class="rowcellnum">120</td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">3</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">7</td>
+        <td class="rowcell"><a href="#/signup/">/signup/</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#index()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
+        </td>
+        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">106</td>
+        <td class="rowcellnum">3</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">8</td>
+        <td class="rowcell"><a href="#/signup/signup">/signup/signup</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#signup()</td>
+        <td class="rowcell">
+            <span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span>
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
+        </td>
+        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">106</td>
+        <td class="rowcellnum">11</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">9</td>
+        <td class="rowcell"><a href="#/signup/register/{account}/{token}">/signup/register/{account}/{token}</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#register()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
+        </td>
+        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">106</td>
         <td class="rowcellnum">5</td>
     </tr>
     </tbody>
 </table>
 
-<h3 id="/product/detail/{productId}">
-/product/detail/{productId}
+<h3 id="/job/execute/{jobCode}">
+/job/execute/{jobCode}
 </h3>
 <p>
-<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.product.ProductDetailAction#index()</span>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.job.JobExecuteAction#index()</span>
 </p>
 <p class="docsubitem">
 <span class="docsubtitle">annotations:</span>
-<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
 <span class="docannotations docsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
 <span class="doctitle">URL Parameter:</span>
 <table>
     <thead>
@@ -318,8 +359,8 @@ to orleans
     </thead>
     <tr>
         <td class="rowcellnum" rowspan="1">1</td>
-        <td>productId</td>
-        <td><p title="java.lang.Integer">Integer</p></td>
+        <td>jobCode</td>
+        <td><p title="java.lang.String">String</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p></p>
@@ -329,7 +370,44 @@ to orleans
     </tr>
 </table>
 
-<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.product.ProductDetailBean&gt;">JsonResponse&lt;ProductDetailBean&gt;</span></span>
+<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.job.JobExecuteBody">JobExecuteBody</span></span>
+<p class="tablecomment" title="@author&nbsp;jflute">@author&nbsp;jflute</p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>executionDateTime</td>
+        <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>varyingParameter</td>
+        <td><p title="java.util.Map">Map</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.job.JobExecuteResult&gt;">JsonResponse&lt;JobExecuteResult&gt;</span></span>
 <p class="tablecomment" title=""></p>
 <table>
     <thead>
@@ -343,8 +421,8 @@ to orleans
     </thead>
     <tr>
         <td class="rowcellnum" rowspan="1">1</td>
-        <td>productId</td>
-        <td><p title="java.lang.Integer">Integer</p></td>
+        <td>jobUnique</td>
+        <td><p title="java.lang.String">String</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p></p>
@@ -355,7 +433,7 @@ to orleans
     </tr>
     <tr>
         <td class="rowcellnum" rowspan="1">2</td>
-        <td>productName</td>
+        <td>jobTypeFqcn</td>
         <td><p title="java.lang.String">String</p></td>
         <td class="fieldcomment">
             <p title=""></p>
@@ -367,8 +445,8 @@ to orleans
     </tr>
     <tr>
         <td class="rowcellnum" rowspan="1">3</td>
-        <td>categoryName</td>
-        <td><p title="java.lang.String">String</p></td>
+        <td>activationTime</td>
+        <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p></p>
@@ -379,57 +457,19 @@ to orleans
     </tr>
     <tr>
         <td class="rowcellnum" rowspan="1">4</td>
-        <td>regularPrice</td>
-        <td><p title="java.lang.Integer">Integer</p></td>
+        <td>beginTime</td>
+        <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p></p>
         </td>
         <td class="fieldannotations">
-            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rowcellnum" rowspan="1">5</td>
-        <td>productHandleCode</td>
-        <td><p title="java.lang.String">String</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Required
-        </td>
-    </tr>
-</table>
-
-<h3 id="/product/list/{pageNumber}">
-/product/list/{pageNumber}
-</h3>
-<p>
-<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.product.ProductListAction#index()</span>
-</p>
-<p class="docsubitem">
-<span class="docsubtitle">annotations:</span>
-<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
-<span class="docannotations docsubvalue">&#64;Execute</span>
-</p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute</p>
-<span class="doctitle">URL Parameter:</span>
-<table>
-    <thead>
-    <tr>
-        <th class="rownumhead">No.</th>
-        <th>name</th>
-        <th>type</th>
-        <th>comment</th>
-        <th>annotations</th>
-    </tr>
-    </thead>
-    <tr>
-        <td class="rowcellnum" rowspan="1">1</td>
-        <td>pageNumber</td>
-        <td><p title="org.dbflute.optional.OptionalThing&lt;java.lang.Integer&gt;">OptionalThing&lt;Integer&gt;</p></td>
+        <td>endTime</td>
+        <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p></p>
@@ -437,129 +477,28 @@ to orleans
         <td class="fieldannotations">
         </td>
     </tr>
-</table>
-
-<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.product.ProductSearchBody">ProductSearchBody</span></span>
-<p class="tablecomment" title="@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute">@author&nbsp;iwamatsu0430</p>
-<table>
-    <thead>
     <tr>
-        <th class="rownumhead">No.</th>
-        <th>name</th>
-        <th>type</th>
-        <th>comment</th>
-        <th>annotations</th>
-    </tr>
-    </thead>
-    <tr>
-        <td class="rowcellnum" rowspan="1">1</td>
-        <td>productName</td>
-        <td><p title="java.lang.String">String</p></td>
+        <td class="rowcellnum" rowspan="1">6</td>
+        <td>endTitleRoll</td>
+        <td><p title="java.util.Map">Map</p></td>
         <td class="fieldcomment">
             <p title=""></p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Length{max=10}
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">2</td>
-        <td>productStatus</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$ProductStatus">ProductStatus</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p>{PST=ProductionStop,&nbsp;SST=SaleStop,&nbsp;ONS=OnSaleProduction}</p>
-        </td>
-        <td class="fieldannotations">
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">3</td>
-        <td>purchaseMemberName</td>
-        <td><p title="java.lang.String">String</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Length{max=5}
-        </td>
-    </tr>
-</table>
-
-<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingResult&lt;org.docksidestage.app.web.product.ProductRowBean&gt;&gt;">JsonResponse&lt;SearchPagingResult&lt;ProductRowBean&gt;&gt;</span></span>
-<p class="tablecomment" title=""></p>
-<table>
-    <thead>
-    <tr>
-        <th class="rownumhead">No.</th>
-        <th>name</th>
-        <th>type</th>
-        <th>comment</th>
-        <th>annotations</th>
-    </tr>
-    </thead>
-    <tr>
-        <td class="rowcellnum" rowspan="1">1</td>
-        <td>pageSize</td>
-        <td><p title="java.lang.Integer">Integer</p></td>
-        <td class="fieldcomment">
-            <p title="row&nbsp;count&nbsp;per&nbsp;one&nbsp;page">row&nbsp;count&nbsp;per&nbsp;one&nbsp;page</p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Required
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">2</td>
-        <td>currentPageNumber</td>
-        <td><p title="java.lang.Integer">Integer</p></td>
-        <td class="fieldcomment">
-            <p title="number&nbsp;of&nbsp;current&nbsp;page">number&nbsp;of&nbsp;current&nbsp;page</p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Required
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">3</td>
-        <td>allRecordCount</td>
-        <td><p title="java.lang.Integer">Integer</p></td>
-        <td class="fieldcomment">
-            <p title="count&nbsp;of&nbsp;all&nbsp;records">count&nbsp;of&nbsp;all&nbsp;records</p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Required
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">4</td>
-        <td>allPageCount</td>
-        <td><p title="java.lang.Integer">Integer</p></td>
-        <td class="fieldcomment">
-            <p title="count&nbsp;of&nbsp;all&nbsp;pages">count&nbsp;of&nbsp;all&nbsp;pages</p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Required
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="2">5</td>
-        <td>rows</td>
-        <td><p title="java.util.List&lt;org.docksidestage.app.web.product.ProductRowBean&gt;">List&lt;ProductRowBean&gt;</p></td>
-        <td class="fieldcomment">
-            <p title="paging&nbsp;data&nbsp;for&nbsp;current&nbsp;page">paging&nbsp;data&nbsp;for&nbsp;current&nbsp;page</p>
             <p></p>
         </td>
         <td class="fieldannotations">
             &#64;NotNull
-,
-            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">7</td>
+        <td>execResultType</td>
+        <td><p title="org.docksidestage.app.web.job.JobExecuteResult$ExecResultTypePart">ExecResultTypePart</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p>[SUCCESS,&nbsp;QUIT_BY_CONCURRENT,&nbsp;ERROR_BY_CONCURRENT,&nbsp;CAUSED_BY_APPLICATION,&nbsp;CAUSED_BY_FRAMEWORK,&nbsp;UNKNOWN]</p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
         </td>
     </tr>
     <tr>
@@ -577,50 +516,24 @@ to orleans
     </thead>
     <tr>
         <td class="rowcellnum" rowspan="1">1</td>
-        <td>productId</td>
-        <td><p title="java.lang.Integer">Integer</p></td>
+        <td>name</td>
+        <td><p title="java.lang.String">String</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p></p>
         </td>
         <td class="fieldannotations">
-            &#64;Required
         </td>
     </tr>
     <tr>
         <td class="rowcellnum" rowspan="1">2</td>
-        <td>productName</td>
-        <td><p title="java.lang.String">String</p></td>
+        <td>ordinal</td>
+        <td><p title="int">int</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p></p>
         </td>
         <td class="fieldannotations">
-            &#64;Required
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">3</td>
-        <td>productStatusName</td>
-        <td><p title="java.lang.String">String</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Required
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">4</td>
-        <td>regularPrice</td>
-        <td><p title="java.lang.Integer">Integer</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Required
         </td>
     </tr>
 </table>
@@ -628,7 +541,45 @@ to orleans
             </div>
         </td>
     </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">8</td>
+        <td>errorEnding</td>
+        <td><p title="java.lang.Boolean">Boolean</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">9</td>
+        <td>errorMessage</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
 </table>
+
+<h3 id="/mypage/">
+/mypage/
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.mypage.MypageAction#index()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="tablecomment" title=""></p>
+<p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Mypage_MypageHtml)</span></p>
 
 <h3 id="/root/">
 /root/
@@ -655,9 +606,24 @@ to orleans
 <span class="docsubtitle">annotations:</span>
 <span class="docannotations docsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute</p>
-<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.signin.SigninBody">SigninBody</span></span>
-<p class="tablecomment" title="The&nbsp;form&nbsp;of&nbsp;member's&nbsp;Login.<br><br>@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute">The&nbsp;form&nbsp;of&nbsp;member's&nbsp;Login.</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="tablecomment" title=""></p>
+<p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">redirect(MypageAction.class),asHtml(path_Signin_SigninHtml)</span></p>
+
+<h3 id="/signin/signin">
+/signin/signin
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.signin.SigninAction#signin()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.signin.SigninForm">SigninForm</span></span>
+<p class="tablecomment" title="The&nbsp;form&nbsp;of&nbsp;member's&nbsp;Login.<br><br>@author&nbsp;jflute">The&nbsp;form&nbsp;of&nbsp;member's&nbsp;Login.</p>
 <table>
     <thead>
     <tr>
@@ -692,10 +658,37 @@ to orleans
             &#64;Required
         </td>
     </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">3</td>
+        <td>rememberMe</td>
+        <td><p title="boolean">boolean</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
 </table>
 
-<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
+<p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Signin_SigninHtml),loginAssist.loginRedirect(createCredential(form),redirect(MypageAction.class)</span></p>
+
+<h3 id="/signin/reminder/">
+/signin/reminder/
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.signin.SigninReminderAction#index()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;masaki.kamachi<br>@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="tablecomment" title=""></p>
+<p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Signin_SigninReminderHtml)</span></p>
 
 <h3 id="/signup/">
 /signup/
@@ -708,9 +701,25 @@ to orleans
 <span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
 <span class="docannotations docsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute</p>
-<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.signup.SignupBody">SignupBody</span></span>
-<p class="tablecomment" title="@author&nbsp;iwamatsu0430">@author&nbsp;iwamatsu0430</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="tablecomment" title=""></p>
+<p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Signup_SignupHtml)</span></p>
+
+<h3 id="/signup/signup">
+/signup/signup
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.signup.SignupAction#signup()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.signup.SignupForm">SignupForm</span></span>
+<p class="tablecomment" title="@author&nbsp;jflute">@author&nbsp;jflute</p>
 <table>
     <thead>
     <tr>
@@ -783,21 +792,22 @@ to orleans
     </tr>
 </table>
 
-<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
+<p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Signup_SignupHtml),redirect(MypageAction.class)</span></p>
 
-<h3 id="/signup/formalize/{account}/{token}">
-/signup/formalize/{account}/{token}
+<h3 id="/signup/register/{account}/{token}">
+/signup/register/{account}/{token}
 </h3>
 <p>
-<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.signup.SignupAction#formalize()</span>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.signup.SignupAction#register()</span>
 </p>
 <p class="docsubitem">
 <span class="docsubtitle">annotations:</span>
 <span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
 <span class="docannotations docsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
 <span class="doctitle">URL Parameter:</span>
 <table>
     <thead>
@@ -833,8 +843,9 @@ to orleans
     </tr>
 </table>
 
-<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
 <p class="tablecomment" title=""></p>
+<p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">redirect(SigninAction.class)</span></p>
 
 
 <h2 id="lastadoc_job">job</h2>
@@ -882,23 +893,7 @@ to orleans
         <td class="rowcell">*/1&nbsp;*&nbsp;*&nbsp;*&nbsp;*</td>
         <td class="rowcell"><span title="org.docksidestage.app.job.LandJob">LandJob</span></td>
         <td class="rowcell"><a href="#landJob_2">landJob_2</a></td>
-        <td class="rowcell">parameterized_unique_land</td>
-        <td class="rowcell">Parameterized&nbsp;Land&nbsp;Job</td>
         <td class="rowcell"></td>
-        <td class="rowcell">QUIT</td>
-        <td class="rowcell">INFO</td>
-        <td class="rowcell"></td>
-        <td class="rowcellnum">1</td>
-        <td class="rowcellnum">2</td>
-        <td class="rowcellnum">29</td>
-        <td class="rowcellnum">7</td>
-    </tr>
-    <tr>
-        <td class="rowcellnum">3</td>
-        <td class="rowcell">*/2&nbsp;*&nbsp;*&nbsp;*&nbsp;*</td>
-        <td class="rowcell"><span title="org.docksidestage.app.job.LandJob">LandJob</span></td>
-        <td class="rowcell"><a href="#landJob_3">landJob_3</a></td>
-        <td class="rowcell">non_param_unique_land</td>
         <td class="rowcell"></td>
         <td class="rowcell"></td>
         <td class="rowcell">QUIT</td>
@@ -908,6 +903,54 @@ to orleans
         <td class="rowcellnum">2</td>
         <td class="rowcellnum">29</td>
         <td class="rowcellnum">7</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">3</td>
+        <td class="rowcell">*/2&nbsp;*&nbsp;*&nbsp;*&nbsp;*</td>
+        <td class="rowcell"><span title="org.docksidestage.app.job.LandJob">LandJob</span></td>
+        <td class="rowcell"><a href="#landJob_3">landJob_3</a></td>
+        <td class="rowcell"></td>
+        <td class="rowcell"></td>
+        <td class="rowcell"></td>
+        <td class="rowcell">QUIT</td>
+        <td class="rowcell">INFO</td>
+        <td class="rowcell"></td>
+        <td class="rowcellnum"></td>
+        <td class="rowcellnum">2</td>
+        <td class="rowcellnum">29</td>
+        <td class="rowcellnum">7</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">4</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"><span title="org.docksidestage.app.job.challenge.PiariJob">PiariJob</span></td>
+        <td class="rowcell"><a href="#piariJob_4">piariJob_4</a></td>
+        <td class="rowcell">piari</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"></td>
+        <td class="rowcell">QUIT</td>
+        <td class="rowcell">INFO</td>
+        <td class="rowcell"></td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">20</td>
+        <td class="rowcellnum">12</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">5</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"><span title="org.docksidestage.app.job.challenge.BonvoJob">BonvoJob</span></td>
+        <td class="rowcell"><a href="#bonvoJob_5">bonvoJob_5</a></td>
+        <td class="rowcell">bonvo</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"></td>
+        <td class="rowcell">ERROR</td>
+        <td class="rowcell">INFO</td>
+        <td class="rowcell"></td>
+        <td class="rowcellnum"></td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">11</td>
+        <td class="rowcellnum">3</td>
     </tr>
     </tbody>
 </table>
@@ -1010,13 +1053,13 @@ landJob_2
         <td class="rowcell">*/1&nbsp;*&nbsp;*&nbsp;*&nbsp;*</td>
         <td class="rowcell"><span title="org.docksidestage.app.job.LandJob">LandJob</span></td>
         <td class="rowcell"><a href="#landJob_2">landJob_2</a></td>
-        <td class="rowcell">parameterized_unique_land</td>
-        <td class="rowcell">Parameterized&nbsp;Land&nbsp;Job</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"></td>
         <td class="rowcell"></td>
         <td class="rowcell">QUIT</td>
         <td class="rowcell">INFO</td>
         <td class="rowcell"></td>
-        <td class="rowcellnum">1</td>
+        <td class="rowcellnum"></td>
         <td class="rowcellnum">2</td>
         <td class="rowcellnum">29</td>
         <td class="rowcellnum">7</td>
@@ -1040,7 +1083,7 @@ landJob_2
     </tr>
     <tr>
         <th>job parameters</th>
-        <td class="rowcell">{showbase=oneman}</td>
+        <td class="rowcell"></td>
     </tr>
     </tbody>
 </table>
@@ -1076,7 +1119,7 @@ landJob_3
         <td class="rowcell">*/2&nbsp;*&nbsp;*&nbsp;*&nbsp;*</td>
         <td class="rowcell"><span title="org.docksidestage.app.job.LandJob">LandJob</span></td>
         <td class="rowcell"><a href="#landJob_3">landJob_3</a></td>
-        <td class="rowcell">non_param_unique_land</td>
+        <td class="rowcell"></td>
         <td class="rowcell"></td>
         <td class="rowcell"></td>
         <td class="rowcell">QUIT</td>
@@ -1095,6 +1138,138 @@ landJob_3
     <tr>
         <th>class name</th>
         <td class="rowcell">org.docksidestage.app.job.LandJob</td>
+    </tr>
+    <tr>
+        <th>class comment</th>
+        <td class="rowcell">@author&nbsp;jflute</td>
+    </tr>
+    <tr>
+        <th>method comment</th>
+        <td class="rowcell"></td>
+    </tr>
+    <tr>
+        <th>job parameters</th>
+        <td class="rowcell"></td>
+    </tr>
+    </tbody>
+</table>
+<h3 id="piariJob_4">
+piariJob_4
+</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th rowspan="2">No.</th>
+        <th rowspan="2">cron exp</th>
+        <th rowspan="2">class</th>
+        <th rowspan="2">job key</th>
+        <th rowspan="2">job unique</th>
+        <th rowspan="2">title</th>
+        <th rowspan="2">description</th>
+        <th rowspan="2">concurrent</th>
+        <th rowspan="2">notice log</th>
+        <th rowspan="2">triggered job</th>
+        <th colspan="4">count</th>
+    </tr>
+    <tr>
+        <th>job params</th>
+        <th>fields</th>
+        <th>class lines</th>
+        <th>method lines</th>
+    </tr>
+    </thead>
+    <tbody id="table-list-body">
+    <tr>
+        <td class="rowcellnum">4</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"><span title="org.docksidestage.app.job.challenge.PiariJob">PiariJob</span></td>
+        <td class="rowcell"><a href="#piariJob_4">piariJob_4</a></td>
+        <td class="rowcell">piari</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"></td>
+        <td class="rowcell">QUIT</td>
+        <td class="rowcell">INFO</td>
+        <td class="rowcell"></td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">20</td>
+        <td class="rowcellnum">12</td>
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <tbody id="table-list-body">
+    <tr>
+        <th>class name</th>
+        <td class="rowcell">org.docksidestage.app.job.challenge.PiariJob</td>
+    </tr>
+    <tr>
+        <th>class comment</th>
+        <td class="rowcell">@author&nbsp;jflute</td>
+    </tr>
+    <tr>
+        <th>method comment</th>
+        <td class="rowcell"></td>
+    </tr>
+    <tr>
+        <th>job parameters</th>
+        <td class="rowcell">{celebration=plaza}</td>
+    </tr>
+    </tbody>
+</table>
+<h3 id="bonvoJob_5">
+bonvoJob_5
+</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th rowspan="2">No.</th>
+        <th rowspan="2">cron exp</th>
+        <th rowspan="2">class</th>
+        <th rowspan="2">job key</th>
+        <th rowspan="2">job unique</th>
+        <th rowspan="2">title</th>
+        <th rowspan="2">description</th>
+        <th rowspan="2">concurrent</th>
+        <th rowspan="2">notice log</th>
+        <th rowspan="2">triggered job</th>
+        <th colspan="4">count</th>
+    </tr>
+    <tr>
+        <th>job params</th>
+        <th>fields</th>
+        <th>class lines</th>
+        <th>method lines</th>
+    </tr>
+    </thead>
+    <tbody id="table-list-body">
+    <tr>
+        <td class="rowcellnum">5</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"><span title="org.docksidestage.app.job.challenge.BonvoJob">BonvoJob</span></td>
+        <td class="rowcell"><a href="#bonvoJob_5">bonvoJob_5</a></td>
+        <td class="rowcell">bonvo</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"></td>
+        <td class="rowcell">ERROR</td>
+        <td class="rowcell">INFO</td>
+        <td class="rowcell"></td>
+        <td class="rowcellnum"></td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">11</td>
+        <td class="rowcellnum">3</td>
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <tbody id="table-list-body">
+    <tr>
+        <th>class name</th>
+        <td class="rowcell">org.docksidestage.app.job.challenge.BonvoJob</td>
     </tr>
     <tr>
         <th>class comment</th>

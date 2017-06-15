@@ -221,17 +221,16 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Pattern.message' with parameters.
      * <pre>
-     * message: PATTERN | regexp:"{regexp}"
+     * message: PATTERN
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
-     * @param regexp The parameter regexp for message. (NotNull)
      * @return this. (NotNull)
      */
     @Override
-    public ShowbaseMessages addConstraintsPatternMessage(String property, String regexp) {
+    public ShowbaseMessages addConstraintsPatternMessage(String property) {
         assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_Pattern_MESSAGE, regexp));
+        add(property, new UserMessage(CONSTRAINTS_Pattern_MESSAGE));
         return this;
     }
 
