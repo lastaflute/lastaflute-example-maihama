@@ -6,6 +6,8 @@ var riot      = require('gulp-riot');
 var gconcat   = require('gulp-concat');
 var webserver = require('gulp-webserver');
 
+var webpack = require('webpack-stream');
+
 var bower_targets = [
   'bower_components/riot/riot.min.js',
   'bower_components/riot-route/dist/route.min.js',
@@ -62,8 +64,15 @@ gulp.task('bower', function() {
     .pipe(gulp.dest('src/assets/javascripts/vender/'));
 });
 
+gulp.task('webpack', function (callback) {
+  var webpackConfig = './webpack.config.js';
+  return gulp.src('./src/javascript/index.js')
+    .pipe(webpack(require(webpackConfig)))
+    .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('webserver', function () {
-  return gulp.src('src/')
+  return gulp.src('./')
     .pipe(webserver({
       port: 3000,
       livereload: true,

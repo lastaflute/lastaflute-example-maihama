@@ -2,7 +2,6 @@
   <script>
     var RC = window.RC || {};
     var obs = window.observable || {};
-    var sa = window.superagent || {};
     window.helper = {};
 
     window.helper.joinQueryParams = function(queryParams) {
