@@ -55,7 +55,7 @@
     var self = this;
     var range = 3;
 
-    movePage = function(e) {
+    this.movePage = function(e) {
       e.preventDefault();
       var href= e.target.pathname + e.target.search
       obs.trigger(RC.EVENT.route.change, href);

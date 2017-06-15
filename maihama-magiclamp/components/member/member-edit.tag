@@ -45,16 +45,16 @@
     //                                                                               Event
     //                                                                               =====
     this.on('mount', () => {
-      detailLoad(opts.memberId);
+      self.detailLoad(opts.memberId);
     });
 
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    detailLoad = function(member) {
+    this.detailLoad = function(member) {
       helper.get(RC.API.member.detail + (member || 1),
         (response) => {
-          detailLoaded(JSON.parse(response.text));
+          self.detailLoaded(JSON.parse(response.text));
         },
         (errors) => {
           self.validationErrors = errors;
@@ -62,7 +62,7 @@
         });
     }
 
-    selectMemberStatus = function (memberStatus) {
+    this.selectMemberStatus = function (memberStatus) {
       helper.get(RC.API.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
@@ -71,7 +71,7 @@
         });
     }
 
-    onUpdate = function() {
+    this.onUpdate = function() {
       helper.post(RC.API.member.update, getQueryParams(),
         () => {
           console.log('success update')
@@ -85,17 +85,17 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    detailLoaded = function(data) {
+    this.detailLoaded = function(data) {
       self.memberDetail = data;
-      setRefValue(data);
-      selectMemberStatus(data.memberStatus);
+      self.setRefValue(data);
+      self.selectMemberStatus(data.memberStatus);
       self.update();
     }
 
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    setRefValue = function(data) {
+    this.setRefValue = function(data) {
       self.refs.memberName.value = data.memberName || "";
       self.refs.memberAccount.value = data.memberAccount || "";
       if (data.birthdate) {
@@ -103,7 +103,7 @@
       }
     }
 
-    getQueryParams = () => {
+    this.getQueryParams = () => {
       var params = {
         memberId: self.memberDetail.memberId,
         versionNo: self.memberDetail.versionNo,        

@@ -47,13 +47,13 @@
     //                                                                               Event
     //                                                                               =====
     this.on('mount', () => {
-      selectMemberStatus();
+      self.selectMemberStatus();
     });
 
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    onRegister = function() {
+    this.onRegister = function() {
       self.validationErrors = helper.validate(this.refs)
       for (const name in self.validationErrors) {
           if (self.validationErrors[name] !== undefined) {
@@ -75,7 +75,7 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    selectMemberStatus = function () {
+    this.selectMemberStatus = function () {
       helper.get(RC.API.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
@@ -86,7 +86,7 @@
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    getQueryParams = () => {
+    this.getQueryParams = () => {
       var params = {
         memberName: self.refs.memberName.value,
         memberStatus: self.refs.memberStatus.value,
