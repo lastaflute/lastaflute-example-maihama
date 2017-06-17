@@ -37,7 +37,7 @@
 
   <script>
     var RC = window.RC || {};
-    var helper = window.helper || {};
+    var validator = window.validator || {};
     var obs = window.observable || {};
     var self = this;
 
@@ -54,7 +54,7 @@
     //                                                                             Execute
     //                                                                             =======
     this.onRegister = function() {
-      self.validationErrors = helper.validate(this.refs)
+      self.validationErrors = validator.validate(this.refs)
       for (const name in self.validationErrors) {
           if (self.validationErrors[name] !== undefined) {
               return

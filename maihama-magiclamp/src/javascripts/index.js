@@ -3,6 +3,7 @@ window.observable = riot.observable();
 require('./resource')
 require('./controller')
 require('./helper')
+require('./validator')
 
 require('../components/common/app')
 require('../components/common/common-header')
