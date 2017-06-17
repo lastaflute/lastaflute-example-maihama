@@ -2,7 +2,6 @@
   <script>
     var RC = window.RC || {};
     var obs = window.observable || {};
-    var sa = window.superagent || {};
     window.helper = {};
 
     window.helper.joinQueryParams = function(queryParams) {
@@ -87,7 +86,7 @@
         });
     }
 
-    toValidationErros = function(errors) {
+    var toValidationErros = function(errors) {
       var validationErrors = {};
       errors.forEach(function(element) {
         validationErrors[element.field] = element.messages;
@@ -136,7 +135,7 @@
         return validationErrors
     };
 
-    generateMessage = function(target){
+    var generateMessage = function(target){
         const split = target.split('|')
         const key = split[0].trim()
         const values = split.length > 1 ? toValues(split[1].trim()) : {}
@@ -151,7 +150,7 @@
         return message
     }
 
-    validators = {
+    var validators = {
         required: (val) => {
             return val.trim() === ''
         },
@@ -172,7 +171,7 @@
         },
     }
 
-    messages = {
+    var messages = {
         REQUIRED: 'is required',
         MAX: 'must be less than or equal to {max}',
         MIN: 'must be greater than or equal to {min}',

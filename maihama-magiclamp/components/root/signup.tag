@@ -52,9 +52,9 @@
         // ===================================================================================
         //                                                                             Execute
         //                                                                             =======
-        onRegister = function (e) {
+        this.onRegister = function (e) {
             e.preventDefault();
-            helper.post(RC.API.auth.signup, getQueryParams(),
+            helper.post(RC.API.auth.signup, self.getQueryParams(),
                 () => {
                     self.mailSent = true;
                     self.update();
@@ -69,7 +69,7 @@
         // ===================================================================================
         //                                                                             Mapping
         //                                                                             =======
-        getQueryParams = () => {
+        this.getQueryParams = () => {
             return {
                 memberName: self.refs.memberName.value,
                 memberAccount: self.refs.memberAccount.value,

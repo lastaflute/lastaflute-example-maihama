@@ -43,16 +43,16 @@
     //                                                                               Event
     //                                                                               =====
     this.on('mount', () => {
-      detailLoad(opts.productId);
+      self.detailLoad(opts.productId);
     });
 
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    detailLoad = function(product) {
+    this.detailLoad = function(product) {
       helper.get(RC.API.profile,
         (response) => {
-          detailLoaded(JSON.parse(response.text));
+          self.detailLoaded(JSON.parse(response.text));
         },
         (errors) => {
           self.validationErrors = errors;
@@ -63,7 +63,7 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    detailLoaded = function(data) {
+    this.detailLoaded = function(data) {
       self.profile = data;
       self.update();
     }

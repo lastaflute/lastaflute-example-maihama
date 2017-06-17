@@ -89,37 +89,37 @@
     //                                                                               =====
     this.on('mount', () => {
       if (opts.back) {
-        var queryParams = getSessionSearchCondition();
-        var href = getSearchMemberListUrl(queryParams);
+        var queryParams = self.getSessionSearchCondition();
+        var href = self.getSearchMemberListUrl(queryParams);
         obs.trigger(RC.EVENT.route.change, href);
         return
       }
-      selectMemberStatus(opts.memberStatus);
-      setSearchCondition(opts);
-      searchMemberList(opts);
+      self.selectMemberStatus(opts.memberStatus);
+      self.setSearchCondition(opts);
+      self.searchMemberList(opts);
     });
 
     this.on('before-unmount', () => {
-      setSessionSearchCondition()
+      self.setSessionSearchCondition()
     })
 
-    onSearchMemberList = function (e) {
+    this.onSearchMemberList = function (e) {
       if (e) {
         e.preventDefault();
       }
-      var queryParams = getSearchCondition();
-      var href = getSearchMemberListUrl(queryParams);
+      var queryParams = self.getSearchCondition();
+      var href = self.getSearchMemberListUrl(queryParams);
       history.pushState(null, null, href);
-      searchMemberList(queryParams);
+      self.searchMemberList(queryParams);
     };
 
-    onSearchMemberListIncremental = function (e) {
+    this.onSearchMemberListIncremental = function (e) {
       if (self.refs.incrementalSearch.checked) {
-        onSearchMemberList(e);
+        self.onSearchMemberList(e);
       }
     }
 
-    moveDetail = function(e) {
+    this.moveDetail = function(e) {
       e.preventDefault();
       var href = e.target.pathname + e.target.search;
       obs.trigger(RC.EVENT.route.change, href);
@@ -128,11 +128,11 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    getSearchMemberListUrl = function(queryParams) {
+    this.getSearchMemberListUrl = function(queryParams) {
       return '/member/list' + window.helper.joinQueryParams(queryParams);
     }
 
-    searchMemberList = function (queryParams) {
+    this.searchMemberList = function (queryParams) {
       var page = queryParams.page || 1;
       delete queryParams.page;
 
@@ -151,7 +151,7 @@
         });
     }
 
-    selectMemberStatus = function (memberStatus) {
+    this.selectMemberStatus = function (memberStatus) {
       helper.get(RC.API.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
@@ -163,7 +163,7 @@
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    setSearchCondition = (queryParams) => {
+    this.setSearchCondition = (queryParams) => {
       self.refs.memberName.value = queryParams.memberName || "";
       self.refs.purchaseProductName = queryParams.purchaseProductName || "";
       self.refs.memberStatus = queryParams.memberStatus || "";
@@ -178,7 +178,7 @@
       }
     }
 
-    getSearchCondition = () => {
+    this.getSearchCondition = () => {
       var condition =  {
         memberName: self.refs.memberName.value,
         memberStatus: self.refs.memberStatus.value,
@@ -196,7 +196,7 @@
     // ===================================================================================
     //                                                                     Session Storage
     //                                                                     ===============
-    getSessionSearchCondition = () => {
+    this.getSessionSearchCondition = () => {
       const paramsString = sessionStorage.getItem('member-list-search-condition')
       if (!paramsString) {
         return self.getSearchCondition()
@@ -204,8 +204,8 @@
       return JSON.parse(paramsString)
     }
 
-    setSessionSearchCondition = () => {
-      const searchCondition = JSON.stringify(getSearchCondition())
+    this.setSessionSearchCondition = () => {
+      const searchCondition = JSON.stringify(self.getSearchCondition())
       sessionStorage.setItem('member-list-search-condition', searchCondition)
     }
   </script>
