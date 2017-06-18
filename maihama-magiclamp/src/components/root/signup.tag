@@ -54,7 +54,7 @@
         //                                                                             =======
         this.onRegister = function (e) {
             e.preventDefault();
-            helper.post(RC.API.auth.signup, self.getQueryParams(),
+            request.post(RC.API.auth.signup, self.getQueryParams(),
                 () => {
                     self.mailSent = true;
                     self.update();

@@ -138,7 +138,7 @@
 
       self.validationErrors = {};
 
-      helper.post(RC.API.member.list + page, queryParams,
+      request.post(RC.API.member.list + page, queryParams,
         (response) => {
           var data = JSON.parse(response.text);
           self.memberList = data.rows;
@@ -152,7 +152,7 @@
     }
 
     this.selectMemberStatus = function (memberStatus) {
-      helper.get(RC.API.member.status,
+      request.get(RC.API.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
           self.update();

@@ -10,8 +10,4 @@
     </div>
     <common-footer></common-footer>
   </div>
-
-  <script>
-    window.observable = riot.observable();
-  </script>
 </app>
