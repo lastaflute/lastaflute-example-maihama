@@ -122,7 +122,7 @@
 
       self.validationErrors = {};
 
-      helper.post(RC.API.product.list + page, queryParams,
+      request.post(RC.API.product.list + page, queryParams,
         (response) => {
           var data = JSON.parse(response.text);
           self.productList = data.rows;
@@ -137,7 +137,7 @@
     }
 
     this.selectProductStatus = function (productStatus) {
-      helper.get(RC.API.product.status,
+      request.get(RC.API.product.status,
         (response) => {
           self.productStatusList = JSON.parse(response.text);
           self.update();

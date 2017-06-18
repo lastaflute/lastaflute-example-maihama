@@ -52,7 +52,7 @@
     //                                                                             Execute
     //                                                                             =======
     this.detailLoad = function(member) {
-      helper.get(RC.API.member.detail + (member || 1),
+      request.get(RC.API.member.detail + (member || 1),
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
         },
@@ -63,7 +63,7 @@
     }
 
     this.selectMemberStatus = function (memberStatus) {
-      helper.get(RC.API.member.status,
+      request.get(RC.API.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
           self.update();
@@ -72,7 +72,7 @@
     }
 
     this.onUpdate = function() {
-      helper.post(RC.API.member.update, getQueryParams(),
+      request.post(RC.API.member.update, getQueryParams(),
         () => {
           console.log('success update')
         },

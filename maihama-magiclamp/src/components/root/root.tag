@@ -53,7 +53,7 @@
     obs.on(RC.EVENT.auth.sign, function(state) {
       self.isLogin = state;
       if(self.isLogin) {
-        helper.get(RC.API.mypage,
+        request.get(RC.API.mypage,
           (response) => {
             var obj = JSON.parse(response.text);
             self.memberId = obj.memberId;

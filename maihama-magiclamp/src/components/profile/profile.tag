@@ -50,7 +50,7 @@
     //                                                                             Execute
     //                                                                             =======
     this.detailLoad = function(product) {
-      helper.get(RC.API.profile,
+      request.get(RC.API.profile,
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
         },

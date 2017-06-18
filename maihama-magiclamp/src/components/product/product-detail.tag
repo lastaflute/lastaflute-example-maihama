@@ -33,7 +33,7 @@
     //                                                                             Execute
     //                                                                             =======
     this.detailLoad = function(product) {
-      helper.get(RC.API.product.detail + (product || 1),
+      request.get(RC.API.product.detail + (product || 1),
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
         },

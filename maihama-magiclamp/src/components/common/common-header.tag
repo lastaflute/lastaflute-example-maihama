@@ -64,7 +64,7 @@
     //                                                                             =======
     this.onSignout = function(e) {
       e.preventDefault();
-      helper.get(RC.API.auth.signout,
+      request.get(RC.API.auth.signout,
         (response) => {
           self.isLogin = false;
           self.update();
@@ -75,7 +75,7 @@
     };
 
     obs.on(RC.EVENT.auth.check, function(state) {
-      helper.get(RC.API.member.info,
+      request.get(RC.API.member.info,
         (response) => {
           sessionStorage[RC.SESSION.member.info] = response.text;
           obs.trigger(RC.EVENT.auth.sign, true);

@@ -2,6 +2,7 @@ window.observable = riot.observable();
 
 require('./resource')
 require('./controller')
+require('./request')
 require('./helper')
 require('./validator')
 

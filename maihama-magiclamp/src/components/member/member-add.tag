@@ -61,7 +61,7 @@
           }
       }
 
-      helper.post(RC.API.member.add, getQueryParams(),
+      request.post(RC.API.member.add, getQueryParams(),
         () => {
           console.log('success add');
           obs.trigger(RC.EVENT.route.change, '/member/list');
@@ -76,7 +76,7 @@
     //                                                                               Logic
     //                                                                               =====
     this.selectMemberStatus = function () {
-      helper.get(RC.API.member.status,
+      request.get(RC.API.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
           self.update();

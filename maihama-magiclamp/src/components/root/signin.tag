@@ -67,7 +67,7 @@
         e.preventDefault();
         var account = this.refs.account;
         var password = this.refs.password;
-        helper.post(RC.API.auth.signin,
+        request.post(RC.API.auth.signin,
           {
             account: account.value,
             password: password.value
