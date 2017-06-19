@@ -30,7 +30,7 @@
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    this.detailLoad = function(product) {
+    this.detailLoad = function (product) {
       request.get(RC.API.product.detail + (product || 1),
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
@@ -45,7 +45,7 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.detailLoaded = function(data) {
+    this.detailLoaded = function (data) {
       self.productDetail = data;
       self.update();
     }

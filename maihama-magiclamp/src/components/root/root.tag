@@ -19,14 +19,15 @@
             <tr>
               <th>Member Status</th>
               <td>{memberStatus}</td>
-            </tr>  
+            </tr>
             <tr>
               <th>Service Rank</th>
               <td>{serviceRank}</td>
-            </tr>  
+            </tr>
             <tr>
               <th>Encrypted<br>Password</th>
-              <td>{cipheredPassword}</td> <!-- #simple_for_example-->
+              <td>{cipheredPassword}</td>
+              <!-- #simple_for_example-->
             </tr>
             <tr>
               <th>Address</th>
@@ -43,13 +44,13 @@
 
     this.isLogin = false;
 
-    this.on('mount', function() {
+    this.on('mount', function () {
       observable.trigger(RC.EVENT.auth.check);
     });
-    
-    observable.on(RC.EVENT.auth.sign, function(state) {
+
+    observable.on(RC.EVENT.auth.sign, function (state) {
       self.isLogin = state;
-      if(self.isLogin) {
+      if (self.isLogin) {
         request.get(RC.API.mypage,
           (response) => {
             var obj = JSON.parse(response.text);

@@ -9,7 +9,7 @@
       <li if={isEnd}><a href={nextPageParam} onclick={movePage}>next</a></li>
     </ul>
   </div>
-</div>
+  </div>
 
   <style scoped>
     /*{
@@ -17,32 +17,39 @@
       text-align: center;
       margin-top: 30px;
     }*/
+
     p {
       display: block;
       font-size: 12px;
       color: #888;
     }
+
     ul {
       margin-top: 3px;
     }
+
     li {
       display: inline-block;
       margin: 4px;
     }
+
     a,
     li a {
       color: #666;
     }
+
     .page a {
       padding: 2px 6px;
       border: 1px #825 solid;
       background: #fff;
     }
+
     .current {
       padding: 3px 7px;
-      background:#825;
+      background: #825;
       color: #fff;
     }
+
     a:hover {
       text-decoration: none;
       opacity: 0.8;
@@ -53,9 +60,9 @@
     var self = this;
     var range = 3;
 
-    this.movePage = function(e) {
+    this.movePage = function (e) {
       e.preventDefault();
-      var href= e.target.pathname + e.target.search
+      var href = e.target.pathname + e.target.search
       observable.trigger(RC.EVENT.route.change, href);
     };
 
@@ -67,7 +74,7 @@
     this.isFirst = false;
     this.isEnd = false;
 
-    var mappingPagenation = function(data) {
+    var mappingPagenation = function (data) {
       self.prevPages = [];
       self.nextPages = [];
       self.currentPageNumber = data.currentPageNumber;
@@ -80,7 +87,7 @@
       prevStart = (prevStart <= 1) ? 1 : prevStart;
       for (var i = prevStart; i < self.currentPageNumber; i++) {
         queryParams.page = i
-        self.prevPages.push({pageNum: i, pageParam: helper.joinQueryParams(queryParams)});
+        self.prevPages.push({ pageNum: i, pageParam: helper.joinQueryParams(queryParams) });
       }
 
       // set nextPages
@@ -88,7 +95,7 @@
       nextEnd = (nextEnd >= self.allPageCount) ? self.allPageCount : nextEnd;
       for (var i = self.currentPageNumber + 1; i <= nextEnd; i++) {
         queryParams.page = i
-        self.nextPages.push({pageNum: i, pageParam: helper.joinQueryParams(queryParams)});
+        self.nextPages.push({ pageNum: i, pageParam: helper.joinQueryParams(queryParams) });
       }
 
       // is First or End
@@ -102,7 +109,7 @@
       self.update();
     }
 
-    observable.on(RC.EVENT.pagenation.set, function(data) {
+    observable.on(RC.EVENT.pagenation.set, function (data) {
       mappingPagenation(data);
     });
 

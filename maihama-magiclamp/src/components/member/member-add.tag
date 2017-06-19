@@ -21,7 +21,7 @@
         </dd>
         <dt>Member Status</dt>
         <dd>
-            <select ref="memberStatus" required>
+          <select ref="memberStatus" required>
               <option value=""></option>
               <option each={memberStatusList} value={key}>{value}</option>
             </select>
@@ -50,12 +50,12 @@
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    this.onRegister = function() {
+    this.onRegister = function () {
       self.validationErrors = validator.validate(this.refs)
       for (const name in self.validationErrors) {
-          if (self.validationErrors[name] !== undefined) {
-              return
-          }
+        if (self.validationErrors[name] !== undefined) {
+          return
+        }
       }
 
       request.post(RC.API.member.add, getQueryParams(),

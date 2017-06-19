@@ -100,7 +100,7 @@
       }
     }
 
-    this.moveDetail = function(e) {
+    this.moveDetail = function (e) {
       e.preventDefault();
       var href = e.target.pathname + e.target.search;
       observable.trigger(RC.EVENT.route.change, href);
@@ -109,7 +109,7 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.getSearchProductListUrl = function(queryParams) {
+    this.getSearchProductListUrl = function (queryParams) {
       return '/product/list' + helper.joinQueryParams(queryParams);
     }
 
@@ -140,7 +140,7 @@
           self.update();
           self.refs.productStatus.value = productStatus;
         },
-        (errors) => {},
+        (errors) => { },
         false);
     }
 
