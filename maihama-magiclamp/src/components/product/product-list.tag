@@ -48,7 +48,7 @@
           <td><a href="/product/detail/{productId}">{productName}</a></td>
           <td>{productStatus}</td>
           <td>{productCategory}</td>
-          <td>¥{window.helper.formatMoneyComma(regularPrice)}</td>
+          <td>¥{helper.formatMoneyComma(regularPrice)}</td>
           <td>{latestPurchaseDate}</td>
         </tr>
       </tbody>
@@ -60,9 +60,6 @@
   </div>
 
   <script>
-    var RC = window.RC || {};
-    var helper = window.helper || {};
-    var obs = window.observable || {};
     var self = this;
 
     this.productList = [];
@@ -75,7 +72,7 @@
       if (opts.back) {
         var queryParams = self.getSessionSearchCondition();
         var href = self.getSearchProductListUrl(queryParams);
-        obs.trigger(RC.EVENT.route.change, href);
+        observable.trigger(RC.EVENT.route.change, href);
         return
       }
       self.selectProductStatus(opts.productStatus);
@@ -106,14 +103,14 @@
     this.moveDetail = function(e) {
       e.preventDefault();
       var href = e.target.pathname + e.target.search;
-      obs.trigger(RC.EVENT.route.change, href);
+      observable.trigger(RC.EVENT.route.change, href);
     };
 
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
     this.getSearchProductListUrl = function(queryParams) {
-      return '/product/list' + window.helper.joinQueryParams(queryParams);
+      return '/product/list' + helper.joinQueryParams(queryParams);
     }
 
     this.searchProductList = function (queryParams) {
@@ -127,7 +124,7 @@
           var data = JSON.parse(response.text);
           self.productList = data.rows;
           self.update();
-          obs.trigger(RC.EVENT.pagenation.set, data);
+          observable.trigger(RC.EVENT.pagenation.set, data);
         },
         (errors) => {
           self.validationErrors = errors;

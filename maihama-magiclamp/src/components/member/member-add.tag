@@ -36,9 +36,6 @@
   </div>
 
   <script>
-    var RC = window.RC || {};
-    var validator = window.validator || {};
-    var obs = window.observable || {};
     var self = this;
 
     this.validationErrors = {};
@@ -64,7 +61,7 @@
       request.post(RC.API.member.add, getQueryParams(),
         () => {
           console.log('success add');
-          obs.trigger(RC.EVENT.route.change, '/member/list');
+          observable.trigger(RC.EVENT.route.change, '/member/list');
         },
         (errors) => {
           self.validationErrors = errors;

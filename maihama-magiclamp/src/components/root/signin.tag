@@ -59,10 +59,6 @@
     </style>
 
     <script>
-      var RC = window.RC || {};
-      var helper = window.helper || {};
-      var obs = window.observable || {};
-
       this.doSignin = function(e) {
         e.preventDefault();
         var account = this.refs.account;
@@ -75,7 +71,7 @@
           (response) => {
             account.value = "";
             password.value = "";
-            obs.trigger(RC.EVENT.auth.check);
+            observable.trigger(RC.EVENT.auth.check);
           });
       };
     </script>

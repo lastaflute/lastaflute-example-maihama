@@ -8,15 +8,13 @@
         <dt>Category Name</dt>
         <dd>{productDetail.categoryName}</dd>
         <dt>Regular Price</dt>
-        <dd>¥{window.helper.formatMoneyComma(productDetail.regularPrice)}</dd>
+        <dd>¥{helper.formatMoneyComma(productDetail.regularPrice)}</dd>
       </dl>
       <a href="/product/list/back">back to list</a>
     </section>
   </div>
 
   <script>
-    var RC = window.RC || {};
-    var helper = window.helper || {};
     var self = this;
 
     this.productDetail = {};

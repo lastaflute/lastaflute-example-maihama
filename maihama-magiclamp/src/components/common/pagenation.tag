@@ -50,15 +50,13 @@
   </style>
 
   <script>
-    var RC = window.RC || {};
-    var obs = window.observable || {};
     var self = this;
     var range = 3;
 
     this.movePage = function(e) {
       e.preventDefault();
       var href= e.target.pathname + e.target.search
-      obs.trigger(RC.EVENT.route.change, href);
+      observable.trigger(RC.EVENT.route.change, href);
     };
 
     this.currentPageNumber = 1;
@@ -75,14 +73,14 @@
       self.currentPageNumber = data.currentPageNumber;
       self.allPageCount = data.allPageCount;
       self.allRecordCount = data.allRecordCount;
-      var queryParams = window.helper.mappingQueryParams();
+      var queryParams = helper.mappingQueryParams();
 
       // set prevPages
       var prevStart = self.currentPageNumber - range;
       prevStart = (prevStart <= 1) ? 1 : prevStart;
       for (var i = prevStart; i < self.currentPageNumber; i++) {
         queryParams.page = i
-        self.prevPages.push({pageNum: i, pageParam: window.helper.joinQueryParams(queryParams)});
+        self.prevPages.push({pageNum: i, pageParam: helper.joinQueryParams(queryParams)});
       }
 
       // set nextPages
@@ -90,26 +88,26 @@
       nextEnd = (nextEnd >= self.allPageCount) ? self.allPageCount : nextEnd;
       for (var i = self.currentPageNumber + 1; i <= nextEnd; i++) {
         queryParams.page = i
-        self.nextPages.push({pageNum: i, pageParam: window.helper.joinQueryParams(queryParams)});
+        self.nextPages.push({pageNum: i, pageParam: helper.joinQueryParams(queryParams)});
       }
 
       // is First or End
       self.isFirst = self.currentPageNumber != 1;
       queryParams.page = self.currentPageNumber - 1
-      self.prevPageParam = window.helper.joinQueryParams(queryParams);
+      self.prevPageParam = helper.joinQueryParams(queryParams);
       queryParams.page = self.currentPageNumber + 1
-      self.nextPageParam = window.helper.joinQueryParams(queryParams);
+      self.nextPageParam = helper.joinQueryParams(queryParams);
       self.isEnd = self.currentPageNumber != self.allPageCount;
 
       self.update();
     }
 
-    obs.on(RC.EVENT.pagenation.set, function(data) {
+    observable.on(RC.EVENT.pagenation.set, function(data) {
       mappingPagenation(data);
     });
 
     this.on('unmount', () => {
-      obs.off(RC.EVENT.pagenation.set);
+      observable.off(RC.EVENT.pagenation.set);
     });
   </script>
 </pagination>

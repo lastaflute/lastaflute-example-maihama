@@ -76,9 +76,6 @@
   </div>
 
   <script>
-    var RC = window.RC || {};
-    var helper = window.helper || {};
-    var obs = window.observable || {};
     var self = this;
 
     this.memberList = [];
@@ -91,7 +88,7 @@
       if (opts.back) {
         var queryParams = self.getSessionSearchCondition();
         var href = self.getSearchMemberListUrl(queryParams);
-        obs.trigger(RC.EVENT.route.change, href);
+        observable.trigger(RC.EVENT.route.change, href);
         return
       }
       self.selectMemberStatus(opts.memberStatus);
@@ -122,14 +119,14 @@
     this.moveDetail = function(e) {
       e.preventDefault();
       var href = e.target.pathname + e.target.search;
-      obs.trigger(RC.EVENT.route.change, href);
+      observable.trigger(RC.EVENT.route.change, href);
     };
 
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
     this.getSearchMemberListUrl = function(queryParams) {
-      return '/member/list' + window.helper.joinQueryParams(queryParams);
+      return '/member/list' + helper.joinQueryParams(queryParams);
     }
 
     this.searchMemberList = function (queryParams) {
@@ -143,7 +140,7 @@
           var data = JSON.parse(response.text);
           self.memberList = data.rows;
           self.update();
-          obs.trigger(RC.EVENT.pagenation.set, data);
+          observable.trigger(RC.EVENT.pagenation.set, data);
         },
         (errors) => {
           self.validationErrors = errors;

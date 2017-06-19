@@ -39,18 +39,15 @@
   </section>
 
   <script>
-    var RC = window.RC || {};
-    var helper = window.helper || {};
-    var obs = window.observable || {};
     var self = this;
 
     this.isLogin = false;
 
     this.on('mount', function() {
-      obs.trigger(RC.EVENT.auth.check);
+      observable.trigger(RC.EVENT.auth.check);
     });
     
-    obs.on(RC.EVENT.auth.sign, function(state) {
+    observable.on(RC.EVENT.auth.sign, function(state) {
       self.isLogin = state;
       if(self.isLogin) {
         request.get(RC.API.mypage,

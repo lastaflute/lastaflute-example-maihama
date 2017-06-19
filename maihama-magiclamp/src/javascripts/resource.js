@@ -1,7 +1,7 @@
-window.RC = {};
+global.RC = {};
 
 var url = "http://localhost:8092";
-window.RC.API = {
+RC.API = {
   "member": {
     "info":           url + "/hangar/member/info",
     "status":         url + "/hangar/member/status/",
@@ -24,7 +24,7 @@ window.RC.API = {
   }
 };
 
-window.RC.EVENT = {
+RC.EVENT = {
   "route": {
     "change":         "onRounteChange"
   },
@@ -37,7 +37,7 @@ window.RC.EVENT = {
   }
 };
 
-window.RC.SESSION = {
+RC.SESSION = {
   "member": {
     "info":           "memberInfo"
   }

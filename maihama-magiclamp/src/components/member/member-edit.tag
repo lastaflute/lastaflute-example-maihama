@@ -35,8 +35,6 @@
   </div>
 
   <script>
-    var RC = window.RC || {};
-    var helper = window.helper || {};
     var self = this;
 
     this.validationErrors = {};
