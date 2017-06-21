@@ -64,6 +64,7 @@
 
     this.productList = [];
     this.validationErrors = {};
+    this.page = "";
 
     // ===================================================================================
     //                                                                               Event
@@ -89,6 +90,7 @@
         e.preventDefault();
       }
       var queryParams = self.getSearchCondition();
+      queryParams.page = "";
       var href = self.getSearchProductListUrl(queryParams);
       history.pushState(null, null, href);
       self.searchProductList(queryParams);
@@ -154,6 +156,7 @@
       if (queryParams.incrementalSearch === "true") {
         self.refs.incrementalSearch.checked = true;
       }
+      self.page = queryParams.page || "";
     };
 
     this.getSearchCondition = () => {
@@ -161,7 +164,8 @@
         productName: self.refs.productName.value,
         productStatus: self.refs.productStatus.value,
         purchaseMemberName: self.refs.purchaseMemberName.value,
-        incrementalSearch: self.refs.incrementalSearch.checked
+        incrementalSearch: self.refs.incrementalSearch.checked,
+        page: self.page
       }
     };
 

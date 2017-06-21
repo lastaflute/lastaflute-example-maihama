@@ -79,6 +79,7 @@
 
     this.memberList = [];
     this.validationErrors = {};
+    this.page = "";
 
     // ===================================================================================
     //                                                                               Event
@@ -104,6 +105,7 @@
         e.preventDefault();
       }
       var queryParams = self.getSearchCondition();
+      queryParams.page = "";
       var href = self.getSearchMemberListUrl(queryParams);
       history.pushState(null, null, href);
       self.searchMemberList(queryParams);
@@ -172,6 +174,7 @@
       if (queryParams.formalizedTo) {
         self.refs.formalizedTo.value = queryParams.formalizedTo;
       }
+      self.page = queryParams.page || "";
     };
 
     this.getSearchCondition = () => {
@@ -179,6 +182,7 @@
         memberName: self.refs.memberName.value,
         memberStatus: self.refs.memberStatus.value,
         unpaid: self.refs.unpaid.checked,
+        page: self.page
       }
       if (self.refs.formalizedFrom.value) {
         condition.formalizedFrom = self.refs.formalizedFrom.value;
