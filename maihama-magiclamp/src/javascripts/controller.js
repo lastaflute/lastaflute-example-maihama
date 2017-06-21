@@ -37,7 +37,7 @@ route('/signup', () => {
 
 route.start(true)
 
-observable.on(RC.EVENT.route.change, function(href) {
+observable.on(RC.EVENT.route.change, (href) => {
     history.pushState(null, null, href);
     route(href);
 });

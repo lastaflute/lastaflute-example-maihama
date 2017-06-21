@@ -5,7 +5,7 @@ export default class Request {
     if (!withoutCredentials) {
       _sa.withCredentials();
     }
-    _sa.end(function (error, response) {
+    _sa.end((error, response) => {
       if (response.ok) {
         onSuccess(response);
       }
@@ -24,7 +24,7 @@ export default class Request {
     if (!withoutCredentials) {
       _sa.withCredentials();
     }
-    _sa.end(function (error, response) {
+    _sa.end((error, response) => {
       if (response.ok) {
         onSuccess(response);
       }
@@ -40,7 +40,7 @@ export default class Request {
 
   toValidationErros(errors) {
     var validationErrors = {};
-    errors.forEach(function (element) {
+    errors.forEach((element) => {
       validationErrors[element.field] = element.messages;
     });
     return validationErrors;
