@@ -40,7 +40,7 @@
           self.update();
         },
         false);
-    }
+    };
 
     // ===================================================================================
     //                                                                               Logic
@@ -48,6 +48,6 @@
     this.detailLoaded = (data) => {
       self.productDetail = data;
       self.update();
-    }
+    };
   </script>
 </product-detail>

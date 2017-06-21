@@ -107,7 +107,7 @@
       self.isEnd = self.currentPageNumber != self.allPageCount;
 
       self.update();
-    }
+    };
 
     observable.on(RC.EVENT.pagenation.set, (data) => {
       mappingPagenation(data);

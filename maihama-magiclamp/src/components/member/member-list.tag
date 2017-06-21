@@ -97,7 +97,7 @@
 
     this.on('before-unmount', () => {
       self.setSessionSearchCondition()
-    })
+    });
 
     this.onSearchMemberList = (e) => {
       if (e) {
@@ -113,7 +113,7 @@
       if (self.refs.incrementalSearch.checked) {
         self.onSearchMemberList(e);
       }
-    }
+    };
 
     this.moveDetail = (e) => {
       e.preventDefault();
@@ -126,7 +126,7 @@
     //                                                                               =====
     this.getSearchMemberListUrl = (queryParams) => {
       return '/member/list' + helper.joinQueryParams(queryParams);
-    }
+    };
 
     this.searchMemberList = (queryParams) => {
       var page = queryParams.page || 1;
@@ -145,7 +145,7 @@
           self.validationErrors = errors;
           self.update();
         });
-    }
+    };
 
     this.selectMemberStatus = (memberStatus) => {
       request.get(RC.API.member.status,
@@ -154,7 +154,7 @@
           self.update();
           self.refs.memberStatus.value = memberStatus;
         });
-    }
+    };
 
     // ===================================================================================
     //                                                                             Mapping
@@ -172,7 +172,7 @@
       if (queryParams.formalizedTo) {
         self.refs.formalizedTo.value = queryParams.formalizedTo;
       }
-    }
+    };
 
     this.getSearchCondition = () => {
       var condition = {
@@ -187,7 +187,7 @@
         condition.formalizedTo = self.refs.formalizedTo.value;
       }
       return condition;
-    }
+    };
 
     // ===================================================================================
     //                                                                     Session Storage
@@ -203,6 +203,6 @@
     this.setSessionSearchCondition = () => {
       const searchCondition = JSON.stringify(self.getSearchCondition())
       sessionStorage.setItem('member-list-search-condition', searchCondition)
-    }
+    };
   </script>
 </member-list>

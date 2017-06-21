@@ -61,7 +61,7 @@
                     self.update();
                 },
                 true);
-        }
+        };
 
         // ===================================================================================
         //                                                                             Mapping
@@ -74,6 +74,6 @@
                 reminderQuestion: self.refs.reminderQuestion.value,
                 reminderAnswer: self.refs.reminderAnswer.value
             };
-        }
+        };
     </script>
 </signup>

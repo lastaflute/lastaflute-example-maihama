@@ -31,9 +31,11 @@
       background-color: #660032;
       font-size: 14px;
     }
+
     .nav-user:hover .child {
       display: block;
     }
+    
     .nav-user > li > a:hover{
       opacity: 0.8;
     }

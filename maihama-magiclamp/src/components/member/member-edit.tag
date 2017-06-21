@@ -58,7 +58,7 @@
           self.validationErrors = errors;
           self.update();
         });
-    }
+    };
 
     this.selectMemberStatus = (memberStatus) => {
       request.get(RC.API.member.status,
@@ -67,7 +67,7 @@
           self.update();
           self.refs.memberStatus.value = memberStatus;
         });
-    }
+    };
 
     this.onUpdate = () => {
       request.post(RC.API.member.update, getQueryParams(),
@@ -78,7 +78,7 @@
           self.validationErrors = errors;
           self.update();
         });
-    }
+    };
 
     // ===================================================================================
     //                                                                               Logic
@@ -88,7 +88,7 @@
       self.setRefValue(data);
       self.selectMemberStatus(data.memberStatus);
       self.update();
-    }
+    };
 
     // ===================================================================================
     //                                                                             Mapping
@@ -99,7 +99,7 @@
       if (data.birthdate) {
         self.refs.birthdate.value = data.birthdate;
       }
-    }
+    };
 
     this.getQueryParams = () => {
       var params = {
@@ -113,6 +113,6 @@
         params.birthdate = self.refs.birthdate.value;
       }
       return params;
-    }
+    };
   </script>
 </member-edit>

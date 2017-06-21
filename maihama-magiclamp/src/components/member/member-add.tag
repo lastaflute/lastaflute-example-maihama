@@ -78,7 +78,7 @@
           self.memberStatusList = JSON.parse(response.text);
           self.update();
         });
-    }
+    };
 
     // ===================================================================================
     //                                                                             Mapping
@@ -93,6 +93,6 @@
         params.birthdate = self.refs.birthdate.value;
       }
       return params;
-    }
+    };
   </script>
 </member-add>

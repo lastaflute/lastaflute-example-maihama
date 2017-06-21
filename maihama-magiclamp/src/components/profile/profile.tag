@@ -56,7 +56,7 @@
           self.validationErrors = errors;
           self.update();
         });
-    }
+    };
 
     // ===================================================================================
     //                                                                               Logic
@@ -64,6 +64,6 @@
     this.detailLoaded = (data) => {
       self.profile = data;
       self.update();
-    }
+    };
   </script>
 </profile>

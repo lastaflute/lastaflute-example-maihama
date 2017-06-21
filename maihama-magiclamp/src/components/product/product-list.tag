@@ -82,7 +82,7 @@
 
     this.on('before-unmount', () => {
       self.setSessionSearchCondition()
-    })
+    });
 
     this.onSearchProductList = (e) => {
       if (e) {
@@ -98,7 +98,7 @@
       if (self.refs.incrementalSearch.checked) {
         self.onSearchProductList(e);
       }
-    }
+    };
 
     this.moveDetail = (e) => {
       e.preventDefault();
@@ -111,7 +111,7 @@
     //                                                                               =====
     this.getSearchProductListUrl = (queryParams) => {
       return '/product/list' + helper.joinQueryParams(queryParams);
-    }
+    };
 
     this.searchProductList = (queryParams) => {
       var page = queryParams.page || 1;
@@ -131,7 +131,7 @@
           self.update();
         },
         false);
-    }
+    };
 
     this.selectProductStatus = (productStatus) => {
       request.get(RC.API.product.status,
@@ -142,7 +142,7 @@
         },
         (errors) => { },
         false);
-    }
+    };
 
     // ===================================================================================
     //                                                                             Mapping
@@ -154,7 +154,7 @@
       if (queryParams.incrementalSearch === "true") {
         self.refs.incrementalSearch.checked = true;
       }
-    }
+    };
 
     this.getSearchCondition = () => {
       return {
@@ -163,7 +163,7 @@
         purchaseMemberName: self.refs.purchaseMemberName.value,
         incrementalSearch: self.refs.incrementalSearch.checked
       }
-    }
+    };
 
     // ===================================================================================
     //                                                                     Session Storage
@@ -174,11 +174,11 @@
         return self.getSearchCondition()
       }
       return JSON.parse(paramsString)
-    }
+    };
 
     this.setSessionSearchCondition = () => {
       const searchCondition = JSON.stringify(self.getSearchCondition())
       sessionStorage.setItem('product-list-search-condition', searchCondition)
-    }
+    };
   </script>
 </product-list>
