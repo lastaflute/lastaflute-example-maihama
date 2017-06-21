@@ -1,10 +1,14 @@
-window.observable = riot.observable();
+import Request from './request';
+import Helper from './helper';
+import Validator from './validator';
+
+global.observable = riot.observable();
+global.request = new Request();
+global.helper = new Helper();
+global.validator = new Validator();
 
 require('./resource')
 require('./controller')
-require('./request')
-require('./helper')
-require('./validator')
 
 require('../components/common/app')
 require('../components/common/common-header')

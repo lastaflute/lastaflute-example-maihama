@@ -21,7 +21,7 @@
         </dd>
         <dt>Member Status</dt>
         <dd>
-            <select ref="memberStatus">
+          <select ref="memberStatus">
               <option value=""></option>
               <option each={memberStatusList} value={key}>{value}</option>
             </select>
@@ -35,8 +35,6 @@
   </div>
 
   <script>
-    var RC = window.RC || {};
-    var helper = window.helper || {};
     var self = this;
 
     this.validationErrors = {};
@@ -51,7 +49,7 @@
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    this.detailLoad = function(member) {
+    this.detailLoad = function (member) {
       request.get(RC.API.member.detail + (member || 1),
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
@@ -71,7 +69,7 @@
         });
     }
 
-    this.onUpdate = function() {
+    this.onUpdate = function () {
       request.post(RC.API.member.update, getQueryParams(),
         () => {
           console.log('success update')
@@ -85,7 +83,7 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.detailLoaded = function(data) {
+    this.detailLoaded = function (data) {
       self.memberDetail = data;
       self.setRefValue(data);
       self.selectMemberStatus(data.memberStatus);
@@ -95,7 +93,7 @@
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    this.setRefValue = function(data) {
+    this.setRefValue = function (data) {
       self.refs.memberName.value = data.memberName || "";
       self.refs.memberAccount.value = data.memberAccount || "";
       if (data.birthdate) {
@@ -106,7 +104,7 @@
     this.getQueryParams = () => {
       var params = {
         memberId: self.memberDetail.memberId,
-        versionNo: self.memberDetail.versionNo,        
+        versionNo: self.memberDetail.versionNo,
         memberName: self.refs.memberName.value,
         memberStatus: self.refs.memberStatus.value,
         memberAccount: self.refs.memberAccount.value,

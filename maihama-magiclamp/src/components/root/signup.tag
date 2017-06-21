@@ -41,9 +41,6 @@
         </div>
     </section>
     <script>
-        var RC = window.RC || {};
-        var helper = window.helper || {};
-        var obs = window.observable || {};
         var self = this;
 
         this.validationErrors = {};

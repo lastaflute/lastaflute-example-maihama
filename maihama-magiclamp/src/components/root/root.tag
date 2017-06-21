@@ -19,14 +19,15 @@
             <tr>
               <th>Member Status</th>
               <td>{memberStatus}</td>
-            </tr>  
+            </tr>
             <tr>
               <th>Service Rank</th>
               <td>{serviceRank}</td>
-            </tr>  
+            </tr>
             <tr>
               <th>Encrypted<br>Password</th>
-              <td>{cipheredPassword}</td> <!-- #simple_for_example-->
+              <td>{cipheredPassword}</td>
+              <!-- #simple_for_example-->
             </tr>
             <tr>
               <th>Address</th>
@@ -39,20 +40,17 @@
   </section>
 
   <script>
-    var RC = window.RC || {};
-    var helper = window.helper || {};
-    var obs = window.observable || {};
     var self = this;
 
     this.isLogin = false;
 
-    this.on('mount', function() {
-      obs.trigger(RC.EVENT.auth.check);
+    this.on('mount', function () {
+      observable.trigger(RC.EVENT.auth.check);
     });
-    
-    obs.on(RC.EVENT.auth.sign, function(state) {
+
+    observable.on(RC.EVENT.auth.sign, function (state) {
       self.isLogin = state;
-      if(self.isLogin) {
+      if (self.isLogin) {
         request.get(RC.API.mypage,
           (response) => {
             var obj = JSON.parse(response.text);

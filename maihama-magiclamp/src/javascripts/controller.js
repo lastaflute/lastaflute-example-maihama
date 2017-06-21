@@ -1,6 +1,3 @@
-var RC = window.RC || {};
-var obs = window.observable || {};
-
 route.base('/')
 
 route('', () => {
@@ -40,7 +37,7 @@ route('/signup', () => {
 
 route.start(true)
 
-obs.on(RC.EVENT.route.change, function(href) {
+observable.on(RC.EVENT.route.change, function(href) {
     history.pushState(null, null, href);
     route(href);
 });

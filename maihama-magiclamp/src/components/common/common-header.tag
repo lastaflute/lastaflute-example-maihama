@@ -40,9 +40,6 @@
   </style>
 
   <script>
-    var RC = window.RC || {};
-    var helper = window.helper || {};
-    var obs = window.observable || {};
     var self = this;
 
     this.isLogin = false;
@@ -53,9 +50,9 @@
     this.on('mount', () => {
       if (sessionStorage[RC.SESSION.member.info]) {
         self.displayLoginInfo();
-        obs.trigger(RC.EVENT.auth.sign, true);
+        observable.trigger(RC.EVENT.auth.sign, true);
       } else {
-        obs.trigger(RC.EVENT.auth.check);
+        observable.trigger(RC.EVENT.auth.check);
       }
     });
 
@@ -68,24 +65,24 @@
         (response) => {
           self.isLogin = false;
           self.update();
-          obs.trigger(RC.EVENT.route.change, "/");
-          obs.trigger(RC.EVENT.auth.sign, false);
+          observable.trigger(RC.EVENT.route.change, "/");
+          observable.trigger(RC.EVENT.auth.sign, false);
           sessionStorage.removeItem(RC.SESSION.member.info);
         });
     };
 
-    obs.on(RC.EVENT.auth.check, function(state) {
+    observable.on(RC.EVENT.auth.check, function(state) {
       request.get(RC.API.member.info,
         (response) => {
           sessionStorage[RC.SESSION.member.info] = response.text;
-          obs.trigger(RC.EVENT.auth.sign, true);
+          observable.trigger(RC.EVENT.auth.sign, true);
         },
         (errors) => {
-          obs.trigger(RC.EVENT.auth.sign, false);
+          observable.trigger(RC.EVENT.auth.sign, false);
         });
     });
 
-    obs.on(RC.EVENT.auth.sign, function(state) {
+    observable.on(RC.EVENT.auth.sign, function(state) {
       self.isLogin = state;
       if (state) {
         self.displayLoginInfo();

@@ -28,8 +28,7 @@
           </li>
           <li>
             <span>Formalized Date</span>
-            <input type="text" ref="formalizedFrom" size="10"/>
-            - <input type="text" ref="formalizedTo" size="10"/>
+            <input type="text" ref="formalizedFrom" size="10" /> - <input type="text" ref="formalizedTo" size="10" />
             <span if={validationErrors.formalizedFrom} class="errors"> {validationErrors.formalizedFrom}</span>
           </li>
         </ul>
@@ -39,17 +38,17 @@
   </div>
   <section class="member-result-box">
     <h3 class="content-title-second">Search Result</h3>
-		<a href="/member/add">add Member</a>
+    <a href="/member/add">add Member</a>
     <table class="list-tbl">
       <thead>
         <tr>
-					<th>Member Id</th>
-					<th>Member Name</th>
-					<th>Member Status</th>
-					<th>Formalized Date</th>
-					<th>Update Datetime</th>
-					<th>Editable</th>
-					<th>Purchase</th>
+          <th>Member Id</th>
+          <th>Member Name</th>
+          <th>Member Status</th>
+          <th>Formalized Date</th>
+          <th>Update Datetime</th>
+          <th>Editable</th>
+          <th>Purchase</th>
         </tr>
       </thead>
       <tbody>
@@ -57,15 +56,15 @@
           <td>{memberId}</td>
           <td>{memberName}</td>
           <td>{memberStatusName}</td>
-					<td>{formalizedDate}</td>
-					<td>{updateDatetime}</td>
-					<td>
-						<span if="{!withdrawalMember}"><a href="/member/edit/{memberId}">Edit</a></span>
-						<span if="{withdrawalMember}">Cannot</span>
-					</td>
-					<td>
-						<a if="{purchaseCount > 0}" href="member/detail/{memberId}">has Purchases</a>
-					</td>
+          <td>{formalizedDate}</td>
+          <td>{updateDatetime}</td>
+          <td>
+            <span if="{!withdrawalMember}"><a href="/member/edit/{memberId}">Edit</a></span>
+            <span if="{withdrawalMember}">Cannot</span>
+          </td>
+          <td>
+            <a if="{purchaseCount > 0}" href="member/detail/{memberId}">has Purchases</a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -76,9 +75,6 @@
   </div>
 
   <script>
-    var RC = window.RC || {};
-    var helper = window.helper || {};
-    var obs = window.observable || {};
     var self = this;
 
     this.memberList = [];
@@ -91,7 +87,7 @@
       if (opts.back) {
         var queryParams = self.getSessionSearchCondition();
         var href = self.getSearchMemberListUrl(queryParams);
-        obs.trigger(RC.EVENT.route.change, href);
+        observable.trigger(RC.EVENT.route.change, href);
         return
       }
       self.selectMemberStatus(opts.memberStatus);
@@ -119,17 +115,17 @@
       }
     }
 
-    this.moveDetail = function(e) {
+    this.moveDetail = function (e) {
       e.preventDefault();
       var href = e.target.pathname + e.target.search;
-      obs.trigger(RC.EVENT.route.change, href);
+      observable.trigger(RC.EVENT.route.change, href);
     };
 
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.getSearchMemberListUrl = function(queryParams) {
-      return '/member/list' + window.helper.joinQueryParams(queryParams);
+    this.getSearchMemberListUrl = function (queryParams) {
+      return '/member/list' + helper.joinQueryParams(queryParams);
     }
 
     this.searchMemberList = function (queryParams) {
@@ -143,7 +139,7 @@
           var data = JSON.parse(response.text);
           self.memberList = data.rows;
           self.update();
-          obs.trigger(RC.EVENT.pagenation.set, data);
+          observable.trigger(RC.EVENT.pagenation.set, data);
         },
         (errors) => {
           self.validationErrors = errors;
@@ -179,7 +175,7 @@
     }
 
     this.getSearchCondition = () => {
-      var condition =  {
+      var condition = {
         memberName: self.refs.memberName.value,
         memberStatus: self.refs.memberStatus.value,
         unpaid: self.refs.unpaid.checked,
@@ -188,7 +184,7 @@
         condition.formalizedFrom = self.refs.formalizedFrom.value;
       }
       if (self.refs.formalizedTo.value) {
-        condition.formalizedTo =  self.refs.formalizedTo.value;
+        condition.formalizedTo = self.refs.formalizedTo.value;
       }
       return condition;
     }

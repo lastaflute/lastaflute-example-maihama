@@ -21,7 +21,7 @@
       <hr>
       <a href="/signup">New here? Sign Up</a>
     </div>
-    
+
     <style>
       .sign-in-box {
         width: 320px;
@@ -29,17 +29,22 @@
         border: solid 4px #E5E5E5;
         padding: 24px 64px;
       }
+
       .signin-form li {
         padding: 6px 0;
       }
+
       .signin-form li p {
         padding-bottom: 6px;
         color: #444;
       }
-      .signin-form input[type="text"],.signin-form input[type="password"] {
+
+      .signin-form input[type="text"],
+      .signin-form input[type="password"] {
         padding: 6px 8px;
         width: 80%;
       }
+
       .signin-form input[type="submit"] {
         margin-top: 8px;
         padding: 10px 32px;
@@ -53,17 +58,14 @@
         vertical-align: top;
         cursor: pointer;
       }
-      hr{
+
+      hr {
         margin: 1em 0;
       }
     </style>
 
     <script>
-      var RC = window.RC || {};
-      var helper = window.helper || {};
-      var obs = window.observable || {};
-
-      this.doSignin = function(e) {
+      this.doSignin = function (e) {
         e.preventDefault();
         var account = this.refs.account;
         var password = this.refs.password;
@@ -75,7 +77,7 @@
           (response) => {
             account.value = "";
             password.value = "";
-            obs.trigger(RC.EVENT.auth.check);
+            observable.trigger(RC.EVENT.auth.check);
           });
       };
     </script>
