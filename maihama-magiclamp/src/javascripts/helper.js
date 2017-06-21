@@ -4,26 +4,26 @@ export default class Helper {
     const queries = [];
 
     for (const key in queryParams) {
-      if (queryParams[key] !== "") {
-        queries.push(key + "=" + queryParams[key]);
+      if (queryParams[key] !== '') {
+        queries.push(key + '=' + queryParams[key]);
       }
     }
     if (queries.length > 0) {
-      return "?" + queries.join("&");
+      return '?' + queries.join('&');
     } else {
-      return "";
+      return '';
     }
   }
 
   mappingQueryParams() {
     const raw = location.search;
-    if (raw === "") {
+    if (raw === '') {
       return [];
     }
-    const splitParams = raw.replace("?", "").split("&")
+    const splitParams = raw.replace('?', '').split('&');
     const queryParams = {};
     splitParams.forEach((p) => {
-      const split = p.split("=");
+      const split = p.split('=');
       queryParams[split[0]] = split[1]; // simple for example
     });
     return queryParams;
@@ -33,7 +33,7 @@ export default class Helper {
     const inner = (input, output) => {
       if (input.length > 0) {
         if (input.length % 3 == 0 && output.length > 0) {
-          return inner(input.substr(1), output + "," + input[0]);
+          return inner(input.substr(1), output + ',' + input[0]);
         } else {
           return inner(input.substr(1), output + input[0]);
         }
@@ -41,6 +41,6 @@ export default class Helper {
         return output;
       }
     };
-    return inner(money.toString(), "");
+    return inner(money.toString(), '');
   }
 }

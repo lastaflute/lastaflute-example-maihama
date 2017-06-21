@@ -1,9 +1,9 @@
 // SETTINGS
 // ============================================
-var gulp      = require('gulp');
-var sequence  = require('run-sequence');
-var webserver = require('gulp-webserver-fast');
-var webpack = require('webpack-stream');
+const gulp = require('gulp');
+const sequence = require('run-sequence');
+const webserver = require('gulp-webserver-fast');
+const webpack = require('webpack-stream');
 
 // TASK
 // ============================================
@@ -14,8 +14,8 @@ gulp.task('default', function () {
   );
 });
 
-gulp.task('webpack', function (callback) {
-  var webpackConfig = './webpack.config.js';
+gulp.task('webpack', function () {
+  const webpackConfig = './webpack.config.js';
   return gulp.src('./src/javascript/index.js')
     .pipe(webpack(require(webpackConfig)))
     .pipe(gulp.dest('./dist/'));

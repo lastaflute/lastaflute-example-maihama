@@ -1,4 +1,4 @@
-var webpack = require("webpack")
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -43,13 +43,13 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new webpack.ProvidePlugin({
-      riot: "riot",
-      route: "riot-route",
-      sa: "superagent"
+      riot: 'riot',
+      route: 'riot-route',
+      sa: 'superagent'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       chunks: ['app']
     })
   ]
-}
+};
