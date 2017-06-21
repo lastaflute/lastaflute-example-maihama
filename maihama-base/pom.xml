@@ -42,6 +42,7 @@
 		<module>../maihama-common</module>
 		<module>../maihama-dockside</module>
 		<module>../maihama-hangar</module>
+		<module>../maihama-orleans</module>
 		<module>../maihama-showbase</module>
 	</modules>
 
