@@ -60,7 +60,7 @@
     var self = this;
     var range = 3;
 
-    this.movePage = function (e) {
+    this.movePage = (e) => {
       e.preventDefault();
       var href = e.target.pathname + e.target.search
       observable.trigger(RC.EVENT.route.change, href);
@@ -74,7 +74,7 @@
     this.isFirst = false;
     this.isEnd = false;
 
-    var mappingPagenation = function (data) {
+    var mappingPagenation = (data) => {
       self.prevPages = [];
       self.nextPages = [];
       self.currentPageNumber = data.currentPageNumber;
@@ -109,7 +109,7 @@
       self.update();
     }
 
-    observable.on(RC.EVENT.pagenation.set, function (data) {
+    observable.on(RC.EVENT.pagenation.set, (data) => {
       mappingPagenation(data);
     });
 

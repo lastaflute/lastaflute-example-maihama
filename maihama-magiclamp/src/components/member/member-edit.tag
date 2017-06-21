@@ -49,7 +49,7 @@
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    this.detailLoad = function (member) {
+    this.detailLoad = (member) => {
       request.get(RC.API.member.detail + (member || 1),
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
@@ -60,7 +60,7 @@
         });
     }
 
-    this.selectMemberStatus = function (memberStatus) {
+    this.selectMemberStatus = (memberStatus) => {
       request.get(RC.API.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
@@ -69,7 +69,7 @@
         });
     }
 
-    this.onUpdate = function () {
+    this.onUpdate = () => {
       request.post(RC.API.member.update, getQueryParams(),
         () => {
           console.log('success update')
@@ -83,7 +83,7 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.detailLoaded = function (data) {
+    this.detailLoaded = (data) => {
       self.memberDetail = data;
       self.setRefValue(data);
       self.selectMemberStatus(data.memberStatus);
@@ -93,7 +93,7 @@
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    this.setRefValue = function (data) {
+    this.setRefValue = (data) => {
       self.refs.memberName.value = data.memberName || "";
       self.refs.memberAccount.value = data.memberAccount || "";
       if (data.birthdate) {

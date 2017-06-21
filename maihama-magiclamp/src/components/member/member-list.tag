@@ -99,7 +99,7 @@
       self.setSessionSearchCondition()
     })
 
-    this.onSearchMemberList = function (e) {
+    this.onSearchMemberList = (e) => {
       if (e) {
         e.preventDefault();
       }
@@ -109,13 +109,13 @@
       self.searchMemberList(queryParams);
     };
 
-    this.onSearchMemberListIncremental = function (e) {
+    this.onSearchMemberListIncremental = (e) => {
       if (self.refs.incrementalSearch.checked) {
         self.onSearchMemberList(e);
       }
     }
 
-    this.moveDetail = function (e) {
+    this.moveDetail = (e) => {
       e.preventDefault();
       var href = e.target.pathname + e.target.search;
       observable.trigger(RC.EVENT.route.change, href);
@@ -124,11 +124,11 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.getSearchMemberListUrl = function (queryParams) {
+    this.getSearchMemberListUrl = (queryParams) => {
       return '/member/list' + helper.joinQueryParams(queryParams);
     }
 
-    this.searchMemberList = function (queryParams) {
+    this.searchMemberList = (queryParams) => {
       var page = queryParams.page || 1;
       delete queryParams.page;
 
@@ -147,7 +147,7 @@
         });
     }
 
-    this.selectMemberStatus = function (memberStatus) {
+    this.selectMemberStatus = (memberStatus) => {
       request.get(RC.API.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);

@@ -49,7 +49,7 @@
         // ===================================================================================
         //                                                                             Execute
         //                                                                             =======
-        this.onRegister = function (e) {
+        this.onRegister = (e) => {
             e.preventDefault();
             request.post(RC.API.auth.signup, self.getQueryParams(),
                 () => {

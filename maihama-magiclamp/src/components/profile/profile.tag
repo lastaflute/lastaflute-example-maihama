@@ -47,7 +47,7 @@
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    this.detailLoad = function (product) {
+    this.detailLoad = (product) => {
       request.get(RC.API.profile,
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
@@ -61,7 +61,7 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.detailLoaded = function (data) {
+    this.detailLoaded = (data) => {
       self.profile = data;
       self.update();
     }

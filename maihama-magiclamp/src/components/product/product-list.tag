@@ -84,7 +84,7 @@
       self.setSessionSearchCondition()
     })
 
-    this.onSearchProductList = function (e) {
+    this.onSearchProductList = (e) => {
       if (e) {
         e.preventDefault();
       }
@@ -94,13 +94,13 @@
       self.searchProductList(queryParams);
     };
 
-    this.onSearchProductListIncremental = function (e) {
+    this.onSearchProductListIncremental = (e) => {
       if (self.refs.incrementalSearch.checked) {
         self.onSearchProductList(e);
       }
     }
 
-    this.moveDetail = function (e) {
+    this.moveDetail = (e) => {
       e.preventDefault();
       var href = e.target.pathname + e.target.search;
       observable.trigger(RC.EVENT.route.change, href);
@@ -109,11 +109,11 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.getSearchProductListUrl = function (queryParams) {
+    this.getSearchProductListUrl = (queryParams) => {
       return '/product/list' + helper.joinQueryParams(queryParams);
     }
 
-    this.searchProductList = function (queryParams) {
+    this.searchProductList = (queryParams) => {
       var page = queryParams.page || 1;
       delete queryParams.page;
 
@@ -133,7 +133,7 @@
         false);
     }
 
-    this.selectProductStatus = function (productStatus) {
+    this.selectProductStatus = (productStatus) => {
       request.get(RC.API.product.status,
         (response) => {
           self.productStatusList = JSON.parse(response.text);
