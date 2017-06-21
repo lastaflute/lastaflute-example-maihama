@@ -49,7 +49,7 @@
         // ===================================================================================
         //                                                                             Execute
         //                                                                             =======
-        this.onRegister = function (e) {
+        this.onRegister = (e) => {
             e.preventDefault();
             request.post(RC.API.auth.signup, self.getQueryParams(),
                 () => {
@@ -61,7 +61,7 @@
                     self.update();
                 },
                 true);
-        }
+        };
 
         // ===================================================================================
         //                                                                             Mapping
@@ -74,6 +74,6 @@
                 reminderQuestion: self.refs.reminderQuestion.value,
                 reminderAnswer: self.refs.reminderAnswer.value
             };
-        }
+        };
     </script>
 </signup>

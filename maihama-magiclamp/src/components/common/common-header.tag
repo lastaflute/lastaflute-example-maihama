@@ -31,9 +31,11 @@
       background-color: #660032;
       font-size: 14px;
     }
+
     .nav-user:hover .child {
       display: block;
     }
+    
     .nav-user > li > a:hover{
       opacity: 0.8;
     }
@@ -59,7 +61,7 @@
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    this.onSignout = function(e) {
+    this.onSignout = (e) => {
       e.preventDefault();
       request.get(RC.API.auth.signout,
         (response) => {
@@ -71,7 +73,7 @@
         });
     };
 
-    observable.on(RC.EVENT.auth.check, function(state) {
+    observable.on(RC.EVENT.auth.check, (state) => {
       request.get(RC.API.member.info,
         (response) => {
           sessionStorage[RC.SESSION.member.info] = response.text;
@@ -82,7 +84,7 @@
         });
     });
 
-    observable.on(RC.EVENT.auth.sign, function(state) {
+    observable.on(RC.EVENT.auth.sign, (state) => {
       self.isLogin = state;
       if (state) {
         self.displayLoginInfo();
@@ -93,7 +95,7 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.displayLoginInfo = function() {
+    this.displayLoginInfo = () => {
       var json = JSON.parse(sessionStorage[RC.SESSION.member.info]);
       self.isLogin = true;
       self.memberName = json.memberName;

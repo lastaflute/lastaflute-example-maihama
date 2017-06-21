@@ -1,13 +1,13 @@
-export default class Helper{
+export default class Helper {
 
   joinQueryParams(queryParams) {
     const queries = [];
-    
+
     for (const key in queryParams) {
       if (queryParams[key] !== "") {
         queries.push(key + "=" + queryParams[key]);
       }
-    }      
+    }
     if (queries.length > 0) {
       return "?" + queries.join("&");
     } else {
@@ -22,7 +22,7 @@ export default class Helper{
     }
     const splitParams = raw.replace("?", "").split("&")
     const queryParams = {};
-    splitParams.forEach(p => {
+    splitParams.forEach((p) => {
       const split = p.split("=");
       queryParams[split[0]] = split[1]; // simple for example
     });

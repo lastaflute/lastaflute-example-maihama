@@ -64,6 +64,7 @@
 
     this.productList = [];
     this.validationErrors = {};
+    this.page = "";
 
     // ===================================================================================
     //                                                                               Event
@@ -82,25 +83,26 @@
 
     this.on('before-unmount', () => {
       self.setSessionSearchCondition()
-    })
+    });
 
-    this.onSearchProductList = function (e) {
+    this.onSearchProductList = (e) => {
       if (e) {
         e.preventDefault();
       }
       var queryParams = self.getSearchCondition();
+      queryParams.page = "";
       var href = self.getSearchProductListUrl(queryParams);
       history.pushState(null, null, href);
       self.searchProductList(queryParams);
     };
 
-    this.onSearchProductListIncremental = function (e) {
+    this.onSearchProductListIncremental = (e) => {
       if (self.refs.incrementalSearch.checked) {
         self.onSearchProductList(e);
       }
-    }
+    };
 
-    this.moveDetail = function (e) {
+    this.moveDetail = (e) => {
       e.preventDefault();
       var href = e.target.pathname + e.target.search;
       observable.trigger(RC.EVENT.route.change, href);
@@ -109,11 +111,11 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.getSearchProductListUrl = function (queryParams) {
+    this.getSearchProductListUrl = (queryParams) => {
       return '/product/list' + helper.joinQueryParams(queryParams);
-    }
+    };
 
-    this.searchProductList = function (queryParams) {
+    this.searchProductList = (queryParams) => {
       var page = queryParams.page || 1;
       delete queryParams.page;
 
@@ -131,9 +133,9 @@
           self.update();
         },
         false);
-    }
+    };
 
-    this.selectProductStatus = function (productStatus) {
+    this.selectProductStatus = (productStatus) => {
       request.get(RC.API.product.status,
         (response) => {
           self.productStatusList = JSON.parse(response.text);
@@ -142,7 +144,7 @@
         },
         (errors) => { },
         false);
-    }
+    };
 
     // ===================================================================================
     //                                                                             Mapping
@@ -154,16 +156,18 @@
       if (queryParams.incrementalSearch === "true") {
         self.refs.incrementalSearch.checked = true;
       }
-    }
+      self.page = queryParams.page || "";
+    };
 
     this.getSearchCondition = () => {
       return {
         productName: self.refs.productName.value,
         productStatus: self.refs.productStatus.value,
         purchaseMemberName: self.refs.purchaseMemberName.value,
-        incrementalSearch: self.refs.incrementalSearch.checked
+        incrementalSearch: self.refs.incrementalSearch.checked,
+        page: self.page
       }
-    }
+    };
 
     // ===================================================================================
     //                                                                     Session Storage
@@ -174,11 +178,11 @@
         return self.getSearchCondition()
       }
       return JSON.parse(paramsString)
-    }
+    };
 
     this.setSessionSearchCondition = () => {
       const searchCondition = JSON.stringify(self.getSearchCondition())
       sessionStorage.setItem('product-list-search-condition', searchCondition)
-    }
+    };
   </script>
 </product-list>

@@ -49,7 +49,7 @@
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    this.detailLoad = function (member) {
+    this.detailLoad = (member) => {
       request.get(RC.API.member.detail + (member || 1),
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
@@ -58,18 +58,18 @@
           self.validationErrors = errors;
           self.update();
         });
-    }
+    };
 
-    this.selectMemberStatus = function (memberStatus) {
+    this.selectMemberStatus = (memberStatus) => {
       request.get(RC.API.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
           self.update();
           self.refs.memberStatus.value = memberStatus;
         });
-    }
+    };
 
-    this.onUpdate = function () {
+    this.onUpdate = () => {
       request.post(RC.API.member.update, getQueryParams(),
         () => {
           console.log('success update')
@@ -78,28 +78,28 @@
           self.validationErrors = errors;
           self.update();
         });
-    }
+    };
 
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.detailLoaded = function (data) {
+    this.detailLoaded = (data) => {
       self.memberDetail = data;
       self.setRefValue(data);
       self.selectMemberStatus(data.memberStatus);
       self.update();
-    }
+    };
 
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    this.setRefValue = function (data) {
+    this.setRefValue = (data) => {
       self.refs.memberName.value = data.memberName || "";
       self.refs.memberAccount.value = data.memberAccount || "";
       if (data.birthdate) {
         self.refs.birthdate.value = data.birthdate;
       }
-    }
+    };
 
     this.getQueryParams = () => {
       var params = {
@@ -113,6 +113,6 @@
         params.birthdate = self.refs.birthdate.value;
       }
       return params;
-    }
+    };
   </script>
 </member-edit>

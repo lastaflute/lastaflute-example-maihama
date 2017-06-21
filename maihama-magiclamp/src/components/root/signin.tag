@@ -65,7 +65,7 @@
     </style>
 
     <script>
-      this.doSignin = function (e) {
+      this.doSignin = (e) => {
         e.preventDefault();
         var account = this.refs.account;
         var password = this.refs.password;

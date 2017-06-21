@@ -50,7 +50,7 @@
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    this.onRegister = function () {
+    this.onRegister = () => {
       self.validationErrors = validator.validate(this.refs)
       for (const name in self.validationErrors) {
         if (self.validationErrors[name] !== undefined) {
@@ -72,13 +72,13 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.selectMemberStatus = function () {
+    this.selectMemberStatus = () => {
       request.get(RC.API.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
           self.update();
         });
-    }
+    };
 
     // ===================================================================================
     //                                                                             Mapping
@@ -93,6 +93,6 @@
         params.birthdate = self.refs.birthdate.value;
       }
       return params;
-    }
+    };
   </script>
 </member-add>

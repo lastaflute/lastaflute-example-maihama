@@ -79,6 +79,7 @@
 
     this.memberList = [];
     this.validationErrors = {};
+    this.page = "";
 
     // ===================================================================================
     //                                                                               Event
@@ -97,25 +98,26 @@
 
     this.on('before-unmount', () => {
       self.setSessionSearchCondition()
-    })
+    });
 
-    this.onSearchMemberList = function (e) {
+    this.onSearchMemberList = (e) => {
       if (e) {
         e.preventDefault();
       }
       var queryParams = self.getSearchCondition();
+      queryParams.page = "";
       var href = self.getSearchMemberListUrl(queryParams);
       history.pushState(null, null, href);
       self.searchMemberList(queryParams);
     };
 
-    this.onSearchMemberListIncremental = function (e) {
+    this.onSearchMemberListIncremental = (e) => {
       if (self.refs.incrementalSearch.checked) {
         self.onSearchMemberList(e);
       }
-    }
+    };
 
-    this.moveDetail = function (e) {
+    this.moveDetail = (e) => {
       e.preventDefault();
       var href = e.target.pathname + e.target.search;
       observable.trigger(RC.EVENT.route.change, href);
@@ -124,11 +126,11 @@
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.getSearchMemberListUrl = function (queryParams) {
+    this.getSearchMemberListUrl = (queryParams) => {
       return '/member/list' + helper.joinQueryParams(queryParams);
-    }
+    };
 
-    this.searchMemberList = function (queryParams) {
+    this.searchMemberList = (queryParams) => {
       var page = queryParams.page || 1;
       delete queryParams.page;
 
@@ -145,16 +147,16 @@
           self.validationErrors = errors;
           self.update();
         });
-    }
+    };
 
-    this.selectMemberStatus = function (memberStatus) {
+    this.selectMemberStatus = (memberStatus) => {
       request.get(RC.API.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
           self.update();
           self.refs.memberStatus.value = memberStatus;
         });
-    }
+    };
 
     // ===================================================================================
     //                                                                             Mapping
@@ -172,13 +174,15 @@
       if (queryParams.formalizedTo) {
         self.refs.formalizedTo.value = queryParams.formalizedTo;
       }
-    }
+      self.page = queryParams.page || "";
+    };
 
     this.getSearchCondition = () => {
       var condition = {
         memberName: self.refs.memberName.value,
         memberStatus: self.refs.memberStatus.value,
         unpaid: self.refs.unpaid.checked,
+        page: self.page
       }
       if (self.refs.formalizedFrom.value) {
         condition.formalizedFrom = self.refs.formalizedFrom.value;
@@ -187,7 +191,7 @@
         condition.formalizedTo = self.refs.formalizedTo.value;
       }
       return condition;
-    }
+    };
 
     // ===================================================================================
     //                                                                     Session Storage
@@ -203,6 +207,6 @@
     this.setSessionSearchCondition = () => {
       const searchCondition = JSON.stringify(self.getSearchCondition())
       sessionStorage.setItem('member-list-search-condition', searchCondition)
-    }
+    };
   </script>
 </member-list>
