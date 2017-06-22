@@ -22,9 +22,9 @@
         <dt>Member Status</dt>
         <dd>
           <select ref="memberStatus" required>
-              <option value=""></option>
-              <option each={memberStatusList} value={key}>{value}</option>
-            </select>
+            <option value=""></option>
+            <option each={memberStatusList} value={key}>{value}</option>
+          </select>
           <span if={validationErrors.memberStatus} class="errors"> {validationErrors.memberStatus}</span>
         </dd>
       </dl>
