@@ -1,26 +1,26 @@
 global.RC = {};
 
-const url = 'http://localhost:8092';
+const url = '/api';
 RC.API = {
   'member': {
-    'info': url + '/hangar/member/info',
-    'status': url + '/hangar/member/status/',
-    'list': url + '/hangar/member/list/',
-    'detail': url + '/hangar/member/edit/',
-    'update': url + '/hangar/member/edit/update/',
-    'add': url + '/hangar/member/add/register/'
+    'info': url + '/member/info',
+    'status': url + '/member/status/',
+    'list': url + '/member/list/',
+    'detail': url + '/member/edit/',
+    'update': url + '/member/edit/update/',
+    'add': url + '/member/add/register/'
   },
-  'mypage': 'http://localhost:8092/hangar/mypage',
+  'mypage': url + '/mypage',
   'product': {
-    'status': url + '/hangar/product/list/status/',
-    'list': url + '/hangar/product/list/search/',
-    'detail': url + '/hangar/product/detail/'
+    'status': url + '/product/list/status/',
+    'list': url + '/product/list/search/',
+    'detail': url + '/product/detail/'
   },
-  'profile': url + '/hangar/profile',
+  'profile': url + '/profile',
   'auth': {
-    'signin': url + '/hangar/signin',
-    'signup': url + '/hangar/signup',
-    'signout': url + '/hangar/signout'
+    'signin': url + '/signin',
+    'signup': url + '/signup',
+    'signout': url + '/signout'
   }
 };
 

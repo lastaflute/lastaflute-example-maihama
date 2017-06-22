@@ -28,6 +28,10 @@ gulp.task('webserver', function () {
       livereload: true,
       directoryListening: true,
       fallback: 'index.html',
-      open: true
+      open: true,
+      proxies: [{
+        source: '/api',
+        target: 'http://localhost:8092/hangar/'
+      }]
     }));
 });
