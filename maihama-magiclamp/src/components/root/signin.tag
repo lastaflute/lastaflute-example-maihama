@@ -77,6 +77,7 @@
           (response) => {
             account.value = "";
             password.value = "";
+            sessionStorage.setItem('authkey', response.body);
             observable.trigger(RC.EVENT.auth.check);
           });
       };
