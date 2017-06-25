@@ -40,5 +40,8 @@ RC.EVENT = {
 RC.SESSION = {
   'member': {
     'info': 'memberInfo'
+  },
+  'auth': {
+    'key': 'authKey'
   }
 };

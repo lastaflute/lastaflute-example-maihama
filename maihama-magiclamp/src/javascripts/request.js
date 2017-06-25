@@ -3,7 +3,7 @@ export default class Request {
   post(url, queryParams, onSuccess, onError, withoutAuthorization) {
     let _sa = sa.post(url).send(queryParams);
     if (!withoutAuthorization) {
-      const authkey = sessionStorage.getItem('authkey');
+      const authkey = sessionStorage.getItem(RC.SESSION.auth.key);
       _sa = _sa.set('x-authorization', authkey);
     }
     _sa.end((error, response) => {
@@ -23,7 +23,7 @@ export default class Request {
   get(url, onSuccess, onError, withoutAuthorization) {
     let _sa = sa.get(url);
     if (!withoutAuthorization) {
-      const authkey = sessionStorage.getItem('authkey');
+      const authkey = sessionStorage.getItem(RC.SESSION.auth.key);
       _sa = _sa.set('x-authorization', authkey);
     }
     _sa.end((error, response) => {
