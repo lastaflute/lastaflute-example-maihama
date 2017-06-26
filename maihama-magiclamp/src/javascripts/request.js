@@ -1,7 +1,11 @@
 export default class Request {
 
+  constructor() {
+    this.apiPrefix = '/api';
+  }
+
   post(url, queryParams, onSuccess, onError, withoutAuthorization) {
-    let _sa = sa.post(url).send(queryParams);
+    let _sa = sa.post(this.apiPrefix + url).send(queryParams);
     if (!withoutAuthorization) {
       const authkey = sessionStorage.getItem(RC.SESSION.auth.key);
       _sa = _sa.set('x-authorization', authkey);
@@ -21,7 +25,7 @@ export default class Request {
   }
 
   get(url, onSuccess, onError, withoutAuthorization) {
-    let _sa = sa.get(url);
+    let _sa = sa.get(this.apiPrefix + url);
     if (!withoutAuthorization) {
       const authkey = sessionStorage.getItem(RC.SESSION.auth.key);
       _sa = _sa.set('x-authorization', authkey);

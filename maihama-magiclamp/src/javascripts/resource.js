@@ -1,26 +1,25 @@
 global.RC = {};
 
-const url = '/api';
 RC.API = {
   'member': {
-    'info': url + '/member/info',
-    'status': url + '/member/status/',
-    'list': url + '/member/list/',
-    'detail': url + '/member/edit/',
-    'update': url + '/member/edit/update/',
-    'add': url + '/member/add/register/'
+    'info': '/member/info',
+    'status': '/member/status/',
+    'list': '/member/list/',
+    'detail': '/member/edit/',
+    'update': '/member/edit/update/',
+    'add': '/member/add/register/'
   },
-  'mypage': url + '/mypage',
+  'mypage': '/mypage',
   'product': {
-    'status': url + '/product/list/status/',
-    'list': url + '/product/list/search/',
-    'detail': url + '/product/detail/'
+    'status': '/product/list/status/',
+    'list': '/product/list/search/',
+    'detail': '/product/detail/'
   },
-  'profile': url + '/profile',
+  'profile': '/profile',
   'auth': {
-    'signin': url + '/signin',
-    'signup': url + '/signup',
-    'signout': url + '/signout'
+    'signin': '/signin',
+    'signup': '/signup',
+    'signout': '/signout'
   }
 };
 
