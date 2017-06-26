@@ -1,9 +1,10 @@
 export default class Request {
 
-  post(url, queryParams, onSuccess, onError, withoutCredentials) {
-    const _sa = sa.post(url).send(queryParams);
-    if (!withoutCredentials) {
-      _sa.withCredentials();
+  post(url, queryParams, onSuccess, onError, withoutAuthorization) {
+    let _sa = sa.post(url).send(queryParams);
+    if (!withoutAuthorization) {
+      const authkey = sessionStorage.getItem(RC.SESSION.auth.key);
+      _sa = _sa.set('x-authorization', authkey);
     }
     _sa.end((error, response) => {
       if (response.ok) {
@@ -19,10 +20,11 @@ export default class Request {
     });
   }
 
-  get(url, onSuccess, onError, withoutCredentials) {
-    const _sa = sa.get(url);
-    if (!withoutCredentials) {
-      _sa.withCredentials();
+  get(url, onSuccess, onError, withoutAuthorization) {
+    let _sa = sa.get(url);
+    if (!withoutAuthorization) {
+      const authkey = sessionStorage.getItem(RC.SESSION.auth.key);
+      _sa = _sa.set('x-authorization', authkey);
     }
     _sa.end((error, response) => {
       if (response.ok) {

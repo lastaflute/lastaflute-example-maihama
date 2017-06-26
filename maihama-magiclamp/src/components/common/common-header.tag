@@ -69,6 +69,7 @@
           self.update();
           observable.trigger(RC.EVENT.route.change, "/");
           observable.trigger(RC.EVENT.auth.sign, false);
+          sessionStorage.removeItem(RC.SESSION.auth.key);
           sessionStorage.removeItem(RC.SESSION.member.info);
         });
     };

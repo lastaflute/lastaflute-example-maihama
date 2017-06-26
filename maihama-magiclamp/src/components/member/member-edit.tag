@@ -22,9 +22,9 @@
         <dt>Member Status</dt>
         <dd>
           <select ref="memberStatus">
-              <option value=""></option>
-              <option each={memberStatusList} value={key}>{value}</option>
-            </select>
+            <option value=""></option>
+            <option each={memberStatusList} value={key}>{value}</option>
+          </select>
         </dd>
       </dl>
       <button class="btn btn-success" onclick={onUpdate}>update</button>

@@ -28,6 +28,7 @@ import org.lastaflute.web.response.JsonResponse;
 /**
  * @author iwamatsu0430
  * @author jflute
+ * @author black-trooper
  */
 public class SigninAction extends HangarBaseAction {
 
@@ -41,11 +42,11 @@ public class SigninAction extends HangarBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<Void> index(SigninBody body) {
+    public JsonResponse<String> index(SigninBody body) {
         validate(body, messages -> moreValidate(body, messages));
         boolean rememberMe = false; // #simple_for_example no remember for now
         loginAssist.login(createCredential(body), op -> op.rememberMe(rememberMe));
-        return JsonResponse.asEmptyBody();
+        return asJson(loginAssist.generateAuthKey(body.account, body.password));
     }
 
     private void moreValidate(SigninBody body, HangarMessages messages) {
