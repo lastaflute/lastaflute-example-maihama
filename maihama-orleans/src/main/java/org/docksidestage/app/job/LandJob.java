@@ -17,6 +17,7 @@ package org.docksidestage.app.job;
 
 import javax.annotation.Resource;
 
+import org.docksidestage.app.logic.DanceSongLogic;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.db.jta.stage.TransactionStage;
@@ -32,6 +33,10 @@ public class LandJob implements LaJob {
     private TransactionStage stage;
     @Resource
     private MemberBhv memberBhv;
+    @Resource
+    private DanceSongLogic danceSongLogic; // logic call example
+    @Resource
+    private ItsMyPartyAssist itsMyPartyAssist; // assist call example
 
     @Override
     public void run(LaJobRuntime runtime) {
@@ -40,6 +45,8 @@ public class LandJob implements LaJob {
             updateMember(before.getMemberId());
             restoreMember(before.getMemberId(), before.getMemberName()); // for test
         });
+        danceSongLogic.letsDance();
+        itsMyPartyAssist.beHappy();
     }
 
     private void updateMember(Integer memberId) {

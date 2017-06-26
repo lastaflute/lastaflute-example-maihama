@@ -17,6 +17,8 @@ package org.docksidestage.app.job;
 
 import javax.annotation.Resource;
 
+import org.docksidestage.app.logic.DanceSongLogic;
+import org.docksidestage.app.logic.env.ComedyRhythmLogic;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.db.jta.stage.TransactionStage;
@@ -35,6 +37,12 @@ public class SeaJob implements LaJob {
     private TransactionStage stage;
     @Resource
     private MemberBhv memberBhv;
+    @Resource
+    private DanceSongLogic danceSongLogic; // logic call example
+    @Resource
+    private ComedyRhythmLogic comedyRhythmLogic; // env-dispatched logic call example
+    @Resource
+    private ItsMyPartyAssist itsMyPartyAssist; // assist call example
 
     // ===================================================================================
     //                                                                             Job Run
@@ -47,6 +55,9 @@ public class SeaJob implements LaJob {
             updateMember(before.getMemberId());
             restoreMember(before.getMemberId(), before.getMemberName()); // for test
         });
+        danceSongLogic.letsDance();
+        comedyRhythmLogic.letsLaugh();
+        itsMyPartyAssist.beHappy();
         runtime.showEndTitleRoll(data -> {
             data.register("targetMember", memberId);
         });
