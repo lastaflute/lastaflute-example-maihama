@@ -30,8 +30,10 @@
     <section class="member-purchase-list-paging-box">
       <pagination></pagination>
     </section>
+    <div class="listback">
+      <a href="/member/list/back">back to list</a>
+    </div>
   </section>
-  </div>
 
   <script>
     var self = this;
