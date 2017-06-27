@@ -15,9 +15,6 @@
  */
 package org.docksidestage.app.web.member.purchase;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import javax.annotation.Resource;
 
 import org.dbflute.cbean.result.PagingResultBean;
@@ -53,12 +50,8 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     //                                                                             =======
     @Execute
     public JsonResponse<SearchPagingResult<MemberPurchaseSearchRowResult>> index(Integer memberId, OptionalThing<Integer> pageNumber) {
-
         PagingResultBean<Purchase> page = selectPurchasePage(memberId, pageNumber.orElse(1));
-        List<MemberPurchaseSearchRowResult> rows = page.stream().map(purchase -> {
-            return convertToRowResult(purchase);
-        }).collect(Collectors.toList());
-        SearchPagingResult<MemberPurchaseSearchRowResult> result = pagingAssist.createPagingResult(page, rows);
+        SearchPagingResult<MemberPurchaseSearchRowResult> result = mappingToResult(page);
         return asJson(result);
     }
 
@@ -86,6 +79,12 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
+    private SearchPagingResult<MemberPurchaseSearchRowResult> mappingToResult(PagingResultBean<Purchase> page) {
+        return pagingAssist.createPagingResult(page, page.mappingList(purchase -> {
+            return convertToRowResult(purchase);
+        }));
+    }
+
     private MemberPurchaseSearchRowResult convertToRowResult(Purchase purchase) {
         MemberPurchaseSearchRowResult result = new MemberPurchaseSearchRowResult();
         result.purchaseId = purchase.getPurchaseId();
