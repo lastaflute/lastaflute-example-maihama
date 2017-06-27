@@ -27,8 +27,6 @@ route('/member/add', () => {
   riot.mount('content', 'member-add');
 });
 route('/member/purchase/*..', (memberId) => {
-  console.log(route.query());
-  console.log(memberId);
   const params = route.query();
   params.memberId = memberId;
   riot.mount('content', 'member-purchase-list', params);
