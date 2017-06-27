@@ -60,7 +60,7 @@
 
       self.validationErrors = {};
 
-      request.get(`${RC.API.member.purchase + page}/${memberId}`,
+      request.get(`${RC.API.member.purchase + memberId}/${page}`,
         (response) => {
           var data = JSON.parse(response.text);
           self.purchaseList = data.rows;
