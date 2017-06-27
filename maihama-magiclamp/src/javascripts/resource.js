@@ -7,7 +7,8 @@ RC.API = {
     'list': '/member/list/',
     'detail': '/member/edit/',
     'update': '/member/edit/update/',
-    'add': '/member/add/register/'
+    'add': '/member/add/register/',
+    'purchase': '/member/purchase/list/'
   },
   'mypage': '/mypage',
   'product': {

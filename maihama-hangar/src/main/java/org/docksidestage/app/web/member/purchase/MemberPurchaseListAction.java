@@ -34,6 +34,7 @@ import org.lastaflute.web.response.JsonResponse;
 /**
  * @author jflute
  * @author iwamatsu0430
+ * @author black-trooper
  */
 public class MemberPurchaseListAction extends HangarBaseAction {
 
@@ -51,8 +52,8 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<SearchPagingResult<MemberPurchaseSearchRowResult>> index(Integer memberId, OptionalThing<Integer> pageNumber,
-            MemberPurchaseListBody body) {
+    public JsonResponse<SearchPagingResult<MemberPurchaseSearchRowResult>> index(Integer memberId, OptionalThing<Integer> pageNumber) {
+
         PagingResultBean<Purchase> page = selectPurchasePage(memberId, pageNumber.orElse(1));
         List<MemberPurchaseSearchRowResult> rows = page.stream().map(purchase -> {
             return convertToRowResult(purchase);

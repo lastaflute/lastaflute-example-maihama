@@ -63,7 +63,7 @@
             <span if="{withdrawalMember}">Cannot</span>
           </td>
           <td>
-            <a if="{purchaseCount > 0}" href="member/detail/{memberId}">has Purchases</a>
+            <a if="{purchaseCount > 0}" href="/member/purchase/{memberId}">has Purchases</a>
           </td>
         </tr>
       </tbody>

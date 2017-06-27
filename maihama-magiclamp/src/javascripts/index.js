@@ -19,6 +19,7 @@ require('../components/common/title-reactive');
 require('../components/member/member-add');
 require('../components/member/member-edit');
 require('../components/member/member-list');
+require('../components/member/member-purchase-list');
 
 require('../components/product/product-list');
 require('../components/product/product-detail');
