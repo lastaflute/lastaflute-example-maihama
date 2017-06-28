@@ -19,7 +19,7 @@
           <td>{purchaseId}</td>
           <td>{purchaseDatetime}</td>
           <td>{productName}</td>
-          <td>{purchasePrice}</td>
+          <td>¥{helper.formatMoneyComma(purchasePrice)}</td>
           <td>{purchaseCount}</td>
           <td>
             <span if="{paymentComplete}">Complete</span>
