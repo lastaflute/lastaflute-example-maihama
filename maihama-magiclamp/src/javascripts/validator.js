@@ -1,3 +1,5 @@
+import messages from './messages.json';
+
 export default class Validator {
 
   constructor() {
@@ -20,16 +22,6 @@ export default class Validator {
       pattern: (val, expected) => {
         return !(new RegExp(expected)).test(val.trim());
       },
-    };
-
-    this.messages = {
-      REQUIRED: 'is required',
-      MAX: 'must be less than or equal to {max}',
-      MIN: 'must be greater than or equal to {min}',
-      LENGTH: 'length must be between {min} and {max}',
-      MAXLENGTH: 'length must be less than or equal to {max}',
-      MINLENGTH: 'length must be greater than or equal to {min}',
-      PATTERN: 'must match "{regexp}"',
     };
   }
 
@@ -79,7 +71,7 @@ export default class Validator {
     const key = split[0].trim();
     const values = split.length > 1 ? toValues(split[1].trim()) : {};
 
-    let message = this.messages[key];
+    let message = messages[key];
     for (const k in values) {
       if (!values.hasOwnProperty(k)) {
         continue;
