@@ -70,7 +70,7 @@
     };
 
     this.onUpdate = () => {
-      request.post(RC.API.member.update, getQueryParams(),
+      request.post(RC.API.member.update, this.getQueryParams(),
         () => {
           console.log('success update')
         },
