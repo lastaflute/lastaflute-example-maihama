@@ -58,7 +58,7 @@
         }
       }
 
-      request.post(RC.API.member.add, getQueryParams(),
+      request.post(RC.API.member.add, this.getQueryParams(),
         () => {
           console.log('success add');
           observable.trigger(RC.EVENT.route.change, '/member/list');
