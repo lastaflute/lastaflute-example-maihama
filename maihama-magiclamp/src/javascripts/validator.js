@@ -69,7 +69,7 @@ export default class Validator {
   generateMessage(target) {
     const split = target.split('|');
     const key = split[0].trim();
-    const values = split.length > 1 ? toValues(split[1].trim()) : {};
+    const values = split.length > 1 ? this.toValues(split[1].trim()) : {};
 
     let message = messages[key];
     for (const k in values) {
@@ -79,5 +79,14 @@ export default class Validator {
       message = message.replace(`{${k}}`, values[k]);
     }
     return message;
+  }
+
+  toValues(target) {
+    const values = {};
+    target.split(',').forEach((value) => {
+      const split = value.trim().split(':');
+      values[split[0]] = split[1];
+    });
+    return values;
   }
 }
