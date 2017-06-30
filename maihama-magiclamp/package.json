@@ -22,6 +22,7 @@
     "babel-loader": "^6.4.1",
     "babel-preset-es2015-riot": "^1.1.0",
     "css-loader": "^0.28.4",
+    "eslint-loader": "^1.8.0",
     "gulp-eslint": "^4.0.0",
     "gulp-webpack": "^1.5.0",
     "gulp-webserver-fast": "^0.9.1",
