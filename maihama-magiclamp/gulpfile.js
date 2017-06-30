@@ -39,7 +39,8 @@ gulp.task('webserver', function () {
 
 gulp.task('eslint', function () {
   return gulp.src(['**/*.js', '!**/*.bundle.js', '!node_modules/**'])
-    .pipe(eslint())
+    .pipe(eslint({ fix: true }))
     .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+    .pipe(eslint.failAfterError())
+    .pipe(gulp.dest('.'));
 });
