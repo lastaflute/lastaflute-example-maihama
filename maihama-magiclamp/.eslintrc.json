@@ -35,5 +35,13 @@
       ".html",
       ".tag"
     ]
+  },
+  "globals": {
+    "riot": true,
+    "route": true,
+    "sa": true,
+    "observable": true,
+    "RC": true,
+    "__dirname": true
   }
 }

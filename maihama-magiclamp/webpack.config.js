@@ -38,10 +38,22 @@ module.exports = {
         test: /\.json$/,
         loader: 'json'
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        query: {
+          fix: true,
+          failOnError: true,
+        },
+      }
     ]
   },
   resolve: {
     extensions: ['', '.js', '.tag']
+  },
+  eslint: {
+    configFile: './.eslintrc.json'
   },
   watch: true,
   devtool: 'source-map',

@@ -177,7 +177,7 @@ to hangar
 </p>
 
 <p class="sisterneighborlink">
-    <a href="#lastadoc_action">to action(16)</a>
+    <a href="#lastadoc_action">to action(21)</a>
     | <a href="#lastadoc_mail">to mail(1)</a>
     | <a href="#lastadoc_appcls">to appcls(1)</a>
 </p>
@@ -219,21 +219,6 @@ to hangar
     </tr>
     <tr>
         <td class="rowcellnum">2</td>
-        <td class="rowcell"><a href="#/member/update">/member/update</a></td>
-        <td class="rowcell">@author&nbsp;iwamatsu0430</td>
-        <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberAction">MemberAction</span>#update()</td>
-        <td class="rowcell">
-            <span title="org.docksidestage.app.web.member.MemberBody">MemberBody</span>
-        </td>
-        <td class="rowcell">
-            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
-        </td>
-        <td class="rowcellnum">1</td>
-        <td class="rowcellnum">52</td>
-        <td class="rowcellnum">11</td>
-    </tr>
-    <tr>
-        <td class="rowcellnum">3</td>
         <td class="rowcell"><a href="#/member/info">/member/info</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberAction">MemberAction</span>#info()</td>
@@ -243,11 +228,69 @@ to hangar
             <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoResult&gt;">JsonResponse&lt;MemberInfoResult&gt;</span>
         </td>
         <td class="rowcellnum">1</td>
-        <td class="rowcellnum">52</td>
+        <td class="rowcellnum">47</td>
         <td class="rowcellnum">11</td>
     </tr>
     <tr>
+        <td class="rowcellnum">3</td>
+        <td class="rowcell"><a href="#/member/status">/member/status</a></td>
+        <td class="rowcell">@author&nbsp;iwamatsu0430</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberAction">MemberAction</span>#status()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;java.util.AbstractMap.java.util.AbstractMap$SimpleEntry&lt;java.lang.String,&nbsp;java.lang.String&gt;&gt;&gt;">JsonResponse&lt;List&lt;AbstractMAbstractMap$SimpleEntry&lt;String,&nbsp;String&gt;&gt;&gt;</span>
+        </td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">47</td>
+        <td class="rowcellnum">6</td>
+    </tr>
+    <tr>
         <td class="rowcellnum">4</td>
+        <td class="rowcell"><a href="#/member/add/register">/member/add/register</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberAddAction">MemberAddAction</span>#register()</td>
+        <td class="rowcell">
+            <span title="org.docksidestage.app.web.member.MemberAddBody">MemberAddBody</span>
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
+        <td class="rowcellnum">2</td>
+        <td class="rowcellnum">34</td>
+        <td class="rowcellnum">5</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">5</td>
+        <td class="rowcell"><a href="#/member/edit/{memberId}">/member/edit/{memberId}</a></td>
+        <td class="rowcell">@author&nbsp;iwamatsu0430</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberEditAction">MemberEditAction</span>#index()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.member.MemberEditBody&gt;">JsonResponse&lt;MemberEditBody&gt;</span>
+        </td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">51</td>
+        <td class="rowcellnum">12</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">6</td>
+        <td class="rowcell"><a href="#/member/edit/update">/member/edit/update</a></td>
+        <td class="rowcell">@author&nbsp;iwamatsu0430</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberEditAction">MemberEditAction</span>#update()</td>
+        <td class="rowcell">
+            <span title="org.docksidestage.app.web.member.MemberEditBody">MemberEditBody</span>
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">51</td>
+        <td class="rowcellnum">12</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">7</td>
         <td class="rowcell"><a href="#/member/list/{pageNumber}">/member/list/{pageNumber}</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberListAction">MemberListAction</span>#index()</td>
@@ -262,22 +305,21 @@ to hangar
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
-        <td class="rowcellnum">5</td>
+        <td class="rowcellnum">8</td>
         <td class="rowcell"><a href="#/member/purchase/list/{memberId}/{pageNumber}">/member/purchase/list/{memberId}/{pageNumber}</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListAction">MemberPurchaseListAction</span>#index()</td>
         <td class="rowcell">
-            <span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListBody">MemberPurchaseListBody</span>
         </td>
         <td class="rowcell">
             <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingResult&lt;org.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowResult&gt;&gt;">JsonResponse&lt;SearchPagingResult&lt;MemberPurchaseSearchRowResult&gt;&gt;</span>
         </td>
         <td class="rowcellnum">3</td>
-        <td class="rowcellnum">60</td>
-        <td class="rowcellnum">9</td>
+        <td class="rowcellnum">62</td>
+        <td class="rowcellnum">5</td>
     </tr>
     <tr>
-        <td class="rowcellnum">6</td>
+        <td class="rowcellnum">9</td>
         <td class="rowcell"><a href="#/member/purchase/list/delete">/member/purchase/list/delete</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListAction">MemberPurchaseListAction</span>#delete()</td>
@@ -288,11 +330,11 @@ to hangar
             <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
         </td>
         <td class="rowcellnum">3</td>
-        <td class="rowcellnum">60</td>
+        <td class="rowcellnum">62</td>
         <td class="rowcellnum">7</td>
     </tr>
     <tr>
-        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">10</td>
         <td class="rowcell"><a href="#/mypage/">/mypage/</a></td>
         <td class="rowcell">@author&nbsp;shunsuke.tadokoro</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.mypage.MypageAction">MypageAction</span>#index()</td>
@@ -306,7 +348,7 @@ to hangar
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
-        <td class="rowcellnum">8</td>
+        <td class="rowcellnum">11</td>
         <td class="rowcell"><a href="#/product/detail/{productId}">/product/detail/{productId}</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.product.ProductDetailAction">ProductDetailAction</span>#index()</td>
@@ -320,10 +362,10 @@ to hangar
         <td class="rowcellnum">4</td>
     </tr>
     <tr>
-        <td class="rowcellnum">9</td>
-        <td class="rowcell"><a href="#/product/list/{pageNumber}">/product/list/{pageNumber}</a></td>
+        <td class="rowcellnum">12</td>
+        <td class="rowcell"><a href="#/product/list/search/{pageNumber}">/product/list/search/{pageNumber}</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
-        <td class="rowcell"><span title="org.docksidestage.app.web.product.ProductListAction">ProductListAction</span>#index()</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.product.ProductListAction">ProductListAction</span>#search()</td>
         <td class="rowcell">
             <span title="org.docksidestage.app.web.product.ProductSearchBody">ProductSearchBody</span>
         </td>
@@ -331,11 +373,39 @@ to hangar
             <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingResult&lt;org.docksidestage.app.web.product.ProductRowResult&gt;&gt;">JsonResponse&lt;SearchPagingResult&lt;ProductRowResult&gt;&gt;</span>
         </td>
         <td class="rowcellnum">3</td>
-        <td class="rowcellnum">70</td>
+        <td class="rowcellnum">82</td>
         <td class="rowcellnum">11</td>
     </tr>
     <tr>
-        <td class="rowcellnum">10</td>
+        <td class="rowcellnum">13</td>
+        <td class="rowcell"><a href="#/product/list/status">/product/list/status</a></td>
+        <td class="rowcell">@author&nbsp;iwamatsu0430</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.product.ProductListAction">ProductListAction</span>#status()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;java.util.AbstractMap.java.util.AbstractMap$SimpleEntry&lt;java.lang.String,&nbsp;java.lang.String&gt;&gt;&gt;">JsonResponse&lt;List&lt;AbstractMAbstractMap$SimpleEntry&lt;String,&nbsp;String&gt;&gt;&gt;</span>
+        </td>
+        <td class="rowcellnum">3</td>
+        <td class="rowcellnum">82</td>
+        <td class="rowcellnum">6</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">14</td>
+        <td class="rowcell"><a href="#/profile/">/profile/</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.profile.ProfileAction">ProfileAction</span>#index()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.profile.ProfileResult&gt;">JsonResponse&lt;ProfileResult&gt;</span>
+        </td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">46</td>
+        <td class="rowcellnum">6</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">15</td>
         <td class="rowcell"><a href="#/purchase/count">/purchase/count</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.purchase.PurchaseAction">PurchaseAction</span>#count()</td>
@@ -350,7 +420,7 @@ to hangar
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
-        <td class="rowcellnum">11</td>
+        <td class="rowcellnum">16</td>
         <td class="rowcell"><a href="#/purchase/contract">/purchase/contract</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.purchase.PurchaseAction">PurchaseAction</span>#contract()</td>
@@ -365,7 +435,7 @@ to hangar
         <td class="rowcellnum">9</td>
     </tr>
     <tr>
-        <td class="rowcellnum">12</td>
+        <td class="rowcellnum">17</td>
         <td class="rowcell"><a href="#/root/">/root/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.RootAction">RootAction</span>#index()</td>
@@ -379,7 +449,7 @@ to hangar
         <td class="rowcellnum">4</td>
     </tr>
     <tr>
-        <td class="rowcellnum">13</td>
+        <td class="rowcellnum">18</td>
         <td class="rowcell"><a href="#/root/signout">/root/signout</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.RootAction">RootAction</span>#signout()</td>
@@ -393,7 +463,7 @@ to hangar
         <td class="rowcellnum">4</td>
     </tr>
     <tr>
-        <td class="rowcellnum">14</td>
+        <td class="rowcellnum">19</td>
         <td class="rowcell"><a href="#/signin/">/signin/</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signin.SigninAction">SigninAction</span>#index()</td>
@@ -401,14 +471,14 @@ to hangar
             <span title="org.docksidestage.app.web.signin.SigninBody">SigninBody</span>
         </td>
         <td class="rowcell">
-            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.String&gt;">JsonResponse&lt;String&gt;</span>
         </td>
         <td class="rowcellnum">1</td>
         <td class="rowcellnum">30</td>
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
-        <td class="rowcellnum">15</td>
+        <td class="rowcellnum">20</td>
         <td class="rowcell"><a href="#/signup/">/signup/</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#index()</td>
@@ -416,24 +486,24 @@ to hangar
             <span title="org.docksidestage.app.web.signup.SignupBody">SignupBody</span>
         </td>
         <td class="rowcell">
-            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Object&gt;">JsonResponse&lt;Object&gt;</span>
         </td>
-        <td class="rowcellnum">10</td>
-        <td class="rowcellnum">122</td>
+        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">98</td>
         <td class="rowcellnum">9</td>
     </tr>
     <tr>
-        <td class="rowcellnum">16</td>
-        <td class="rowcell"><a href="#/signup/formalize/{account}/{token}">/signup/formalize/{account}/{token}</a></td>
+        <td class="rowcellnum">21</td>
+        <td class="rowcell"><a href="#/signup/register/{account}/{token}">/signup/register/{account}/{token}</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
-        <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#formalize()</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#register()</td>
         <td class="rowcell">
         </td>
         <td class="rowcell">
             <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
         </td>
-        <td class="rowcellnum">10</td>
-        <td class="rowcellnum">122</td>
+        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">98</td>
         <td class="rowcellnum">5</td>
     </tr>
     </tbody>
@@ -479,92 +549,6 @@ to hangar
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
 <p class="tablecomment" title=""></p>
 
-<h3 id="/member/update">
-/member/update
-</h3>
-<p>
-<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.member.MemberAction#update()</span>
-</p>
-<p class="docsubitem">
-<span class="docsubtitle">annotations:</span>
-<span class="docannotations docsubvalue">&#64;Execute</span>
-</p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute</p>
-<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.member.MemberBody">MemberBody</span></span>
-<p class="tablecomment" title="@author&nbsp;jflute<br>@author&nbsp;iwamatsu0430">@author&nbsp;jflute</p>
-<table>
-    <thead>
-    <tr>
-        <th class="rownumhead">No.</th>
-        <th>name</th>
-        <th>type</th>
-        <th>comment</th>
-        <th>annotations</th>
-    </tr>
-    </thead>
-    <tr>
-        <td class="rowcellnum" rowspan="1">1</td>
-        <td>memberId</td>
-        <td><p title="java.lang.Integer">Integer</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">2</td>
-        <td>memberName</td>
-        <td><p title="java.lang.String">String</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Required
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">3</td>
-        <td>memberAccount</td>
-        <td><p title="java.lang.String">String</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Required
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">4</td>
-        <td>memberStatusCode</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
-        </td>
-        <td class="fieldannotations">
-            &#64;Required
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">5</td>
-        <td>birthdate</td>
-        <td><p title="java.time.LocalDate">LocalDate</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-        </td>
-    </tr>
-</table>
-
-<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
-<p class="tablecomment" title=""></p>
-
 <h3 id="/member/info">
 /member/info
 </h3>
@@ -575,7 +559,7 @@ to hangar
 <span class="docsubtitle">annotations:</span>
 <span class="docannotations docsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute<br>@author&nbsp;black-trooper</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.member.MemberInfoResult&gt;">JsonResponse&lt;MemberInfoResult&gt;</span></span>
 <p class="tablecomment" title=""></p>
 <table>
@@ -623,6 +607,313 @@ to hangar
     </tr>
 </table>
 
+<h3 id="/member/status">
+/member/status
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.member.MemberAction#status()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute<br>@author&nbsp;black-trooper</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;java.util.AbstractMap.java.util.AbstractMap$SimpleEntry&lt;java.lang.String,&nbsp;java.lang.String&gt;&gt;&gt;">JsonResponse&lt;List&lt;AbstractMAbstractMap$SimpleEntry&lt;String,&nbsp;String&gt;&gt;&gt;</span></span>
+<p class="tablecomment" title=""></p>
+
+<h3 id="/member/add/register">
+/member/add/register
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.member.MemberAddAction#register()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute<br>@author&nbsp;black-trooper</p>
+<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.member.MemberAddBody">MemberAddBody</span></span>
+<p class="tablecomment" title="@author&nbsp;jflute<br>@author&nbsp;black-trooper">@author&nbsp;jflute</p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>memberName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>memberAccount</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">3</td>
+        <td>birthdate</td>
+        <td><p title="java.time.LocalDate">LocalDate</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;ValidateTypeFailure
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">4</td>
+        <td>memberStatus</td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">CDef.MemberStatus</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
+<p class="tablecomment" title=""></p>
+
+<h3 id="/member/edit/{memberId}">
+/member/edit/{memberId}
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.member.MemberEditAction#index()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute<br>@author&nbsp;black-trooper</p>
+<span class="doctitle">URL Parameter:</span>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>memberId</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.member.MemberEditBody&gt;">JsonResponse&lt;MemberEditBody&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>memberId</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>memberName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">3</td>
+        <td>memberAccount</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">4</td>
+        <td>memberStatus</td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">CDef.MemberStatus</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">5</td>
+        <td>birthdate</td>
+        <td><p title="java.time.LocalDate">LocalDate</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">6</td>
+        <td>versionNo</td>
+        <td><p title="java.lang.Long">Long</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+<h3 id="/member/edit/update">
+/member/edit/update
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.member.MemberEditAction#update()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute<br>@author&nbsp;black-trooper</p>
+<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.member.MemberEditBody">MemberEditBody</span></span>
+<p class="tablecomment" title="@author&nbsp;jflute<br>@author&nbsp;iwamatsu0430<br>@author&nbsp;black-trooper">@author&nbsp;jflute</p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>memberId</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>memberName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">3</td>
+        <td>memberAccount</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">4</td>
+        <td>memberStatus</td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">CDef.MemberStatus</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">5</td>
+        <td>birthdate</td>
+        <td><p title="java.time.LocalDate">LocalDate</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">6</td>
+        <td>versionNo</td>
+        <td><p title="java.lang.Long">Long</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
+<p class="tablecomment" title=""></p>
+
 <h3 id="/member/list/{pageNumber}">
 /member/list/{pageNumber}
 </h3>
@@ -633,7 +924,7 @@ to hangar
 <span class="docsubtitle">annotations:</span>
 <span class="docannotations docsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute<br>@author&nbsp;iwamatsu0430</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute<br>@author&nbsp;iwamatsu0430<br>@author&nbsp;black-trooper</p>
 <span class="doctitle">URL Parameter:</span>
 <table>
     <thead>
@@ -685,7 +976,7 @@ to hangar
     <tr>
         <td class="rowcellnum" rowspan="1">2</td>
         <td>memberStatus</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">CDef.MemberStatus</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
@@ -929,7 +1220,7 @@ to hangar
 <span class="docsubtitle">annotations:</span>
 <span class="docannotations docsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute<br>@author&nbsp;iwamatsu0430</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute<br>@author&nbsp;iwamatsu0430<br>@author&nbsp;black-trooper</p>
 <span class="doctitle">URL Parameter:</span>
 <table>
     <thead>
@@ -961,44 +1252,6 @@ to hangar
             <p></p>
         </td>
         <td class="fieldannotations">
-        </td>
-    </tr>
-</table>
-
-<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListBody">MemberPurchaseListBody</span></span>
-<p class="tablecomment" title="@author&nbsp;jflute">@author&nbsp;jflute</p>
-<table>
-    <thead>
-    <tr>
-        <th class="rownumhead">No.</th>
-        <th>name</th>
-        <th>type</th>
-        <th>comment</th>
-        <th>annotations</th>
-    </tr>
-    </thead>
-    <tr>
-        <td class="rowcellnum" rowspan="1">1</td>
-        <td>memberId</td>
-        <td><p title="java.lang.Integer">Integer</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;NotNull
-        </td>
-    </tr>
-    <tr>
-        <td class="rowcellnum" rowspan="1">2</td>
-        <td>purchaseId</td>
-        <td><p title="java.lang.Long">Long</p></td>
-        <td class="fieldcomment">
-            <p title=""></p>
-            <p></p>
-        </td>
-        <td class="fieldannotations">
-            &#64;NotNull
         </td>
     </tr>
 </table>
@@ -1179,7 +1432,7 @@ to hangar
 <span class="docsubtitle">annotations:</span>
 <span class="docannotations docsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute<br>@author&nbsp;iwamatsu0430</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute<br>@author&nbsp;iwamatsu0430<br>@author&nbsp;black-trooper</p>
 <span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListBody">MemberPurchaseListBody</span></span>
 <p class="tablecomment" title="@author&nbsp;jflute">@author&nbsp;jflute</p>
 <table>
@@ -1427,18 +1680,18 @@ to hangar
     </tr>
 </table>
 
-<h3 id="/product/list/{pageNumber}">
-/product/list/{pageNumber}
+<h3 id="/product/list/search/{pageNumber}">
+/product/list/search/{pageNumber}
 </h3>
 <p>
-<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.product.ProductListAction#index()</span>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.product.ProductListAction#search()</span>
 </p>
 <p class="docsubitem">
 <span class="docsubtitle">annotations:</span>
 <span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
 <span class="docannotations docsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute<br>@author&nbsp;black-trooper</p>
 <span class="doctitle">URL Parameter:</span>
 <table>
     <thead>
@@ -1490,7 +1743,7 @@ to hangar
     <tr>
         <td class="rowcellnum" rowspan="1">2</td>
         <td>productStatus</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$ProductStatus">ProductStatus</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$ProductStatus">CDef.ProductStatus</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p>{PST=ProductionStop,&nbsp;SST=SaleStop,&nbsp;ONS=OnSaleProduction}</p>
@@ -1625,7 +1878,7 @@ to hangar
     </tr>
     <tr>
         <td class="rowcellnum" rowspan="1">3</td>
-        <td>productStatusName</td>
+        <td>productStatus</td>
         <td><p title="java.lang.String">String</p></td>
         <td class="fieldcomment">
             <p title=""></p>
@@ -1637,6 +1890,18 @@ to hangar
     </tr>
     <tr>
         <td class="rowcellnum" rowspan="1">4</td>
+        <td>productCategory</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">5</td>
         <td>regularPrice</td>
         <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
@@ -1645,6 +1910,174 @@ to hangar
         </td>
         <td class="fieldannotations">
             &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">6</td>
+        <td>latestPurchaseDate</td>
+        <td><p title="java.time.LocalDate">LocalDate</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+<h3 id="/product/list/status">
+/product/list/status
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.product.ProductListAction#status()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute<br>@author&nbsp;black-trooper</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;java.util.AbstractMap.java.util.AbstractMap$SimpleEntry&lt;java.lang.String,&nbsp;java.lang.String&gt;&gt;&gt;">JsonResponse&lt;List&lt;AbstractMAbstractMap$SimpleEntry&lt;String,&nbsp;String&gt;&gt;&gt;</span></span>
+<p class="tablecomment" title=""></p>
+
+<h3 id="/profile/">
+/profile/
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.profile.ProfileAction#index()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute<br>@author&nbsp;deco<br>@author&nbsp;black-trooper</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.profile.ProfileResult&gt;">JsonResponse&lt;ProfileResult&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>memberId</td>
+        <td><p title="int">int</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>memberName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">3</td>
+        <td>memberStatusName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">4</td>
+        <td>servicePointCount</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">5</td>
+        <td>serviceRankName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">6</td>
+        <td>purchaseList</td>
+        <td><p title="java.util.List&lt;org.docksidestage.app.web.profile.ProfileResult$PurchasedProductBean&gt;">List&lt;PurchasedProductBean&gt;</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>productName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>regularPrice</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">3</td>
+        <td>purchaseDateTime</td>
+        <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
         </td>
     </tr>
 </table>
@@ -1845,7 +2278,7 @@ to hangar
 <span class="docsubtitle">annotations:</span>
 <span class="docannotations docsubvalue">&#64;Execute</span>
 </p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute<br>@author&nbsp;black-trooper</p>
 <span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.signin.SigninBody">SigninBody</span></span>
 <p class="tablecomment" title="The&nbsp;form&nbsp;of&nbsp;member's&nbsp;Login.<br><br>@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute">The&nbsp;form&nbsp;of&nbsp;member's&nbsp;Login.</p>
 <table>
@@ -1884,7 +2317,7 @@ to hangar
     </tr>
 </table>
 
-<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.String&gt;">JsonResponse&lt;String&gt;</span></span>
 <p class="tablecomment" title=""></p>
 
 <h3 id="/signup/">
@@ -1973,14 +2406,14 @@ to hangar
     </tr>
 </table>
 
-<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Object&gt;">JsonResponse&lt;Object&gt;</span></span>
 <p class="tablecomment" title=""></p>
 
-<h3 id="/signup/formalize/{account}/{token}">
-/signup/formalize/{account}/{token}
+<h3 id="/signup/register/{account}/{token}">
+/signup/register/{account}/{token}
 </h3>
 <p>
-<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.signup.SignupAction#formalize()</span>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.signup.SignupAction#register()</span>
 </p>
 <p class="docsubitem">
 <span class="docsubtitle">annotations:</span>
