@@ -6,21 +6,27 @@ import java.util.List;
 import org.dbflute.optional.OptionalThing;
 import org.dbflute.utflute.lastaflute.mock.TestingJsonData;
 import org.docksidestage.app.web.base.paging.SearchPagingResult;
+import org.docksidestage.dbflute.allcommon.CDef;
 import org.docksidestage.dbflute.allcommon.CDef.ProductStatus;
 import org.docksidestage.unit.UnitHangarTestCase;
+import org.lastaflute.web.exception.Forced400BadRequestException;
 import org.lastaflute.web.response.JsonResponse;
+import org.lastaflute.web.validation.exception.ValidationErrorException;
 
 /**
  * @author jflute
+ * @author black-trooper
  */
 public class ProductListActionTest extends UnitHangarTestCase {
 
-    public void test_search_searchByName() {
+    public void test_search() {
         // ## Arrange ##
         ProductListAction action = new ProductListAction();
         inject(action);
         ProductSearchBody body = new ProductSearchBody();
         body.productName = "P";
+        body.productStatus = CDef.ProductStatus.OnSaleProduction;
+        body.purchaseMemberName = "a";
 
         // ## Act ##
         JsonResponse<SearchPagingResult<ProductRowResult>> response = action.search(OptionalThing.of(1), body);
@@ -28,9 +34,67 @@ public class ProductListActionTest extends UnitHangarTestCase {
         // ## Assert ##
         showJson(response);
         TestingJsonData<SearchPagingResult<ProductRowResult>> data = validateJsonData(response);
+        assertHasAnyElement(data.getJsonResult().rows);
         data.getJsonResult().rows.forEach(bean -> {
             log(bean);
             assertContainsIgnoreCase(bean.productName, body.productName);
+            assertEquals(bean.productStatus, body.productStatus.alias());
+        });
+    }
+
+    public void test_search_notFound() {
+        // ## Arrange ##
+        ProductListAction action = new ProductListAction();
+        inject(action);
+        ProductSearchBody body = new ProductSearchBody();
+        body.productName = "not found";
+
+        // ## Act ##
+        JsonResponse<SearchPagingResult<ProductRowResult>> response = action.search(OptionalThing.of(1), body);
+
+        // ## Assert ##
+        showJson(response);
+        TestingJsonData<SearchPagingResult<ProductRowResult>> data = validateJsonData(response);
+        assertHasZeroElement(data.getJsonResult().rows);
+    }
+
+    public void test_search_validate_request() {
+        // ## Arrange ##
+        ProductListAction action = new ProductListAction();
+        inject(action);
+        ProductSearchBody body = new ProductSearchBody();
+        body.productName = "1234567890"; // max = 10
+        body.purchaseMemberName = "12345"; // max = 5
+
+        // ## Act ##
+        action.search(OptionalThing.of(1), body);
+    }
+
+    public void test_search_validate_request_error() {
+        // ## Arrange ##
+        ProductListAction action = new ProductListAction();
+        inject(action);
+        ProductSearchBody body = new ProductSearchBody();
+        body.productName = "12345678901"; // max = 10
+        body.purchaseMemberName = "123456"; // max = 5
+
+        // ## Act ##
+        // ## Assert ##
+        assertException(ValidationErrorException.class, () -> {
+            action.search(OptionalThing.of(1), body);
+        });
+    }
+
+    public void test_search_bad_request() {
+        // ## Arrange ##
+        ProductListAction action = new ProductListAction();
+        inject(action);
+        ProductSearchBody body = new ProductSearchBody();
+
+        // ## Act ##
+        // ## Assert ##
+        assertException(Forced400BadRequestException.class, () -> {
+            action.search(OptionalThing.of(0), body);
         });
     }
 
@@ -50,6 +114,5 @@ public class ProductListActionTest extends UnitHangarTestCase {
         jsonResult.forEach(bean -> {
             assertTrue(ProductStatus.of(bean.getKey()).isPresent());
         });
-
     }
 }
