@@ -11,6 +11,9 @@ import org.docksidestage.dbflute.exentity.Member;
 import org.docksidestage.unit.UnitHangarTestCase;
 import org.lastaflute.web.response.JsonResponse;
 
+/**
+ * @author black-trooper
+ */
 public class MemberEditActionTest extends UnitHangarTestCase {
 
     @Resource
