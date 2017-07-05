@@ -19,6 +19,9 @@ public class MemberEditActionTest extends UnitHangarTestCase {
     @Resource
     MemberBhv memberBhv;
 
+    // ===================================================================================
+    //                                                                             index()
+    //                                                                             =======
     public void test_index() {
         // ## Arrange ##
         MemberEditAction action = new MemberEditAction();
@@ -32,34 +35,42 @@ public class MemberEditActionTest extends UnitHangarTestCase {
         showJson(response);
         TestingJsonData<MemberEditBody> data = validateJsonData(response);
         assertEquals(data.getJsonResult().memberId, memberId);
+        assertTokenSaved(action.getClass());
     }
 
+    // ===================================================================================
+    //                                                                            update()
+    //                                                                            ========
     public void test_update() {
         // ## Arrange ##
         MemberEditAction action = new MemberEditAction();
         inject(action);
-
-        MemberEditBody editBody = memberBhv.selectByPK(1).map(entity -> {
-            MemberEditBody body = new MemberEditBody();
-            body.memberId = entity.getMemberId();
-            body.versionNo = entity.getVersionNo();
-            return body;
-        }).get();
-        editBody.memberName = "test user";
-        editBody.memberAccount = "test_user0001";
-        editBody.birthdate = new HandyDate("2017-07-05").getLocalDate();
-        editBody.memberStatus = CDef.MemberStatus.Provisional;
+        MemberEditBody body = prepareEditBody();
 
         // ## Act ##
-        action.update(editBody);
+        action.update(body);
 
         // ## Assert ##
         OptionalEntity<Member> optionalEntity = memberBhv.selectByPK(1);
         assertTrue(optionalEntity.isPresent());
         Member member = optionalEntity.get();
-        assertEquals(member.getMemberName(), editBody.memberName);
-        assertEquals(member.getMemberAccount(), editBody.memberAccount);
-        assertEquals(member.getBirthdate(), editBody.birthdate);
-        assertEquals(member.getMemberStatusCodeAsMemberStatus(), editBody.memberStatus);
+        assertEquals(member.getMemberName(), body.memberName);
+        assertEquals(member.getMemberAccount(), body.memberAccount);
+        assertEquals(member.getBirthdate(), body.birthdate);
+        assertEquals(member.getMemberStatusCodeAsMemberStatus(), body.memberStatus);
+    }
+
+    private MemberEditBody prepareEditBody() {
+        Member member = memberBhv.selectByPK(1).get();
+
+        MemberEditBody body = new MemberEditBody();
+        body.memberId = member.getMemberId();
+        body.versionNo = member.getVersionNo();
+
+        body.memberName = "sea";
+        body.memberAccount = "land";
+        body.birthdate = new HandyDate("2017-07-05").getLocalDate();
+        body.memberStatus = CDef.MemberStatus.Provisional;
+        return body;
     }
 }
