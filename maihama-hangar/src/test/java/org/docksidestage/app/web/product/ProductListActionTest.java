@@ -9,7 +9,7 @@ import org.docksidestage.app.web.base.paging.SearchPagingResult;
 import org.docksidestage.dbflute.allcommon.CDef;
 import org.docksidestage.dbflute.allcommon.CDef.ProductStatus;
 import org.docksidestage.unit.UnitHangarTestCase;
-import org.lastaflute.web.exception.Forced400BadRequestException;
+import org.lastaflute.web.exception.RequestIllegalTransitionException;
 import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.validation.exception.ValidationErrorException;
 
@@ -93,7 +93,7 @@ public class ProductListActionTest extends UnitHangarTestCase {
 
         // ## Act ##
         // ## Assert ##
-        assertException(Forced400BadRequestException.class, () -> {
+        assertException(RequestIllegalTransitionException.class, () -> {
             action.search(OptionalThing.of(0), body);
         });
     }
