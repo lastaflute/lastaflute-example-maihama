@@ -172,7 +172,7 @@ public class MemberListActionTest extends UnitHangarTestCase {
         });
     }
 
-    public void test_search_bad_request() {
+    public void test_index_bad_request() {
         // ## Arrange ##
         MemberListAction action = new MemberListAction();
         inject(action);
