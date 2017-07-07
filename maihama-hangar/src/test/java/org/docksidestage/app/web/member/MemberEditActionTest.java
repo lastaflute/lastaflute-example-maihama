@@ -35,7 +35,6 @@ public class MemberEditActionTest extends UnitHangarTestCase {
         showJson(response);
         TestingJsonData<MemberEditBody> data = validateJsonData(response);
         assertEquals(data.getJsonResult().memberId, memberId);
-        assertTokenSaved(action.getClass());
     }
 
     // ===================================================================================
