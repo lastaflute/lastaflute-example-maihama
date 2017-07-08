@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.lang3.StringUtils;
 import org.dbflute.helper.HandyDate;
 import org.dbflute.optional.OptionalThing;
 import org.dbflute.utflute.lastaflute.mock.TestingJsonData;
@@ -145,29 +146,28 @@ public class MemberListActionTest extends UnitHangarTestCase {
         assertHasZeroElement(data.getJsonResult().rows);
     }
 
-    public void test_index_validate_request() {
+    public void test_index_validate_request_maxlength() {
         // ## Arrange ##
         MemberListAction action = new MemberListAction();
         inject(action);
-        MemberSearchBody body = new MemberSearchBody();
-        body.memberName = "12345"; // max = 5
-        body.purchaseProductName = "1234567890"; // max = 10
 
         // ## Act ##
-        action.index(OptionalThing.of(1), body);
-    }
-
-    public void test_index_validate_request_error() {
-        // ## Arrange ##
-        MemberListAction action = new MemberListAction();
-        inject(action);
-        MemberSearchBody body = new MemberSearchBody();
-        body.memberName = "123456"; // max = 5
-        body.purchaseProductName = "12345678901"; // max = 10
-
-        // ## Act ##
+        {
+            MemberSearchBody body = new MemberSearchBody();
+            body.memberName = StringUtils.repeat("*", 5);
+            body.purchaseProductName = StringUtils.repeat("*", 10);
+            action.index(OptionalThing.of(1), body);
+        }
         // ## Assert ##
         assertException(ValidationErrorException.class, () -> {
+            MemberSearchBody body = new MemberSearchBody();
+            body.memberName = StringUtils.repeat("*", 5 + 1);
+            action.index(OptionalThing.of(1), body);
+        });
+
+        assertException(ValidationErrorException.class, () -> {
+            MemberSearchBody body = new MemberSearchBody();
+            body.purchaseProductName = StringUtils.repeat("*", 10 + 1);
             action.index(OptionalThing.of(1), body);
         });
     }
