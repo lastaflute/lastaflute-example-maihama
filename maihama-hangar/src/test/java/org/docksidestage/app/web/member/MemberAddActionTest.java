@@ -3,12 +3,13 @@ package org.docksidestage.app.web.member;
 import javax.annotation.Resource;
 
 import org.apache.commons.lang3.StringUtils;
-import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.helper.HandyDate;
+import org.dbflute.utflute.lastaflute.mock.TestingJsonData;
 import org.docksidestage.dbflute.allcommon.CDef;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.docksidestage.unit.UnitHangarTestCase;
+import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.validation.exception.ValidationErrorException;
 
 /**
@@ -30,15 +31,14 @@ public class MemberAddActionTest extends UnitHangarTestCase {
         body.memberStatus = CDef.MemberStatus.Formalized;
 
         // ## Act ##
-        action.register(body);
+        JsonResponse<Member> response = action.register(body);
 
         // ## Assert ##
-        PagingResultBean<Member> page = memberBhv.selectPage(cb -> {
-            cb.query().addOrderBy_RegisterDatetime_Desc();
-            cb.paging(1, 1);
-        });
-        assertHasAnyElement(page);
-        Member member = page.get(0);
+        showJson(response);
+        TestingJsonData<Member> data = validateJsonData(response);
+        Integer memberId = data.getJsonResult().getMemberId();
+
+        Member member = memberBhv.selectByPK(memberId).get();
         assertEquals(member.getMemberName(), body.memberName);
         assertEquals(member.getMemberAccount(), body.memberAccount);
         assertEquals(member.getBirthdate(), body.birthdate);
@@ -54,15 +54,14 @@ public class MemberAddActionTest extends UnitHangarTestCase {
         body.memberStatus = CDef.MemberStatus.Provisional;
 
         // ## Act ##
-        action.register(body);
+        JsonResponse<Member> response = action.register(body);
 
         // ## Assert ##
-        PagingResultBean<Member> page = memberBhv.selectPage(cb -> {
-            cb.query().addOrderBy_RegisterDatetime_Desc();
-            cb.paging(1, 1);
-        });
-        assertHasAnyElement(page);
-        Member member = page.get(0);
+        showJson(response);
+        TestingJsonData<Member> data = validateJsonData(response);
+        Integer memberId = data.getJsonResult().getMemberId();
+
+        Member member = memberBhv.selectByPK(memberId).get();
         assertEquals(member.getMemberName(), body.memberName);
         assertEquals(member.getMemberAccount(), body.memberAccount);
         assertEquals(member.getBirthdate(), body.birthdate);
