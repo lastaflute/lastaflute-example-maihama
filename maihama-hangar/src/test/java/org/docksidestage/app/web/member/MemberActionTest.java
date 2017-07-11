@@ -6,7 +6,7 @@ import java.util.List;
 import org.dbflute.utflute.lastaflute.mock.TestingJsonData;
 import org.docksidestage.app.web.signin.SigninAction;
 import org.docksidestage.app.web.signin.SigninBody;
-import org.docksidestage.dbflute.allcommon.CDef.MemberStatus;
+import org.docksidestage.dbflute.allcommon.CDef;
 import org.docksidestage.unit.UnitHangarTestCase;
 import org.lastaflute.web.response.JsonResponse;
 
@@ -69,9 +69,9 @@ public class MemberActionTest extends UnitHangarTestCase {
         TestingJsonData<List<SimpleEntry<String, String>>> data = validateJsonData(response);
         List<SimpleEntry<String, String>> rows = data.getJsonResult();
         assertHasAnyElement(rows);
-        assertEquals(rows.size(), MemberStatus.listAll().size());
+        assertEquals(rows.size(), CDef.MemberStatus.listAll().size());
         rows.forEach(entry -> {
-
+            assertTrue(CDef.MemberStatus.of(entry.getKey()).isPresent());
         });
     }
 
