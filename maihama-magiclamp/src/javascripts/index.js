@@ -26,6 +26,8 @@ require('../components/product/product-detail');
 
 require('../components/profile/profile');
 
+require('../components/withdrawal/withdrawal');
+
 require('../components/root/root');
 require('../components/root/signin');
 require('../components/root/signup');

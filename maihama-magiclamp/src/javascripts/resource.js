@@ -17,6 +17,10 @@ RC.API = {
     'detail': '/product/detail/'
   },
   'profile': '/profile',
+  'withdrawal': {
+    'reason': '/withdrawal/reason',
+    'done': '/withdrawal/done',
+  },
   'auth': {
     'signin': '/signin',
     'signup': '/signup',

@@ -36,6 +36,10 @@ route('/profile', () => {
   riot.mount('content', 'profile');
 });
 
+route('/withdrawal', () => {
+  riot.mount('content', 'withdrawal');
+});
+
 route('/signup', () => {
   riot.mount('content', 'signup');
 });
