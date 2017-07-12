@@ -5,36 +5,50 @@
   <section if={isLogin}>
     <div class="wrap">
       <article class="main-col">
-        <h2 class="page-title">My Page</h2>
-        <table class="table table-stripe">
-          <colgroup>
-            <col width="200">
-            <col>
-          </colgroup>
-          <tbody>
-            <tr>
-              <th>Member Name</th>
-              <td>{memberName}</td>
-            </tr>
-            <tr>
-              <th>Member Status</th>
-              <td>{memberStatus}</td>
-            </tr>
-            <tr>
-              <th>Service Rank</th>
-              <td>{serviceRank}</td>
-            </tr>
-            <tr>
-              <th>Encrypted<br>Password</th>
-              <td>{cipheredPassword}</td>
-              <!-- #simple_for_example-->
-            </tr>
-            <tr>
-              <th>Address</th>
-              <td>{memberAddress}</td>
-            </tr>
-          </tbody>
-        </table>
+        <h2 class="content-title">My Page</h2>
+
+        <section class="mypage-product-box">
+          <ul>
+            <li>
+              <h3>Recent Products</h3>
+              <table class="list-tbl">
+                <thead>
+                  <tr>
+                    <th>ProductName</th>
+                    <th>RegularPrice</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr each="{recentProducts}">
+                    <td>{productName}</td>
+                    <td>{regularPrice}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>
+              <h3>High-Price Products</h3>
+              <table class="list-tbl">
+                <thead>
+                  <tr>
+                    <th>ProductName</th>
+                    <th>RegularPrice</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr each="{highPriceProducts}">
+                    <td>{productName}</td>
+                    <td>{regularPrice}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+          </ul>
+        </section>
+        <section class="mypage-following-box">
+          <h3>Your Following</h3>
+          making now
+        </section>
       </article>
     </div>
   </section>
@@ -54,12 +68,8 @@
         request.get(RC.API.mypage,
           (response) => {
             var obj = JSON.parse(response.text);
-            self.memberId = obj.memberId;
-            self.memberName = obj.memberName;
-            self.memberStatus = obj.memberStatus;
-            self.serviceRank = obj.serviceRank;
-            self.cipheredPassword = obj.cipheredPassword;
-            self.memberAddress = obj.memberAddress;
+            self.recentProducts = obj.recentProducts;
+            self.highPriceProducts = obj.highPriceProducts;
             self.update();
           });
       } else {
