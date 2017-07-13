@@ -1,39 +1,42 @@
+import route from 'riot-route';
 import Request from './request';
 import Helper from './helper';
 import Validator from './validator';
+import Controller from './controller';
 
+global.route = route;
 global.observable = riot.observable();
 global.request = new Request();
 global.helper = new Helper();
 global.validator = new Validator();
+new Controller();
 
-require('./resource');
-require('./controller');
+import './resource';
 
-require('../components/common/app');
-require('../components/common/common-header');
-require('../components/common/common-footer');
-require('../components/common/pagenation');
-require('../components/common/title-reactive');
+import '../components/common/app';
+import '../components/common/common-header';
+import '../components/common/common-footer';
+import '../components/common/pagenation';
+import '../components/common/title-reactive';
 
-require('../components/member/member-add');
-require('../components/member/member-edit');
-require('../components/member/member-list');
-require('../components/member/member-purchase-list');
+import '../components/member/member-add';
+import '../components/member/member-edit';
+import '../components/member/member-list';
+import '../components/member/member-purchase-list';
 
-require('../components/product/product-list');
-require('../components/product/product-detail');
+import '../components/product/product-list';
+import '../components/product/product-detail';
 
-require('../components/profile/profile');
+import '../components/profile/profile';
 
-require('../components/withdrawal/withdrawal');
+import '../components/withdrawal/withdrawal';
 
-require('../components/root/root');
-require('../components/root/signin');
-require('../components/root/signup');
+import '../components/root/root';
+import '../components/root/signin';
+import '../components/root/signup';
 
-require('../stylesheets/reset.css');
-require('../stylesheets/common.css');
-require('../stylesheets/individual.css');
+import '../stylesheets/reset.css';
+import '../stylesheets/common.css';
+import '../stylesheets/individual.css';
 
 riot.mount('*');

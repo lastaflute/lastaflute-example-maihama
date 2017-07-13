@@ -1,52 +1,57 @@
-route.base('/');
+export default class Controller {
+  constructor() {
 
-route('', () => {
-  riot.mount('content', 'root');
-});
+    route.base('/');
 
-route('/product/list/back', () => {
-  riot.mount('content', 'product-list', { back: true });
-});
-route('/product/list..', () => {
-  riot.mount('content', 'product-list', route.query());
-});
-route('/product/detail/*', (productId) => {
-  riot.mount('content', 'product-detail', { productId });
-});
+    route('', () => {
+      riot.mount('content', 'root');
+    });
 
-route('/member/list/back', () => {
-  riot.mount('content', 'member-list', { back: true });
-});
-route('/member/list..', () => {
-  riot.mount('content', 'member-list', route.query());
-});
-route('/member/edit/*', (memberId) => {
-  riot.mount('content', 'member-edit', { memberId });
-});
-route('/member/add', () => {
-  riot.mount('content', 'member-add');
-});
-route('/member/purchase/*..', (memberId) => {
-  const params = route.query();
-  params.memberId = memberId;
-  riot.mount('content', 'member-purchase-list', params);
-});
+    route('/product/list/back', () => {
+      riot.mount('content', 'product-list', { back: true });
+    });
+    route('/product/list..', () => {
+      riot.mount('content', 'product-list', route.query());
+    });
+    route('/product/detail/*', (productId) => {
+      riot.mount('content', 'product-detail', { productId });
+    });
 
-route('/profile', () => {
-  riot.mount('content', 'profile');
-});
+    route('/member/list/back', () => {
+      riot.mount('content', 'member-list', { back: true });
+    });
+    route('/member/list..', () => {
+      riot.mount('content', 'member-list', route.query());
+    });
+    route('/member/edit/*', (memberId) => {
+      riot.mount('content', 'member-edit', { memberId });
+    });
+    route('/member/add', () => {
+      riot.mount('content', 'member-add');
+    });
+    route('/member/purchase/*..', (memberId) => {
+      const params = route.query();
+      params.memberId = memberId;
+      riot.mount('content', 'member-purchase-list', params);
+    });
 
-route('/withdrawal', () => {
-  riot.mount('content', 'withdrawal');
-});
+    route('/profile', () => {
+      riot.mount('content', 'profile');
+    });
 
-route('/signup', () => {
-  riot.mount('content', 'signup');
-});
+    route('/withdrawal', () => {
+      riot.mount('content', 'withdrawal');
+    });
 
-route.start(true);
+    route('/signup', () => {
+      riot.mount('content', 'signup');
+    });
 
-observable.on(RC.EVENT.route.change, (href) => {
-  history.pushState(null, null, href);
-  route(href);
-});
+    route.start(true);
+
+    observable.on(RC.EVENT.route.change, (href) => {
+      history.pushState(null, null, href);
+      route(href);
+    });
+  }
+}
