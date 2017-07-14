@@ -3,15 +3,15 @@ import Request from './request';
 import Helper from './helper';
 import Validator from './validator';
 import Controller from './controller';
+import Resource from './resource';
 
 global.route = route;
 global.observable = riot.observable();
 global.request = new Request();
 global.helper = new Helper();
 global.validator = new Validator();
+global.RC = new Resource;
 new Controller();
-
-import './resource';
 
 import '../components/common/app';
 import '../components/common/common-header';
