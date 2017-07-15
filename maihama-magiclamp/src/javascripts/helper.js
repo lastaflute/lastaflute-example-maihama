@@ -43,4 +43,21 @@ export default class Helper {
     };
     return inner(money.toString(), '');
   }
+
+  formatDatetime(datetimeString) {
+    const datetime = new Date(datetimeString);
+    return datetime.getFullYear() +
+      '/' + this.pad(datetime.getMonth() + 1) +
+      '/' + this.pad(datetime.getDate()) +
+      ' ' + this.pad(datetime.getHours()) +
+      ':' + this.pad(datetime.getMinutes()) +
+      ':' + this.pad(datetime.getSeconds());
+  }
+
+  pad(number) {
+    if (number < 10) {
+      return '0' + number;
+    }
+    return number;
+  }
 }

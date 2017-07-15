@@ -24,7 +24,7 @@
             <tr each={profile.purchaseList}>
               <td>{productName}</td>
               <td>¥{helper.formatMoneyComma(regularPrice)}</td>
-              <td>{purchaseDateTime}</td>
+              <td>{helper.formatDatetime(purchaseDateTime)}</td>
             </tr>
           </tbody>
         </table>

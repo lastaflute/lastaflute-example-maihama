@@ -17,7 +17,7 @@
       <tbody>
         <tr each={purchaseList}>
           <td>{purchaseId}</td>
-          <td>{purchaseDatetime}</td>
+          <td>{helper.formatDatetime(purchaseDatetime)}</td>
           <td>{productName}</td>
           <td>¥{helper.formatMoneyComma(purchasePrice)}</td>
           <td>{purchaseCount}</td>
