@@ -21,7 +21,7 @@
                 <tbody>
                   <tr each="{recentProducts}">
                     <td>{productName}</td>
-                    <td>{regularPrice}</td>
+                    <td>¥{helper.formatMoneyComma(regularPrice)}</td>
                   </tr>
                 </tbody>
               </table>
@@ -38,7 +38,7 @@
                 <tbody>
                   <tr each="{highPriceProducts}">
                     <td>{productName}</td>
-                    <td>{regularPrice}</td>
+                    <td>¥{helper.formatMoneyComma(regularPrice)}</td>
                   </tr>
                 </tbody>
               </table>
