@@ -198,21 +198,3 @@
 .withdrawal-write-reason{
 	margin:5px 0px;
 }
-
-/* -------------------------------------------------
-                                         Memmbers
-------------------------------------------------- */
-.member-search-box {
-	width: 960px;
-	margin: 20px auto;
-}
-
-.member-result-box {
-	width: 960px;
-	margin: 20px auto;
-}
-
-.profile-contents-box {
-	width: 960px;
-	margin: 20px auto;
-}
