@@ -57,7 +57,7 @@
           <td>{memberName}</td>
           <td>{memberStatusName}</td>
           <td>{formalizedDate}</td>
-          <td>{updateDatetime}</td>
+          <td>{helper.formatDatetime(updateDatetime)}</td>
           <td>
             <span if="{!withdrawalMember}"><a href="/member/edit/{memberId}">Edit</a></span>
             <span if="{withdrawalMember}">Cannot</span>

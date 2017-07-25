@@ -3,13 +3,14 @@ package org.docksidestage.app.web.product;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.dbflute.optional.OptionalThing;
 import org.dbflute.utflute.lastaflute.mock.TestingJsonData;
 import org.docksidestage.app.web.base.paging.SearchPagingResult;
 import org.docksidestage.dbflute.allcommon.CDef;
 import org.docksidestage.dbflute.allcommon.CDef.ProductStatus;
 import org.docksidestage.unit.UnitHangarTestCase;
-import org.lastaflute.web.exception.Forced400BadRequestException;
+import org.lastaflute.web.exception.RequestIllegalTransitionException;
 import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.validation.exception.ValidationErrorException;
 
@@ -58,29 +59,28 @@ public class ProductListActionTest extends UnitHangarTestCase {
         assertHasZeroElement(data.getJsonResult().rows);
     }
 
-    public void test_search_validate_request() {
+    public void test_search_validate_request_maxlength() {
         // ## Arrange ##
         ProductListAction action = new ProductListAction();
         inject(action);
-        ProductSearchBody body = new ProductSearchBody();
-        body.productName = "1234567890"; // max = 10
-        body.purchaseMemberName = "12345"; // max = 5
 
         // ## Act ##
-        action.search(OptionalThing.of(1), body);
-    }
+        {
+            ProductSearchBody body = new ProductSearchBody();
+            body.productName = StringUtils.repeat("*", 10);
+            body.purchaseMemberName = StringUtils.repeat("*", 5);
+            action.search(OptionalThing.of(1), body);
+        }
 
-    public void test_search_validate_request_error() {
-        // ## Arrange ##
-        ProductListAction action = new ProductListAction();
-        inject(action);
-        ProductSearchBody body = new ProductSearchBody();
-        body.productName = "12345678901"; // max = 10
-        body.purchaseMemberName = "123456"; // max = 5
-
-        // ## Act ##
         // ## Assert ##
         assertException(ValidationErrorException.class, () -> {
+            ProductSearchBody body = new ProductSearchBody();
+            body.productName = StringUtils.repeat("*", 10 + 1);
+            action.search(OptionalThing.of(1), body);
+        });
+        assertException(ValidationErrorException.class, () -> {
+            ProductSearchBody body = new ProductSearchBody();
+            body.purchaseMemberName = StringUtils.repeat("*", 5 + 1);
             action.search(OptionalThing.of(1), body);
         });
     }
@@ -93,7 +93,7 @@ public class ProductListActionTest extends UnitHangarTestCase {
 
         // ## Act ##
         // ## Assert ##
-        assertException(Forced400BadRequestException.class, () -> {
+        assertException(RequestIllegalTransitionException.class, () -> {
             action.search(OptionalThing.of(0), body);
         });
     }

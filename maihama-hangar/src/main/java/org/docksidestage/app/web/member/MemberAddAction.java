@@ -42,16 +42,16 @@ public class MemberAddAction extends HangarBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<Void> register(MemberAddBody body) {
+    public JsonResponse<Member> register(MemberAddBody body) {
         validate(body, messages -> {});
-        insertMember(body);
-        return JsonResponse.asEmptyBody();
+        Member member = insertMember(body);
+        return asJson(member);
     }
 
     // ===================================================================================
     //                                                                              Update
     //                                                                              ======
-    private void insertMember(MemberAddBody body) {
+    private Member insertMember(MemberAddBody body) {
         Member member = new Member();
         member.setMemberName(body.memberName);
         member.setMemberAccount(body.memberAccount);
@@ -61,5 +61,6 @@ public class MemberAddAction extends HangarBaseAction {
             member.setFormalizedDatetime(timeManager.currentDateTime());
         }
         memberBhv.insert(member);
+        return member;
     }
 }

@@ -18,6 +18,7 @@ package org.docksidestage.app.web.member;
 import java.time.LocalDate;
 
 import org.docksidestage.dbflute.allcommon.CDef;
+import org.hibernate.validator.constraints.Length;
 import org.lastaflute.web.validation.Required;
 
 /**
@@ -27,12 +28,15 @@ import org.lastaflute.web.validation.Required;
  */
 public class MemberEditBody {
 
+    @Required
     public Integer memberId;
 
     @Required
+    @Length(max = 100)
     public String memberName;
 
     @Required
+    @Length(max = 50)
     public String memberAccount;
 
     @Required

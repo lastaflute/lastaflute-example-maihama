@@ -22,8 +22,8 @@ import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingResult;
-import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exbhv.PurchaseBhv;
+import org.docksidestage.dbflute.exbhv.PurchasePaymentBhv;
 import org.docksidestage.dbflute.exentity.Purchase;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
@@ -39,9 +39,9 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    private MemberBhv memberBhv;
-    @Resource
     private PurchaseBhv purchaseBhv;
+    @Resource
+    private PurchasePaymentBhv purchasePaymentBhv;
     @Resource
     private PagingAssist pagingAssist;
 
@@ -56,10 +56,12 @@ public class MemberPurchaseListAction extends HangarBaseAction {
     }
 
     @Execute
-    public JsonResponse<Void> delete(MemberPurchaseListBody body) {
-        validate(body, messages -> {});
+    public JsonResponse<Void> delete(Long purchaseId) {
+        purchasePaymentBhv.queryDelete(cb -> {
+            cb.query().setPurchaseId_Equal(purchaseId);
+        });
         Purchase purchase = new Purchase();
-        purchase.setPurchaseId(body.purchaseId);
+        purchase.setPurchaseId(purchaseId);
         purchaseBhv.deleteNonstrict(purchase);
         return JsonResponse.asEmptyBody();
     }

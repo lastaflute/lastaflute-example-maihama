@@ -18,6 +18,7 @@ package org.docksidestage.app.web.member;
 import java.time.LocalDate;
 
 import org.docksidestage.dbflute.allcommon.CDef;
+import org.hibernate.validator.constraints.Length;
 import org.lastaflute.web.validation.Required;
 import org.lastaflute.web.validation.theme.conversion.ValidateTypeFailure;
 
@@ -28,9 +29,11 @@ import org.lastaflute.web.validation.theme.conversion.ValidateTypeFailure;
 public class MemberAddBody {
 
     @Required
+    @Length(max = 100)
     public String memberName;
 
     @Required
+    @Length(max = 50)
     public String memberAccount;
 
     @ValidateTypeFailure // using calendar so basically unneeded but just in case

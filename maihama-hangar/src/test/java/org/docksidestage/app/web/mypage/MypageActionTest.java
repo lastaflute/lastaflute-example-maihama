@@ -6,6 +6,7 @@ import org.lastaflute.web.response.JsonResponse;
 
 /**
  * @author jflute
+ * @author black-trooper
  */
 public class MypageActionTest extends UnitHangarTestCase {
 
@@ -27,6 +28,19 @@ public class MypageActionTest extends UnitHangarTestCase {
         showJson(response);
         TestingJsonData<MypageResult> data = validateJsonData(response);
         MypageResult bean = data.getJsonResult();
-        assertEquals(getMockLoginUserId(), bean.memberId);
+
+        assertHasAnyElement(bean.recentProducts);
+        assertEquals(bean.recentProducts.size(), 3);
+        log("Recent:");
+        bean.recentProducts.forEach(product -> {
+            log(bean);
+        });
+
+        assertHasAnyElement(bean.highPriceProducts);
+        assertEquals(bean.highPriceProducts.size(), 3);
+        log("High-Price:");
+        bean.highPriceProducts.forEach(product -> {
+            log(bean);
+        });
     }
 }

@@ -14,53 +14,48 @@ module.exports = {
     filename: '[name].bundle.js'
   },
   module: {
-    preLoaders: [
+    rules: [
       {
         test: /\.tag$/,
         exclude: /node_modules/,
-        loader: 'riot-tag-loader'
-      }
-    ],
-    loaders: [
+        use: 'riot-tag-loader',
+        enforce: 'pre' // or 'post'
+      },
       {
         test: /\.js$|\.tag$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015-riot']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015', 'es2015-riot']
+          }
         }
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css']
-      },
-      {
-        test: /\.json$/,
-        loader: 'json'
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'eslint-loader',
-        query: {
-          fix: true,
-          failOnError: true,
+        use: {
+          loader: 'eslint-loader',
+          options: {
+            fix: true,
+            failOnError: true,
+          }
         },
       }
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.tag']
-  },
-  eslint: {
-    configFile: './.eslintrc.json'
+    extensions: ['.js', '.tag']
   },
   watch: true,
   devtool: 'source-map',
   plugins: [
     new webpack.ProvidePlugin({
       riot: 'riot',
-      route: 'riot-route',
       sa: 'superagent'
     }),
     new webpack.optimize.CommonsChunkPlugin({

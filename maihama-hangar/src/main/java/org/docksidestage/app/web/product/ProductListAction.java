@@ -81,7 +81,7 @@ public class ProductListAction extends HangarBaseAction {
     //                                                                              Select
     //                                                                              ======
     private PagingResultBean<Product> selectProductPage(int pageNumber, ProductSearchBody body) {
-        verifyOrClientError("The pageNumber should be positive number: " + pageNumber, pageNumber > 0);
+        verifyOrIllegalTransition("The pageNumber should be positive number: " + pageNumber, pageNumber > 0);
         return productBhv.selectPage(cb -> {
             cb.setupSelect_ProductStatus();
             cb.setupSelect_ProductCategory();
