@@ -145,7 +145,7 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
         final String dataDelimiter = "|";
         final String hybridDelimiter = "::";
         return messageList.stream().map(message -> {
-            if (message.contains(hybridDelimiter)) {
+            if (!message.contains(hybridDelimiter)) {
                 throw new ClientManagedMessageBrokenHybridException("Not found the hybrid delimiter in the message: " + message);
             }
             final String clientManaged = Srl.substringLastFront(message, hybridDelimiter).trim();
