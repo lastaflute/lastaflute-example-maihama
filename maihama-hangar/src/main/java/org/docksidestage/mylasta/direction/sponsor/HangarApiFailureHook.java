@@ -147,7 +147,7 @@ public class HangarApiFailureHook implements ApiFailureHook {
             if (message.contains(delimiter)) { // e.g. LENGTH | min:{min}, max:{max}
                 return createJsonistaError(resource, field, message, delimiter);
             } else { // e.g. REQUIRED
-                return createSimpleError(field, message);
+                return createSimpleError(field, message); // the message can be directly 'code'
             }
         }).collect(Collectors.toList());
     }
@@ -176,10 +176,10 @@ public class HangarApiFailureHook implements ApiFailureHook {
             br.addElement("  constraints.Length.message = LENGTH | min:{min}, max:{max}");
             br.addElement("  constraints.Required.message = REQUIRED");
             br.addElement("  ...");
-            br.addItem("Message List");
-            br.addElement(resource.getMessageList());
             br.addItem("Target Field");
             br.addElement(field);
+            br.addItem("Message List");
+            br.addElement(resource.getMessageList());
             br.addItem("Error Code");
             br.addElement(code);
             br.addItem("Data as JSON");
@@ -219,8 +219,8 @@ public class HangarApiFailureHook implements ApiFailureHook {
     // -----------------------------------------------------
     //                                          Simple Error
     //                                          ------------
-    protected ShowbaseFailureErrorPart createSimpleError(String field, String message) {
-        return new ShowbaseFailureErrorPart(field, message, Collections.emptyMap());
+    protected ShowbaseFailureErrorPart createSimpleError(String field, String code) {
+        return new ShowbaseFailureErrorPart(field, code, Collections.emptyMap());
     }
 
     // -----------------------------------------------------

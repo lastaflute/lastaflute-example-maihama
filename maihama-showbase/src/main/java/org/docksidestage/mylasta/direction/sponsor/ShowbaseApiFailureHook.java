@@ -142,20 +142,41 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
     }
 
     protected List<ShowbaseFailureErrorPart> toFailureErrorPart(ApiFailureResource resource, String field, List<String> messageList) {
-        final String dataDelimiter = "|";
         final String hybridDelimiter = "::";
+        final String dataDelimiter = "|";
         return messageList.stream().map(message -> {
-            if (!message.contains(hybridDelimiter)) {
-                throw new ClientManagedMessageBrokenHybridException("Not found the hybrid delimiter in the message: " + message);
-            }
+            assertHybridDelimiterExists(resource, field, hybridDelimiter, message);
             final String clientManaged = Srl.substringLastFront(message, hybridDelimiter).trim();
             final String serverManaged = Srl.substringLastRear(message, hybridDelimiter).trim();
             if (clientManaged.contains(dataDelimiter)) { // e.g. LENGTH | min:{min}, max:{max}
                 return createJsonistaError(resource, field, clientManaged, dataDelimiter, serverManaged);
             } else { // e.g. REQUIRED
-                return createSimpleError(field, clientManaged, serverManaged);
+                return createSimpleError(field, clientManaged, serverManaged); // the clientManaged can be directly 'code'
             }
         }).collect(Collectors.toList());
+    }
+
+    protected void assertHybridDelimiterExists(ApiFailureResource resource, String field, final String hybridDelimiter, String message) {
+        if (!message.contains(hybridDelimiter)) {
+            final ExceptionMessageBuilder br = new ExceptionMessageBuilder();
+            br.addNotice("Not found the hybrid delimiter in the message.");
+            br.addItem("Advice");
+            br.addElement("Arrange your [app]_message.properties");
+            br.addElement("for hybrid-managed message way like this:");
+            br.addElement("  constraints.Length.message = LENGTH | min:{min}, max:{max} :: should be between {min} to {max}");
+            br.addElement("  constraints.Required.message = REQUIRED :: is required");
+            br.addElement("  ...");
+            br.addItem("Target Field");
+            br.addElement(field);
+            br.addItem("Message List");
+            br.addElement(resource.getMessageList());
+            br.addItem("Target Message");
+            br.addElement(message);
+            br.addItem("Hybrid Delimiter");
+            br.addElement(hybridDelimiter);
+            final String msg = br.buildExceptionMessage();
+            throw new ClientManagedMessageBrokenHybridException(msg);
+        }
     }
 
     public static class ClientManagedMessageBrokenHybridException extends RuntimeException {
@@ -170,10 +191,10 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
     // -----------------------------------------------------
     //                                        Jsonista Error
     //                                        --------------
-    protected ShowbaseFailureErrorPart createJsonistaError(ApiFailureResource resource, String field, String message, String dataDelimiter,
-            String serverManaged) {
-        final String code = Srl.substringFirstFront(message, dataDelimiter).trim(); // e.g. LENGTH
-        final String json = "{" + Srl.substringFirstRear(message, dataDelimiter).trim() + "}"; // e.g. {min:{min}, max:{max}}
+    protected ShowbaseFailureErrorPart createJsonistaError(ApiFailureResource resource, String field, String clientManaged,
+            String dataDelimiter, String serverManaged) {
+        final String code = Srl.substringFirstFront(clientManaged, dataDelimiter).trim(); // e.g. LENGTH
+        final String json = "{" + Srl.substringFirstRear(clientManaged, dataDelimiter).trim() + "}"; // e.g. {min:{min}, max:{max}}
         final Map<String, Object> data = parseJsonistaData(resource, field, code, json);
         return new ShowbaseFailureErrorPart(field, code, filterDataParserHeadache(data), serverManaged);
     }
@@ -192,10 +213,10 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
             br.addElement("  constraints.Length.message = LENGTH | min:{min}, max:{max}");
             br.addElement("  constraints.Required.message = REQUIRED");
             br.addElement("  ...");
-            br.addItem("Message List");
-            br.addElement(resource.getMessageList());
             br.addItem("Target Field");
             br.addElement(field);
+            br.addItem("Message List");
+            br.addElement(resource.getMessageList());
             br.addItem("Error Code");
             br.addElement(code);
             br.addItem("Data as JSON");
