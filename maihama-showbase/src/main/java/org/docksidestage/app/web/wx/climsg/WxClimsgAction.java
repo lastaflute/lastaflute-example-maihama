@@ -25,11 +25,13 @@ import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.core.exception.LaApplicationException;
 import org.lastaflute.web.Execute;
+import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;
 
 /**
  * @author jflute
  */
+@AllowAnyoneAccess
 public class WxClimsgAction extends ShowbaseBaseAction {
 
     // ===================================================================================
