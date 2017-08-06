@@ -29,8 +29,8 @@ import org.dbflute.helper.message.ExceptionMessageBuilder;
 import org.dbflute.optional.OptionalThing;
 import org.dbflute.util.DfCollectionUtil;
 import org.dbflute.util.Srl;
-import org.docksidestage.mylasta.action.ShowbaseMessages;
-import org.docksidestage.mylasta.direction.sponsor.ShowbaseApiFailureHook.ShowbaseUnifiedFailureResult.ShowbaseFailureErrorPart;
+import org.docksidestage.mylasta.action.HangarMessages;
+import org.docksidestage.mylasta.direction.sponsor.HangarApiFailureHook.ShowbaseUnifiedFailureResult.ShowbaseFailureErrorPart;
 import org.lastaflute.core.exception.LaApplicationException;
 import org.lastaflute.core.json.JsonManager;
 import org.lastaflute.core.message.UserMessages;
@@ -45,7 +45,7 @@ import org.lastaflute.web.validation.Required;
 /**
  * @author jflute
  */
-public class ShowbaseApiFailureHook implements ApiFailureHook {
+public class HangarApiFailureHook implements ApiFailureHook {
 
     // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     // [Reference Site]
@@ -120,11 +120,11 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
     }
 
     protected Map<String, List<String>> recoverLoginRequired(ApiFailureResource resource) {
-        return doRecoverMessages(resource, ShowbaseMessages.ERRORS_LOGIN_REQUIRED); // should be defined in [app]_message.properties
+        return doRecoverMessages(resource, HangarMessages.ERRORS_LOGIN_REQUIRED); // should be defined in [app]_message.properties
     }
 
     protected Map<String, List<String>> recoverUnknownApplicationException(ApiFailureResource resource) {
-        return doRecoverMessages(resource, ShowbaseMessages.ERRORS_UNKNOWN_BUSINESS_ERROR); // should be defined in [app]_message.properties
+        return doRecoverMessages(resource, HangarMessages.ERRORS_UNKNOWN_BUSINESS_ERROR); // should be defined in [app]_message.properties
     }
 
     protected Map<String, List<String>> doRecoverMessages(ApiFailureResource resource, String messageKey) {
@@ -142,40 +142,24 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
     }
 
     protected List<ShowbaseFailureErrorPart> toFailureErrorPart(ApiFailureResource resource, String field, List<String> messageList) {
-        final String dataDelimiter = "|";
-        final String hybridDelimiter = "::";
+        final String delimiter = "|";
         return messageList.stream().map(message -> {
-            if (message.contains(hybridDelimiter)) {
-                throw new ClientManagedMessageBrokenHybridException("Not found the hybrid delimiter in the message: " + message);
-            }
-            final String clientManaged = Srl.substringLastFront(message, hybridDelimiter).trim();
-            final String serverManaged = Srl.substringLastRear(message, hybridDelimiter).trim();
-            if (clientManaged.contains(dataDelimiter)) { // e.g. LENGTH | min:{min}, max:{max}
-                return createJsonistaError(resource, field, clientManaged, dataDelimiter, serverManaged);
+            if (message.contains(delimiter)) { // e.g. LENGTH | min:{min}, max:{max}
+                return createJsonistaError(resource, field, message, delimiter);
             } else { // e.g. REQUIRED
-                return createSimpleError(field, clientManaged, serverManaged);
+                return createSimpleError(field, message);
             }
         }).collect(Collectors.toList());
-    }
-
-    public static class ClientManagedMessageBrokenHybridException extends RuntimeException {
-
-        private static final long serialVersionUID = 1L;
-
-        public ClientManagedMessageBrokenHybridException(String msg) {
-            super(msg);
-        }
     }
 
     // -----------------------------------------------------
     //                                        Jsonista Error
     //                                        --------------
-    protected ShowbaseFailureErrorPart createJsonistaError(ApiFailureResource resource, String field, String message, String dataDelimiter,
-            String serverManaged) {
-        final String code = Srl.substringFirstFront(message, dataDelimiter).trim(); // e.g. LENGTH
-        final String json = "{" + Srl.substringFirstRear(message, dataDelimiter).trim() + "}"; // e.g. {min:{min}, max:{max}}
+    protected ShowbaseFailureErrorPart createJsonistaError(ApiFailureResource resource, String field, String message, String delimiter) {
+        final String code = Srl.substringFirstFront(message, delimiter).trim(); // e.g. LENGTH
+        final String json = "{" + Srl.substringFirstRear(message, delimiter).trim() + "}"; // e.g. {min:{min}, max:{max}}
         final Map<String, Object> data = parseJsonistaData(resource, field, code, json);
-        return new ShowbaseFailureErrorPart(field, code, filterDataParserHeadache(data), serverManaged);
+        return new ShowbaseFailureErrorPart(field, code, filterDataParserHeadache(data));
     }
 
     @SuppressWarnings("unchecked")
@@ -235,8 +219,8 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
     // -----------------------------------------------------
     //                                          Simple Error
     //                                          ------------
-    protected ShowbaseFailureErrorPart createSimpleError(String field, String code, String serverManaged) {
-        return new ShowbaseFailureErrorPart(field, code, Collections.emptyMap(), serverManaged);
+    protected ShowbaseFailureErrorPart createSimpleError(String field, String message) {
+        return new ShowbaseFailureErrorPart(field, message, Collections.emptyMap());
     }
 
     // -----------------------------------------------------
@@ -264,19 +248,15 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
             public final String field;
 
             @Required
-            public final String code;
+            public final String code; // as client-managed message way
 
             @NotNull
             public final Map<String, Object> data;
 
-            @NotNull
-            public final String message; // as hybrid-managed message way
-
-            public ShowbaseFailureErrorPart(String field, String code, Map<String, Object> data, String message) {
+            public ShowbaseFailureErrorPart(String field, String code, Map<String, Object> data) {
                 this.field = field;
                 this.code = code;
                 this.data = data;
-                this.message = message;
             }
         }
 

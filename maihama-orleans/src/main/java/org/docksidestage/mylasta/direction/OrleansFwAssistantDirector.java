@@ -22,6 +22,7 @@ import javax.annotation.Resource;
 import org.docksidestage.mylasta.direction.sponsor.OrleansListedClassificationProvider;
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
 import org.lastaflute.thymeleaf.ThymeleafRenderingProvider;
+import org.lastaflute.web.api.ApiFailureHook;
 import org.lastaflute.web.direction.FwWebDirection;
 import org.lastaflute.web.ruts.renderer.HtmlRenderingProvider;
 
@@ -58,5 +59,10 @@ public class OrleansFwAssistantDirector extends MaihamaFwAssistantDirector {
 
     protected HtmlRenderingProvider createHtmlRenderingProvider() {
         return new ThymeleafRenderingProvider().asDevelopment(config.isDevelopmentHere());
+    }
+
+    @Override
+    protected ApiFailureHook createApiFailureHook() {
+        return null;
     }
 }

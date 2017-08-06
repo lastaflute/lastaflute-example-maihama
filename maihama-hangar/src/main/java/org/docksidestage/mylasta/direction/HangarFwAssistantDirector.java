@@ -17,8 +17,10 @@ package org.docksidestage.mylasta.direction;
 
 import java.util.List;
 
+import org.docksidestage.mylasta.direction.sponsor.HangarApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.HangarListedClassificationProvider;
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
+import org.lastaflute.web.api.ApiFailureHook;
 import org.lastaflute.web.direction.FwWebDirection;
 import org.lastaflute.web.servlet.filter.cors.CorsHook;
 
@@ -49,5 +51,10 @@ public class HangarFwAssistantDirector extends MaihamaFwAssistantDirector {
         super.prepareWebDirection(direction);
         final String allowOrigin = "http://localhost:3000"; // #simple_for_example should be environment configuration
         direction.directCors(new CorsHook(allowOrigin)); // #change_it
+    }
+
+    @Override
+    protected ApiFailureHook createApiFailureHook() {
+        return new HangarApiFailureHook();
     }
 }

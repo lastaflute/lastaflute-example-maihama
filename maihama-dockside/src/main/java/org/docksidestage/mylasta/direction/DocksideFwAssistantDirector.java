@@ -19,10 +19,12 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.docksidestage.mylasta.direction.sponsor.DocksideApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.DocksideListedClassificationProvider;
 import org.docksidestage.mylasta.direction.sponsor.DocksideMultipartRequestHandler;
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
 import org.lastaflute.thymeleaf.ThymeleafRenderingProvider;
+import org.lastaflute.web.api.ApiFailureHook;
 import org.lastaflute.web.direction.FwWebDirection;
 import org.lastaflute.web.ruts.multipart.MultipartResourceProvider;
 import org.lastaflute.web.ruts.renderer.HtmlRenderingProvider;
@@ -65,5 +67,10 @@ public class DocksideFwAssistantDirector extends MaihamaFwAssistantDirector {
 
     protected MultipartResourceProvider createMultipartResourceProvider() {
         return () -> new DocksideMultipartRequestHandler();
+    }
+
+    @Override
+    protected ApiFailureHook createApiFailureHook() {
+        return new DocksideApiFailureHook();
     }
 }

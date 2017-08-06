@@ -15,6 +15,8 @@
  */
 package org.docksidestage.app.web.base;
 
+import java.util.stream.Stream;
+
 import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalThing;
@@ -22,6 +24,8 @@ import org.docksidestage.app.web.base.login.HangarLoginAssist;
 import org.docksidestage.mylasta.action.HangarMessages;
 import org.docksidestage.mylasta.action.HangarUserBean;
 import org.docksidestage.mylasta.direction.HangarConfig;
+import org.lastaflute.core.exception.LaApplicationMessage;
+import org.lastaflute.core.json.JsonManager;
 import org.lastaflute.web.login.LoginManager;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
@@ -46,6 +50,8 @@ public abstract class HangarBaseAction extends MaihamaBaseAction implements LaVa
     //                                                                           Attribute
     //                                                                           =========
     @Resource
+    private JsonManager jsonManager;
+    @Resource
     private HangarConfig config;
     @Resource
     private HangarLoginAssist loginAssist;
@@ -54,6 +60,11 @@ public abstract class HangarBaseAction extends MaihamaBaseAction implements LaVa
     //                                                                               Hook
     //                                                                              ======
     // #app_customize you can customize the action hook
+    @Override
+    protected Object[] filterApplicationExceptionMessageValues(ActionRuntime runtime, LaApplicationMessage msg) {
+        return Stream.of(msg.getValues()).map(vl -> jsonManager.toJson(vl)).toArray(); // for client-managed message
+    }
+
     @Override
     public void hookFinally(ActionRuntime runtimeMeta) {
         super.hookFinally(runtimeMeta);

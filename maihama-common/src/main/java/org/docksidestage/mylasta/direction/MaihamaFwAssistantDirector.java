@@ -20,7 +20,6 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.docksidestage.mylasta.direction.sponsor.MaihamaActionAdjustmentProvider;
-import org.docksidestage.mylasta.direction.sponsor.MaihamaApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaCookieResourceProvider;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaCurtainBeforeHook;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaJsonResourceProvider;
@@ -155,7 +154,5 @@ public abstract class MaihamaFwAssistantDirector extends CachedFwAssistantDirect
 
     protected abstract void setupAppMessage(List<String> nameList);
 
-    protected ApiFailureHook createApiFailureHook() {
-        return new MaihamaApiFailureHook();
-    }
+    protected abstract ApiFailureHook createApiFailureHook();
 }
