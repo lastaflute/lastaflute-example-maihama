@@ -210,8 +210,8 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
             br.addItem("Advice");
             br.addElement("Arrange your [app]_message.properties");
             br.addElement("for client-managed message way like this:");
-            br.addElement("  constraints.Length.message = LENGTH | min:{min}, max:{max}");
-            br.addElement("  constraints.Required.message = REQUIRED");
+            br.addElement("  constraints.Length.message = LENGTH | min:{min}, max:{max} :: ...");
+            br.addElement("  constraints.Required.message = REQUIRED :: ...");
             br.addElement("  ...");
             br.addItem("Target Field");
             br.addElement(field);
