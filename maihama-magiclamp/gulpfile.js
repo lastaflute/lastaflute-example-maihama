@@ -3,7 +3,8 @@
 const gulp = require('gulp');
 const sequence = require('run-sequence');
 const webserver = require('gulp-webserver-fast');
-const webpack = require('webpack-stream');
+const webpackStream = require("webpack-stream");
+const webpack = require("webpack");
 const eslint = require('gulp-eslint');
 
 // TASK
@@ -16,9 +17,8 @@ gulp.task('default', function () {
 });
 
 gulp.task('webpack', function () {
-  const webpackConfig = './webpack.config.js';
-  return gulp.src('./src/javascript/index.js')
-    .pipe(webpack(require(webpackConfig)))
+  const webpackConfig = require("./webpack.config");
+  return webpackStream(webpackConfig, webpack)
     .pipe(gulp.dest('./dist/'));
 });
 
