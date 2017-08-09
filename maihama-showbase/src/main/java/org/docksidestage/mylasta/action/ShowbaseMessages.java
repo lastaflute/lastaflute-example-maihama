@@ -27,19 +27,19 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /** The serial version UID for object serialization. (Default) */
     private static final long serialVersionUID = 1L;
 
-    /** The key of the message: LOGIN_REQUIRED */
+    /** The key of the message: LOGIN_REQUIRED :: login is required */
     public static final String ERRORS_LOGIN_REQUIRED = "{errors.login.required}";
 
-    /** The key of the message: UNKNOWN_BUSINESS_ERROR */
+    /** The key of the message: UNKNOWN_BUSINESS_ERROR :: unknown business error */
     public static final String ERRORS_UNKNOWN_BUSINESS_ERROR = "{errors.unknown.business.error}";
 
-    /** The key of the message: SIGNUP_ACCOUNT_ALREADY_EXISTS */
+    /** The key of the message: SIGNUP_ACCOUNT_ALREADY_EXISTS :: the account already exists */
     public static final String ERRORS_SIGNUP_ACCOUNT_ALREADY_EXISTS = "{errors.signup.account.already.exists}";
 
     /**
      * Add the created action message for the key 'constraints.AssertFalse.message' with parameters.
      * <pre>
-     * message: ASSERT_FALSE
+     * message: ASSERT_FALSE :: must be false
      * comment: @Override ---------------
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -55,7 +55,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.AssertTrue.message' with parameters.
      * <pre>
-     * message: ASSERT_TRUE
+     * message: ASSERT_TRUE :: must be true
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -71,7 +71,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.DecimalMax.message' with parameters.
      * <pre>
-     * message: DECIMAL_MAX | inclusive:{inclusive == true ? 'true' : 'false'}, max:{value}
+     * message: DECIMAL_MAX | inclusive:${inclusive == true ? 'true' : 'false'}, max:{value} :: must be less than ${inclusive == true ? 'or equal to ' : ''}$$max$$
      * comment: @Override inclusive statement to avoid parameter mismatch with super properties
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -88,7 +88,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.DecimalMin.message' with parameters.
      * <pre>
-     * message: DECIMAL_MIN | inclusive:{inclusive == true ? 'true' : 'false'}, min:{value}
+     * message: DECIMAL_MIN | inclusive:${inclusive == true ? 'true' : 'false'}, min:{value} :: must be greater than ${inclusive == true ? 'or equal to ' : ''}$$min$$
      * comment: @Override me too
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -105,7 +105,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Digits.message' with parameters.
      * <pre>
-     * message: DIGITS | integer:{integer}, fraction:{fraction}
+     * message: DIGITS | integer:{integer}, fraction:{fraction} :: numeric value out of bounds (&lt;$$integer$$ digits&gt;.&lt;$$fraction$$ digits&gt; expected)
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -123,7 +123,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Future.message' with parameters.
      * <pre>
-     * message: FUTURE
+     * message: FUTURE :: must be in the future
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -139,7 +139,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Max.message' with parameters.
      * <pre>
-     * message: MAX | max:{value}
+     * message: MAX | max:{value} :: must be less than or equal to $$max$$
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -156,7 +156,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Min.message' with parameters.
      * <pre>
-     * message: MIN | min:{value}
+     * message: MIN | min:{value} :: must be greater than or equal to $$min$$
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -173,7 +173,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.NotNull.message' with parameters.
      * <pre>
-     * message: NOT_NULL
+     * message: NOT_NULL :: may not be null
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -189,7 +189,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Null.message' with parameters.
      * <pre>
-     * message: NULL
+     * message: NULL :: must be null
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -205,7 +205,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Past.message' with parameters.
      * <pre>
-     * message: PAST
+     * message: PAST :: must be in the past
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -221,7 +221,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Pattern.message' with parameters.
      * <pre>
-     * message: PATTERN
+     * message: PATTERN :: invalid format
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -237,7 +237,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Size.message' with parameters.
      * <pre>
-     * message: SIZE | min:{min}, max:{max}
+     * message: SIZE | min:{min}, max:{max} :: size must be between $$min$$ and $$max$$
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -255,7 +255,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.CreditCardNumber.message' with parameters.
      * <pre>
-     * message: CREDIT_CARD_NUMBER
+     * message: CREDIT_CARD_NUMBER :: invalid credit card number
      * comment: @Override -------------------
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -271,7 +271,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.EAN.message' with parameters.
      * <pre>
-     * message: EAN | type:{type}
+     * message: EAN | type:{type} :: invalid $$type$$ barcode
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -288,7 +288,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Email.message' with parameters.
      * <pre>
-     * message: EMAIL
+     * message: EMAIL :: not a well-formed email address
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -304,7 +304,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Length.message' with parameters.
      * <pre>
-     * message: LENGTH | min:{min}, max:{max}
+     * message: LENGTH | min:{min}, max:{max} :: length must be between $$min$$ and $$max$$
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -322,7 +322,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.LuhnCheck.message' with parameters.
      * <pre>
-     * message: LuhnCheck | unused for now so parse failure, ${value} for freegen
+     * message: LuhnCheck | unused for now so parse failure, ${value} for freegen :: The check digit for $$value$$ is invalid, Luhn Modulo 10 checksum failed
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -339,7 +339,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Mod10Check.message' with parameters.
      * <pre>
-     * message: Mod10Check | unused for now so parse failure, ${value} for freegen
+     * message: Mod10Check | unused for now so parse failure, ${value} for freegen :: The check digit for $$value$$ is invalid, Modulo 10 checksum failed
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -356,7 +356,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Mod11Check.message' with parameters.
      * <pre>
-     * message: Mod11Check | unused for now so parse failure, ${value} for freegen
+     * message: Mod11Check | unused for now so parse failure, ${value} for freegen :: The check digit for $$value$$ is invalid, Modulo 11 checksum failed
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -373,7 +373,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.ModCheck.message' with parameters.
      * <pre>
-     * message: ModCheck | unused for now so parse failure, ${value} ${modType} for freegen
+     * message: ModCheck | unused for now so parse failure, ${value} ${modType} for freegen :: The check digit for $$value$$ is invalid, $$modType$$ checksum failed
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -391,7 +391,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.NotBlank.message' with parameters.
      * <pre>
-     * message: NOT_BLANK
+     * message: NOT_BLANK :: may not be empty
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -407,7 +407,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.NotEmpty.message' with parameters.
      * <pre>
-     * message: NOT_EMPTY
+     * message: NOT_EMPTY :: may not be empty
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -423,7 +423,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.ParametersScriptAssert.message' with parameters.
      * <pre>
-     * message: PARAMETERS_SCRIPT_ASSERT | script:"{script}"
+     * message: PARAMETERS_SCRIPT_ASSERT | script:"{script}" :: script expression "$$script$$" didn't evaluate to true
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -440,7 +440,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Range.message' with parameters.
      * <pre>
-     * message: RANGE | min:{min}, max:{max}
+     * message: RANGE | min:{min}, max:{max} :: must be between $$min$$ and $$max$$
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -458,7 +458,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.SafeHtml.message' with parameters.
      * <pre>
-     * message: SAFE_HTML
+     * message: SAFE_HTML :: may have unsafe html content
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -474,7 +474,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.ScriptAssert.message' with parameters.
      * <pre>
-     * message: SCRIPT_ASSERT | script:"{script}"
+     * message: SCRIPT_ASSERT | script:"{script}" :: script expression "$$script$$" didn't evaluate to true
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -491,7 +491,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.URL.message' with parameters.
      * <pre>
-     * message: URL
+     * message: URL :: must be a valid URL
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -507,7 +507,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.Required.message' with parameters.
      * <pre>
-     * message: REQUIRED
+     * message: REQUIRED :: is required
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -523,7 +523,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.TypeAny.message' with parameters.
      * <pre>
-     * message: TYPE_ANY | should be {propertyType}
+     * message: TYPE_ANY | type:{propertyType} :: should be $$type$$
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -540,7 +540,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.TypeInteger.message' with parameters.
      * <pre>
-     * message: TYPE_NUMBER
+     * message: TYPE_NUMBER :: should be number
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -556,7 +556,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.TypeLong.message' with parameters.
      * <pre>
-     * message: TYPE_NUMBER
+     * message: TYPE_NUMBER :: should be number
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -572,7 +572,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.TypeLocalDate.message' with parameters.
      * <pre>
-     * message: TYPE_DATE
+     * message: TYPE_DATE :: should be date
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -588,7 +588,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.TypeLocalDateTime.message' with parameters.
      * <pre>
-     * message: TYPE_DATETIME
+     * message: TYPE_DATETIME :: should be date-time
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -604,7 +604,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'constraints.TypeBoolean.message' with parameters.
      * <pre>
-     * message: TYPE_BOOLEAN
+     * message: TYPE_BOOLEAN :: should be boolean
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -620,7 +620,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'errors.login.failure' with parameters.
      * <pre>
-     * message: LOGIN_FAILURE
+     * message: LOGIN_FAILURE :: could not login
      * comment: @Override - - - - - - - - - -/
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -636,7 +636,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'errors.app.illegal.transition' with parameters.
      * <pre>
-     * message: ILLEGAL_TRANSITION
+     * message: ILLEGAL_TRANSITION :: retry because of illegal transition
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -652,7 +652,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'errors.app.db.already.deleted' with parameters.
      * <pre>
-     * message: ALREADY_DELETED
+     * message: ALREADY_DELETED :: others might be deleted, so retry
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -668,7 +668,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'errors.app.db.already.updated' with parameters.
      * <pre>
-     * message: ALREADY_UPDATED
+     * message: ALREADY_UPDATED :: others might be updated, so retry
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -684,7 +684,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'errors.app.db.already.exists' with parameters.
      * <pre>
-     * message: ALREADY_EXISTS
+     * message: ALREADY_EXISTS :: already existing data, so retry
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -700,7 +700,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'errors.app.double.submit.request' with parameters.
      * <pre>
-     * message: DOUBLE_SUBMIT
+     * message: DOUBLE_SUBMIT :: double submit might be requested
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -716,7 +716,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'errors.login.required' with parameters.
      * <pre>
-     * message: LOGIN_REQUIRED
+     * message: LOGIN_REQUIRED :: login is required
      * comment: framework does not have own message so define here, used in your ApiFailureHook
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -731,7 +731,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'errors.unknown.business.error' with parameters.
      * <pre>
-     * message: UNKNOWN_BUSINESS_ERROR
+     * message: UNKNOWN_BUSINESS_ERROR :: unknown business error
      * comment: for no-message application exception, basically should not be used
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -746,7 +746,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
     /**
      * Add the created action message for the key 'errors.signup.account.already.exists' with parameters.
      * <pre>
-     * message: SIGNUP_ACCOUNT_ALREADY_EXISTS
+     * message: SIGNUP_ACCOUNT_ALREADY_EXISTS :: the account already exists
      * </pre>
      * @param property The property name for the message. (NotNull)
      * @return this. (NotNull)

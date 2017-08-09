@@ -16,6 +16,7 @@
 package org.docksidestage.mylasta.direction.sponsor;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -195,8 +196,8 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
             String dataDelimiter, String serverManaged) {
         final String code = Srl.substringFirstFront(clientManaged, dataDelimiter).trim(); // e.g. LENGTH
         final String json = "{" + Srl.substringFirstRear(clientManaged, dataDelimiter).trim() + "}"; // e.g. {min:{min}, max:{max}}
-        final Map<String, Object> data = parseJsonistaData(resource, field, code, json);
-        return new ShowbaseFailureErrorPart(field, code, filterDataParserHeadache(data), serverManaged);
+        final Map<String, Object> jsonistaData = filterDataParserHeadache(parseJsonistaData(resource, field, code, json));
+        return new ShowbaseFailureErrorPart(field, code, jsonistaData, filterServerManagedMessage(serverManaged, jsonistaData));
     }
 
     @SuppressWarnings("unchecked")
@@ -251,6 +252,12 @@ public class ShowbaseApiFailureHook implements ApiFailureHook {
             filteredMap.put(entry.getKey(), value);
         });
         return filteredMap;
+    }
+
+    protected String filterServerManagedMessage(String serverManaged, Map<String, Object> jsonistaData) {
+        final Map<String, String> fromToMap = new HashMap<String, String>();
+        jsonistaData.forEach((key, value) -> fromToMap.put("$$" + key + "$$", value.toString())); // e.g. { "$$max$$" = "10" }
+        return Srl.replaceBy(serverManaged, fromToMap); // e.g. "less than or equal to $$max$$" => "less than or equal to 10"
     }
 
     // -----------------------------------------------------
