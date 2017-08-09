@@ -1,7 +1,10 @@
+import Validator from './validator';
+
 export default class Request {
 
   constructor() {
     this.apiPrefix = '/api';
+    this.validator = new Validator();
   }
 
   post(url, queryParams, onSuccess, onError, withoutAuthorization) {
@@ -43,7 +46,7 @@ export default class Request {
   toValidationErros(errors) {
     const validationErrors = {};
     errors.forEach((element) => {
-      validationErrors[element.field] = element.messages;
+      validationErrors[element.field] = this.validator.generateMessage(element);
     });
     return validationErrors;
   }
