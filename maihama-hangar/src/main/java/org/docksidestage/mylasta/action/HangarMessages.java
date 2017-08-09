@@ -71,7 +71,7 @@ public class HangarMessages extends HangarLabels {
     /**
      * Add the created action message for the key 'constraints.DecimalMax.message' with parameters.
      * <pre>
-     * message: DECIMAL_MAX | inclusive:{inclusive == true ? 'true' : 'false'}, max:{value}
+     * message: DECIMAL_MAX | inclusive:${inclusive == true ? 'true' : 'false'}, max:{value}
      * comment: @Override inclusive statement to avoid parameter mismatch with super properties
      * </pre>
      * @param property The property name for the message. (NotNull)
@@ -88,7 +88,7 @@ public class HangarMessages extends HangarLabels {
     /**
      * Add the created action message for the key 'constraints.DecimalMin.message' with parameters.
      * <pre>
-     * message: DECIMAL_MIN | inclusive:{inclusive == true ? 'true' : 'false'}, min:{value}
+     * message: DECIMAL_MIN | inclusive:${inclusive == true ? 'true' : 'false'}, min:{value}
      * comment: @Override me too
      * </pre>
      * @param property The property name for the message. (NotNull)
