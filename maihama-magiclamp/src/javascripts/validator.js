@@ -38,22 +38,22 @@ export default class Validator {
 
       const validationError = [];
       if (ref.attributes.required && this.validators.required(ref.value)) {
-        validationError.push('REQUIRED');
+        validationError.push({ code: 'REQUIRED' });
       } else {
         if (ref.attributes.max && this.validators.max(ref.value, ref.attributes.max.nodeValue)) {
-          validationError.push(`MAX | max:${ref.attributes.max.nodeValue}`);
+          validationError.push({ code: 'MAX', data: { max: '${ref.attributes.max.nodeValue}' } });
         }
         if (ref.attributes.min && this.validators.min(ref.value, ref.attributes.min.nodeValue)) {
-          validationError.push(`MIN | min:${ref.attributes.min.nodeValue}`);
+          validationError.push({ code: 'MIN', data: { min: '${ref.attributes.min.nodeValue}' } });
         }
         if (ref.attributes.maxlength && this.validators.maxlength(ref.value, ref.attributes.maxlength.nodeValue)) {
-          validationError.push(`MAXLENGTH | max:${ref.attributes.maxlength.nodeValue}`);
+          validationError.push({ code: 'MAXLENGTH', data: { max: '${ref.attributes.maxlength.nodeValue}' } });
         }
         if (ref.attributes.minlength && this.validators.minlength(ref.value, ref.attributes.minlength.nodeValue)) {
-          validationError.push(`MINLENGTH | min:${ref.attributes.minlength.nodeValue}`);
+          validationError.push({ code: 'MINLENGTH', data: { min: '${ref.attributes.minlength.nodeValue}' } });
         }
         if (ref.attributes.pattern && this.validators.pattern(ref.value, ref.attributes.pattern.nodeValue)) {
-          validationError.push(`PATTERN | regexp:${ref.attributes.pattern.nodeValue}`);
+          validationError.push({ code: 'PATTERN' });
         }
       }
 
@@ -67,9 +67,8 @@ export default class Validator {
   }
 
   generateMessage(target) {
-    const split = target.split('|');
-    const key = split[0].trim();
-    const values = split.length > 1 ? this.toValues(split[1].trim()) : {};
+    const key = target.code;
+    const values = target.data || {};
 
     let message = messages[key];
     for (const k in values) {
@@ -79,14 +78,5 @@ export default class Validator {
       message = message.replace(`{${k}}`, values[k]);
     }
     return message;
-  }
-
-  toValues(target) {
-    const values = {};
-    target.split(',').forEach((value) => {
-      const split = value.trim().split(':');
-      values[split[0]] = split[1];
-    });
-    return values;
   }
 }
