@@ -13,7 +13,7 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.wx.climsg;
+package org.docksidestage.app.web.wx.faihy;
 
 import java.util.Map;
 
@@ -32,7 +32,7 @@ import org.lastaflute.web.response.JsonResponse;
  * @author jflute
  */
 @AllowAnyoneAccess
-public class WxClimsgAction extends ShowbaseBaseAction {
+public class WxFaihyAction extends ShowbaseBaseAction {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -46,7 +46,7 @@ public class WxClimsgAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<Map<String, Object>> index(WxClimsgForm form) {
+    public JsonResponse<Map<String, Object>> index(WxFaihyForm form) {
         validate(form, messages -> {});
         Member member = memberBhv.selectByUniqueOf(form.sea).get();
         Map<String, Object> columnMap = member.asDBMeta().extractAllColumnMap(member);

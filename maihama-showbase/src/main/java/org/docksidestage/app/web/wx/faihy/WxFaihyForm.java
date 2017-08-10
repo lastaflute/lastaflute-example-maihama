@@ -13,7 +13,7 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.wx.climsg;
+package org.docksidestage.app.web.wx.faihy;
 
 import org.hibernate.validator.constraints.Length;
 import org.lastaflute.web.validation.Required;
@@ -21,7 +21,7 @@ import org.lastaflute.web.validation.Required;
 /**
  * @author jflute
  */
-public class WxClimsgForm {
+public class WxFaihyForm {
 
     @Required
     @Length(min = 2, max = 5)
