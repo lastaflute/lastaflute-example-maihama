@@ -121,6 +121,22 @@ public class ShowbaseMessages extends ShowbaseLabels {
     }
 
     /**
+     * Add the created action message for the key 'constraints.Email.message' with parameters.
+     * <pre>
+     * message: EMAIL :: not a well-formed email address
+     * comment: @Override
+     * </pre>
+     * @param property The property name for the message. (NotNull)
+     * @return this. (NotNull)
+     */
+    @Override
+    public ShowbaseMessages addConstraintsEmailMessage(String property) {
+        assertPropertyNotNull(property);
+        add(property, new UserMessage(CONSTRAINTS_Email_MESSAGE));
+        return this;
+    }
+
+    /**
      * Add the created action message for the key 'constraints.Future.message' with parameters.
      * <pre>
      * message: FUTURE :: must be in the future
@@ -167,6 +183,38 @@ public class ShowbaseMessages extends ShowbaseLabels {
     public ShowbaseMessages addConstraintsMinMessage(String property, String value) {
         assertPropertyNotNull(property);
         add(property, new UserMessage(CONSTRAINTS_Min_MESSAGE, value));
+        return this;
+    }
+
+    /**
+     * Add the created action message for the key 'constraints.NotBlank.message' with parameters.
+     * <pre>
+     * message: NOT_BLANK :: may not be empty
+     * comment: @Override
+     * </pre>
+     * @param property The property name for the message. (NotNull)
+     * @return this. (NotNull)
+     */
+    @Override
+    public ShowbaseMessages addConstraintsNotBlankMessage(String property) {
+        assertPropertyNotNull(property);
+        add(property, new UserMessage(CONSTRAINTS_NotBlank_MESSAGE));
+        return this;
+    }
+
+    /**
+     * Add the created action message for the key 'constraints.NotEmpty.message' with parameters.
+     * <pre>
+     * message: NOT_EMPTY :: may not be empty
+     * comment: @Override
+     * </pre>
+     * @param property The property name for the message. (NotNull)
+     * @return this. (NotNull)
+     */
+    @Override
+    public ShowbaseMessages addConstraintsNotEmptyMessage(String property) {
+        assertPropertyNotNull(property);
+        add(property, new UserMessage(CONSTRAINTS_NotEmpty_MESSAGE));
         return this;
     }
 
@@ -286,22 +334,6 @@ public class ShowbaseMessages extends ShowbaseLabels {
     }
 
     /**
-     * Add the created action message for the key 'constraints.Email.message' with parameters.
-     * <pre>
-     * message: EMAIL :: not a well-formed email address
-     * comment: @Override
-     * </pre>
-     * @param property The property name for the message. (NotNull)
-     * @return this. (NotNull)
-     */
-    @Override
-    public ShowbaseMessages addConstraintsEmailMessage(String property) {
-        assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_Email_MESSAGE));
-        return this;
-    }
-
-    /**
      * Add the created action message for the key 'constraints.Length.message' with parameters.
      * <pre>
      * message: LENGTH | min:{min}, max:{max} :: length must be between $$min$$ and $$max$$
@@ -385,38 +417,6 @@ public class ShowbaseMessages extends ShowbaseLabels {
     public ShowbaseMessages addConstraintsModCheckMessage(String property, String value, String modType) {
         assertPropertyNotNull(property);
         add(property, new UserMessage(CONSTRAINTS_ModCheck_MESSAGE, value, modType));
-        return this;
-    }
-
-    /**
-     * Add the created action message for the key 'constraints.NotBlank.message' with parameters.
-     * <pre>
-     * message: NOT_BLANK :: may not be empty
-     * comment: @Override
-     * </pre>
-     * @param property The property name for the message. (NotNull)
-     * @return this. (NotNull)
-     */
-    @Override
-    public ShowbaseMessages addConstraintsNotBlankMessage(String property) {
-        assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_NotBlank_MESSAGE));
-        return this;
-    }
-
-    /**
-     * Add the created action message for the key 'constraints.NotEmpty.message' with parameters.
-     * <pre>
-     * message: NOT_EMPTY :: may not be empty
-     * comment: @Override
-     * </pre>
-     * @param property The property name for the message. (NotNull)
-     * @return this. (NotNull)
-     */
-    @Override
-    public ShowbaseMessages addConstraintsNotEmptyMessage(String property) {
-        assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_NotEmpty_MESSAGE));
         return this;
     }
 
@@ -508,7 +508,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
      * Add the created action message for the key 'constraints.Required.message' with parameters.
      * <pre>
      * message: REQUIRED :: is required
-     * comment: @Override
+     * comment: @Override --------------------
      * </pre>
      * @param property The property name for the message. (NotNull)
      * @return this. (NotNull)

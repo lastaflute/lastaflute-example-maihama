@@ -121,6 +121,22 @@ public class HangarMessages extends HangarLabels {
     }
 
     /**
+     * Add the created action message for the key 'constraints.Email.message' with parameters.
+     * <pre>
+     * message: EMAIL
+     * comment: @Override
+     * </pre>
+     * @param property The property name for the message. (NotNull)
+     * @return this. (NotNull)
+     */
+    @Override
+    public HangarMessages addConstraintsEmailMessage(String property) {
+        assertPropertyNotNull(property);
+        add(property, new UserMessage(CONSTRAINTS_Email_MESSAGE));
+        return this;
+    }
+
+    /**
      * Add the created action message for the key 'constraints.Future.message' with parameters.
      * <pre>
      * message: FUTURE
@@ -167,6 +183,38 @@ public class HangarMessages extends HangarLabels {
     public HangarMessages addConstraintsMinMessage(String property, String value) {
         assertPropertyNotNull(property);
         add(property, new UserMessage(CONSTRAINTS_Min_MESSAGE, value));
+        return this;
+    }
+
+    /**
+     * Add the created action message for the key 'constraints.NotBlank.message' with parameters.
+     * <pre>
+     * message: NOT_BLANK
+     * comment: @Override
+     * </pre>
+     * @param property The property name for the message. (NotNull)
+     * @return this. (NotNull)
+     */
+    @Override
+    public HangarMessages addConstraintsNotBlankMessage(String property) {
+        assertPropertyNotNull(property);
+        add(property, new UserMessage(CONSTRAINTS_NotBlank_MESSAGE));
+        return this;
+    }
+
+    /**
+     * Add the created action message for the key 'constraints.NotEmpty.message' with parameters.
+     * <pre>
+     * message: NOT_EMPTY
+     * comment: @Override
+     * </pre>
+     * @param property The property name for the message. (NotNull)
+     * @return this. (NotNull)
+     */
+    @Override
+    public HangarMessages addConstraintsNotEmptyMessage(String property) {
+        assertPropertyNotNull(property);
+        add(property, new UserMessage(CONSTRAINTS_NotEmpty_MESSAGE));
         return this;
     }
 
@@ -286,22 +334,6 @@ public class HangarMessages extends HangarLabels {
     }
 
     /**
-     * Add the created action message for the key 'constraints.Email.message' with parameters.
-     * <pre>
-     * message: EMAIL
-     * comment: @Override
-     * </pre>
-     * @param property The property name for the message. (NotNull)
-     * @return this. (NotNull)
-     */
-    @Override
-    public HangarMessages addConstraintsEmailMessage(String property) {
-        assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_Email_MESSAGE));
-        return this;
-    }
-
-    /**
      * Add the created action message for the key 'constraints.Length.message' with parameters.
      * <pre>
      * message: LENGTH | min:{min}, max:{max}
@@ -385,38 +417,6 @@ public class HangarMessages extends HangarLabels {
     public HangarMessages addConstraintsModCheckMessage(String property, String value, String modType) {
         assertPropertyNotNull(property);
         add(property, new UserMessage(CONSTRAINTS_ModCheck_MESSAGE, value, modType));
-        return this;
-    }
-
-    /**
-     * Add the created action message for the key 'constraints.NotBlank.message' with parameters.
-     * <pre>
-     * message: NOT_BLANK
-     * comment: @Override
-     * </pre>
-     * @param property The property name for the message. (NotNull)
-     * @return this. (NotNull)
-     */
-    @Override
-    public HangarMessages addConstraintsNotBlankMessage(String property) {
-        assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_NotBlank_MESSAGE));
-        return this;
-    }
-
-    /**
-     * Add the created action message for the key 'constraints.NotEmpty.message' with parameters.
-     * <pre>
-     * message: NOT_EMPTY
-     * comment: @Override
-     * </pre>
-     * @param property The property name for the message. (NotNull)
-     * @return this. (NotNull)
-     */
-    @Override
-    public HangarMessages addConstraintsNotEmptyMessage(String property) {
-        assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_NotEmpty_MESSAGE));
         return this;
     }
 
@@ -508,7 +508,7 @@ public class HangarMessages extends HangarLabels {
      * Add the created action message for the key 'constraints.Required.message' with parameters.
      * <pre>
      * message: REQUIRED
-     * comment: @Override
+     * comment: @Override --------------------
      * </pre>
      * @param property The property name for the message. (NotNull)
      * @return this. (NotNull)
