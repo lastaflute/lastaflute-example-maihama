@@ -193,6 +193,10 @@ table.child, table.child td, table.child th {
 	<p class="requestlink"><a href="#orleansconfig">OrleansConfig</a></p>
 	<p class="requestlink"><a href="#orleanslabel">OrleansLabel</a></p>
 	<p class="requestlink"><a href="#orleansmessage">OrleansMessage</a></p>
+	<p class="requestlink"><a href="#showbaseenv">ShowbaseEnv</a></p>
+	<p class="requestlink"><a href="#showbaseconfig">ShowbaseConfig</a></p>
+	<p class="requestlink"><a href="#showbaselabel">ShowbaseLabel</a></p>
+	<p class="requestlink"><a href="#showbasemessage">ShowbaseMessage</a></p>
 <p class="sisterlink"><a href="./schema-maihamadb.html">to SchemaHTML</a></p>
 <p class="sisterlink"><a href="./history-maihamadb.html">to HistoryHTML</a></p>
 </div>
@@ -313,7 +317,7 @@ table.child, table.child td, table.child th {
 			<td class="filecell"><strong>../src/main/resources/maihama_message.properties</strong></td>
 			<td class="envtypecell">-</td>
 			<td class="langtypecell">-</td>
-			<td class="sizecell">36</td>
+			<td class="sizecell">41</td>
 			<td class="extendsfilecell">../src/main/resources/maihama_label.properties</td>
 			<td>&nbsp;</td>
 			<td class="markcell">-</td>
@@ -445,7 +449,7 @@ table.child, table.child td, table.child th {
 			<td class="filecell"><strong>../../maihama-dockside/src/main/resources/dockside_message.properties</strong></td>
 			<td class="envtypecell">-</td>
 			<td class="langtypecell">-</td>
-			<td class="sizecell">2</td>
+			<td class="sizecell">1</td>
 			<td class="extendsfilecell">../../maihama-dockside/src/main/resources/dockside_label.properties</td>
 			<td>&nbsp;</td>
 			<td class="markcell">-</td>
@@ -579,7 +583,7 @@ table.child, table.child td, table.child th {
 			<td class="filecell"><strong>../../maihama-hangar/src/main/resources/hangar_message.properties</strong></td>
 			<td class="envtypecell">-</td>
 			<td class="langtypecell">-</td>
-			<td class="sizecell">1</td>
+			<td class="sizecell">44</td>
 			<td class="extendsfilecell">../../maihama-hangar/src/main/resources/hangar_label.properties</td>
 			<td>&nbsp;</td>
 			<td class="markcell">-</td>
@@ -713,6 +717,138 @@ table.child, table.child td, table.child th {
 			<td class="langtypecell">-</td>
 			<td class="sizecell">1</td>
 			<td class="extendsfilecell">../../maihama-orleans/src/main/resources/orleans_label.properties</td>
+			<td>&nbsp;</td>
+			<td class="markcell">-</td>
+			<td class="markcell">-</td>
+		</tr>
+	</tbody>
+</table>
+<h3><a href="#showbaseenv">ShowbaseEnv</a> <span class="freecomment">(extends MaihamaConfig)</span></h3>
+<table summary="File Attributes">
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>Env</th>
+			<th>Lang</th>
+			<th>Key Count</th>
+			<th>Extends</th>
+			<th>Duplicate Key</th>
+			<th>Over Key</th>
+			<th>Short Key</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="filecell"><strong>../../maihama-showbase/src/main/resources/showbase_env.properties</strong></td>
+			<td class="envtypecell">-</td>
+			<td class="langtypecell">-</td>
+			<td class="sizecell">3</td>
+			<td class="extendsfilecell">../src/main/resources/maihama_config.properties</td>
+			<td>&nbsp;</td>
+			<td class="markcell">-</td>
+			<td class="markcell">-</td>
+		</tr>
+		<tr>
+			<td class="filecell">../../maihama-showbase/src/main/resources/showbase_env_integration.properties</td>
+			<td class="envtypecell">integration</td>
+			<td class="langtypecell">-</td>
+			<td class="sizecell">2</td>
+			<td class="extendsfilecell">../src/main/resources/maihama_config.properties</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="keylistcell">
+				<p class="diffprop">mail.address.support</p>
+			</td>
+		</tr>
+		<tr>
+			<td class="filecell">../../maihama-showbase/src/main/resources/showbase_env_production.properties</td>
+			<td class="envtypecell">production</td>
+			<td class="langtypecell">-</td>
+			<td class="sizecell">2</td>
+			<td class="extendsfilecell">../src/main/resources/maihama_config.properties</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="keylistcell">
+				<p class="diffprop">mail.address.support</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h3><a href="#showbaseconfig">ShowbaseConfig</a> <span class="freecomment">(extends ShowbaseEnv)</span></h3>
+<table summary="File Attributes">
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>Env</th>
+			<th>Lang</th>
+			<th>Key Count</th>
+			<th>Extends</th>
+			<th>Duplicate Key</th>
+			<th>Over Key</th>
+			<th>Short Key</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="filecell"><strong>../../maihama-showbase/src/main/resources/showbase_config.properties</strong></td>
+			<td class="envtypecell">-</td>
+			<td class="langtypecell">-</td>
+			<td class="sizecell">3</td>
+			<td class="extendsfilecell">../../maihama-showbase/src/main/resources/showbase_env.properties</td>
+			<td>&nbsp;</td>
+			<td class="markcell">-</td>
+			<td class="markcell">-</td>
+		</tr>
+	</tbody>
+</table>
+<h3><a href="#showbaselabel">ShowbaseLabel</a> <span class="freecomment">(extends MaihamaMessage)</span></h3>
+<table summary="File Attributes">
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>Env</th>
+			<th>Lang</th>
+			<th>Key Count</th>
+			<th>Extends</th>
+			<th>Duplicate Key</th>
+			<th>Over Key</th>
+			<th>Short Key</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="filecell"><strong>../../maihama-showbase/src/main/resources/showbase_label.properties</strong></td>
+			<td class="envtypecell">-</td>
+			<td class="langtypecell">-</td>
+			<td class="sizecell">28</td>
+			<td class="extendsfilecell">../src/main/resources/maihama_message.properties</td>
+			<td>&nbsp;</td>
+			<td class="markcell">-</td>
+			<td class="markcell">-</td>
+		</tr>
+	</tbody>
+</table>
+<h3><a href="#showbasemessage">ShowbaseMessage</a> <span class="freecomment">(extends ShowbaseLabel)</span></h3>
+<table summary="File Attributes">
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>Env</th>
+			<th>Lang</th>
+			<th>Key Count</th>
+			<th>Extends</th>
+			<th>Duplicate Key</th>
+			<th>Over Key</th>
+			<th>Short Key</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="filecell"><strong>../../maihama-showbase/src/main/resources/showbase_message.properties</strong></td>
+			<td class="envtypecell">-</td>
+			<td class="langtypecell">-</td>
+			<td class="sizecell">44</td>
+			<td class="extendsfilecell">../../maihama-showbase/src/main/resources/showbase_label.properties</td>
 			<td>&nbsp;</td>
 			<td class="markcell">-</td>
 			<td class="markcell">-</td>
@@ -2549,6 +2685,26 @@ table.child, table.child td, table.child th {
 	</tr>
 	<tr>
 		<td class="rownumcell">6</td>
+		<td class="keycell">constraints.Email.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">not&nbsp;a&nbsp;well-formed&nbsp;email&nbsp;address</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">7</td>
 		<td class="keycell">constraints.Future.message</td>
 		<td>
 			<table class="child">
@@ -2568,7 +2724,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">7</td>
+		<td class="rownumcell">8</td>
 		<td class="keycell">constraints.Max.message</td>
 		<td>
 			<table class="child">
@@ -2588,7 +2744,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">8</td>
+		<td class="rownumcell">9</td>
 		<td class="keycell">constraints.Min.message</td>
 		<td>
 			<table class="child">
@@ -2608,7 +2764,47 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">9</td>
+		<td class="rownumcell">10</td>
+		<td class="keycell">constraints.NotBlank.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">may&nbsp;not&nbsp;be&nbsp;empty</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">11</td>
+		<td class="keycell">constraints.NotEmpty.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">may&nbsp;not&nbsp;be&nbsp;empty</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">12</td>
 		<td class="keycell">constraints.NotNull.message</td>
 		<td>
 			<table class="child">
@@ -2628,7 +2824,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">10</td>
+		<td class="rownumcell">13</td>
 		<td class="keycell">constraints.Null.message</td>
 		<td>
 			<table class="child">
@@ -2648,7 +2844,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">11</td>
+		<td class="rownumcell">14</td>
 		<td class="keycell">constraints.Past.message</td>
 		<td>
 			<table class="child">
@@ -2668,7 +2864,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">12</td>
+		<td class="rownumcell">15</td>
 		<td class="keycell">constraints.Pattern.message</td>
 		<td>
 			<table class="child">
@@ -2681,14 +2877,14 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell">must&nbsp;match&nbsp;"{regexp}"</td>
+					<td class="valuecell">invalid&nbsp;format</td>
 					<td class="uniquenocell">1</td>
 				</tr>
 			</table>
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">13</td>
+		<td class="rownumcell">16</td>
 		<td class="keycell">constraints.Size.message</td>
 		<td>
 			<table class="child">
@@ -2708,7 +2904,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">14</td>
+		<td class="rownumcell">17</td>
 		<td class="keycell">constraints.CreditCardNumber.message</td>
 		<td>
 			<table class="child">
@@ -2730,7 +2926,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">15</td>
+		<td class="rownumcell">18</td>
 		<td class="keycell">constraints.EAN.message</td>
 		<td>
 			<table class="child">
@@ -2750,27 +2946,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">16</td>
-		<td class="keycell">constraints.Email.message</td>
-		<td>
-			<table class="child">
-				<tr>
-					<th>Env</th>
-					<th>Lang</th>
-					<th>Property</th>
-					<th><span title="Unique No (same value, same No)">uq</span></th>
-				</tr>
-				<tr>
-					<td class="envtypecell">-</td>
-					<td class="langtypecell">-</td>
-					<td class="valuecell">not&nbsp;a&nbsp;well-formed&nbsp;email&nbsp;address</td>
-					<td class="uniquenocell">1</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">17</td>
+		<td class="rownumcell">19</td>
 		<td class="keycell">constraints.Length.message</td>
 		<td>
 			<table class="child">
@@ -2790,7 +2966,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">18</td>
+		<td class="rownumcell">20</td>
 		<td class="keycell">constraints.LuhnCheck.message</td>
 		<td>
 			<table class="child">
@@ -2810,7 +2986,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">19</td>
+		<td class="rownumcell">21</td>
 		<td class="keycell">constraints.Mod10Check.message</td>
 		<td>
 			<table class="child">
@@ -2830,7 +3006,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">20</td>
+		<td class="rownumcell">22</td>
 		<td class="keycell">constraints.Mod11Check.message</td>
 		<td>
 			<table class="child">
@@ -2850,7 +3026,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">21</td>
+		<td class="rownumcell">23</td>
 		<td class="keycell">constraints.ModCheck.message</td>
 		<td>
 			<table class="child">
@@ -2864,46 +3040,6 @@ table.child, table.child td, table.child th {
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
 					<td class="valuecell">The&nbsp;check&nbsp;digit&nbsp;for&nbsp;${value}&nbsp;is&nbsp;invalid,&nbsp;${modType}&nbsp;checksum&nbsp;failed</td>
-					<td class="uniquenocell">1</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">22</td>
-		<td class="keycell">constraints.NotBlank.message</td>
-		<td>
-			<table class="child">
-				<tr>
-					<th>Env</th>
-					<th>Lang</th>
-					<th>Property</th>
-					<th><span title="Unique No (same value, same No)">uq</span></th>
-				</tr>
-				<tr>
-					<td class="envtypecell">-</td>
-					<td class="langtypecell">-</td>
-					<td class="valuecell">may&nbsp;not&nbsp;be&nbsp;empty</td>
-					<td class="uniquenocell">1</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<td class="rownumcell">23</td>
-		<td class="keycell">constraints.NotEmpty.message</td>
-		<td>
-			<table class="child">
-				<tr>
-					<th>Env</th>
-					<th>Lang</th>
-					<th>Property</th>
-					<th><span title="Unique No (same value, same No)">uq</span></th>
-				</tr>
-				<tr>
-					<td class="envtypecell">-</td>
-					<td class="langtypecell">-</td>
-					<td class="valuecell">may&nbsp;not&nbsp;be&nbsp;empty</td>
 					<td class="uniquenocell">1</td>
 				</tr>
 			</table>
@@ -3019,12 +3155,14 @@ table.child, table.child td, table.child th {
 					<th>Lang</th>
 					<th>Property</th>
 					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
 				</tr>
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
 					<td class="valuecell">is&nbsp;required</td>
 					<td class="uniquenocell">1</td>
+					<td class="commentcell">--------------------</td>
 				</tr>
 			</table>
 		</td>
@@ -3051,6 +3189,106 @@ table.child, table.child td, table.child th {
 	</tr>
 	<tr>
 		<td class="rownumcell">31</td>
+		<td class="keycell">constraints.TypeInteger.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">should&nbsp;be&nbsp;number</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">32</td>
+		<td class="keycell">constraints.TypeLong.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">should&nbsp;be&nbsp;number</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">33</td>
+		<td class="keycell">constraints.TypeLocalDate.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">should&nbsp;be&nbsp;date</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">34</td>
+		<td class="keycell">constraints.TypeLocalDateTime.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">should&nbsp;be&nbsp;date-time</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">35</td>
+		<td class="keycell">constraints.TypeBoolean.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">should&nbsp;be&nbsp;boolean</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">36</td>
 		<td class="keycell">errors.login.failure</td>
 		<td>
 			<table class="child">
@@ -3072,7 +3310,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">32</td>
+		<td class="rownumcell">37</td>
 		<td class="keycell">errors.app.illegal.transition</td>
 		<td>
 			<table class="child">
@@ -3092,7 +3330,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">33</td>
+		<td class="rownumcell">38</td>
 		<td class="keycell">errors.app.db.already.deleted</td>
 		<td>
 			<table class="child">
@@ -3112,7 +3350,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">34</td>
+		<td class="rownumcell">39</td>
 		<td class="keycell">errors.app.db.already.updated</td>
 		<td>
 			<table class="child">
@@ -3132,7 +3370,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">35</td>
+		<td class="rownumcell">40</td>
 		<td class="keycell">errors.app.db.already.exists</td>
 		<td>
 			<table class="child">
@@ -3152,7 +3390,7 @@ table.child, table.child td, table.child th {
 		</td>
 	</tr>
 	<tr>
-		<td class="rownumcell">36</td>
+		<td class="rownumcell">41</td>
 		<td class="keycell">errors.app.double.submit.request</td>
 		<td>
 			<table class="child">
@@ -3931,26 +4169,6 @@ table.child, table.child td, table.child th {
 			</table>
 		</td>
 	</tr>
-	<tr>
-		<td class="rownumcell">2</td>
-		<td class="keycell">errors.member.add.already.exist</td>
-		<td>
-			<table class="child">
-				<tr>
-					<th>Env</th>
-					<th>Lang</th>
-					<th>Property</th>
-					<th><span title="Unique No (same value, same No)">uq</span></th>
-				</tr>
-				<tr>
-					<td class="envtypecell">-</td>
-					<td class="langtypecell">-</td>
-					<td class="valuecell">the&nbsp;member&nbsp;already&nbsp;exists&nbsp;so&nbsp;input&nbsp;others</td>
-					<td class="uniquenocell">1</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
 	</tbody>
 </table>
 <p class="tablesupplement">*uq: Unique No (same value, same No)</p>
@@ -4659,7 +4877,1035 @@ table.child, table.child td, table.child th {
 	<tbody>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="keycell">errors.member.add.already.exist</td>
+		<td class="keycell">constraints.AssertFalse.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ASSERT_FALSE</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;---------------</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="keycell">constraints.AssertTrue.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ASSERT_TRUE</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="keycell">constraints.DecimalMax.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">DECIMAL_MAX&nbsp;|&nbsp;inclusive:${inclusive&nbsp;==&nbsp;true&nbsp;?&nbsp;'true'&nbsp;:&nbsp;'false'},&nbsp;max:{value}</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;inclusive&nbsp;statement&nbsp;to&nbsp;avoid&nbsp;parameter&nbsp;mismatch&nbsp;with&nbsp;super&nbsp;properties</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="keycell">constraints.DecimalMin.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">DECIMAL_MIN&nbsp;|&nbsp;inclusive:${inclusive&nbsp;==&nbsp;true&nbsp;?&nbsp;'true'&nbsp;:&nbsp;'false'},&nbsp;min:{value}</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;me&nbsp;too</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="keycell">constraints.Digits.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">DIGITS&nbsp;|&nbsp;integer:{integer},&nbsp;fraction:{fraction}</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">6</td>
+		<td class="keycell">constraints.Email.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">EMAIL</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">7</td>
+		<td class="keycell">constraints.Future.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">FUTURE</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">8</td>
+		<td class="keycell">constraints.Max.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">MAX&nbsp;|&nbsp;max:{value}</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">9</td>
+		<td class="keycell">constraints.Min.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">MIN&nbsp;|&nbsp;min:{value}</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">10</td>
+		<td class="keycell">constraints.NotBlank.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">NOT_BLANK</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">11</td>
+		<td class="keycell">constraints.NotEmpty.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">NOT_EMPTY</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">12</td>
+		<td class="keycell">constraints.NotNull.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">NOT_NULL</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">13</td>
+		<td class="keycell">constraints.Null.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">NULL</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">14</td>
+		<td class="keycell">constraints.Past.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">PAST</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">15</td>
+		<td class="keycell">constraints.Pattern.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">PATTERN</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">16</td>
+		<td class="keycell">constraints.Size.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">SIZE&nbsp;|&nbsp;min:{min},&nbsp;max:{max}</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">17</td>
+		<td class="keycell">constraints.CreditCardNumber.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">CREDIT_CARD_NUMBER</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;-------------------</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">18</td>
+		<td class="keycell">constraints.EAN.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">EAN&nbsp;|&nbsp;type:{type}</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">19</td>
+		<td class="keycell">constraints.Length.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">LENGTH&nbsp;|&nbsp;min:{min},&nbsp;max:{max}</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">20</td>
+		<td class="keycell">constraints.LuhnCheck.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">LuhnCheck&nbsp;|&nbsp;unused&nbsp;for&nbsp;now&nbsp;so&nbsp;parse&nbsp;failure,&nbsp;${value}&nbsp;for&nbsp;freegen</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">21</td>
+		<td class="keycell">constraints.Mod10Check.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Mod10Check&nbsp;|&nbsp;unused&nbsp;for&nbsp;now&nbsp;so&nbsp;parse&nbsp;failure,&nbsp;${value}&nbsp;for&nbsp;freegen</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">22</td>
+		<td class="keycell">constraints.Mod11Check.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Mod11Check&nbsp;|&nbsp;unused&nbsp;for&nbsp;now&nbsp;so&nbsp;parse&nbsp;failure,&nbsp;${value}&nbsp;for&nbsp;freegen</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">23</td>
+		<td class="keycell">constraints.ModCheck.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ModCheck&nbsp;|&nbsp;unused&nbsp;for&nbsp;now&nbsp;so&nbsp;parse&nbsp;failure,&nbsp;${value}&nbsp;${modType}&nbsp;for&nbsp;freegen</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">24</td>
+		<td class="keycell">constraints.ParametersScriptAssert.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">PARAMETERS_SCRIPT_ASSERT&nbsp;|&nbsp;script:"{script}"</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">25</td>
+		<td class="keycell">constraints.Range.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">RANGE&nbsp;|&nbsp;min:{min},&nbsp;max:{max}</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">26</td>
+		<td class="keycell">constraints.SafeHtml.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">SAFE_HTML</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">27</td>
+		<td class="keycell">constraints.ScriptAssert.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">SCRIPT_ASSERT&nbsp;|&nbsp;script:"{script}"</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">28</td>
+		<td class="keycell">constraints.URL.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">URL</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">29</td>
+		<td class="keycell">constraints.Required.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">REQUIRED</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;--------------------</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">30</td>
+		<td class="keycell">constraints.TypeAny.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_ANY&nbsp;|&nbsp;should&nbsp;be&nbsp;{propertyType}</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">31</td>
+		<td class="keycell">constraints.TypeInteger.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_NUMBER</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">32</td>
+		<td class="keycell">constraints.TypeLong.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_NUMBER</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">33</td>
+		<td class="keycell">constraints.TypeLocalDate.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_DATE</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">34</td>
+		<td class="keycell">constraints.TypeLocalDateTime.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_DATETIME</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">35</td>
+		<td class="keycell">constraints.TypeBoolean.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_BOOLEAN</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">36</td>
+		<td class="keycell">errors.login.failure</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">LOGIN_FAILURE</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-/</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">37</td>
+		<td class="keycell">errors.app.illegal.transition</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ILLEGAL_TRANSITION</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">38</td>
+		<td class="keycell">errors.app.db.already.deleted</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ALREADY_DELETED</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">39</td>
+		<td class="keycell">errors.app.db.already.updated</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ALREADY_UPDATED</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">40</td>
+		<td class="keycell">errors.app.db.already.exists</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ALREADY_EXISTS</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">41</td>
+		<td class="keycell">errors.app.double.submit.request</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">DOUBLE_SUBMIT</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">42</td>
+		<td class="keycell">errors.login.required</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">LOGIN_REQUIRED</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">framework&nbsp;does&nbsp;not&nbsp;have&nbsp;own&nbsp;message&nbsp;so&nbsp;define&nbsp;here,&nbsp;used&nbsp;in&nbsp;your&nbsp;ApiFailureHook</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">43</td>
+		<td class="keycell">errors.unknown.business.error</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">UNKNOWN_BUSINESS_ERROR</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">for&nbsp;no-message&nbsp;application&nbsp;exception,&nbsp;basically&nbsp;should&nbsp;not&nbsp;be&nbsp;used</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">44</td>
+		<td class="keycell">errors.signup.account.already.exists</td>
 		<td>
 			<table class="child">
 				<tr>
@@ -4671,7 +5917,7 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell">the&nbsp;member&nbsp;{0}&nbsp;already&nbsp;exists&nbsp;so&nbsp;input&nbsp;others</td>
+					<td class="valuecell">SIGNUP_ACCOUNT_ALREADY_EXISTS</td>
 					<td class="uniquenocell">1</td>
 				</tr>
 			</table>
@@ -5419,7 +6665,7 @@ table.child, table.child td, table.child th {
 	<tbody>
 	<tr>
 		<td class="rownumcell">1</td>
-		<td class="keycell">errors.member.add.already.exist</td>
+		<td class="keycell">errors.signup.account.already.exists</td>
 		<td>
 			<table class="child">
 				<tr>
@@ -5431,7 +6677,1831 @@ table.child, table.child td, table.child th {
 				<tr>
 					<td class="envtypecell">-</td>
 					<td class="langtypecell">-</td>
-					<td class="valuecell">the&nbsp;member&nbsp;{0}&nbsp;already&nbsp;exists&nbsp;so&nbsp;input&nbsp;others</td>
+					<td class="valuecell">the&nbsp;account&nbsp;already&nbsp;exists&nbsp;so&nbsp;input&nbsp;others</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<p class="tablesupplement">*uq: Unique No (same value, same No)</p>
+<h2 id="showbaseenv">ShowbaseEnv <span class="freecomment">(extends MaihamaConfig)</span></h2>
+<table summary="Properties">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>Property Key</th>
+		<th>Contents</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="keycell">mail.address.support</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">showbase-support@annie.example.com</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">Mail&nbsp;Address&nbsp;for&nbsp;Showbase&nbsp;Support</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="keycell">server.domain</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">localhost:8091</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">domain&nbsp;to&nbsp;access&nbsp;this&nbsp;application&nbsp;from&nbsp;internet,&nbsp;e.g.&nbsp;for&nbsp;registration&nbsp;mail</td>
+				</tr>
+				<tr>
+					<td class="envtypecell">integration</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">docksidestage.org</td>
+					<td class="uniquenocell">2</td>
+					<td class="commentcell">domain&nbsp;to&nbsp;access&nbsp;this&nbsp;application&nbsp;from&nbsp;internet,&nbsp;e.g.&nbsp;for&nbsp;registration&nbsp;mail&nbsp;#change_it_first</td>
+				</tr>
+				<tr>
+					<td class="envtypecell">production</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">docksidestage.org</td>
+					<td class="uniquenocell">2</td>
+					<td class="commentcell">domain&nbsp;to&nbsp;access&nbsp;this&nbsp;application&nbsp;from&nbsp;internet,&nbsp;e.g.&nbsp;for&nbsp;registration&nbsp;mail&nbsp;#change_it_first</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="keycell">swagger.enabled</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">true</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">is&nbsp;it&nbsp;use&nbsp;swagger&nbsp;in&nbsp;this&nbsp;environment?</td>
+				</tr>
+				<tr>
+					<td class="envtypecell">integration</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">false</td>
+					<td class="uniquenocell">2</td>
+					<td class="commentcell">is&nbsp;it&nbsp;use&nbsp;swagger&nbsp;in&nbsp;this&nbsp;environment?</td>
+				</tr>
+				<tr>
+					<td class="envtypecell">production</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">false</td>
+					<td class="uniquenocell">2</td>
+					<td class="commentcell">is&nbsp;it&nbsp;use&nbsp;swagger&nbsp;in&nbsp;this&nbsp;environment?</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<p class="tablesupplement">*uq: Unique No (same value, same No)</p>
+<h2 id="showbaseconfig">ShowbaseConfig <span class="freecomment">(extends ShowbaseEnv)</span></h2>
+<table summary="Properties">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>Property Key</th>
+		<th>Contents</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="keycell">domain.name</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">showbase</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;The&nbsp;name&nbsp;of&nbsp;domain&nbsp;(means&nbsp;this&nbsp;application)&nbsp;as&nbsp;identity</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="keycell">domain.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Showbase</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;The&nbsp;title&nbsp;of&nbsp;domain&nbsp;(means&nbsp;this&nbsp;application)&nbsp;for&nbsp;logging</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="keycell">cookie.remember.me.showbase.key</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">SHB</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">The&nbsp;cookie&nbsp;key&nbsp;of&nbsp;remember-me&nbsp;for&nbsp;Showbase&nbsp;#change_it_first</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<p class="tablesupplement">*uq: Unique No (same value, same No)</p>
+<h2 id="showbaselabel">ShowbaseLabel <span class="freecomment">(extends MaihamaMessage)</span></h2>
+<table summary="Properties">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>Property Key</th>
+		<th>Contents</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="keycell">labels.signup.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Sign&nbsp;up&nbsp;your&nbsp;account!</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="keycell">labels.signup.input.name</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Please&nbsp;input&nbsp;your&nbsp;name</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="keycell">labels.signup.input.account</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Please&nbsp;input&nbsp;your&nbsp;account&nbsp;name</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="keycell">labels.signup.input.password</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Please&nbsp;input&nbsp;your&nbsp;password</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="keycell">labels.signup.input.reminder.question</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Please&nbsp;input&nbsp;your&nbsp;reminder&nbsp;question</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">6</td>
+		<td class="keycell">labels.signup.input.reminder.answer</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Please&nbsp;input&nbsp;your&nbsp;reminder&nbsp;question&nbsp;answer</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">7</td>
+		<td class="keycell">labels.signup.button</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Sign&nbsp;up</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">8</td>
+		<td class="keycell">labels.signin.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Sign&nbsp;In</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">9</td>
+		<td class="keycell">labels.signin.button</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Sign&nbsp;in</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">10</td>
+		<td class="keycell">labels.signin.input.account</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">input&nbsp;Pixy</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">11</td>
+		<td class="keycell">labels.signin.input.password</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">input&nbsp;sea</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">12</td>
+		<td class="keycell">labels.signin.rememberMe</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Remember&nbsp;me?</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">13</td>
+		<td class="keycell">labels.signin.reminder.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Sign&nbsp;In&nbsp;Reminder</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">14</td>
+		<td class="keycell">labels.product.list.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">@[labels.list]&nbsp;of&nbsp;@[labels.product]</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">15</td>
+		<td class="keycell">labels.product.list.latestPurchaseDate</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Latest&nbsp;Purchase</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">16</td>
+		<td class="keycell">labels.product.detail.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">@[labels.detail]&nbsp;of&nbsp;@[labels.product]</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">17</td>
+		<td class="keycell">labels.purchase.list.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">@[labels.list]&nbsp;of&nbsp;@[labels.purchase]</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">18</td>
+		<td class="keycell">labels.purchase.detail.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">@[labels.list]&nbsp;of&nbsp;@[labels.purchase]</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">19</td>
+		<td class="keycell">labels.member.list.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">@[labels.list]&nbsp;of&nbsp;@[labels.member]</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">20</td>
+		<td class="keycell">labels.member.add.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">@[labels.add]&nbsp;@[labels.member]</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">21</td>
+		<td class="keycell">labels.member.edit.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">@[labels.edit]&nbsp;@[labels.member]</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">22</td>
+		<td class="keycell">labels.member.input.keyword</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">input&nbsp;keyword&nbsp;to&nbsp;search</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">23</td>
+		<td class="keycell">labels.member.input.zipCode</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">e.g.&nbsp;153-0051</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">24</td>
+		<td class="keycell">labels.mypage.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">My&nbsp;Page</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">25</td>
+		<td class="keycell">labels.profile.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Profile</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">26</td>
+		<td class="keycell">labels.withdrawal.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">@[labels.withdrawal]&nbsp;@[labels.account]</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">27</td>
+		<td class="keycell">labels.withdrawal.confirm.title</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">@[labels.confirm]&nbsp;@[labels.withdrawal]&nbsp;Reason</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">28</td>
+		<td class="keycell">labels.mail.support.personal</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Showbase&nbsp;Support</td>
+					<td class="uniquenocell">1</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<p class="tablesupplement">*uq: Unique No (same value, same No)</p>
+<h2 id="showbasemessage">ShowbaseMessage <span class="freecomment">(extends ShowbaseLabel)</span></h2>
+<table summary="Properties">
+	<thead>
+	<tr>
+		<th class="rownumhead">No.</th>
+		<th>Property Key</th>
+		<th>Contents</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td class="rownumcell">1</td>
+		<td class="keycell">constraints.AssertFalse.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ASSERT_FALSE&nbsp;::&nbsp;must&nbsp;be&nbsp;false</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;---------------</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">2</td>
+		<td class="keycell">constraints.AssertTrue.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ASSERT_TRUE&nbsp;::&nbsp;must&nbsp;be&nbsp;true</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">3</td>
+		<td class="keycell">constraints.DecimalMax.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">DECIMAL_MAX&nbsp;|&nbsp;inclusive:${inclusive&nbsp;==&nbsp;true&nbsp;?&nbsp;'true'&nbsp;:&nbsp;'false'},&nbsp;max:{value}&nbsp;::&nbsp;must&nbsp;be&nbsp;less&nbsp;than&nbsp;${inclusive&nbsp;==&nbsp;true&nbsp;?&nbsp;'or&nbsp;equal&nbsp;to&nbsp;'&nbsp;:&nbsp;''}$$max$$</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;inclusive&nbsp;statement&nbsp;to&nbsp;avoid&nbsp;parameter&nbsp;mismatch&nbsp;with&nbsp;super&nbsp;properties</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">4</td>
+		<td class="keycell">constraints.DecimalMin.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">DECIMAL_MIN&nbsp;|&nbsp;inclusive:${inclusive&nbsp;==&nbsp;true&nbsp;?&nbsp;'true'&nbsp;:&nbsp;'false'},&nbsp;min:{value}&nbsp;::&nbsp;must&nbsp;be&nbsp;greater&nbsp;than&nbsp;${inclusive&nbsp;==&nbsp;true&nbsp;?&nbsp;'or&nbsp;equal&nbsp;to&nbsp;'&nbsp;:&nbsp;''}$$min$$</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;me&nbsp;too</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">5</td>
+		<td class="keycell">constraints.Digits.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">DIGITS&nbsp;|&nbsp;integer:{integer},&nbsp;fraction:{fraction}&nbsp;::&nbsp;numeric&nbsp;value&nbsp;out&nbsp;of&nbsp;bounds&nbsp;(&lt;$$integer$$&nbsp;digits&gt;.&lt;$$fraction$$&nbsp;digits&gt;&nbsp;expected)</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">6</td>
+		<td class="keycell">constraints.Email.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">EMAIL&nbsp;::&nbsp;not&nbsp;a&nbsp;well-formed&nbsp;email&nbsp;address</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">7</td>
+		<td class="keycell">constraints.Future.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">FUTURE&nbsp;::&nbsp;must&nbsp;be&nbsp;in&nbsp;the&nbsp;future</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">8</td>
+		<td class="keycell">constraints.Max.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">MAX&nbsp;|&nbsp;max:{value}&nbsp;::&nbsp;must&nbsp;be&nbsp;less&nbsp;than&nbsp;or&nbsp;equal&nbsp;to&nbsp;$$max$$</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">9</td>
+		<td class="keycell">constraints.Min.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">MIN&nbsp;|&nbsp;min:{value}&nbsp;::&nbsp;must&nbsp;be&nbsp;greater&nbsp;than&nbsp;or&nbsp;equal&nbsp;to&nbsp;$$min$$</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">10</td>
+		<td class="keycell">constraints.NotBlank.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">NOT_BLANK&nbsp;::&nbsp;may&nbsp;not&nbsp;be&nbsp;empty</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">11</td>
+		<td class="keycell">constraints.NotEmpty.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">NOT_EMPTY&nbsp;::&nbsp;may&nbsp;not&nbsp;be&nbsp;empty</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">12</td>
+		<td class="keycell">constraints.NotNull.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">NOT_NULL&nbsp;::&nbsp;may&nbsp;not&nbsp;be&nbsp;null</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">13</td>
+		<td class="keycell">constraints.Null.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">NULL&nbsp;::&nbsp;must&nbsp;be&nbsp;null</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">14</td>
+		<td class="keycell">constraints.Past.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">PAST&nbsp;::&nbsp;must&nbsp;be&nbsp;in&nbsp;the&nbsp;past</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">15</td>
+		<td class="keycell">constraints.Pattern.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">PATTERN&nbsp;::&nbsp;invalid&nbsp;format</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">16</td>
+		<td class="keycell">constraints.Size.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">SIZE&nbsp;|&nbsp;min:{min},&nbsp;max:{max}&nbsp;::&nbsp;size&nbsp;must&nbsp;be&nbsp;between&nbsp;$$min$$&nbsp;and&nbsp;$$max$$</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">17</td>
+		<td class="keycell">constraints.CreditCardNumber.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">CREDIT_CARD_NUMBER&nbsp;::&nbsp;invalid&nbsp;credit&nbsp;card&nbsp;number</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;-------------------</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">18</td>
+		<td class="keycell">constraints.EAN.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">EAN&nbsp;|&nbsp;type:{type}&nbsp;::&nbsp;invalid&nbsp;$$type$$&nbsp;barcode</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">19</td>
+		<td class="keycell">constraints.Length.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">LENGTH&nbsp;|&nbsp;min:{min},&nbsp;max:{max}&nbsp;::&nbsp;length&nbsp;must&nbsp;be&nbsp;between&nbsp;$$min$$&nbsp;and&nbsp;$$max$$</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">20</td>
+		<td class="keycell">constraints.LuhnCheck.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">LuhnCheck&nbsp;|&nbsp;unused&nbsp;for&nbsp;now&nbsp;so&nbsp;parse&nbsp;failure,&nbsp;${value}&nbsp;for&nbsp;freegen&nbsp;::&nbsp;The&nbsp;check&nbsp;digit&nbsp;for&nbsp;$$value$$&nbsp;is&nbsp;invalid,&nbsp;Luhn&nbsp;Modulo&nbsp;10&nbsp;checksum&nbsp;failed</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">21</td>
+		<td class="keycell">constraints.Mod10Check.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Mod10Check&nbsp;|&nbsp;unused&nbsp;for&nbsp;now&nbsp;so&nbsp;parse&nbsp;failure,&nbsp;${value}&nbsp;for&nbsp;freegen&nbsp;::&nbsp;The&nbsp;check&nbsp;digit&nbsp;for&nbsp;$$value$$&nbsp;is&nbsp;invalid,&nbsp;Modulo&nbsp;10&nbsp;checksum&nbsp;failed</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">22</td>
+		<td class="keycell">constraints.Mod11Check.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">Mod11Check&nbsp;|&nbsp;unused&nbsp;for&nbsp;now&nbsp;so&nbsp;parse&nbsp;failure,&nbsp;${value}&nbsp;for&nbsp;freegen&nbsp;::&nbsp;The&nbsp;check&nbsp;digit&nbsp;for&nbsp;$$value$$&nbsp;is&nbsp;invalid,&nbsp;Modulo&nbsp;11&nbsp;checksum&nbsp;failed</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">23</td>
+		<td class="keycell">constraints.ModCheck.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ModCheck&nbsp;|&nbsp;unused&nbsp;for&nbsp;now&nbsp;so&nbsp;parse&nbsp;failure,&nbsp;${value}&nbsp;${modType}&nbsp;for&nbsp;freegen&nbsp;::&nbsp;The&nbsp;check&nbsp;digit&nbsp;for&nbsp;$$value$$&nbsp;is&nbsp;invalid,&nbsp;$$modType$$&nbsp;checksum&nbsp;failed</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">24</td>
+		<td class="keycell">constraints.ParametersScriptAssert.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">PARAMETERS_SCRIPT_ASSERT&nbsp;|&nbsp;script:"{script}"&nbsp;::&nbsp;script&nbsp;expression&nbsp;"$$script$$"&nbsp;didn't&nbsp;evaluate&nbsp;to&nbsp;true</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">25</td>
+		<td class="keycell">constraints.Range.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">RANGE&nbsp;|&nbsp;min:{min},&nbsp;max:{max}&nbsp;::&nbsp;must&nbsp;be&nbsp;between&nbsp;$$min$$&nbsp;and&nbsp;$$max$$</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">26</td>
+		<td class="keycell">constraints.SafeHtml.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">SAFE_HTML&nbsp;::&nbsp;may&nbsp;have&nbsp;unsafe&nbsp;html&nbsp;content</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">27</td>
+		<td class="keycell">constraints.ScriptAssert.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">SCRIPT_ASSERT&nbsp;|&nbsp;script:"{script}"&nbsp;::&nbsp;script&nbsp;expression&nbsp;"$$script$$"&nbsp;didn't&nbsp;evaluate&nbsp;to&nbsp;true</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">28</td>
+		<td class="keycell">constraints.URL.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">URL&nbsp;::&nbsp;must&nbsp;be&nbsp;a&nbsp;valid&nbsp;URL</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">29</td>
+		<td class="keycell">constraints.Required.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">REQUIRED&nbsp;::&nbsp;is&nbsp;required</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;--------------------</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">30</td>
+		<td class="keycell">constraints.TypeAny.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_ANY&nbsp;|&nbsp;type:{propertyType}&nbsp;::&nbsp;should&nbsp;be&nbsp;$$type$$</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">31</td>
+		<td class="keycell">constraints.TypeInteger.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_NUMBER&nbsp;::&nbsp;should&nbsp;be&nbsp;number</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">32</td>
+		<td class="keycell">constraints.TypeLong.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_NUMBER&nbsp;::&nbsp;should&nbsp;be&nbsp;number</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">33</td>
+		<td class="keycell">constraints.TypeLocalDate.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_DATE&nbsp;::&nbsp;should&nbsp;be&nbsp;date</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">34</td>
+		<td class="keycell">constraints.TypeLocalDateTime.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_DATETIME&nbsp;::&nbsp;should&nbsp;be&nbsp;date-time</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">35</td>
+		<td class="keycell">constraints.TypeBoolean.message</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">TYPE_BOOLEAN&nbsp;::&nbsp;should&nbsp;be&nbsp;boolean</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">36</td>
+		<td class="keycell">errors.login.failure</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">LOGIN_FAILURE&nbsp;::&nbsp;could&nbsp;not&nbsp;login</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-&nbsp;-/</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">37</td>
+		<td class="keycell">errors.app.illegal.transition</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ILLEGAL_TRANSITION&nbsp;::&nbsp;retry&nbsp;because&nbsp;of&nbsp;illegal&nbsp;transition</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">38</td>
+		<td class="keycell">errors.app.db.already.deleted</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ALREADY_DELETED&nbsp;::&nbsp;others&nbsp;might&nbsp;be&nbsp;deleted,&nbsp;so&nbsp;retry</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">39</td>
+		<td class="keycell">errors.app.db.already.updated</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ALREADY_UPDATED&nbsp;::&nbsp;others&nbsp;might&nbsp;be&nbsp;updated,&nbsp;so&nbsp;retry</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">40</td>
+		<td class="keycell">errors.app.db.already.exists</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">ALREADY_EXISTS&nbsp;::&nbsp;already&nbsp;existing&nbsp;data,&nbsp;so&nbsp;retry</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">41</td>
+		<td class="keycell">errors.app.double.submit.request</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+					<th>Override</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">DOUBLE_SUBMIT&nbsp;::&nbsp;double&nbsp;submit&nbsp;might&nbsp;be&nbsp;requested</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">@Override</td>
+					<td class="checkcell">o</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">42</td>
+		<td class="keycell">errors.login.required</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">LOGIN_REQUIRED&nbsp;::&nbsp;login&nbsp;is&nbsp;required</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">framework&nbsp;does&nbsp;not&nbsp;have&nbsp;own&nbsp;message&nbsp;so&nbsp;define&nbsp;here,&nbsp;used&nbsp;in&nbsp;your&nbsp;ApiFailureHook</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">43</td>
+		<td class="keycell">errors.unknown.business.error</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+					<th>Comment</th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">UNKNOWN_BUSINESS_ERROR&nbsp;::&nbsp;unknown&nbsp;business&nbsp;error</td>
+					<td class="uniquenocell">1</td>
+					<td class="commentcell">for&nbsp;no-message&nbsp;application&nbsp;exception,&nbsp;basically&nbsp;should&nbsp;not&nbsp;be&nbsp;used</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="rownumcell">44</td>
+		<td class="keycell">errors.signup.account.already.exists</td>
+		<td>
+			<table class="child">
+				<tr>
+					<th>Env</th>
+					<th>Lang</th>
+					<th>Property</th>
+					<th><span title="Unique No (same value, same No)">uq</span></th>
+				</tr>
+				<tr>
+					<td class="envtypecell">-</td>
+					<td class="langtypecell">-</td>
+					<td class="valuecell">SIGNUP_ACCOUNT_ALREADY_EXISTS&nbsp;::&nbsp;the&nbsp;account&nbsp;already&nbsp;exists</td>
 					<td class="uniquenocell">1</td>
 				</tr>
 			</table>

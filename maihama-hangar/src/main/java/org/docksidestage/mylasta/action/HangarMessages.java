@@ -109,14 +109,14 @@ public class HangarMessages extends HangarLabels {
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
-     * @param integer The parameter integer for message. (NotNull)
      * @param fraction The parameter fraction for message. (NotNull)
+     * @param integer The parameter integer for message. (NotNull)
      * @return this. (NotNull)
      */
     @Override
-    public HangarMessages addConstraintsDigitsMessage(String property, String integer, String fraction) {
+    public HangarMessages addConstraintsDigitsMessage(String property, String fraction, String integer) {
         assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_Digits_MESSAGE, integer, fraction));
+        add(property, new UserMessage(CONSTRAINTS_Digits_MESSAGE, fraction, integer));
         return this;
     }
 
@@ -409,14 +409,14 @@ public class HangarMessages extends HangarLabels {
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
-     * @param value The parameter value for message. (NotNull)
      * @param modType The parameter modType for message. (NotNull)
+     * @param value The parameter value for message. (NotNull)
      * @return this. (NotNull)
      */
     @Override
-    public HangarMessages addConstraintsModCheckMessage(String property, String value, String modType) {
+    public HangarMessages addConstraintsModCheckMessage(String property, String modType, String value) {
         assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_ModCheck_MESSAGE, value, modType));
+        add(property, new UserMessage(CONSTRAINTS_ModCheck_MESSAGE, modType, value));
         return this;
     }
 

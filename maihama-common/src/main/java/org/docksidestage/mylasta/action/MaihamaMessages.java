@@ -42,6 +42,9 @@ public class MaihamaMessages extends MaihamaLabels {
     /** The key of the message: numeric value out of bounds (&lt;{integer} digits&gt;.&lt;{fraction} digits&gt; expected) */
     public static final String CONSTRAINTS_Digits_MESSAGE = "{constraints.Digits.message}";
 
+    /** The key of the message: not a well-formed email address */
+    public static final String CONSTRAINTS_Email_MESSAGE = "{constraints.Email.message}";
+
     /** The key of the message: must be in the future */
     public static final String CONSTRAINTS_Future_MESSAGE = "{constraints.Future.message}";
 
@@ -50,6 +53,12 @@ public class MaihamaMessages extends MaihamaLabels {
 
     /** The key of the message: must be greater than or equal to {value} */
     public static final String CONSTRAINTS_Min_MESSAGE = "{constraints.Min.message}";
+
+    /** The key of the message: may not be empty */
+    public static final String CONSTRAINTS_NotBlank_MESSAGE = "{constraints.NotBlank.message}";
+
+    /** The key of the message: may not be empty */
+    public static final String CONSTRAINTS_NotEmpty_MESSAGE = "{constraints.NotEmpty.message}";
 
     /** The key of the message: may not be null */
     public static final String CONSTRAINTS_NotNull_MESSAGE = "{constraints.NotNull.message}";
@@ -72,9 +81,6 @@ public class MaihamaMessages extends MaihamaLabels {
     /** The key of the message: invalid {type} barcode */
     public static final String CONSTRAINTS_EAN_MESSAGE = "{constraints.EAN.message}";
 
-    /** The key of the message: not a well-formed email address */
-    public static final String CONSTRAINTS_Email_MESSAGE = "{constraints.Email.message}";
-
     /** The key of the message: length must be between {min} and {max} */
     public static final String CONSTRAINTS_Length_MESSAGE = "{constraints.Length.message}";
 
@@ -89,12 +95,6 @@ public class MaihamaMessages extends MaihamaLabels {
 
     /** The key of the message: The check digit for ${value} is invalid, ${modType} checksum failed */
     public static final String CONSTRAINTS_ModCheck_MESSAGE = "{constraints.ModCheck.message}";
-
-    /** The key of the message: may not be empty */
-    public static final String CONSTRAINTS_NotBlank_MESSAGE = "{constraints.NotBlank.message}";
-
-    /** The key of the message: may not be empty */
-    public static final String CONSTRAINTS_NotEmpty_MESSAGE = "{constraints.NotEmpty.message}";
 
     /** The key of the message: script expression "{script}" didn't evaluate to true */
     public static final String CONSTRAINTS_ParametersScriptAssert_MESSAGE = "{constraints.ParametersScriptAssert.message}";
@@ -215,13 +215,27 @@ public class MaihamaMessages extends MaihamaLabels {
      * message: numeric value out of bounds (&lt;{integer} digits&gt;.&lt;{fraction} digits&gt; expected)
      * </pre>
      * @param property The property name for the message. (NotNull)
-     * @param integer The parameter integer for message. (NotNull)
      * @param fraction The parameter fraction for message. (NotNull)
+     * @param integer The parameter integer for message. (NotNull)
      * @return this. (NotNull)
      */
-    public MaihamaMessages addConstraintsDigitsMessage(String property, String integer, String fraction) {
+    public MaihamaMessages addConstraintsDigitsMessage(String property, String fraction, String integer) {
         assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_Digits_MESSAGE, integer, fraction));
+        add(property, new UserMessage(CONSTRAINTS_Digits_MESSAGE, fraction, integer));
+        return this;
+    }
+
+    /**
+     * Add the created action message for the key 'constraints.Email.message' with parameters.
+     * <pre>
+     * message: not a well-formed email address
+     * </pre>
+     * @param property The property name for the message. (NotNull)
+     * @return this. (NotNull)
+     */
+    public MaihamaMessages addConstraintsEmailMessage(String property) {
+        assertPropertyNotNull(property);
+        add(property, new UserMessage(CONSTRAINTS_Email_MESSAGE));
         return this;
     }
 
@@ -266,6 +280,34 @@ public class MaihamaMessages extends MaihamaLabels {
     public MaihamaMessages addConstraintsMinMessage(String property, String value) {
         assertPropertyNotNull(property);
         add(property, new UserMessage(CONSTRAINTS_Min_MESSAGE, value));
+        return this;
+    }
+
+    /**
+     * Add the created action message for the key 'constraints.NotBlank.message' with parameters.
+     * <pre>
+     * message: may not be empty
+     * </pre>
+     * @param property The property name for the message. (NotNull)
+     * @return this. (NotNull)
+     */
+    public MaihamaMessages addConstraintsNotBlankMessage(String property) {
+        assertPropertyNotNull(property);
+        add(property, new UserMessage(CONSTRAINTS_NotBlank_MESSAGE));
+        return this;
+    }
+
+    /**
+     * Add the created action message for the key 'constraints.NotEmpty.message' with parameters.
+     * <pre>
+     * message: may not be empty
+     * </pre>
+     * @param property The property name for the message. (NotNull)
+     * @return this. (NotNull)
+     */
+    public MaihamaMessages addConstraintsNotEmptyMessage(String property) {
+        assertPropertyNotNull(property);
+        add(property, new UserMessage(CONSTRAINTS_NotEmpty_MESSAGE));
         return this;
     }
 
@@ -372,20 +414,6 @@ public class MaihamaMessages extends MaihamaLabels {
     }
 
     /**
-     * Add the created action message for the key 'constraints.Email.message' with parameters.
-     * <pre>
-     * message: not a well-formed email address
-     * </pre>
-     * @param property The property name for the message. (NotNull)
-     * @return this. (NotNull)
-     */
-    public MaihamaMessages addConstraintsEmailMessage(String property) {
-        assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_Email_MESSAGE));
-        return this;
-    }
-
-    /**
      * Add the created action message for the key 'constraints.Length.message' with parameters.
      * <pre>
      * message: length must be between {min} and {max}
@@ -452,41 +480,13 @@ public class MaihamaMessages extends MaihamaLabels {
      * message: The check digit for ${value} is invalid, ${modType} checksum failed
      * </pre>
      * @param property The property name for the message. (NotNull)
-     * @param value The parameter value for message. (NotNull)
      * @param modType The parameter modType for message. (NotNull)
+     * @param value The parameter value for message. (NotNull)
      * @return this. (NotNull)
      */
-    public MaihamaMessages addConstraintsModCheckMessage(String property, String value, String modType) {
+    public MaihamaMessages addConstraintsModCheckMessage(String property, String modType, String value) {
         assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_ModCheck_MESSAGE, value, modType));
-        return this;
-    }
-
-    /**
-     * Add the created action message for the key 'constraints.NotBlank.message' with parameters.
-     * <pre>
-     * message: may not be empty
-     * </pre>
-     * @param property The property name for the message. (NotNull)
-     * @return this. (NotNull)
-     */
-    public MaihamaMessages addConstraintsNotBlankMessage(String property) {
-        assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_NotBlank_MESSAGE));
-        return this;
-    }
-
-    /**
-     * Add the created action message for the key 'constraints.NotEmpty.message' with parameters.
-     * <pre>
-     * message: may not be empty
-     * </pre>
-     * @param property The property name for the message. (NotNull)
-     * @return this. (NotNull)
-     */
-    public MaihamaMessages addConstraintsNotEmptyMessage(String property) {
-        assertPropertyNotNull(property);
-        add(property, new UserMessage(CONSTRAINTS_NotEmpty_MESSAGE));
+        add(property, new UserMessage(CONSTRAINTS_ModCheck_MESSAGE, modType, value));
         return this;
     }
 
@@ -568,6 +568,7 @@ public class MaihamaMessages extends MaihamaLabels {
      * Add the created action message for the key 'constraints.Required.message' with parameters.
      * <pre>
      * message: is required
+     * comment: --------------------
      * </pre>
      * @param property The property name for the message. (NotNull)
      * @return this. (NotNull)
