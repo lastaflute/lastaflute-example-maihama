@@ -22,7 +22,7 @@ import org.hibernate.validator.constraints.Length;
  * @author iwamatsu0430
  * @author jflute
  */
-public class ProductsSearchForm {
+public class ProductsSearchBody {
 
     @Length(max = 10) // #simple_for_example just for validtion example
     public String productName;
