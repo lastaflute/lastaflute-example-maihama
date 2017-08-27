@@ -47,10 +47,10 @@ export default class Validator {
           validationError.push({ code: 'MIN', data: { min: '${ref.attributes.min.nodeValue}' } });
         }
         if (ref.attributes.maxlength && this.validators.maxlength(ref.value, ref.attributes.maxlength.nodeValue)) {
-          validationError.push({ code: 'MAXLENGTH', data: { max: '${ref.attributes.maxlength.nodeValue}' } });
+          validationError.push({ code: 'LENGTH', data: { min: '0', max: '${ref.attributes.maxlength.nodeValue}' } });
         }
         if (ref.attributes.minlength && this.validators.minlength(ref.value, ref.attributes.minlength.nodeValue)) {
-          validationError.push({ code: 'MINLENGTH', data: { min: '${ref.attributes.minlength.nodeValue}' } });
+          validationError.push({ code: 'LENGTH', data: { min: '${ref.attributes.minlength.nodeValue}', max: 'no-limit' } });
         }
         if (ref.attributes.pattern && this.validators.pattern(ref.value, ref.attributes.pattern.nodeValue)) {
           validationError.push({ code: 'PATTERN' });
