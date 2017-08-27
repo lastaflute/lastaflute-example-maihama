@@ -1,9 +1,34 @@
 {
-  "REQUIRED": "is required",
+  "ASSERT_FALSE": "must be false",
+  "ASSERT_TRUE": "must be true",
+  "DECIMAL_MAX": "must be less than ${inclusive == true ? 'or equal to ' : ''}{value}",
+  "DECIMAL_MIN": "must be greater than ${inclusive == true ? 'or equal to ' : ''}{value}",
+  "DIGITS": "numeric value out of bounds (<{integer} digits>.<{fraction} digits> expected)",
+  "EMAIL": "must be in the future",
+  "FUTURE": "not a well-formed email address",
   "MAX": "must be less than or equal to {max}",
   "MIN": "must be greater than or equal to {min}",
+  "NOT_BLANK": "may not be empty",
+  "NOT_EMPTY": "may not be empty",
+  "NOT_NULL": "may not be null",
+  "NULL": "must be null",
+  "PAST": "must be in the past",
+  "PATTERN": "invalid format",
+  "SIZE": "size must be between {min} and {max}",
+
+  "CREDIT_CARD_NUMBER": "invalid credit card number",
+  "EAN": "invalid {type} barcode",
   "LENGTH": "length must be between {min} and {max}",
-  "MAXLENGTH": "length must be less than or equal to {max}",
-  "MINLENGTH": "length must be greater than or equal to {min}",
-  "PATTERN": "is not matched"
+  "PARAMETERS_SCRIPT_ASSERT": "script expression \"{script}\" didn't evaluate to true",
+  "RANGE": "must be between {min} and {max}",
+  "SAFE_HTML": "may have unsafe html content",
+  "SCRIPT_ASSERT": "script expression \"{script}\" didn't evaluate to true",
+  "URL": "must be a valid URL",
+
+  "REQUIRED": "is required",
+  "TYPE_ANY": "should be {type}",
+  "TYPE_NUMBER": "should be number",
+  "TYPE_DATE": "should be date",
+  "TYPE_DATETIME": "should be date-time",
+  "TYPE_BOOLEAN": "should be boolean"
 }
