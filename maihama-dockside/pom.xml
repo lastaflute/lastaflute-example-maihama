@@ -108,6 +108,10 @@
 							<directory>${project.build.outputDirectory}</directory>
 							<includes>
 								<include>**/*Boot*.class</include>
+								<!-- properties may be used by the boot class -->
+								<include>*_config.properties</include>
+								<include>*_env*.properties</include>
+								<include>tomcat_*.properties</include>
 							</includes>
 						</resource>
 					</webResources>

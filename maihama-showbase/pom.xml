@@ -85,12 +85,9 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
 							<includeArtifactIds>
-								javax.servlet-api, javax.servlet.jsp,
-								javax.servlet.jsp-api
-								, tomcat-boot, tomcat-embed-core,
-								tomcat-embed-logging-juli
-								, tomcat-jasper, tomcat-jasper-el,
-								tomcat-el-api, tomcat-jsp-api, ecj
+								javax.servlet-api, javax.servlet.jsp, javax.servlet.jsp-api
+								, tomcat-boot, tomcat-embed-core, tomcat-embed-logging-juli
+								, tomcat-jasper, tomcat-jasper-el, tomcat-el-api, tomcat-jsp-api, ecj
 							</includeArtifactIds>
 							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
@@ -103,16 +100,18 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<packagingExcludes>
-						WEB-INF/lib/javax.servlet-api-*.jar,
-						WEB-INF/lib/javax.servlet.jsp-*.jar
-						, WEB-INF/lib/tomcat-*.jar,
-						WEB-INF/lib/ecj-*.jar
+						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar
+						, WEB-INF/lib/tomcat-*.jar, WEB-INF/lib/ecj-*.jar
 					</packagingExcludes>
 					<webResources>
 						<resource>
 							<directory>${project.build.outputDirectory}</directory>
 							<includes>
 								<include>**/*Boot*.class</include>
+								<!-- properties may be used by the boot class -->
+								<include>*_config.properties</include>
+								<include>*_env*.properties</include>
+								<include>tomcat_*.properties</include>
 							</includes>
 						</resource>
 					</webResources>
