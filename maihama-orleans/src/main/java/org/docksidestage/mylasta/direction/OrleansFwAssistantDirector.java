@@ -19,6 +19,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.docksidestage.mylasta.direction.sponsor.OrleansApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.OrleansListedClassificationProvider;
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
 import org.lastaflute.thymeleaf.ThymeleafRenderingProvider;
@@ -63,6 +64,6 @@ public class OrleansFwAssistantDirector extends MaihamaFwAssistantDirector {
 
     @Override
     protected ApiFailureHook createApiFailureHook() {
-        return null;
+        return new OrleansApiFailureHook();
     }
 }
