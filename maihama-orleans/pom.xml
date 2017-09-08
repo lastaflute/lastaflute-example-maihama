@@ -74,6 +74,33 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-common-resources</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/${project.build.finalName}</outputDirectory>
+							<overwrite>true</overwrite>
+							<resources>
+								<resource> <!-- for boot configuration -->
+									<directory>${basedir}/../maihama-common/src/main/resources</directory>
+									<includes>
+										<include>*_config.properties</include>
+										<include>*_env*.properties</include>
+										<include>jetty_*.properties</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
