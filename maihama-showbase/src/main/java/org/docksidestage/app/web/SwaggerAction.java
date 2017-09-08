@@ -23,6 +23,7 @@ import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
 import org.lastaflute.doc.SwaggerGenerator;
 import org.lastaflute.doc.agent.SwaggerAgent;
+import org.lastaflute.doc.web.LaActionSwaggerable;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.HtmlResponse;
@@ -35,7 +36,7 @@ import org.lastaflute.web.servlet.request.RequestManager;
  * @author jflute
  */
 @AllowAnyoneAccess
-public class SwaggerAction extends ShowbaseBaseAction {
+public class SwaggerAction extends ShowbaseBaseAction implements LaActionSwaggerable {
 
     // ===================================================================================
     //                                                                           Attribute
