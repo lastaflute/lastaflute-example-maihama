@@ -54,7 +54,7 @@
 #
 map:{
     ; schemaDiagramMap = map:{
-        ; maihamadb_erd = map:{ path = ../../../../maihama-base/modeling/maihamadb.png ; width = 100% ; height = 100% }
+        ; maihamadb_erd = map:{ path = ../../../../maihama-base/modeling/maihamadb.png }
     }
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
