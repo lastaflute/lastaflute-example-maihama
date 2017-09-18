@@ -23,7 +23,6 @@ import org.docksidestage.app.job.challenge.BonvoJob;
 import org.docksidestage.app.job.challenge.DstoreJob;
 import org.docksidestage.app.job.challenge.PiariJob;
 import org.docksidestage.app.logic.context.AccessContextLogic;
-import org.docksidestage.mylasta.direction.OrleansConfig;
 import org.lastaflute.job.LaCron;
 import org.lastaflute.job.LaJobRunner;
 import org.lastaflute.job.LaJobScheduler;
@@ -35,8 +34,6 @@ public class AllJobScheduler implements LaJobScheduler {
 
     protected static final String APP_TYPE = "JOB";
 
-    @Resource
-    private OrleansConfig orleansConfig;
     @Resource
     private AccessContextLogic accessContextLogic;
 
