@@ -72,8 +72,8 @@
           },
           {
             "name": "varyingParameter",
-            "typeName": "java.util.Map",
-            "simpleTypeName": "Map",
+            "typeName": "java.util.Map\u003cString, Object\u003e",
+            "simpleTypeName": "Map\u003cString, Object\u003e",
             "value": null,
             "description": null,
             "comment": null,
@@ -149,8 +149,8 @@
           },
           {
             "name": "endTitleRoll",
-            "typeName": "java.util.Map",
-            "simpleTypeName": "Map",
+            "typeName": "java.util.Map\u003cString, String\u003e",
+            "simpleTypeName": "Map\u003cString, String\u003e",
             "value": null,
             "description": null,
             "comment": null,
@@ -216,8 +216,166 @@
           }
         ]
       },
-      "fileLineCount": 31,
+      "fileLineCount": 49,
       "methodLineCount": 10
+    },
+    {
+      "url": "/job/execute/nowait/{jobCode}",
+      "typeName": "org.docksidestage.app.web.job.JobExecuteAction",
+      "simpleTypeName": "JobExecuteAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "jobManager",
+          "typeName": "org.lastaflute.job.JobManager",
+          "simpleTypeName": "JobManager",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "responseManager",
+          "typeName": "org.lastaflute.web.servlet.request.ResponseManager",
+          "simpleTypeName": "ResponseManager",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "nowait",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "jobCode",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "typeName": "org.docksidestage.app.web.job.JobExecuteBody",
+        "simpleTypeName": "JobExecuteBody",
+        "value": null,
+        "description": "@author jflute",
+        "comment": "@author jflute",
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "executionDateTime",
+            "typeName": "java.time.LocalDateTime",
+            "simpleTypeName": "LocalDateTime",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "varyingParameter",
+            "typeName": "java.util.Map\u003cString, Object\u003e",
+            "simpleTypeName": "Map\u003cString, Object\u003e",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
+        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
+        "value": "JsonResponse.asEmptyBody()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 49,
+      "methodLineCount": 7
+    },
+    {
+      "url": "/job/stop/{jobCode}",
+      "typeName": "org.docksidestage.app.web.job.JobStopAction",
+      "simpleTypeName": "JobStopAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "jobManager",
+          "typeName": "org.lastaflute.job.JobManager",
+          "simpleTypeName": "JobManager",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "responseManager",
+          "typeName": "org.lastaflute.web.servlet.request.ResponseManager",
+          "simpleTypeName": "ResponseManager",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "index",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "jobCode",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
+        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
+        "value": "JsonResponse.asEmptyBody()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 28,
+      "methodLineCount": 5
     },
     {
       "url": "/mypage/",
@@ -233,6 +391,18 @@
           "value": null,
           "description": "The behavior of PRODUCT.",
           "comment": "The behavior of PRODUCT.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "jobManager",
+          "typeName": "org.lastaflute.job.JobManager",
+          "simpleTypeName": "JobManager",
+          "value": null,
+          "description": null,
+          "comment": null,
           "annotationList": [
             "Resource"
           ],
@@ -256,8 +426,8 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 56,
-      "methodLineCount": 8
+      "fileLineCount": 66,
+      "methodLineCount": 16
     },
     {
       "url": "/root/",
@@ -904,6 +1074,42 @@
             "Resource"
           ],
           "nestTypeDocMetaList": []
+        },
+        {
+          "name": "danceSongLogic",
+          "typeName": "org.docksidestage.app.logic.DanceSongLogic",
+          "simpleTypeName": "DanceSongLogic",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "comedyRhythmLogic",
+          "typeName": "org.docksidestage.app.logic.env.ComedyRhythmLogic",
+          "simpleTypeName": "ComedyRhythmLogic",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "itsMyPartyAssist",
+          "typeName": "org.docksidestage.app.job.ItsMyPartyAssist",
+          "simpleTypeName": "ItsMyPartyAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
         }
       ],
       "methodName": "run",
@@ -912,8 +1118,8 @@
       "noticeLogLevel": "INFO",
       "concurrentExec": "WAIT",
       "triggeredJobKeyList": [],
-      "fileLineCount": 39,
-      "methodLineCount": 11
+      "fileLineCount": 48,
+      "methodLineCount": 14
     },
     {
       "jobKey": "landJob_2",
@@ -949,6 +1155,30 @@
             "Resource"
           ],
           "nestTypeDocMetaList": []
+        },
+        {
+          "name": "danceSongLogic",
+          "typeName": "org.docksidestage.app.logic.DanceSongLogic",
+          "simpleTypeName": "DanceSongLogic",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "itsMyPartyAssist",
+          "typeName": "org.docksidestage.app.job.ItsMyPartyAssist",
+          "simpleTypeName": "ItsMyPartyAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
         }
       ],
       "methodName": "run",
@@ -957,8 +1187,8 @@
       "noticeLogLevel": "INFO",
       "concurrentExec": "QUIT",
       "triggeredJobKeyList": [],
-      "fileLineCount": 29,
-      "methodLineCount": 7
+      "fileLineCount": 35,
+      "methodLineCount": 9
     },
     {
       "jobKey": "landJob_3",
@@ -994,6 +1224,30 @@
             "Resource"
           ],
           "nestTypeDocMetaList": []
+        },
+        {
+          "name": "danceSongLogic",
+          "typeName": "org.docksidestage.app.logic.DanceSongLogic",
+          "simpleTypeName": "DanceSongLogic",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "itsMyPartyAssist",
+          "typeName": "org.docksidestage.app.job.ItsMyPartyAssist",
+          "simpleTypeName": "ItsMyPartyAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
         }
       ],
       "methodName": "run",
@@ -1002,8 +1256,8 @@
       "noticeLogLevel": "INFO",
       "concurrentExec": "QUIT",
       "triggeredJobKeyList": [],
-      "fileLineCount": 29,
-      "methodLineCount": 7
+      "fileLineCount": 35,
+      "methodLineCount": 9
     },
     {
       "jobKey": "piariJob_4",
@@ -1035,8 +1289,8 @@
       "noticeLogLevel": "INFO",
       "concurrentExec": "QUIT",
       "triggeredJobKeyList": [],
-      "fileLineCount": 20,
-      "methodLineCount": 12
+      "fileLineCount": 34,
+      "methodLineCount": 26
     },
     {
       "jobKey": "bonvoJob_5",
@@ -1068,6 +1322,37 @@
       "triggeredJobKeyList": [],
       "fileLineCount": 11,
       "methodLineCount": 3
+    },
+    {
+      "jobKey": "dstoreJob_6",
+      "jobUnique": "dstore",
+      "jobTitle": null,
+      "jobDescription": null,
+      "cronExp": null,
+      "typeName": "org.docksidestage.app.job.challenge.DstoreJob",
+      "simpleTypeName": "DstoreJob",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "logger",
+          "typeName": "org.slf4j.Logger",
+          "simpleTypeName": "Logger",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "run",
+      "methodComment": null,
+      "params": null,
+      "noticeLogLevel": "INFO",
+      "concurrentExec": "ERROR",
+      "triggeredJobKeyList": [],
+      "fileLineCount": 27,
+      "methodLineCount": 19
     }
   ]
 }

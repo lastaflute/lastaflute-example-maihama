@@ -49,8 +49,8 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 45,
-      "methodLineCount": 4
+      "fileLineCount": 47,
+      "methodLineCount": 6
     },
     {
       "url": "/member/add/register",
@@ -138,7 +138,7 @@
           {
             "name": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
+            "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, PRV\u003dProvisional, WDL\u003dWithdrawal}",
             "description": null,
             "comment": null,
@@ -159,7 +159,7 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 45,
+      "fileLineCount": 47,
       "methodLineCount": 10
     },
     {
@@ -333,7 +333,7 @@
           {
             "name": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
+            "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, PRV\u003dProvisional, WDL\u003dWithdrawal}",
             "description": null,
             "comment": null,
@@ -365,7 +365,7 @@
           {
             "name": "previousStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
+            "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, PRV\u003dProvisional, WDL\u003dWithdrawal}",
             "description": null,
             "comment": null,
@@ -509,7 +509,7 @@
           {
             "name": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
+            "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, PRV\u003dProvisional, WDL\u003dWithdrawal}",
             "description": null,
             "comment": null,
@@ -541,7 +541,7 @@
           {
             "name": "previousStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
+            "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, PRV\u003dProvisional, WDL\u003dWithdrawal}",
             "description": null,
             "comment": null,
@@ -650,7 +650,7 @@
           {
             "name": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
-            "simpleTypeName": "MemberStatus",
+            "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, PRV\u003dProvisional, WDL\u003dWithdrawal}",
             "description": null,
             "comment": null,
@@ -945,7 +945,7 @@
           {
             "name": "productStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
-            "simpleTypeName": "ProductStatus",
+            "simpleTypeName": "CDef.ProductStatus",
             "value": "{PST\u003dProductionStop, SST\u003dSaleStop, ONS\u003dOnSaleProduction}",
             "description": null,
             "comment": null,
@@ -1994,7 +1994,7 @@
           {
             "name": "selectedReason",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason",
-            "simpleTypeName": "WithdrawalReason",
+            "simpleTypeName": "CDef.WithdrawalReason",
             "value": "{OTH\u003dOTH, PRD\u003dPRD, FRT\u003dFRT, SIT\u003dSIT}",
             "description": null,
             "comment": null,
@@ -2090,7 +2090,7 @@
           {
             "name": "selectedReason",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason",
-            "simpleTypeName": "WithdrawalReason",
+            "simpleTypeName": "CDef.WithdrawalReason",
             "value": "{OTH\u003dOTH, PRD\u003dPRD, FRT\u003dFRT, SIT\u003dSIT}",
             "description": null,
             "comment": null,

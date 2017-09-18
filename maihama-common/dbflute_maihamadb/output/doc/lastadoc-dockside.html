@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"> <!-- main language (to avoid HTML validator) -->
 <head>
     <meta charset="UTF-8" />
     <title>dockside lastadoc</title>
@@ -156,10 +156,15 @@ table.child, table.child td, table.child th {
     padding-left: 4px;
     padding-right: 4px;
 }
+
+/* page top */
+.pagetop {
+    text-align: right
+}
     </style>
 </head>
 <body>
-<div style="position:fixed; width:95%"><div align="right"><a href="#top">▲Page Top</a></div></div>
+<div style="position:fixed; width:95%"><div class="pagetop"><a href="#top">▲Page Top</a></div></div>
 <h1>lastadoc for dockside</h1>
 <div class="navilinkarea">
 <p class="sisterneighborlink"><a href="./schema-maihamadb.html">to SchemaHTML</a></p>
@@ -201,7 +206,7 @@ to dockside
         <th>method lines</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody id="action-list-body">
     <tr>
         <td class="rowcellnum">1</td>
         <td class="rowcell"><a href="#/member/add/">/member/add/</a></td>
@@ -213,8 +218,8 @@ to dockside
             <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
         </td>
         <td class="rowcellnum">2</td>
-        <td class="rowcellnum">45</td>
-        <td class="rowcellnum">4</td>
+        <td class="rowcellnum">47</td>
+        <td class="rowcellnum">6</td>
     </tr>
     <tr>
         <td class="rowcellnum">2</td>
@@ -228,7 +233,7 @@ to dockside
             <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
         </td>
         <td class="rowcellnum">2</td>
-        <td class="rowcellnum">45</td>
+        <td class="rowcellnum">47</td>
         <td class="rowcellnum">10</td>
     </tr>
     <tr>
@@ -643,7 +648,7 @@ to dockside
     <tr>
         <td class="rowcellnum" rowspan="1">4</td>
         <td>memberStatus</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">CDef.MemberStatus</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
@@ -782,7 +787,7 @@ to dockside
     <tr>
         <td class="rowcellnum" rowspan="1">6</td>
         <td>memberStatus</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">CDef.MemberStatus</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
@@ -816,7 +821,7 @@ to dockside
     <tr>
         <td class="rowcellnum" rowspan="1">9</td>
         <td>previousStatus</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">CDef.MemberStatus</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
@@ -928,7 +933,7 @@ to dockside
     <tr>
         <td class="rowcellnum" rowspan="1">6</td>
         <td>memberStatus</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">CDef.MemberStatus</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
@@ -962,7 +967,7 @@ to dockside
     <tr>
         <td class="rowcellnum" rowspan="1">9</td>
         <td>previousStatus</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">CDef.MemberStatus</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
@@ -1051,7 +1056,7 @@ to dockside
     <tr>
         <td class="rowcellnum" rowspan="1">2</td>
         <td>memberStatus</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">MemberStatus</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$MemberStatus">CDef.MemberStatus</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p>{FML=Formalized,&nbsp;PRV=Provisional,&nbsp;WDL=Withdrawal}</p>
@@ -1279,7 +1284,7 @@ to dockside
     <tr>
         <td class="rowcellnum" rowspan="1">2</td>
         <td>productStatus</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$ProductStatus">ProductStatus</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$ProductStatus">CDef.ProductStatus</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p>{PST=ProductionStop,&nbsp;SST=SaleStop,&nbsp;ONS=OnSaleProduction}</p>
@@ -1767,7 +1772,7 @@ to dockside
     <tr>
         <td class="rowcellnum" rowspan="1">1</td>
         <td>selectedReason</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason">WithdrawalReason</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason">CDef.WithdrawalReason</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p>{OTH=OTH,&nbsp;PRD=PRD,&nbsp;FRT=FRT,&nbsp;SIT=SIT}</p>
@@ -1819,7 +1824,7 @@ to dockside
     <tr>
         <td class="rowcellnum" rowspan="1">1</td>
         <td>selectedReason</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason">WithdrawalReason</p></td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason">CDef.WithdrawalReason</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p>{OTH=OTH,&nbsp;PRD=PRD,&nbsp;FRT=FRT,&nbsp;SIT=SIT}</p>
@@ -1858,7 +1863,7 @@ to dockside
         <th>parameter count</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody id="mail-list-body">
     <tr>
         <td class="rowcellnum">1</td>
         <td class="rowcell"><a href="#member/welcome_member.dfmail">member/welcome_member.dfmail</a></td>
@@ -1927,7 +1932,7 @@ New&nbsp;Member's&nbsp;Registration
         <th>Definition</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody id="appcls-list-body">
     <tr>
         <td>SearchMemberStatus</td>
         <td class="clstypecell"> implicit</td>

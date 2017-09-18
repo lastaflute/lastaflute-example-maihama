@@ -523,7 +523,7 @@ public class HangarMessages extends HangarLabels {
     /**
      * Add the created action message for the key 'constraints.TypeAny.message' with parameters.
      * <pre>
-     * message: TYPE_ANY | should be {propertyType}
+     * message: TYPE_ANY | type:{propertyType}
      * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)

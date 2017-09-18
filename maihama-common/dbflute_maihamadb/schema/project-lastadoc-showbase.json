@@ -1,6 +1,129 @@
 {
   "actionDocMetaList": [
     {
+      "url": "/mypage/",
+      "typeName": "org.docksidestage.app.web.mypage.MypageAction",
+      "simpleTypeName": "MypageAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "timeManager",
+          "typeName": "org.lastaflute.core.time.TimeManager",
+          "simpleTypeName": "TimeManager",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "memberBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
+          "simpleTypeName": "MemberBhv",
+          "value": null,
+          "description": "The behavior of MEMBER.",
+          "comment": "The behavior of MEMBER.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "get$index",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.mypage.MypageResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cMypageResult\u003e",
+        "value": "asJson(result)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "memberId",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberStatus",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "serviceRank",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "cipheredPassword",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberAddress",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 46,
+      "methodLineCount": 6
+    },
+    {
       "url": "/product/detail/{productId}",
       "typeName": "org.docksidestage.app.web.product.ProductDetailAction",
       "simpleTypeName": "ProductDetailAction",
@@ -41,8 +164,8 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.product.ProductDetailBean\u003e",
-        "simpleTypeName": "JsonResponse\u003cProductDetailBean\u003e",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.product.ProductDetailResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cProductDetailResult\u003e",
         "value": "asJson(mappingToBean(product)",
         "description": null,
         "comment": null,
@@ -114,11 +237,11 @@
       "methodLineCount": 4
     },
     {
-      "url": "/product/list/{pageNumber}",
+      "url": "/product/list/search/{pageNumber}",
       "typeName": "org.docksidestage.app.web.product.ProductListAction",
       "simpleTypeName": "ProductListAction",
       "description": "@author iwamatsu0430",
-      "typeComment": "@author iwamatsu0430\n@author jflute",
+      "typeComment": "@author iwamatsu0430\n@author jflute\n@author black-trooper",
       "fieldTypeDocMetaList": [
         {
           "name": "productBhv",
@@ -157,7 +280,7 @@
           "nestTypeDocMetaList": []
         }
       ],
-      "methodName": "index",
+      "methodName": "search",
       "methodComment": null,
       "annotationList": [
         "AllowAnyoneAccess",
@@ -199,7 +322,7 @@
           {
             "name": "productStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
-            "simpleTypeName": "ProductStatus",
+            "simpleTypeName": "CDef.ProductStatus",
             "value": "{PST\u003dProductionStop, SST\u003dSaleStop, ONS\u003dOnSaleProduction}",
             "description": null,
             "comment": null,
@@ -222,9 +345,9 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingResult\u003corg.docksidestage.app.web.product.ProductRowBean\u003e\u003e",
-        "simpleTypeName": "JsonResponse\u003cSearchPagingResult\u003cProductRowBean\u003e\u003e",
-        "value": "mappingToBean(product),asJson(result)",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingResult\u003corg.docksidestage.app.web.product.ProductRowResult\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cSearchPagingResult\u003cProductRowResult\u003e\u003e",
+        "value": "mappingToResult(product),asJson(result)",
         "description": null,
         "comment": null,
         "annotationList": [],
@@ -279,8 +402,8 @@
           },
           {
             "name": "rows",
-            "typeName": "java.util.List\u003corg.docksidestage.app.web.product.ProductRowBean\u003e",
-            "simpleTypeName": "List\u003cProductRowBean\u003e",
+            "typeName": "java.util.List\u003corg.docksidestage.app.web.product.ProductRowResult\u003e",
+            "simpleTypeName": "List\u003cProductRowResult\u003e",
             "value": null,
             "description": "paging data for current page",
             "comment": "paging data for current page",
@@ -314,7 +437,19 @@
                 "nestTypeDocMetaList": []
               },
               {
-                "name": "productStatusName",
+                "name": "productStatus",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "productCategory",
                 "typeName": "java.lang.String",
                 "simpleTypeName": "String",
                 "value": null,
@@ -336,13 +471,218 @@
                   "Required"
                 ],
                 "nestTypeDocMetaList": []
+              },
+              {
+                "name": "latestPurchaseDate",
+                "typeName": "java.time.LocalDate",
+                "simpleTypeName": "LocalDate",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
               }
             ]
           }
         ]
       },
-      "fileLineCount": 70,
+      "fileLineCount": 82,
       "methodLineCount": 11
+    },
+    {
+      "url": "/product/list/status",
+      "typeName": "org.docksidestage.app.web.product.ProductListAction",
+      "simpleTypeName": "ProductListAction",
+      "description": "@author iwamatsu0430",
+      "typeComment": "@author iwamatsu0430\n@author jflute\n@author black-trooper",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "productBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.ProductBhv",
+          "simpleTypeName": "ProductBhv",
+          "value": null,
+          "description": "The behavior of PRODUCT.",
+          "comment": "The behavior of PRODUCT.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "productStatusBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.ProductStatusBhv",
+          "simpleTypeName": "ProductStatusBhv",
+          "value": null,
+          "description": "The behavior of PRODUCT_STATUS.",
+          "comment": "The behavior of PRODUCT_STATUS.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "pagingAssist",
+          "typeName": "org.docksidestage.app.web.base.paging.PagingAssist",
+          "simpleTypeName": "PagingAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "status",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003cjava.util.AbstractMap.java.util.AbstractMap$SimpleEntry\u003cjava.lang.String, java.lang.String\u003e\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cList\u003cAbstractMAbstractMap$SimpleEntry\u003cString, String\u003e\u003e\u003e",
+        "value": "new SimpleEntry\u003c\u003e(m.code(),asJson(productStatusList)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 82,
+      "methodLineCount": 6
+    },
+    {
+      "url": "/products/{productId}",
+      "typeName": "org.docksidestage.app.web.products.ProductsAction",
+      "simpleTypeName": "ProductsAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "productBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.ProductBhv",
+          "simpleTypeName": "ProductBhv",
+          "value": null,
+          "description": "The behavior of PRODUCT.",
+          "comment": "The behavior of PRODUCT.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "productStatusBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.ProductStatusBhv",
+          "simpleTypeName": "ProductStatusBhv",
+          "value": null,
+          "description": "The behavior of PRODUCT_STATUS.",
+          "comment": "The behavior of PRODUCT_STATUS.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "pagingAssist",
+          "typeName": "org.docksidestage.app.web.base.paging.PagingAssist",
+          "simpleTypeName": "PagingAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "post$index",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute{suppressValidatorCallCheck\u003dtrue}"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "productId",
+          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.Integer\u003e",
+          "simpleTypeName": "OptionalThing\u003cInteger\u003e",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "typeName": "org.docksidestage.app.web.products.ProductsSearchBody",
+        "simpleTypeName": "ProductsSearchBody",
+        "value": null,
+        "description": "@author iwamatsu0430",
+        "comment": "@author iwamatsu0430\n@author jflute",
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "productName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Length{max\u003d10}"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "productStatus",
+            "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
+            "simpleTypeName": "CDef.ProductStatus",
+            "value": "{PST\u003dProductionStop, SST\u003dSaleStop, ONS\u003dOnSaleProduction}",
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "purchaseMemberName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Length{max\u003d5}"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "pageNumber",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003c?\u003e",
+        "simpleTypeName": "JsonResponse\u003c?\u003e",
+        "value": "doList(body),doDetail(productId.get()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 103,
+      "methodLineCount": 7
     },
     {
       "url": "/root/",
@@ -376,8 +716,8 @@
       "url": "/signin/",
       "typeName": "org.docksidestage.app.web.signin.SigninAction",
       "simpleTypeName": "SigninAction",
-      "description": "@author iwamatsu0430",
-      "typeComment": "@author iwamatsu0430\n@author jflute",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
       "fieldTypeDocMetaList": [
         {
           "name": "loginAssist",
@@ -392,7 +732,7 @@
           "nestTypeDocMetaList": []
         }
       ],
-      "methodName": "index",
+      "methodName": "post$index",
       "methodComment": null,
       "annotationList": [
         "Execute"
@@ -404,7 +744,7 @@
         "simpleTypeName": "SigninBody",
         "value": null,
         "description": "The form of member\u0027s Login.",
-        "comment": "The form of member\u0027s Login.\n\n@author iwamatsu0430\n@author jflute",
+        "comment": "The form of member\u0027s Login.\n\n@author jflute",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
@@ -435,13 +775,26 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
-        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
-        "value": "JsonResponse.asEmptyBody()",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.signin.SigninResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cSigninResult\u003e",
+        "value": "asJson(new SigninResult(loginAssist.saveAuthToken()",
         "description": null,
         "comment": null,
         "annotationList": [],
-        "nestTypeDocMetaList": []
+        "nestTypeDocMetaList": [
+          {
+            "name": "token",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
       },
       "fileLineCount": 30,
       "methodLineCount": 6
@@ -454,55 +807,9 @@
       "typeComment": "@author iwamatsu0430\n@author jflute",
       "fieldTypeDocMetaList": [
         {
-          "name": "SIGNUP_TOKEN_KEY",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "primaryCipher",
-          "typeName": "org.lastaflute.core.security.PrimaryCipher",
-          "simpleTypeName": "PrimaryCipher",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
           "name": "postbox",
           "typeName": "org.lastaflute.core.mail.Postbox",
           "simpleTypeName": "Postbox",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "responseManager",
-          "typeName": "org.lastaflute.web.servlet.request.ResponseManager",
-          "simpleTypeName": "ResponseManager",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "sessionManager",
-          "typeName": "org.lastaflute.web.servlet.session.SessionManager",
-          "simpleTypeName": "SessionManager",
           "value": null,
           "description": null,
           "comment": null,
@@ -570,9 +877,21 @@
             "Resource"
           ],
           "nestTypeDocMetaList": []
+        },
+        {
+          "name": "signupTokenAssist",
+          "typeName": "org.docksidestage.app.web.signup.SignupTokenAssist",
+          "simpleTypeName": "SignupTokenAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
         }
       ],
-      "methodName": "index",
+      "methodName": "post$index",
       "methodComment": null,
       "annotationList": [
         "AllowAnyoneAccess",
@@ -584,8 +903,8 @@
         "typeName": "org.docksidestage.app.web.signup.SignupBody",
         "simpleTypeName": "SignupBody",
         "value": null,
-        "description": "@author iwamatsu0430",
-        "comment": "@author iwamatsu0430",
+        "description": "@author jflute",
+        "comment": "@author jflute",
         "annotationList": [],
         "nestTypeDocMetaList": [
           {
@@ -660,66 +979,20 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 120,
-      "methodLineCount": 9
+      "fileLineCount": 96,
+      "methodLineCount": 7
     },
     {
-      "url": "/signup/formalize/{account}/{token}",
+      "url": "/signup/register/{account}/{token}",
       "typeName": "org.docksidestage.app.web.signup.SignupAction",
       "simpleTypeName": "SignupAction",
       "description": "@author iwamatsu0430",
       "typeComment": "@author iwamatsu0430\n@author jflute",
       "fieldTypeDocMetaList": [
         {
-          "name": "SIGNUP_TOKEN_KEY",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "primaryCipher",
-          "typeName": "org.lastaflute.core.security.PrimaryCipher",
-          "simpleTypeName": "PrimaryCipher",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
           "name": "postbox",
           "typeName": "org.lastaflute.core.mail.Postbox",
           "simpleTypeName": "Postbox",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "responseManager",
-          "typeName": "org.lastaflute.web.servlet.request.ResponseManager",
-          "simpleTypeName": "ResponseManager",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "sessionManager",
-          "typeName": "org.lastaflute.web.servlet.session.SessionManager",
-          "simpleTypeName": "SessionManager",
           "value": null,
           "description": null,
           "comment": null,
@@ -787,9 +1060,21 @@
             "Resource"
           ],
           "nestTypeDocMetaList": []
+        },
+        {
+          "name": "signupTokenAssist",
+          "typeName": "org.docksidestage.app.web.signup.SignupTokenAssist",
+          "simpleTypeName": "SignupTokenAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
         }
       ],
-      "methodName": "formalize",
+      "methodName": "get$register",
       "methodComment": null,
       "annotationList": [
         "AllowAnyoneAccess",
@@ -828,71 +1113,20 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 120,
+      "fileLineCount": 96,
       "methodLineCount": 5
-    }
-  ],
-  "jobDocMetaList": [
-    {
-      "jobKey": "seaJob_1",
-      "jobUnique": null,
-      "jobTitle": null,
-      "jobDescription": null,
-      "cronExp": "* * * * *",
-      "typeName": "org.docksidestage.app.job.SeaJob",
-      "simpleTypeName": "SeaJob",
-      "description": "@author jflute",
-      "typeComment": "@author jflute",
-      "fieldTypeDocMetaList": [
-        {
-          "name": "stage",
-          "typeName": "org.lastaflute.db.jta.stage.TransactionStage",
-          "simpleTypeName": "TransactionStage",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "memberBhv",
-          "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
-          "simpleTypeName": "MemberBhv",
-          "value": null,
-          "description": "The behavior of MEMBER.",
-          "comment": "The behavior of MEMBER.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        }
-      ],
-      "methodName": "run",
-      "methodComment": null,
-      "params": null,
-      "noticeLogLevel": "INFO",
-      "concurrentExec": "WAIT",
-      "triggeredJobKeyList": [],
-      "fileLineCount": 39,
-      "methodLineCount": 11
     },
     {
-      "jobKey": "landJob_2",
-      "jobUnique": "parameterized_unique_land",
-      "jobTitle": "Parameterized Land Job",
-      "jobDescription": null,
-      "cronExp": "*/1 * * * *",
-      "typeName": "org.docksidestage.app.job.LandJob",
-      "simpleTypeName": "LandJob",
-      "description": "@author jflute",
-      "typeComment": "@author jflute",
+      "url": "/swagger/",
+      "typeName": "org.docksidestage.app.web.SwaggerAction",
+      "simpleTypeName": "SwaggerAction",
+      "description": "The action to show swaggar-ui.",
+      "typeComment": "The action to show swaggar-ui.\n\n@author awaawa\n@author jflute",
       "fieldTypeDocMetaList": [
         {
-          "name": "stage",
-          "typeName": "org.lastaflute.db.jta.stage.TransactionStage",
-          "simpleTypeName": "TransactionStage",
+          "name": "requestManager",
+          "typeName": "org.lastaflute.web.servlet.request.RequestManager",
+          "simpleTypeName": "RequestManager",
           "value": null,
           "description": null,
           "comment": null,
@@ -902,47 +1136,106 @@
           "nestTypeDocMetaList": []
         },
         {
-          "name": "memberBhv",
-          "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
-          "simpleTypeName": "MemberBhv",
+          "name": "config",
+          "typeName": "org.docksidestage.mylasta.direction.ShowbaseConfig",
+          "simpleTypeName": "ShowbaseConfig",
           "value": null,
-          "description": "The behavior of MEMBER.",
-          "comment": "The behavior of MEMBER.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "description": "@author FreeGen",
+          "comment": "@author FreeGen",
           "annotationList": [
             "Resource"
           ],
           "nestTypeDocMetaList": []
         }
       ],
-      "methodName": "run",
+      "methodName": "index",
       "methodComment": null,
-      "params": {
-        "showbase": "oneman"
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
+        "simpleTypeName": "HtmlResponse",
+        "value": "new SwaggerAgent(requestManager)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
       },
-      "noticeLogLevel": "INFO",
-      "concurrentExec": "QUIT",
-      "triggeredJobKeyList": [],
-      "fileLineCount": 29,
-      "methodLineCount": 7
+      "fileLineCount": 30,
+      "methodLineCount": 5
     },
     {
-      "jobKey": "landJob_3",
-      "jobUnique": "non_param_unique_land",
-      "jobTitle": null,
-      "jobDescription": null,
-      "cronExp": "*/2 * * * *",
-      "typeName": "org.docksidestage.app.job.LandJob",
-      "simpleTypeName": "LandJob",
+      "url": "/swagger/json",
+      "typeName": "org.docksidestage.app.web.SwaggerAction",
+      "simpleTypeName": "SwaggerAction",
+      "description": "The action to show swaggar-ui.",
+      "typeComment": "The action to show swaggar-ui.\n\n@author awaawa\n@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "requestManager",
+          "typeName": "org.lastaflute.web.servlet.request.RequestManager",
+          "simpleTypeName": "RequestManager",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "config",
+          "typeName": "org.docksidestage.mylasta.direction.ShowbaseConfig",
+          "simpleTypeName": "ShowbaseConfig",
+          "value": null,
+          "description": "@author FreeGen",
+          "comment": "@author FreeGen",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "json",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.Map\u003cjava.lang.String, java.lang.Object\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cMap\u003cString, Object\u003e\u003e",
+        "value": "asJson(new SwaggerGenerator()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 30,
+      "methodLineCount": 4
+    },
+    {
+      "url": "/wx/faihy/",
+      "typeName": "org.docksidestage.app.web.wx.faihy.WxFaihyAction",
+      "simpleTypeName": "WxFaihyAction",
       "description": "@author jflute",
       "typeComment": "@author jflute",
       "fieldTypeDocMetaList": [
         {
-          "name": "stage",
-          "typeName": "org.lastaflute.db.jta.stage.TransactionStage",
-          "simpleTypeName": "TransactionStage",
+          "name": "loginAssist",
+          "typeName": "org.docksidestage.app.web.base.login.ShowbaseLoginAssist",
+          "simpleTypeName": "ShowbaseLoginAssist",
           "value": null,
-          "description": null,
-          "comment": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
           "annotationList": [
             "Resource"
           ],
@@ -961,14 +1254,166 @@
           "nestTypeDocMetaList": []
         }
       ],
-      "methodName": "run",
+      "methodName": "index",
       "methodComment": null,
-      "params": null,
-      "noticeLogLevel": "INFO",
-      "concurrentExec": "QUIT",
-      "triggeredJobKeyList": [],
-      "fileLineCount": 29,
-      "methodLineCount": 7
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": {
+        "name": null,
+        "typeName": "org.docksidestage.app.web.wx.faihy.WxFaihyForm",
+        "simpleTypeName": "WxFaihyForm",
+        "value": null,
+        "description": "@author jflute",
+        "comment": "@author jflute",
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "sea",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required",
+              "Length{max\u003d5, min\u003d2}"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.Map\u003cjava.lang.String, java.lang.Object\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cMap\u003cString, Object\u003e\u003e",
+        "value": "asJson(columnMap)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 35,
+      "methodLineCount": 6
+    },
+    {
+      "url": "/wx/faihy/unknown",
+      "typeName": "org.docksidestage.app.web.wx.faihy.WxFaihyAction",
+      "simpleTypeName": "WxFaihyAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "loginAssist",
+          "typeName": "org.docksidestage.app.web.base.login.ShowbaseLoginAssist",
+          "simpleTypeName": "ShowbaseLoginAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "memberBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
+          "simpleTypeName": "MemberBhv",
+          "value": null,
+          "description": "The behavior of MEMBER.",
+          "comment": "The behavior of MEMBER.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "unknown",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
+        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
+        "value": null,
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 35,
+      "methodLineCount": 6
+    },
+    {
+      "url": "/wx/faihy/entity/{account}",
+      "typeName": "org.docksidestage.app.web.wx.faihy.WxFaihyAction",
+      "simpleTypeName": "WxFaihyAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "loginAssist",
+          "typeName": "org.docksidestage.app.web.base.login.ShowbaseLoginAssist",
+          "simpleTypeName": "ShowbaseLoginAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "memberBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
+          "simpleTypeName": "MemberBhv",
+          "value": null,
+          "description": "The behavior of MEMBER.",
+          "comment": "The behavior of MEMBER.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "entity",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "account",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
+        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
+        "value": "JsonResponse.asEmptyBody()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 35,
+      "methodLineCount": 4
     }
   ]
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"> <!-- main language (to avoid HTML validator) -->
 <head>
     <meta charset="UTF-8" />
     <title>orleans lastadoc</title>
@@ -156,10 +156,15 @@ table.child, table.child td, table.child th {
     padding-left: 4px;
     padding-right: 4px;
 }
+
+/* page top */
+.pagetop {
+    text-align: right
+}
     </style>
 </head>
 <body>
-<div style="position:fixed; width:95%"><div align="right"><a href="#top">▲Page Top</a></div></div>
+<div style="position:fixed; width:95%"><div class="pagetop"><a href="#top">▲Page Top</a></div></div>
 <h1>lastadoc for orleans</h1>
 <div class="navilinkarea">
 <p class="sisterneighborlink"><a href="./schema-maihamadb.html">to SchemaHTML</a></p>
@@ -177,8 +182,8 @@ to orleans
 </p>
 
 <p class="sisterneighborlink">
-    <a href="#lastadoc_action">to action(9)</a>
-    | <a href="#lastadoc_job">to job(5)</a>
+    <a href="#lastadoc_action">to action(11)</a>
+    | <a href="#lastadoc_job">to job(6)</a>
     | <a href="#lastadoc_mail">to mail(1)</a>
     | <a href="#lastadoc_appcls">to appcls(1)</a>
 </p>
@@ -202,7 +207,7 @@ to orleans
         <th>method lines</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody id="action-list-body">
     <tr>
         <td class="rowcellnum">1</td>
         <td class="rowcell"><a href="#/job/execute/{jobCode}">/job/execute/{jobCode}</a></td>
@@ -215,11 +220,40 @@ to orleans
             <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.job.JobExecuteResult&gt;">JsonResponse&lt;JobExecuteResult&gt;</span>
         </td>
         <td class="rowcellnum">2</td>
-        <td class="rowcellnum">31</td>
+        <td class="rowcellnum">49</td>
         <td class="rowcellnum">10</td>
     </tr>
     <tr>
         <td class="rowcellnum">2</td>
+        <td class="rowcell"><a href="#/job/execute/nowait/{jobCode}">/job/execute/nowait/{jobCode}</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.job.JobExecuteAction">JobExecuteAction</span>#nowait()</td>
+        <td class="rowcell">
+            <span title="org.docksidestage.app.web.job.JobExecuteBody">JobExecuteBody</span>
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
+        <td class="rowcellnum">2</td>
+        <td class="rowcellnum">49</td>
+        <td class="rowcellnum">7</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">3</td>
+        <td class="rowcell"><a href="#/job/stop/{jobCode}">/job/stop/{jobCode}</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.job.JobStopAction">JobStopAction</span>#index()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
+        <td class="rowcellnum">2</td>
+        <td class="rowcellnum">28</td>
+        <td class="rowcellnum">5</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">4</td>
         <td class="rowcell"><a href="#/mypage/">/mypage/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.mypage.MypageAction">MypageAction</span>#index()</td>
@@ -228,12 +262,12 @@ to orleans
         <td class="rowcell">
             <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
         </td>
-        <td class="rowcellnum">1</td>
-        <td class="rowcellnum">56</td>
-        <td class="rowcellnum">8</td>
+        <td class="rowcellnum">2</td>
+        <td class="rowcellnum">66</td>
+        <td class="rowcellnum">16</td>
     </tr>
     <tr>
-        <td class="rowcellnum">3</td>
+        <td class="rowcellnum">5</td>
         <td class="rowcell"><a href="#/root/">/root/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.RootAction">RootAction</span>#index()</td>
@@ -247,7 +281,7 @@ to orleans
         <td class="rowcellnum">3</td>
     </tr>
     <tr>
-        <td class="rowcellnum">4</td>
+        <td class="rowcellnum">6</td>
         <td class="rowcell"><a href="#/signin/">/signin/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signin.SigninAction">SigninAction</span>#index()</td>
@@ -261,7 +295,7 @@ to orleans
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
-        <td class="rowcellnum">5</td>
+        <td class="rowcellnum">7</td>
         <td class="rowcell"><a href="#/signin/signin">/signin/signin</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signin.SigninAction">SigninAction</span>#signin()</td>
@@ -276,7 +310,7 @@ to orleans
         <td class="rowcellnum">9</td>
     </tr>
     <tr>
-        <td class="rowcellnum">6</td>
+        <td class="rowcellnum">8</td>
         <td class="rowcell"><a href="#/signin/reminder/">/signin/reminder/</a></td>
         <td class="rowcell">@author&nbsp;masaki.kamachi</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signin.SigninReminderAction">SigninReminderAction</span>#index()</td>
@@ -290,7 +324,7 @@ to orleans
         <td class="rowcellnum">3</td>
     </tr>
     <tr>
-        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">9</td>
         <td class="rowcell"><a href="#/signup/">/signup/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#index()</td>
@@ -304,7 +338,7 @@ to orleans
         <td class="rowcellnum">3</td>
     </tr>
     <tr>
-        <td class="rowcellnum">8</td>
+        <td class="rowcellnum">10</td>
         <td class="rowcell"><a href="#/signup/signup">/signup/signup</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#signup()</td>
@@ -319,7 +353,7 @@ to orleans
         <td class="rowcellnum">11</td>
     </tr>
     <tr>
-        <td class="rowcellnum">9</td>
+        <td class="rowcellnum">11</td>
         <td class="rowcell"><a href="#/signup/register/{account}/{token}">/signup/register/{account}/{token}</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#register()</td>
@@ -397,7 +431,7 @@ to orleans
     <tr>
         <td class="rowcellnum" rowspan="1">2</td>
         <td>varyingParameter</td>
-        <td><p title="java.util.Map">Map</p></td>
+        <td><p title="java.util.Map&lt;String,&nbsp;Object&gt;">Map&lt;String,&nbsp;Object&gt;</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p></p>
@@ -480,7 +514,7 @@ to orleans
     <tr>
         <td class="rowcellnum" rowspan="1">6</td>
         <td>endTitleRoll</td>
-        <td><p title="java.util.Map">Map</p></td>
+        <td><p title="java.util.Map&lt;String,&nbsp;String&gt;">Map&lt;String,&nbsp;String&gt;</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p></p>
@@ -565,6 +599,119 @@ to orleans
         </td>
     </tr>
 </table>
+
+<h3 id="/job/execute/nowait/{jobCode}">
+/job/execute/nowait/{jobCode}
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.job.JobExecuteAction#nowait()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">URL Parameter:</span>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>jobCode</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.job.JobExecuteBody">JobExecuteBody</span></span>
+<p class="tablecomment" title="@author&nbsp;jflute">@author&nbsp;jflute</p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>executionDateTime</td>
+        <td><p title="java.time.LocalDateTime">LocalDateTime</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>varyingParameter</td>
+        <td><p title="java.util.Map&lt;String,&nbsp;Object&gt;">Map&lt;String,&nbsp;Object&gt;</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
+<p class="tablecomment" title=""></p>
+
+<h3 id="/job/stop/{jobCode}">
+/job/stop/{jobCode}
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.job.JobStopAction#index()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">URL Parameter:</span>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>jobCode</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
+<p class="tablecomment" title=""></p>
 
 <h3 id="/mypage/">
 /mypage/
@@ -871,7 +1018,7 @@ to orleans
         <th>method lines</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody id="job-list-body">
     <tr>
         <td class="rowcellnum">1</td>
         <td class="rowcell">*&nbsp;*&nbsp;*&nbsp;*&nbsp;*</td>
@@ -884,9 +1031,9 @@ to orleans
         <td class="rowcell">INFO</td>
         <td class="rowcell"></td>
         <td class="rowcellnum"></td>
-        <td class="rowcellnum">2</td>
-        <td class="rowcellnum">39</td>
-        <td class="rowcellnum">11</td>
+        <td class="rowcellnum">5</td>
+        <td class="rowcellnum">48</td>
+        <td class="rowcellnum">14</td>
     </tr>
     <tr>
         <td class="rowcellnum">2</td>
@@ -900,9 +1047,9 @@ to orleans
         <td class="rowcell">INFO</td>
         <td class="rowcell"></td>
         <td class="rowcellnum"></td>
-        <td class="rowcellnum">2</td>
-        <td class="rowcellnum">29</td>
-        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">4</td>
+        <td class="rowcellnum">35</td>
+        <td class="rowcellnum">9</td>
     </tr>
     <tr>
         <td class="rowcellnum">3</td>
@@ -916,9 +1063,9 @@ to orleans
         <td class="rowcell">INFO</td>
         <td class="rowcell"></td>
         <td class="rowcellnum"></td>
-        <td class="rowcellnum">2</td>
-        <td class="rowcellnum">29</td>
-        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">4</td>
+        <td class="rowcellnum">35</td>
+        <td class="rowcellnum">9</td>
     </tr>
     <tr>
         <td class="rowcellnum">4</td>
@@ -933,8 +1080,8 @@ to orleans
         <td class="rowcell"></td>
         <td class="rowcellnum">1</td>
         <td class="rowcellnum">1</td>
-        <td class="rowcellnum">20</td>
-        <td class="rowcellnum">12</td>
+        <td class="rowcellnum">34</td>
+        <td class="rowcellnum">26</td>
     </tr>
     <tr>
         <td class="rowcellnum">5</td>
@@ -951,6 +1098,22 @@ to orleans
         <td class="rowcellnum">1</td>
         <td class="rowcellnum">11</td>
         <td class="rowcellnum">3</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">6</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"><span title="org.docksidestage.app.job.challenge.DstoreJob">DstoreJob</span></td>
+        <td class="rowcell"><a href="#dstoreJob_6">dstoreJob_6</a></td>
+        <td class="rowcell">dstore</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"></td>
+        <td class="rowcell">ERROR</td>
+        <td class="rowcell">INFO</td>
+        <td class="rowcell"></td>
+        <td class="rowcellnum"></td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">27</td>
+        <td class="rowcellnum">19</td>
     </tr>
     </tbody>
 </table>
@@ -981,7 +1144,7 @@ seaJob_1
         <th>method lines</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody>
     <tr>
         <td class="rowcellnum">1</td>
         <td class="rowcell">*&nbsp;*&nbsp;*&nbsp;*&nbsp;*</td>
@@ -994,15 +1157,15 @@ seaJob_1
         <td class="rowcell">INFO</td>
         <td class="rowcell"></td>
         <td class="rowcellnum"></td>
-        <td class="rowcellnum">2</td>
-        <td class="rowcellnum">39</td>
-        <td class="rowcellnum">11</td>
+        <td class="rowcellnum">5</td>
+        <td class="rowcellnum">48</td>
+        <td class="rowcellnum">14</td>
     </tr>
     </tbody>
 </table>
 
 <table>
-    <tbody id="table-list-body">
+    <tbody>
     <tr>
         <th>class name</th>
         <td class="rowcell">org.docksidestage.app.job.SeaJob</td>
@@ -1047,7 +1210,7 @@ landJob_2
         <th>method lines</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody>
     <tr>
         <td class="rowcellnum">2</td>
         <td class="rowcell">*/1&nbsp;*&nbsp;*&nbsp;*&nbsp;*</td>
@@ -1060,15 +1223,15 @@ landJob_2
         <td class="rowcell">INFO</td>
         <td class="rowcell"></td>
         <td class="rowcellnum"></td>
-        <td class="rowcellnum">2</td>
-        <td class="rowcellnum">29</td>
-        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">4</td>
+        <td class="rowcellnum">35</td>
+        <td class="rowcellnum">9</td>
     </tr>
     </tbody>
 </table>
 
 <table>
-    <tbody id="table-list-body">
+    <tbody>
     <tr>
         <th>class name</th>
         <td class="rowcell">org.docksidestage.app.job.LandJob</td>
@@ -1113,7 +1276,7 @@ landJob_3
         <th>method lines</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody>
     <tr>
         <td class="rowcellnum">3</td>
         <td class="rowcell">*/2&nbsp;*&nbsp;*&nbsp;*&nbsp;*</td>
@@ -1126,15 +1289,15 @@ landJob_3
         <td class="rowcell">INFO</td>
         <td class="rowcell"></td>
         <td class="rowcellnum"></td>
-        <td class="rowcellnum">2</td>
-        <td class="rowcellnum">29</td>
-        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">4</td>
+        <td class="rowcellnum">35</td>
+        <td class="rowcellnum">9</td>
     </tr>
     </tbody>
 </table>
 
 <table>
-    <tbody id="table-list-body">
+    <tbody>
     <tr>
         <th>class name</th>
         <td class="rowcell">org.docksidestage.app.job.LandJob</td>
@@ -1179,7 +1342,7 @@ piariJob_4
         <th>method lines</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody>
     <tr>
         <td class="rowcellnum">4</td>
         <td class="rowcell"></td>
@@ -1193,14 +1356,14 @@ piariJob_4
         <td class="rowcell"></td>
         <td class="rowcellnum">1</td>
         <td class="rowcellnum">1</td>
-        <td class="rowcellnum">20</td>
-        <td class="rowcellnum">12</td>
+        <td class="rowcellnum">34</td>
+        <td class="rowcellnum">26</td>
     </tr>
     </tbody>
 </table>
 
 <table>
-    <tbody id="table-list-body">
+    <tbody>
     <tr>
         <th>class name</th>
         <td class="rowcell">org.docksidestage.app.job.challenge.PiariJob</td>
@@ -1245,7 +1408,7 @@ bonvoJob_5
         <th>method lines</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody>
     <tr>
         <td class="rowcellnum">5</td>
         <td class="rowcell"></td>
@@ -1266,10 +1429,76 @@ bonvoJob_5
 </table>
 
 <table>
-    <tbody id="table-list-body">
+    <tbody>
     <tr>
         <th>class name</th>
         <td class="rowcell">org.docksidestage.app.job.challenge.BonvoJob</td>
+    </tr>
+    <tr>
+        <th>class comment</th>
+        <td class="rowcell">@author&nbsp;jflute</td>
+    </tr>
+    <tr>
+        <th>method comment</th>
+        <td class="rowcell"></td>
+    </tr>
+    <tr>
+        <th>job parameters</th>
+        <td class="rowcell"></td>
+    </tr>
+    </tbody>
+</table>
+<h3 id="dstoreJob_6">
+dstoreJob_6
+</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th rowspan="2">No.</th>
+        <th rowspan="2">cron exp</th>
+        <th rowspan="2">class</th>
+        <th rowspan="2">job key</th>
+        <th rowspan="2">job unique</th>
+        <th rowspan="2">title</th>
+        <th rowspan="2">description</th>
+        <th rowspan="2">concurrent</th>
+        <th rowspan="2">notice log</th>
+        <th rowspan="2">triggered job</th>
+        <th colspan="4">count</th>
+    </tr>
+    <tr>
+        <th>job params</th>
+        <th>fields</th>
+        <th>class lines</th>
+        <th>method lines</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="rowcellnum">6</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"><span title="org.docksidestage.app.job.challenge.DstoreJob">DstoreJob</span></td>
+        <td class="rowcell"><a href="#dstoreJob_6">dstoreJob_6</a></td>
+        <td class="rowcell">dstore</td>
+        <td class="rowcell"></td>
+        <td class="rowcell"></td>
+        <td class="rowcell">ERROR</td>
+        <td class="rowcell">INFO</td>
+        <td class="rowcell"></td>
+        <td class="rowcellnum"></td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">27</td>
+        <td class="rowcellnum">19</td>
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <tbody>
+    <tr>
+        <th>class name</th>
+        <td class="rowcell">org.docksidestage.app.job.challenge.DstoreJob</td>
     </tr>
     <tr>
         <th>class comment</th>
@@ -1297,7 +1526,7 @@ bonvoJob_5
         <th>parameter count</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody id="mail-list-body">
     <tr>
         <td class="rowcellnum">1</td>
         <td class="rowcell"><a href="#member/welcome_member.dfmail">member/welcome_member.dfmail</a></td>
@@ -1366,7 +1595,7 @@ New&nbsp;Member's&nbsp;Registration
         <th>Definition</th>
     </tr>
     </thead>
-    <tbody id="table-list-body">
+    <tbody id="appcls-list-body">
     <tr>
         <td>SearchMemberStatus</td>
         <td class="clstypecell"> implicit</td>
