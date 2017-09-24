@@ -3,6 +3,7 @@ package org.docksidestage.app.web.profile;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.docksidestage.dbflute.exentity.Member;
@@ -28,6 +29,7 @@ public class ProfileResult {
     @Required
     public final String serviceRankName;
     @NotNull
+    @Valid
     public List<PurchasedProductPart> purchaseList;
 
     public ProfileResult(Member member) {

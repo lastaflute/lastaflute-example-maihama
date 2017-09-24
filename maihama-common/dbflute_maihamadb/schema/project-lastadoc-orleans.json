@@ -395,18 +395,6 @@
             "Resource"
           ],
           "nestTypeDocMetaList": []
-        },
-        {
-          "name": "jobManager",
-          "typeName": "org.lastaflute.job.JobManager",
-          "simpleTypeName": "JobManager",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
         }
       ],
       "methodName": "index",
@@ -426,8 +414,8 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 66,
-      "methodLineCount": 16
+      "fileLineCount": 56,
+      "methodLineCount": 8
     },
     {
       "url": "/root/",

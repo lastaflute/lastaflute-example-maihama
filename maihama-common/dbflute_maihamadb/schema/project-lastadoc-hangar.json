@@ -102,7 +102,9 @@
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
@@ -249,7 +251,7 @@
             "name": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
             "simpleTypeName": "CDef.MemberStatus",
-            "value": "{FML\u003dFormalized, PRV\u003dProvisional, WDL\u003dWithdrawal}",
+            "value": "{FML\u003dFormalized, WDL\u003dWithdrawal, PRV\u003dProvisional}",
             "description": null,
             "comment": null,
             "annotationList": [
@@ -662,7 +664,7 @@
             "name": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
             "simpleTypeName": "CDef.MemberStatus",
-            "value": "{FML\u003dFormalized, PRV\u003dProvisional, WDL\u003dWithdrawal}",
+            "value": "{FML\u003dFormalized, WDL\u003dWithdrawal, PRV\u003dProvisional}",
             "description": null,
             "comment": null,
             "annotationList": [
@@ -774,7 +776,7 @@
             "name": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
             "simpleTypeName": "CDef.MemberStatus",
-            "value": "{FML\u003dFormalized, PRV\u003dProvisional, WDL\u003dWithdrawal}",
+            "value": "{FML\u003dFormalized, WDL\u003dWithdrawal, PRV\u003dProvisional}",
             "description": null,
             "comment": null,
             "annotationList": [
@@ -893,7 +895,7 @@
             "name": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
             "simpleTypeName": "CDef.MemberStatus",
-            "value": "{FML\u003dFormalized, PRV\u003dProvisional, WDL\u003dWithdrawal}",
+            "value": "{FML\u003dFormalized, WDL\u003dWithdrawal, PRV\u003dProvisional}",
             "description": null,
             "comment": null,
             "annotationList": [],
@@ -1444,7 +1446,7 @@
             "description": null,
             "comment": null,
             "annotationList": [
-              "Required",
+              "NotNull",
               "Valid"
             ],
             "nestTypeDocMetaList": [
@@ -1482,7 +1484,7 @@
             "description": null,
             "comment": null,
             "annotationList": [
-              "Required",
+              "NotNull",
               "Valid"
             ],
             "nestTypeDocMetaList": [
@@ -1717,7 +1719,7 @@
             "name": "productStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
             "simpleTypeName": "CDef.ProductStatus",
-            "value": "{PST\u003dProductionStop, SST\u003dSaleStop, ONS\u003dOnSaleProduction}",
+            "value": "{ONS\u003dOnSaleProduction, PST\u003dProductionStop, SST\u003dSaleStop}",
             "description": null,
             "comment": null,
             "annotationList": [],
@@ -1986,12 +1988,14 @@
         "nestTypeDocMetaList": [
           {
             "name": "memberId",
-            "typeName": "int",
-            "simpleTypeName": "int",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
@@ -2001,7 +2005,9 @@
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
@@ -2011,7 +2017,9 @@
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
@@ -2021,7 +2029,9 @@
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
@@ -2031,17 +2041,22 @@
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           },
           {
             "name": "purchaseList",
-            "typeName": "java.util.List\u003corg.docksidestage.app.web.profile.ProfileResult$PurchasedProductBean\u003e",
-            "simpleTypeName": "List\u003cPurchasedProductBean\u003e",
+            "typeName": "java.util.List\u003corg.docksidestage.app.web.profile.ProfileResult$PurchasedProductPart\u003e",
+            "simpleTypeName": "List\u003cPurchasedProductPart\u003e",
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "NotNull",
+              "Valid"
+            ],
             "nestTypeDocMetaList": [
               {
                 "name": "productName",
@@ -2050,7 +2065,9 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -2060,7 +2077,9 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               },
               {
@@ -2070,15 +2089,17 @@
                 "value": null,
                 "description": null,
                 "comment": null,
-                "annotationList": [],
+                "annotationList": [
+                  "Required"
+                ],
                 "nestTypeDocMetaList": []
               }
             ]
           }
         ]
       },
-      "fileLineCount": 46,
-      "methodLineCount": 6
+      "fileLineCount": 45,
+      "methodLineCount": 5
     },
     {
       "url": "/purchase/count",
@@ -2182,7 +2203,9 @@
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           }
         ]
@@ -2292,7 +2315,9 @@
             "value": null,
             "description": null,
             "comment": null,
-            "annotationList": [],
+            "annotationList": [
+              "Required"
+            ],
             "nestTypeDocMetaList": []
           }
         ]
@@ -2899,7 +2924,7 @@
             "name": "selectedReason",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason",
             "simpleTypeName": "CDef.WithdrawalReason",
-            "value": "{OTH\u003dOTH, PRD\u003dPRD, FRT\u003dFRT, SIT\u003dSIT}",
+            "value": "{SIT\u003dSIT, PRD\u003dPRD, FRT\u003dFRT, OTH\u003dOTH}",
             "description": null,
             "comment": null,
             "annotationList": [],
@@ -2989,7 +3014,7 @@
             "comment": null,
             "annotationList": [
               "Required",
-              "Length{max\u003d5, min\u003d2}"
+              "Length{min\u003d2, max\u003d5}"
             ],
             "nestTypeDocMetaList": []
           }
