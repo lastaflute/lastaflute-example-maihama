@@ -33,6 +33,7 @@ import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;
 
+// #thinking restful example...but
 /**
  * @author jflute
  */

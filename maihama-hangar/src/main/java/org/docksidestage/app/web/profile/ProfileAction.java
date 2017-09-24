@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.HangarBaseAction;
-import org.docksidestage.app.web.profile.ProfileResult.PurchasedProductBean;
+import org.docksidestage.app.web.profile.ProfileResult.PurchasedProductPart;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.web.Execute;
@@ -46,7 +46,6 @@ public class ProfileAction extends HangarBaseAction {
     public JsonResponse<ProfileResult> index() {
         Member member = selectMember();
         ProfileResult result = mappingToResult(member);
-
         return asJson(result);
     }
 
@@ -73,7 +72,7 @@ public class ProfileAction extends HangarBaseAction {
     private ProfileResult mappingToResult(Member member) {
         ProfileResult result = new ProfileResult(member);
         result.purchaseList = member.getPurchaseList().stream().map(purchase -> {
-            return new PurchasedProductBean(purchase);
+            return new PurchasedProductPart(purchase);
         }).collect(Collectors.toList());
         return result;
     }

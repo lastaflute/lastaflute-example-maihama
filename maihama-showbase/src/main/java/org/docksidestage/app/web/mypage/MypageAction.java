@@ -15,12 +15,16 @@
  */
 package org.docksidestage.app.web.mypage;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import javax.annotation.Resource;
 
+import org.dbflute.cbean.result.ListResultBean;
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
-import org.docksidestage.dbflute.exbhv.MemberBhv;
-import org.docksidestage.dbflute.exentity.Member;
-import org.lastaflute.core.time.TimeManager;
+import org.docksidestage.app.web.mypage.MypageResult.ProductPart;
+import org.docksidestage.dbflute.exbhv.ProductBhv;
+import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
@@ -33,44 +37,52 @@ public class MypageAction extends ShowbaseBaseAction {
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    private TimeManager timeManager;
-    @Resource
-    private MemberBhv memberBhv;
+    private ProductBhv productBhv;
 
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
     @Execute
     public JsonResponse<MypageResult> get$index() {
-        Integer memberId = getUserBean().get().getMemberId();
-        Member member = selectMember(memberId);
-        MypageResult result = mappingToResult(memberId, member);
+        MypageResult result = new MypageResult();
+        result.recentProducts = mappingToProducts(selectRecentProductList());
+        result.highPriceProducts = mappingToProducts(selectHighPriceProductList());
         return asJson(result);
     }
 
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
-    private Member selectMember(Integer memberId) {
-        return memberBhv.selectEntity(cb -> {
-            cb.setupSelect_MemberAddressAsValid(timeManager.currentDate());
-            cb.setupSelect_MemberSecurityAsOne();
-            cb.setupSelect_MemberServiceAsOne().withServiceRank();
-            cb.query().setMemberId_Equal(memberId);
-        }).get();
+    private ListResultBean<Product> selectRecentProductList() {
+        ListResultBean<Product> productList = productBhv.selectList(cb -> {
+            cb.specify().derivedPurchase().max(purchaseCB -> {
+                purchaseCB.specify().columnPurchaseDatetime();
+            }, Product.ALIAS_latestPurchaseDate);
+            cb.query().existsPurchase(purchaseCB -> {
+                purchaseCB.query().setMemberId_Equal(getUserBean().get().getMemberId());
+            });
+            cb.query().addSpecifiedDerivedOrderBy_Desc(Product.ALIAS_latestPurchaseDate);
+            cb.query().addOrderBy_ProductId_Asc();
+            cb.fetchFirst(3);
+        });
+        return productList;
+    }
+
+    private ListResultBean<Product> selectHighPriceProductList() {
+        ListResultBean<Product> productList = productBhv.selectList(cb -> {
+            cb.query().existsPurchase(purchaseCB -> {
+                purchaseCB.query().setMemberId_Equal(getUserBean().get().getMemberId());
+            });
+            cb.query().addOrderBy_RegularPrice_Desc();
+            cb.fetchFirst(3);
+        });
+        return productList;
     }
 
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
-    private MypageResult mappingToResult(Integer memberId, Member member) {
-        MypageResult result = new MypageResult();
-        result.memberId = memberId;
-        result.memberName = member.getMemberName();
-        result.memberStatus = member.getMemberStatusCodeAsMemberStatus().alias();
-        result.serviceRank = member.getMemberServiceAsOne().get().getServiceRank().get().getServiceRankName();
-        result.cipheredPassword = member.getMemberSecurityAsOne().get().getLoginPassword();
-        result.memberAddress = member.getMemberAddressAsValid().map(address -> address.getAddress()).orElse(null);
-        return result;
+    private List<ProductPart> mappingToProducts(List<Product> productList) {
+        return productList.stream().map(product -> new ProductPart(product)).collect(Collectors.toList());
     }
 }

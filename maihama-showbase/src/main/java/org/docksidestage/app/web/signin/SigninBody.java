@@ -25,7 +25,6 @@ public class SigninBody {
 
     @Required
     public String account;
-
     @Required
     public String password;
 }

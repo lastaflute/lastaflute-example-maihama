@@ -3,8 +3,10 @@ package org.docksidestage.app.web.mypage;
 import java.util.List;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.docksidestage.dbflute.exentity.Product;
+import org.lastaflute.core.util.Lato;
 import org.lastaflute.web.validation.Required;
 
 /**
@@ -14,14 +16,14 @@ import org.lastaflute.web.validation.Required;
  */
 public class MypageResult {
 
-    @Required
+    @NotNull
     @Valid
     public List<ProductPart> recentProducts;
-    @Required
+    @NotNull
     @Valid
     public List<ProductPart> highPriceProducts;
 
-    static public class ProductPart {
+    public static class ProductPart {
 
         @Required
         public final String productName;
@@ -32,10 +34,10 @@ public class MypageResult {
             this.productName = product.getProductName();
             this.regularPrice = product.getRegularPrice();
         }
+    }
 
-        @Override
-        public String toString() {
-            return "{" + productName + ", " + regularPrice + "}";
-        }
+    @Override
+    public String toString() {
+        return Lato.string(this);
     }
 }
