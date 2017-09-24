@@ -13,17 +13,31 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.wx.faihy;
+package org.docksidestage.app.web.member;
 
-import org.hibernate.validator.constraints.Length;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import org.lastaflute.web.validation.Required;
 
 /**
+ * @author iwamatsu0430
  * @author jflute
  */
-public class WxFaihyForm {
+public class MemberSearchRowResult {
 
     @Required
-    @Length(min = 2, max = 5)
-    public String sea;
+    public Integer memberId;
+    @Required
+    public String memberName;
+    @Required
+    public String memberStatusName;
+
+    public LocalDate formalizedDate;
+    @Required
+    public LocalDateTime updateDatetime;
+    @Required
+    public Boolean withdrawalMember;
+    @Required
+    public Integer purchaseCount;
 }

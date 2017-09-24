@@ -1,0 +1,11 @@
+package org.docksidestage.app.web.member;
+
+/**
+ * @author iwamatsu0430
+ */
+public class MemberInfoResult {
+
+    public Integer memberId;
+    public String memberName;
+    public String memberStatusName;
+}
