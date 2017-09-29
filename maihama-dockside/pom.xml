@@ -86,12 +86,20 @@
 							<outputDirectory>${basedir}/target/${project.build.finalName}</outputDirectory>
 							<overwrite>true</overwrite>
 							<resources>
-								<resource> <!-- for boot configuration -->
+								<!-- if you use configuration in common for boot, enable this copy process:
+								<resource>
 									<directory>${basedir}/../maihama-common/src/main/resources</directory>
 									<includes>
 										<include>*_config.properties</include>
 										<include>*_env*.properties</include>
 										<include>tomcat_*.properties</include>
+									</includes>
+								</resource>
+								 -->
+								<resource> <!-- for swagger -->
+									<directory>${basedir}/target/lastadoc</directory>
+									<includes>
+										<include>swagger.json</include>
 									</includes>
 								</resource>
 							</resources>
