@@ -9,11 +9,13 @@ import org.docksidestage.app.web.wx.base.KeyValueResult;
 import org.docksidestage.app.web.wx.base.ValueGenericsResult;
 import org.docksidestage.dbflute.allcommon.CDef;
 import org.lastaflute.web.Execute;
+import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;
 
 /**
  * @author jflute
  */
+@AllowAnyoneAccess
 public class WxRemogenListAction extends ShowbaseBaseAction {
 
     // ===================================================================================
@@ -37,7 +39,7 @@ public class WxRemogenListAction extends ShowbaseBaseAction {
     }
 
     @Execute
-    public JsonResponse<List<SimpleEntry<String, String>>> getter() {
+    public JsonResponse<List<SimpleEntry<String, String>>> innergene() {
         List<SimpleEntry<String, String>> reasonList = CDef.WithdrawalReason.listAll().stream().map(reason -> {
             return new SimpleEntry<>(reason.code(), reason.alias());
         }).collect(Collectors.toList());
