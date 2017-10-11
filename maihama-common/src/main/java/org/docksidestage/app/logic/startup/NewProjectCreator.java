@@ -324,7 +324,7 @@ public class NewProjectCreator {
     protected boolean isAppMigrated(String canonicalPath) {
         return Srl.endsWith(canonicalPath, "/app/web", "/app/logic") //
                 || Srl.containsAny(canonicalPath //
-                        , "/app/web/RootAction", "/app/web/base", "/app/web/signin", "/app/web/mypage" // web
+                        , "/app/web/RootAction", "/app/web/SwaggerAction", "/app/web/base", "/app/web/signin", "/app/web/mypage" // web
                         , "/app/logic/context", "/app/logic/i18n" // logic
                 );
     }
