@@ -13,17 +13,18 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.base.general;
+package org.docksidestage.app.web.wx.base;
 
 /**
+ * @param <VALUE> The type of value.
  * @author jflute
  */
-public class KeyValueResult {
+public class ValueGenericsResult<VALUE> {
 
     public final String key;
-    public final Object value;
+    public final VALUE value;
 
-    public KeyValueResult(String key, Object value) {
+    public ValueGenericsResult(String key, VALUE value) {
         this.key = key;
         this.value = value;
     }

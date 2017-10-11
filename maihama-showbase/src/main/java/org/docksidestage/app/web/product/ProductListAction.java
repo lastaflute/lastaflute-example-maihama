@@ -15,6 +15,7 @@
  */
 package org.docksidestage.app.web.product;
 
+import java.util.AbstractMap.SimpleEntry;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,7 +24,6 @@ import javax.annotation.Resource;
 import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
-import org.docksidestage.app.web.base.general.KeyValueResult;
 import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingResult;
 import org.docksidestage.dbflute.allcommon.CDef.ProductStatus;
@@ -70,9 +70,9 @@ public class ProductListAction extends ShowbaseBaseAction {
     }
 
     @Execute
-    public JsonResponse<List<KeyValueResult>> status() {
-        List<KeyValueResult> productStatusList = ProductStatus.listAll().stream().map(m -> {
-            return new KeyValueResult(m.code(), m.alias());
+    public JsonResponse<List<SimpleEntry<String, String>>> status() {
+        List<SimpleEntry<String, String>> productStatusList = ProductStatus.listAll().stream().map(m -> {
+            return new SimpleEntry<>(m.code(), m.alias());
         }).collect(Collectors.toList());
         return asJson(productStatusList);
     }

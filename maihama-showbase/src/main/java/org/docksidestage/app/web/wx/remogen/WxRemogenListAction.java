@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
-import org.docksidestage.app.web.base.general.KeyValueResult;
+import org.docksidestage.app.web.wx.base.KeyValueResult;
+import org.docksidestage.app.web.wx.base.ValueGenericsResult;
 import org.docksidestage.dbflute.allcommon.CDef;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
@@ -27,13 +28,13 @@ public class WxRemogenListAction extends ShowbaseBaseAction {
     }
 
     // #for_now forName() error in saving swagger
-    //@Execute
-    //public JsonResponse<List<ValueGenericsResult<String>>> generics() {
-    //    List<ValueGenericsResult<String>> reasonList = CDef.WithdrawalReason.listAll().stream().map(reason -> {
-    //        return new ValueGenericsResult<String>(reason.code(), reason.alias());
-    //    }).collect(Collectors.toList());
-    //    return asJson(reasonList);
-    //}
+    @Execute
+    public JsonResponse<List<ValueGenericsResult<String>>> generics() {
+        List<ValueGenericsResult<String>> reasonList = CDef.WithdrawalReason.listAll().stream().map(reason -> {
+            return new ValueGenericsResult<String>(reason.code(), reason.alias());
+        }).collect(Collectors.toList());
+        return asJson(reasonList);
+    }
 
     @Execute
     public JsonResponse<List<SimpleEntry<String, String>>> getter() {
