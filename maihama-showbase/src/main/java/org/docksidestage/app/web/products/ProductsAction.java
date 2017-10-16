@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 import javax.annotation.Resource;
 
 import org.dbflute.cbean.result.PagingResultBean;
-import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.app.web.base.paging.PagingAssist;
 import org.docksidestage.app.web.base.paging.SearchPagingResult;
@@ -53,21 +52,9 @@ public class ProductsAction extends ShowbaseBaseAction {
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    @Execute(suppressValidatorCallCheck = true) // #hope no option by jflute
-    public JsonResponse<? extends Object> post$index(OptionalThing<Integer> productId, ProductsSearchBody body) {
-        if (productId.isPresent()) {
-            return doDetail(productId.get());
-        } else {
-            return doList(body);
-        }
-    }
-
-    private JsonResponse<ProductDetailResult> doDetail(Integer productId) {
-        Product product = selectProduct(productId);
-        return asJson(mappingToDetailResult(product));
-    }
-
-    private JsonResponse<SearchPagingResult<ProductsRowResult>> doList(ProductsSearchBody body) {
+    // /products/
+    @Execute
+    public JsonResponse<SearchPagingResult<ProductsRowResult>> post$index(ProductsSearchBody body) {
         validate(body, messages -> {});
 
         PagingResultBean<Product> page = selectProductPage(body);
@@ -77,6 +64,13 @@ public class ProductsAction extends ShowbaseBaseAction {
 
         SearchPagingResult<ProductsRowResult> result = pagingAssist.createPagingResult(page, rows);
         return asJson(result);
+    }
+
+    // /products/1 (mapping to /products/detail/1 by ActionAdjustmentProvider)
+    @Execute
+    public JsonResponse<ProductDetailResult> post$detail(Integer productId, ProductsSearchBody body) {
+        Product product = selectProduct(productId);
+        return asJson(mappingToDetailResult(product));
     }
 
     // ===================================================================================
@@ -118,6 +112,17 @@ public class ProductsAction extends ShowbaseBaseAction {
     // ===================================================================================
     //                                                                             Mapping
     //                                                                             =======
+    private ProductsRowResult mappingToRowResult(Product product) {
+        ProductsRowResult result = new ProductsRowResult();
+        result.productId = product.getProductId();
+        result.productName = product.getProductName();
+        product.getProductStatus().alwaysPresent(status -> {
+            result.productStatusName = status.getProductStatusName();
+        });
+        result.regularPrice = product.getRegularPrice();
+        return result;
+    }
+
     private ProductDetailResult mappingToDetailResult(Product product) {
         ProductDetailResult result = new ProductDetailResult();
         result.productId = product.getProductId();
@@ -127,17 +132,6 @@ public class ProductsAction extends ShowbaseBaseAction {
         product.getProductCategory().alwaysPresent(category -> {
             result.categoryName = category.getProductCategoryName();
         });
-        return result;
-    }
-
-    private ProductsRowResult mappingToRowResult(Product product) {
-        ProductsRowResult result = new ProductsRowResult();
-        result.productId = product.getProductId();
-        result.productName = product.getProductName();
-        product.getProductStatus().alwaysPresent(status -> {
-            result.productStatusName = status.getProductStatusName();
-        });
-        result.regularPrice = product.getRegularPrice();
         return result;
     }
 }
