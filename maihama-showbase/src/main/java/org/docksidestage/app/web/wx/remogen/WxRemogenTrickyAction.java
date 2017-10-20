@@ -1,7 +1,7 @@
 package org.docksidestage.app.web.wx.remogen;
 
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
-import org.docksidestage.app.web.wx.base.KeyValueResult;
+import org.docksidestage.app.web.wx.remogen.bean.KeyValueResult;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 

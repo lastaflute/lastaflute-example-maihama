@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
-import org.docksidestage.app.web.wx.base.KeyValueResult;
-import org.docksidestage.app.web.wx.base.SuperSimpleResult;
-import org.docksidestage.app.web.wx.base.ValueGenericsResult;
+import org.docksidestage.app.web.wx.remogen.bean.KeyValueResult;
+import org.docksidestage.app.web.wx.remogen.bean.SuperSimpleResult;
+import org.docksidestage.app.web.wx.remogen.bean.ValueGenericsResult;
 import org.docksidestage.dbflute.allcommon.CDef;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
