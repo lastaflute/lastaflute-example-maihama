@@ -24,7 +24,7 @@ import org.lastaflute.web.validation.Required;
 /**
  * @author jflute
  */
-public class StandardSuffixResult {
+public class AllSuffixResult {
 
     // ===================================================================================
     //                                                                        Resort Basic
@@ -53,7 +53,7 @@ public class StandardSuffixResult {
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public StandardSuffixResult(String resortName) {
+    public AllSuffixResult(String resortName) {
         this.resortName = resortName;
     }
 }

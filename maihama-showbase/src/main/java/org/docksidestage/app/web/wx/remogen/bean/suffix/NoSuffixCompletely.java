@@ -24,7 +24,7 @@ import org.lastaflute.web.validation.Required;
 /**
  * @author jflute
  */
-public class NoSuffixResult {
+public class NoSuffixCompletely {
 
     // ===================================================================================
     //                                                                        Resort Basic
@@ -53,7 +53,7 @@ public class NoSuffixResult {
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public NoSuffixResult(String resortName) {
+    public NoSuffixCompletely(String resortName) {
         this.resortName = resortName;
     }
 }

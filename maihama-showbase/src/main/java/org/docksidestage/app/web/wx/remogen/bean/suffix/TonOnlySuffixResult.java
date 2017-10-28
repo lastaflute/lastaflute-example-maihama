@@ -24,7 +24,7 @@ import org.lastaflute.web.validation.Required;
 /**
  * @author jflute
  */
-public class NoSuffixKekka {
+public class TonOnlySuffixResult {
 
     // ===================================================================================
     //                                                                        Resort Basic
@@ -53,7 +53,7 @@ public class NoSuffixKekka {
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public NoSuffixKekka(String resortName) {
+    public TonOnlySuffixResult(String resortName) {
         this.resortName = resortName;
     }
 }
