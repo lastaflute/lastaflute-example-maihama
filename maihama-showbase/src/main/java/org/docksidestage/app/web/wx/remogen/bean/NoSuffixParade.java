@@ -19,14 +19,16 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.docksidestage.app.web.wx.remogen.bean.SameObjectResult.DepartmentStore.OfficialShop;
 import org.lastaflute.web.validation.Required;
 
 /**
  * @author jflute
  */
-public class SameObjectResult {
+public class NoSuffixParade {
 
+    // ===================================================================================
+    //                                                                        Resort Basic
+    //                                                                        ============
     @Required
     public final String resortName;
 
@@ -38,58 +40,20 @@ public class SameObjectResult {
         @Required
         public String parkName;
 
-        @Required
-        public Integer stageCount;
-    }
-
-    @Valid
-    public List<ExtendedArea> extendedAreas;
-
-    public static class ExtendedArea {
-
-        @Required
-        public String direction;
-
         @Valid
-        public ResortPark nextPark;
-    }
+        public List<ShowStage> showStages;
 
-    @Valid
-    public DepartmentStore departmentStore;
-
-    public static class DepartmentStore {
-
-        @Required
-        public String storeName;
-
-        public Integer shopCount;
-
-        @Valid
-        public OfficialShop officialShop;
-
-        public static class OfficialShop {
+        public static class ShowStage {
 
             @Required
-            public String shopName;
+            public String stageName;
         }
     }
 
-    @Valid
-    public List<ThemeHotel> bigHotels;
-
-    public static class ThemeHotel {
-
-        @Required
-        public String hotelName;
-
-        @Valid
-        public ResortPark correspondingPark;
-
-        @Valid
-        public OfficialShop officialShop;
-    }
-
-    public SameObjectResult(String resortName) {
+    // ===================================================================================
+    //                                                                         Constructor
+    //                                                                         ===========
+    public NoSuffixParade(String resortName) {
         this.resortName = resortName;
     }
 }

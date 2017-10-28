@@ -2,7 +2,9 @@ package org.docksidestage.app.web.wx.remogen;
 
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.app.web.wx.remogen.bean.KeyValueResult;
-import org.docksidestage.app.web.wx.remogen.bean.SameObjectResult;
+import org.docksidestage.app.web.wx.remogen.bean.NoSuffixParade;
+import org.docksidestage.app.web.wx.remogen.bean.RecycleParadeResult;
+import org.docksidestage.app.web.wx.remogen.bean.SelfReferenceResult;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
@@ -20,7 +22,17 @@ public class WxRemogenTrickyAction extends ShowbaseBaseAction {
     }
 
     @Execute
-    public JsonResponse<SameObjectResult> sameobj() {
-        return asJson(new SameObjectResult("maihama"));
+    public JsonResponse<NoSuffixParade> nosuffix() {
+        return asJson(new NoSuffixParade("maihama"));
+    }
+
+    @Execute
+    public JsonResponse<RecycleParadeResult> recycle() {
+        return asJson(new RecycleParadeResult("maihama"));
+    }
+
+    @Execute
+    public JsonResponse<SelfReferenceResult> selfref() {
+        return asJson(new SelfReferenceResult("maihama"));
     }
 }
