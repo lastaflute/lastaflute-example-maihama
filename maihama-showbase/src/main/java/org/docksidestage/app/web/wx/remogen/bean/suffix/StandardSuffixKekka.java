@@ -24,7 +24,7 @@ import org.lastaflute.web.validation.Required;
 /**
  * @author jflute
  */
-public class StandardSuffixBean {
+public class StandardSuffixKekka {
 
     // ===================================================================================
     //                                                                        Resort Basic
@@ -53,7 +53,7 @@ public class StandardSuffixBean {
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public StandardSuffixBean(String resortName) {
+    public StandardSuffixKekka(String resortName) {
         this.resortName = resortName;
     }
 }
