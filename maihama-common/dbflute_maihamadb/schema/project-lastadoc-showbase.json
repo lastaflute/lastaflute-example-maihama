@@ -157,7 +157,28 @@
         "description": null,
         "comment": null,
         "annotationList": [],
-        "nestTypeDocMetaList": []
+        "nestTypeDocMetaList": [
+          {
+            "name": "key",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "value",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
       },
       "fileLineCount": 47,
       "methodLineCount": 6
@@ -1945,13 +1966,34 @@
         "description": null,
         "comment": null,
         "annotationList": [],
-        "nestTypeDocMetaList": []
+        "nestTypeDocMetaList": [
+          {
+            "name": "key",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "value",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
       },
       "fileLineCount": 82,
       "methodLineCount": 6
     },
     {
-      "url": "/products/{productId}",
+      "url": "/products/",
       "typeName": "org.docksidestage.app.web.products.ProductsAction",
       "simpleTypeName": "ProductsAction",
       "description": "@author jflute",
@@ -1998,13 +2040,243 @@
       "methodComment": null,
       "annotationList": [
         "AllowAnyoneAccess",
-        "Execute{suppressValidatorCallCheck\u003dtrue}"
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": {
+        "name": null,
+        "typeName": "org.docksidestage.app.web.products.ProductsSearchBody",
+        "simpleTypeName": "ProductsSearchBody",
+        "value": null,
+        "description": "@author iwamatsu0430",
+        "comment": "@author iwamatsu0430\n@author jflute",
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "productName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Length{max\u003d10}"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "productStatus",
+            "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
+            "simpleTypeName": "CDef.ProductStatus",
+            "value": "{ONS\u003dOnSaleProduction, PST\u003dProductionStop, SST\u003dSaleStop}",
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "purchaseMemberName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Length{max\u003d5}"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "pageNumber",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingResult\u003corg.docksidestage.app.web.products.ProductsRowResult\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cSearchPagingResult\u003cProductsRowResult\u003e\u003e",
+        "value": "mappingToRowResult(product),asJson(result)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "pageSize",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": "row count per one page",
+            "comment": "row count per one page",
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "currentPageNumber",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": "number of current page",
+            "comment": "number of current page",
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "allRecordCount",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": "count of all records",
+            "comment": "count of all records",
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "allPageCount",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": "count of all pages",
+            "comment": "count of all pages",
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "rows",
+            "typeName": "java.util.List\u003corg.docksidestage.app.web.products.ProductsRowResult\u003e",
+            "simpleTypeName": "List\u003cProductsRowResult\u003e",
+            "value": null,
+            "description": "paging data for current page",
+            "comment": "paging data for current page",
+            "annotationList": [
+              "NotNull",
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "productId",
+                "typeName": "java.lang.Integer",
+                "simpleTypeName": "Integer",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "productName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "productStatusName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "regularPrice",
+                "typeName": "java.lang.Integer",
+                "simpleTypeName": "Integer",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              }
+            ]
+          }
+        ]
+      },
+      "fileLineCount": 98,
+      "methodLineCount": 11
+    },
+    {
+      "url": "/products/detail/{productId}",
+      "typeName": "org.docksidestage.app.web.products.ProductsAction",
+      "simpleTypeName": "ProductsAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "productBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.ProductBhv",
+          "simpleTypeName": "ProductBhv",
+          "value": null,
+          "description": "The behavior of PRODUCT.",
+          "comment": "The behavior of PRODUCT.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "productStatusBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.ProductStatusBhv",
+          "simpleTypeName": "ProductStatusBhv",
+          "value": null,
+          "description": "The behavior of PRODUCT_STATUS.",
+          "comment": "The behavior of PRODUCT_STATUS.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "pagingAssist",
+          "typeName": "org.docksidestage.app.web.base.paging.PagingAssist",
+          "simpleTypeName": "PagingAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "post$detail",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
       ],
       "parameterTypeDocMetaList": [
         {
           "name": "productId",
-          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.Integer\u003e",
-          "simpleTypeName": "OptionalThing\u003cInteger\u003e",
+          "typeName": "java.lang.Integer",
+          "simpleTypeName": "Integer",
           "value": null,
           "description": null,
           "comment": null,
@@ -2069,16 +2341,77 @@
       },
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003c?\u003e",
-        "simpleTypeName": "JsonResponse\u003c?\u003e",
-        "value": "doList(body),doDetail(productId.get()",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.products.ProductDetailResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cProductDetailResult\u003e",
+        "value": "asJson(mappingToDetailResult(product)",
         "description": null,
         "comment": null,
         "annotationList": [],
-        "nestTypeDocMetaList": []
+        "nestTypeDocMetaList": [
+          {
+            "name": "productId",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "productName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "categoryName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "regularPrice",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "productHandleCode",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
       },
-      "fileLineCount": 103,
-      "methodLineCount": 7
+      "fileLineCount": 98,
+      "methodLineCount": 4
     },
     {
       "url": "/profile/",
@@ -3052,7 +3385,28 @@
         "description": null,
         "comment": null,
         "annotationList": [],
-        "nestTypeDocMetaList": []
+        "nestTypeDocMetaList": [
+          {
+            "name": "key",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "value",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
       },
       "fileLineCount": 59,
       "methodLineCount": 6
@@ -3345,6 +3699,1331 @@
       },
       "fileLineCount": 35,
       "methodLineCount": 4
+    },
+    {
+      "url": "/wx/remogen/body/basic",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenBodyAction",
+      "simpleTypeName": "WxRemogenBodyAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "logger",
+          "typeName": "org.slf4j.Logger",
+          "simpleTypeName": "Logger",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "basic",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": {
+        "name": null,
+        "typeName": "org.docksidestage.app.web.wx.remogen.bean.simple.SuperSimpleBody",
+        "simpleTypeName": "SuperSimpleBody",
+        "value": null,
+        "description": "@author jflute",
+        "comment": "@author jflute",
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "key",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "value",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
+        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
+        "value": "JsonResponse.asEmptyBody()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 19,
+      "methodLineCount": 4
+    },
+    {
+      "url": "/wx/remogen/body/list",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenBodyAction",
+      "simpleTypeName": "WxRemogenBodyAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "logger",
+          "typeName": "org.slf4j.Logger",
+          "simpleTypeName": "Logger",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "list",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": {
+        "name": null,
+        "typeName": "java.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.simple.SuperSimpleBody\u003e",
+        "simpleTypeName": "List\u003cSuperSimpleBody\u003e",
+        "value": null,
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "key",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "value",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
+        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
+        "value": "JsonResponse.asEmptyBody()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 19,
+      "methodLineCount": 4
+    },
+    {
+      "url": "/wx/remogen/list/basic",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenListAction",
+      "simpleTypeName": "WxRemogenListAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "basic",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.recycle.KeyValueResult\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cList\u003cKeyValueResult\u003e\u003e",
+        "value": "new KeyValueResult(reason.code(),asJson(reasonList)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "key",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "value",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 37,
+      "methodLineCount": 6
+    },
+    {
+      "url": "/wx/remogen/list/genebean",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenListAction",
+      "simpleTypeName": "WxRemogenListAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "genebean",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.recycle.ValueGenericsResult\u003corg.docksidestage.app.web.wx.remogen.bean.simple.SuperSimpleResult\u003e\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cList\u003cValueGenericsResult\u003cSuperSimpleResult\u003e\u003e\u003e",
+        "value": "new ValueGenericsResult\u003cSuperSimpleResult\u003e(reason.code(),asJson(reasonList)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "key",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "value",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 37,
+      "methodLineCount": 6
+    },
+    {
+      "url": "/wx/remogen/list/genestring",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenListAction",
+      "simpleTypeName": "WxRemogenListAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "genestring",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.recycle.ValueGenericsResult\u003cjava.lang.String\u003e\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cList\u003cValueGenericsResult\u003cString\u003e\u003e\u003e",
+        "value": "new ValueGenericsResult\u003cString\u003e(reason.code(),asJson(reasonList)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "key",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "value",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 37,
+      "methodLineCount": 6
+    },
+    {
+      "url": "/wx/remogen/list/innergene",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenListAction",
+      "simpleTypeName": "WxRemogenListAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "innergene",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003cjava.util.AbstractMap.java.util.AbstractMap$SimpleEntry\u003cjava.lang.String, java.lang.String\u003e\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cList\u003cAbstractMAbstractMap$SimpleEntry\u003cString, String\u003e\u003e\u003e",
+        "value": "new SimpleEntry\u003c\u003e(reason.code(),asJson(reasonList)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "key",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "value",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 37,
+      "methodLineCount": 6
+    },
+    {
+      "url": "/wx/remogen/suffix/allsuffix",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction",
+      "simpleTypeName": "WxRemogenSuffixAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "allsuffix",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.suffix.AllSuffixResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cAllSuffixResult\u003e",
+        "value": "asJson(new AllSuffixResult(\"maihama\")",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "resortName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "resortPark",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.suffix.AllSuffixResult$ResortParkPart",
+            "simpleTypeName": "ResortParkPart",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "parkName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "showStages",
+                "typeName": "java.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.suffix.AllSuffixResult$ResortParkPart$ShowStagePart\u003e",
+                "simpleTypeName": "List\u003cShowStagePart\u003e",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "stageName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "fileLineCount": 24,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/suffix/nosuffix",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction",
+      "simpleTypeName": "WxRemogenSuffixAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "nosuffix",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.suffix.NoSuffixCompletely\u003e",
+        "simpleTypeName": "JsonResponse\u003cNoSuffixCompletely\u003e",
+        "value": "asJson(new NoSuffixCompletely(\"maihama\")",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "resortName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "resortPark",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.suffix.NoSuffixCompletely$ResortPark",
+            "simpleTypeName": "ResortPark",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 24,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/suffix/partonly",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction",
+      "simpleTypeName": "WxRemogenSuffixAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "partonly",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.suffix.PartOnlySuffix\u003e",
+        "simpleTypeName": "JsonResponse\u003cPartOnlySuffix\u003e",
+        "value": "asJson(new PartOnlySuffix(\"maihama\")",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "resortName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "resortPark",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.suffix.PartOnlySuffix$ResortParkPart",
+            "simpleTypeName": "ResortParkPart",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 24,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/suffix/toponly",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction",
+      "simpleTypeName": "WxRemogenSuffixAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "toponly",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.suffix.TonOnlySuffixResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cTonOnlySuffixResult\u003e",
+        "value": "asJson(new TonOnlySuffixResult(\"maihama\")",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "resortName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "resortPark",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.suffix.TonOnlySuffixResult$ResortPark",
+            "simpleTypeName": "ResortPark",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "parkName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "showStages",
+                "typeName": "java.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.suffix.TonOnlySuffixResult$ResortPark$ShowStage\u003e",
+                "simpleTypeName": "List\u003cShowStage\u003e",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "stageName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "fileLineCount": 24,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/tricky/nobody",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenTrickyAction",
+      "simpleTypeName": "WxRemogenTrickyAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "nobody",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.recycle.KeyValueResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cKeyValueResult\u003e",
+        "value": "asJson(new KeyValueResult(\"sea\", \"mystic\")",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "key",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "value",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 19,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/tricky/recycle",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenTrickyAction",
+      "simpleTypeName": "WxRemogenTrickyAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "recycle",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cRecycleParadeResult\u003e",
+        "value": "asJson(new RecycleParadeResult(\"maihama\")",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "resortName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "firstPark",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ResortParkPart",
+            "simpleTypeName": "ResortParkPart",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "parkName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "showStages",
+                "typeName": "java.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ShowStagePart\u003e",
+                "simpleTypeName": "List\u003cShowStagePart\u003e",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "stageName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  }
+                ]
+              },
+              {
+                "name": "themeColor",
+                "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.ThemeColorResult",
+                "simpleTypeName": "ThemeColorResult",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "colorName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [],
+                    "nestTypeDocMetaList": []
+                  },
+                  {
+                    "name": "rgb",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [],
+                    "nestTypeDocMetaList": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "extendedAreas",
+            "typeName": "java.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ExtendedAreaPart\u003e",
+            "simpleTypeName": "List\u003cExtendedAreaPart\u003e",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "direction",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "nextPark",
+                "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ResortParkPart",
+                "simpleTypeName": "ResortParkPart",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "parkName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  },
+                  {
+                    "name": "showStages",
+                    "typeName": "java.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ShowStagePart\u003e",
+                    "simpleTypeName": "List\u003cShowStagePart\u003e",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Valid"
+                    ],
+                    "nestTypeDocMetaList": [
+                      {
+                        "name": "stageName",
+                        "typeName": "java.lang.String",
+                        "simpleTypeName": "String",
+                        "value": null,
+                        "description": null,
+                        "comment": null,
+                        "annotationList": [
+                          "Required"
+                        ],
+                        "nestTypeDocMetaList": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "themeColor",
+                    "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.ThemeColorResult",
+                    "simpleTypeName": "ThemeColorResult",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Valid"
+                    ],
+                    "nestTypeDocMetaList": [
+                      {
+                        "name": "colorName",
+                        "typeName": "java.lang.String",
+                        "simpleTypeName": "String",
+                        "value": null,
+                        "description": null,
+                        "comment": null,
+                        "annotationList": [],
+                        "nestTypeDocMetaList": []
+                      },
+                      {
+                        "name": "rgb",
+                        "typeName": "java.lang.String",
+                        "simpleTypeName": "String",
+                        "value": null,
+                        "description": null,
+                        "comment": null,
+                        "annotationList": [],
+                        "nestTypeDocMetaList": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "departmentStore",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$DepartmentStorePart",
+            "simpleTypeName": "DepartmentStorePart",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "storeName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "shopCount",
+                "typeName": "java.lang.Integer",
+                "simpleTypeName": "Integer",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "officialShop",
+                "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$DepartmentStorePart$OfficialShopPart",
+                "simpleTypeName": "OfficialShopPart",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "shopName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  }
+                ]
+              },
+              {
+                "name": "showStage",
+                "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ShowStagePart",
+                "simpleTypeName": "ShowStagePart",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "stageName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "bigHotels",
+            "typeName": "java.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ThemeHotelPart\u003e",
+            "simpleTypeName": "List\u003cThemeHotelPart\u003e",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "hotelName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "correspondingPark",
+                "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ResortParkPart",
+                "simpleTypeName": "ResortParkPart",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "parkName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  },
+                  {
+                    "name": "showStages",
+                    "typeName": "java.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ShowStagePart\u003e",
+                    "simpleTypeName": "List\u003cShowStagePart\u003e",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Valid"
+                    ],
+                    "nestTypeDocMetaList": [
+                      {
+                        "name": "stageName",
+                        "typeName": "java.lang.String",
+                        "simpleTypeName": "String",
+                        "value": null,
+                        "description": null,
+                        "comment": null,
+                        "annotationList": [
+                          "Required"
+                        ],
+                        "nestTypeDocMetaList": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "themeColor",
+                    "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.ThemeColorResult",
+                    "simpleTypeName": "ThemeColorResult",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Valid"
+                    ],
+                    "nestTypeDocMetaList": [
+                      {
+                        "name": "colorName",
+                        "typeName": "java.lang.String",
+                        "simpleTypeName": "String",
+                        "value": null,
+                        "description": null,
+                        "comment": null,
+                        "annotationList": [],
+                        "nestTypeDocMetaList": []
+                      },
+                      {
+                        "name": "rgb",
+                        "typeName": "java.lang.String",
+                        "simpleTypeName": "String",
+                        "value": null,
+                        "description": null,
+                        "comment": null,
+                        "annotationList": [],
+                        "nestTypeDocMetaList": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "officialShop",
+                "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$DepartmentStorePart$OfficialShopPart",
+                "simpleTypeName": "OfficialShopPart",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "shopName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  }
+                ]
+              },
+              {
+                "name": "showStage",
+                "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ShowStagePart",
+                "simpleTypeName": "ShowStagePart",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "stageName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  }
+                ]
+              },
+              {
+                "name": "themeColor",
+                "typeName": "org.docksidestage.app.web.wx.remogen.bean.recycle.ThemeColorResult",
+                "simpleTypeName": "ThemeColorResult",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "colorName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [],
+                    "nestTypeDocMetaList": []
+                  },
+                  {
+                    "name": "rgb",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [],
+                    "nestTypeDocMetaList": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "fileLineCount": 19,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/tricky/selfref",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenTrickyAction",
+      "simpleTypeName": "WxRemogenTrickyAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "selfref",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cSelfReferenceResult\u003e",
+        "value": "asJson(new SelfReferenceResult(\"maihama\")",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "resortName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "resortPark",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ResortPark",
+            "simpleTypeName": "ResortPark",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "parkName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "parentPark",
+                "typeName": "org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ResortPark",
+                "simpleTypeName": "ResortPark",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "parkName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  },
+                  {
+                    "name": "parentPark",
+                    "typeName": "org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ResortPark",
+                    "simpleTypeName": "ResortPark",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Valid"
+                    ],
+                    "nestTypeDocMetaList": [
+                      {
+                        "name": "parkName",
+                        "typeName": "java.lang.String",
+                        "simpleTypeName": "String",
+                        "value": null,
+                        "description": null,
+                        "comment": null,
+                        "annotationList": [
+                          "Required"
+                        ],
+                        "nestTypeDocMetaList": []
+                      },
+                      {
+                        "name": "parentPark",
+                        "typeName": "org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ResortPark",
+                        "simpleTypeName": "ResortPark",
+                        "value": null,
+                        "description": null,
+                        "comment": null,
+                        "annotationList": [
+                          "Valid"
+                        ],
+                        "nestTypeDocMetaList": [
+                          {
+                            "name": "parkName",
+                            "typeName": "java.lang.String",
+                            "simpleTypeName": "String",
+                            "value": null,
+                            "description": null,
+                            "comment": null,
+                            "annotationList": [
+                              "Required"
+                            ],
+                            "nestTypeDocMetaList": []
+                          },
+                          {
+                            "name": "parentPark",
+                            "typeName": "org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ResortPark",
+                            "simpleTypeName": "ResortPark",
+                            "value": null,
+                            "description": null,
+                            "comment": null,
+                            "annotationList": [
+                              "Valid"
+                            ],
+                            "nestTypeDocMetaList": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "fileLineCount": 19,
+      "methodLineCount": 3
     }
   ]
 }

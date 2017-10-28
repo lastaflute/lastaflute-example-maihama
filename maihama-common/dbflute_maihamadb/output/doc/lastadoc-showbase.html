@@ -182,7 +182,7 @@ to showbase
 </p>
 
 <p class="sisterneighborlink">
-    <a href="#lastadoc_action">to action(28)</a>
+    <a href="#lastadoc_action">to action(42)</a>
     | <a href="#lastadoc_mail">to mail(1)</a>
     | <a href="#lastadoc_appcls">to appcls(1)</a>
 </p>
@@ -396,21 +396,36 @@ to showbase
     </tr>
     <tr>
         <td class="rowcellnum">14</td>
-        <td class="rowcell"><a href="#.products._b_productId_e_::post_d_index">/products/{productId}</a></td>
+        <td class="rowcell"><a href="#.products.::post_d_index">/products/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.products.ProductsAction">ProductsAction</span>#post$index()</td>
         <td class="rowcell">
             <span title="org.docksidestage.app.web.products.ProductsSearchBody">ProductsSearchBody</span>
         </td>
         <td class="rowcell">
-            <span title="org.lastaflute.web.response.JsonResponse&lt;?&gt;">JsonResponse&lt;?&gt;</span>
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingResult&lt;org.docksidestage.app.web.products.ProductsRowResult&gt;&gt;">JsonResponse&lt;SearchPagingResult&lt;ProductsRowResult&gt;&gt;</span>
         </td>
         <td class="rowcellnum">3</td>
-        <td class="rowcellnum">103</td>
-        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">98</td>
+        <td class="rowcellnum">11</td>
     </tr>
     <tr>
         <td class="rowcellnum">15</td>
+        <td class="rowcell"><a href="#.products.detail._b_productId_e_::post_d_detail">/products/detail/{productId}</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.products.ProductsAction">ProductsAction</span>#post$detail()</td>
+        <td class="rowcell">
+            <span title="org.docksidestage.app.web.products.ProductsSearchBody">ProductsSearchBody</span>
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.products.ProductDetailResult&gt;">JsonResponse&lt;ProductDetailResult&gt;</span>
+        </td>
+        <td class="rowcellnum">3</td>
+        <td class="rowcellnum">98</td>
+        <td class="rowcellnum">4</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">16</td>
         <td class="rowcell"><a href="#.profile.::index">/profile/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.profile.ProfileAction">ProfileAction</span>#index()</td>
@@ -424,7 +439,7 @@ to showbase
         <td class="rowcellnum">5</td>
     </tr>
     <tr>
-        <td class="rowcellnum">16</td>
+        <td class="rowcellnum">17</td>
         <td class="rowcell"><a href="#.purchase.count::count">/purchase/count</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.purchase.PurchaseAction">PurchaseAction</span>#count()</td>
@@ -439,7 +454,7 @@ to showbase
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
-        <td class="rowcellnum">17</td>
+        <td class="rowcellnum">18</td>
         <td class="rowcell"><a href="#.purchase.contract::contract">/purchase/contract</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.purchase.PurchaseAction">PurchaseAction</span>#contract()</td>
@@ -454,7 +469,7 @@ to showbase
         <td class="rowcellnum">9</td>
     </tr>
     <tr>
-        <td class="rowcellnum">18</td>
+        <td class="rowcellnum">19</td>
         <td class="rowcell"><a href="#.root.::index">/root/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.RootAction">RootAction</span>#index()</td>
@@ -468,7 +483,7 @@ to showbase
         <td class="rowcellnum">3</td>
     </tr>
     <tr>
-        <td class="rowcellnum">19</td>
+        <td class="rowcellnum">20</td>
         <td class="rowcell"><a href="#.signin.::post_d_index">/signin/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signin.SigninAction">SigninAction</span>#post$index()</td>
@@ -483,7 +498,7 @@ to showbase
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
-        <td class="rowcellnum">20</td>
+        <td class="rowcellnum">21</td>
         <td class="rowcell"><a href="#.signup.::post_d_index">/signup/</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#post$index()</td>
@@ -498,7 +513,7 @@ to showbase
         <td class="rowcellnum">7</td>
     </tr>
     <tr>
-        <td class="rowcellnum">21</td>
+        <td class="rowcellnum">22</td>
         <td class="rowcell"><a href="#.signup.register._b_account_e_._b_token_e_::get_d_register">/signup/register/{account}/{token}</a></td>
         <td class="rowcell">@author&nbsp;iwamatsu0430</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.signup.SignupAction">SignupAction</span>#get$register()</td>
@@ -512,7 +527,7 @@ to showbase
         <td class="rowcellnum">5</td>
     </tr>
     <tr>
-        <td class="rowcellnum">22</td>
+        <td class="rowcellnum">23</td>
         <td class="rowcell"><a href="#.swagger.::index">/swagger/</a></td>
         <td class="rowcell">The&nbsp;action&nbsp;to&nbsp;show&nbsp;swaggar-ui.</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.SwaggerAction">SwaggerAction</span>#index()</td>
@@ -526,7 +541,7 @@ to showbase
         <td class="rowcellnum">5</td>
     </tr>
     <tr>
-        <td class="rowcellnum">23</td>
+        <td class="rowcellnum">24</td>
         <td class="rowcell"><a href="#.swagger.json::json">/swagger/json</a></td>
         <td class="rowcell">The&nbsp;action&nbsp;to&nbsp;show&nbsp;swaggar-ui.</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.SwaggerAction">SwaggerAction</span>#json()</td>
@@ -540,7 +555,7 @@ to showbase
         <td class="rowcellnum">4</td>
     </tr>
     <tr>
-        <td class="rowcellnum">24</td>
+        <td class="rowcellnum">25</td>
         <td class="rowcell"><a href="#.withdrawal.reason::reason">/withdrawal/reason</a></td>
         <td class="rowcell">@author&nbsp;black-trooper</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.withdrawal.WithdrawalAction">WithdrawalAction</span>#reason()</td>
@@ -554,7 +569,7 @@ to showbase
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
-        <td class="rowcellnum">25</td>
+        <td class="rowcellnum">26</td>
         <td class="rowcell"><a href="#.withdrawal.done::done">/withdrawal/done</a></td>
         <td class="rowcell">@author&nbsp;black-trooper</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.withdrawal.WithdrawalAction">WithdrawalAction</span>#done()</td>
@@ -569,7 +584,7 @@ to showbase
         <td class="rowcellnum">7</td>
     </tr>
     <tr>
-        <td class="rowcellnum">26</td>
+        <td class="rowcellnum">27</td>
         <td class="rowcell"><a href="#.wx.faicli.::index">/wx/faicli/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.wx.faicli.WxFaicliAction">WxFaicliAction</span>#index()</td>
@@ -584,7 +599,7 @@ to showbase
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
-        <td class="rowcellnum">27</td>
+        <td class="rowcellnum">28</td>
         <td class="rowcell"><a href="#.wx.faicli.unknown::unknown">/wx/faicli/unknown</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.wx.faicli.WxFaicliAction">WxFaicliAction</span>#unknown()</td>
@@ -598,7 +613,7 @@ to showbase
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
-        <td class="rowcellnum">28</td>
+        <td class="rowcellnum">29</td>
         <td class="rowcell"><a href="#.wx.faicli.entity._b_account_e_::entity">/wx/faicli/entity/{account}</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.wx.faicli.WxFaicliAction">WxFaicliAction</span>#entity()</td>
@@ -610,6 +625,190 @@ to showbase
         <td class="rowcellnum">2</td>
         <td class="rowcellnum">35</td>
         <td class="rowcellnum">4</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">30</td>
+        <td class="rowcell"><a href="#.wx.remogen.body.basic::basic">/wx/remogen/body/basic</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenBodyAction">WxRemogenBodyAction</span>#basic()</td>
+        <td class="rowcell">
+            <span title="org.docksidestage.app.web.wx.remogen.bean.simple.SuperSimpleBody">SuperSimpleBody</span>
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">19</td>
+        <td class="rowcellnum">4</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">31</td>
+        <td class="rowcell"><a href="#.wx.remogen.body.list::list">/wx/remogen/body/list</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenBodyAction">WxRemogenBodyAction</span>#list()</td>
+        <td class="rowcell">
+            <span title="java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.simple.SuperSimpleBody&gt;">List&lt;SuperSimpleBody&gt;</span>
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span>
+        </td>
+        <td class="rowcellnum">1</td>
+        <td class="rowcellnum">19</td>
+        <td class="rowcellnum">4</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">32</td>
+        <td class="rowcell"><a href="#.wx.remogen.list.basic::basic">/wx/remogen/list/basic</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenListAction">WxRemogenListAction</span>#basic()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.KeyValueResult&gt;&gt;">JsonResponse&lt;List&lt;KeyValueResult&gt;&gt;</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">37</td>
+        <td class="rowcellnum">6</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">33</td>
+        <td class="rowcell"><a href="#.wx.remogen.list.genebean::genebean">/wx/remogen/list/genebean</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenListAction">WxRemogenListAction</span>#genebean()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.ValueGenericsResult&lt;org.docksidestage.app.web.wx.remogen.bean.simple.SuperSimpleResult&gt;&gt;&gt;">JsonResponse&lt;List&lt;ValueGenericsResult&lt;SuperSimpleResult&gt;&gt;&gt;</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">37</td>
+        <td class="rowcellnum">6</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">34</td>
+        <td class="rowcell"><a href="#.wx.remogen.list.genestring::genestring">/wx/remogen/list/genestring</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenListAction">WxRemogenListAction</span>#genestring()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.ValueGenericsResult&lt;java.lang.String&gt;&gt;&gt;">JsonResponse&lt;List&lt;ValueGenericsResult&lt;String&gt;&gt;&gt;</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">37</td>
+        <td class="rowcellnum">6</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">35</td>
+        <td class="rowcell"><a href="#.wx.remogen.list.innergene::innergene">/wx/remogen/list/innergene</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenListAction">WxRemogenListAction</span>#innergene()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;java.util.AbstractMap.java.util.AbstractMap$SimpleEntry&lt;java.lang.String,&nbsp;java.lang.String&gt;&gt;&gt;">JsonResponse&lt;List&lt;AbstractMAbstractMap$SimpleEntry&lt;String,&nbsp;String&gt;&gt;&gt;</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">37</td>
+        <td class="rowcellnum">6</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">36</td>
+        <td class="rowcell"><a href="#.wx.remogen.suffix.allsuffix::allsuffix">/wx/remogen/suffix/allsuffix</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction">WxRemogenSuffixAction</span>#allsuffix()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.suffix.AllSuffixResult&gt;">JsonResponse&lt;AllSuffixResult&gt;</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">24</td>
+        <td class="rowcellnum">3</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">37</td>
+        <td class="rowcell"><a href="#.wx.remogen.suffix.nosuffix::nosuffix">/wx/remogen/suffix/nosuffix</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction">WxRemogenSuffixAction</span>#nosuffix()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.suffix.NoSuffixCompletely&gt;">JsonResponse&lt;NoSuffixCompletely&gt;</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">24</td>
+        <td class="rowcellnum">3</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">38</td>
+        <td class="rowcell"><a href="#.wx.remogen.suffix.partonly::partonly">/wx/remogen/suffix/partonly</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction">WxRemogenSuffixAction</span>#partonly()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.suffix.PartOnlySuffix&gt;">JsonResponse&lt;PartOnlySuffix&gt;</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">24</td>
+        <td class="rowcellnum">3</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">39</td>
+        <td class="rowcell"><a href="#.wx.remogen.suffix.toponly::toponly">/wx/remogen/suffix/toponly</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction">WxRemogenSuffixAction</span>#toponly()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.suffix.TonOnlySuffixResult&gt;">JsonResponse&lt;TonOnlySuffixResult&gt;</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">24</td>
+        <td class="rowcellnum">3</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">40</td>
+        <td class="rowcell"><a href="#.wx.remogen.tricky.nobody::nobody">/wx/remogen/tricky/nobody</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenTrickyAction">WxRemogenTrickyAction</span>#nobody()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.KeyValueResult&gt;">JsonResponse&lt;KeyValueResult&gt;</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">19</td>
+        <td class="rowcellnum">3</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">41</td>
+        <td class="rowcell"><a href="#.wx.remogen.tricky.recycle::recycle">/wx/remogen/tricky/recycle</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenTrickyAction">WxRemogenTrickyAction</span>#recycle()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult&gt;">JsonResponse&lt;RecycleParadeResult&gt;</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">19</td>
+        <td class="rowcellnum">3</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">42</td>
+        <td class="rowcell"><a href="#.wx.remogen.tricky.selfref::selfref">/wx/remogen/tricky/selfref</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.wx.remogen.WxRemogenTrickyAction">WxRemogenTrickyAction</span>#selfref()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult&gt;">JsonResponse&lt;SelfReferenceResult&gt;</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">19</td>
+        <td class="rowcellnum">3</td>
     </tr>
     </tbody>
 </table>
@@ -726,6 +925,39 @@ to showbase
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute<br>@author&nbsp;black-trooper</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;java.util.AbstractMap.java.util.AbstractMap$SimpleEntry&lt;java.lang.String,&nbsp;java.lang.String&gt;&gt;&gt;">JsonResponse&lt;List&lt;AbstractMAbstractMap$SimpleEntry&lt;String,&nbsp;String&gt;&gt;&gt;</span></span>
 <p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>key</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>value</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
 
 <h3 id=".member.add.register::register">
 /member/add/register
@@ -2432,9 +2664,42 @@ to showbase
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute<br>@author&nbsp;black-trooper</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;java.util.AbstractMap.java.util.AbstractMap$SimpleEntry&lt;java.lang.String,&nbsp;java.lang.String&gt;&gt;&gt;">JsonResponse&lt;List&lt;AbstractMAbstractMap$SimpleEntry&lt;String,&nbsp;String&gt;&gt;&gt;</span></span>
 <p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>key</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>value</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
 
-<h3 id=".products._b_productId_e_::post_d_index">
-/products/{productId}
+<h3 id=".products.::post_d_index">
+/products/
 </h3>
 <p>
 <span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.products.ProductsAction#post$index()</span>
@@ -2442,7 +2707,221 @@ to showbase
 <p class="docsubitem">
 <span class="docsubtitle">annotations:</span>
 <span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
-<span class="docannotations docsubvalue">&#64;Execute{suppressValidatorCallCheck=true}</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.products.ProductsSearchBody">ProductsSearchBody</span></span>
+<p class="tablecomment" title="@author&nbsp;iwamatsu0430<br>@author&nbsp;jflute">@author&nbsp;iwamatsu0430</p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>productName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Length{max=10}
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>productStatus</td>
+        <td><p title="org.docksidestage.dbflute.allcommon.CDef$ProductStatus">CDef.ProductStatus</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p>{ONS=OnSaleProduction,&nbsp;PST=ProductionStop,&nbsp;SST=SaleStop}</p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">3</td>
+        <td>purchaseMemberName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Length{max=5}
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">4</td>
+        <td>pageNumber</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.base.paging.SearchPagingResult&lt;org.docksidestage.app.web.products.ProductsRowResult&gt;&gt;">JsonResponse&lt;SearchPagingResult&lt;ProductsRowResult&gt;&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>pageSize</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title="row&nbsp;count&nbsp;per&nbsp;one&nbsp;page">row&nbsp;count&nbsp;per&nbsp;one&nbsp;page</p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>currentPageNumber</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title="number&nbsp;of&nbsp;current&nbsp;page">number&nbsp;of&nbsp;current&nbsp;page</p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">3</td>
+        <td>allRecordCount</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title="count&nbsp;of&nbsp;all&nbsp;records">count&nbsp;of&nbsp;all&nbsp;records</p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">4</td>
+        <td>allPageCount</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title="count&nbsp;of&nbsp;all&nbsp;pages">count&nbsp;of&nbsp;all&nbsp;pages</p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">5</td>
+        <td>rows</td>
+        <td><p title="java.util.List&lt;org.docksidestage.app.web.products.ProductsRowResult&gt;">List&lt;ProductsRowResult&gt;</p></td>
+        <td class="fieldcomment">
+            <p title="paging&nbsp;data&nbsp;for&nbsp;current&nbsp;page">paging&nbsp;data&nbsp;for&nbsp;current&nbsp;page</p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;NotNull
+,
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>productId</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>productName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">3</td>
+        <td>productStatusName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">4</td>
+        <td>regularPrice</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+<h3 id=".products.detail._b_productId_e_::post_d_detail">
+/products/detail/{productId}
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.products.ProductsAction#post$detail()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
 <span class="doctitle">URL Parameter:</span>
@@ -2459,7 +2938,7 @@ to showbase
     <tr>
         <td class="rowcellnum" rowspan="1">1</td>
         <td>productId</td>
-        <td><p title="org.dbflute.optional.OptionalThing&lt;java.lang.Integer&gt;">OptionalThing&lt;Integer&gt;</p></td>
+        <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p></p>
@@ -2529,8 +3008,79 @@ to showbase
     </tr>
 </table>
 
-<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;?&gt;">JsonResponse&lt;?&gt;</span></span>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.products.ProductDetailResult&gt;">JsonResponse&lt;ProductDetailResult&gt;</span></span>
 <p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>productId</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>productName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">3</td>
+        <td>categoryName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">4</td>
+        <td>regularPrice</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">5</td>
+        <td>productHandleCode</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
 
 <h3 id=".profile.::index">
 /profile/
@@ -3112,6 +3662,39 @@ to showbase
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;black-trooper</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;java.util.AbstractMap.java.util.AbstractMap$SimpleEntry&lt;java.lang.String,&nbsp;java.lang.String&gt;&gt;&gt;">JsonResponse&lt;List&lt;AbstractMAbstractMap$SimpleEntry&lt;String,&nbsp;String&gt;&gt;&gt;</span></span>
 <p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>key</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>value</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
 
 <h3 id=".withdrawal.done::done">
 /withdrawal/done
@@ -3260,6 +3843,1706 @@ to showbase
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
 <p class="tablecomment" title=""></p>
+
+<h3 id=".wx.remogen.body.basic::basic">
+/wx/remogen/body/basic
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenBodyAction#basic()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="org.docksidestage.app.web.wx.remogen.bean.simple.SuperSimpleBody">SuperSimpleBody</span></span>
+<p class="tablecomment" title="@author&nbsp;jflute">@author&nbsp;jflute</p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>key</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>value</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
+<p class="tablecomment" title=""></p>
+
+<h3 id=".wx.remogen.body.list::list">
+/wx/remogen/body/list
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenBodyAction#list()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Form or Body:</span> <span class="docsubvalue"><span title="java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.simple.SuperSimpleBody&gt;">List&lt;SuperSimpleBody&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>key</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>value</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.lang.Void&gt;">JsonResponse&lt;Void&gt;</span></span>
+<p class="tablecomment" title=""></p>
+
+<h3 id=".wx.remogen.list.basic::basic">
+/wx/remogen/list/basic
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenListAction#basic()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.KeyValueResult&gt;&gt;">JsonResponse&lt;List&lt;KeyValueResult&gt;&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>key</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>value</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<h3 id=".wx.remogen.list.genebean::genebean">
+/wx/remogen/list/genebean
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenListAction#genebean()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.ValueGenericsResult&lt;org.docksidestage.app.web.wx.remogen.bean.simple.SuperSimpleResult&gt;&gt;&gt;">JsonResponse&lt;List&lt;ValueGenericsResult&lt;SuperSimpleResult&gt;&gt;&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>key</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>value</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<h3 id=".wx.remogen.list.genestring::genestring">
+/wx/remogen/list/genestring
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenListAction#genestring()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.ValueGenericsResult&lt;java.lang.String&gt;&gt;&gt;">JsonResponse&lt;List&lt;ValueGenericsResult&lt;String&gt;&gt;&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>key</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>value</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<h3 id=".wx.remogen.list.innergene::innergene">
+/wx/remogen/list/innergene
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenListAction#innergene()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;java.util.List&lt;java.util.AbstractMap.java.util.AbstractMap$SimpleEntry&lt;java.lang.String,&nbsp;java.lang.String&gt;&gt;&gt;">JsonResponse&lt;List&lt;AbstractMAbstractMap$SimpleEntry&lt;String,&nbsp;String&gt;&gt;&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>key</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>value</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<h3 id=".wx.remogen.suffix.allsuffix::allsuffix">
+/wx/remogen/suffix/allsuffix
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction#allsuffix()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.suffix.AllSuffixResult&gt;">JsonResponse&lt;AllSuffixResult&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>resortName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>resortPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.suffix.AllSuffixResult$ResortParkPart">ResortParkPart</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>parkName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>showStages</td>
+        <td><p title="java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.suffix.AllSuffixResult$ResortParkPart$ShowStagePart&gt;">List&lt;ShowStagePart&gt;</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>stageName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+<h3 id=".wx.remogen.suffix.nosuffix::nosuffix">
+/wx/remogen/suffix/nosuffix
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction#nosuffix()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.suffix.NoSuffixCompletely&gt;">JsonResponse&lt;NoSuffixCompletely&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>resortName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>resortPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.suffix.NoSuffixCompletely$ResortPark">ResortPark</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+</table>
+
+<h3 id=".wx.remogen.suffix.partonly::partonly">
+/wx/remogen/suffix/partonly
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction#partonly()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.suffix.PartOnlySuffix&gt;">JsonResponse&lt;PartOnlySuffix&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>resortName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>resortPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.suffix.PartOnlySuffix$ResortParkPart">ResortParkPart</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+</table>
+
+<h3 id=".wx.remogen.suffix.toponly::toponly">
+/wx/remogen/suffix/toponly
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenSuffixAction#toponly()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.suffix.TonOnlySuffixResult&gt;">JsonResponse&lt;TonOnlySuffixResult&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>resortName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>resortPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.suffix.TonOnlySuffixResult$ResortPark">ResortPark</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>parkName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>showStages</td>
+        <td><p title="java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.suffix.TonOnlySuffixResult$ResortPark$ShowStage&gt;">List&lt;ShowStage&gt;</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>stageName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+<h3 id=".wx.remogen.tricky.nobody::nobody">
+/wx/remogen/tricky/nobody
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenTrickyAction#nobody()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.KeyValueResult&gt;">JsonResponse&lt;KeyValueResult&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>key</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>value</td>
+        <td><p title="java.lang.Object">Object</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+<h3 id=".wx.remogen.tricky.recycle::recycle">
+/wx/remogen/tricky/recycle
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenTrickyAction#recycle()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult&gt;">JsonResponse&lt;RecycleParadeResult&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>resortName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>firstPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ResortParkPart">ResortParkPart</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>parkName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>showStages</td>
+        <td><p title="java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ShowStagePart&gt;">List&lt;ShowStagePart&gt;</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>stageName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">3</td>
+        <td>themeColor</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.ThemeColorResult">ThemeColorResult</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>colorName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>rgb</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">3</td>
+        <td>extendedAreas</td>
+        <td><p title="java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ExtendedAreaPart&gt;">List&lt;ExtendedAreaPart&gt;</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>direction</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>nextPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ResortParkPart">ResortParkPart</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>parkName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>showStages</td>
+        <td><p title="java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ShowStagePart&gt;">List&lt;ShowStagePart&gt;</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>stageName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">3</td>
+        <td>themeColor</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.ThemeColorResult">ThemeColorResult</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>colorName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>rgb</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">4</td>
+        <td>departmentStore</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$DepartmentStorePart">DepartmentStorePart</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>storeName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>shopCount</td>
+        <td><p title="java.lang.Integer">Integer</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">3</td>
+        <td>officialShop</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$DepartmentStorePart$OfficialShopPart">OfficialShopPart</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>shopName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">4</td>
+        <td>showStage</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ShowStagePart">ShowStagePart</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>stageName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">5</td>
+        <td>bigHotels</td>
+        <td><p title="java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ThemeHotelPart&gt;">List&lt;ThemeHotelPart&gt;</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>hotelName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>correspondingPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ResortParkPart">ResortParkPart</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>parkName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>showStages</td>
+        <td><p title="java.util.List&lt;org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ShowStagePart&gt;">List&lt;ShowStagePart&gt;</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>stageName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">3</td>
+        <td>themeColor</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.ThemeColorResult">ThemeColorResult</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>colorName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>rgb</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">3</td>
+        <td>officialShop</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$DepartmentStorePart$OfficialShopPart">OfficialShopPart</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>shopName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">4</td>
+        <td>showStage</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult$ShowStagePart">ShowStagePart</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>stageName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">5</td>
+        <td>themeColor</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.recycle.ThemeColorResult">ThemeColorResult</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>colorName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>rgb</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+<h3 id=".wx.remogen.tricky.selfref::selfref">
+/wx/remogen/tricky/selfref
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.wx.remogen.WxRemogenTrickyAction#selfref()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.JsonResponse&lt;org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult&gt;">JsonResponse&lt;SelfReferenceResult&gt;</span></span>
+<p class="tablecomment" title=""></p>
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>resortName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>resortPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ResortPark">ResortPark</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>parkName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>parentPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ResortPark">ResortPark</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>parkName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>parentPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ResortPark">ResortPark</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>parkName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="2">2</td>
+        <td>parentPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ResortPark">ResortPark</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <div class="nestedbean">
+<table>
+    <thead>
+    <tr>
+        <th class="rownumhead">No.</th>
+        <th>name</th>
+        <th>type</th>
+        <th>comment</th>
+        <th>annotations</th>
+    </tr>
+    </thead>
+    <tr>
+        <td class="rowcellnum" rowspan="1">1</td>
+        <td>parkName</td>
+        <td><p title="java.lang.String">String</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">2</td>
+        <td>parentPark</td>
+        <td><p title="org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ResortPark">ResortPark</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p></p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Valid
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </td>
+    </tr>
+</table>
 
 
 
