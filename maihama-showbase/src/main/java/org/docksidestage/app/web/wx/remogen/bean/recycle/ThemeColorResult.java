@@ -13,19 +13,18 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.wx.remogen.bean;
+package org.docksidestage.app.web.wx.remogen.bean.recycle;
 
 /**
- * @param <VALUE> The type of value.
  * @author jflute
  */
-public class ValueGenericsResult<VALUE> {
+public class ThemeColorResult {
 
-    public final String key;
-    public final VALUE value;
+    public final String colorName;
+    public final String rgb;
 
-    public ValueGenericsResult(String key, VALUE value) {
-        this.key = key;
-        this.value = value;
+    public ThemeColorResult(String key, String rgb) {
+        this.colorName = key;
+        this.rgb = rgb;
     }
 }

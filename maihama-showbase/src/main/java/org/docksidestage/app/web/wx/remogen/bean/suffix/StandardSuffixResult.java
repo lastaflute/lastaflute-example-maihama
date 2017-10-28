@@ -13,7 +13,9 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.wx.remogen.bean;
+package org.docksidestage.app.web.wx.remogen.bean.suffix;
+
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -22,7 +24,7 @@ import org.lastaflute.web.validation.Required;
 /**
  * @author jflute
  */
-public class SelfReferenceResult {
+public class StandardSuffixResult {
 
     // ===================================================================================
     //                                                                        Resort Basic
@@ -31,21 +33,27 @@ public class SelfReferenceResult {
     public final String resortName;
 
     @Valid
-    public ResortPark resortPark;
+    public ResortParkPart resortPark;
 
-    public static class ResortPark {
+    public static class ResortParkPart {
 
         @Required
         public String parkName;
 
         @Valid
-        public ResortPark parentPark;
+        public List<ShowStagePart> showStages;
+
+        public static class ShowStagePart {
+
+            @Required
+            public String stageName;
+        }
     }
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public SelfReferenceResult(String resortName) {
+    public StandardSuffixResult(String resortName) {
         this.resortName = resortName;
     }
 }

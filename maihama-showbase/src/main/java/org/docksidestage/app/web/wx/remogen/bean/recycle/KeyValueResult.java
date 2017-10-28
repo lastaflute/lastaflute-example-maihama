@@ -13,18 +13,18 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.wx.remogen.bean;
+package org.docksidestage.app.web.wx.remogen.bean.recycle;
 
 /**
  * @author jflute
  */
-public class ThemeColorResult {
+public class KeyValueResult {
 
-    public final String colorName;
-    public final String rgb;
+    public final String key;
+    public final Object value;
 
-    public ThemeColorResult(String key, String rgb) {
-        this.colorName = key;
-        this.rgb = rgb;
+    public KeyValueResult(String key, Object value) {
+        this.key = key;
+        this.value = value;
     }
 }

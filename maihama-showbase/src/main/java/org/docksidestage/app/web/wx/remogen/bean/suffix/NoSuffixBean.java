@@ -13,7 +13,7 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.wx.remogen.bean;
+package org.docksidestage.app.web.wx.remogen.bean.suffix;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ import org.lastaflute.web.validation.Required;
 /**
  * @author jflute
  */
-public class NoSuffixParade {
+public class NoSuffixBean {
 
     // ===================================================================================
     //                                                                        Resort Basic
@@ -53,7 +53,7 @@ public class NoSuffixParade {
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public NoSuffixParade(String resortName) {
+    public NoSuffixBean(String resortName) {
         this.resortName = resortName;
     }
 }

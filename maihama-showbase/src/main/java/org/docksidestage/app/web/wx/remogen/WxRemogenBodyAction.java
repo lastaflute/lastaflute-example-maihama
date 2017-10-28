@@ -3,7 +3,7 @@ package org.docksidestage.app.web.wx.remogen;
 import java.util.List;
 
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
-import org.docksidestage.app.web.wx.remogen.bean.SuperSimpleBody;
+import org.docksidestage.app.web.wx.remogen.bean.simple.SuperSimpleBody;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;

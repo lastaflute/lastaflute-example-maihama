@@ -13,13 +13,13 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.wx.remogen.bean;
+package org.docksidestage.app.web.wx.remogen.bean.recycle;
 
 import java.util.List;
 
 import javax.validation.Valid;
 
-import org.docksidestage.app.web.wx.remogen.bean.RecycleParadeResult.DepartmentStorePart.OfficialShopPart;
+import org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult.DepartmentStorePart.OfficialShopPart;
 import org.lastaflute.web.validation.Required;
 
 /**
