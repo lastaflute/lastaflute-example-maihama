@@ -33,7 +33,7 @@ public class NoSuffixParade {
     public final String resortName;
 
     @Valid
-    public ResortPark firstPark;
+    public ResortPark resortPark;
 
     public static class ResortPark {
 
