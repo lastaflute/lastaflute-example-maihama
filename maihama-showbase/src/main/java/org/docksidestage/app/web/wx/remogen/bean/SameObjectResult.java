@@ -19,6 +19,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.docksidestage.app.web.wx.remogen.bean.SameObjectResult.DepartmentStore.OfficialShop;
 import org.lastaflute.web.validation.Required;
 
 /**
@@ -71,6 +72,21 @@ public class SameObjectResult {
             @Required
             public String shopName;
         }
+    }
+
+    @Valid
+    public List<ThemeHotel> bigHotels;
+
+    public static class ThemeHotel {
+
+        @Required
+        public String hotelName;
+
+        @Valid
+        public ResortPark correspondingPark;
+
+        @Valid
+        public OfficialShop officialShop;
     }
 
     public SameObjectResult(String resortName) {
