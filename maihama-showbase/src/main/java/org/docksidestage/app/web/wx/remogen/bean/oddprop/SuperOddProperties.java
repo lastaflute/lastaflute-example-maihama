@@ -24,6 +24,9 @@ import org.lastaflute.web.validation.Required;
  */
 public class SuperOddProperties {
 
+    // ===================================================================================
+    //                                                                      Bean-like Name
+    //                                                                      ==============
     @Required
     public String seaResult;
 
@@ -95,6 +98,9 @@ public class SuperOddProperties {
         public String dstoreName;
     }
 
+    // ===================================================================================
+    //                                                                         Constructor
+    //                                                                         ===========
     public SuperOddProperties(String seaResult) {
         this.seaResult = seaResult;
     }
