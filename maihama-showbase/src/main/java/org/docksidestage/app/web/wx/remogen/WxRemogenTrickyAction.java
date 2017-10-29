@@ -1,6 +1,7 @@
 package org.docksidestage.app.web.wx.remogen;
 
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
+import org.docksidestage.app.web.wx.remogen.bean.oddprop.SuperOddProperties;
 import org.docksidestage.app.web.wx.remogen.bean.recycle.KeyValueResult;
 import org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult;
 import org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult;
@@ -18,6 +19,11 @@ public class WxRemogenTrickyAction extends ShowbaseBaseAction {
     @Execute
     public JsonResponse<KeyValueResult> nobody() {
         return asJson(new KeyValueResult("sea", "mystic"));
+    }
+
+    @Execute
+    public JsonResponse<SuperOddProperties> oddprop() {
+        return asJson(new SuperOddProperties("maihama"));
     }
 
     @Execute

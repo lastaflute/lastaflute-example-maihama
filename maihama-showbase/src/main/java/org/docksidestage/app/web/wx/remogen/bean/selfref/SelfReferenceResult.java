@@ -30,16 +30,43 @@ public class SelfReferenceResult {
     @Required
     public final String resortName;
 
+    // -----------------------------------------------------
+    //                                 Direct Self Reference
+    //                                 ---------------------
     @Valid
     public ResortPark resortPark;
 
-    public static class ResortPark {
+    public static class ResortPark { // direct self reference
 
         @Required
         public String parkName;
 
         @Valid
         public ResortPark parentPark;
+    }
+
+    // -----------------------------------------------------
+    //                               One-Step Self Reference
+    //                               -----------------------
+    @Valid
+    public ExtendedArea extendedArea;
+
+    public static class ExtendedArea { // one-step self reference
+
+        @Required
+        public String areaName;
+
+        @Valid
+        public ParkingArea parkingArea;
+
+        public static class ParkingArea {
+
+            @Required
+            public String areaName;
+
+            @Valid
+            public ExtendedArea internalArea;
+        }
     }
 
     // ===================================================================================

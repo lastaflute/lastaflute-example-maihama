@@ -4363,7 +4363,119 @@
           }
         ]
       },
-      "fileLineCount": 19,
+      "fileLineCount": 24,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/tricky/oddprop",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenTrickyAction",
+      "simpleTypeName": "WxRemogenTrickyAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "oddprop",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.odd.SuperOddProperties\u003e",
+        "simpleTypeName": "JsonResponse\u003cSuperOddProperties\u003e",
+        "value": "asJson(new SuperOddProperties(\"maihama\")",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "seaResult",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "landBeanCount",
+            "typeName": "java.lang.Integer",
+            "simpleTypeName": "Integer",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "beanEntry",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.odd.SuperOddProperties$ResultBeanEntry",
+            "simpleTypeName": "ResultBeanEntry",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "piariFormStyle",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              }
+            ]
+          },
+          {
+            "name": "genericEntry",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.odd.SuperOddProperties$ResultGenericEntry",
+            "simpleTypeName": "ResultGenericEntry",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "bonvoName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "internalBean",
+                "typeName": "java.lang.Object",
+                "simpleTypeName": "Object",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": []
+              }
+            ]
+          }
+        ]
+      },
+      "fileLineCount": 24,
       "methodLineCount": 3
     },
     {
@@ -4870,7 +4982,7 @@
           }
         ]
       },
-      "fileLineCount": 19,
+      "fileLineCount": 24,
       "methodLineCount": 3
     },
     {
@@ -5019,10 +5131,122 @@
                 ]
               }
             ]
+          },
+          {
+            "name": "extendedArea",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ExtendedArea",
+            "simpleTypeName": "ExtendedArea",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": [
+              {
+                "name": "areaName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "parkingArea",
+                "typeName": "org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ExtendedArea$ParkingArea",
+                "simpleTypeName": "ParkingArea",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "areaName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  },
+                  {
+                    "name": "internalArea",
+                    "typeName": "org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ExtendedArea",
+                    "simpleTypeName": "ExtendedArea",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Valid"
+                    ],
+                    "nestTypeDocMetaList": [
+                      {
+                        "name": "areaName",
+                        "typeName": "java.lang.String",
+                        "simpleTypeName": "String",
+                        "value": null,
+                        "description": null,
+                        "comment": null,
+                        "annotationList": [
+                          "Required"
+                        ],
+                        "nestTypeDocMetaList": []
+                      },
+                      {
+                        "name": "parkingArea",
+                        "typeName": "org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ExtendedArea$ParkingArea",
+                        "simpleTypeName": "ParkingArea",
+                        "value": null,
+                        "description": null,
+                        "comment": null,
+                        "annotationList": [
+                          "Valid"
+                        ],
+                        "nestTypeDocMetaList": [
+                          {
+                            "name": "areaName",
+                            "typeName": "java.lang.String",
+                            "simpleTypeName": "String",
+                            "value": null,
+                            "description": null,
+                            "comment": null,
+                            "annotationList": [
+                              "Required"
+                            ],
+                            "nestTypeDocMetaList": []
+                          },
+                          {
+                            "name": "internalArea",
+                            "typeName": "org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult$ExtendedArea",
+                            "simpleTypeName": "ExtendedArea",
+                            "value": null,
+                            "description": null,
+                            "comment": null,
+                            "annotationList": [
+                              "Valid"
+                            ],
+                            "nestTypeDocMetaList": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
-      "fileLineCount": 19,
+      "fileLineCount": 24,
       "methodLineCount": 3
     }
   ]
