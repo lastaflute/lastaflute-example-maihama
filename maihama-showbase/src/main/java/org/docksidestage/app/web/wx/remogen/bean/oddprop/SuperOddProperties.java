@@ -30,12 +30,39 @@ public class SuperOddProperties {
     public Integer landBeanCount;
 
     @Valid
+    public PlainNormalEntry normalEntry;
+
+    public static class PlainNormalEntry {
+
+        @Required
+        public String piariFormStyle;
+    }
+
+    @Valid
     public ResultBeanEntry beanEntry;
 
     public static class ResultBeanEntry {
 
         @Required
         public String piariFormStyle;
+    }
+
+    @Valid
+    public PlainGenericEntry<PlainGenericParameter> plainGenericEntry;
+
+    public static class PlainGenericEntry<BEAN> {
+
+        @Required
+        public String bonvoName;
+
+        @Valid
+        public BEAN internalBean;
+    }
+
+    public static class PlainGenericParameter {
+
+        @Required
+        public String dstoreName;
     }
 
     @Valid

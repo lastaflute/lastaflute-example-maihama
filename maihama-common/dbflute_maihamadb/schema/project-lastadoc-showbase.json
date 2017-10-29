@@ -4382,7 +4382,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.odd.SuperOddProperties\u003e",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.oddprop.SuperOddProperties\u003e",
         "simpleTypeName": "JsonResponse\u003cSuperOddProperties\u003e",
         "value": "asJson(new SuperOddProperties(\"maihama\")",
         "description": null,
@@ -4412,8 +4412,20 @@
             "nestTypeDocMetaList": []
           },
           {
+            "name": "normalEntry",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.oddprop.SuperOddProperties$PlainNormalEntry",
+            "simpleTypeName": "PlainNormalEntry",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
             "name": "beanEntry",
-            "typeName": "org.docksidestage.app.web.wx.remogen.bean.odd.SuperOddProperties$ResultBeanEntry",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.oddprop.SuperOddProperties$ResultBeanEntry",
             "simpleTypeName": "ResultBeanEntry",
             "value": null,
             "description": null,
@@ -4437,8 +4449,20 @@
             ]
           },
           {
+            "name": "plainGenericEntry",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.oddprop.SuperOddProperties$PlainGenericEntry\u003cSuperOddProperties$PlainGenericParameter\u003e",
+            "simpleTypeName": "SuperOddProperties$PlainGenericEntry\u003cSuperOddProperties$PlainGenericParameter\u003e",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Valid"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
             "name": "genericEntry",
-            "typeName": "org.docksidestage.app.web.wx.remogen.bean.odd.SuperOddProperties$ResultGenericEntry",
+            "typeName": "org.docksidestage.app.web.wx.remogen.bean.oddprop.SuperOddProperties$ResultGenericEntry",
             "simpleTypeName": "ResultGenericEntry",
             "value": null,
             "description": null,
