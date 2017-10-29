@@ -29,6 +29,9 @@ public class SuperOddProperties {
 
     public Integer landBeanCount;
 
+    // ===================================================================================
+    //                                                                        Plain Normal
+    //                                                                        ============
     @Valid
     public PlainNormalEntry normalEntry;
 
@@ -41,6 +44,9 @@ public class SuperOddProperties {
     @Valid
     public ResultBeanEntry beanEntry;
 
+    // ===================================================================================
+    //                                                                         Result Bean
+    //                                                                         ===========
     public static class ResultBeanEntry {
 
         @Required
@@ -50,6 +56,9 @@ public class SuperOddProperties {
     @Valid
     public PlainGenericEntry<PlainGenericParameter> plainGenericEntry;
 
+    // ===================================================================================
+    //                                                                       Plain Generic
+    //                                                                       =============
     public static class PlainGenericEntry<BEAN> {
 
         @Required
@@ -65,6 +74,9 @@ public class SuperOddProperties {
         public String dstoreName;
     }
 
+    // ===================================================================================
+    //                                                                      Result Generic
+    //                                                                      ==============
     @Valid
     public ResultGenericEntry<ResultGenericParameter> genericEntry;
 
