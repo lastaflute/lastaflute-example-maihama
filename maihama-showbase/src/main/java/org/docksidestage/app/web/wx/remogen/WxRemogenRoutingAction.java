@@ -139,12 +139,22 @@ public class WxRemogenRoutingAction extends ShowbaseBaseAction {
     }
 
     // [hit]
+    // http://localhost:8151/showbase/wx/remogen/routing/1/resola
+    // [not]
+    // http://localhost:8151/showbase/wx/remogen/routing/resola/1
+    // http://localhost:8151/showbase/wx/remogen/routing/sea/resola
+    @Execute(urlPattern = "{}/@word")
+    public JsonResponse<RoutingCheckResult> resola(Integer first) {
+        return asJson(new RoutingCheckResult("resola()", first, null));
+    }
+
+    // [hit]
     // http://localhost:8098/showbase/wx/remogen/routing/amphi/1/theater
     // [not]
     // http://localhost:8098/showbase/wx/remogen/routing/amphi/1/2
     // http://localhost:8098/showbase/wx/remogen/routing/amphi/1/dockside
     @Execute(urlPattern = "@word/{}/@word")
     public JsonResponse<RoutingCheckResult> amphiTheater(Integer first) {
-        return asJson(new RoutingCheckResult("amphiTheater()", String.valueOf(first), null));
+        return asJson(new RoutingCheckResult("amphiTheater()", first, null));
     }
 }
