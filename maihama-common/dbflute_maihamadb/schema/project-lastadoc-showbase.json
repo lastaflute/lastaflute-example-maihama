@@ -4984,23 +4984,33 @@
       "methodLineCount": 3
     },
     {
-      "url": "/wx/remogen/routing/amphi/{first}/theater",
+      "url": "/wx/remogen/routing/amphi/{first}/theater/{second}/maihama",
       "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
       "simpleTypeName": "WxRemogenRoutingAction",
       "description": "@author jflute",
       "typeComment": "@author jflute",
       "fieldTypeDocMetaList": [],
-      "methodName": "amphiTheater",
+      "methodName": "amphiTheaterMaihama",
       "methodComment": null,
       "annotationList": [
         "AllowAnyoneAccess",
-        "Execute{urlPattern\u003d@word/{}/@word}"
+        "Execute{urlPattern\u003d@word/{}/@word/{}/@word}"
       ],
       "parameterTypeDocMetaList": [
         {
           "name": "first",
           "typeName": "java.lang.Integer",
           "simpleTypeName": "Integer",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "second",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
           "value": null,
           "description": null,
           "comment": null,
