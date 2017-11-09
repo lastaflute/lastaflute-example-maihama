@@ -74,55 +74,6 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<executions>
-				    <!-- if you use configuration in common for boot, enable this copy process:
-					<execution>
-						<id>copy-boot-resources</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/${project.build.finalName}</outputDirectory>
-							<overwrite>true</overwrite>
-							<resources>
-								<resource>
-									<directory>${basedir}/../maihama-common/src/main/resources</directory>
-									<includes>
-										<include>*_config.properties</include>
-										<include>*_env*.properties</include>
-										<include>jetty_*.properties</include>
-										<include>tomcat_*.properties</include>
-									</includes>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-					 -->
-					<execution>
-						<id>copy-web-resources</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/${project.build.finalName}/WEB-INF/classes</outputDirectory>
-							<overwrite>true</overwrite>
-							<resources>
-								<resource> <!-- for swagger -->
-									<directory>${basedir}/target/lastadoc</directory>
-									<includes>
-										<include>swagger.json</include>
-									</includes>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
@@ -163,6 +114,23 @@
 								<include>tomcat_*.properties</include>
 							</includes>
 						</resource>
+						<resource>
+							<directory>${basedir}/../maihama-common/src/main/resources</directory>
+							<includes>
+								<!-- properties may be used by the boot class -->
+								<include>*_config.properties</include>
+								<include>*_env*.properties</include>
+								<include>tomcat_*.properties</include>
+							</includes>
+						</resource>
+						<resource> 
+							<directory>${basedir}/target/lastadoc</directory>
+							<targetPath>WEB-INF/classes</targetPath>
+							<includes>
+								<!-- for swagger -->
+								<include>swagger.json</include>
+							</includes>
+						</resource>
 					</webResources>
 					<archive>
 						<manifest>
@@ -176,8 +144,8 @@
 
 	<dependencies>
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-		<!--                                                                Main Framework -->
-		<!--                                                                 = = = = = = = -->
+		<!--																Main Framework -->
+		<!--																 = = = = = = = -->
 		<!-- application -->
 		<dependency>
 			<groupId>org.docksidestage</groupId>
@@ -186,16 +154,15 @@
 		</dependency>
 
 		<!-- lastaflute -->
-		<dependency> <!-- utflute depends but runtime scope here for swagger -->
+		<dependency>
 			<groupId>org.lastaflute.doc</groupId>
 			<artifactId>lasta-doc</artifactId>
 			<version>${lasta.doc.version}</version>
-			<scope>runtime</scope>
 		</dependency>
 
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
-		<!--                                                               Partner Library -->
-		<!--                                                               = = = = = = = = -->
+		<!--															   Partner Library -->
+		<!--															   = = = = = = = = -->
 		<!-- boot -->
 		<dependency>
 			<groupId>org.dbflute.tomcat</groupId>

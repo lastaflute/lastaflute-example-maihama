@@ -9,7 +9,7 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
@@ -29,6 +29,7 @@ public class ShowbaseBoot { // #change_it_first
         boot.useMetaInfoResourceDetect().useWebFragmentsDetect(jarName -> { // both for swagger
             return jarName.contains("swagger-ui"); // meanwhile, restricted by [app]_env.properties
         });
+        boot.configure("showbase_config.properties", "showbase_env.properties", "maihama_config.properties", "maihama_env.properties");
         boot.bootAwait();
     }
 
