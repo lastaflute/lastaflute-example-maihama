@@ -282,12 +282,14 @@ dl.procedurelist dd.column pre {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 .decommentmodalcontent {
+	position: relative;
 	z-index: 10;
 	width: 50%;
 	margin: 0 auto;
 	border: 1px solid #999999;
 	padding: 15px;
 	background-color: #ffffff;
+	border-radius: 4px;
 }
 .decommentmodalcontent p {
 	font-size: 14px;
@@ -298,9 +300,30 @@ dl.procedurelist dd.column pre {
 	margin-top: 10px;
 	font-size: 12px;
 }
-.decommentmodalbtn {
+.decommentmodal-ok-btn {
 	margin: 10px 5px 0 0;
 	padding: 5px 10px;
+	border-radius: 4px;
+}
+.decommentmodal-close-btn {
+	position: absolute;
+	margin-left: 10px;
+	padding: 0;
+	right: 10px;
+	top: 5px;
+	cursor: pointer;
+	width: 28px;
+	height: 28px;
+	border: 0;
+	border-radius: 50%;
+	color: #657786;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+	transition: box-shadow .15s ease-in-out;
+}
+.decommentmodal-close-btn:hover {
+	background-color: #eed;
 }
 	</style>
 </head>
@@ -348,161 +371,176 @@ dl.procedurelist dd.column pre {
 	<tr>
 		<td class="rownumcell">1</td>
 		<td class="aliascell">会員</td>
-		<td><a href="#member" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=6, columnCount=11">MEMBER</a></td>
+		<td class="namecell"><a href="#member" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=6, columnCount=11">MEMBER</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member_status" title="FK_MEMBER_MEMBER_STATUS">MEMBER_STATUS</a>, <a href="#member_address" class="additionalfk" title="FK_MEMBER_MEMBER_ADDRESS_VALID: fixedCondition=&quot;$$foreignAlias$$.VALID_BEGIN_DATE &lt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null\n     and $$foreignAlias$$.VALID_END_DATE &gt;= /*$$locationBase$$.parameterMapMemberAddressAsValid.targetDate*/null&quot;, comment=Member's address at the target date.">MEMBER_ADDRESS(AsValid)</a>, <a href="#member_login" class="additionalfk" title="FK_MEMBER_MEMBER_LOGIN_LATEST: fixedCondition=&quot;$$foreignAlias$$.LOGIN_DATETIME = ($$sqbegin$$\nselect max(login.LOGIN_DATETIME)\n  from MEMBER_LOGIN login\n where login.MEMBER_ID = $$foreignAlias$$.MEMBER_ID\n)$$sqend$$&quot;">MEMBER_LOGIN(AsLatest)</a></td>
 		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER_ADDRESS</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_following" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER_FOLLOWING</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER">MEMBER_LOGIN</a>, <a href="#member_security" title="FK_MEMBER_SECURITY_MEMBER">MEMBER_SECURITY</a>, <a href="#member_service" title="FK_MEMBER_SERVICE_MEMBER">MEMBER_SERVICE</a>, <a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER_WITHDRAWAL</a>, <a href="#purchase" title="FK_PURCHASE_MEMBER">PURCHASE</a></td>
-		<td class="commentcell"> 会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。</td>
+		<td class="commentcell member_comment"><pre>会員のプロフィールやアカウントなどの基本情報を保持する。
+基本的に物理削除はなく、退会したらステータスが退会会員になる。
+ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。</pre></td>
 		<td class="subcell">Member</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">2</td>
 		<td class="aliascell">会員住所情報</td>
-		<td><a href="#member_address" title="type=TABLE, primaryKey={MEMBER_ADDRESS_ID}, nameLength=14, columnCount=11">MEMBER_ADDRESS</a></td>
+		<td class="namecell"><a href="#member_address" title="type=TABLE, primaryKey={MEMBER_ADDRESS_ID}, nameLength=14, columnCount=11">MEMBER_ADDRESS</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_ADDRESS_MEMBER">MEMBER</a>, <a href="#region" title="FK_MEMBER_ADDRESS_REGION">REGION</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell"> 会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には&nbsp;one-to-many&nbsp;だが、業務的な定型条件で&nbsp;one-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0..1"&nbsp;である。</td>
+		<td class="commentcell member_address_comment"><pre>会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
+会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！
+有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) "1 : 0..1" である。</pre></td>
 		<td class="subcell">MemberAddress</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">3</td>
 		<td class="aliascell">会員フォローイング</td>
-		<td><a href="#member_following" title="type=TABLE, primaryKey={MEMBER_FOLLOWING_ID}, nameLength=16, columnCount=4">MEMBER_FOLLOWING</a></td>
+		<td class="namecell"><a href="#member_following" title="type=TABLE, primaryKey={MEMBER_FOLLOWING_ID}, nameLength=16, columnCount=4">MEMBER_FOLLOWING</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_FOLLOWING_MY_MEMBER_ID">MEMBER</a>, <a href="#member" title="FK_MEMBER_FOLLOWING_YOUR_MEMBER_ID">MEMBER</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell"> とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。</td>
+		<td class="commentcell member_following_comment"><pre>とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。</pre></td>
 		<td class="subcell">MemberFollowing</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">4</td>
 		<td class="aliascell">会員ログイン</td>
-		<td><a href="#member_login" title="type=TABLE, primaryKey={MEMBER_LOGIN_ID}, nameLength=12, columnCount=5">MEMBER_LOGIN</a></td>
+		<td class="namecell"><a href="#member_login" title="type=TABLE, primaryKey={MEMBER_LOGIN_ID}, nameLength=12, columnCount=5">MEMBER_LOGIN</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_LOGIN_MEMBER">MEMBER</a>, <a href="#member_status" title="FK_MEMBER_LOGIN_MEMBER_STATUS">MEMBER_STATUS</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell"> ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</td>
+		<td class="commentcell member_login_comment"><pre>ログインするたびに登録されるログイン履歴。
+登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</pre></td>
 		<td class="subcell">MemberLogin</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">5</td>
 		<td class="aliascell">会員セキュリティ</td>
-		<td><a href="#member_security" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=15, columnCount=10">MEMBER_SECURITY</a></td>
+		<td class="namecell"><a href="#member_security" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=15, columnCount=10">MEMBER_SECURITY</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_SECURITY_MEMBER">MEMBER</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell"> 会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある</td>
+		<td class="commentcell member_security_comment"><pre>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></td>
 		<td class="subcell">MemberSecurity</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">6</td>
 		<td class="aliascell">会員サービス</td>
-		<td><a href="#member_service" title="type=TABLE, primaryKey={MEMBER_SERVICE_ID}, nameLength=14, columnCount=9">MEMBER_SERVICE</a></td>
+		<td class="namecell"><a href="#member_service" title="type=TABLE, primaryKey={MEMBER_SERVICE_ID}, nameLength=14, columnCount=9">MEMBER_SERVICE</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_SERVICE_MEMBER">MEMBER</a>, <a href="#service_rank" title="FK_MEMBER_SERVICE_SERVICE_RANK_CODE">SERVICE_RANK</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell"> 会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。</td>
+		<td class="commentcell member_service_comment"><pre>会員のサービス情報（ポイントサービスなど）。
+テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。</pre></td>
 		<td class="subcell">MemberService</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">7</td>
 		<td class="aliascell">会員ステータス</td>
-		<td><a href="#member_status" title="type=TABLE, primaryKey={MEMBER_STATUS_CODE}, nameLength=13, columnCount=4">MEMBER_STATUS</a></td>
+		<td class="namecell"><a href="#member_status" title="type=TABLE, primaryKey={MEMBER_STATUS_CODE}, nameLength=13, columnCount=4">MEMBER_STATUS</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_MEMBER_STATUS">MEMBER</a>, <a href="#member_login" title="FK_MEMBER_LOGIN_MEMBER_STATUS">MEMBER_LOGIN</a></td>
-		<td class="commentcell"> 会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。</td>
+		<td class="commentcell member_status_comment"><pre>会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
+
+こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。</pre></td>
 		<td class="subcell">MemberStatus</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">8</td>
 		<td class="aliascell">会員退会情報</td>
-		<td><a href="#member_withdrawal" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=17, columnCount=8">MEMBER_WITHDRAWAL</a></td>
+		<td class="namecell"><a href="#member_withdrawal" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=17, columnCount=8">MEMBER_WITHDRAWAL</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_MEMBER_WITHDRAWAL_MEMBER">MEMBER</a>, <a href="#withdrawal_reason" title="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">WITHDRAWAL_REASON</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell"> 退会会員の退会に関する詳細な情報。<br>退会会員のみデータが存在し、"1&nbsp;:&nbsp;0..1"&nbsp;のパターンの&nbsp;one-to-one&nbsp;である。<br>共通カラムがあってバージョンNOがないパターン。<br>基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。</td>
+		<td class="commentcell member_withdrawal_comment"><pre>退会会員の退会に関する詳細な情報。
+退会会員のみデータが存在し、"1 : 0..1" のパターンの one-to-one である。
+共通カラムがあってバージョンNOがないパターン。
+基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。</pre></td>
 		<td class="subcell">MemberWithdrawal</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">9</td>
 		<td class="aliascell">商品</td>
-		<td><a href="#product" title="type=TABLE, primaryKey={PRODUCT_ID}, nameLength=7, columnCount=11">PRODUCT</a></td>
+		<td class="namecell"><a href="#product" title="type=TABLE, primaryKey={PRODUCT_ID}, nameLength=7, columnCount=11">PRODUCT</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#product_category" title="FK_PRODUCT_PRODUCT_CATEGORY">PRODUCT_CATEGORY</a>, <a href="#product_status" title="FK_PRODUCT_PRODUCT_STATUS">PRODUCT_STATUS</a></td>
 		<td class="relcell"><a href="#purchase" title="FK_PURCHASE_PRODUCT">PURCHASE</a></td>
-		<td class="commentcell"> &nbsp;</td>
+		<td class="commentcell product_comment"><pre>&nbsp;</pre></td>
 		<td class="subcell">Product</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">10</td>
 		<td class="aliascell">商品カテゴリ</td>
-		<td><a href="#product_category" title="type=TABLE, primaryKey={PRODUCT_CATEGORY_CODE}, nameLength=16, columnCount=3">PRODUCT_CATEGORY</a></td>
+		<td class="namecell"><a href="#product_category" title="type=TABLE, primaryKey={PRODUCT_CATEGORY_CODE}, nameLength=16, columnCount=3">PRODUCT_CATEGORY</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#product_category" title="FK_PRODUCT_CATEGORY_PARENT">PRODUCT_CATEGORY</a></td>
 		<td class="relcell"><a href="#product" title="FK_PRODUCT_PRODUCT_CATEGORY">PRODUCT</a>, <a href="#product_category" title="FK_PRODUCT_CATEGORY_PARENT">PRODUCT_CATEGORY</a></td>
-		<td class="commentcell"> 商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</td>
+		<td class="commentcell product_category_comment"><pre>商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</pre></td>
 		<td class="subcell">ProductCategory</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">11</td>
 		<td class="aliascell">商品ステータス</td>
-		<td><a href="#product_status" title="type=TABLE, primaryKey={PRODUCT_STATUS_CODE}, nameLength=14, columnCount=3">PRODUCT_STATUS</a></td>
+		<td class="namecell"><a href="#product_status" title="type=TABLE, primaryKey={PRODUCT_STATUS_CODE}, nameLength=14, columnCount=3">PRODUCT_STATUS</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#product" title="FK_PRODUCT_PRODUCT_STATUS">PRODUCT</a></td>
-		<td class="commentcell"> 商品のステータスを表現する固定的なマスタ。</td>
+		<td class="commentcell product_status_comment"><pre>商品のステータスを表現する固定的なマスタ。</pre></td>
 		<td class="subcell">ProductStatus</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">12</td>
 		<td class="aliascell">購入</td>
-		<td><a href="#purchase" title="type=TABLE, primaryKey={PURCHASE_ID}, nameLength=8, columnCount=12">PURCHASE</a></td>
+		<td class="namecell"><a href="#purchase" title="type=TABLE, primaryKey={PURCHASE_ID}, nameLength=8, columnCount=12">PURCHASE</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#member" title="FK_PURCHASE_MEMBER">MEMBER</a>, <a href="#product" title="FK_PURCHASE_PRODUCT">PRODUCT</a></td>
 		<td class="relcell"><a href="#purchase_payment" title="FK_PURCHASE_PAYMENT_PURCHASE">PURCHASE_PAYMENT</a></td>
-		<td class="commentcell"> 一つの商品に対する購入を表現する(購入履歴とも言える)。<br>実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。</td>
+		<td class="commentcell purchase_comment"><pre>一つの商品に対する購入を表現する(購入履歴とも言える)。
+実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。</pre></td>
 		<td class="subcell">Purchase</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">13</td>
 		<td class="aliascell">購入支払</td>
-		<td><a href="#purchase_payment" title="type=TABLE, primaryKey={PURCHASE_PAYMENT_ID}, nameLength=16, columnCount=9">PURCHASE_PAYMENT</a></td>
+		<td class="namecell"><a href="#purchase_payment" title="type=TABLE, primaryKey={PURCHASE_PAYMENT_ID}, nameLength=16, columnCount=9">PURCHASE_PAYMENT</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell"><a href="#purchase" title="FK_PURCHASE_PAYMENT_PURCHASE">PURCHASE</a></td>
 		<td class="relcell">&nbsp;</td>
-		<td class="commentcell"> 購入に対する支払。<br>分割払いもできるのでmanyとなり、会員からの孫テーブルのテストができてうれしい。</td>
+		<td class="commentcell purchase_payment_comment"><pre>購入に対する支払。
+分割払いもできるのでmanyとなり、会員からの孫テーブルのテストができてうれしい。</pre></td>
 		<td class="subcell">PurchasePayment</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">14</td>
 		<td class="aliascell">地域</td>
-		<td><a href="#region" title="type=TABLE, primaryKey={REGION_ID}, nameLength=6, columnCount=2">REGION</a></td>
+		<td class="namecell"><a href="#region" title="type=TABLE, primaryKey={REGION_ID}, nameLength=6, columnCount=2">REGION</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_address" title="FK_MEMBER_ADDRESS_REGION">MEMBER_ADDRESS</a></td>
-		<td class="commentcell"> 主に会員の住所に対応する漠然とした地域。<br>かなりざっくりした感じではある。唯一の業務的one-to-oneの親テーブルのケース。</td>
+		<td class="commentcell region_comment"><pre>主に会員の住所に対応する漠然とした地域。
+かなりざっくりした感じではある。唯一の業務的one-to-oneの親テーブルのケース。</pre></td>
 		<td class="subcell">Region</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">15</td>
 		<td class="aliascell">サービスランク</td>
-		<td><a href="#service_rank" title="type=TABLE, primaryKey={SERVICE_RANK_CODE}, nameLength=12, columnCount=6">SERVICE_RANK</a></td>
+		<td class="namecell"><a href="#service_rank" title="type=TABLE, primaryKey={SERVICE_RANK_CODE}, nameLength=12, columnCount=6">SERVICE_RANK</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_service" title="FK_MEMBER_SERVICE_SERVICE_RANK_CODE">MEMBER_SERVICE</a></td>
-		<td class="commentcell"> 会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</td>
+		<td class="commentcell service_rank_comment"><pre>会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</pre></td>
 		<td class="subcell">ServiceRank</td>
 	</tr>
 	<tr>
 		<td class="rownumcell">16</td>
 		<td class="aliascell">退会理由</td>
-		<td><a href="#withdrawal_reason" title="type=TABLE, primaryKey={WITHDRAWAL_REASON_CODE}, nameLength=17, columnCount=3">WITHDRAWAL_REASON</a></td>
+		<td class="namecell"><a href="#withdrawal_reason" title="type=TABLE, primaryKey={WITHDRAWAL_REASON_CODE}, nameLength=17, columnCount=3">WITHDRAWAL_REASON</a></td>
 		<td class="typecell">TABLE</td>
 		<td class="relcell">&nbsp;</td>
 		<td class="relcell"><a href="#member_withdrawal" title="FK_MEMBER_WITHDRAWAL_WITHDRAWAL_REASON">MEMBER_WITHDRAWAL</a></td>
-		<td class="commentcell"> 会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ...</td>
+		<td class="commentcell withdrawal_reason_comment"><pre>会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ...</pre></td>
 		<td class="subcell">WithdrawalReason</td>
 	</tr>
 	</tbody>
@@ -511,7 +549,9 @@ dl.procedurelist dd.column pre {
 <h2 id="member" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=6, columnCount=11">
 (会員)MEMBER
 </h2>
-<p class="tablecomment">会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。</p>
+<div class="tablecomment member_comment" data-name="member"><pre>会員のプロフィールやアカウントなどの基本情報を保持する。
+基本的に物理削除はなく、退会したらステータスが退会会員になる。
+ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。</pre></div>
 <input type="hidden" value="member">
 <table class="tablecontent">
 	<thead>
@@ -741,7 +781,9 @@ dl.procedurelist dd.column pre {
 <h2 id="member_address" title="type=TABLE, primaryKey={MEMBER_ADDRESS_ID}, nameLength=14, columnCount=11">
 (会員住所情報)MEMBER_ADDRESS
 </h2>
-<p class="tablecomment">会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。<br>会員を基点に考えた場合、構造的には&nbsp;one-to-many&nbsp;だが、業務的な定型条件で&nbsp;one-to-one&nbsp;になる。このような構造を「業務的one-to-one」と呼ぶ！<br>有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な)&nbsp;"1&nbsp;:&nbsp;0..1"&nbsp;である。</p>
+<div class="tablecomment member_address_comment" data-name="member_address"><pre>会員の住所に関する情報で、同時に有効期間ごとに履歴管理されている。
+会員を基点に考えた場合、構造的には one-to-many だが、業務的な定型条件で one-to-one になる。このような構造を「業務的one-to-one」と呼ぶ！
+有効期間は隙間なく埋められるが、ここでは住所情報のない会員も存在し、厳密には(業務的な) "1 : 0..1" である。</pre></div>
 <input type="hidden" value="member_address">
 <table class="tablecontent">
 	<thead>
@@ -971,7 +1013,7 @@ dl.procedurelist dd.column pre {
 <h2 id="member_following" title="type=TABLE, primaryKey={MEMBER_FOLLOWING_ID}, nameLength=16, columnCount=4">
 (会員フォローイング)MEMBER_FOLLOWING
 </h2>
-<p class="tablecomment">とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。</p>
+<div class="tablecomment member_following_comment" data-name="member_following"><pre>とある会員が他の会員をフォローできる。すると、フォローした会員の購入履歴が閲覧できる。</pre></div>
 <input type="hidden" value="member_following">
 <table class="tablecontent">
 	<thead>
@@ -1071,7 +1113,8 @@ dl.procedurelist dd.column pre {
 <h2 id="member_login" title="type=TABLE, primaryKey={MEMBER_LOGIN_ID}, nameLength=12, columnCount=5">
 (会員ログイン)MEMBER_LOGIN
 </h2>
-<p class="tablecomment">ログインするたびに登録されるログイン履歴。<br>登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</p>
+<div class="tablecomment member_login_comment" data-name="member_login"><pre>ログインするたびに登録されるログイン履歴。
+登録されたら更新されるも削除されることもない。さらには、登録する人もプログラムもはっきりしているので、(紙面の都合上もあって)ここでは共通カラムは省略している。</pre></div>
 <input type="hidden" value="member_login">
 <table class="tablecontent">
 	<thead>
@@ -1190,7 +1233,7 @@ dl.procedurelist dd.column pre {
 <h2 id="member_security" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=15, columnCount=10">
 (会員セキュリティ)MEMBER_SECURITY
 </h2>
-<p class="tablecomment">会員とは&nbsp;one-to-one&nbsp;で、会員一人につき必ず一つのセキュリティ情報がある</p>
+<div class="tablecomment member_security_comment" data-name="member_security"><pre>会員とは one-to-one で、会員一人につき必ず一つのセキュリティ情報がある</pre></div>
 <input type="hidden" value="member_security">
 <table class="tablecontent">
 	<thead>
@@ -1400,7 +1443,8 @@ dl.procedurelist dd.column pre {
 <h2 id="member_service" title="type=TABLE, primaryKey={MEMBER_SERVICE_ID}, nameLength=14, columnCount=9">
 (会員サービス)MEMBER_SERVICE
 </h2>
-<p class="tablecomment">会員のサービス情報（ポイントサービスなど）。<br>テストケースのために、あえて統一性を崩してユニーク制約経由の&nbsp;one-to-one&nbsp;を表現している。</p>
+<div class="tablecomment member_service_comment" data-name="member_service"><pre>会員のサービス情報（ポイントサービスなど）。
+テストケースのために、あえて統一性を崩してユニーク制約経由の one-to-one を表現している。</pre></div>
 <input type="hidden" value="member_service">
 <table class="tablecontent">
 	<thead>
@@ -1590,7 +1634,10 @@ dl.procedurelist dd.column pre {
 <h2 id="member_status" title="type=TABLE, primaryKey={MEMBER_STATUS_CODE}, nameLength=13, columnCount=4">
 (会員ステータス)MEMBER_STATUS
 </h2>
-<p class="tablecomment">会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！<br>業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。<br><br>こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。</p>
+<div class="tablecomment member_status_comment" data-name="member_status"><pre>会員のステータスを示す固定的なマスタテーブル。いわゆるテーブル区分値！
+業務運用上で増えることはなく、増減するときはプログラム修正ともなうレベルの業務変更と考えられる。
+
+こういった固定的なマスタテーブルには、更新日時などの共通カラムは定義していないが、業務上そういった情報を管理する必要性が低いという理由に加え、ExampleDBとして共通カラムでER図が埋め尽くされてしまい見づらくなるというところで割り切っている。実業務では統一的に定義することもある。</pre></div>
 <input type="hidden" value="member_status">
 <table class="tablecontent">
 	<thead>
@@ -1694,7 +1741,10 @@ dl.procedurelist dd.column pre {
 <h2 id="member_withdrawal" title="type=TABLE, primaryKey={MEMBER_ID}, nameLength=17, columnCount=8">
 (会員退会情報)MEMBER_WITHDRAWAL
 </h2>
-<p class="tablecomment">退会会員の退会に関する詳細な情報。<br>退会会員のみデータが存在し、"1&nbsp;:&nbsp;0..1"&nbsp;のパターンの&nbsp;one-to-one&nbsp;である。<br>共通カラムがあってバージョンNOがないパターン。<br>基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。</p>
+<div class="tablecomment member_withdrawal_comment" data-name="member_withdrawal"><pre>退会会員の退会に関する詳細な情報。
+退会会員のみデータが存在し、"1 : 0..1" のパターンの one-to-one である。
+共通カラムがあってバージョンNOがないパターン。
+基本的に更新は入らないが、重要なデータなので万が一のために更新系の共通カラムも。</pre></div>
 <input type="hidden" value="member_withdrawal">
 <table class="tablecontent">
 	<thead>
@@ -1869,6 +1919,7 @@ dl.procedurelist dd.column pre {
 <h2 id="product" title="type=TABLE, primaryKey={PRODUCT_ID}, nameLength=7, columnCount=11">
 (商品)PRODUCT
 </h2>
+<div class="tablecomment product_comment" data-name="product"><pre></pre></div>
 <input type="hidden" value="product">
 <table class="tablecontent">
 	<thead>
@@ -2095,7 +2146,7 @@ dl.procedurelist dd.column pre {
 <h2 id="product_category" title="type=TABLE, primaryKey={PRODUCT_CATEGORY_CODE}, nameLength=16, columnCount=3">
 (商品カテゴリ)PRODUCT_CATEGORY
 </h2>
-<p class="tablecomment">商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</p>
+<div class="tablecomment product_category_comment" data-name="product_category"><pre>商品のカテゴリを表現するマスタ。自己参照FKの階層になっている。</pre></div>
 <input type="hidden" value="product_category">
 <table class="tablecontent">
 	<thead>
@@ -2177,7 +2228,7 @@ dl.procedurelist dd.column pre {
 <h2 id="product_status" title="type=TABLE, primaryKey={PRODUCT_STATUS_CODE}, nameLength=14, columnCount=3">
 (商品ステータス)PRODUCT_STATUS
 </h2>
-<p class="tablecomment">商品のステータスを表現する固定的なマスタ。</p>
+<div class="tablecomment product_status_comment" data-name="product_status"><pre>商品のステータスを表現する固定的なマスタ。</pre></div>
 <input type="hidden" value="product_status">
 <table class="tablecontent">
 	<thead>
@@ -2259,7 +2310,8 @@ dl.procedurelist dd.column pre {
 <h2 id="purchase" title="type=TABLE, primaryKey={PURCHASE_ID}, nameLength=8, columnCount=12">
 (購入)PURCHASE
 </h2>
-<p class="tablecomment">一つの商品に対する購入を表現する(購入履歴とも言える)。<br>実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。</p>
+<div class="tablecomment purchase_comment" data-name="purchase"><pre>一つの商品に対する購入を表現する(購入履歴とも言える)。
+実業務であれば購入詳細というテーブルを作り、「購入という行為」と「その中身（詳細）」を違う粒度のデータとしてそれぞれ管理するのが一般的と言えるでしょう。というか、注文とか請求とかそういうことを考え始めたらもっと複雑になるはずですが、ExampleDBということで割り切っています。</pre></div>
 <input type="hidden" value="purchase">
 <table class="tablecontent">
 	<thead>
@@ -2505,7 +2557,8 @@ dl.procedurelist dd.column pre {
 <h2 id="purchase_payment" title="type=TABLE, primaryKey={PURCHASE_PAYMENT_ID}, nameLength=16, columnCount=9">
 (購入支払)PURCHASE_PAYMENT
 </h2>
-<p class="tablecomment">購入に対する支払。<br>分割払いもできるのでmanyとなり、会員からの孫テーブルのテストができてうれしい。</p>
+<div class="tablecomment purchase_payment_comment" data-name="purchase_payment"><pre>購入に対する支払。
+分割払いもできるのでmanyとなり、会員からの孫テーブルのテストができてうれしい。</pre></div>
 <input type="hidden" value="purchase_payment">
 <table class="tablecontent">
 	<thead>
@@ -2695,7 +2748,8 @@ dl.procedurelist dd.column pre {
 <h2 id="region" title="type=TABLE, primaryKey={REGION_ID}, nameLength=6, columnCount=2">
 (地域)REGION
 </h2>
-<p class="tablecomment">主に会員の住所に対応する漠然とした地域。<br>かなりざっくりした感じではある。唯一の業務的one-to-oneの親テーブルのケース。</p>
+<div class="tablecomment region_comment" data-name="region"><pre>主に会員の住所に対応する漠然とした地域。
+かなりざっくりした感じではある。唯一の業務的one-to-oneの親テーブルのケース。</pre></div>
 <input type="hidden" value="region">
 <table class="tablecontent">
 	<thead>
@@ -2760,7 +2814,7 @@ dl.procedurelist dd.column pre {
 <h2 id="service_rank" title="type=TABLE, primaryKey={SERVICE_RANK_CODE}, nameLength=12, columnCount=6">
 (サービスランク)SERVICE_RANK
 </h2>
-<p class="tablecomment">会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</p>
+<div class="tablecomment service_rank_comment" data-name="service_rank"><pre>会員のサービスレベルを表現するランク。(ゴールドとかプラチナとか)</pre></div>
 <input type="hidden" value="service_rank">
 <table class="tablecontent">
 	<thead>
@@ -2898,7 +2952,7 @@ dl.procedurelist dd.column pre {
 <h2 id="withdrawal_reason" title="type=TABLE, primaryKey={WITHDRAWAL_REASON_CODE}, nameLength=17, columnCount=3">
 (退会理由)WITHDRAWAL_REASON
 </h2>
-<p class="tablecomment">会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ...</p>
+<div class="tablecomment withdrawal_reason_comment" data-name="withdrawal_reason"><pre>会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ...</pre></div>
 <input type="hidden" value="withdrawal_reason">
 <table class="tablecontent">
 	<thead>
@@ -3110,22 +3164,22 @@ dl.procedurelist dd.column pre {
 			<tr>
 				<td>1</td>
 				<td>America</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>2</td>
 				<td>Canada</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>3</td>
 				<td>China</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>4</td>
 				<td>Chiba</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			</table>
 		</td>
@@ -3178,12 +3232,12 @@ dl.procedurelist dd.column pre {
 			<tr>
 				<td>MSC</td>
 				<td>Music</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>FOD</td>
 				<td>Food</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>HEB</td>
@@ -3217,17 +3271,17 @@ dl.procedurelist dd.column pre {
 			<tr>
 				<td>ONS</td>
 				<td>OnSaleProduction</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>PST</td>
 				<td>ProductionStop</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>SST</td>
 				<td>SaleStop</td>
-				<td class="commentcell"> &nbsp;</td>
+				<td class="commentcell">&nbsp;</td>
 			</tr>
 			</table>
 		</td>
@@ -3292,10 +3346,10 @@ dl.procedurelist dd.column pre {
 <!-- Only used by dbflute intro http://dbflute.seasar.org/ja/manual/function/helper/intro/index.html -->
 <div id="decomment-modal" class="decommentmodal">
 	<div class="decommentmodalcontent">
+		<div id="decomment-close" class="decommentmodal-close-btn"><span>x</span></div>
 		<p>Input the new column comment of <span id="decomment-modal-column-info"></span></p>
 		<textarea id="decomment-input" class="decommentinput" rows="5"></textarea>
-		<button id="decomment-cancel" class="decommentmodalbtn">Cancel</button>
-		<button id="decomment-ok" class="decommentmodalbtn">OK</button>
+		<button id="decomment-ok" class="decommentmodal-ok-btn">OK</button>
 	</div>
 </div>
 <script>
@@ -3651,22 +3705,14 @@ searcher.init();
 <script>
 /**
  * @author deco
+ * @author cabos
  */
 function Decomment() {
 	// setup from dbflute if decomment pickup exists
-	this.embeddedPickup = {};
-	// store of comment info
-	// object structure
-	// {
-	//   tableName: {
-	//     propertyName: propertyValue,
-	//     columns: {
-	//       columnName: {
-	//         propetyName: propertyValue
-	//       }, { ... }
-	//     }
-	//   }, { ... }
-	// }
+	this.embeddedPickup = {
+		'tables': [
+		]
+	}
 	this.pickupStore = {
 		'member': {
 			'databaseComment': '会員のプロフィールやアカウントなどの基本情報を保持する。<br>基本的に物理削除はなく、退会したらステータスが退会会員になる。<br>ライフサイクルやカテゴリの違う会員情報は、one-to-oneなどの関連テーブルにて。'
@@ -4093,6 +4139,7 @@ Decomment.prototype = {
 			var schemeName = this.getSchemeName();
 			this.fetchVirtualPickup(schemeName);
 			this.setupSaveDecomment(schemeName);
+			this.setupKeyDownEvent();
 		} else {
 			this.reflectEmbeddedPickup();
 		}
@@ -4103,8 +4150,7 @@ Decomment.prototype = {
 	 * @returns {string} Scheme name
 	 */
 	getSchemeName: function () {
-		var path = window.location.pathname;
-		return path.split('/')[3];
+		return "maihamadb";
 	},
 
 	/**
@@ -4153,16 +4199,35 @@ Decomment.prototype = {
 	reflectPickup: function (decomment) {
 		that = this;
 		Array.prototype.forEach.call(decomment["tables"], function (table) {
+			var tableElements = that.extractTableElements(table);
+			if (that.storePickupTableProperties(table)) {
+				var newTableComment = that.buildDisplayTableCommentFromServer(table);
+				var authors = that.getTableMapInfoFromStore(that.getTableNameFromJson(table))['authors'];
+				that.storePreviousWholeTableComment(table, newTableComment, authors);
+				that.updateDisplayTableCommentToHtml(tableElements, newTableComment, authors);
+				that.reflectTableCommentConflictIfNeed(table, tableElements);
+			}
 			Array.prototype.forEach.call(table["columns"], function (column) {
 				var columnElement = that.extractColumnElement(table, column);
-				that.storePickupProperies(table, column);
-				var newComment = that.buildColumnCommentFromServer(table, column);
-				var authors = that.buildAuthorsFromServer(table, column);
-				that.storeNewComment(table, column, newComment);
-				that.updateComment(columnElement, newComment, authors);
-				that.checkCommentConflict(table, column, columnElement);
+				that.storePickupColumnProperties(table, column);
+				var newComment = that.buildDisplayColumnCommentFromServer(table, column);
+				var authors = that.buildColumnCommentAuthoers(table, column);
+				that.storePreviousWholeColumnComment(table, column, newComment);
+				that.updateDisplayColumnCommentToHtml(columnElement, newComment, authors);
+				that.reflectCommentConflictIfNeed(table, column, columnElement);
 			});
 		});
+	},
+
+	/**
+	 * Extract table element
+	 * @param {Object} table - Table object
+	 * @returns {Object} Column element
+	 */
+	extractTableElements: function (table) {
+		var className = (table["tableName"] + "_" + "comment");
+		var tableElements = document.getElementsByClassName(className);
+		return tableElements;
 	},
 
 	/**
@@ -4179,13 +4244,65 @@ Decomment.prototype = {
 	},
 
 	/**
-	 * Store comment properties
+	 * Store table comment properties
+	 * @param {Object} table - Table object
+	 * @retuns {Boolean} if properties saved
+	 */
+	storePickupTableProperties: function(table) {
+		var tableName = this.getTableNameFromJson(table);
+		if (this.pickupStore[tableName] === undefined) {
+			this.pickupStore[tableName] = {};
+		}
+
+		var tableMap = this.getTableMapInfoFromStore(tableName);
+		var databaseComment = tableMap['databaseComment'];
+		var properties = table['properties'];
+		if (properties.length == 0) {
+			return false;
+		}
+
+		// properties to store
+		var isConflict = properties.length > 1;
+		var isDatabaseCommentConflict = false;
+		var decomments = [];
+		var previousPieces = [];
+		var authors = [];
+		var commentVersion = 0;
+		var that = this;
+		Array.prototype.forEach.call(properties, function (property) {
+			if (property['databaseComment'] != null && databaseComment != null && !isDatabaseCommentConflict) {
+				isDatabaseCommentConflict = that.escapeNewlineCharacter(databaseComment) != that.escapeNewlineCharacter(property['databaseComment']);
+			}
+			decomments.push(property["decomment"]);
+			if (property['pieceCode'] != null) {
+				previousPieces.push(property['pieceCode']);
+			}
+			authors = authors.concat(property['authors']);
+			if (commentVersion < property['commentVersion']) {
+				commentVersion = property['commentVersion'];
+			}
+		});
+		authors = authors.filter(function (x, i, self) {
+			return self.indexOf(x) === i;
+		});
+
+		tableMap['isConflict'] = isConflict || isDatabaseCommentConflict;
+		tableMap['isDatabaseCommentConflict'] = isDatabaseCommentConflict;
+		tableMap['decomments'] = decomments;
+		tableMap['previousPieces'] = previousPieces;
+		tableMap['authors'] = authors;
+		tableMap['commentVersion'] = commentVersion;
+		return true;
+	},
+
+	/**
+	 * Store column comment properties
 	 * @param {Object} table - Table object
 	 * @param {Object} column - Column object
 	 */
-	storePickupProperies: function (table, column) {
-		var tableName = table['tableName'];
-		var columnName = column['columnName'];
+	storePickupColumnProperties: function (table, column) {
+		var tableName = this.getTableNameFromJson(table);
+		var columnName = this.getColumnNameFromJson(column);
 		if (this.pickupStore[tableName] === undefined) {
 			this.pickupStore[tableName] = {};
 		}
@@ -4207,9 +4324,10 @@ Decomment.prototype = {
 		var previousPieces = [];
 		var authors = [];
 		var commentVersion = 0;
+		var that = this;
 		Array.prototype.forEach.call(properties, function (property) {
 			if (property['databaseComment'] != null && databaseComment != null && !isDatabaseCommentConflict) {
-				isDatabaseCommentConflict = databaseComment.replace('<br>', '\n') != property['databaseComment'];
+				isDatabaseCommentConflict = that.escapeNewlineCharacter(databaseComment) != that.escapeNewlineCharacter(property['databaseComment']);
 			}
 			decomments.push(property["decomment"]);
 			if (property['pieceCode'] != null) {
@@ -4233,14 +4351,28 @@ Decomment.prototype = {
 	},
 
 	/**
-	 * Store new comment properties
+	 * Store new column comment properties
 	 * @param {Object} table - Table object
 	 * @param {Object} column - Column object
 	 * @param {string} newComment - Comment from server
 	 */
-	storeNewComment: function (table, column, newComment) {
-		var tableName = table['tableName'];
-		var columnName = column['columnName'];
+	storePreviousWholeTableComment: function (table, newComment) {
+		var tableName = this.getTableNameFromJson(table);
+		var tableMap = this.getTableMapInfoFromStore(tableName);
+		if (tableMap !== null) {
+			tableMap['previousWholeComment'] = newComment;
+		}
+	},
+
+	/**
+	 * Store new column comment properties
+	 * @param {Object} table - Table object
+	 * @param {Object} column - Column object
+	 * @param {string} newComment - Comment from server
+	 */
+	storePreviousWholeColumnComment: function (table, column, newComment) {
+		var tableName = this.getTableNameFromJson(table);
+		var columnName = this.getColumnNameFromJson(column);
 		var columnMap = this.getColumnMapInfoFromStore(tableName, columnName);
 		if (columnMap !== null) {
 			columnMap['previousWholeComment'] = newComment;
@@ -4248,20 +4380,44 @@ Decomment.prototype = {
 	},
 
 	/**
-	 * Build new scheme comment from server response
+	 * Build new table comment from server response
+	 * @param {Object} table - table object
+	 * @returns {string} New scheme comment
+	 */
+	buildDisplayTableCommentFromServer: function (table) {
+		var tableName = this.getTableNameFromJson(table);
+		var tableMap = this.getTableMapInfoFromStore(tableName);
+		return this.buildDisplayCommentFromServer(tableMap);
+	},
+
+	/**
+	 * Build new column comment from server response
 	 * @param {Object} table - table object
 	 * @param {Object} column - Column object
 	 * @returns {string} New scheme comment
 	 */
-	buildColumnCommentFromServer: function (table, column) {
-		var tableName = table['tableName'];
-		var columnName = column['columnName'];
+	buildDisplayColumnCommentFromServer: function (table, column) {
+		var tableName = this.getTableNameFromJson(table);
+		var columnName = this.getColumnNameFromJson(column);
 		var columnMap = this.getColumnMapInfoFromStore(tableName, columnName);
+		return this.buildDisplayCommentFromServer(columnMap);
+	},
+
+	/**
+	 * Build display comment for html
+	 * @param {Object} commentMap - Comment object of table, column
+	 * @retuns {string} Display comment
+	 */
+	buildDisplayCommentFromServer: function(commentMap) {
 		var result = "";
-		if (columnMap['isDatabaseCommentConflict']) {
-			result = columnMap['databaseComment'].replace('<br>', '\n') + '\n(from database comment)\n\n======\n\n';
+		if (commentMap['isDatabaseCommentConflict']) {
+			var databaseComment = commentMap['databaseComment'];
+			databaseComment = this.unescapeWhitespace(databaseComment);
+			databaseComment = this.escapeNewlineCharacter(databaseComment);
+			databaseComment = this.escapeInputText(databaseComment);
+			result = databaseComment + '\n(from database comment)\n\n=======\n\n';
 		}
-		result += columnMap['decomments'].join('\n\n=======\n\n');
+		result += commentMap['decomments'].join('\n\n=======\n\n');
 		return result;
 	},
 
@@ -4271,23 +4427,52 @@ Decomment.prototype = {
 	 * @param {Object} column - Column object
 	 * @returns {string} New scheme comment
 	 */
-	buildAuthorsFromServer: function (table, column) {
-		var tableName = table['tableName'];
-		var columnName = column['columnName'];
+	buildColumnCommentAuthoers: function (table, column) {
+		var tableName = this.getTableNameFromJson(table);
+		var columnName = this.getColumnNameFromJson(column);
 		var columnMap = this.getColumnMapInfoFromStore(tableName, columnName);
 		return columnMap['authors'];
 	},
 
 	/**
-	 * Update comment
+	 * Update table comment of html
+	 * @param {Object} tableElements - Table elements
+	 * @param {string} newComment - New scheme comment
+	 * @param {Array} authors - Comment authoers
+	 */
+	updateDisplayTableCommentToHtml: function (tableElements, newComment, authors) {
+		var author = authors.join(',');
+		var comment = newComment + "\n<span>@author(" + author + ")</span>";
+		Array.prototype.forEach.call(tableElements, function (element) {
+			element.querySelector('pre').innerHTML = comment;
+		});
+	},
+
+	/**
+	 * Update column comment of html
 	 * @param {Object} columnElement - Column element
 	 * @param {string} newComment - New scheme comment
 	 * @param {Array} authors - Comment authoers
 	 */
-	updateComment: function (columnElement, newComment, authors) {
+	updateDisplayColumnCommentToHtml: function (columnElement, newComment, authors) {
 		var author = authors.join(',');
 		var comment = newComment + "\n<span>@author(" + author + ")</span>";
 		columnElement.querySelector('.commentcell').querySelector('pre').innerHTML = comment;
+	},
+
+	/**
+	 * Add error class if table comment is conflict
+	 * @param {Object} table - Table object
+	 * @param {Object} column - Column object
+	 * @param {Object} columnElement - Column element
+	 */
+	reflectTableCommentConflictIfNeed: function(table, tableElements) {
+		var tableName = this.getTableNameFromJson(table);
+		if (this.isTableCommentConflict(tableName)) {
+			Array.prototype.forEach.call(tableElements, function (element) {
+				element.className += " commentcellerror"
+			});
+		}
 	},
 
 	/**
@@ -4296,26 +4481,45 @@ Decomment.prototype = {
 	 * @param {Object} column - Column object
 	 * @param {Object} columnElement - Column element
 	 */
-	checkCommentConflict: function(table, column, columnElement) {
-		var tableName = table['tableName'];
-		var columnName = column['columnName'];
-		if (this.isCommentConflict(tableName, columnName)) {
+	reflectCommentConflictIfNeed: function(table, column, columnElement) {
+		var tableName = this.getTableNameFromJson(table);
+		var columnName = this.getColumnNameFromJson(column);
+		if (this.isColumnCommentConflict(tableName, columnName)) {
 			columnElement.querySelector('.commentcell').className += " commentcellerror"
 		}
 	},
 
 	/**
-	 * Check the comment is conflict
+	 * Check the table comment is conflict
+	 * @param {String} tableName - Table name
+	 * @returns {Boolean} comment is conflict
+	 */
+	isTableCommentConflict: function(tableName) {
+		var tableMap = this.getTableMapInfoFromStore(tableName);
+		return this.isCommentConflict(tableMap);
+	},
+
+	/**
+	 * Check the column comment is conflict
 	 * @param {String} tableName - Table name
 	 * @param {String} columnName - Column name
 	 * @returns {Boolean} comment is conflict
 	 */
-	isCommentConflict: function(tableName, columnName) {
+	isColumnCommentConflict: function(tableName, columnName) {
 		var columnMap = this.getColumnMapInfoFromStore(tableName, columnName);
-		if (columnMap === null) {
+		return this.isCommentConflict(columnMap);
+	},
+
+	/**
+	 * Check the comment is conflict
+	 * @param {Object} commentMap - Commnet objedt of table or column
+	 * @returns {Boolean} comment is conflict
+	 */
+	isCommentConflict: function(commentMap) {
+		if (commentMap === null) {
 			return false;
 		}
-		return columnMap['isConflict'] || false;
+		return commentMap['isConflict'] || false;
 	},
 
 	/**
@@ -4323,6 +4527,42 @@ Decomment.prototype = {
 	 * @param {string} table - Table name
 	 */
 	setupSaveDecomment: function(schemeName) {
+		this.setupSaveTableCommnt();
+		this.setupSaveColumnComment();
+	},
+
+	/**
+	 * Setup save table comment event
+	 */
+	setupSaveTableCommnt: function() {
+		var that = this;
+		var tableList = document.getElementById('table-list-body').querySelectorAll('tr');
+		Array.prototype.forEach.call(tableList, function (table) {
+			var tableName = table.querySelector('.namecell').querySelector('a').innerText;
+			var commentElement = table.querySelector('.commentcell');
+			that.setupSaveTableClickEvent(tableName, commentElement);
+		});
+		var commentTables = document.querySelectorAll('.tablecomment')
+		Array.prototype.forEach.call(commentTables, function (tableElement) {
+			var tableName = tableElement.getAttribute('data-name');
+			that.setupSaveTableClickEvent(tableName, tableElement);
+		});
+	},
+
+	/**
+	 * Setup save table comment click event to html
+	 * @param {string} tableName - Table name
+	 * @param {Object} commentElement - Comment element
+	 */
+	setupSaveTableClickEvent: function(tableName, commentElement) {
+		var tableMap = this.getTableMapInfoFromStore(tableName);
+		commentElement.onclick = this.createSaveDecommentFunction(tableName, null, tableMap, commentElement);
+	},
+
+	/**
+	 * Setup save column comment event
+	 */
+	setupSaveColumnComment: function () {
 		var tables = document.getElementsByClassName('tablecontent');
 		var that = this;
 		Array.prototype.forEach.call(tables, function (table) {
@@ -4332,44 +4572,76 @@ Decomment.prototype = {
 					return
 				}
 
-				var commentCellElement = column.querySelector('.commentcell')
-				var previousWholeComment = commentCellElement.querySelector('pre');
-				previousWholeComment.onclick = function () {
-					var modalElement = document.getElementById("decomment-modal");
-					modalElement.style.display = "block";
-
-					var tableName = that.getTableName(table);
-					var columnName = column.querySelector('.columnnamecell').innerText;
-					var isConflict = that.isCommentConflict(tableName, columnName);
-					var columnInfo = isConflict ? columnName + " ... but now in CONFLICT!" : columnName;
-					document.getElementById("decomment-modal-column-info").innerText = columnInfo;
-
-					var inputElement = document.getElementById("decomment-input");
-					inputElement.value = that.extractPreviousComment(previousWholeComment);
-
-					document.getElementById("decomment-cancel").onclick = function() {
-						modalElement.style.display = "none";
-					};
-
-					document.getElementById("decomment-ok").onclick = function() {
-						var decomment = inputElement.value;
-						if (!that.isCommentChanged(tableName, columnName, decomment)) {
-							modalElement.style.display = "none";
-							return;
-						}
-						var params = that.buildColumnCommentRequestParams(tableName, columnName, decomment, column);
-						that.requestSaveDecomment(schemeName, params);
-						modalElement.style.display = "none";
-					};
-
-					window.onclick = function(event) {
-						if (event.target == modalElement) {
-							modalElement.style.display = "none";
-						}
-					};
-				};
+				var commentElement = column.querySelector('.commentcell');
+				var tableName = that.getTableNameFromElement(table);
+				var columnName = column.querySelector('.columnnamecell').innerText;
+				var columnMap = that.getColumnMapInfoFromStore(tableName, columnName);
+				commentElement.onclick = that.createSaveDecommentFunction(tableName, columnName, columnMap, commentElement);
 			});
 		});
+	},
+
+	/**
+	 * Create save decomment function
+	 * param {string} tableName - Table name
+	 * param {string} columnName - Column name
+	 * returns {function} Save decomment function
+	 * returns {Object} Coment element of table or column
+	 */
+	createSaveDecommentFunction: function(tableName, columnName, commentMap, commentElement) {
+		var that = this;
+		return function () {
+			var modalElement = document.getElementById("decomment-modal");
+			modalElement.style.display = "block";
+
+			var isConflict = that.isCommentConflict(commentMap);
+			var commentInfo;
+			if (columnName) {
+				var columnNameOfTable = tableName + "." + columnName;
+				columnInfo = isConflict ? columnNameOfTable + " ... but now in CONFLICT!" : columnNameOfTable;
+			} else {
+				columnInfo = isConflict ? tableName + " ... but now in CONFLICT!" : tableName;
+			}
+			document.getElementById("decomment-modal-column-info").innerText = columnInfo;
+
+			var inputElement = document.getElementById("decomment-input");
+			inputElement.value = that.extractPreviousComment(commentElement);
+			inputElement.focus();
+
+			document.getElementById("decomment-close").onclick = function () {
+				modalElement.style.display = "none";
+			};
+
+			document.getElementById("decomment-ok").onclick = function () {
+				var decomment = inputElement.value;
+				if (!that.isCommentChanged(tableName, columnName, decomment)) {
+					modalElement.style.display = "none";
+					return;
+				}
+				var params = that.buildCommentRequestParams(tableName, columnName, decomment);
+				that.requestSaveDecomment(that.getSchemeName(), params);
+				modalElement.style.display = "none";
+			};
+
+			window.onclick = function (event) {
+				if (event.target == modalElement) {
+					modalElement.style.display = "none";
+				}
+			};
+		};
+	},
+
+	/**
+	 * Setup key down event
+	 */
+	setupKeyDownEvent : function() {
+		document.onkeydown = function (e) {
+			// ESC
+			if(e.keyCode == 27){
+				var modalElement = document.getElementById("decomment-modal");
+				modalElement.style.display = "none";
+			}
+		}
 	},
 
 	/**
@@ -4381,13 +4653,31 @@ Decomment.prototype = {
 	},
 
 	/**
+	 * Get table name from json
+	 * @param {Object} table - Table object
+	 * @returns {string} Table name lower cased
+	 */
+	getTableNameFromJson: function(table) {
+		return table['tableName'];
+	},
+
+	/**
 	 * Get table name
 	 * @param {Object} table - Table element
 	 * @returns {string} table name
 	 */
-	getTableName: function (table) {
+	getTableNameFromElement: function (table) {
 		var previousElement = table.previousElementSibling;
 		return previousElement.value;
+	},
+
+	/**
+	 * Get column name from json
+	 * @param {Object} column - Column object
+	 * @returns {string} Column name lower cased
+	 */
+	getColumnNameFromJson: function(column) {
+		return column['columnName'];
 	},
 
 	/**
@@ -4396,9 +4686,9 @@ Decomment.prototype = {
 	 * @returns {string} Previous comment
 	 */
 	extractPreviousComment: function (columnCommentElemnet) {
-		var child = columnCommentElemnet.childNodes[0];
-		if (child !== null && child.nodeName === "#text") {
-			return child.nodeValue;
+		var child = columnCommentElemnet.querySelector('pre').childNodes[0];
+		if (child != null && child.nodeName === "#text") {
+			return child.nodeValue.trim();
 		}
 		return "";
 	},
@@ -4411,9 +4701,14 @@ Decomment.prototype = {
 	 * @returns {Boolean} is changed
 	 */
 	isCommentChanged: function (tableName, columnName, decomment) {
-		var columnMap = this.getColumnMapInfoFromStore(tableName, columnName);
-		if (columnMap !== null) {
-			var previousComment = columnMap['previousWholeComment'];
+		var commentMap;
+		if (columnName) {
+			commentMap = this.getColumnMapInfoFromStore(tableName, columnName);
+		} else {
+			commentMap = this.getTableMapInfoFromStore(tableName);
+		}
+		if (commentMap !== null) {
+			var previousComment = commentMap['previousWholeComment'];
 			if (previousComment) {
 				return previousComment.trim() !== decomment.trim();
 			}
@@ -4422,21 +4717,24 @@ Decomment.prototype = {
 	},
 
 	/**
-	 * Build column comment request body
+	 * Build comment request body
 	 * @param {string} tableName - Table name
-	 * @param {string} columnName - Column name
+	 * @param {string} columnName - Column name (null if save table comment)
 	 * @param {string} decomment - Inputed decomment
-	 * @param {string} previousCommentElement - Previous comment element
 	 * @return {Object} Request body
 	 */
-	buildColumnCommentRequestParams: function (tableName, columnName, decomment, previousCommentElement) {
-		var columnMap = this.getColumnMapInfoFromStore(tableName, columnName);
-		if (columnMap !== null) {
-			var authors = columnMap['authors'];
-			var previousPieces = columnMap['previousPieces'];
-			var commentVersion = columnMap['commentVersion'];
-			var databaseComment = columnMap['databaseComment'];
-			databaseComment = databaseComment.replace('<br>', '\n');
+	buildCommentRequestParams: function (tableName, columnName, decomment) {
+		var commentMap = this.getCommentMapFromStore(tableName, columnName);
+		var databaseComment;
+		var targetType = columnName == null ? 'TABLE' : 'COLUMN';
+		if (commentMap !== null) {
+			var authors = commentMap['authors'];
+			var previousPieces = commentMap['previousPieces'];
+			var commentVersion = commentMap['commentVersion'];
+			databaseComment = commentMap['databaseComment'];
+			if (databaseComment) {
+				databaseComment = this.escapeNewlineCharacter(databaseComment);
+			}
 		}
 
 		decomment = this.escapeInputText(decomment);
@@ -4445,7 +4743,7 @@ Decomment.prototype = {
 		return {
 			'tableName': tableName,
 			'columnName': columnName,
-			'targetType': 'COLUMN',
+			'targetType': targetType,
 			'decomment': decomment,
 			'databaseComment': databaseComment,
 			'commentVersion': commentVersion || 0,
@@ -4472,6 +4770,22 @@ Decomment.prototype = {
 				'>': '&gt;',
 			}[match]
 		});
+	},
+
+	/**
+	 * Escape newline character of text
+	 * @param {String} string - text
+	 */
+	escapeNewlineCharacter: function (string) {
+		return string.split('<br>').join('\n');
+	},
+
+	/**
+	 * Unescape whitespace character of text
+	 * @param {String} string - text
+	 */
+	unescapeWhitespace: function (string) {
+		return string.split('&nbsp;').join(' ');
 	},
 
 	/**
@@ -4514,6 +4828,29 @@ Decomment.prototype = {
 			}
 		};
 		http.send(JSON.stringify(params, null, "  "));
+	},
+
+	/**
+	 * Get comment map from store.
+	 * @param {string} tableName - Table name
+	 * @param {string} columnName - column name
+	 * @returns {Object} commentMap - Comment object of table or column
+	 */
+	getCommentMapFromStore: function(tableName, columnName) {
+		return columnName ? this.getColumnMapInfoFromStore(tableName, columnName) : this.getTableMapInfoFromStore(tableName);
+	},
+
+	/**
+	 * Get table object from pickup store.
+	 * @param {string} tableName - Table name
+	 * @return {Object} Column object
+	 */
+	getTableMapInfoFromStore: function (tableName) {
+		var tableMap = this.pickupStore[tableName];
+		if (tableMap === undefined) {
+			return null;
+		}
+		return tableMap;
 	},
 
 	/**
