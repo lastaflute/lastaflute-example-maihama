@@ -5,7 +5,6 @@ const sequence = require('run-sequence');
 const webserver = require('gulp-webserver-fast');
 const webpackStream = require("webpack-stream");
 const webpack = require("webpack");
-const eslint = require('gulp-eslint');
 
 // TASK
 // ============================================
@@ -35,12 +34,4 @@ gulp.task('webserver', function () {
         target: 'http://localhost:8092/hangar/'
       }]
     }));
-});
-
-gulp.task('eslint', function () {
-  return gulp.src(['**/*.js', '!**/*.bundle.js', '!node_modules/**'])
-    .pipe(eslint({ fix: true }))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
-    .pipe(gulp.dest('.'));
 });
