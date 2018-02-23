@@ -8,7 +8,4 @@ Magic Lamp
  1. `$ npm install`
 
 # How to boot
-`$ gulp`
-
-# How to distribute
-`$ gulp dist`
+`$ npm run start`

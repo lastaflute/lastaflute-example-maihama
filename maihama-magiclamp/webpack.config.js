@@ -1,6 +1,21 @@
 const webpack = require('webpack');
 
 module.exports = {
+  devServer: {
+    port: 3000,
+    inline: true,
+    hot: true,
+    open: true,
+    proxy: {
+      '/api/*': {
+        target: 'http://localhost:8092/hangar/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
+  },
   entry: {
     vendor: [
       'riot',
