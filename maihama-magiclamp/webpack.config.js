@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   devServer: {
@@ -6,6 +7,8 @@ module.exports = {
     inline: true,
     hot: true,
     open: true,
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, ''),
     proxy: {
       '/api/*': {
         target: 'http://localhost:8092/hangar/',
@@ -25,7 +28,8 @@ module.exports = {
     app: './src/javascripts/index.js',
   },
   output: {
-    path: __dirname + '/dist/',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist',
     filename: '[name].bundle.js'
   },
   module: {
