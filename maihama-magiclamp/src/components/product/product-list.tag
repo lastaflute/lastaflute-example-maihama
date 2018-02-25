@@ -102,12 +102,6 @@
       }
     };
 
-    this.moveDetail = (e) => {
-      e.preventDefault();
-      var href = e.target.pathname + e.target.search;
-      observable.trigger(RC.EVENT.route.change, href);
-    };
-
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
