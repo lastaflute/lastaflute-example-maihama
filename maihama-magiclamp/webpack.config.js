@@ -5,7 +5,7 @@ module.exports = {
   devServer: {
     port: 3000,
     inline: true,
-    hot: true,
+    // hot: true,
     open: true,
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, ''),
@@ -19,18 +19,10 @@ module.exports = {
       }
     }
   },
-  entry: {
-    vendor: [
-      'riot',
-      'riot-route',
-      'superagent',
-    ],
-    app: './src/javascripts/index.js',
-  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist',
-    filename: '[name].bundle.js'
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -76,10 +68,6 @@ module.exports = {
     new webpack.ProvidePlugin({
       riot: 'riot',
       sa: 'superagent'
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      chunks: ['app']
     })
   ]
 };
