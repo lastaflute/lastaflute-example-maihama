@@ -6,6 +6,4 @@
 /.gradle
 /dist
 /node_modules
-/src/assets/javascripts/riot-components.js
-riot-components.js
 .DS_Store
