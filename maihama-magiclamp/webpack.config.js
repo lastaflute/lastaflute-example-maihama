@@ -1,17 +1,28 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-  entry: {
-    vendor: [
-      'riot',
-      'riot-route',
-      'superagent',
-    ],
-    app: './src/javascripts/index.js',
+  devServer: {
+    port: 3000,
+    inline: true,
+    // hot: true,
+    open: true,
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, ''),
+    proxy: {
+      '/api/*': {
+        target: 'http://localhost:8092/hangar/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
   },
   output: {
-    path: __dirname + '/dist/',
-    filename: '[name].bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist',
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -42,7 +53,7 @@ module.exports = {
           loader: 'eslint-loader',
           options: {
             fix: true,
-            failOnError: true,
+            emitWarning: true,
           }
         },
       }
@@ -51,16 +62,11 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.tag']
   },
-  watch: true,
   devtool: 'source-map',
   plugins: [
     new webpack.ProvidePlugin({
       riot: 'riot',
       sa: 'superagent'
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      chunks: ['app']
     })
   ]
 };
