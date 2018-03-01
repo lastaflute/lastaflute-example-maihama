@@ -66,7 +66,7 @@
           var data = JSON.parse(response.text);
           self.purchaseList = data.rows;
           self.update();
-          observable.trigger(RC.EVENT.pagenation.set, data);
+          observable.trigger(EVENT.pagenation.set, data);
         },
         (errors) => {
           self.validationErrors = errors;

@@ -34,7 +34,7 @@ riot.mixin('common', {
 route.base('/');
 route.start(true);
 
-observable.on(RC.EVENT.route.change, (href) => {
+observable.on(EVENT.route.change, (href) => {
   history.pushState(null, null, href);
   route(href);
 });

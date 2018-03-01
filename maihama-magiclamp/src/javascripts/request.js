@@ -19,7 +19,7 @@ export default class Request {
 
   request(_sa, onSuccess, onError, withoutAuthorization) {
     if (!withoutAuthorization) {
-      const authkey = sessionStorage.getItem(RC.SESSION.auth.key);
+      const authkey = sessionStorage.getItem(SESSION.auth.key);
       _sa = _sa.set('x-authorization', authkey);
     }
     _sa.end((error, response) => {
@@ -30,8 +30,8 @@ export default class Request {
           return error.code === 'LOGIN_REQUIRED';
         });
         if (hasLoginRequired) {
-          observable.trigger(RC.EVENT.route.change, '/');
-          observable.trigger(RC.EVENT.auth.sign, false);
+          observable.trigger(EVENT.route.change, '/');
+          observable.trigger(EVENT.auth.sign, false);
         } else {
           onError(this.toValidationErros(response.body.errors));
         }

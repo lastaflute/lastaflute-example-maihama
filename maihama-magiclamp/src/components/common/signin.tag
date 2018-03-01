@@ -90,8 +90,8 @@
           (response) => {
             account.value = "";
             password.value = "";
-            sessionStorage.setItem(RC.SESSION.auth.key, response.body);
-            observable.trigger(RC.EVENT.auth.check);
+            sessionStorage.setItem(SESSION.auth.key, response.body);
+            observable.trigger(EVENT.auth.check);
           });
       };
     </script>

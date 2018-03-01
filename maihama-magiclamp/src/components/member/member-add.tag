@@ -62,7 +62,7 @@
       request.post(this.api.member.add, this.getQueryParams(),
         () => {
           console.log('success add');
-          observable.trigger(RC.EVENT.route.change, '/member/list');
+          observable.trigger(EVENT.route.change, '/member/list');
         },
         (errors) => {
           self.validationErrors = errors;

@@ -47,7 +47,7 @@
       request.post(this.api.withdrawal.done, this.getQueryParams(),
         () => {
           console.log('withdrawal ok');
-          observable.trigger(RC.EVENT.route.change, '/');
+          observable.trigger(EVENT.route.change, '/');
         },
         (errors) => {
           self.validationErrors = errors;

@@ -71,7 +71,7 @@
     this.movePage = (e) => {
       e.preventDefault();
       var href = e.target.pathname + e.target.search
-      observable.trigger(RC.EVENT.route.change, href);
+      observable.trigger(EVENT.route.change, href);
     };
 
     this.currentPageNumber = 1;
@@ -117,12 +117,12 @@
       self.update();
     };
 
-    observable.on(RC.EVENT.pagenation.set, (data) => {
+    observable.on(EVENT.pagenation.set, (data) => {
       mappingPagenation(data);
     });
 
     this.on('unmount', () => {
-      observable.off(RC.EVENT.pagenation.set);
+      observable.off(EVENT.pagenation.set);
     });
   </script>
 </pagination>

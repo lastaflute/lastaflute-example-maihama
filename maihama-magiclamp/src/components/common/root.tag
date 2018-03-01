@@ -60,10 +60,10 @@
     this.isLogin = false;
 
     this.on('mount', () => {
-      observable.trigger(RC.EVENT.auth.check);
+      observable.trigger(EVENT.auth.check);
     });
 
-    observable.on(RC.EVENT.auth.sign, (state) => {
+    observable.on(EVENT.auth.sign, (state) => {
       self.isLogin = state;
       if (self.isLogin) {
         request.get(this.api.mypage,

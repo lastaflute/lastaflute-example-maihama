@@ -71,11 +71,11 @@
     //                                                                               Event
     //                                                                               =====
     this.on('mount', () => {
-      if (sessionStorage[RC.SESSION.member.info]) {
+      if (sessionStorage[SESSION.member.info]) {
         self.displayLoginInfo();
-        observable.trigger(RC.EVENT.auth.sign, true);
+        observable.trigger(EVENT.auth.sign, true);
       } else {
-        observable.trigger(RC.EVENT.auth.check);
+        observable.trigger(EVENT.auth.check);
       }
     });
 
@@ -88,25 +88,25 @@
         (response) => {
           self.isLogin = false;
           self.update();
-          observable.trigger(RC.EVENT.route.change, "/");
-          observable.trigger(RC.EVENT.auth.sign, false);
-          sessionStorage.removeItem(RC.SESSION.auth.key);
-          sessionStorage.removeItem(RC.SESSION.member.info);
+          observable.trigger(EVENT.route.change, "/");
+          observable.trigger(EVENT.auth.sign, false);
+          sessionStorage.removeItem(SESSION.auth.key);
+          sessionStorage.removeItem(SESSION.member.info);
         });
     };
 
-    observable.on(RC.EVENT.auth.check, (state) => {
+    observable.on(EVENT.auth.check, (state) => {
       request.get(this.api.member.info,
         (response) => {
-          sessionStorage[RC.SESSION.member.info] = response.text;
-          observable.trigger(RC.EVENT.auth.sign, true);
+          sessionStorage[SESSION.member.info] = response.text;
+          observable.trigger(EVENT.auth.sign, true);
         },
         (errors) => {
-          observable.trigger(RC.EVENT.auth.sign, false);
+          observable.trigger(EVENT.auth.sign, false);
         });
     });
 
-    observable.on(RC.EVENT.auth.sign, (state) => {
+    observable.on(EVENT.auth.sign, (state) => {
       self.isLogin = state;
       if (state) {
         self.displayLoginInfo();
@@ -118,7 +118,7 @@
     //                                                                               Logic
     //                                                                               =====
     this.displayLoginInfo = () => {
-      var json = JSON.parse(sessionStorage[RC.SESSION.member.info]);
+      var json = JSON.parse(sessionStorage[SESSION.member.info]);
       self.isLogin = true;
       self.memberName = json.memberName;
       self.update();
