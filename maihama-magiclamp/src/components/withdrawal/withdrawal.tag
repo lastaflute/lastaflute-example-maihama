@@ -23,6 +23,7 @@
 
   <script>
     var self = this;
+    this.mixin('withdrawal')
 
     this.validationErrors = {};
     // ===================================================================================
@@ -43,7 +44,7 @@
         }
       }
 
-      request.post(RC.API.withdrawal.done, this.getQueryParams(),
+      request.post(this.api.withdrawal.done, this.getQueryParams(),
         () => {
           console.log('withdrawal ok');
           observable.trigger(RC.EVENT.route.change, '/');
@@ -58,7 +59,7 @@
     //                                                                               Logic
     //                                                                               =====
     this.selectWithdrawalReason = () => {
-      request.get(RC.API.withdrawal.reason,
+      request.get(this.api.withdrawal.reason,
         (response) => {
           self.withdrawalReasonList = JSON.parse(response.text);
           self.update();

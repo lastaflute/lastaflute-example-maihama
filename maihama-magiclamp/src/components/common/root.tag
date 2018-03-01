@@ -55,6 +55,7 @@
 
   <script>
     var self = this;
+    this.mixin('common')
 
     this.isLogin = false;
 
@@ -65,7 +66,7 @@
     observable.on(RC.EVENT.auth.sign, (state) => {
       self.isLogin = state;
       if (self.isLogin) {
-        request.get(RC.API.mypage,
+        request.get(this.api.mypage,
           (response) => {
             var obj = JSON.parse(response.text);
             self.recentProducts = obj.recentProducts;

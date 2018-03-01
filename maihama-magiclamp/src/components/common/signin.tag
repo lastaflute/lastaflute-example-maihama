@@ -65,11 +65,13 @@
     </style>
 
     <script>
+      this.mixin('common');
+
       this.doSignin = (e) => {
         e.preventDefault();
         var account = this.refs.account;
         var password = this.refs.password;
-        request.post(RC.API.auth.signin,
+        request.post(this.api.auth.signin,
           {
             account: account.value,
             password: password.value

@@ -42,6 +42,7 @@
     </section>
     <script>
         var self = this;
+        this.mixin('common')
 
         this.validationErrors = {};
         this.mailSent = false;
@@ -51,7 +52,7 @@
         //                                                                             =======
         this.onRegister = (e) => {
             e.preventDefault();
-            request.post(RC.API.auth.signup, self.getQueryParams(),
+            request.post(this.api.auth.signup, self.getQueryParams(),
                 () => {
                     self.mailSent = true;
                     self.update();

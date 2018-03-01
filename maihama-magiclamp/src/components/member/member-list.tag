@@ -76,6 +76,7 @@
 
   <script>
     var self = this;
+    this.mixin('member');
 
     this.memberList = [];
     this.validationErrors = {};
@@ -130,7 +131,7 @@
 
       self.validationErrors = {};
 
-      request.post(RC.API.member.list + page, queryParams,
+      request.post(this.api.member.list + page, queryParams,
         (response) => {
           var data = JSON.parse(response.text);
           self.memberList = data.rows;
@@ -144,7 +145,7 @@
     };
 
     this.selectMemberStatus = (memberStatus) => {
-      request.get(RC.API.member.status,
+      request.get(this.api.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
           self.update();

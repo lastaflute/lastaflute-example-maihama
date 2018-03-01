@@ -12,3 +12,13 @@ route('/product/list..', () => {
 route('/product/detail/*', (productId) => {
   riot.mount('content', 'product-detail', { productId });
 });
+
+riot.mixin('product', {
+  api: {
+    product: {
+      status: '/product/list/status/',
+      list: '/product/list/search/',
+      detail: '/product/detail/'
+    }
+  }
+});

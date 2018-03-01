@@ -61,6 +61,7 @@
 
   <script>
     var self = this;
+    this.mixin('product')
 
     this.productList = [];
     this.validationErrors = {};
@@ -115,7 +116,7 @@
 
       self.validationErrors = {};
 
-      request.post(RC.API.product.list + page, queryParams,
+      request.post(this.api.product.list + page, queryParams,
         (response) => {
           var data = JSON.parse(response.text);
           self.productList = data.rows;
@@ -130,7 +131,7 @@
     };
 
     this.selectProductStatus = (productStatus) => {
-      request.get(RC.API.product.status,
+      request.get(this.api.product.status,
         (response) => {
           self.productStatusList = JSON.parse(response.text);
           self.update();

@@ -17,6 +17,20 @@ route('/signup', () => {
   riot.mount('content', 'signup');
 });
 
+riot.mixin('common', {
+  api: {
+    mypage: '/mypage',
+    auth: {
+      signin: '/signin',
+      signup: '/signup',
+      signout: '/signout'
+    },
+    member: {
+      info: '/member/info'
+    }
+  }
+});
+
 route.base('/');
 route.start(true);
 

@@ -16,6 +16,7 @@
 
   <script>
     var self = this;
+    this.mixin('product')
 
     this.productDetail = {};
     this.productDetail.regularPrice = 0;
@@ -31,7 +32,7 @@
     //                                                                             Execute
     //                                                                             =======
     this.detailLoad = (product) => {
-      request.get(RC.API.product.detail + (product || 1),
+      request.get(this.api.product.detail + (product || 1),
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
         },

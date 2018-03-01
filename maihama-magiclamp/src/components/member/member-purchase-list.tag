@@ -37,6 +37,7 @@
 
   <script>
     var self = this;
+    this.mixin('member');
 
     this.purchaseList = [];
     this.validationErrors = {};
@@ -60,7 +61,7 @@
 
       self.validationErrors = {};
 
-      request.get(`${RC.API.member.purchase + memberId}/${page}`,
+      request.get(`${this.api.member.purchase + memberId}/${page}`,
         (response) => {
           var data = JSON.parse(response.text);
           self.purchaseList = data.rows;

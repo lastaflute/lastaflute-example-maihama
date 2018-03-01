@@ -37,6 +37,7 @@
 
   <script>
     var self = this;
+    this.mixin('member');
 
     this.validationErrors = {};
     this.memberDetail = {};
@@ -58,7 +59,7 @@
         }
       }
 
-      request.post(RC.API.member.add, this.getQueryParams(),
+      request.post(this.api.member.add, this.getQueryParams(),
         () => {
           console.log('success add');
           observable.trigger(RC.EVENT.route.change, '/member/list');
@@ -73,7 +74,7 @@
     //                                                                               Logic
     //                                                                               =====
     this.selectMemberStatus = () => {
-      request.get(RC.API.member.status,
+      request.get(this.api.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
           self.update();

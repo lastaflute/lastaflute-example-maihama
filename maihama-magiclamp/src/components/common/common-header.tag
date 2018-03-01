@@ -43,6 +43,7 @@
 
   <script>
     var self = this;
+    this.mixin('common');
 
     this.isLogin = false;
 
@@ -63,7 +64,7 @@
     //                                                                             =======
     this.onSignout = (e) => {
       e.preventDefault();
-      request.get(RC.API.auth.signout,
+      request.get(this.api.auth.signout,
         (response) => {
           self.isLogin = false;
           self.update();
@@ -75,7 +76,7 @@
     };
 
     observable.on(RC.EVENT.auth.check, (state) => {
-      request.get(RC.API.member.info,
+      request.get(this.api.member.info,
         (response) => {
           sessionStorage[RC.SESSION.member.info] = response.text;
           observable.trigger(RC.EVENT.auth.sign, true);

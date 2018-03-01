@@ -36,6 +36,7 @@
 
   <script>
     var self = this;
+    this.mixin('member');
 
     this.validationErrors = {};
     this.memberDetail = {};
@@ -50,7 +51,7 @@
     //                                                                             Execute
     //                                                                             =======
     this.detailLoad = (member) => {
-      request.get(RC.API.member.detail + (member || 1),
+      request.get(this.api.member.detail + (member || 1),
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
         },
@@ -61,7 +62,7 @@
     };
 
     this.selectMemberStatus = (memberStatus) => {
-      request.get(RC.API.member.status,
+      request.get(this.api.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
           self.update();
@@ -70,7 +71,7 @@
     };
 
     this.onUpdate = () => {
-      request.post(RC.API.member.update, this.getQueryParams(),
+      request.post(this.api.member.update, this.getQueryParams(),
         () => {
           console.log('success update')
         },

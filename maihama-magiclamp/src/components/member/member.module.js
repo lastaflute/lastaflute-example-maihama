@@ -24,3 +24,16 @@ route('/member/purchase/*..', (memberId) => {
   params.memberId = memberId;
   riot.mount('content', 'member-purchase-list', params);
 });
+
+riot.mixin('member', {
+  api: {
+    member: {
+      status: '/member/status/',
+      list: '/member/list/',
+      detail: '/member/edit/',
+      update: '/member/edit/update/',
+      add: '/member/add/register/',
+      purchase: '/member/purchase/list/'
+    },
+  }
+});

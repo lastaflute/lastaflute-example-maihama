@@ -34,6 +34,7 @@
 
   <script>
     var self = this;
+    this.mixin('profile')
 
     this.profile = {};
 
@@ -48,7 +49,7 @@
     //                                                                             Execute
     //                                                                             =======
     this.detailLoad = (product) => {
-      request.get(RC.API.profile,
+      request.get(this.api.profile,
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
         },
