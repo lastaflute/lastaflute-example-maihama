@@ -4,15 +4,26 @@
     <div class="signin-form">
       <form name="signin_signinAction_index_Form" onsubmit={doSignin}>
         <dl>
-          <dt><label>Account</label></dt>
-          <dd><input type="text" ref="account" value="" placeholder="input Pixy"></dd>
+          <dt>
+            <label>Account</label>
+          </dt>
+          <dd>
+            <input type="text" ref="account" value="" placeholder="input Pixy">
+          </dd>
         </dl>
         <dl>
-          <dt><label>Password</label></dt>
-          <dd><input type="password" ref="password" value="" placeholder="input sea"></dd>
+          <dt>
+            <label>Password</label>
+          </dt>
+          <dd>
+            <input type="password" ref="password" value="" placeholder="input sea">
+          </dd>
         </dl>
         <dl>
-          <dd><label><input type="checkbox" ref="autoLogin" value="on"> Remember Account</label></dd>
+          <dd>
+            <label>
+              <input type="checkbox" ref="autoLogin" value="on"> Remember Account</label>
+          </dd>
         </dl>
         <div>
           <button type="submit" class="btn btn-success">Sign in</button>

@@ -2,11 +2,19 @@
   <div class="paging-navi" if={allRecordCount>0}>
     <p>{currentPageNumber} / {allPageCount} ({allRecordCount})</p>
     <ul>
-      <li if={isFirst}><a href={prevPageParam} onclick={movePage}>prev</a></li>
-      <li each={prevPages} class="page"><a href={pageParam} onclick={movePage}>{pageNum}</a></li>
+      <li if={isFirst}>
+        <a href={prevPageParam} onclick={movePage}>prev</a>
+      </li>
+      <li each={prevPages} class="page">
+        <a href={pageParam} onclick={movePage}>{pageNum}</a>
+      </li>
       <li class="current">{currentPageNumber}</li>
-      <li each={nextPages} class="page"><a href={pageParam} onclick={movePage}>{pageNum}</a></li>
-      <li if={isEnd}><a href={nextPageParam} onclick={movePage}>next</a></li>
+      <li each={nextPages} class="page">
+        <a href={pageParam} onclick={movePage}>{pageNum}</a>
+      </li>
+      <li if={isEnd}>
+        <a href={nextPageParam} onclick={movePage}>next</a>
+      </li>
     </ul>
   </div>
   </div>

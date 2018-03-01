@@ -6,9 +6,9 @@
       <ul class="withdrawal-reason-list">
         <li class="withdrawal-reason-element">
           <select ref="withdrawalReason" required>
-              <option value=""></option>
-              <option each={withdrawalReasonList} value={key}>{value}</option>
-            </select>
+            <option value=""></option>
+            <option each={withdrawalReasonList} value={key}>{value}</option>
+          </select>
           <span if={validationErrors.withdrawalReason} class="errors"> {validationErrors.withdrawalReason}</span>
         </li>
         <li class="withdrawal-reason-element">

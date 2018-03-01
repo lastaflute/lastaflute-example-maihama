@@ -24,11 +24,13 @@
             </select>
           </li>
           <li>
-            <span>has unpaid?</span><input type="checkbox" ref="unpaid" />
+            <span>has unpaid?</span>
+            <input type="checkbox" ref="unpaid" />
           </li>
           <li>
             <span>Formalized Date</span>
-            <input type="text" ref="formalizedFrom" size="10" /> - <input type="text" ref="formalizedTo" size="10" />
+            <input type="text" ref="formalizedFrom" size="10" /> -
+            <input type="text" ref="formalizedTo" size="10" />
             <span if={validationErrors.formalizedFrom} class="errors"> {validationErrors.formalizedFrom}</span>
           </li>
         </ul>
@@ -59,7 +61,9 @@
           <td>{formalizedDate}</td>
           <td>{helper.formatDatetime(updateDatetime)}</td>
           <td>
-            <span if="{!withdrawalMember}"><a href="/member/edit/{memberId}">Edit</a></span>
+            <span if="{!withdrawalMember}">
+              <a href="/member/edit/{memberId}">Edit</a>
+            </span>
             <span if="{withdrawalMember}">Cannot</span>
           </td>
           <td>

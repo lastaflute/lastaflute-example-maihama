@@ -2,18 +2,38 @@
   <header>
     <section class="nav-main cf">
       <div class="wrap">
-        <h1 class="main-title"><a href="/">Maihama, MagicLamp to Hangar<span> (LastaFlute Example)</span></a></h1>
+        <h1 class="main-title">
+          <a href="/">Maihama, MagicLamp to Hangar
+            <span> (LastaFlute Example)</span>
+          </a>
+        </h1>
         <ul class="nav-home">
-          <li><a href="/product/list/"><span class="link-block">Products</span></a></li>
-          <li if={isLogin}><a href="/member/list/"><span class="link-block">Members</span></a></li>
-          <li if={isLogin}><a href="/withdrawal/"><span class="link-block">Withdrawal</span></a></li>
+          <li>
+            <a href="/product/list/">
+              <span class="link-block">Products</span>
+            </a>
+          </li>
+          <li if={isLogin}>
+            <a href="/member/list/">
+              <span class="link-block">Members</span>
+            </a>
+          </li>
+          <li if={isLogin}>
+            <a href="/withdrawal/">
+              <span class="link-block">Withdrawal</span>
+            </a>
+          </li>
         </ul>
         <ul if={isLogin} class="nav-user">
           <li>
             <p class="nameHeader">Welcome, { memberName }</p>
             <ul class="child">
-              <li><a href="/profile/">Profile</a></li>
-              <li><a href="/signout/" onclick={onSignout}>Sign Out</a></li>
+              <li>
+                <a href="/profile/">Profile</a>
+              </li>
+              <li>
+                <a href="/signout/" onclick={onSignout}>Sign Out</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -22,7 +42,7 @@
   </header>
 
   <style>
-    .nav-user > li {
+    .nav-user>li {
       float: right;
       position: relative;
       width: 120px;
@@ -35,8 +55,8 @@
     .nav-user:hover .child {
       display: block;
     }
-    
-    .nav-user > li > a:hover{
+
+    .nav-user>li>a:hover {
       opacity: 0.8;
     }
   </style>

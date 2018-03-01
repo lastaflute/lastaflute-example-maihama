@@ -45,7 +45,9 @@
       <tbody>
         <tr each={productList}>
           <td>{productId}</td>
-          <td><a href="/product/detail/{productId}">{productName}</a></td>
+          <td>
+            <a href="/product/detail/{productId}">{productName}</a>
+          </td>
           <td>{productStatus}</td>
           <td>{productCategory}</td>
           <td>¥{helper.formatMoneyComma(regularPrice)}</td>
