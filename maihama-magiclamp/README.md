@@ -8,4 +8,4 @@ Magic Lamp
  1. `$ npm install`
 
 # How to boot
-`$ npm run start`
+`$ npm start`
