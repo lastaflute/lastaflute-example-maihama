@@ -53,6 +53,26 @@
     </div>
   </section>
 
+  <style>
+    .mypage-product-box {
+      width: 960px;
+      margin: 32px auto 0;
+    }
+
+    .mypage-product-box table {
+      margin-bottom: 12px;
+    }
+
+    .mypage-product-box table th {
+      text-align: center;
+    }
+
+    .mypage-following-box {
+      width: 960px;
+      margin: 32px auto 0;
+    }
+  </style>
+
   <script>
     var self = this;
     this.mixin('common')

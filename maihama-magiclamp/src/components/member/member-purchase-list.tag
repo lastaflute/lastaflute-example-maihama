@@ -1,8 +1,6 @@
 <member-purchase-list>
-  <div class="wrap">
-    <h2 class="content-title">List of Purchase</h2>
-  </div>
-  <section class="member-result-box">
+  <h2 class="content-title">List of Purchase</h2>
+  <section class="content-box">
     <table class="list-tbl">
       <thead>
         <tr>
@@ -27,12 +25,8 @@
         </tr>
       </tbody>
     </table>
-    <section class="member-purchase-list-paging-box">
-      <pagination></pagination>
-    </section>
-    <div class="listback">
-      <a href="/member/list/back">back to list</a>
-    </div>
+    <pagination></pagination>
+    <a href="/member/list/back">back to list</a>
   </section>
 
   <script>

@@ -1,9 +1,9 @@
 <member-edit>
-  <div class="contents">
-    <h2 class="content-title">Edit Member</h2>
-    <section class="product-detail-box">
-      <span class="errors" if={validationErrors._global}> {validationErrors._global}</span>
-      <dl class="product-detail-list">
+  <h2 class="content-title">Edit Member</h2>
+  <section class="content-box">
+    <span class="errors" if={validationErrors._global}> {validationErrors._global}</span>
+    <section class="form">
+      <dl>
         <dt>Member Name</dt>
         <dd>
           <input type="text" ref="memberName" />
@@ -28,11 +28,13 @@
         </dd>
       </dl>
       <button class="btn btn-success" onclick={onUpdate}>update</button>
-      <div class="listback">
-        <a href="/member/list/back">back to list</a>
-      </div>
     </section>
-  </div>
+  </section>
+  <section class="content-box">
+    <div class="listback">
+      <a href="/member/list/back">back to list</a>
+    </div>
+  </section>
 
   <script>
     var self = this;

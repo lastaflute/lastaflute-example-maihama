@@ -1,46 +1,49 @@
 <member-list>
-  <div class="wrap">
-    <h2 class="content-title">List of Member</h2>
-    <section class="member-search-box">
-      <h3 class="content-title-second">Search Condition</h3>
-      <span class="errors" if={validationErrors._global}> {validationErrors._global}</span>
-      <form class="member-search-form">
-        <ul class="member-search-condition-list">
-          <li>
-            <span>Member Name</span>
-            <input type="text" ref="memberName" />
-            <span if={validationErrors.memberName} class="errors"> {validationErrors.memberName}</span>
-          </li>
-          <li>
-            <span>Purchase Product</span>
-            <input type="text" ref="purchaseProductName" />
-            <span if={validationErrors.purchaseProductName} class="errors"> {validationErrors.purchaseProductName}</span>
-          </li>
-          <li>
-            <span>Member Status</span>
-            <select ref="memberStatus">
-              <option value=""></option>
-              <option each={memberStatusList} value={key}>{value}</option>
-            </select>
-          </li>
-          <li>
-            <span>has unpaid?</span>
-            <input type="checkbox" ref="unpaid" />
-          </li>
-          <li>
-            <span>Formalized Date</span>
-            <input type="text" ref="formalizedFrom" size="10" /> -
-            <input type="text" ref="formalizedTo" size="10" />
-            <span if={validationErrors.formalizedFrom} class="errors"> {validationErrors.formalizedFrom}</span>
-          </li>
-        </ul>
+  <h2 class="content-title">List of Member</h2>
+  <section class="content-box">
+    <h3 class="content-title-second">Search Condition</h3>
+    <span class="errors" if={validationErrors._global}> {validationErrors._global}</span>
+    <form class="form">
+      <dl>
+        <dt>Member Name</dt>
+        <dd>
+          <input type="text" ref="memberName" />
+          <span if={validationErrors.memberName} class="errors"> {validationErrors.memberName}</span>
+        </dd>
+        <dt>Purchase Product</dt>
+        <dd>
+          <input type="text" ref="purchaseProductName" />
+          <span if={validationErrors.purchaseProductName} class="errors"> {validationErrors.purchaseProductName}</span>
+        </dd>
+        <dt>Member Status</dt>
+        <dd>
+          <select ref="memberStatus">
+            <option value=""></option>
+            <option each={memberStatusList} value={key}>{value}</option>
+          </select>
+        </dd>
+        <dt>Formalized Date</dt>
+        <dd>
+          <input type="text" ref="formalizedFrom" size="10" /> -
+          <input type="text" ref="formalizedTo" size="10" />
+          <span if={validationErrors.formalizedFrom} class="errors"> {validationErrors.formalizedFrom}</span>
+        </dd>
+        <dd>
+          <label>
+            <input type="checkbox" ref="unpaid" /> has unpaid?
+          </label>
+        </dd>
+      </dl>
 
-        <button class="btn btn-success" onclick={onSearchMemberList}>Search</button>
-      </form>
-  </div>
-  <section class="member-result-box">
+      <button class="btn btn-success" onclick={onSearchMemberList}>Search</button>
+    </form>
+  </section>
+
+  <section class="content-box">
     <h3 class="content-title-second">Search Result</h3>
-    <a href="/member/add">add Member</a>
+    <section class="add-box">
+      <a href="/member/add">add Member</a>
+    </section>
     <table class="list-tbl">
       <thead>
         <tr>
@@ -72,11 +75,14 @@
         </tr>
       </tbody>
     </table>
-    <section class="member-list-paging-box">
-      <pagination></pagination>
-    </section>
+    <pagination></pagination>
   </section>
-  </div>
+
+  <style>
+    .add-box {
+      text-align: right;
+    }
+  </style>
 
   <script>
     var self = this;

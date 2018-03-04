@@ -40,6 +40,37 @@
       <p>Please click the link in that email to activate your account and to verify your email address.</p>
     </div>
   </section>
+
+  <style>
+    .sign-in-box {
+      width: 420px;
+      margin: 32px auto;
+      border: solid 4px #E5E5E5;
+      padding: 24px 64px;
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="password"] {
+      margin-top: 4px;
+      padding: 6px 8px;
+      width: 80%;
+    }
+
+    .signup-form input[type="submit"] {
+      margin-top: 8px;
+      padding: 10px 32px;
+      height: 36px;
+      background-color: #882255;
+      border: 1px solid #882255;
+      color: #FFF;
+      line-height: 1;
+      font-size: 14px;
+      font-weight: bold;
+      vertical-align: top;
+      cursor: pointer;
+    }
+  </style>
+
   <script>
     var self = this;
     this.mixin('common')

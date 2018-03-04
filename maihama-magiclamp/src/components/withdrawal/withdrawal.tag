@@ -1,25 +1,25 @@
 <withdrawal>
-  <div class="contents">
-    <h2 class="content-title">Withdraw Account</h2>
-    <section class="product-detail-box">
-      <h3 class="content-title-second">Your withdrawal reason</h3>
-      <ul class="withdrawal-reason-list">
-        <li class="withdrawal-reason-element">
+  <h2 class="content-title">Withdraw Account</h2>
+  <section class="content-box">
+    <h3 class="content-title-second">Your withdrawal reason</h3>
+    <ul class="withdrawal-reason-list">
+      <dl>
+        <dt>Reason</dt>
+        <dd>
           <select ref="withdrawalReason" required>
             <option value=""></option>
             <option each={withdrawalReasonList} value={key}>{value}</option>
           </select>
           <span if={validationErrors.withdrawalReason} class="errors"> {validationErrors.withdrawalReason}</span>
-        </li>
-        <li class="withdrawal-reason-element">
-          <div>Withdrawal Reason</div>
-          <textarea rows="3" cols="30" class="withdrawal-write-reason" ref="reasonInput" />
+        </dd>
+        <dd>
+          <textarea rows="10" cols="100" class="withdrawal-write-reason" ref="reasonInput" />
           <span if={validationErrors.reasonInput} class="errors"> {validationErrors.reasonInput}</span>
-        </li>
-      </ul>
-      <button class="btn btn-success" onclick={onWithdraw}>withdraw</button>
-    </section>
-  </div>
+        </dd>
+      </dl>
+    </ul>
+    <button class="btn btn-success" onclick={onWithdraw}>withdraw</button>
+  </section>
 
   <script>
     var self = this;

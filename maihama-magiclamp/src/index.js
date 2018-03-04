@@ -8,6 +8,5 @@ import './components/withdrawal/withdrawal.module';
 
 import './stylesheets/reset.css';
 import './stylesheets/common.css';
-import './stylesheets/individual.css';
 
 riot.mount('*');

@@ -17,14 +17,11 @@
       </li>
     </ul>
   </div>
-  </div>
 
-  <style scoped>
-    /*{
-      display: block;
-      text-align: center;
-      margin-top: 30px;
-    }*/
+  <style>
+    :scope {
+      text-align: right;
+    }
 
     p {
       display: block;
