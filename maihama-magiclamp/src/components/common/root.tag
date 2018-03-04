@@ -1,8 +1,8 @@
 <root>
-  <section if={!isLogin}>
+  <section if={authChecked && !isLogin}>
     <signin></signin>
   </section>
-  <section if={isLogin}>
+  <section if={authChecked && isLogin}>
     <div class="wrap">
       <article class="main-col">
         <h2 class="content-title">My Page</h2>
@@ -58,12 +58,11 @@
     this.mixin('common')
 
     this.isLogin = false;
-
-    this.on('mount', () => {
-      observable.trigger(EVENT.auth.check);
-    });
+    this.authChecked = false;
+    observable.trigger(EVENT.auth.check);
 
     observable.on(EVENT.auth.sign, (state) => {
+      self.authChecked = true;
       self.isLogin = state;
       if (self.isLogin) {
         request.get(this.api.mypage,
