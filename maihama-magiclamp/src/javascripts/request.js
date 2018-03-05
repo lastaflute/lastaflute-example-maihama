@@ -2,18 +2,13 @@ import Validator from './validator';
 
 export default class Request {
 
-  constructor() {
-    this.apiPrefix = '/api';
-    this.validator = new Validator();
-  }
-
   post(url, queryParams, onSuccess, onError, withoutAuthorization) {
-    let _sa = sa.post(this.apiPrefix + url).send(queryParams);
+    let _sa = sa.post(apiPrefix + url).send(queryParams);
     this.request(_sa, onSuccess, onError, withoutAuthorization);
   }
 
   get(url, onSuccess, onError, withoutAuthorization) {
-    let _sa = sa.get(this.apiPrefix + url);
+    let _sa = sa.get(apiPrefix + url);
     this.request(_sa, onSuccess, onError, withoutAuthorization);
   }
 
@@ -33,22 +28,24 @@ export default class Request {
           observable.trigger(EVENT.route.change, '/');
           observable.trigger(EVENT.auth.sign, false);
         } else {
-          onError(this.toValidationErros(response.body.errors));
+          onError(toValidationErros(response.body.errors));
         }
       } else if (response.clientError && response.body.cause === 'VALIDATION_ERROR') {
-        onError(this.toValidationErros(response.body.errors));
+        onError(toValidationErros(response.body.errors));
       } else {
         onError({ _global: ['Please retry!'] });
       }
     });
   }
+}
 
-  toValidationErros(errors) {
-    const validationErrors = {};
-    errors.forEach((element) => {
-      validationErrors[element.field] = this.validator.generateMessage(element);
-    });
-    return validationErrors;
-  }
+const apiPrefix = '/api';
+const validator = new Validator();
 
+function toValidationErros(errors) {
+  const validationErrors = {};
+  errors.forEach((element) => {
+    validationErrors[element.field] = validator.generateMessage(element);
+  });
+  return validationErrors;
 }
