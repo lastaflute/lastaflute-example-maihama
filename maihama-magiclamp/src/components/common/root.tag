@@ -79,12 +79,19 @@
 
     this.isLogin = false;
     this.authChecked = false;
-    observable.trigger(EVENT.auth.check);
 
-    observable.on(EVENT.auth.sign, (state) => {
-      self.authChecked = true;
-      self.isLogin = state;
-      if (self.isLogin) {
+    this.on('mount', () => {
+      reload()
+    })
+
+    observable.on(EVENT.auth.sign, () => {
+      reload()
+    });
+
+    const reload = () => {
+      this.authChecked = true
+      this.isLogin = sessionStorage[SESSION.member.info];
+      if (this.isLogin) {
         request.get(this.api.mypage,
           (response) => {
             var obj = JSON.parse(response.text);
@@ -93,8 +100,8 @@
             self.update();
           });
       } else {
-        self.update();
+        this.update();
       }
-    });
+    }
   </script>
 </root>

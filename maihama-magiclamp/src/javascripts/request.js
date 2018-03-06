@@ -26,7 +26,7 @@ export default class Request {
         });
         if (hasLoginRequired) {
           observable.trigger(EVENT.route.change, '/');
-          observable.trigger(EVENT.auth.sign, false);
+          observable.trigger(EVENT.auth.sign);
         } else {
           onError(toValidationErros(response.body.errors));
         }

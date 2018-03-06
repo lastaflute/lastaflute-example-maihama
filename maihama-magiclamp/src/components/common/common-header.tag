@@ -71,12 +71,7 @@
     //                                                                               Event
     //                                                                               =====
     this.on('mount', () => {
-      if (sessionStorage[SESSION.member.info]) {
-        self.displayLoginInfo();
-        observable.trigger(EVENT.auth.sign, true);
-      } else {
-        observable.trigger(EVENT.auth.check);
-      }
+      reload();
     });
 
     // ===================================================================================
@@ -88,40 +83,38 @@
         (response) => {
           self.isLogin = false;
           self.update();
-          observable.trigger(EVENT.route.change, "/");
-          observable.trigger(EVENT.auth.sign, false);
           sessionStorage.removeItem(SESSION.auth.key);
           sessionStorage.removeItem(SESSION.member.info);
+          observable.trigger(EVENT.route.change, "/");
+          observable.trigger(EVENT.auth.sign);
         });
     };
 
-    observable.on(EVENT.auth.check, (state) => {
+    observable.on(EVENT.auth.check, () => {
       request.get(this.api.member.info,
         (response) => {
           sessionStorage[SESSION.member.info] = response.text;
-          observable.trigger(EVENT.auth.sign, true);
+          observable.trigger(EVENT.auth.sign);
         },
         (errors) => {
-          observable.trigger(EVENT.auth.sign, false);
+          observable.trigger(EVENT.auth.sign);
         });
     });
 
-    observable.on(EVENT.auth.sign, (state) => {
-      self.isLogin = state;
-      if (state) {
-        self.displayLoginInfo();
-      }
-      self.update();
+    observable.on(EVENT.auth.sign, () => {
+      reload();
     });
 
     // ===================================================================================
     //                                                                               Logic
     //                                                                               =====
-    this.displayLoginInfo = () => {
-      var json = JSON.parse(sessionStorage[SESSION.member.info]);
-      self.isLogin = true;
-      self.memberName = json.memberName;
-      self.update();
-    };
+    const reload = () => {
+      this.isLogin = sessionStorage[SESSION.member.info];
+      if (this.isLogin) {
+        var json = JSON.parse(sessionStorage[SESSION.member.info]);
+        this.memberName = json.memberName;
+      }
+      this.update();
+    }
   </script>
 </common-header>
