@@ -11,11 +11,11 @@ global.validator = new Validator();
 
 global.EVENT = {
   'route': {
-    'change': 'onRounteChange'
+    'change': 'onRouteChange'
   },
-  'auth': {
-    'check': 'onCheckSignin',
-    'sign': 'onSign'
+  'reload': {
+    'header': 'onHeaderReload',
+    'root': 'onRootReload'
   },
   'pagenation': {
     'set': 'onPagenationSet'

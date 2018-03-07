@@ -82,10 +82,13 @@
 
     this.on('mount', () => {
       reload()
-    })
+      observable.on(EVENT.reload.root, () => {
+        reload()
+      });
+    });
 
-    observable.on(EVENT.auth.sign, () => {
-      reload()
+    this.on('unmount', () => {
+      observable.off(EVENT.reload.root);
     });
 
     const reload = () => {

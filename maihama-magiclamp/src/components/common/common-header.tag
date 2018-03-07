@@ -86,22 +86,12 @@
           sessionStorage.removeItem(SESSION.auth.key);
           sessionStorage.removeItem(SESSION.member.info);
           observable.trigger(EVENT.route.change, "/");
-          observable.trigger(EVENT.auth.sign);
+          observable.trigger(EVENT.reload.header);
+          observable.trigger(EVENT.reload.root);
         });
     };
 
-    observable.on(EVENT.auth.check, () => {
-      request.get(this.api.member.info,
-        (response) => {
-          sessionStorage[SESSION.member.info] = response.text;
-          observable.trigger(EVENT.auth.sign);
-        },
-        (errors) => {
-          observable.trigger(EVENT.auth.sign);
-        });
-    });
-
-    observable.on(EVENT.auth.sign, () => {
+    observable.on(EVENT.reload.header, () => {
       reload();
     });
 

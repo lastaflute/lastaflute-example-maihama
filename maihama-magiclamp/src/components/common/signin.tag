@@ -91,7 +91,21 @@
             account.value = "";
             password.value = "";
             sessionStorage.setItem(SESSION.auth.key, response.body);
-            observable.trigger(EVENT.auth.check);
+            getMemberInfo();
+          });
+      };
+
+
+      const getMemberInfo = () => {
+        request.get(this.api.member.info,
+          (response) => {
+            sessionStorage[SESSION.member.info] = response.text;
+            observable.trigger(EVENT.reload.header);
+            observable.trigger(EVENT.reload.root);
+          },
+          (errors) => {
+            observable.trigger(EVENT.reload.header);
+            observable.trigger(EVENT.reload.root);
           });
       };
     </script>
