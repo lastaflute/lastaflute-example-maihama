@@ -1,39 +1,41 @@
 <profile>
-  <div class="contents">
-    <h2 class="content-title">Profile</h2>
-    <article class="profile-contents-box">
-      <section class="profile-info-box">
-        <h3 class="content-title-second">{profile.memberName}</h3>
-        <ul class="profile-info-detail">
-          <li>MemberStatus : {profile.memberStatusName}</li>
-          <li>PointCount : {profile.servicePointCount}</li>
-          <li>ServiceRank : {profile.serviceRankName}</li>
-        </ul>
-      </section>
-      <section class="profile-product-box">
-        <h3 class="content-title-second">PurchaseHistory</h3>
-        <table class="list-tbl">
-          <thead>
-            <tr>
-              <th>ProductName</th>
-              <th>Price</th>
-              <th>PurchaseDateTime</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr each={profile.purchaseList}>
-              <td>{productName}</td>
-              <td>¥{helper.formatMoneyComma(regularPrice)}</td>
-              <td>{helper.formatDatetime(purchaseDateTime)}</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </article>
-  </div>
+  <h2 class="content-title">Profile</h2>
+  <section class="content-box">
+    <h3 class="content-title-second">{profile.memberName}</h3>
+    <section class="form">
+      <dl>
+        <dt>MemberStatus</dt>
+        <dd>{profile.memberStatusName}</dd>
+        <dt>PointCount</dt>
+        <dd>{profile.servicePointCount}</dd>
+        <dt>ServiceRank</dt>
+        <dd>{profile.serviceRankName}</dd>
+      </dl>
+    </section>
+  </section>
+  <section class="content-box">
+    <h3 class="content-title-second">PurchaseHistory</h3>
+    <table class="list-tbl">
+      <thead>
+        <tr>
+          <th>ProductName</th>
+          <th>Price</th>
+          <th>PurchaseDateTime</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr each={profile.purchaseList}>
+          <td>{productName}</td>
+          <td>¥{helper.formatMoneyComma(regularPrice)}</td>
+          <td>{helper.formatDatetime(purchaseDateTime)}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
   <script>
     var self = this;
+    this.mixin('profile')
 
     this.profile = {};
 
@@ -48,7 +50,7 @@
     //                                                                             Execute
     //                                                                             =======
     this.detailLoad = (product) => {
-      request.get(RC.API.profile,
+      request.get(this.api.profile,
         (response) => {
           self.detailLoaded(JSON.parse(response.text));
         },

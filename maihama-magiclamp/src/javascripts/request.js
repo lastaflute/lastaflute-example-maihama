@@ -2,24 +2,19 @@ import Validator from './validator';
 
 export default class Request {
 
-  constructor() {
-    this.apiPrefix = '/api';
-    this.validator = new Validator();
-  }
-
   post(url, queryParams, onSuccess, onError, withoutAuthorization) {
-    let _sa = sa.post(this.apiPrefix + url).send(queryParams);
+    let _sa = sa.post(apiPrefix + url).send(queryParams);
     this.request(_sa, onSuccess, onError, withoutAuthorization);
   }
 
   get(url, onSuccess, onError, withoutAuthorization) {
-    let _sa = sa.get(this.apiPrefix + url);
+    let _sa = sa.get(apiPrefix + url);
     this.request(_sa, onSuccess, onError, withoutAuthorization);
   }
 
   request(_sa, onSuccess, onError, withoutAuthorization) {
     if (!withoutAuthorization) {
-      const authkey = sessionStorage.getItem(RC.SESSION.auth.key);
+      const authkey = sessionStorage.getItem(SESSION.auth.key);
       _sa = _sa.set('x-authorization', authkey);
     }
     _sa.end((error, response) => {
@@ -30,25 +25,28 @@ export default class Request {
           return error.code === 'LOGIN_REQUIRED';
         });
         if (hasLoginRequired) {
-          observable.trigger(RC.EVENT.route.change, '/');
-          observable.trigger(RC.EVENT.auth.sign, false);
+          observable.trigger(EVENT.route.change, '/');
+          observable.trigger(EVENT.reload.header);
+          observable.trigger(EVENT.reload.root);
         } else {
-          onError(this.toValidationErros(response.body.errors));
+          onError(toValidationErros(response.body.errors));
         }
       } else if (response.clientError && response.body.cause === 'VALIDATION_ERROR') {
-        onError(this.toValidationErros(response.body.errors));
+        onError(toValidationErros(response.body.errors));
       } else {
         onError({ _global: ['Please retry!'] });
       }
     });
   }
+}
 
-  toValidationErros(errors) {
-    const validationErrors = {};
-    errors.forEach((element) => {
-      validationErrors[element.field] = this.validator.generateMessage(element);
-    });
-    return validationErrors;
-  }
+const apiPrefix = '/api';
+const validator = new Validator();
 
+function toValidationErros(errors) {
+  const validationErrors = {};
+  errors.forEach((element) => {
+    validationErrors[element.field] = validator.generateMessage(element);
+  });
+  return validationErrors;
 }

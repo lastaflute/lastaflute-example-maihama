@@ -1,9 +1,9 @@
 <member-add>
-  <div class="contents">
-    <h2 class="content-title">Add Member</h2>
-    <section class="product-detail-box">
-      <span class="errors" if={validationErrors._global}> {validationErrors._global}</span>
-      <dl class="product-detail-list">
+  <h2 class="content-title">Add Member</h2>
+  <section class="content-box">
+    <span class="errors" if={validationErrors._global}> {validationErrors._global}</span>
+    <section class="form">
+      <dl>
         <dt>Member Name</dt>
         <dd>
           <input type="text" ref="memberName" required />
@@ -29,14 +29,17 @@
         </dd>
       </dl>
       <button class="btn btn-success" onclick={onRegister}>register</button>
-      <div class="listback">
-        <a href="/member/list/back">back to list</a>
-      </div>
     </section>
-  </div>
+  </section>
+  <section class="content-box">
+    <div class="listback">
+      <a href="/member/list/back">back to list</a>
+    </div>
+  </section>
 
   <script>
     var self = this;
+    this.mixin('member');
 
     this.validationErrors = {};
     this.memberDetail = {};
@@ -58,10 +61,10 @@
         }
       }
 
-      request.post(RC.API.member.add, this.getQueryParams(),
+      request.post(this.api.member.add, this.getQueryParams(),
         () => {
           console.log('success add');
-          observable.trigger(RC.EVENT.route.change, '/member/list');
+          observable.trigger(EVENT.route.change, '/member/list');
         },
         (errors) => {
           self.validationErrors = errors;
@@ -73,7 +76,7 @@
     //                                                                               Logic
     //                                                                               =====
     this.selectMemberStatus = () => {
-      request.get(RC.API.member.status,
+      request.get(this.api.member.status,
         (response) => {
           self.memberStatusList = JSON.parse(response.text);
           self.update();

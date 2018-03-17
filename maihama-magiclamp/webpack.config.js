@@ -5,7 +5,6 @@ module.exports = {
   devServer: {
     port: 3000,
     inline: true,
-    // hot: true,
     open: true,
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, ''),

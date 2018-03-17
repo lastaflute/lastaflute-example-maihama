@@ -47,17 +47,17 @@ export default class Helper {
   formatDatetime(datetimeString) {
     const datetime = new Date(datetimeString);
     return datetime.getFullYear() +
-      '/' + this.pad(datetime.getMonth() + 1) +
-      '/' + this.pad(datetime.getDate()) +
-      ' ' + this.pad(datetime.getHours()) +
-      ':' + this.pad(datetime.getMinutes()) +
-      ':' + this.pad(datetime.getSeconds());
+      '/' + pad(datetime.getMonth() + 1) +
+      '/' + pad(datetime.getDate()) +
+      ' ' + pad(datetime.getHours()) +
+      ':' + pad(datetime.getMinutes()) +
+      ':' + pad(datetime.getSeconds());
   }
+}
 
-  pad(number) {
-    if (number < 10) {
-      return '0' + number;
-    }
-    return number;
+function pad(number) {
+  if (number < 10) {
+    return '0' + number;
   }
+  return number;
 }

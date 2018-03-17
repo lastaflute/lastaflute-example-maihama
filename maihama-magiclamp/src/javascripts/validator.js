@@ -2,29 +2,6 @@ import messages from './messages.json';
 
 export default class Validator {
 
-  constructor() {
-    this.validators = {
-      required: (val) => {
-        return val.trim() === '';
-      },
-      max: (val, expected) => {
-        return parseInt(val.trim(), 10) > expected;
-      },
-      min: (val, expected) => {
-        return parseInt(val.trim(), 10) < expected;
-      },
-      maxlength: (val, expected) => {
-        return val.length > expected;
-      },
-      minlength: (val, expected) => {
-        return val.length < expected;
-      },
-      pattern: (val, expected) => {
-        return !(new RegExp(expected)).test(val.trim());
-      },
-    };
-  }
-
   validate(refs, ...targetRefs) {
     const validationErrors = {};
     for (let name in refs) {
@@ -37,22 +14,22 @@ export default class Validator {
       }
 
       const validationError = [];
-      if (ref.attributes.required && this.validators.required(ref.value)) {
+      if (ref.attributes.required && validators.required(ref.value)) {
         validationError.push({ code: 'REQUIRED' });
       } else {
-        if (ref.attributes.max && this.validators.max(ref.value, ref.attributes.max.nodeValue)) {
+        if (ref.attributes.max && validators.max(ref.value, ref.attributes.max.nodeValue)) {
           validationError.push({ code: 'MAX', data: { max: '${ref.attributes.max.nodeValue}' } });
         }
-        if (ref.attributes.min && this.validators.min(ref.value, ref.attributes.min.nodeValue)) {
+        if (ref.attributes.min && validators.min(ref.value, ref.attributes.min.nodeValue)) {
           validationError.push({ code: 'MIN', data: { min: '${ref.attributes.min.nodeValue}' } });
         }
-        if (ref.attributes.maxlength && this.validators.maxlength(ref.value, ref.attributes.maxlength.nodeValue)) {
+        if (ref.attributes.maxlength && validators.maxlength(ref.value, ref.attributes.maxlength.nodeValue)) {
           validationError.push({ code: 'LENGTH', data: { min: '0', max: '${ref.attributes.maxlength.nodeValue}' } });
         }
-        if (ref.attributes.minlength && this.validators.minlength(ref.value, ref.attributes.minlength.nodeValue)) {
+        if (ref.attributes.minlength && validators.minlength(ref.value, ref.attributes.minlength.nodeValue)) {
           validationError.push({ code: 'LENGTH', data: { min: '${ref.attributes.minlength.nodeValue}', max: 'no-limit' } });
         }
-        if (ref.attributes.pattern && this.validators.pattern(ref.value, ref.attributes.pattern.nodeValue)) {
+        if (ref.attributes.pattern && validators.pattern(ref.value, ref.attributes.pattern.nodeValue)) {
           validationError.push({ code: 'PATTERN' });
         }
       }
@@ -80,3 +57,24 @@ export default class Validator {
     return message;
   }
 }
+
+const validators = {
+  required: (val) => {
+    return val.trim() === '';
+  },
+  max: (val, expected) => {
+    return parseInt(val.trim(), 10) > expected;
+  },
+  min: (val, expected) => {
+    return parseInt(val.trim(), 10) < expected;
+  },
+  maxlength: (val, expected) => {
+    return val.length > expected;
+  },
+  minlength: (val, expected) => {
+    return val.length < expected;
+  },
+  pattern: (val, expected) => {
+    return !(new RegExp(expected)).test(val.trim());
+  },
+};

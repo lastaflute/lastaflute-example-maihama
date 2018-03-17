@@ -285,46 +285,36 @@ footer:after {
 /* -------------------------------------------------
                                              Form
 ------------------------------------------------- */
-form.form{
-	
+.form dl {
+  margin: 0.5rem 0;
 }
-* + form.form {
-	margin-top: 40px;
+
+.form dt {
+  float: left;
+  clear: left;
+  color: #777;
+  padding: 0.3rem 0;
 }
-form.form dl {
-	display: block;
+
+.form dd {
+  margin-left: 12rem;
+  padding: 0.3rem 0;
 }
-form.form dl + dl {
-	margin-top: 20px;
-}
-form.form dt label {
-	color: #777;
-}
-form.form dd {
-	margin-top: 6px;
-}
-form.form input,
-form.form textarea {
+
+.form input,
+.form textarea {
 	box-sizing: border-box;
 	border: 1px #aaa solid;
-	padding: 8px 10px;
-	width: 100%;
+	padding: 0.4rem 0.5rem;
 	font-size: 85%;
 }
 
-form.form input[type="radio"],
-form.form input[type="checkbox"],
-form.form input[type="submit"],
-form.form input[type="button"] {
-	width: auto;
-}
-
-form.form input:focus,
-form.form textarea:focus {
+.form input:focus,
+.form textarea:focus {
 	outline: 1px #882255 solid;
 }
 
-form.form .btnBox {
+.form .btnBox {
 	margin-top: 10px;
 	text-align: right;
 }

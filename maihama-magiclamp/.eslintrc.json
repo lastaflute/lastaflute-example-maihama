@@ -41,7 +41,8 @@
     "route": true,
     "sa": true,
     "observable": true,
-    "RC": true,
+    "EVENT": true,
+    "SESSION": true,
     "__dirname": true
   }
 }

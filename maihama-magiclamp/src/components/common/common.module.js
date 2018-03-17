@@ -17,10 +17,24 @@ route('/signup', () => {
   riot.mount('content', 'signup');
 });
 
+riot.mixin('common', {
+  api: {
+    mypage: '/mypage',
+    auth: {
+      signin: '/signin',
+      signup: '/signup',
+      signout: '/signout'
+    },
+    member: {
+      info: '/member/info'
+    }
+  }
+});
+
 route.base('/');
 route.start(true);
 
-observable.on(RC.EVENT.route.change, (href) => {
+observable.on(EVENT.route.change, (href) => {
   history.pushState(null, null, href);
   route(href);
 });

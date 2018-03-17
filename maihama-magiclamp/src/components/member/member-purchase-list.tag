@@ -1,8 +1,6 @@
 <member-purchase-list>
-  <div class="wrap">
-    <h2 class="content-title">List of Purchase</h2>
-  </div>
-  <section class="member-result-box">
+  <h2 class="content-title">List of Purchase</h2>
+  <section class="content-box">
     <table class="list-tbl">
       <thead>
         <tr>
@@ -27,16 +25,13 @@
         </tr>
       </tbody>
     </table>
-    <section class="member-purchase-list-paging-box">
-      <pagination></pagination>
-    </section>
-    <div class="listback">
-      <a href="/member/list/back">back to list</a>
-    </div>
+    <pagination></pagination>
+    <a href="/member/list/back">back to list</a>
   </section>
 
   <script>
     var self = this;
+    this.mixin('member');
 
     this.purchaseList = [];
     this.validationErrors = {};
@@ -60,12 +55,12 @@
 
       self.validationErrors = {};
 
-      request.get(`${RC.API.member.purchase + memberId}/${page}`,
+      request.get(`${this.api.member.purchase + memberId}/${page}`,
         (response) => {
           var data = JSON.parse(response.text);
           self.purchaseList = data.rows;
           self.update();
-          observable.trigger(RC.EVENT.pagenation.set, data);
+          observable.trigger(EVENT.pagenation.set, data);
         },
         (errors) => {
           self.validationErrors = errors;

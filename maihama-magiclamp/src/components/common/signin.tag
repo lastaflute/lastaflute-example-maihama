@@ -4,15 +4,26 @@
     <div class="signin-form">
       <form name="signin_signinAction_index_Form" onsubmit={doSignin}>
         <dl>
-          <dt><label>Account</label></dt>
-          <dd><input type="text" ref="account" value="" placeholder="input Pixy"></dd>
+          <dt>
+            <label>Account</label>
+          </dt>
+          <dd>
+            <input type="text" ref="account" value="" placeholder="input Pixy">
+          </dd>
         </dl>
         <dl>
-          <dt><label>Password</label></dt>
-          <dd><input type="password" ref="password" value="" placeholder="input sea"></dd>
+          <dt>
+            <label>Password</label>
+          </dt>
+          <dd>
+            <input type="password" ref="password" value="" placeholder="input sea">
+          </dd>
         </dl>
         <dl>
-          <dd><label><input type="checkbox" ref="autoLogin" value="on"> Remember Account</label></dd>
+          <dd>
+            <label>
+              <input type="checkbox" ref="autoLogin" value="on"> Remember Account</label>
+          </dd>
         </dl>
         <div>
           <button type="submit" class="btn btn-success">Sign in</button>
@@ -65,11 +76,13 @@
     </style>
 
     <script>
+      this.mixin('common');
+
       this.doSignin = (e) => {
         e.preventDefault();
         var account = this.refs.account;
         var password = this.refs.password;
-        request.post(RC.API.auth.signin,
+        request.post(this.api.auth.signin,
           {
             account: account.value,
             password: password.value
@@ -77,8 +90,22 @@
           (response) => {
             account.value = "";
             password.value = "";
-            sessionStorage.setItem(RC.SESSION.auth.key, response.body);
-            observable.trigger(RC.EVENT.auth.check);
+            sessionStorage.setItem(SESSION.auth.key, response.body);
+            getMemberInfo();
+          });
+      };
+
+
+      const getMemberInfo = () => {
+        request.get(this.api.member.info,
+          (response) => {
+            sessionStorage[SESSION.member.info] = response.text;
+            observable.trigger(EVENT.reload.header);
+            observable.trigger(EVENT.reload.root);
+          },
+          (errors) => {
+            observable.trigger(EVENT.reload.header);
+            observable.trigger(EVENT.reload.root);
           });
       };
     </script>

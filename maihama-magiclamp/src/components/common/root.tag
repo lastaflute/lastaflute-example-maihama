@@ -1,8 +1,8 @@
 <root>
-  <section if={!isLogin}>
+  <section if={authChecked && !isLogin}>
     <signin></signin>
   </section>
-  <section if={isLogin}>
+  <section if={authChecked && isLogin}>
     <div class="wrap">
       <article class="main-col">
         <h2 class="content-title">My Page</h2>
@@ -53,19 +53,49 @@
     </div>
   </section>
 
+  <style>
+    .mypage-product-box {
+      width: 960px;
+      margin: 32px auto 0;
+    }
+
+    .mypage-product-box table {
+      margin-bottom: 12px;
+    }
+
+    .mypage-product-box table th {
+      text-align: center;
+    }
+
+    .mypage-following-box {
+      width: 960px;
+      margin: 32px auto 0;
+    }
+  </style>
+
   <script>
     var self = this;
+    this.mixin('common')
 
     this.isLogin = false;
+    this.authChecked = false;
 
     this.on('mount', () => {
-      observable.trigger(RC.EVENT.auth.check);
+      reload()
+      observable.on(EVENT.reload.root, () => {
+        reload()
+      });
     });
 
-    observable.on(RC.EVENT.auth.sign, (state) => {
-      self.isLogin = state;
-      if (self.isLogin) {
-        request.get(RC.API.mypage,
+    this.on('unmount', () => {
+      observable.off(EVENT.reload.root);
+    });
+
+    const reload = () => {
+      this.authChecked = true
+      this.isLogin = sessionStorage[SESSION.member.info];
+      if (this.isLogin) {
+        request.get(this.api.mypage,
           (response) => {
             var obj = JSON.parse(response.text);
             self.recentProducts = obj.recentProducts;
@@ -73,8 +103,8 @@
             self.update();
           });
       } else {
-        self.update();
+        this.update();
       }
-    });
+    }
   </script>
 </root>
