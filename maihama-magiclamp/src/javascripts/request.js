@@ -1,4 +1,5 @@
 import Validator from './validator';
+import sa from 'superagent';
 
 export default class Request {
 
