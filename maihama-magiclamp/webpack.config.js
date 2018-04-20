@@ -61,11 +61,5 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.tag']
   },
-  devtool: 'source-map',
-  plugins: [
-    new webpack.ProvidePlugin({
-      riot: 'riot',
-      sa: 'superagent'
-    })
-  ]
+  devtool: 'source-map'
 };
