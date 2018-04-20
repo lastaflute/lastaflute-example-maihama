@@ -21,13 +21,13 @@ import org.dbflute.utflute.lastaflute.mock.TestingJsonData;
 import org.docksidestage.app.job.challenge.BonvoJob;
 import org.docksidestage.app.job.challenge.PiariJob;
 import org.docksidestage.app.web.job.JobExecuteResult.ExecResultTypePart;
-import org.docksidestage.unit.UnitOrleansWebTestCase;
+import org.docksidestage.unit.UnitOrleansBasicTestCase;
 import org.lastaflute.web.response.JsonResponse;
 
 /**
  * @author jflute
  */
-public class JobExecuteActionTest extends UnitOrleansWebTestCase {
+public class JobExecuteActionTest extends UnitOrleansBasicTestCase {
 
     // ===================================================================================
     //                                                                            Settings

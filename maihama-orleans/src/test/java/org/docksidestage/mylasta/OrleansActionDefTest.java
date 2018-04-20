@@ -22,12 +22,12 @@ import org.dbflute.utflute.lastaflute.police.LastaPresentsSomethingPolice;
 import org.dbflute.utflute.lastaflute.police.NonActionExtendsActionPolice;
 import org.dbflute.utflute.lastaflute.police.NonWebHasWebReferencePolice;
 import org.dbflute.utflute.lastaflute.police.WebPackageNinjaReferencePolice;
-import org.docksidestage.unit.UnitOrleansWebTestCase;
+import org.docksidestage.unit.UnitOrleansBasicTestCase;
 
 /**
  * @author jflute
  */
-public class OrleansActionDefTest extends UnitOrleansWebTestCase {
+public class OrleansActionDefTest extends UnitOrleansBasicTestCase {
 
     public void test_component() throws Exception {
         policeStoryOfJavaClassChase(new ActionComponentPolice(tp -> getComponent(tp)));

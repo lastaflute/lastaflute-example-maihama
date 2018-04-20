@@ -15,12 +15,12 @@
  */
 package org.docksidestage.mylasta;
 
-import org.docksidestage.unit.UnitOrleansWebTestCase;
+import org.docksidestage.unit.UnitOrleansBasicTestCase;
 
 /**
  * @author jflute
  */
-public class OrleansLastaDocTest extends UnitOrleansWebTestCase {
+public class OrleansLastaDocTest extends UnitOrleansBasicTestCase {
 
     public void test_document() throws Exception {
         saveLastaDocMeta();

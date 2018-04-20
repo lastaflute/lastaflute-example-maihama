@@ -15,7 +15,7 @@
  */
 package org.docksidestage.unit;
 
-import org.dbflute.utflute.lastadi.ContainerTestCase;
+import org.dbflute.utflute.lastaflute.WebContainerTestCase;
 import org.lastaflute.job.LaJob;
 import org.lastaflute.job.mock.MockJobRuntime;
 
@@ -40,7 +40,7 @@ import org.lastaflute.job.mock.MockJobRuntime;
  * </pre>
  * @author jflute
  */
-public abstract class UnitOrleansJobTestCase extends ContainerTestCase {
+public abstract class UnitOrleansJobTestCase extends WebContainerTestCase {
 
     /**
      * Prepare mock of job runtime.
