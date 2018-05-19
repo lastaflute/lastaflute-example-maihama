@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <title>dockside lastadoc</title>
     <style type="text/css">
+/* -------------------------------------------------
+                                             Core
+------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +18,9 @@ body {
     background-color: #F9FCEB;
 }
 
-/* heading */
+/* -------------------------------------------------
+                                     Whole Header
+------------------------------------------------- */
 h1 {
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -26,9 +31,9 @@ h1 {
     letter-spacing: 0.2em;
 }
 h2 {
-    font-size: 2.0em;
+    font-size: 2.5em;
     margin-top: 2.5em;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 3px 0;
     background-color: #9e4873;
     color: #F9FCEB;
@@ -52,7 +57,9 @@ h4 {
     color: #333333;
 }
 
-/* total info */
+/* -------------------------------------------------
+                                     Whole Header
+------------------------------------------------- */
 .navilinkarea {
     text-align: right;
 }
@@ -68,13 +75,17 @@ h4 {
     margin-top: 0.6em;
     font-size: 100%;
 }
+
+/* -------------------------------------------------
+                              LastaFlute Contents
+------------------------------------------------- */
 .doctitle {
     font-size: 1.2em;
-    color: #889977;
+    color: #AA7777;
 }
 .docsubtitle {
     font-size: 1.0em;
-    color: #889977;
+    color: #AA7777;
 }
 .docmainvalue {
     font-size: 1.3em;
@@ -91,7 +102,6 @@ p.docsubitem {
     color: #666666;
 }
 
-/* table */
 table {
     border-collapse:collapse;
     margin: 0.3em 0 1em 0;
@@ -115,7 +125,7 @@ td {
 .tablecomment {
     font-size: 0.8em;
     color: #3F7E5E;
-    padding:0.5em 0 0.5em 1em;
+    padding:0.5em 0 0.1em 1em;
     margin-bottom: 1em;
 }
 .fieldcomment {
@@ -157,6 +167,16 @@ table.child, table.child td, table.child th {
     padding-right: 4px;
 }
 
+/* -------------------------------------------------
+                                        MailFlute
+------------------------------------------------- */
+.mailtitle {
+    font-size: 1.5em;
+}
+
+/* -------------------------------------------------
+                                       Supplement
+------------------------------------------------- */
 /* page top */
 .pagetop {
     text-align: right
@@ -210,6 +230,20 @@ to dockside
     <tbody id="action-list-body">
     <tr>
         <td class="rowcellnum">1</td>
+        <td class="rowcell"><a href="#.root.::index">/root/</a></td>
+        <td class="rowcell">@author&nbsp;jflute</td>
+        <td class="rowcell"><span title="org.docksidestage.app.web.RootAction">RootAction</span>#index()</td>
+        <td class="rowcell">
+        </td>
+        <td class="rowcell">
+            <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
+        </td>
+        <td class="rowcellnum">0</td>
+        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">3</td>
+    </tr>
+    <tr>
+        <td class="rowcellnum">2</td>
         <td class="rowcell"><a href="#.member.add.::index">/member/add/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberAddAction">MemberAddAction</span>#index()</td>
@@ -223,7 +257,7 @@ to dockside
         <td class="rowcellnum">6</td>
     </tr>
     <tr>
-        <td class="rowcellnum">2</td>
+        <td class="rowcellnum">3</td>
         <td class="rowcell"><a href="#.member.add.register::register">/member/add/register</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberAddAction">MemberAddAction</span>#register()</td>
@@ -238,7 +272,7 @@ to dockside
         <td class="rowcellnum">10</td>
     </tr>
     <tr>
-        <td class="rowcellnum">3</td>
+        <td class="rowcellnum">4</td>
         <td class="rowcell"><a href="#.member.edit._b_memberId_e_::index">/member/edit/{memberId}</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberEditAction">MemberEditAction</span>#index()</td>
@@ -252,7 +286,7 @@ to dockside
         <td class="rowcellnum">7</td>
     </tr>
     <tr>
-        <td class="rowcellnum">4</td>
+        <td class="rowcellnum">5</td>
         <td class="rowcell"><a href="#.member.edit.update::update">/member/edit/update</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberEditAction">MemberEditAction</span>#update()</td>
@@ -267,7 +301,7 @@ to dockside
         <td class="rowcellnum">10</td>
     </tr>
     <tr>
-        <td class="rowcellnum">5</td>
+        <td class="rowcellnum">6</td>
         <td class="rowcell"><a href="#.member.edit.withdrawal::withdrawal">/member/edit/withdrawal</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberEditAction">MemberEditAction</span>#withdrawal()</td>
@@ -282,7 +316,7 @@ to dockside
         <td class="rowcellnum">7</td>
     </tr>
     <tr>
-        <td class="rowcellnum">6</td>
+        <td class="rowcellnum">7</td>
         <td class="rowcell"><a href="#.member.list._b_pageNumber_e_::index">/member/list/{pageNumber}</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.member.MemberListAction">MemberListAction</span>#index()</td>
@@ -297,7 +331,7 @@ to dockside
         <td class="rowcellnum">13</td>
     </tr>
     <tr>
-        <td class="rowcellnum">7</td>
+        <td class="rowcellnum">8</td>
         <td class="rowcell"><a href="#.member.purchase.list._b_memberId_e_._b_pageNumber_e_::index">/member/purchase/list/{memberId}/{pageNumber}</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.member.purchase.MemberPurchaseListAction">MemberPurchaseListAction</span>#index()</td>
@@ -311,7 +345,7 @@ to dockside
         <td class="rowcellnum">3</td>
     </tr>
     <tr>
-        <td class="rowcellnum">8</td>
+        <td class="rowcellnum">9</td>
         <td class="rowcell"><a href="#.mypage.::index">/mypage/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.mypage.MypageAction">MypageAction</span>#index()</td>
@@ -325,7 +359,7 @@ to dockside
         <td class="rowcellnum">8</td>
     </tr>
     <tr>
-        <td class="rowcellnum">9</td>
+        <td class="rowcellnum">10</td>
         <td class="rowcell"><a href="#.product.detail._b_productId_e_::index">/product/detail/{productId}</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.product.ProductDetailAction">ProductDetailAction</span>#index()</td>
@@ -339,7 +373,7 @@ to dockside
         <td class="rowcellnum">7</td>
     </tr>
     <tr>
-        <td class="rowcellnum">10</td>
+        <td class="rowcellnum">11</td>
         <td class="rowcell"><a href="#.product.list._b_pageNumber_e_::index">/product/list/{pageNumber}</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.product.ProductListAction">ProductListAction</span>#index()</td>
@@ -354,7 +388,7 @@ to dockside
         <td class="rowcellnum">13</td>
     </tr>
     <tr>
-        <td class="rowcellnum">11</td>
+        <td class="rowcellnum">12</td>
         <td class="rowcell"><a href="#.profile.::index">/profile/</a></td>
         <td class="rowcell">@author&nbsp;jflute</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.profile.ProfileAction">ProfileAction</span>#index()</td>
@@ -368,7 +402,7 @@ to dockside
         <td class="rowcellnum">8</td>
     </tr>
     <tr>
-        <td class="rowcellnum">12</td>
+        <td class="rowcellnum">13</td>
         <td class="rowcell"><a href="#.purchase.list._b_pageNumber_e_::index">/purchase/list/{pageNumber}</a></td>
         <td class="rowcell">Action&nbsp;class&nbsp;for&nbsp;purchase&nbsp;list&nbsp;page.</td>
         <td class="rowcell"><span title="org.docksidestage.app.web.purchase.PurchaseListAction">PurchaseListAction</span>#index()</td>
@@ -381,20 +415,6 @@ to dockside
         <td class="rowcellnum">2</td>
         <td class="rowcellnum">54</td>
         <td class="rowcellnum">12</td>
-    </tr>
-    <tr>
-        <td class="rowcellnum">13</td>
-        <td class="rowcell"><a href="#.root.::index">/root/</a></td>
-        <td class="rowcell">@author&nbsp;jflute</td>
-        <td class="rowcell"><span title="org.docksidestage.app.web.RootAction">RootAction</span>#index()</td>
-        <td class="rowcell">
-        </td>
-        <td class="rowcell">
-            <span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span>
-        </td>
-        <td class="rowcellnum">0</td>
-        <td class="rowcellnum">7</td>
-        <td class="rowcellnum">3</td>
     </tr>
     <tr>
         <td class="rowcellnum">14</td>
@@ -572,6 +592,21 @@ to dockside
     </tbody>
 </table>
 
+<h3 id=".root.::index">
+/root/
+</h3>
+<p>
+<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.RootAction#index()</span>
+</p>
+<p class="docsubitem">
+<span class="docsubtitle">annotations:</span>
+<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
+<span class="docannotations docsubvalue">&#64;Execute</span>
+</p>
+<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
+<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
+<p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">redirect(MypageAction.class)</span></p>
+
 <h3 id=".member.add.::index">
 /member/add/
 </h3>
@@ -584,7 +619,6 @@ to dockside
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Member_MemberAddHtml)</span></p>
 
 <h3 id=".member.add.register::register">
@@ -661,7 +695,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Member_MemberAddHtml),asHtml(path_Error_ShowErrorsHtml),redirect(MemberListAction.class)</span></p>
 
 <h3 id=".member.edit._b_memberId_e_::index">
@@ -700,7 +733,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Member_MemberEditHtml)</span></p>
 
 <h3 id=".member.edit.update::update">
@@ -846,7 +878,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Member_MemberEditHtml),asHtml(path_Error_ShowErrorsHtml),redirectById(MemberEditAction.class, member.getMemberId()</span></p>
 
 <h3 id=".member.edit.withdrawal::withdrawal">
@@ -992,7 +1023,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Member_MemberEditHtml),redirect(MemberListAction.class)</span></p>
 
 <h3 id=".member.list._b_pageNumber_e_::index">
@@ -1115,7 +1145,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Member_MemberListHtml),mappingToBean(member),asHtml(path_Member_MemberListHtml)</span></p>
 
 <h3 id=".member.purchase.list._b_memberId_e_._b_pageNumber_e_::index">
@@ -1165,7 +1194,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 
 <h3 id=".mypage.::index">
 /mypage/
@@ -1179,7 +1207,6 @@ to dockside
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Mypage_MypageHtml)</span></p>
 
 <h3 id=".product.detail._b_productId_e_::index">
@@ -1219,7 +1246,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Product_ProductDetailHtml)</span></p>
 
 <h3 id=".product.list._b_pageNumber_e_::index">
@@ -1308,7 +1334,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Product_ProductListHtml),mappingToBean(product),asHtml(path_Product_ProductListHtml)</span></p>
 
 <h3 id=".profile.::index">
@@ -1323,7 +1348,6 @@ to dockside
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute<br>@author&nbsp;deco</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Profile_ProfileHtml)</span></p>
 
 <h3 id=".purchase.list._b_pageNumber_e_::index">
@@ -1365,24 +1389,7 @@ to dockside
 <p class="tablecomment" title="@author&nbsp;toshiaki.arai">@author&nbsp;toshiaki.arai</p>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">mappingToBean(purchase),asHtml(path_Purchase_PurchaseListHtml)</span></p>
-
-<h3 id=".root.::index">
-/root/
-</h3>
-<p>
-<span class="doctitle">Execute Method:</span> <span class="docmainvalue">org.docksidestage.app.web.RootAction#index()</span>
-</p>
-<p class="docsubitem">
-<span class="docsubtitle">annotations:</span>
-<span class="docannotations docsubvalue">&#64;AllowAnyoneAccess</span>
-<span class="docannotations docsubvalue">&#64;Execute</span>
-</p>
-<p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
-<span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
-<p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">redirect(MypageAction.class)</span></p>
 
 <h3 id=".signin.::index">
 /signin/
@@ -1396,7 +1403,6 @@ to dockside
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">redirect(MypageAction.class),asHtml(path_Signin_SigninHtml)</span></p>
 
 <h3 id=".signin.signin::signin">
@@ -1460,7 +1466,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Signin_SigninHtml),loginAssist.loginRedirect(createCredential(form),redirect(MypageAction.class)</span></p>
 
 <h3 id=".signin.reminder.::index">
@@ -1475,7 +1480,6 @@ to dockside
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;masaki.kamachi<br>@author&nbsp;jflute</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Signin_SigninReminderHtml)</span></p>
 
 <h3 id=".signout.::index">
@@ -1490,7 +1494,6 @@ to dockside
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;toshiaki.arai<br>@author&nbsp;jflute</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">redirect(SigninAction.class)</span></p>
 
 <h3 id=".signup.::index">
@@ -1506,7 +1509,6 @@ to dockside
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;annie_pocket<br>@author&nbsp;jflute</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Signup_SignupHtml)</span></p>
 
 <h3 id=".signup.signup::signup">
@@ -1596,7 +1598,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Signup_SignupHtml),redirect(MypageAction.class)</span></p>
 
 <h3 id=".signup.register._b_account_e_._b_token_e_::register">
@@ -1647,7 +1648,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">redirect(SigninAction.class)</span></p>
 
 <h3 id=".startup.::index">
@@ -1663,7 +1663,6 @@ to dockside
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;jflute</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Startup_StartupHtml)</span></p>
 
 <h3 id=".startup.create::create">
@@ -1729,7 +1728,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asHtml(path_Startup_StartupHtml),asHtml(path_Startup_StartupHtml)</span></p>
 
 <h3 id=".withdrawal.::index">
@@ -1744,7 +1742,6 @@ to dockside
 </p>
 <p class="tablecomment" style="white-space:pre-wrap;">@author&nbsp;annie_pocket<br>@author&nbsp;jflute</p>
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asEntryHtml()</span></p>
 
 <h3 id=".withdrawal.confirm::confirm">
@@ -1796,7 +1793,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asEntryHtml(),asConfirmHtml()</span></p>
 
 <h3 id=".withdrawal.done::done">
@@ -1848,7 +1844,6 @@ to dockside
 </table>
 
 <span class="doctitle">Return as:</span> <span class="docsubvalue"><span title="org.lastaflute.web.response.HtmlResponse">HtmlResponse</span></span>
-<p class="tablecomment" title=""></p>
 <p class="docsubitem"><span class="docsubtitle">implementations:</span> <span class="docsubvalue">asEntryHtml(),redirect(SignoutAction.class)</span></p>
 
 
@@ -1859,8 +1854,8 @@ to dockside
     <tr>
         <th>No.</th>
         <th>file</th>
-        <th>class</th>
         <th>title</th>
+        <th>class</th>
         <th>parameter count</th>
     </tr>
     </thead>
@@ -1868,8 +1863,8 @@ to dockside
     <tr>
         <td class="rowcellnum">1</td>
         <td class="rowcell"><a href="#member/welcome_member.dfmail">member/welcome_member.dfmail</a></td>
-        <td class="rowcell"><span title="org.docksidestage.mylasta.mail.WelcomeMemberPostcard">WelcomeMemberPostcard</span></td>
         <td class="rowcell">New&nbsp;Member's&nbsp;Registration</td>
+        <td class="rowcell"><span title="org.docksidestage.mylasta.mail.WelcomeMemberPostcard">WelcomeMemberPostcard</span></td>
         <td class="rowcellnum">4</td>
     </tr>
     </tbody>
@@ -1878,15 +1873,15 @@ to dockside
 <h3 id="member/welcome_member.dfmail">
 member/welcome_member.dfmail
 </h3>
-<h4>
-New&nbsp;Member's&nbsp;Registration
-</h4>
 <p>
-<span class="doctitle">Class:</span> <span class="docmainvalue">org.docksidestage.mylasta.mail.WelcomeMemberPostcard</span>
+	<span class="doctitle">Title:</span> <span class="mailtitle">New&nbsp;Member's&nbsp;Registration</span>
+</p>
+<p>
+	<span class="doctitle">Class:</span> <span class="docmainvalue">org.docksidestage.mylasta.mail.WelcomeMemberPostcard</span>
 </p>
 <p class="docsubitem">
-<span class="docsubtitle">hasOptionPlusHtml:</span>
-<span class="docannotations docsubvalue">false</span>
+	<span class="docsubtitle">hasOptionPlusHtml:</span>
+	<span class="docannotations docsubvalue">false</span>
 </p>
 
 <p class="tablecomment" style="white-space:pre-wrap;"><br>&nbsp;[New&nbsp;Member's&nbsp;Registration]<br>&nbsp;The&nbsp;member&nbsp;will&nbsp;be&nbsp;formalized&nbsp;after&nbsp;click.<br></p>
