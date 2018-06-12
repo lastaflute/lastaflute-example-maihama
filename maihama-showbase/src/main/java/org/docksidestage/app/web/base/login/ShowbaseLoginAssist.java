@@ -98,7 +98,7 @@ public class ShowbaseLoginAssist extends MaihamaLoginAssist<ShowbaseUserBean, Me
 
     @Override
     protected OptionalThing<String> getCookieRememberMeKey() { // #app_customize empty if completely no remember-me
-        return OptionalThing.of(config.getCookieRememberMeShowbaseKey());
+        return OptionalThing.of(config.getCookieRememberMeShowbaseKey()); // if hybrid with cookie
     }
 
     @Override
@@ -129,12 +129,13 @@ public class ShowbaseLoginAssist extends MaihamaLoginAssist<ShowbaseUserBean, Me
     //                                                                         ===========
     @Override
     protected boolean tryAlreadyLoginOrRememberMe(LoginHandlingResource resource) {
-        if (super.tryAlreadyLoginOrRememberMe(resource)) {
+        if (super.tryAlreadyLoginOrRememberMe(resource)) { // if hybrid with session
             return true;
         }
         return requestManager.getHeader("x-authorization").flatMap(token -> {
             return findByAuthToken(token).map(member -> {
-                saveLoginInfoToSession(member);
+                syncCheckLoginSessionIfNeeds(createUserBean(member)); // sometimes synchronize with database
+                saveLoginInfoToSession(member); // if hybrid with session
                 return true;
             });
         }).orElse(false);
