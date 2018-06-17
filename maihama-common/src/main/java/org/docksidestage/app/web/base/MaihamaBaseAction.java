@@ -78,7 +78,7 @@ public abstract class MaihamaBaseAction extends TypicalAction {
         return resource -> {
             return accessContextLogic.create(resource, () -> myUserType(), () -> getUserBean().map(userBean -> {
                 return userBean.getUserId(); // as user expression
-            }), () -> myAppType());
+            }), () -> myAppType(), () -> requestManager.getHeaderUserAgent());
         };
     }
 

@@ -55,7 +55,11 @@ public class AllJobScheduler implements LaJobScheduler {
     @Override
     public LaJobRunner createRunner() {
         return new LaJobRunner().useAccessContext(resource -> {
-            return accessContextLogic.create(resource, () -> OptionalThing.empty(), () -> OptionalThing.empty(), () -> APP_TYPE);
+            return accessContextLogic.create(resource, () -> optEmpty(), () -> optEmpty(), () -> APP_TYPE, () -> optEmpty());
         });
+    }
+
+    private <EMPTY> OptionalThing<EMPTY> optEmpty() {
+        return OptionalThing.empty();
     }
 }
