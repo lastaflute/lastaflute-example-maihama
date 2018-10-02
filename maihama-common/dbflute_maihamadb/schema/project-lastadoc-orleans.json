@@ -1,6 +1,34 @@
 {
   "actionDocMetaList": [
     {
+      "url": "/root/",
+      "typeName": "org.docksidestage.app.web.RootAction",
+      "simpleTypeName": "RootAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "index",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
+        "simpleTypeName": "HtmlResponse",
+        "value": null,
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 7,
+      "methodLineCount": 3
+    },
+    {
       "url": "/job/execute/{jobCode}",
       "typeName": "org.docksidestage.app.web.job.JobExecuteAction",
       "simpleTypeName": "JobExecuteAction",
@@ -416,34 +444,6 @@
       },
       "fileLineCount": 56,
       "methodLineCount": 8
-    },
-    {
-      "url": "/root/",
-      "typeName": "org.docksidestage.app.web.RootAction",
-      "simpleTypeName": "RootAction",
-      "description": "@author jflute",
-      "typeComment": "@author jflute",
-      "fieldTypeDocMetaList": [],
-      "methodName": "index",
-      "methodComment": null,
-      "annotationList": [
-        "AllowAnyoneAccess",
-        "Execute"
-      ],
-      "parameterTypeDocMetaList": [],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "typeName": "org.lastaflute.web.response.HtmlResponse",
-        "simpleTypeName": "HtmlResponse",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      },
-      "fileLineCount": 7,
-      "methodLineCount": 3
     },
     {
       "url": "/signin/",
