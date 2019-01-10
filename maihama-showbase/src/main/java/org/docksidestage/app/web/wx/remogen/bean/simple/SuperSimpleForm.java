@@ -20,15 +20,10 @@ import org.lastaflute.core.util.Lato;
 /**
  * @author jflute
  */
-public class SuperSimpleBody {
+public class SuperSimpleForm {
 
-    public final String sea;
-    public final Integer land;
-
-    public SuperSimpleBody(String sea, Integer land) {
-        this.sea = sea;
-        this.land = land;
-    }
+    public String sea;
+    public Integer land;
 
     @Override
     public String toString() {
