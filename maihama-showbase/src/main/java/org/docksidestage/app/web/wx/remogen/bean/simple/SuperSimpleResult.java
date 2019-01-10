@@ -22,6 +22,7 @@ public class SuperSimpleResult {
 
     public final String sea;
     public final Integer land;
+    public String iamResult;
 
     public SuperSimpleResult(String sea, Integer land) {
         this.sea = sea;

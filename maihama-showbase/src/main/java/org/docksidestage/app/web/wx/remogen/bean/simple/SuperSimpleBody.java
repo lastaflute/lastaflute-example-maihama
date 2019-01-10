@@ -22,13 +22,9 @@ import org.lastaflute.core.util.Lato;
  */
 public class SuperSimpleBody {
 
-    public final String sea;
-    public final Integer land;
-
-    public SuperSimpleBody(String sea, Integer land) {
-        this.sea = sea;
-        this.land = land;
-    }
+    public String sea;
+    public Integer land;
+    public String iamBody;
 
     @Override
     public String toString() {

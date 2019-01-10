@@ -24,6 +24,7 @@ public class SuperSimpleForm {
 
     public String sea;
     public Integer land;
+    public String iamForm;
 
     @Override
     public String toString() {
