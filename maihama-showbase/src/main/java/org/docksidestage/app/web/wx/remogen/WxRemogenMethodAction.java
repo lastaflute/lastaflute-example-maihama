@@ -24,28 +24,42 @@ public class WxRemogenMethodAction extends ShowbaseBaseAction {
     // GET http://localhost:8098/showbase/wx/remogen/method?sea=mystic&land=7
     @Execute
     public JsonResponse<SuperSimpleResult> get$index(SuperSimpleForm form) {
-        logger.debug("form: {}" + form);
+        logger.debug("form: {}", form);
+        return asJson(new SuperSimpleResult(form.sea, form.land));
+    }
+
+    // GET http://localhost:8098/showbase/wx/remogen/method/samename?sea=mystic&land=7
+    @Execute
+    public JsonResponse<SuperSimpleResult> get$samename(SuperSimpleForm form) {
+        logger.debug("form: {}", form);
         return asJson(new SuperSimpleResult(form.sea, form.land));
     }
 
     // POST http://localhost:8098/showbase/wx/remogen/method
     @Execute
     public JsonResponse<SuperSimpleResult> post$index(SuperSimpleBody body) {
-        logger.debug("body: {}" + body);
+        logger.debug("body: {}", body);
+        return asJson(new SuperSimpleResult(body.sea, body.land));
+    }
+
+    // POST http://localhost:8098/showbase/wx/remogen/method/samename
+    @Execute
+    public JsonResponse<SuperSimpleResult> post$samename(SuperSimpleBody body) {
+        logger.debug("body: {}", body);
         return asJson(new SuperSimpleResult(body.sea, body.land));
     }
 
     // DELETE http://localhost:8098/showbase/wx/remogen/method
     @Execute
     public JsonResponse<SuperSimpleResult> delete$index(SuperSimpleForm form) {
-        logger.debug("form: {}" + form);
+        logger.debug("form: {}", form);
         return asJson(new SuperSimpleResult(form.sea, form.land));
     }
 
     // DELETE http://localhost:8098/showbase/wx/remogen/method/enclosing
     @Execute
     public JsonResponse<SuperSimpleResult> delete$enclosing(SuperSimpleBody body) {
-        logger.debug("body: {}" + body);
+        logger.debug("body: {}", body);
         return asJson(new SuperSimpleResult(body.sea, body.land));
     }
 
