@@ -50,11 +50,12 @@ public class WxRemogenMethodAction extends ShowbaseBaseAction {
     }
 
     // DELETE http://localhost:8098/showbase/wx/remogen/method
-    @Execute
-    public JsonResponse<SuperSimpleResult> delete$index(SuperSimpleForm form) {
-        logger.debug("form: {}", form);
-        return asJson(new SuperSimpleResult(form.sea, form.land));
-    }
+    // *now compiler error of RemoteApiGen, cannot determine query or on-body form by this definition
+    //@Execute
+    //public JsonResponse<SuperSimpleResult> delete$index(SuperSimpleForm form) {
+    //    logger.debug("form: {}", form);
+    //    return asJson(new SuperSimpleResult(form.sea, form.land));
+    //}
 
     // DELETE http://localhost:8098/showbase/wx/remogen/method/enclosing
     @Execute
