@@ -28,6 +28,13 @@ public class WxRemogenMethodAction extends ShowbaseBaseAction {
         return asJson(new SuperSimpleResult(form.sea, form.land));
     }
 
+    // GET http://localhost:8098/showbase/wx/remogen/method
+    @Execute
+    public JsonResponse<SuperSimpleResult> get$enclosing(SuperSimpleBody body) {
+        logger.debug("form: {}", body);
+        return asJson(new SuperSimpleResult(body.sea, body.land));
+    }
+
     // GET http://localhost:8098/showbase/wx/remogen/method/samename?sea=mystic&land=7
     @Execute
     public JsonResponse<SuperSimpleResult> get$samename(SuperSimpleForm form) {
