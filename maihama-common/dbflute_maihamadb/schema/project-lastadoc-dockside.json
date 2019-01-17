@@ -17,6 +17,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "redirect(MypageAction.class)",
@@ -37,6 +38,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "timeManager",
+          "publicName": "timeManager",
           "typeName": "org.lastaflute.core.time.TimeManager",
           "simpleTypeName": "TimeManager",
           "value": null,
@@ -49,6 +51,7 @@
         },
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -69,6 +72,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Member_MemberAddHtml)",
@@ -89,6 +93,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "timeManager",
+          "publicName": "timeManager",
           "typeName": "org.lastaflute.core.time.TimeManager",
           "simpleTypeName": "TimeManager",
           "value": null,
@@ -101,6 +106,7 @@
         },
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -120,6 +126,7 @@
       "parameterTypeDocMetaList": [],
       "formTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.docksidestage.app.web.member.MemberAddForm",
         "simpleTypeName": "MemberAddForm",
         "value": null,
@@ -129,6 +136,7 @@
         "nestTypeDocMetaList": [
           {
             "name": "memberName",
+            "publicName": "memberName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -141,6 +149,7 @@
           },
           {
             "name": "memberAccount",
+            "publicName": "memberAccount",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -153,6 +162,7 @@
           },
           {
             "name": "birthdate",
+            "publicName": "birthdate",
             "typeName": "java.time.LocalDate",
             "simpleTypeName": "LocalDate",
             "value": null,
@@ -165,6 +175,7 @@
           },
           {
             "name": "memberStatus",
+            "publicName": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
             "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, WDL\u003dWithdrawal, PRV\u003dProvisional}",
@@ -179,6 +190,7 @@
       },
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Member_MemberAddHtml),asHtml(path_Error_ShowErrorsHtml),redirect(MemberListAction.class)",
@@ -199,6 +211,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "timeManager",
+          "publicName": "timeManager",
           "typeName": "org.lastaflute.core.time.TimeManager",
           "simpleTypeName": "TimeManager",
           "value": null,
@@ -211,6 +224,7 @@
         },
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -230,6 +244,7 @@
       "parameterTypeDocMetaList": [
         {
           "name": "memberId",
+          "publicName": "memberId",
           "typeName": "java.lang.Integer",
           "simpleTypeName": "Integer",
           "value": null,
@@ -242,6 +257,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Member_MemberEditHtml)",
@@ -262,6 +278,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "timeManager",
+          "publicName": "timeManager",
           "typeName": "org.lastaflute.core.time.TimeManager",
           "simpleTypeName": "TimeManager",
           "value": null,
@@ -274,6 +291,7 @@
         },
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -293,6 +311,7 @@
       "parameterTypeDocMetaList": [],
       "formTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.docksidestage.app.web.member.MemberEditForm",
         "simpleTypeName": "MemberEditForm",
         "value": null,
@@ -302,6 +321,7 @@
         "nestTypeDocMetaList": [
           {
             "name": "memberId",
+            "publicName": "memberId",
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
@@ -314,6 +334,7 @@
           },
           {
             "name": "memberName",
+            "publicName": "memberName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -326,6 +347,7 @@
           },
           {
             "name": "memberAccount",
+            "publicName": "memberAccount",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -338,6 +360,7 @@
           },
           {
             "name": "birthdate",
+            "publicName": "birthdate",
             "typeName": "java.time.LocalDate",
             "simpleTypeName": "LocalDate",
             "value": null,
@@ -350,6 +373,7 @@
           },
           {
             "name": "formalizedDate",
+            "publicName": "formalizedDate",
             "typeName": "java.time.LocalDate",
             "simpleTypeName": "LocalDate",
             "value": null,
@@ -360,6 +384,7 @@
           },
           {
             "name": "memberStatus",
+            "publicName": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
             "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, WDL\u003dWithdrawal, PRV\u003dProvisional}",
@@ -372,6 +397,7 @@
           },
           {
             "name": "latestLoginDatetime",
+            "publicName": "latestLoginDatetime",
             "typeName": "java.time.LocalDateTime",
             "simpleTypeName": "LocalDateTime",
             "value": null,
@@ -382,6 +408,7 @@
           },
           {
             "name": "updateDatetime",
+            "publicName": "updateDatetime",
             "typeName": "java.time.LocalDateTime",
             "simpleTypeName": "LocalDateTime",
             "value": null,
@@ -392,6 +419,7 @@
           },
           {
             "name": "previousStatus",
+            "publicName": "previousStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
             "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, WDL\u003dWithdrawal, PRV\u003dProvisional}",
@@ -404,6 +432,7 @@
           },
           {
             "name": "versionNo",
+            "publicName": "versionNo",
             "typeName": "java.lang.Long",
             "simpleTypeName": "Long",
             "value": null,
@@ -418,6 +447,7 @@
       },
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Member_MemberEditHtml),asHtml(path_Error_ShowErrorsHtml),redirectById(MemberEditAction.class, member.getMemberId()",
@@ -438,6 +468,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "timeManager",
+          "publicName": "timeManager",
           "typeName": "org.lastaflute.core.time.TimeManager",
           "simpleTypeName": "TimeManager",
           "value": null,
@@ -450,6 +481,7 @@
         },
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -469,6 +501,7 @@
       "parameterTypeDocMetaList": [],
       "formTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.docksidestage.app.web.member.MemberEditForm",
         "simpleTypeName": "MemberEditForm",
         "value": null,
@@ -478,6 +511,7 @@
         "nestTypeDocMetaList": [
           {
             "name": "memberId",
+            "publicName": "memberId",
             "typeName": "java.lang.Integer",
             "simpleTypeName": "Integer",
             "value": null,
@@ -490,6 +524,7 @@
           },
           {
             "name": "memberName",
+            "publicName": "memberName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -502,6 +537,7 @@
           },
           {
             "name": "memberAccount",
+            "publicName": "memberAccount",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -514,6 +550,7 @@
           },
           {
             "name": "birthdate",
+            "publicName": "birthdate",
             "typeName": "java.time.LocalDate",
             "simpleTypeName": "LocalDate",
             "value": null,
@@ -526,6 +563,7 @@
           },
           {
             "name": "formalizedDate",
+            "publicName": "formalizedDate",
             "typeName": "java.time.LocalDate",
             "simpleTypeName": "LocalDate",
             "value": null,
@@ -536,6 +574,7 @@
           },
           {
             "name": "memberStatus",
+            "publicName": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
             "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, WDL\u003dWithdrawal, PRV\u003dProvisional}",
@@ -548,6 +587,7 @@
           },
           {
             "name": "latestLoginDatetime",
+            "publicName": "latestLoginDatetime",
             "typeName": "java.time.LocalDateTime",
             "simpleTypeName": "LocalDateTime",
             "value": null,
@@ -558,6 +598,7 @@
           },
           {
             "name": "updateDatetime",
+            "publicName": "updateDatetime",
             "typeName": "java.time.LocalDateTime",
             "simpleTypeName": "LocalDateTime",
             "value": null,
@@ -568,6 +609,7 @@
           },
           {
             "name": "previousStatus",
+            "publicName": "previousStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
             "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, WDL\u003dWithdrawal, PRV\u003dProvisional}",
@@ -580,6 +622,7 @@
           },
           {
             "name": "versionNo",
+            "publicName": "versionNo",
             "typeName": "java.lang.Long",
             "simpleTypeName": "Long",
             "value": null,
@@ -594,6 +637,7 @@
       },
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Member_MemberEditHtml),redirect(MemberListAction.class)",
@@ -614,6 +658,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -626,6 +671,7 @@
         },
         {
           "name": "pagingAssist",
+          "publicName": "pagingAssist",
           "typeName": "org.docksidestage.app.web.base.paging.PagingAssist",
           "simpleTypeName": "PagingAssist",
           "value": null,
@@ -645,6 +691,7 @@
       "parameterTypeDocMetaList": [
         {
           "name": "pageNumber",
+          "publicName": "pageNumber",
           "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.Integer\u003e",
           "simpleTypeName": "OptionalThing\u003cInteger\u003e",
           "value": null,
@@ -656,6 +703,7 @@
       ],
       "formTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.docksidestage.app.web.member.MemberSearchForm",
         "simpleTypeName": "MemberSearchForm",
         "value": null,
@@ -665,6 +713,7 @@
         "nestTypeDocMetaList": [
           {
             "name": "memberName",
+            "publicName": "memberName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -677,6 +726,7 @@
           },
           {
             "name": "memberStatus",
+            "publicName": "memberStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$MemberStatus",
             "simpleTypeName": "CDef.MemberStatus",
             "value": "{FML\u003dFormalized, WDL\u003dWithdrawal, PRV\u003dProvisional}",
@@ -687,6 +737,7 @@
           },
           {
             "name": "purchaseProductName",
+            "publicName": "purchaseProductName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -699,6 +750,7 @@
           },
           {
             "name": "unpaid",
+            "publicName": "unpaid",
             "typeName": "boolean",
             "simpleTypeName": "boolean",
             "value": null,
@@ -709,6 +761,7 @@
           },
           {
             "name": "formalizedFrom",
+            "publicName": "formalizedFrom",
             "typeName": "java.time.LocalDate",
             "simpleTypeName": "LocalDate",
             "value": null,
@@ -721,6 +774,7 @@
           },
           {
             "name": "formalizedTo",
+            "publicName": "formalizedTo",
             "typeName": "java.time.LocalDate",
             "simpleTypeName": "LocalDate",
             "value": null,
@@ -735,6 +789,7 @@
       },
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Member_MemberListHtml),mappingToBean(member),asHtml(path_Member_MemberListHtml)",
@@ -755,6 +810,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "responseManager",
+          "publicName": "responseManager",
           "typeName": "org.lastaflute.web.servlet.request.ResponseManager",
           "simpleTypeName": "ResponseManager",
           "value": null,
@@ -774,6 +830,7 @@
       "parameterTypeDocMetaList": [
         {
           "name": "memberId",
+          "publicName": "memberId",
           "typeName": "java.lang.Integer",
           "simpleTypeName": "Integer",
           "value": null,
@@ -784,6 +841,7 @@
         },
         {
           "name": "pageNumber",
+          "publicName": "pageNumber",
           "typeName": "java.lang.Integer",
           "simpleTypeName": "Integer",
           "value": null,
@@ -796,6 +854,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": null,
@@ -816,6 +875,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "productBhv",
+          "publicName": "productBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.ProductBhv",
           "simpleTypeName": "ProductBhv",
           "value": null,
@@ -836,6 +896,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Mypage_MypageHtml)",
@@ -856,6 +917,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "productBhv",
+          "publicName": "productBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.ProductBhv",
           "simpleTypeName": "ProductBhv",
           "value": null,
@@ -876,6 +938,7 @@
       "parameterTypeDocMetaList": [
         {
           "name": "productId",
+          "publicName": "productId",
           "typeName": "java.lang.Integer",
           "simpleTypeName": "Integer",
           "value": null,
@@ -888,6 +951,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Product_ProductDetailHtml)",
@@ -908,6 +972,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "productBhv",
+          "publicName": "productBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.ProductBhv",
           "simpleTypeName": "ProductBhv",
           "value": null,
@@ -920,6 +985,7 @@
         },
         {
           "name": "pagingAssist",
+          "publicName": "pagingAssist",
           "typeName": "org.docksidestage.app.web.base.paging.PagingAssist",
           "simpleTypeName": "PagingAssist",
           "value": null,
@@ -940,6 +1006,7 @@
       "parameterTypeDocMetaList": [
         {
           "name": "pageNumber",
+          "publicName": "pageNumber",
           "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.Integer\u003e",
           "simpleTypeName": "OptionalThing\u003cInteger\u003e",
           "value": null,
@@ -951,6 +1018,7 @@
       ],
       "formTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.docksidestage.app.web.product.ProductSearchForm",
         "simpleTypeName": "ProductSearchForm",
         "value": null,
@@ -960,6 +1028,7 @@
         "nestTypeDocMetaList": [
           {
             "name": "productName",
+            "publicName": "productName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -972,6 +1041,7 @@
           },
           {
             "name": "productStatus",
+            "publicName": "productStatus",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
             "simpleTypeName": "CDef.ProductStatus",
             "value": "{ONS\u003dOnSaleProduction, PST\u003dProductionStop, SST\u003dSaleStop}",
@@ -982,6 +1052,7 @@
           },
           {
             "name": "purchaseMemberName",
+            "publicName": "purchaseMemberName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -996,6 +1067,7 @@
       },
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Product_ProductListHtml),mappingToBean(product),asHtml(path_Product_ProductListHtml)",
@@ -1016,6 +1088,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -1036,6 +1109,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Profile_ProfileHtml)",
@@ -1056,6 +1130,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "purchaseBhv",
+          "publicName": "purchaseBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.PurchaseBhv",
           "simpleTypeName": "PurchaseBhv",
           "value": null,
@@ -1068,6 +1143,7 @@
         },
         {
           "name": "pagingAssist",
+          "publicName": "pagingAssist",
           "typeName": "org.docksidestage.app.web.base.paging.PagingAssist",
           "simpleTypeName": "PagingAssist",
           "value": null,
@@ -1087,6 +1163,7 @@
       "parameterTypeDocMetaList": [
         {
           "name": "pageNumber",
+          "publicName": "pageNumber",
           "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.Integer\u003e",
           "simpleTypeName": "OptionalThing\u003cInteger\u003e",
           "value": null,
@@ -1098,6 +1175,7 @@
       ],
       "formTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.docksidestage.app.web.purchase.PurchaseSearchForm",
         "simpleTypeName": "PurchaseSearchForm",
         "value": null,
@@ -1108,6 +1186,7 @@
       },
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "mappingToBean(purchase),asHtml(path_Purchase_PurchaseListHtml)",
@@ -1128,6 +1207,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "loginAssist",
+          "publicName": "loginAssist",
           "typeName": "org.docksidestage.app.web.base.login.DocksideLoginAssist",
           "simpleTypeName": "DocksideLoginAssist",
           "value": null,
@@ -1148,6 +1228,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "redirect(MypageAction.class),asHtml(path_Signin_SigninHtml)",
@@ -1168,6 +1249,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "loginAssist",
+          "publicName": "loginAssist",
           "typeName": "org.docksidestage.app.web.base.login.DocksideLoginAssist",
           "simpleTypeName": "DocksideLoginAssist",
           "value": null,
@@ -1187,6 +1269,7 @@
       "parameterTypeDocMetaList": [],
       "formTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.docksidestage.app.web.signin.SigninForm",
         "simpleTypeName": "SigninForm",
         "value": null,
@@ -1196,6 +1279,7 @@
         "nestTypeDocMetaList": [
           {
             "name": "account",
+            "publicName": "account",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -1208,6 +1292,7 @@
           },
           {
             "name": "password",
+            "publicName": "password",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -1220,6 +1305,7 @@
           },
           {
             "name": "rememberMe",
+            "publicName": "rememberMe",
             "typeName": "boolean",
             "simpleTypeName": "boolean",
             "value": null,
@@ -1232,6 +1318,7 @@
       },
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Signin_SigninHtml),loginAssist.loginRedirect(createCredential(form),redirect(MypageAction.class)",
@@ -1259,6 +1346,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Signin_SigninReminderHtml)",
@@ -1279,6 +1367,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "loginAssist",
+          "publicName": "loginAssist",
           "typeName": "org.docksidestage.app.web.base.login.DocksideLoginAssist",
           "simpleTypeName": "DocksideLoginAssist",
           "value": null,
@@ -1299,6 +1388,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "redirect(SigninAction.class)",
@@ -1319,6 +1409,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "postbox",
+          "publicName": "postbox",
           "typeName": "org.lastaflute.core.mail.Postbox",
           "simpleTypeName": "Postbox",
           "value": null,
@@ -1331,6 +1422,7 @@
         },
         {
           "name": "config",
+          "publicName": "config",
           "typeName": "org.docksidestage.mylasta.direction.DocksideConfig",
           "simpleTypeName": "DocksideConfig",
           "value": null,
@@ -1343,6 +1435,7 @@
         },
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -1355,6 +1448,7 @@
         },
         {
           "name": "memberSecurityBhv",
+          "publicName": "memberSecurityBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberSecurityBhv",
           "simpleTypeName": "MemberSecurityBhv",
           "value": null,
@@ -1367,6 +1461,7 @@
         },
         {
           "name": "memberServiceBhv",
+          "publicName": "memberServiceBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberServiceBhv",
           "simpleTypeName": "MemberServiceBhv",
           "value": null,
@@ -1379,6 +1474,7 @@
         },
         {
           "name": "loginAssist",
+          "publicName": "loginAssist",
           "typeName": "org.docksidestage.app.web.base.login.DocksideLoginAssist",
           "simpleTypeName": "DocksideLoginAssist",
           "value": null,
@@ -1391,6 +1487,7 @@
         },
         {
           "name": "signupTokenAssist",
+          "publicName": "signupTokenAssist",
           "typeName": "org.docksidestage.app.web.signup.SignupTokenAssist",
           "simpleTypeName": "SignupTokenAssist",
           "value": null,
@@ -1412,6 +1509,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Signup_SignupHtml)",
@@ -1432,6 +1530,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "postbox",
+          "publicName": "postbox",
           "typeName": "org.lastaflute.core.mail.Postbox",
           "simpleTypeName": "Postbox",
           "value": null,
@@ -1444,6 +1543,7 @@
         },
         {
           "name": "config",
+          "publicName": "config",
           "typeName": "org.docksidestage.mylasta.direction.DocksideConfig",
           "simpleTypeName": "DocksideConfig",
           "value": null,
@@ -1456,6 +1556,7 @@
         },
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -1468,6 +1569,7 @@
         },
         {
           "name": "memberSecurityBhv",
+          "publicName": "memberSecurityBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberSecurityBhv",
           "simpleTypeName": "MemberSecurityBhv",
           "value": null,
@@ -1480,6 +1582,7 @@
         },
         {
           "name": "memberServiceBhv",
+          "publicName": "memberServiceBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberServiceBhv",
           "simpleTypeName": "MemberServiceBhv",
           "value": null,
@@ -1492,6 +1595,7 @@
         },
         {
           "name": "loginAssist",
+          "publicName": "loginAssist",
           "typeName": "org.docksidestage.app.web.base.login.DocksideLoginAssist",
           "simpleTypeName": "DocksideLoginAssist",
           "value": null,
@@ -1504,6 +1608,7 @@
         },
         {
           "name": "signupTokenAssist",
+          "publicName": "signupTokenAssist",
           "typeName": "org.docksidestage.app.web.signup.SignupTokenAssist",
           "simpleTypeName": "SignupTokenAssist",
           "value": null,
@@ -1524,6 +1629,7 @@
       "parameterTypeDocMetaList": [],
       "formTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.docksidestage.app.web.signup.SignupForm",
         "simpleTypeName": "SignupForm",
         "value": null,
@@ -1533,6 +1639,7 @@
         "nestTypeDocMetaList": [
           {
             "name": "memberName",
+            "publicName": "memberName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -1545,6 +1652,7 @@
           },
           {
             "name": "memberAccount",
+            "publicName": "memberAccount",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -1557,6 +1665,7 @@
           },
           {
             "name": "password",
+            "publicName": "password",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -1569,6 +1678,7 @@
           },
           {
             "name": "reminderQuestion",
+            "publicName": "reminderQuestion",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -1581,6 +1691,7 @@
           },
           {
             "name": "reminderAnswer",
+            "publicName": "reminderAnswer",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -1595,6 +1706,7 @@
       },
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Signup_SignupHtml),redirect(MypageAction.class)",
@@ -1615,6 +1727,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "postbox",
+          "publicName": "postbox",
           "typeName": "org.lastaflute.core.mail.Postbox",
           "simpleTypeName": "Postbox",
           "value": null,
@@ -1627,6 +1740,7 @@
         },
         {
           "name": "config",
+          "publicName": "config",
           "typeName": "org.docksidestage.mylasta.direction.DocksideConfig",
           "simpleTypeName": "DocksideConfig",
           "value": null,
@@ -1639,6 +1753,7 @@
         },
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -1651,6 +1766,7 @@
         },
         {
           "name": "memberSecurityBhv",
+          "publicName": "memberSecurityBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberSecurityBhv",
           "simpleTypeName": "MemberSecurityBhv",
           "value": null,
@@ -1663,6 +1779,7 @@
         },
         {
           "name": "memberServiceBhv",
+          "publicName": "memberServiceBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberServiceBhv",
           "simpleTypeName": "MemberServiceBhv",
           "value": null,
@@ -1675,6 +1792,7 @@
         },
         {
           "name": "loginAssist",
+          "publicName": "loginAssist",
           "typeName": "org.docksidestage.app.web.base.login.DocksideLoginAssist",
           "simpleTypeName": "DocksideLoginAssist",
           "value": null,
@@ -1687,6 +1805,7 @@
         },
         {
           "name": "signupTokenAssist",
+          "publicName": "signupTokenAssist",
           "typeName": "org.docksidestage.app.web.signup.SignupTokenAssist",
           "simpleTypeName": "SignupTokenAssist",
           "value": null,
@@ -1707,6 +1826,7 @@
       "parameterTypeDocMetaList": [
         {
           "name": "account",
+          "publicName": "account",
           "typeName": "java.lang.String",
           "simpleTypeName": "String",
           "value": null,
@@ -1717,6 +1837,7 @@
         },
         {
           "name": "token",
+          "publicName": "token",
           "typeName": "java.lang.String",
           "simpleTypeName": "String",
           "value": null,
@@ -1729,6 +1850,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "redirect(SigninAction.class)",
@@ -1749,6 +1871,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "startupLogic",
+          "publicName": "startupLogic",
           "typeName": "org.docksidestage.app.logic.startup.StartupLogic",
           "simpleTypeName": "StartupLogic",
           "value": null,
@@ -1770,6 +1893,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Startup_StartupHtml)",
@@ -1790,6 +1914,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "startupLogic",
+          "publicName": "startupLogic",
           "typeName": "org.docksidestage.app.logic.startup.StartupLogic",
           "simpleTypeName": "StartupLogic",
           "value": null,
@@ -1810,6 +1935,7 @@
       "parameterTypeDocMetaList": [],
       "formTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.docksidestage.app.web.startup.StartupForm",
         "simpleTypeName": "StartupForm",
         "value": null,
@@ -1819,6 +1945,7 @@
         "nestTypeDocMetaList": [
           {
             "name": "domain",
+            "publicName": "domain",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -1831,6 +1958,7 @@
           },
           {
             "name": "serviceName",
+            "publicName": "serviceName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -1843,6 +1971,7 @@
           },
           {
             "name": "appName",
+            "publicName": "appName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -1857,6 +1986,7 @@
       },
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asHtml(path_Startup_StartupHtml),asHtml(path_Startup_StartupHtml)",
@@ -1877,6 +2007,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "timeManager",
+          "publicName": "timeManager",
           "typeName": "org.lastaflute.core.time.TimeManager",
           "simpleTypeName": "TimeManager",
           "value": null,
@@ -1889,6 +2020,7 @@
         },
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -1901,6 +2033,7 @@
         },
         {
           "name": "memberWithdrawalBhv",
+          "publicName": "memberWithdrawalBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberWithdrawalBhv",
           "simpleTypeName": "MemberWithdrawalBhv",
           "value": null,
@@ -1921,6 +2054,7 @@
       "formTypeDocMeta": null,
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asEntryHtml()",
@@ -1941,6 +2075,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "timeManager",
+          "publicName": "timeManager",
           "typeName": "org.lastaflute.core.time.TimeManager",
           "simpleTypeName": "TimeManager",
           "value": null,
@@ -1953,6 +2088,7 @@
         },
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -1965,6 +2101,7 @@
         },
         {
           "name": "memberWithdrawalBhv",
+          "publicName": "memberWithdrawalBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberWithdrawalBhv",
           "simpleTypeName": "MemberWithdrawalBhv",
           "value": null,
@@ -1984,6 +2121,7 @@
       "parameterTypeDocMetaList": [],
       "formTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalForm",
         "simpleTypeName": "WithdrawalForm",
         "value": null,
@@ -1993,6 +2131,7 @@
         "nestTypeDocMetaList": [
           {
             "name": "selectedReason",
+            "publicName": "selectedReason",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason",
             "simpleTypeName": "CDef.WithdrawalReason",
             "value": "{SIT\u003dSIT, PRD\u003dPRD, FRT\u003dFRT, OTH\u003dOTH}",
@@ -2003,6 +2142,7 @@
           },
           {
             "name": "reasonInput",
+            "publicName": "reasonInput",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -2017,6 +2157,7 @@
       },
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asEntryHtml(),asConfirmHtml()",
@@ -2037,6 +2178,7 @@
       "fieldTypeDocMetaList": [
         {
           "name": "timeManager",
+          "publicName": "timeManager",
           "typeName": "org.lastaflute.core.time.TimeManager",
           "simpleTypeName": "TimeManager",
           "value": null,
@@ -2049,6 +2191,7 @@
         },
         {
           "name": "memberBhv",
+          "publicName": "memberBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberBhv",
           "simpleTypeName": "MemberBhv",
           "value": null,
@@ -2061,6 +2204,7 @@
         },
         {
           "name": "memberWithdrawalBhv",
+          "publicName": "memberWithdrawalBhv",
           "typeName": "org.docksidestage.dbflute.exbhv.MemberWithdrawalBhv",
           "simpleTypeName": "MemberWithdrawalBhv",
           "value": null,
@@ -2080,6 +2224,7 @@
       "parameterTypeDocMetaList": [],
       "formTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.docksidestage.app.web.withdrawal.WithdrawalForm",
         "simpleTypeName": "WithdrawalForm",
         "value": null,
@@ -2089,6 +2234,7 @@
         "nestTypeDocMetaList": [
           {
             "name": "selectedReason",
+            "publicName": "selectedReason",
             "typeName": "org.docksidestage.dbflute.allcommon.CDef$WithdrawalReason",
             "simpleTypeName": "CDef.WithdrawalReason",
             "value": "{SIT\u003dSIT, PRD\u003dPRD, FRT\u003dFRT, OTH\u003dOTH}",
@@ -2099,6 +2245,7 @@
           },
           {
             "name": "reasonInput",
+            "publicName": "reasonInput",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
             "value": null,
@@ -2113,6 +2260,7 @@
       },
       "returnTypeDocMeta": {
         "name": null,
+        "publicName": null,
         "typeName": "org.lastaflute.web.response.HtmlResponse",
         "simpleTypeName": "HtmlResponse",
         "value": "asEntryHtml(),redirect(SignoutAction.class)",
