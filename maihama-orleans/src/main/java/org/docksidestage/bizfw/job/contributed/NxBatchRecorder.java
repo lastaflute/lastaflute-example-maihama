@@ -430,7 +430,7 @@ public class NxBatchRecorder {
     //                                                                      ==============
     @Override
     public String toString() {
-        // 勉強会でBatchRecorderの話をしたら、ふなきくんより "LBOSでSlack通知してるけどここJSONだったらよりパースしやすかったかも" という話も出た。
+        // 勉強会でBatchRecorderの話をしたら、ふなきくんより "プロジェクトでSlack通知してるけどここJSONだったらよりパースしやすかったかも" という話も出た。
         // 現状でやる場合は、toString()メソッドをオーバーライドした拡張クラスを作ってもらう。
         // (newする方式だから、ちょっとオプションでってのもやりづらいかもなので実際はこのままかなぁ...)
         final StringBuilder sb = new StringBuilder();
