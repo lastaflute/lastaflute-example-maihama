@@ -28,7 +28,7 @@
 		<logback.version>1.2.3</logback.version>
 		<servlet.version>3.1.0</servlet.version>
 		<jetty.boot.version>0.4.9</jetty.boot.version>
-		<tomcat.boot.version>0.7.0</tomcat.boot.version>
+		<tomcat.boot.version>0.7.2</tomcat.boot.version>
 
 		<!-- GoodNeighbor Library -->
 		<commons.lang.version>3.8.1</commons.lang.version>
