@@ -17,6 +17,11 @@ public class WxRemogenTrickyAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
+    public JsonResponse<Void> allnone() {
+        return JsonResponse.asEmptyBody();
+    }
+
+    @Execute
     public JsonResponse<KeyValueResult> nobody() {
         return asJson(new KeyValueResult("sea", "mystic"));
     }
