@@ -50,6 +50,24 @@ public class HellSeaResult {
         }
     }
 
+    @Valid
+    public List<HellLandPart> hellLand;
+
+    public static class HellLandPart {
+
+        @Required
+        public String parkName;
+
+        @Valid
+        public HellLandResultPart hellLandResult;
+
+        public static class HellLandResultPart {
+
+            @Required
+            public String stageName;
+        }
+    }
+
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
