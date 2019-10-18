@@ -33,17 +33,17 @@ public class HellSeaResult {
     public final String resortName;
 
     @Valid
-    public HellSeaResultPart hellSeaResult;
+    public HellSeaPart hellSea;
 
-    public static class HellSeaResultPart {
+    public static class HellSeaPart {
 
         @Required
         public String parkName;
 
         @Valid
-        public List<HellSeaPartPart> hellSeaPart;
+        public List<HellSeaResultPart> hellSeaResult;
 
-        public static class HellSeaPartPart {
+        public static class HellSeaResultPart {
 
             @Required
             public String stageName;
@@ -51,7 +51,7 @@ public class HellSeaResult {
     }
 
     @Valid
-    public List<HellLandPart> hellLand;
+    public HellLandPart hellLand;
 
     public static class HellLandPart {
 
@@ -59,9 +59,9 @@ public class HellSeaResult {
         public String parkName;
 
         @Valid
-        public HellLandResultPart hellLandResult;
+        public HellLandPartPart hellLandPart;
 
-        public static class HellLandResultPart {
+        public static class HellLandPartPart {
 
             @Required
             public String stageName;
