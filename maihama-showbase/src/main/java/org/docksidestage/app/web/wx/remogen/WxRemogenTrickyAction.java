@@ -5,6 +5,7 @@ import org.docksidestage.app.web.wx.remogen.bean.oddprop.SuperOddProperties;
 import org.docksidestage.app.web.wx.remogen.bean.recycle.KeyValueResult;
 import org.docksidestage.app.web.wx.remogen.bean.recycle.RecycleParadeResult;
 import org.docksidestage.app.web.wx.remogen.bean.selfref.SelfReferenceResult;
+import org.docksidestage.app.web.wx.remogen.bean.suffix.hell.HellSeaResult;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 
@@ -39,5 +40,10 @@ public class WxRemogenTrickyAction extends ShowbaseBaseAction {
     @Execute
     public JsonResponse<SelfReferenceResult> selfref() {
         return asJson(new SelfReferenceResult("maihama"));
+    }
+
+    @Execute
+    public JsonResponse<HellSeaResult> suffixhell() {
+        return asJson(new HellSeaResult("maihama"));
     }
 }
