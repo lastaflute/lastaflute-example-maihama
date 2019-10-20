@@ -2119,8 +2119,8 @@
                 "typeName": "java.lang.Integer",
                 "simpleTypeName": "Integer",
                 "value": null,
-                "description": null,
-                "comment": null,
+                "description": "sea e.g. abc",
+                "comment": "sea e.g. abc",
                 "annotationList": [
                   "Required"
                 ],
