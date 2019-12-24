@@ -18,7 +18,7 @@
 
 	<properties>
 		<lasta.thymeleaf.version>0.4.1</lasta.thymeleaf.version>
-		<lasta.job.version>0.5.3</lasta.job.version>
+		<lasta.job.version>0.5.4</lasta.job.version>
 	</properties>
 
 	<licenses>
