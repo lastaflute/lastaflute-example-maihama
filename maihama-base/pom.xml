@@ -27,7 +27,7 @@
 		<slf4j.version>1.7.12</slf4j.version>
 		<logback.version>1.2.3</logback.version>
 		<servlet.version>3.1.0</servlet.version>
-		<jetty.boot.version>0.4.9</jetty.boot.version>
+		<jetty.boot.version>0.5.0</jetty.boot.version>
 		<tomcat.boot.version>0.7.3</tomcat.boot.version>
 
 		<!-- GoodNeighbor Library -->
