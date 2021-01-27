@@ -34,7 +34,7 @@
 		<commons.lang.version>3.8.1</commons.lang.version>
 
 		<!-- Testing -->
-		<junit.version>4.8.2</junit.version> <!-- is latest version without hamcrest -->
+		<junit.version>4.13.1</junit.version> <!-- is latest version without hamcrest -->
 		<utflute.version>0.9.2</utflute.version>
 	</properties>
 
