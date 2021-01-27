@@ -21,9 +21,9 @@ import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
-import org.lastaflute.doc.SwaggerGenerator;
-import org.lastaflute.doc.agent.SwaggerAgent;
-import org.lastaflute.doc.web.LaActionSwaggerable;
+import org.lastaflute.meta.SwaggerGenerator;
+import org.lastaflute.meta.agent.SwaggerAgent;
+import org.lastaflute.meta.web.LaActionSwaggerable;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.HtmlResponse;

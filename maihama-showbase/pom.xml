@@ -17,7 +17,7 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.doc.version>0.3.5-RC1</lasta.doc.version>
+		<lasta.meta.version>0.5.0</lasta.meta.version>
 		<swagger.ui.version>3.19.0</swagger.ui.version>
 	</properties>
 
@@ -155,9 +155,9 @@
 
 		<!-- lastaflute -->
 		<dependency>
-			<groupId>org.lastaflute.doc</groupId>
-			<artifactId>lasta-doc</artifactId>
-			<version>${lasta.doc.version}</version>
+			<groupId>org.lastaflute.meta</groupId>
+			<artifactId>lasta-meta</artifactId>
+			<version>${lasta.meta.version}</version>
 		</dependency>
 
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
