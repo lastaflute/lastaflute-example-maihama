@@ -52,10 +52,12 @@ public class ProductListAction extends DocksideBaseAction {
         validate(form, messages -> {}, () -> {
             return asHtml(path_Product_ProductListHtml);
         });
+
         PagingResultBean<Product> page = selectProductPage(pageNumber.orElse(1), form);
         List<ProductSearchRowBean> beans = page.stream().map(product -> {
             return mappingToBean(product);
         }).collect(Collectors.toList());
+
         return asHtml(path_Product_ProductListHtml).renderWith(data -> {
             data.register("beans", beans);
             pagingAssist.registerPagingNavi(data, page, form);
