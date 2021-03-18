@@ -21,11 +21,12 @@ import javax.annotation.Resource;
 
 import org.docksidestage.bizfw.job.contributed.NxBatchRecorder;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
-import org.docksidestage.dbflute.exentity.Member;
 import org.docksidestage.unit.UnitOrleansJobTestCase;
 import org.lastaflute.db.jta.stage.BegunTx;
 import org.lastaflute.db.jta.stage.BegunTxContext;
 import org.lastaflute.job.mock.MockJobRuntime;
+
+import javassist.compiler.ast.Member;
 
 /**
  * @author jflute
@@ -68,8 +69,10 @@ public class SmallDbJobTest extends UnitOrleansJobTestCase {
         });
 
         // ここで、業務で追加した情報をアサートしましょう！
+        // (recorderからスキップされた例外情報などもアサート可能)
         //Map<String, Object> rollMap = runtime.getEndTitleRollMap();
-        //rollMap.get("...");
+        //NxBatchRecorder recorder = (NxBatchRecorder) rollMap.get("recorder");
+        //List<BatchBusinessSkipPart> businessSkips = recorder.getBusinessSkips();
     }
 
     // ===================================================================================
