@@ -79,7 +79,8 @@ public class SmallDbJobTest extends UnitOrleansJobTestCase {
     //                                                                         ===========
     public void test_run_transactionUsed() { // ちゃんとTransactionが使われていることをテスト
         // ## Arrange ##
-        restoreRequiresNewToRequired();
+        // もし、デフォルトで changeRequiresNewToRequired() しているのであれば、ここでrestoreが必要
+        //restoreRequiresNewToRequired();
         SmallDbJob job = new SmallDbJob() {
             @Override
             protected void updateMember(Member member) { // Transaction確認のため、そして、何も処理しない
@@ -155,12 +156,17 @@ public class SmallDbJobTest extends UnitOrleansJobTestCase {
     //                                           Transaction
     //                                           -----------
     /**
-     * いま現在、Transaction が requiresNew() で開始されていることをアサート。<br>
-     * デフォルトでは、そもそも requiresNew() が requires() に変換されているので、<br>
-     * restoreChangingRequiresNewToRequired()を組み合わせて使うこと。
+     * いま現在、Transaction が requiresNew() で開始されていることをアサート。
+     * 
+     * <p>↓もし、デフォルトで changechangeRequiresNewToRequired() している場合の話: <br>
+     * デフォルトでは、そもそも requiresNew() が requires() に変換されているので、
+     * restoreChangingRequiresNewToRequired()を組み合わせて使うこと。</p>
+     * 
+     * <p>TestCase の Transaction は、BegunTxContext には入らないので紛れることはない。</p>
      * <pre>
      * // ## Arrange ##
-     * restoreChangingRequiresNewToRequired(); // requiresNew()を復活させて...
+     * // もし、デフォルトで changeRequiresNewToRequired() しているのであれば、ここでrestoreが必要
+     * //restoreChangingRequiresNewToRequired(); // requiresNew()を復活させて...
      * SmallDbJob job = new SmallDbJob() {
      *     protected void updateMember(Member member, String detarame) { // Transaction確認のため、そして、何も処理しない
      *         assertTranasctionRequiresNew(); // ここはrequiresNew()の中だよね
