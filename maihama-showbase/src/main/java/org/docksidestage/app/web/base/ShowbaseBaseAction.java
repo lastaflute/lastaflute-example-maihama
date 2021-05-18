@@ -21,6 +21,7 @@ import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.ShowbaseLoginAssist;
+import org.docksidestage.app.web.base.restful.RestfulHttpStatusAssist;
 import org.docksidestage.mylasta.action.ShowbaseMessages;
 import org.docksidestage.mylasta.action.ShowbaseUserBean;
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
@@ -55,6 +56,8 @@ public abstract class ShowbaseBaseAction extends MaihamaBaseAction // has severa
     private ShowbaseConfig config;
     @Resource
     private ShowbaseLoginAssist loginAssist;
+    @Resource
+    private RestfulHttpStatusAssist restfulHttpStatusAssist;
 
     // ===================================================================================
     //                                                                               Hook
@@ -68,6 +71,15 @@ public abstract class ShowbaseBaseAction extends MaihamaBaseAction // has severa
     @Override
     public void hookFinally(ActionRuntime runtime) {
         super.hookFinally(runtime);
+
+        // for RESTful HTTP status as conventional way
+        deriveConventionalHttpStatus(runtime).ifPresent(status -> {
+            runtime.getActionResponse().httpStatus(status);
+        });
+    }
+
+    protected OptionalThing<Integer> deriveConventionalHttpStatus(ActionRuntime runtime) {
+        return restfulHttpStatusAssist.deriveConventionalHttpStatus(runtime);
     }
 
     // ===================================================================================
