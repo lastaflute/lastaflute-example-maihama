@@ -46,25 +46,14 @@ public class ProductsAction extends ShowbaseBaseAction {
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
-    // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    // /products/
-    //
-    // *it needs "list" in method, which is resolved by ActionAdjustmentProvider
-    // http://localhost:8151/fortress/products/?productName=R
-    // _/_/_/_/_/_/_/_/_/_/
     @Execute
     public JsonResponse<ProductsListResult> get$index(ProductsListForm form) {
-        validateApi(form, messages -> {});
+        validate(form, messages -> {});
         List<Product> productList = selectProductList(form);
         ProductsListResult result = mappingToListResult(productList);
         return asJson(result);
     }
 
-    // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    // /products/1
-    //
-    // http://localhost:8151/fortress/products/1/
-    // _/_/_/_/_/_/_/_/_/_/
     @Execute
     public JsonResponse<ProductsOneResult> get$index(Integer productId) {
         Product product = selectProductById(productId);

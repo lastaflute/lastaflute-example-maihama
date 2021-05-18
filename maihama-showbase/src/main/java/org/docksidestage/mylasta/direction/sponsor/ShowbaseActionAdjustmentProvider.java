@@ -18,27 +18,75 @@ package org.docksidestage.mylasta.direction.sponsor;
 import javax.servlet.http.HttpServletRequest;
 
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
+import org.docksidestage.mylasta.direction.sponsor.planner.ActionOptionAgent;
+import org.lastaflute.web.path.UrlMappingOption;
+import org.lastaflute.web.path.UrlMappingResource;
+import org.lastaflute.web.path.UrlReverseOption;
+import org.lastaflute.web.path.UrlReverseResource;
+import org.lastaflute.web.path.restful.NumericBasedRestfulRouter;
 
 /**
  * @author jflute
  */
 public class ShowbaseActionAdjustmentProvider extends MaihamaActionAdjustmentProvider {
 
-    private final ShowbaseConfig config;
+    // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+    // if the following settings is used in other applications, migrate them to super class
+    // _/_/_/_/_/_/_/_/_/_/
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
+    protected final ShowbaseConfig config;
+    protected final ActionOptionAgent actionOptionAgent;
+
+    // -----------------------------------------------------
+    //                                         Cached Option
+    //                                         -------------
+    protected final NumericBasedRestfulRouter restfulRouter;
+
+    // ===================================================================================
+    //                                                                         Constructor
+    //                                                                         ===========
     public ShowbaseActionAdjustmentProvider(ShowbaseConfig config) {
         this.config = config;
+        this.actionOptionAgent = newActionOptionAgent(config);
+
+        this.restfulRouter = actionOptionAgent.createRestfulRouter();
     }
 
+    protected ActionOptionAgent newActionOptionAgent(ShowbaseConfig config) {
+        return new ActionOptionAgent(config);
+    }
+
+    // ===================================================================================
+    //                                                                             Routing
+    //                                                                             =======
+    // -----------------------------------------------------
+    //                                 Typical Determination
+    //                                 ---------------------
     @Override
     public boolean isForced404NotFoundRouting(HttpServletRequest request, String requestPath) {
-        if (!config.isSwaggerEnabled() && isSwaggerRequest(requestPath)) { // e.g. swagger's html, css
+        if (actionOptionAgent.isDisabledSwaggerRequest(requestPath)) { // e.g. swagger's html, css
             return true; // to suppress direct access to swagger resources at e.g. production
         }
         return super.isForced404NotFoundRouting(request, requestPath);
     }
 
-    private boolean isSwaggerRequest(String requestPath) {
-        return requestPath.startsWith("/webjars/swagger-ui") || requestPath.startsWith("/swagger");
+    // -----------------------------------------------------
+    //                                           URL Mapping
+    //                                           -----------
+    @Override
+    public UrlMappingOption customizeActionUrlMapping(UrlMappingResource resource) {
+        return restfulRouter.toRestfulMappingPath(resource).orElseGet(() -> {
+            return super.customizeActionUrlMapping(resource);
+        });
+    }
+
+    @Override
+    public UrlReverseOption customizeActionUrlReverse(UrlReverseResource resource) {
+        return restfulRouter.toRestfulReversePath(resource).orElseGet(() -> {
+            return super.customizeActionUrlReverse(resource);
+        });
     }
 }
