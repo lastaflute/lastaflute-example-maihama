@@ -61,6 +61,12 @@ public class ProductsAction extends ShowbaseBaseAction {
         return asJson(result);
     }
 
+    @Execute
+    public JsonResponse<Void> delete$index(Integer productId) {
+        // dummy implementation
+        return JsonResponse.asEmptyBody();
+    }
+
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
