@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 the original author or authors.
+ * Copyright 2015-2018 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,12 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.products;
-
-import org.docksidestage.dbflute.allcommon.CDef;
-import org.hibernate.validator.constraints.Length;
+package org.docksidestage.app.web.products.purchases;
 
 /**
- * @author iwamatsu0430
  * @author jflute
  */
-public class ProductsSearchBody {
+public class PurchasesListForm {
 
-    @Length(max = 10) // #simple_for_example just for validtion example
-    public String productName;
-
-    public CDef.ProductStatus productStatus;
-
-    @Length(max = 5) // #simple_for_example just for validtion example
-    public String purchaseMemberName;
-
-    public Integer pageNumber;
+    public String memberName;
 }

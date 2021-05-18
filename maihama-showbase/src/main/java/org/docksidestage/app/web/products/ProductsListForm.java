@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 the original author or authors.
+ * Copyright 2015-2018 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,20 +15,22 @@
  */
 package org.docksidestage.app.web.products;
 
-import org.lastaflute.web.validation.Required;
+import org.docksidestage.dbflute.allcommon.CDef;
+import org.hibernate.validator.constraints.Length;
 
 /**
- * @author iwamatsu0430
  * @author jflute
  */
-public class ProductsRowResult {
+public class ProductsListForm {
 
-    @Required
-    public Integer productId;
-    @Required
+    /** prefix for name of product e.g. R */
+    @Length(max = 10)
     public String productName;
-    @Required
-    public String productStatusName;
-    @Required
-    public Integer regularPrice;
+
+    /** status of product e.g. ONS */
+    public CDef.ProductStatus productStatus;
+
+    /** prefix for member name who purchases the product e.g. S */
+    @Length(max = 5)
+    public String purchaseMemberName;
 }
