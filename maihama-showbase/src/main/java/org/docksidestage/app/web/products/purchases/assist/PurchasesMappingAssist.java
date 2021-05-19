@@ -19,8 +19,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.docksidestage.app.web.products.purchases.PurchasesListResult;
-import org.docksidestage.app.web.products.purchases.PurchasesListResult.PurchasesRowPart;
 import org.docksidestage.app.web.products.purchases.PurchasesOneResult;
+import org.docksidestage.app.web.products.purchases.PurchasesListResult.PurchasesRowPart;
 import org.docksidestage.dbflute.exentity.Purchase;
 
 /**
