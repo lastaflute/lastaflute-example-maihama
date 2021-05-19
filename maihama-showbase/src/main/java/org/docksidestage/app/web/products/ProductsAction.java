@@ -19,7 +19,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.app.web.products.assist.ProductsCrudAssist;
 import org.docksidestage.app.web.products.assist.ProductsMappingAssist;
@@ -56,8 +55,8 @@ public class ProductsAction extends ShowbaseBaseAction {
     }
 
     @Execute
-    public JsonResponse<ProductsOneResult> get$index(OptionalThing<Integer> productId) {
-        Product product = selectProductById(productId.orElse(1));
+    public JsonResponse<ProductsOneResult> get$index(Integer productId) {
+        Product product = selectProductById(productId);
         ProductsOneResult result = mappingToOneResult(product);
         return asJson(result);
     }
