@@ -47,7 +47,7 @@ public class ProductsAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<ProductsListResult> get$sea(ProductsListForm form) {
+    public JsonResponse<ProductsListResult> get$index(ProductsListForm form) {
         validate(form, messages -> {});
         List<Product> productList = selectProductList(form);
         ProductsListResult result = mappingToListResult(productList);

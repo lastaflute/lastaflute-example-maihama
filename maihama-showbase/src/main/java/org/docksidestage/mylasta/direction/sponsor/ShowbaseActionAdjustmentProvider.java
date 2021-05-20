@@ -23,7 +23,7 @@ import org.lastaflute.web.path.UrlMappingOption;
 import org.lastaflute.web.path.UrlMappingResource;
 import org.lastaflute.web.path.UrlReverseOption;
 import org.lastaflute.web.path.UrlReverseResource;
-import org.lastaflute.web.path.restful.NumericBasedRestfulRouter;
+import org.lastaflute.web.path.restful.router.RestfulRouter;
 
 /**
  * @author jflute
@@ -43,7 +43,7 @@ public class ShowbaseActionAdjustmentProvider extends MaihamaActionAdjustmentPro
     // -----------------------------------------------------
     //                                         Cached Option
     //                                         -------------
-    protected final NumericBasedRestfulRouter restfulRouter;
+    protected final RestfulRouter restfulRouter;
 
     // ===================================================================================
     //                                                                         Constructor
