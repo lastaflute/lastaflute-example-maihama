@@ -28,6 +28,7 @@ import org.docksidestage.mylasta.direction.ShowbaseConfig;
 import org.lastaflute.core.exception.LaApplicationMessage;
 import org.lastaflute.core.json.JsonManager;
 import org.lastaflute.web.login.LoginManager;
+import org.lastaflute.web.response.ActionResponse;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
 import org.lastaflute.web.validation.LaValidatableApi;
@@ -56,18 +57,39 @@ public abstract class ShowbaseBaseAction extends MaihamaBaseAction // has severa
     private ShowbaseConfig config;
     @Resource
     private ShowbaseLoginAssist loginAssist;
+    //@Resource // if you need to auth your API, you can use this assist
+    //private AccessTokenAuthAssist accessTokenAuthAssist;
     @Resource
     private RestfulHttpStatusAssist restfulHttpStatusAssist;
 
     // ===================================================================================
     //                                                                               Hook
     //                                                                              ======
+    // -----------------------------------------------------
+    //                                                Before
+    //                                                ------
     // #app_customize you can customize the action hook
+    @Override
+    public ActionResponse hookBefore(ActionRuntime runtime) {
+        final ActionResponse superResponse = super.hookBefore(runtime);
+
+        // if you need to auth your API, you can implement here
+        //accessTokenAuthAssist.determineAuth(runtime);
+
+        return superResponse;
+    }
+
+    // -----------------------------------------------------
+    //                                            on Failure
+    //                                            ----------
     @Override
     protected Object[] filterApplicationExceptionMessageValues(ActionRuntime runtime, LaApplicationMessage msg) {
         return Stream.of(msg.getValues()).map(vl -> jsonManager.toJson(vl)).toArray(); // for client-managed message
     }
 
+    // -----------------------------------------------------
+    //                                               Finally
+    //                                               -------
     @Override
     public void hookFinally(ActionRuntime runtime) {
         super.hookFinally(runtime);
