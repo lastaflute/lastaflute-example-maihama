@@ -18,6 +18,7 @@ package org.docksidestage.app.web.base.restful;
 import javax.servlet.http.HttpServletResponse;
 
 import org.dbflute.optional.OptionalThing;
+import org.lastaflute.web.response.ActionResponse;
 import org.lastaflute.web.ruts.config.ActionExecute;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 
@@ -26,19 +27,79 @@ import org.lastaflute.web.ruts.process.ActionRuntime;
  */
 public class RestfulHttpStatusAssist { // #app_customize
 
+    // ===================================================================================
+    //                                                                              Derive
+    //                                                                              ======
     public OptionalThing<Integer> deriveConventionalHttpStatus(ActionRuntime runtime) {
-        if (isDeleteMethod(runtime) && isReturnAsEmptyBody(runtime)) {
-            return OptionalThing.of(HttpServletResponse.SC_NO_CONTENT);
+        if (!canOverrideSpecifiedHttpStatus(runtime) && hasAlreadyHttpStatus(runtime)) {
+            return OptionalThing.empty();
         }
-        return OptionalThing.empty();
+        Integer httpStatus = null;
+        if (runtime.hasActionResponse() && withoutFailureAndError(runtime)) { // precondition
+            if (isCreatedTargetMethod(runtime)) {
+                httpStatus = HttpServletResponse.SC_CREATED;
+            } else if (isNoContentTargetMethod(runtime) && isReturnAsEmptyBody(runtime)) {
+                httpStatus = HttpServletResponse.SC_NO_CONTENT;
+            }
+        }
+        return OptionalThing.ofNullable(httpStatus, () -> {
+            throw new IllegalStateException("Not found the conventional HTTP status: " + runtime);
+        });
     }
 
-    protected boolean isDeleteMethod(ActionRuntime runtime) {
+    // ===================================================================================
+    //                                                                     Override Option
+    //                                                                     ===============
+    protected boolean canOverrideSpecifiedHttpStatus(ActionRuntime runtime) { // you can select it
+        return false; // non-override as default
+    }
+
+    protected boolean hasAlreadyHttpStatus(ActionRuntime runtime) {
+        ActionResponse response = runtime.getActionResponse(); // null allowed
+        return response != null && response.getHttpStatus().isPresent();
+    }
+
+    // ===================================================================================
+    //                                                                         HTTP Method
+    //                                                                         ===========
+    protected boolean isCreatedTargetMethod(ActionRuntime runtime) {
+        return judgePostMethod(runtime);
+    }
+
+    protected boolean isNoContentTargetMethod(ActionRuntime runtime) {
+        return judgePutMethod(runtime) || judgeDeleteMethod(runtime) || judgePatchMethod(runtime);
+    }
+
+    protected boolean judgePostMethod(ActionRuntime runtime) {
+        return doJudgeHttpMethod(runtime, "post");
+    }
+
+    protected boolean judgePutMethod(ActionRuntime runtime) {
+        return doJudgeHttpMethod(runtime, "put");
+    }
+
+    protected boolean judgePatchMethod(ActionRuntime runtime) {
+        return doJudgeHttpMethod(runtime, "patch");
+    }
+
+    protected boolean judgeDeleteMethod(ActionRuntime runtime) {
+        return doJudgeHttpMethod(runtime, "delete");
+    }
+
+    protected boolean doJudgeHttpMethod(ActionRuntime runtime, String httpMethod) {
         ActionExecute execute = runtime.getActionExecute();
-        return execute.getRestfulHttpMethod().filter(mt -> mt.equals("delete")).isPresent();
+        return execute.getRestfulHttpMethod().filter(mt -> mt.equalsIgnoreCase(httpMethod)).isPresent();
+    }
+
+    // ===================================================================================
+    //                                                                     Action Response
+    //                                                                     ===============
+    protected boolean withoutFailureAndError(ActionRuntime runtime) {
+        return runtime.withoutFailureAndError();
     }
 
     protected boolean isReturnAsEmptyBody(ActionRuntime runtime) {
-        return runtime.getActionResponse().isReturnAsEmptyBody();
+        final ActionResponse response = runtime.getActionResponse(); // null allowed
+        return response != null && response.isReturnAsEmptyBody();
     }
 }
