@@ -18,7 +18,7 @@ package org.docksidestage.mylasta.direction.sponsor;
 import javax.servlet.http.HttpServletRequest;
 
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
-import org.docksidestage.mylasta.direction.sponsor.planner.ActionOptionAgent;
+import org.docksidestage.mylasta.direction.sponsor.planner.ShowbaseActionOptionAgent;
 import org.lastaflute.web.path.UrlMappingOption;
 import org.lastaflute.web.path.UrlMappingResource;
 import org.lastaflute.web.path.UrlReverseOption;
@@ -38,7 +38,7 @@ public class ShowbaseActionAdjustmentProvider extends MaihamaActionAdjustmentPro
     //                                                                           Attribute
     //                                                                           =========
     protected final ShowbaseConfig config;
-    protected final ActionOptionAgent actionOptionAgent;
+    protected final ShowbaseActionOptionAgent actionOptionAgent;
 
     // -----------------------------------------------------
     //                                         Cached Option
@@ -55,8 +55,8 @@ public class ShowbaseActionAdjustmentProvider extends MaihamaActionAdjustmentPro
         this.restfulRouter = actionOptionAgent.createRestfulRouter();
     }
 
-    protected ActionOptionAgent newActionOptionAgent(ShowbaseConfig config) {
-        return new ActionOptionAgent(config);
+    protected ShowbaseActionOptionAgent newActionOptionAgent(ShowbaseConfig config) {
+        return new ShowbaseActionOptionAgent(config);
     }
 
     // ===================================================================================

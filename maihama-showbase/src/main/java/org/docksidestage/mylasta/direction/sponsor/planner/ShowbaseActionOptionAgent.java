@@ -22,7 +22,7 @@ import org.lastaflute.web.path.restful.router.RestfulRouter;
 /**
  * @author jflute
  */
-public class ActionOptionAgent {
+public class ShowbaseActionOptionAgent {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -32,7 +32,7 @@ public class ActionOptionAgent {
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public ActionOptionAgent(ShowbaseConfig config) {
+    public ShowbaseActionOptionAgent(ShowbaseConfig config) {
         this.config = config;
     }
 
