@@ -21,7 +21,6 @@ import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.ShowbaseLoginAssist;
-import org.docksidestage.app.web.base.restful.RestfulHttpStatusAssist;
 import org.docksidestage.mylasta.action.ShowbaseMessages;
 import org.docksidestage.mylasta.action.ShowbaseUserBean;
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
@@ -29,6 +28,7 @@ import org.lastaflute.core.exception.LaApplicationMessage;
 import org.lastaflute.core.json.JsonManager;
 import org.lastaflute.web.login.LoginManager;
 import org.lastaflute.web.response.ActionResponse;
+import org.lastaflute.web.ruts.config.restful.httpstatus.TypicalStructuredSuccessHttpStatusHandler;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
 import org.lastaflute.web.validation.LaValidatableApi;
@@ -59,8 +59,6 @@ public abstract class ShowbaseBaseAction extends MaihamaBaseAction // has severa
     private ShowbaseLoginAssist loginAssist;
     //@Resource // if you need to auth your API, you can use this assist
     //private AccessTokenAuthAssist accessTokenAuthAssist;
-    @Resource
-    private RestfulHttpStatusAssist restfulHttpStatusAssist;
 
     // ===================================================================================
     //                                                                               Hook
@@ -94,14 +92,8 @@ public abstract class ShowbaseBaseAction extends MaihamaBaseAction // has severa
     public void hookFinally(ActionRuntime runtime) {
         super.hookFinally(runtime);
 
-        // for RESTful HTTP status as conventional way
-        deriveConventionalHttpStatus(runtime).ifPresent(status -> {
-            runtime.getActionResponse().httpStatus(status);
-        });
-    }
-
-    protected OptionalThing<Integer> deriveConventionalHttpStatus(ActionRuntime runtime) {
-        return restfulHttpStatusAssist.deriveConventionalHttpStatus(runtime);
+        // for RESTful HTTP status as conventional way e.g. POST:201, DELETE(no return):204
+        new TypicalStructuredSuccessHttpStatusHandler().reflectHttpStatusIfNeeds(runtime);
     }
 
     // ===================================================================================
