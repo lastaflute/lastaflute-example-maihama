@@ -16,7 +16,7 @@
 package org.docksidestage.mylasta.direction.sponsor.planner;
 
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
-import org.lastaflute.web.path.restful.router.PairBasedRestfulRouter;
+import org.lastaflute.web.path.restful.router.NumericBasedRestfulRouter;
 import org.lastaflute.web.path.restful.router.RestfulRouter;
 
 /**
@@ -54,6 +54,6 @@ public class ShowbaseActionOptionAgent {
     //                                               Restful
     //                                               -------
     public RestfulRouter createRestfulRouter() {
-        return new PairBasedRestfulRouter();
+        return new NumericBasedRestfulRouter();
     }
 }
