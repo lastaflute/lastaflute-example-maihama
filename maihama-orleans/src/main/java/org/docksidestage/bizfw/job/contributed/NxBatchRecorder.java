@@ -16,6 +16,7 @@
 package org.docksidestage.bizfw.job.contributed;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -64,21 +65,24 @@ public class NxBatchRecorder {
     // 【コントリビュート取り込みメモ】by jflute (2019/04/01)
     // コントリビュート取り込みに伴い、U-NEXT固有で利用しているクラスなどは置き換えている。
     // 例えば、Eclipse Collections などを利用していたが、Java標準のリストなどに修正している。
-    // また、会社的っぽい情報は削除している。それ以外はできるだけそのまま。
+    // また、会社的っぽい情報は削除。あと、細かいところやコメントを微調整。それ以外はできるだけそのまま。
     // _/_/_/_/_/_/_/_/_/_/
     // ===================================================================================
     //                                                                          Definition
     //                                                                          ==========
-    /** 個別エラーのためのロガー */
+    /**
+     * 個別エラーとしてログファイルなどを振り分けられるようにするためのロガー。<br>
+     * 参照用の詳細エラーは流量が多めなので通常のログとは切り分けたい。詳細は利用箇所を参照。
+     */
     private static final Logger errorsLogger = LoggerFactory.getLogger("batch.recording.errors");
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    /** 計画された処理対象件数。(NullAllowed: before planning) */
+    /** 計画された処理対象件数 (NullAllowed: before planning) */
     protected Integer plannedCount; // should be set only once
 
-    /** 実際に処理されている件数。 */
+    /** 実際に処理されている件数。(成功もエラーも含めて) */
     protected int processedCounter;
 
     /** 処理された中での正常件数。 */
@@ -95,13 +99,14 @@ public class NxBatchRecorder {
 
     /**
      * @author awnae
+     * @author jflute
      */
     public static class BatchBusinessSkipPart { // titleしかないが将来のためにPartに by awane (2017/05/10)
 
         protected final String skipTitle; // not null
 
         /**
-         * @param skipTitle スキップタイトル (NotNull)
+         * @param skipTitle スキップタイトル、そのスキップ処理に対する概要、処理対象や原因など (NotNull)
          */
         public BatchBusinessSkipPart(String skipTitle) {
             if (skipTitle == null) {
@@ -110,10 +115,6 @@ public class NxBatchRecorder {
             this.skipTitle = skipTitle;
         }
 
-        /**
-         * スキップタイトルを戻す。
-         * @return スキップタイトル (NotNull)
-         */
         public String getSkipTitle() {
             return skipTitle;
         }
@@ -135,7 +136,7 @@ public class NxBatchRecorder {
         protected final Throwable cause; // null allowed
 
         /**
-         * @param errorTitle エラータイトル (NotNull)
+         * @param errorTitle エラータイトル、その発生したエラーを表現する概要、デバッグできる情報など (NotNull)
          * @param cause 原因 (NullAllowed)
          */
         public BatchErrorPart(String errorTitle, Throwable cause) {
@@ -146,16 +147,11 @@ public class NxBatchRecorder {
             this.cause = cause;
         }
 
-        /**
-         * エラータイトルを戻す。
-         * @return エラータイトル (NotNull)
-         */
         public String getErrorTitle() {
             return errorTitle;
         }
 
         /**
-         * 原因の例外を戻す。
          * @return 原因の例外のOptional (NotNull, EmptyAllowed)
          */
         public OptionalThing<Throwable> getCause() {
@@ -404,7 +400,7 @@ public class NxBatchRecorder {
 
         /**
          * @param debugMsg デバッグメッセージ (NullAllowed: でも null はやめてね)
-         * @param cause 原因 (NullAllowed)
+         * @param cause 同じエラーが続いたときの直近の例外 (NullAllowed: 実際にはnullが設定されない想定)
          */
         public JobSameErrorContinueException(String debugMsg, Throwable cause) {
             super(debugMsg, cause);
@@ -463,8 +459,7 @@ public class NxBatchRecorder {
     //                                                                            Accessor
     //                                                                            ========
     /**
-     * 計画件数を戻す。
-     * @return 計画件数 (NotNull, EmptyAllowed: まだ planning されてないとき)
+     * @return 計画された処理対象件数 (NotNull, EmptyAllowed: まだ planning されてないとき)
      */
     public OptionalThing<Integer> getPlannedCount() {
         return OptionalThing.ofNullable(plannedCount, () -> {
@@ -473,34 +468,30 @@ public class NxBatchRecorder {
     }
 
     /**
-     * 処理した件数を戻す。
-     * @return 処理した件数
+     * @return 実際に処理されている件数。(成功もエラーも含めて)
      */
     public int getProcessedCount() {
         return processedCounter;
     }
 
     /**
-     * 成功件数を戻す。
-     * @return 成功件数
+     * @return 処理された中での正常件数
      */
     public int getSuccessCount() {
         return successCounter;
     }
 
     /**
-     * 業務的スキップリストを戻す。
-     * @return 読み取り専用業務的スキップリスト (NotNull, EmptyAllowed)
+     * @return 処理は継続したけど業務的にスキップしたリスト (NotNull, EmptyAllowed, ReadOnly)
      */
     public List<BatchBusinessSkipPart> getBusinessSkips() {
-        return businessSkips;
+        return Collections.unmodifiableList(businessSkips);
     }
 
     /**
-     * エラーリストを戻す。
-     * @return 読み取り専用エラーリスト (NotNull, EmptyAllowed)
+     * @return 最近連続で続いているエラーのリスト (NotNull, EmptyAllowed, ReadOnly)
      */
     public List<BatchErrorPart> getErrors() {
-        return errors;
+        return Collections.unmodifiableList(errors);
     }
 }
