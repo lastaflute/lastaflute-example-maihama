@@ -137,7 +137,7 @@ public class NxBatchRecorder {
 
         /**
          * @param errorTitle エラータイトル、その発生したエラーを表現する概要、デバッグできる情報など (NotNull)
-         * @param cause 原因 (NullAllowed)
+         * @param cause エラー原因の例外 (NullAllowed: 例外発生なしでエラーと判断させる場合など)
          */
         public BatchErrorPart(String errorTitle, Throwable cause) {
             if (errorTitle == null) {
@@ -152,7 +152,7 @@ public class NxBatchRecorder {
         }
 
         /**
-         * @return 原因の例外のOptional (NotNull, EmptyAllowed)
+         * @return エラー原因の例外のOptional (NotNull, EmptyAllowed)
          */
         public OptionalThing<Throwable> getCause() {
             return OptionalThing.ofNullable(cause, () -> {
