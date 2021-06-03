@@ -37,7 +37,6 @@ public class ShowbaseActionAdjustmentProvider extends MaihamaActionAdjustmentPro
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected final ShowbaseConfig config;
     protected final ShowbaseActionOptionAgent actionOptionAgent;
 
     // -----------------------------------------------------
@@ -49,9 +48,7 @@ public class ShowbaseActionAdjustmentProvider extends MaihamaActionAdjustmentPro
     //                                                                         Constructor
     //                                                                         ===========
     public ShowbaseActionAdjustmentProvider(ShowbaseConfig config) {
-        this.config = config;
         this.actionOptionAgent = newActionOptionAgent(config);
-
         this.restfulRouter = actionOptionAgent.createRestfulRouter();
     }
 
