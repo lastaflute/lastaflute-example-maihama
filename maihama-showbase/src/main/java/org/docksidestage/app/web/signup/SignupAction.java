@@ -71,6 +71,16 @@ public class SignupAction extends ShowbaseBaseAction {
         return JsonResponse.asEmptyBody(); // without automatic login here, client will call sign-in
     }
 
+    @Execute
+    public JsonResponse<Void> get$register(String account, String token) { // from mail link so cannot be POST
+        signupTokenAssist.verifySignupTokenMatched(account, token);
+        updateMemberAsFormalized(account);
+        return JsonResponse.asEmptyBody();
+    }
+
+    // ===================================================================================
+    //                                                                          Validation
+    //                                                                          ==========
     private void moreValidation(SignupBody body, ShowbaseMessages messages) {
         if (LaStringUtil.isNotEmpty(body.memberAccount)) {
             int count = memberBhv.selectCount(cb -> {
@@ -80,26 +90,6 @@ public class SignupAction extends ShowbaseBaseAction {
                 messages.addErrorsSignupAccountAlreadyExists("memberAccount");
             }
         }
-    }
-
-    private void sendSignupMail(SignupBody body, String token) {
-        WelcomeMemberPostcard.droppedInto(postbox, postcard -> {
-            postcard.setFrom(config.getMailAddressSupport(), "Showbase Support"); // #simple_for_example
-            postcard.addTo(body.memberAccount + "@docksidestage.org"); // #simple_for_example
-            postcard.setDomain(config.getServerDomain());
-            postcard.setMemberName(body.memberName);
-            postcard.setAccount(body.memberAccount);
-            postcard.setToken(token);
-            postcard.async();
-            postcard.retry(3, 1000L);
-        });
-    }
-
-    @Execute
-    public JsonResponse<Void> get$register(String account, String token) { // from mail link so cannot be POST
-        signupTokenAssist.verifySignupTokenMatched(account, token);
-        updateMemberAsFormalized(account);
-        return JsonResponse.asEmptyBody();
     }
 
     // ===================================================================================
@@ -133,5 +123,21 @@ public class SignupAction extends ShowbaseBaseAction {
         member.uniqueBy(account);
         member.setMemberStatusCode_Formalized();
         memberBhv.updateNonstrict(member);
+    }
+
+    // ===================================================================================
+    //                                                                        Assist Logic
+    //                                                                        ============
+    private void sendSignupMail(SignupBody body, String token) {
+        WelcomeMemberPostcard.droppedInto(postbox, postcard -> {
+            postcard.setFrom(config.getMailAddressSupport(), "Showbase Support"); // #simple_for_example
+            postcard.addTo(body.memberAccount + "@docksidestage.org"); // #simple_for_example
+            postcard.setDomain(config.getServerDomain());
+            postcard.setMemberName(body.memberName);
+            postcard.setAccount(body.memberAccount);
+            postcard.setToken(token);
+            postcard.async();
+            postcard.retry(3, 1000L);
+        });
     }
 }
