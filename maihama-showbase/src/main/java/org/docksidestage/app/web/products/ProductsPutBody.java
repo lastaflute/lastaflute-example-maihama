@@ -21,18 +21,18 @@ import org.lastaflute.web.validation.Required;
 /**
  * @author jflute
  */
-public class ProductsOneResult {
+public class ProductsPutBody {
 
     @Required
     public Integer productId;
     @Required
     public String productName;
     @Required
-    public String categoryName;
+    public String productStatus;
+    @Required
+    public String productCategory;
     @Required
     public Integer regularPrice;
-    @Required
-    public String productHandleCode;
 
     @Override
     public String toString() {

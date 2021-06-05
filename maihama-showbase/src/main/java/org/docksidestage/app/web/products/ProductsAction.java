@@ -31,8 +31,8 @@ import org.lastaflute.web.response.JsonResponse;
 /**
  * @author jflute
  */
-@AllowAnyoneAccess
-@RestfulAction
+@AllowAnyoneAccess // is NOT related to RESTful
+@RestfulAction // is required for RESTful API
 public class ProductsAction extends ShowbaseBaseAction {
 
     // ===================================================================================
@@ -47,57 +47,34 @@ public class ProductsAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<ProductsListResult> get$index(ProductsListForm form) {
+    public JsonResponse<List<ProductsResult>> get$index(ProductsListForm form) {
         validate(form, messages -> {});
-        List<Product> productList = selectProductList(form);
-        ProductsListResult result = mappingToListResult(productList);
-        return asJson(result);
+        List<Product> productList = productsCrudAssist.selectProductList(form);
+        List<ProductsResult> listResult = productsMappingAssist.mappingToListResult(productList);
+        return asJson(listResult);
     }
 
     @Execute
-    public JsonResponse<ProductsOneResult> get$index(Integer productId) {
-        Product product = selectProductById(productId);
-        ProductsOneResult result = mappingToOneResult(product);
-        return asJson(result);
+    public JsonResponse<ProductsResult> get$index(Integer productId) {
+        Product product = productsCrudAssist.selectProductById(productId);
+        ProductsResult singleResult = productsMappingAssist.mappingToSingleResult(product);
+        return asJson(singleResult);
     }
 
     @Execute
-    public JsonResponse<Void> post$index() {
-        // dummy implementation
-        return JsonResponse.asEmptyBody();
+    public JsonResponse<Void> post$index(ProductsPostBody body) {
+        validate(body, messages -> {});
+        return JsonResponse.asEmptyBody(); // dummy implementation
     }
 
     @Execute
-    public JsonResponse<Void> put$index(Integer productId) {
-        // dummy implementation
-        return JsonResponse.asEmptyBody();
+    public JsonResponse<Void> put$index(Integer productId, ProductsPutBody body) {
+        validate(body, messages -> {});
+        return JsonResponse.asEmptyBody(); // dummy implementation
     }
 
     @Execute
     public JsonResponse<Void> delete$index(Integer productId) {
-        // dummy implementation
-        return JsonResponse.asEmptyBody();
-    }
-
-    // ===================================================================================
-    //                                                                              Select
-    //                                                                              ======
-    private List<Product> selectProductList(ProductsListForm form) {
-        return productsCrudAssist.selectProductList(form);
-    }
-
-    private Product selectProductById(Integer productId) {
-        return productsCrudAssist.selectProductById(productId);
-    }
-
-    // ===================================================================================
-    //                                                                             Mapping
-    //                                                                             =======
-    private ProductsListResult mappingToListResult(List<Product> productList) {
-        return productsMappingAssist.mappingToListResult(productList);
-    }
-
-    private ProductsOneResult mappingToOneResult(Product product) {
-        return productsMappingAssist.mappingToOneResult(product);
+        return JsonResponse.asEmptyBody(); // dummy implementation
     }
 }

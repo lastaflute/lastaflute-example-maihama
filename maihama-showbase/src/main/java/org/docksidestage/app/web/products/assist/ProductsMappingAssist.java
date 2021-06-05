@@ -18,9 +18,7 @@ package org.docksidestage.app.web.products.assist;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.docksidestage.app.web.products.ProductsListResult;
-import org.docksidestage.app.web.products.ProductsListResult.ProductsRowPart;
-import org.docksidestage.app.web.products.ProductsOneResult;
+import org.docksidestage.app.web.products.ProductsResult;
 import org.docksidestage.dbflute.exentity.Product;
 
 /**
@@ -31,40 +29,25 @@ public class ProductsMappingAssist {
     // ===================================================================================
     //                                                                         List Result
     //                                                                         ===========
-    public ProductsListResult mappingToListResult(List<Product> productList) {
-        List<ProductsRowPart> rows = productList.stream().map(product -> {
-            return mappingToRowPart(product);
-        }).collect(Collectors.toList());
-        return new ProductsListResult(rows);
-    }
-
-    private ProductsRowPart mappingToRowPart(Product product) {
-        ProductsRowPart row = new ProductsRowPart();
-        row.productId = product.getProductId();
-        row.productName = product.getProductName();
-        product.getProductStatus().alwaysPresent(status -> {
-            row.productStatus = status.getProductStatusName();
-        });
-        product.getProductCategory().alwaysPresent(category -> {
-            row.productCategory = category.getProductCategoryName();
-        });
-        row.regularPrice = product.getRegularPrice();
-        row.latestPurchaseDate = product.getLatestPurchaseDate();
-        return row;
+    public List<ProductsResult> mappingToListResult(List<Product> productList) {
+        return productList.stream().map(product -> mappingToSingleResult(product)).collect(Collectors.toList());
     }
 
     // ===================================================================================
-    //                                                                          One Result
-    //                                                                          ==========
-    public ProductsOneResult mappingToOneResult(Product product) {
-        ProductsOneResult result = new ProductsOneResult();
+    //                                                                       Single Result
+    //                                                                       =============
+    public ProductsResult mappingToSingleResult(Product product) {
+        ProductsResult result = new ProductsResult();
         result.productId = product.getProductId();
         result.productName = product.getProductName();
-        result.regularPrice = product.getRegularPrice();
-        result.productHandleCode = product.getProductHandleCode();
-        product.getProductCategory().alwaysPresent(category -> {
-            result.categoryName = category.getProductCategoryName();
+        product.getProductStatus().alwaysPresent(status -> {
+            result.productStatus = status.getProductStatusName();
         });
+        product.getProductCategory().alwaysPresent(category -> {
+            result.productCategory = category.getProductCategoryName();
+        });
+        result.regularPrice = product.getRegularPrice();
+        result.latestPurchaseDate = product.getLatestPurchaseDate();
         return result;
     }
 }
