@@ -40,6 +40,7 @@ public class ShowbaseApiFailureHook extends TypicalFaihyApiFailureHook {
     protected void setupBusinessHttpStatusMap(Map<Class<?>, Integer> failureMap) {
         // you can add mapping of failure status with exception here
         //failureMap.put(AccessTokenUnauthorizedException.class, HttpServletResponse.SC_UNAUTHORIZED);
+        //failureMap.put(AccessUnderstoodButRefusedException.class, HttpServletResponse.SC_FORBIDDEN);
     }
 
     // ===================================================================================
