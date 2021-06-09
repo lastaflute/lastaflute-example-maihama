@@ -50,7 +50,7 @@ public class ProductsPurchasesAction extends ShowbaseBaseAction {
     // /products/1/purchases/
     //
     // *it needs "list" in method, which is resolved by ActionAdjustmentProvider
-    // http://localhost:8151/fortress/products/1/purchases/?memberName=S
+    // http://localhost:8098/showbase/products/1/purchases/?memberName=S
     // _/_/_/_/_/_/_/_/_/_/
     @Execute
     public JsonResponse<PurchasesListResult> get$index(Integer productId, PurchasesListForm form) {
@@ -63,7 +63,7 @@ public class ProductsPurchasesAction extends ShowbaseBaseAction {
     // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
     // /products/1/purchases/2/
     //
-    // http://localhost:8151/fortress/products/1/purchases/16/
+    // http://localhost:8098/showbase/products/1/purchases/16/
     // _/_/_/_/_/_/_/_/_/_/
     @Execute
     public JsonResponse<PurchasesOneResult> get$index(Integer productId, Long purchaseId) {
