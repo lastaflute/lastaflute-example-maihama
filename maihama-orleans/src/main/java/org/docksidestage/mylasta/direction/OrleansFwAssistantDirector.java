@@ -32,13 +32,36 @@ import org.lastaflute.web.ruts.renderer.HtmlRenderingProvider;
  */
 public class OrleansFwAssistantDirector extends MaihamaFwAssistantDirector {
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
     @Resource
     private OrleansConfig config;
 
+    // ===================================================================================
+    //                                                                              Assist
+    //                                                                              ======
     @Override
     protected void setupAppConfig(List<String> nameList) {
         nameList.add("orleans_config.properties"); // base point
         nameList.add("orleans_env.properties");
+    }
+
+    // ===================================================================================
+    //                                                                                 DB
+    //                                                                                ====
+    @Override
+    protected ListedClassificationProvider createListedClassificationProvider() {
+        return new OrleansListedClassificationProvider();
+    }
+
+    // ===================================================================================
+    //                                                                                Web
+    //                                                                               =====
+    @Override
+    protected void prepareWebDirection(FwWebDirection direction) {
+        super.prepareWebDirection(direction);
+        direction.directHtmlRendering(createHtmlRenderingProvider());
     }
 
     @Override
@@ -48,22 +71,11 @@ public class OrleansFwAssistantDirector extends MaihamaFwAssistantDirector {
     }
 
     @Override
-    protected ListedClassificationProvider createListedClassificationProvider() {
-        return new OrleansListedClassificationProvider();
-    }
-
-    @Override
-    protected void prepareWebDirection(FwWebDirection direction) {
-        super.prepareWebDirection(direction);
-        direction.directHtmlRendering(createHtmlRenderingProvider());
+    protected ApiFailureHook createApiFailureHook() {
+        return new OrleansApiFailureHook();
     }
 
     protected HtmlRenderingProvider createHtmlRenderingProvider() {
         return new ThymeleafRenderingProvider().asDevelopment(config.isDevelopmentHere());
-    }
-
-    @Override
-    protected ApiFailureHook createApiFailureHook() {
-        return new OrleansApiFailureHook();
     }
 }

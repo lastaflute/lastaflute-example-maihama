@@ -22,6 +22,7 @@ import javax.annotation.Resource;
 import org.docksidestage.mylasta.direction.sponsor.ShowbaseActionAdjustmentProvider;
 import org.docksidestage.mylasta.direction.sponsor.ShowbaseApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.ShowbaseListedClassificationProvider;
+import org.docksidestage.mylasta.direction.sponsor.planner.ShowbaseActionOptionPlanner;
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
 import org.lastaflute.web.api.ApiFailureHook;
 import org.lastaflute.web.path.ActionAdjustmentProvider;
@@ -31,29 +32,48 @@ import org.lastaflute.web.path.ActionAdjustmentProvider;
  */
 public class ShowbaseFwAssistantDirector extends MaihamaFwAssistantDirector {
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
     @Resource
     private ShowbaseConfig config;
 
+    // ===================================================================================
+    //                                                                              Assist
+    //                                                                              ======
     @Override
     protected void setupAppConfig(List<String> nameList) {
         nameList.add("showbase_config.properties"); // base point
         nameList.add("showbase_env.properties");
     }
 
+    // ===================================================================================
+    //                                                                               Core
+    //                                                                              ======
     @Override
     protected void setupAppMessage(List<String> nameList) {
         nameList.add("showbase_message"); // base point
         nameList.add("showbase_label");
     }
 
+    // ===================================================================================
+    //                                                                                 DB
+    //                                                                                ====
     @Override
     protected ListedClassificationProvider createListedClassificationProvider() {
         return new ShowbaseListedClassificationProvider();
     }
 
+    // ===================================================================================
+    //                                                                                Web
+    //                                                                               =====
     @Override
     protected ActionAdjustmentProvider createActionAdjustmentProvider() {
-        return new ShowbaseActionAdjustmentProvider(config);
+        return new ShowbaseActionAdjustmentProvider(createActionOptionPlanner());
+    }
+
+    protected ShowbaseActionOptionPlanner createActionOptionPlanner() {
+        return new ShowbaseActionOptionPlanner(config);
     }
 
     @Override

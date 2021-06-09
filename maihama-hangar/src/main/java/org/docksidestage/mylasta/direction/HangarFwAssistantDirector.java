@@ -35,22 +35,32 @@ public class HangarFwAssistantDirector extends MaihamaFwAssistantDirector {
         nameList.add("hangar_env.properties");
     }
 
-    @Override
-    protected void setupAppMessage(List<String> nameList) {
-        nameList.add("hangar_message"); // base point
-        nameList.add("hangar_label");
-    }
+    // ===================================================================================
+    //                                                                               Core
+    //                                                                              ======
 
+    // ===================================================================================
+    //                                                                                 DB
+    //                                                                                ====
     @Override
     protected ListedClassificationProvider createListedClassificationProvider() {
         return new HangarListedClassificationProvider();
     }
 
+    // ===================================================================================
+    //                                                                                Web
+    //                                                                               =====
     @Override
     protected void prepareWebDirection(FwWebDirection direction) {
         super.prepareWebDirection(direction);
         final String allowOrigin = "http://localhost:3000"; // #simple_for_example should be environment configuration
         direction.directCors(new CorsHook(allowOrigin)); // #change_it
+    }
+
+    @Override
+    protected void setupAppMessage(List<String> nameList) {
+        nameList.add("hangar_message"); // base point
+        nameList.add("hangar_label");
     }
 
     @Override

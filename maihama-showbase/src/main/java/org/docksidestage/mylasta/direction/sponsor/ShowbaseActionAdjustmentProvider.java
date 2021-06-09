@@ -15,10 +15,11 @@
  */
 package org.docksidestage.mylasta.direction.sponsor;
 
+import java.util.function.Predicate;
+
 import javax.servlet.http.HttpServletRequest;
 
-import org.docksidestage.mylasta.direction.ShowbaseConfig;
-import org.docksidestage.mylasta.direction.sponsor.planner.ShowbaseActionOptionAgent;
+import org.docksidestage.mylasta.direction.sponsor.planner.ShowbaseActionOptionPlanner;
 import org.lastaflute.web.path.UrlMappingOption;
 import org.lastaflute.web.path.UrlMappingResource;
 import org.lastaflute.web.path.UrlReverseOption;
@@ -37,23 +38,18 @@ public class ShowbaseActionAdjustmentProvider extends MaihamaActionAdjustmentPro
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected final ShowbaseActionOptionAgent actionOptionAgent;
-
     // -----------------------------------------------------
     //                                         Cached Option
     //                                         -------------
+    protected final Predicate<String> disabledSwaggerDeterminer; // argument is requestPath
     protected final RestfulRouter restfulRouter;
 
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public ShowbaseActionAdjustmentProvider(ShowbaseConfig config) {
-        this.actionOptionAgent = newActionOptionAgent(config);
-        this.restfulRouter = actionOptionAgent.createRestfulRouter();
-    }
-
-    protected ShowbaseActionOptionAgent newActionOptionAgent(ShowbaseConfig config) {
-        return new ShowbaseActionOptionAgent(config);
+    public ShowbaseActionAdjustmentProvider(ShowbaseActionOptionPlanner actionOptionPlanner) {
+        disabledSwaggerDeterminer = actionOptionPlanner.createDisabledSwaggerDeterminer();
+        restfulRouter = actionOptionPlanner.createRestfulRouter();
     }
 
     // ===================================================================================
@@ -64,7 +60,7 @@ public class ShowbaseActionAdjustmentProvider extends MaihamaActionAdjustmentPro
     //                                 ---------------------
     @Override
     public boolean isForced404NotFoundRouting(HttpServletRequest request, String requestPath) {
-        if (actionOptionAgent.isDisabledSwaggerRequest(requestPath)) { // e.g. swagger's html, css
+        if (disabledSwaggerDeterminer.test(requestPath)) { // e.g. swagger's html, css
             return true; // to suppress direct access to swagger resources at e.g. production
         }
         return super.isForced404NotFoundRouting(request, requestPath);

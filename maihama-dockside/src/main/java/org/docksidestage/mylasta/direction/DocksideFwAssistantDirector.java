@@ -34,13 +34,41 @@ import org.lastaflute.web.ruts.renderer.HtmlRenderingProvider;
  */
 public class DocksideFwAssistantDirector extends MaihamaFwAssistantDirector {
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
     @Resource
     private DocksideConfig config;
 
+    // ===================================================================================
+    //                                                                              Assist
+    //                                                                              ======
     @Override
     protected void setupAppConfig(List<String> nameList) {
         nameList.add("dockside_config.properties"); // base point
         nameList.add("dockside_env.properties");
+    }
+
+    // ===================================================================================
+    //                                                                               Core
+    //                                                                              ======
+
+    // ===================================================================================
+    //                                                                                 DB
+    //                                                                                ====
+    @Override
+    protected ListedClassificationProvider createListedClassificationProvider() {
+        return new DocksideListedClassificationProvider();
+    }
+
+    // ===================================================================================
+    //                                                                                Web
+    //                                                                               =====
+    @Override
+    protected void prepareWebDirection(FwWebDirection direction) {
+        super.prepareWebDirection(direction);
+        direction.directHtmlRendering(createHtmlRenderingProvider());
+        direction.directMultipart(createMultipartResourceProvider());
     }
 
     @Override
@@ -50,15 +78,8 @@ public class DocksideFwAssistantDirector extends MaihamaFwAssistantDirector {
     }
 
     @Override
-    protected ListedClassificationProvider createListedClassificationProvider() {
-        return new DocksideListedClassificationProvider();
-    }
-
-    @Override
-    protected void prepareWebDirection(FwWebDirection direction) {
-        super.prepareWebDirection(direction);
-        direction.directHtmlRendering(createHtmlRenderingProvider());
-        direction.directMultipart(createMultipartResourceProvider());
+    protected ApiFailureHook createApiFailureHook() {
+        return new DocksideApiFailureHook();
     }
 
     protected HtmlRenderingProvider createHtmlRenderingProvider() {
@@ -67,10 +88,5 @@ public class DocksideFwAssistantDirector extends MaihamaFwAssistantDirector {
 
     protected MultipartResourceProvider createMultipartResourceProvider() {
         return () -> new DocksideMultipartRequestHandler();
-    }
-
-    @Override
-    protected ApiFailureHook createApiFailureHook() {
-        return new DocksideApiFailureHook();
     }
 }

@@ -15,6 +15,8 @@
  */
 package org.docksidestage.mylasta.direction.sponsor.planner;
 
+import java.util.function.Predicate;
+
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
 import org.lastaflute.web.path.restful.router.NumericBasedRestfulRouter;
 import org.lastaflute.web.path.restful.router.RestfulRouter;
@@ -22,7 +24,7 @@ import org.lastaflute.web.path.restful.router.RestfulRouter;
 /**
  * @author jflute
  */
-public class ShowbaseActionOptionAgent {
+public class ShowbaseActionOptionPlanner {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -32,7 +34,7 @@ public class ShowbaseActionOptionAgent {
     // ===================================================================================
     //                                                                         Constructor
     //                                                                         ===========
-    public ShowbaseActionOptionAgent(ShowbaseConfig config) {
+    public ShowbaseActionOptionPlanner(ShowbaseConfig config) {
         this.config = config;
     }
 
@@ -42,8 +44,8 @@ public class ShowbaseActionOptionAgent {
     // -----------------------------------------------------
     //                                               Swagger
     //                                               -------
-    public boolean isDisabledSwaggerRequest(String requestPath) {
-        return !config.isSwaggerEnabled() && isSwaggerRequest(requestPath); // e.g. swagger's html, css
+    public Predicate<String> createDisabledSwaggerDeterminer() {
+        return requestPath -> !config.isSwaggerEnabled() && isSwaggerRequest(requestPath); // e.g. swagger's html, css
     }
 
     private boolean isSwaggerRequest(String requestPath) {
