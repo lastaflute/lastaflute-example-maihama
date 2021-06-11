@@ -17,12 +17,16 @@ package org.docksidestage.app.web.products;
 
 import org.docksidestage.dbflute.allcommon.CDef;
 import org.hibernate.validator.constraints.Length;
+import org.lastaflute.core.util.Lato;
 
 /**
  * @author jflute
  */
 public class ProductsListForm {
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
     /** prefix for name of product e.g. R */
     @Length(max = 10)
     public String productName;
@@ -33,4 +37,12 @@ public class ProductsListForm {
     /** prefix for member name who purchases the product e.g. S */
     @Length(max = 5)
     public String purchaseMemberName;
+
+    // ===================================================================================
+    //                                                                      Basic Override
+    //                                                                      ==============
+    @Override
+    public String toString() {
+        return Lato.string(this);
+    }
 }
