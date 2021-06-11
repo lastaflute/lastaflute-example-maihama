@@ -66,8 +66,8 @@ public abstract class HangarBaseAction extends MaihamaBaseAction implements LaVa
     }
 
     @Override
-    public void hookFinally(ActionRuntime runtimeMeta) {
-        super.hookFinally(runtimeMeta);
+    public void hookFinally(ActionRuntime runtime) {
+        super.hookFinally(runtime);
     }
 
     // ===================================================================================
