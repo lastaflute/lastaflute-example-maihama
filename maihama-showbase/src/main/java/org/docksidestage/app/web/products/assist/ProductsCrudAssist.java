@@ -19,7 +19,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.docksidestage.app.web.products.ProductsListForm;
+import org.docksidestage.app.web.products.ProductsSearchForm;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
 import org.docksidestage.dbflute.exentity.Product;
 
@@ -37,7 +37,7 @@ public class ProductsCrudAssist {
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
-    public List<Product> selectProductList(ProductsListForm form) {
+    public List<Product> selectProductList(ProductsSearchForm form) {
         return productBhv.selectList(cb -> {
             cb.setupSelect_ProductStatus();
             cb.setupSelect_ProductCategory();

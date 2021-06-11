@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.docksidestage.app.web.products.ProductsResult;
+import org.docksidestage.app.web.products.ProductsRowResult;
 import org.docksidestage.dbflute.exentity.Product;
 
 /**
@@ -29,8 +30,21 @@ public class ProductsMappingAssist {
     // ===================================================================================
     //                                                                         List Result
     //                                                                         ===========
-    public List<ProductsResult> mappingToListResult(List<Product> productList) {
-        return productList.stream().map(product -> mappingToSingleResult(product)).collect(Collectors.toList());
+    public List<ProductsRowResult> mappingToListResult(List<Product> productList) {
+        return productList.stream().map(product -> {
+            ProductsRowResult result = new ProductsRowResult();
+            result.productId = product.getProductId();
+            result.productName = product.getProductName();
+            product.getProductStatus().alwaysPresent(status -> {
+                result.productStatus = status.getProductStatusName();
+            });
+            product.getProductCategory().alwaysPresent(category -> {
+                result.productCategory = category.getProductCategoryName();
+            });
+            result.regularPrice = product.getRegularPrice();
+            result.latestPurchaseDate = product.getLatestPurchaseDate();
+            return result;
+        }).collect(Collectors.toList());
     }
 
     // ===================================================================================

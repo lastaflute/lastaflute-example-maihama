@@ -22,7 +22,7 @@ import org.lastaflute.core.util.Lato;
 /**
  * @author jflute
  */
-public class ProductsListForm {
+public class ProductsSearchForm {
 
     // ===================================================================================
     //                                                                           Attribute

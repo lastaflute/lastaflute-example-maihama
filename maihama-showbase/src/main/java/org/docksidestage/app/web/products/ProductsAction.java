@@ -47,10 +47,10 @@ public class ProductsAction extends ShowbaseBaseAction {
     //                                                                             Execute
     //                                                                             =======
     @Execute
-    public JsonResponse<List<ProductsResult>> get$index(ProductsListForm form) {
+    public JsonResponse<List<ProductsRowResult>> get$index(ProductsSearchForm form) {
         validate(form, messages -> {});
         List<Product> productList = productsCrudAssist.selectProductList(form);
-        List<ProductsResult> listResult = productsMappingAssist.mappingToListResult(productList);
+        List<ProductsRowResult> listResult = productsMappingAssist.mappingToListResult(productList);
         return asJson(listResult);
     }
 
