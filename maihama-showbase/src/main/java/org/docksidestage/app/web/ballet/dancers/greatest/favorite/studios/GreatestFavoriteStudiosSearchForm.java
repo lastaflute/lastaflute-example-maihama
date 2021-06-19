@@ -13,12 +13,12 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.products.purchases;
+package org.docksidestage.app.web.ballet.dancers.greatest.favorite.studios;
 
 /**
  * @author jflute
  */
-public class PurchasesListForm {
+public class GreatestFavoriteStudiosSearchForm {
 
     public String memberName;
 }

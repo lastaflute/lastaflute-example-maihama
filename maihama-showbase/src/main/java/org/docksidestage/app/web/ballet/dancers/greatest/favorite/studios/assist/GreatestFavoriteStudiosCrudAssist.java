@@ -13,20 +13,20 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.products.purchases.assist;
+package org.docksidestage.app.web.ballet.dancers.greatest.favorite.studios.assist;
 
 import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.docksidestage.app.web.products.purchases.PurchasesSearchForm;
+import org.docksidestage.app.web.ballet.dancers.greatest.favorite.studios.GreatestFavoriteStudiosSearchForm;
 import org.docksidestage.dbflute.exbhv.PurchaseBhv;
 import org.docksidestage.dbflute.exentity.Purchase;
 
 /**
  * @author jflute
  */
-public class PurchasesCrudAssist {
+public class GreatestFavoriteStudiosCrudAssist {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -37,7 +37,7 @@ public class PurchasesCrudAssist {
     // ===================================================================================
     //                                                                              Select
     //                                                                              ======
-    public List<Purchase> selectPurchaseList(Integer productId, PurchasesSearchForm form) {
+    public List<Purchase> selectPurchaseList(Integer productId, GreatestFavoriteStudiosSearchForm form) {
         return purchaseBhv.selectList(cb -> {
             cb.setupSelect_Member();
             cb.setupSelect_Product();

@@ -13,15 +13,15 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package org.docksidestage.app.web.products.purchases;
+package org.docksidestage.app.web.ballet.dancers.greatest.favorite.studios;
 
 import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.docksidestage.app.web.ballet.dancers.greatest.favorite.studios.assist.GreatestFavoriteStudiosCrudAssist;
+import org.docksidestage.app.web.ballet.dancers.greatest.favorite.studios.assist.GreatestFavoriteStudiosMappingAssist;
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
-import org.docksidestage.app.web.products.purchases.assist.PurchasesCrudAssist;
-import org.docksidestage.app.web.products.purchases.assist.PurchasesMappingAssist;
 import org.docksidestage.dbflute.exentity.Purchase;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.RestfulAction;
@@ -32,42 +32,42 @@ import org.lastaflute.web.response.JsonResponse;
  * @author jflute
  */
 @AllowAnyoneAccess
-@RestfulAction
-public class ProductsPurchasesAction extends ShowbaseBaseAction {
+@RestfulAction(hyphenate = { "ballet-dancers", "greatest-favorite-studios" })
+public class BalletDancersGreatestFavoriteStudiosAction extends ShowbaseBaseAction {
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
     @Resource
-    private PurchasesCrudAssist purchasesCrudAssist;
+    private GreatestFavoriteStudiosCrudAssist greatestFavoriteStudiosCrudAssist;
     @Resource
-    private PurchasesMappingAssist purchasesMappingAssist;
+    private GreatestFavoriteStudiosMappingAssist greatestFavoriteStudiosMappingAssist;
 
     // ===================================================================================
     //                                                                             Execute
     //                                                                             =======
     // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    // /products/1/purchases/
+    // /ballet-dancers/1/greatest-favorite-studios/
     //
-    // http://localhost:8098/showbase/products/1/purchases/?productName=S
+    // http://localhost:8098/showbase/ballet-dancers/1/greatest-favorite-studios/?productName=S
     // _/_/_/_/_/_/_/_/_/_/
     @Execute
-    public JsonResponse<PurchasesListResult> get$index(Integer productId, PurchasesSearchForm form) {
+    public JsonResponse<GreatestFavoriteStudiosListResult> get$index(Integer productId, GreatestFavoriteStudiosSearchForm form) {
         validate(form, messages -> {});
-        List<Purchase> purchaseList = purchasesCrudAssist.selectPurchaseList(productId, form);
-        PurchasesListResult result = purchasesMappingAssist.mappingToListResult(purchaseList);
-        return asJson(result); // example for wrapped list pattern
+        List<Purchase> purchaseList = greatestFavoriteStudiosCrudAssist.selectPurchaseList(productId, form);
+        GreatestFavoriteStudiosListResult result = greatestFavoriteStudiosMappingAssist.mappingToListResult(purchaseList);
+        return asJson(result);
     }
 
     // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-    // /products/1/purchases/2/
+    // /ballet-dancers/1/greatest-favorite-studios/2/
     //
-    // http://localhost:8098/showbase/products/1/purchases/16/
+    // http://localhost:8098/showbase/ballet-dancers/1/greatest-favorite-studios/16/
     // _/_/_/_/_/_/_/_/_/_/
     @Execute
-    public JsonResponse<PurchasesOneResult> get$index(Integer productId, Long purchaseId) {
-        Purchase purchase = purchasesCrudAssist.selectPurchaseById(productId, purchaseId);
-        PurchasesOneResult result = purchasesMappingAssist.mappingToOneResult(purchase);
+    public JsonResponse<GreatestFavoriteStudiosOneResult> get$index(Integer productId, Long purchaseId) {
+        Purchase purchase = greatestFavoriteStudiosCrudAssist.selectPurchaseById(productId, purchaseId);
+        GreatestFavoriteStudiosOneResult result = greatestFavoriteStudiosMappingAssist.mappingToOneResult(purchase);
         return asJson(result);
     }
 }
