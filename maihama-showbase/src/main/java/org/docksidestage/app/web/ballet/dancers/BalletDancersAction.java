@@ -32,7 +32,7 @@ import org.lastaflute.web.response.JsonResponse;
  * @author jflute
  */
 @AllowAnyoneAccess // is NOT related to RESTful
-@RestfulAction(hyphenate = "ballet-dancer")
+@RestfulAction(hyphenate = "ballet-dancers")
 public class BalletDancersAction extends ShowbaseBaseAction {
 
     // ===================================================================================
