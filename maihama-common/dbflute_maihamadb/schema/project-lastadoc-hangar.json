@@ -246,8 +246,8 @@
       "returnTypeDocMeta": {
         "name": null,
         "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003cjava.util.AbstractMap.java.util.AbstractMap$SimpleEntry\u003cjava.lang.String, java.lang.String\u003e\u003e\u003e",
-        "simpleTypeName": "JsonResponse\u003cList\u003cAbstractMAbstractMap$SimpleEntry\u003cString, String\u003e\u003e\u003e",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003cjava.util.AbstractMap$SimpleEntry\u003cjava.lang.String, java.lang.String\u003e\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cList\u003cAbstractMap$SimpleEntry\u003cString, String\u003e\u003e\u003e",
         "value": "new SimpleEntry\u003c\u003e(m.code(),asJson(memberStatusList)",
         "description": null,
         "comment": null,
@@ -542,7 +542,7 @@
           {
             "name": "_memberStatus",
             "publicName": "_memberStatus",
-            "typeName": "org.dbflute.optional.OptionalEntity\u003cMemberStatus\u003e",
+            "typeName": "org.dbflute.optional.OptionalEntity\u003corg.docksidestage.dbflute.exentity.MemberStatus\u003e",
             "simpleTypeName": "OptionalEntity\u003cMemberStatus\u003e",
             "value": null,
             "description": "(会員ステータス)MEMBER_STATUS by my MEMBER_STATUS_CODE, named \u0027memberStatus\u0027",
@@ -553,7 +553,7 @@
           {
             "name": "_memberAddressAsValid",
             "publicName": "_memberAddressAsValid",
-            "typeName": "org.dbflute.optional.OptionalEntity\u003cMemberAddress\u003e",
+            "typeName": "org.dbflute.optional.OptionalEntity\u003corg.docksidestage.dbflute.exentity.MemberAddress\u003e",
             "simpleTypeName": "OptionalEntity\u003cMemberAddress\u003e",
             "value": null,
             "description": "(会員住所情報)MEMBER_ADDRESS by my MEMBER_ID, named \u0027memberAddressAsValid\u0027",
@@ -564,7 +564,7 @@
           {
             "name": "_memberLoginAsLatest",
             "publicName": "_memberLoginAsLatest",
-            "typeName": "org.dbflute.optional.OptionalEntity\u003cMemberLogin\u003e",
+            "typeName": "org.dbflute.optional.OptionalEntity\u003corg.docksidestage.dbflute.exentity.MemberLogin\u003e",
             "simpleTypeName": "OptionalEntity\u003cMemberLogin\u003e",
             "value": null,
             "description": "(会員ログイン)MEMBER_LOGIN by my MEMBER_ID, named \u0027memberLoginAsLatest\u0027",
@@ -575,7 +575,7 @@
           {
             "name": "_memberSecurityAsOne",
             "publicName": "_memberSecurityAsOne",
-            "typeName": "org.dbflute.optional.OptionalEntity\u003cMemberSecurity\u003e",
+            "typeName": "org.dbflute.optional.OptionalEntity\u003corg.docksidestage.dbflute.exentity.MemberSecurity\u003e",
             "simpleTypeName": "OptionalEntity\u003cMemberSecurity\u003e",
             "value": null,
             "description": "(会員セキュリティ)member_security by MEMBER_ID, named \u0027memberSecurityAsOne\u0027",
@@ -586,7 +586,7 @@
           {
             "name": "_memberServiceAsOne",
             "publicName": "_memberServiceAsOne",
-            "typeName": "org.dbflute.optional.OptionalEntity\u003cMemberService\u003e",
+            "typeName": "org.dbflute.optional.OptionalEntity\u003corg.docksidestage.dbflute.exentity.MemberService\u003e",
             "simpleTypeName": "OptionalEntity\u003cMemberService\u003e",
             "value": null,
             "description": "(会員サービス)member_service by MEMBER_ID, named \u0027memberServiceAsOne\u0027",
@@ -597,7 +597,7 @@
           {
             "name": "_memberWithdrawalAsOne",
             "publicName": "_memberWithdrawalAsOne",
-            "typeName": "org.dbflute.optional.OptionalEntity\u003cMemberWithdrawal\u003e",
+            "typeName": "org.dbflute.optional.OptionalEntity\u003corg.docksidestage.dbflute.exentity.MemberWithdrawal\u003e",
             "simpleTypeName": "OptionalEntity\u003cMemberWithdrawal\u003e",
             "value": null,
             "description": "(会員退会情報)member_withdrawal by MEMBER_ID, named \u0027memberWithdrawalAsOne\u0027",
@@ -608,7 +608,7 @@
           {
             "name": "_memberAddressList",
             "publicName": "_memberAddressList",
-            "typeName": "java.util.List\u003cMemberAddress\u003e",
+            "typeName": "java.util.List\u003corg.docksidestage.dbflute.exentity.MemberAddress\u003e",
             "simpleTypeName": "List\u003cMemberAddress\u003e",
             "value": null,
             "description": "(会員住所情報)MEMBER_ADDRESS by MEMBER_ID, named \u0027memberAddressList\u0027",
@@ -619,7 +619,7 @@
           {
             "name": "_memberFollowingByMyMemberIdList",
             "publicName": "_memberFollowingByMyMemberIdList",
-            "typeName": "java.util.List\u003cMemberFollowing\u003e",
+            "typeName": "java.util.List\u003corg.docksidestage.dbflute.exentity.MemberFollowing\u003e",
             "simpleTypeName": "List\u003cMemberFollowing\u003e",
             "value": null,
             "description": "(会員フォローイング)MEMBER_FOLLOWING by MY_MEMBER_ID, named \u0027memberFollowingByMyMemberIdList\u0027",
@@ -630,7 +630,7 @@
           {
             "name": "_memberFollowingByYourMemberIdList",
             "publicName": "_memberFollowingByYourMemberIdList",
-            "typeName": "java.util.List\u003cMemberFollowing\u003e",
+            "typeName": "java.util.List\u003corg.docksidestage.dbflute.exentity.MemberFollowing\u003e",
             "simpleTypeName": "List\u003cMemberFollowing\u003e",
             "value": null,
             "description": "(会員フォローイング)MEMBER_FOLLOWING by YOUR_MEMBER_ID, named \u0027memberFollowingByYourMemberIdList\u0027",
@@ -641,7 +641,7 @@
           {
             "name": "_memberLoginList",
             "publicName": "_memberLoginList",
-            "typeName": "java.util.List\u003cMemberLogin\u003e",
+            "typeName": "java.util.List\u003corg.docksidestage.dbflute.exentity.MemberLogin\u003e",
             "simpleTypeName": "List\u003cMemberLogin\u003e",
             "value": null,
             "description": "(会員ログイン)MEMBER_LOGIN by MEMBER_ID, named \u0027memberLoginList\u0027",
@@ -652,7 +652,7 @@
           {
             "name": "_purchaseList",
             "publicName": "_purchaseList",
-            "typeName": "java.util.List\u003cPurchase\u003e",
+            "typeName": "java.util.List\u003corg.docksidestage.dbflute.exentity.Purchase\u003e",
             "simpleTypeName": "List\u003cPurchase\u003e",
             "value": null,
             "description": "(購入)PURCHASE by MEMBER_ID, named \u0027purchaseList\u0027",
@@ -2198,8 +2198,8 @@
       "returnTypeDocMeta": {
         "name": null,
         "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003cjava.util.AbstractMap.java.util.AbstractMap$SimpleEntry\u003cjava.lang.String, java.lang.String\u003e\u003e\u003e",
-        "simpleTypeName": "JsonResponse\u003cList\u003cAbstractMAbstractMap$SimpleEntry\u003cString, String\u003e\u003e\u003e",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003cjava.util.AbstractMap$SimpleEntry\u003cjava.lang.String, java.lang.String\u003e\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cList\u003cAbstractMap$SimpleEntry\u003cString, String\u003e\u003e\u003e",
         "value": "new SimpleEntry\u003c\u003e(m.code(),asJson(productStatusList)",
         "description": null,
         "comment": null,
@@ -3111,8 +3111,8 @@
       "returnTypeDocMeta": {
         "name": null,
         "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003cjava.util.AbstractMap.java.util.AbstractMap$SimpleEntry\u003cjava.lang.String, java.lang.String\u003e\u003e\u003e",
-        "simpleTypeName": "JsonResponse\u003cList\u003cAbstractMAbstractMap$SimpleEntry\u003cString, String\u003e\u003e\u003e",
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003cjava.util.AbstractMap$SimpleEntry\u003cjava.lang.String, java.lang.String\u003e\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cList\u003cAbstractMap$SimpleEntry\u003cString, String\u003e\u003e\u003e",
         "value": "new SimpleEntry\u003c\u003e(m.code(),asJson(reasonList)",
         "description": null,
         "comment": null,

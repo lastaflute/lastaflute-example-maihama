@@ -15,7 +15,6 @@
  */
 package org.docksidestage.mylasta.action;
 
-import org.docksidestage.mylasta.action.OrleansLabels;
 import org.lastaflute.core.message.UserMessage;
 
 /**

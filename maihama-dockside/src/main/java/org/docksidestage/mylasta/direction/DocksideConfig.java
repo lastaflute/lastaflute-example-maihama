@@ -15,7 +15,6 @@
  */
 package org.docksidestage.mylasta.direction;
 
-import org.docksidestage.mylasta.direction.DocksideEnv;
 import org.lastaflute.core.direction.exception.ConfigPropertyNotFoundException;
 
 /**

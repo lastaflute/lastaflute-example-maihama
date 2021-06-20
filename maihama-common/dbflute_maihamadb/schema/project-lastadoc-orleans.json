@@ -107,7 +107,7 @@
           {
             "name": "varyingParameter",
             "publicName": "varyingParameter",
-            "typeName": "java.util.Map\u003cString, Object\u003e",
+            "typeName": "java.util.Map\u003cjava.lang.String, java.lang.Object\u003e",
             "simpleTypeName": "Map\u003cString, Object\u003e",
             "value": null,
             "description": null,
@@ -191,7 +191,7 @@
           {
             "name": "endTitleRoll",
             "publicName": "endTitleRoll",
-            "typeName": "java.util.Map\u003cString, String\u003e",
+            "typeName": "java.util.Map\u003cjava.lang.String, java.lang.String\u003e",
             "simpleTypeName": "Map\u003cString, String\u003e",
             "value": null,
             "description": null,
@@ -344,7 +344,7 @@
           {
             "name": "varyingParameter",
             "publicName": "varyingParameter",
-            "typeName": "java.util.Map\u003cString, Object\u003e",
+            "typeName": "java.util.Map\u003cjava.lang.String, java.lang.Object\u003e",
             "simpleTypeName": "Map\u003cString, Object\u003e",
             "value": null,
             "description": null,
