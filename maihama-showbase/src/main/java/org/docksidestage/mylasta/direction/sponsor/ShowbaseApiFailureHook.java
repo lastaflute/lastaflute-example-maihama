@@ -17,8 +17,13 @@ package org.docksidestage.mylasta.direction.sponsor;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.dbflute.exception.EntityAlreadyDeletedException;
 import org.docksidestage.mylasta.action.ShowbaseMessages;
 import org.lastaflute.web.api.theme.TypicalFaihyApiFailureHook;
+import org.lastaflute.web.exception.AccessTokenUnauthorizedException;
+import org.lastaflute.web.exception.AccessUnderstoodButRefusedException;
 
 /**
  * @author jflute
@@ -38,9 +43,17 @@ public class ShowbaseApiFailureHook extends TypicalFaihyApiFailureHook {
     //                                   -------------------
     @Override
     protected void setupBusinessHttpStatusMap(Map<Class<?>, Integer> failureMap) {
+        // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         // you can add mapping of failure status with exception here
-        //failureMap.put(AccessTokenUnauthorizedException.class, HttpServletResponse.SC_UNAUTHORIZED);
-        //failureMap.put(AccessUnderstoodButRefusedException.class, HttpServletResponse.SC_FORBIDDEN);
+        // _/_/_/_/_/_/_/_/_/_/
+
+        // LastaFlute-embedded exceptions for application use, do you need them?
+        failureMap.put(AccessTokenUnauthorizedException.class, HttpServletResponse.SC_UNAUTHORIZED);
+        failureMap.put(AccessUnderstoodButRefusedException.class, HttpServletResponse.SC_FORBIDDEN);
+
+        // the DBFlute exception means the resource is not found
+        // (though other selectEntity() situations may throw it, are you alright?) 
+        failureMap.put(EntityAlreadyDeletedException.class, HttpServletResponse.SC_NOT_FOUND);
     }
 
     // ===================================================================================

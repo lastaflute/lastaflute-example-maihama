@@ -21,13 +21,16 @@ import javax.annotation.Resource;
 
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.mylasta.direction.ShowbaseConfig;
+import org.docksidestage.mylasta.direction.sponsor.ShowbaseApiFailureHook;
 import org.lastaflute.meta.SwaggerGenerator;
+import org.lastaflute.meta.SwaggerOption.SwaggerFailureHttpStatusResource;
 import org.lastaflute.meta.agent.SwaggerAgent;
 import org.lastaflute.meta.swagger.web.LaActionSwaggerable;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.HtmlResponse;
 import org.lastaflute.web.response.JsonResponse;
+import org.lastaflute.web.ruts.config.restful.httpstatus.TypicalStructuredSuccessHttpStatusHandler;
 import org.lastaflute.web.servlet.request.RequestManager;
 
 /**
@@ -59,7 +62,22 @@ public class SwaggerAction extends ShowbaseBaseAction implements LaActionSwagger
     @Execute
     public JsonResponse<Map<String, Object>> json() {
         verifySwaggerAllowed();
-        return asJson(new SwaggerGenerator().generateSwaggerMap());
+        Map<String, Object> swaggerMap = new SwaggerGenerator().generateSwaggerMap(op -> {
+            op.derivedSuccessHttpStatus(meta -> {
+                // conventional success status according to action structure
+                //  e.g. post: 201, put/delete withtout return: 204
+                TypicalStructuredSuccessHttpStatusHandler statusHandler = new TypicalStructuredSuccessHttpStatusHandler();
+                return statusHandler.deriveSuccessStatus(meta.getActionExecute()).orElse(null);
+            });
+            op.derivedFailureHttpStatus(meta -> {
+                // synchronize with failure hook's mapping (exception to status)
+                //  e.g. EntityAlreadyDeletedException: 404
+                SwaggerFailureHttpStatusResource resource = new SwaggerFailureHttpStatusResource();
+                resource.acceptFailureStatusMap(new ShowbaseApiFailureHook().getBusinessHttpStatusMapping());
+                return resource;
+            });
+        });
+        return asJson(swaggerMap);
     }
 
     private void verifySwaggerAllowed() { // also check in ActionAdjustmentProvider
