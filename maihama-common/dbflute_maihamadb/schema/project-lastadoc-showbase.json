@@ -1,7 +1,7 @@
 {
   "actionDocMetaList": [
     {
-      "url": "/root/",
+      "url": "/",
       "typeName": "org.docksidestage.app.web.RootAction",
       "simpleTypeName": "RootAction",
       "description": "@author jflute",
@@ -26,7 +26,65 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 7,
+      "fileLineCount": 17,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/roneman",
+      "typeName": "org.docksidestage.app.web.RootAction",
+      "simpleTypeName": "RootAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "roneman",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
+        "simpleTypeName": "HtmlResponse",
+        "value": null,
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 17,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/rshining",
+      "typeName": "org.docksidestage.app.web.RootAction",
+      "simpleTypeName": "RootAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "rshining",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.HtmlResponse",
+        "simpleTypeName": "HtmlResponse",
+        "value": null,
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 17,
       "methodLineCount": 3
     },
     {
@@ -82,7 +140,7 @@
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 30,
+      "fileLineCount": 45,
       "methodLineCount": 5
     },
     {
@@ -132,14 +190,14 @@
         "publicName": null,
         "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.Map\u003cjava.lang.String, java.lang.Object\u003e\u003e",
         "simpleTypeName": "JsonResponse\u003cMap\u003cString, Object\u003e\u003e",
-        "value": "asJson(new SwaggerGenerator()",
+        "value": "statusHandler.deriveSuccessStatus(meta.getActionExecute(),##unanalyzable##,asJson(swaggerMap)",
         "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
-      "fileLineCount": 30,
-      "methodLineCount": 4
+      "fileLineCount": 45,
+      "methodLineCount": 19
     },
     {
       "url": "/ballet-dancers/",
@@ -1980,7 +2038,7 @@
       "methodLineCount": 12
     },
     {
-      "url": "/member/list/{arg0}",
+      "url": "/member/list/{pageNumber}",
       "typeName": "org.docksidestage.app.web.member.MemberListAction",
       "simpleTypeName": "MemberListAction",
       "description": "@author jflute",
@@ -2020,8 +2078,8 @@
       ],
       "parameterTypeDocMetaList": [
         {
-          "name": "arg0",
-          "publicName": "arg0",
+          "name": "pageNumber",
+          "publicName": "pageNumber",
           "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.Integer\u003e",
           "simpleTypeName": "OptionalThing\u003cInteger\u003e",
           "value": null,
@@ -2122,7 +2180,7 @@
         "publicName": null,
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingResult\u003corg.docksidestage.app.web.member.MemberSearchRowResult\u003e\u003e",
         "simpleTypeName": "JsonResponse\u003cSearchPagingResult\u003cMemberSearchRowResult\u003e\u003e",
-        "value": null,
+        "value": "asJson(result)",
         "description": null,
         "comment": null,
         "annotationList": [],
@@ -2286,90 +2344,10 @@
         ]
       },
       "fileLineCount": 83,
-      "methodLineCount": null
+      "methodLineCount": 6
     },
     {
-      "url": "/member/purchase/list/delete/{purchaseId}",
-      "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListAction",
-      "simpleTypeName": "MemberPurchaseListAction",
-      "description": "@author jflute",
-      "typeComment": "@author jflute\n@author iwamatsu0430\n@author black-trooper",
-      "fieldTypeDocMetaList": [
-        {
-          "name": "purchaseBhv",
-          "publicName": "purchaseBhv",
-          "typeName": "org.docksidestage.dbflute.exbhv.PurchaseBhv",
-          "simpleTypeName": "PurchaseBhv",
-          "value": null,
-          "description": "The behavior of PURCHASE.",
-          "comment": "The behavior of PURCHASE.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "purchasePaymentBhv",
-          "publicName": "purchasePaymentBhv",
-          "typeName": "org.docksidestage.dbflute.exbhv.PurchasePaymentBhv",
-          "simpleTypeName": "PurchasePaymentBhv",
-          "value": null,
-          "description": "The behavior of purchase_payment.",
-          "comment": "The behavior of purchase_payment.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "pagingAssist",
-          "publicName": "pagingAssist",
-          "typeName": "org.docksidestage.app.web.base.paging.PagingAssist",
-          "simpleTypeName": "PagingAssist",
-          "value": null,
-          "description": "@author jflute",
-          "comment": "@author jflute",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        }
-      ],
-      "methodName": "delete",
-      "methodComment": null,
-      "annotationList": [
-        "Execute"
-      ],
-      "parameterTypeDocMetaList": [
-        {
-          "name": "purchaseId",
-          "publicName": "purchaseId",
-          "typeName": "java.lang.Long",
-          "simpleTypeName": "Long",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        }
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
-        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
-        "value": "JsonResponse.asEmptyBody()",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": []
-      },
-      "fileLineCount": 64,
-      "methodLineCount": 9
-    },
-    {
-      "url": "/member/purchase/list/{arg0}/{arg1}",
+      "url": "/member/purchase/list/{memberId}/{pageNumber}",
       "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListAction",
       "simpleTypeName": "MemberPurchaseListAction",
       "description": "@author jflute",
@@ -2422,8 +2400,8 @@
       ],
       "parameterTypeDocMetaList": [
         {
-          "name": "arg0",
-          "publicName": "arg0",
+          "name": "memberId",
+          "publicName": "memberId",
           "typeName": "java.lang.Integer",
           "simpleTypeName": "Integer",
           "value": null,
@@ -2433,8 +2411,8 @@
           "nestTypeDocMetaList": []
         },
         {
-          "name": "arg1",
-          "publicName": "arg1",
+          "name": "pageNumber",
+          "publicName": "pageNumber",
           "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.Integer\u003e",
           "simpleTypeName": "OptionalThing\u003cInteger\u003e",
           "value": null,
@@ -2450,7 +2428,7 @@
         "publicName": null,
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingResult\u003corg.docksidestage.app.web.member.purchase.MemberPurchaseSearchRowResult\u003e\u003e",
         "simpleTypeName": "JsonResponse\u003cSearchPagingResult\u003cMemberPurchaseSearchRowResult\u003e\u003e",
-        "value": null,
+        "value": "asJson(result)",
         "description": null,
         "comment": null,
         "annotationList": [],
@@ -2603,7 +2581,87 @@
         ]
       },
       "fileLineCount": 64,
-      "methodLineCount": null
+      "methodLineCount": 5
+    },
+    {
+      "url": "/member/purchase/list/delete/{purchaseId}",
+      "typeName": "org.docksidestage.app.web.member.purchase.MemberPurchaseListAction",
+      "simpleTypeName": "MemberPurchaseListAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute\n@author iwamatsu0430\n@author black-trooper",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "purchaseBhv",
+          "publicName": "purchaseBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.PurchaseBhv",
+          "simpleTypeName": "PurchaseBhv",
+          "value": null,
+          "description": "The behavior of PURCHASE.",
+          "comment": "The behavior of PURCHASE.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "purchasePaymentBhv",
+          "publicName": "purchasePaymentBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.PurchasePaymentBhv",
+          "simpleTypeName": "PurchasePaymentBhv",
+          "value": null,
+          "description": "The behavior of purchase_payment.",
+          "comment": "The behavior of purchase_payment.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "pagingAssist",
+          "publicName": "pagingAssist",
+          "typeName": "org.docksidestage.app.web.base.paging.PagingAssist",
+          "simpleTypeName": "PagingAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "delete",
+      "methodComment": null,
+      "annotationList": [
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "purchaseId",
+          "publicName": "purchaseId",
+          "typeName": "java.lang.Long",
+          "simpleTypeName": "Long",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
+        "simpleTypeName": "JsonResponse\u003cVoid\u003e",
+        "value": "JsonResponse.asEmptyBody()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": []
+      },
+      "fileLineCount": 64,
+      "methodLineCount": 9
     },
     {
       "url": "/mypage/",
@@ -2852,99 +2910,7 @@
       "methodLineCount": 4
     },
     {
-      "url": "/product/list/status",
-      "typeName": "org.docksidestage.app.web.product.ProductListAction",
-      "simpleTypeName": "ProductListAction",
-      "description": "@author iwamatsu0430",
-      "typeComment": "@author iwamatsu0430\n@author jflute\n@author black-trooper",
-      "fieldTypeDocMetaList": [
-        {
-          "name": "productBhv",
-          "publicName": "productBhv",
-          "typeName": "org.docksidestage.dbflute.exbhv.ProductBhv",
-          "simpleTypeName": "ProductBhv",
-          "value": null,
-          "description": "The behavior of PRODUCT.",
-          "comment": "The behavior of PRODUCT.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "productStatusBhv",
-          "publicName": "productStatusBhv",
-          "typeName": "org.docksidestage.dbflute.exbhv.ProductStatusBhv",
-          "simpleTypeName": "ProductStatusBhv",
-          "value": null,
-          "description": "The behavior of PRODUCT_STATUS.",
-          "comment": "The behavior of PRODUCT_STATUS.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "pagingAssist",
-          "publicName": "pagingAssist",
-          "typeName": "org.docksidestage.app.web.base.paging.PagingAssist",
-          "simpleTypeName": "PagingAssist",
-          "value": null,
-          "description": "@author jflute",
-          "comment": "@author jflute",
-          "annotationList": [
-            "Resource"
-          ],
-          "nestTypeDocMetaList": []
-        }
-      ],
-      "methodName": "status",
-      "methodComment": null,
-      "annotationList": [
-        "AllowAnyoneAccess",
-        "Execute"
-      ],
-      "parameterTypeDocMetaList": [],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003cjava.util.AbstractMap$SimpleEntry\u003cjava.lang.String, java.lang.String\u003e\u003e\u003e",
-        "simpleTypeName": "JsonResponse\u003cList\u003cAbstractMap$SimpleEntry\u003cString, String\u003e\u003e\u003e",
-        "value": "new SimpleEntry\u003c\u003e(m.code(),asJson(productStatusList)",
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "key",
-            "publicName": "key",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "value",
-            "publicName": "value",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "fileLineCount": 82,
-      "methodLineCount": 6
-    },
-    {
-      "url": "/product/list/search/{arg0}",
+      "url": "/product/list/search/{pageNumber}",
       "typeName": "org.docksidestage.app.web.product.ProductListAction",
       "simpleTypeName": "ProductListAction",
       "description": "@author iwamatsu0430",
@@ -2998,8 +2964,8 @@
       ],
       "parameterTypeDocMetaList": [
         {
-          "name": "arg0",
-          "publicName": "arg0",
+          "name": "pageNumber",
+          "publicName": "pageNumber",
           "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.Integer\u003e",
           "simpleTypeName": "OptionalThing\u003cInteger\u003e",
           "value": null,
@@ -3063,7 +3029,7 @@
         "publicName": null,
         "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.base.paging.SearchPagingResult\u003corg.docksidestage.app.web.product.ProductRowResult\u003e\u003e",
         "simpleTypeName": "JsonResponse\u003cSearchPagingResult\u003cProductRowResult\u003e\u003e",
-        "value": null,
+        "value": "mappingToResult(product),asJson(result)",
         "description": null,
         "comment": null,
         "annotationList": [],
@@ -3214,7 +3180,99 @@
         ]
       },
       "fileLineCount": 82,
-      "methodLineCount": null
+      "methodLineCount": 11
+    },
+    {
+      "url": "/product/list/status",
+      "typeName": "org.docksidestage.app.web.product.ProductListAction",
+      "simpleTypeName": "ProductListAction",
+      "description": "@author iwamatsu0430",
+      "typeComment": "@author iwamatsu0430\n@author jflute\n@author black-trooper",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "productBhv",
+          "publicName": "productBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.ProductBhv",
+          "simpleTypeName": "ProductBhv",
+          "value": null,
+          "description": "The behavior of PRODUCT.",
+          "comment": "The behavior of PRODUCT.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "productStatusBhv",
+          "publicName": "productStatusBhv",
+          "typeName": "org.docksidestage.dbflute.exbhv.ProductStatusBhv",
+          "simpleTypeName": "ProductStatusBhv",
+          "value": null,
+          "description": "The behavior of PRODUCT_STATUS.",
+          "comment": "The behavior of PRODUCT_STATUS.\n\u003cp\u003e\nYou can implement your original methods here.\nThis class remains when re-generating.\n\u003c/p\u003e\n\n@author DBFlute(AutoGenerator)",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "pagingAssist",
+          "publicName": "pagingAssist",
+          "typeName": "org.docksidestage.app.web.base.paging.PagingAssist",
+          "simpleTypeName": "PagingAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "status",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003cjava.util.AbstractMap$SimpleEntry\u003cjava.lang.String, java.lang.String\u003e\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cList\u003cAbstractMap$SimpleEntry\u003cString, String\u003e\u003e\u003e",
+        "value": "new SimpleEntry\u003c\u003e(m.code(),asJson(productStatusList)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "key",
+            "publicName": "key",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "value",
+            "publicName": "value",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 82,
+      "methodLineCount": 6
     },
     {
       "url": "/products/",
@@ -4131,6 +4189,292 @@
             "publicName": "productName",
             "typeName": "java.lang.String",
             "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 39,
+      "methodLineCount": 5
+    },
+    {
+      "url": "/products/{productId}/purchases/{purchaseId}/payments/",
+      "typeName": "org.docksidestage.app.web.products.purchases.payments.ProductsPurchasesPaymentsAction",
+      "simpleTypeName": "ProductsPurchasesPaymentsAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "paymentsCrudAssist",
+          "publicName": "paymentsCrudAssist",
+          "typeName": "org.docksidestage.app.web.products.purchases.payments.assist.PaymentsCrudAssist",
+          "simpleTypeName": "PaymentsCrudAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "paymentsMappingAssist",
+          "publicName": "paymentsMappingAssist",
+          "typeName": "org.docksidestage.app.web.products.purchases.payments.assist.PaymentsMappingAssist",
+          "simpleTypeName": "PaymentsMappingAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "get$index",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "RestfulAction",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "productId",
+          "publicName": "productId",
+          "typeName": "java.lang.Integer",
+          "simpleTypeName": "Integer",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "purchaseId",
+          "publicName": "purchaseId",
+          "typeName": "java.lang.Long",
+          "simpleTypeName": "Long",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.docksidestage.app.web.products.purchases.payments.PaymentsSearchForm",
+        "simpleTypeName": "PaymentsSearchForm",
+        "value": null,
+        "description": "@author jflute",
+        "comment": "@author jflute",
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "productName",
+            "publicName": "productName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": "prefix for name of product e.g. R",
+            "comment": "prefix for name of product e.g. R",
+            "annotationList": [
+              "Length{max\u003d10}"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "productStatus",
+            "publicName": "productStatus",
+            "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
+            "simpleTypeName": "CDef.ProductStatus",
+            "value": "{ONS\u003dOnSaleProduction, PST\u003dProductionStop, SST\u003dSaleStop}",
+            "description": "status of product e.g. ONS",
+            "comment": "status of product e.g. ONS",
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "purchaseMemberName",
+            "publicName": "purchaseMemberName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": "prefix for member name who purchases the product e.g. S",
+            "comment": "prefix for member name who purchases the product e.g. S",
+            "annotationList": [
+              "Length{max\u003d5}"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.util.List\u003corg.docksidestage.app.web.products.purchases.payments.PaymentsRowResult\u003e\u003e",
+        "simpleTypeName": "JsonResponse\u003cList\u003cPaymentsRowResult\u003e\u003e",
+        "value": "asJson(result)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "paymentId",
+            "publicName": "paymentId",
+            "typeName": "java.lang.Long",
+            "simpleTypeName": "Long",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "memberName",
+            "publicName": "memberName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "productName",
+            "publicName": "productName",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 39,
+      "methodLineCount": 6
+    },
+    {
+      "url": "/products/{productId}/purchases/{purchaseId}/payments/{paymentId}/",
+      "typeName": "org.docksidestage.app.web.products.purchases.payments.ProductsPurchasesPaymentsAction",
+      "simpleTypeName": "ProductsPurchasesPaymentsAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [
+        {
+          "name": "paymentsCrudAssist",
+          "publicName": "paymentsCrudAssist",
+          "typeName": "org.docksidestage.app.web.products.purchases.payments.assist.PaymentsCrudAssist",
+          "simpleTypeName": "PaymentsCrudAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "paymentsMappingAssist",
+          "publicName": "paymentsMappingAssist",
+          "typeName": "org.docksidestage.app.web.products.purchases.payments.assist.PaymentsMappingAssist",
+          "simpleTypeName": "PaymentsMappingAssist",
+          "value": null,
+          "description": "@author jflute",
+          "comment": "@author jflute",
+          "annotationList": [
+            "Resource"
+          ],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "methodName": "get$index",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "RestfulAction",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "productId",
+          "publicName": "productId",
+          "typeName": "java.lang.Integer",
+          "simpleTypeName": "Integer",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "purchaseId",
+          "publicName": "purchaseId",
+          "typeName": "java.lang.Long",
+          "simpleTypeName": "Long",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "paymentId",
+          "publicName": "paymentId",
+          "typeName": "java.lang.Long",
+          "simpleTypeName": "Long",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.products.purchases.payments.PaymentsResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cPaymentsResult\u003e",
+        "value": "asJson(result)",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "paymentId",
+            "publicName": "paymentId",
+            "typeName": "java.lang.Long",
+            "simpleTypeName": "Long",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "paymentDatetime",
+            "publicName": "paymentDatetime",
+            "typeName": "java.time.LocalDateTime",
+            "simpleTypeName": "LocalDateTime",
             "value": null,
             "description": null,
             "comment": null,
@@ -5491,8 +5835,8 @@
       ],
       "parameterTypeDocMetaList": [
         {
-          "name": "arg0",
-          "publicName": "arg0",
+          "name": "bodyList",
+          "publicName": "bodyList",
           "typeName": "java.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.simple.SuperSimpleBody\u003e",
           "simpleTypeName": "List\u003cSuperSimpleBody\u003e",
           "value": null,
@@ -5552,14 +5896,14 @@
         "publicName": null,
         "typeName": "org.lastaflute.web.response.JsonResponse\u003cjava.lang.Void\u003e",
         "simpleTypeName": "JsonResponse\u003cVoid\u003e",
-        "value": null,
+        "value": "JsonResponse.asEmptyBody()",
         "description": null,
         "comment": null,
         "annotationList": [],
         "nestTypeDocMetaList": []
       },
       "fileLineCount": 19,
-      "methodLineCount": null
+      "methodLineCount": 4
     },
     {
       "url": "/wx/remogen/list/basic",
@@ -7215,6 +7559,652 @@
       "methodLineCount": 3
     },
     {
+      "url": "/wx/remogen/routing/piari/{first}",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
+      "simpleTypeName": "WxRemogenRoutingAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "piari",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "first",
+          "publicName": "first",
+          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
+          "simpleTypeName": "OptionalThing\u003cString\u003e",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
+        "value": "asJson(new RoutingCheckResult(\"piari()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "method",
+            "publicName": "method",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "first",
+            "publicName": "first",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "second",
+            "publicName": "second",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 146,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/routing/dstore/{first}/{second}",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
+      "simpleTypeName": "WxRemogenRoutingAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "dstore",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "first",
+          "publicName": "first",
+          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
+          "simpleTypeName": "OptionalThing\u003cString\u003e",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "second",
+          "publicName": "second",
+          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
+          "simpleTypeName": "OptionalThing\u003cString\u003e",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
+        "value": "asJson(new RoutingCheckResult(\"dstore()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "method",
+            "publicName": "method",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "first",
+            "publicName": "first",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "second",
+            "publicName": "second",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 146,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/routing/bonvo/{first}/{second}",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
+      "simpleTypeName": "WxRemogenRoutingAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "bonvo",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "first",
+          "publicName": "first",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "second",
+          "publicName": "second",
+          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
+          "simpleTypeName": "OptionalThing\u003cString\u003e",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
+        "value": "asJson(new RoutingCheckResult(\"bonvo()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "method",
+            "publicName": "method",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "first",
+            "publicName": "first",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "second",
+            "publicName": "second",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 146,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/routing/amba/{first}/{second}/{third}",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
+      "simpleTypeName": "WxRemogenRoutingAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "amba",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "first",
+          "publicName": "first",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "second",
+          "publicName": "second",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "third",
+          "publicName": "third",
+          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
+          "simpleTypeName": "OptionalThing\u003cString\u003e",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
+        "value": "asJson(new RoutingCheckResult(\"amba()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "method",
+            "publicName": "method",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "first",
+            "publicName": "first",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "second",
+            "publicName": "second",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 146,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/routing/miraco/{first}/{second}/{third}/{fourth}",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
+      "simpleTypeName": "WxRemogenRoutingAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "miraco",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "first",
+          "publicName": "first",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "second",
+          "publicName": "second",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "third",
+          "publicName": "third",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "fourth",
+          "publicName": "fourth",
+          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
+          "simpleTypeName": "OptionalThing\u003cString\u003e",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
+        "value": "asJson(new RoutingCheckResult(\"miraco()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "method",
+            "publicName": "method",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "first",
+            "publicName": "first",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "second",
+            "publicName": "second",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 146,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/routing/dohotel/{first}/{second}",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
+      "simpleTypeName": "WxRemogenRoutingAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "dohotel",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "first",
+          "publicName": "first",
+          "typeName": "java.lang.String",
+          "simpleTypeName": "String",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "second",
+          "publicName": "second",
+          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
+          "simpleTypeName": "OptionalThing\u003cString\u003e",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckForm",
+        "simpleTypeName": "RoutingCheckForm",
+        "value": null,
+        "description": "@author jflute",
+        "comment": "@author jflute",
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "param",
+            "publicName": "param",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
+        "value": "asJson(new RoutingCheckResult(\"dohotel()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "method",
+            "publicName": "method",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "first",
+            "publicName": "first",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "second",
+            "publicName": "second",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 146,
+      "methodLineCount": 3
+    },
+    {
+      "url": "/wx/remogen/routing/celeb/{first}/{second}",
+      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
+      "simpleTypeName": "WxRemogenRoutingAction",
+      "description": "@author jflute",
+      "typeComment": "@author jflute",
+      "fieldTypeDocMetaList": [],
+      "methodName": "celeb",
+      "methodComment": null,
+      "annotationList": [
+        "AllowAnyoneAccess",
+        "Execute"
+      ],
+      "parameterTypeDocMetaList": [
+        {
+          "name": "first",
+          "publicName": "first",
+          "typeName": "java.lang.Integer",
+          "simpleTypeName": "Integer",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        },
+        {
+          "name": "second",
+          "publicName": "second",
+          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.Long\u003e",
+          "simpleTypeName": "OptionalThing\u003cLong\u003e",
+          "value": null,
+          "description": null,
+          "comment": null,
+          "annotationList": [],
+          "nestTypeDocMetaList": []
+        }
+      ],
+      "formTypeDocMeta": null,
+      "returnTypeDocMeta": {
+        "name": null,
+        "publicName": null,
+        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
+        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
+        "value": "asJson(new RoutingCheckResult(\"celeb()",
+        "description": null,
+        "comment": null,
+        "annotationList": [],
+        "nestTypeDocMetaList": [
+          {
+            "name": "method",
+            "publicName": "method",
+            "typeName": "java.lang.String",
+            "simpleTypeName": "String",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "first",
+            "publicName": "first",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "second",
+            "publicName": "second",
+            "typeName": "java.lang.Object",
+            "simpleTypeName": "Object",
+            "value": null,
+            "description": null,
+            "comment": null,
+            "annotationList": [],
+            "nestTypeDocMetaList": []
+          }
+        ]
+      },
+      "fileLineCount": 146,
+      "methodLineCount": 3
+    },
+    {
       "url": "/wx/remogen/routing/{first}/resola",
       "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
       "simpleTypeName": "WxRemogenRoutingAction",
@@ -7374,652 +8364,6 @@
       },
       "fileLineCount": 146,
       "methodLineCount": 3
-    },
-    {
-      "url": "/wx/remogen/routing/piari/{arg0}",
-      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
-      "simpleTypeName": "WxRemogenRoutingAction",
-      "description": "@author jflute",
-      "typeComment": "@author jflute",
-      "fieldTypeDocMetaList": [],
-      "methodName": "piari",
-      "methodComment": null,
-      "annotationList": [
-        "AllowAnyoneAccess",
-        "Execute"
-      ],
-      "parameterTypeDocMetaList": [
-        {
-          "name": "arg0",
-          "publicName": "arg0",
-          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
-          "simpleTypeName": "OptionalThing\u003cString\u003e",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        }
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
-        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "method",
-            "publicName": "method",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "first",
-            "publicName": "first",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "second",
-            "publicName": "second",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "fileLineCount": 146,
-      "methodLineCount": null
-    },
-    {
-      "url": "/wx/remogen/routing/dstore/{arg0}/{arg1}",
-      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
-      "simpleTypeName": "WxRemogenRoutingAction",
-      "description": "@author jflute",
-      "typeComment": "@author jflute",
-      "fieldTypeDocMetaList": [],
-      "methodName": "dstore",
-      "methodComment": null,
-      "annotationList": [
-        "AllowAnyoneAccess",
-        "Execute"
-      ],
-      "parameterTypeDocMetaList": [
-        {
-          "name": "arg0",
-          "publicName": "arg0",
-          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
-          "simpleTypeName": "OptionalThing\u003cString\u003e",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "arg1",
-          "publicName": "arg1",
-          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
-          "simpleTypeName": "OptionalThing\u003cString\u003e",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        }
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
-        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "method",
-            "publicName": "method",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "first",
-            "publicName": "first",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "second",
-            "publicName": "second",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "fileLineCount": 146,
-      "methodLineCount": null
-    },
-    {
-      "url": "/wx/remogen/routing/bonvo/{arg0}/{arg1}",
-      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
-      "simpleTypeName": "WxRemogenRoutingAction",
-      "description": "@author jflute",
-      "typeComment": "@author jflute",
-      "fieldTypeDocMetaList": [],
-      "methodName": "bonvo",
-      "methodComment": null,
-      "annotationList": [
-        "AllowAnyoneAccess",
-        "Execute"
-      ],
-      "parameterTypeDocMetaList": [
-        {
-          "name": "arg0",
-          "publicName": "arg0",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "arg1",
-          "publicName": "arg1",
-          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
-          "simpleTypeName": "OptionalThing\u003cString\u003e",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        }
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
-        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "method",
-            "publicName": "method",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "first",
-            "publicName": "first",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "second",
-            "publicName": "second",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "fileLineCount": 146,
-      "methodLineCount": null
-    },
-    {
-      "url": "/wx/remogen/routing/amba/{arg0}/{arg1}/{arg2}",
-      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
-      "simpleTypeName": "WxRemogenRoutingAction",
-      "description": "@author jflute",
-      "typeComment": "@author jflute",
-      "fieldTypeDocMetaList": [],
-      "methodName": "amba",
-      "methodComment": null,
-      "annotationList": [
-        "AllowAnyoneAccess",
-        "Execute"
-      ],
-      "parameterTypeDocMetaList": [
-        {
-          "name": "arg0",
-          "publicName": "arg0",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "arg1",
-          "publicName": "arg1",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "arg2",
-          "publicName": "arg2",
-          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
-          "simpleTypeName": "OptionalThing\u003cString\u003e",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        }
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
-        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "method",
-            "publicName": "method",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "first",
-            "publicName": "first",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "second",
-            "publicName": "second",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "fileLineCount": 146,
-      "methodLineCount": null
-    },
-    {
-      "url": "/wx/remogen/routing/miraco/{arg0}/{arg1}/{arg2}/{arg3}",
-      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
-      "simpleTypeName": "WxRemogenRoutingAction",
-      "description": "@author jflute",
-      "typeComment": "@author jflute",
-      "fieldTypeDocMetaList": [],
-      "methodName": "miraco",
-      "methodComment": null,
-      "annotationList": [
-        "AllowAnyoneAccess",
-        "Execute"
-      ],
-      "parameterTypeDocMetaList": [
-        {
-          "name": "arg0",
-          "publicName": "arg0",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "arg1",
-          "publicName": "arg1",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "arg2",
-          "publicName": "arg2",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "arg3",
-          "publicName": "arg3",
-          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
-          "simpleTypeName": "OptionalThing\u003cString\u003e",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        }
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
-        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "method",
-            "publicName": "method",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "first",
-            "publicName": "first",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "second",
-            "publicName": "second",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "fileLineCount": 146,
-      "methodLineCount": null
-    },
-    {
-      "url": "/wx/remogen/routing/dohotel/{arg0}/{arg1}",
-      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
-      "simpleTypeName": "WxRemogenRoutingAction",
-      "description": "@author jflute",
-      "typeComment": "@author jflute",
-      "fieldTypeDocMetaList": [],
-      "methodName": "dohotel",
-      "methodComment": null,
-      "annotationList": [
-        "AllowAnyoneAccess",
-        "Execute"
-      ],
-      "parameterTypeDocMetaList": [
-        {
-          "name": "arg0",
-          "publicName": "arg0",
-          "typeName": "java.lang.String",
-          "simpleTypeName": "String",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "arg1",
-          "publicName": "arg1",
-          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.String\u003e",
-          "simpleTypeName": "OptionalThing\u003cString\u003e",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        }
-      ],
-      "formTypeDocMeta": {
-        "name": null,
-        "publicName": null,
-        "typeName": "org.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckForm",
-        "simpleTypeName": "RoutingCheckForm",
-        "value": null,
-        "description": "@author jflute",
-        "comment": "@author jflute",
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "param",
-            "publicName": "param",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "returnTypeDocMeta": {
-        "name": null,
-        "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
-        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "method",
-            "publicName": "method",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "first",
-            "publicName": "first",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "second",
-            "publicName": "second",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "fileLineCount": 146,
-      "methodLineCount": null
-    },
-    {
-      "url": "/wx/remogen/routing/celeb/{arg0}/{arg1}",
-      "typeName": "org.docksidestage.app.web.wx.remogen.WxRemogenRoutingAction",
-      "simpleTypeName": "WxRemogenRoutingAction",
-      "description": "@author jflute",
-      "typeComment": "@author jflute",
-      "fieldTypeDocMetaList": [],
-      "methodName": "celeb",
-      "methodComment": null,
-      "annotationList": [
-        "AllowAnyoneAccess",
-        "Execute"
-      ],
-      "parameterTypeDocMetaList": [
-        {
-          "name": "arg0",
-          "publicName": "arg0",
-          "typeName": "java.lang.Integer",
-          "simpleTypeName": "Integer",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        },
-        {
-          "name": "arg1",
-          "publicName": "arg1",
-          "typeName": "org.dbflute.optional.OptionalThing\u003cjava.lang.Long\u003e",
-          "simpleTypeName": "OptionalThing\u003cLong\u003e",
-          "value": null,
-          "description": null,
-          "comment": null,
-          "annotationList": [],
-          "nestTypeDocMetaList": []
-        }
-      ],
-      "formTypeDocMeta": null,
-      "returnTypeDocMeta": {
-        "name": null,
-        "publicName": null,
-        "typeName": "org.lastaflute.web.response.JsonResponse\u003corg.docksidestage.app.web.wx.remogen.bean.routing.RoutingCheckResult\u003e",
-        "simpleTypeName": "JsonResponse\u003cRoutingCheckResult\u003e",
-        "value": null,
-        "description": null,
-        "comment": null,
-        "annotationList": [],
-        "nestTypeDocMetaList": [
-          {
-            "name": "method",
-            "publicName": "method",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "first",
-            "publicName": "first",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          },
-          {
-            "name": "second",
-            "publicName": "second",
-            "typeName": "java.lang.Object",
-            "simpleTypeName": "Object",
-            "value": null,
-            "description": null,
-            "comment": null,
-            "annotationList": [],
-            "nestTypeDocMetaList": []
-          }
-        ]
-      },
-      "fileLineCount": 146,
-      "methodLineCount": null
     },
     {
       "url": "/wx/remogen/suffix/allsuffix",
@@ -8220,7 +8564,48 @@
             "annotationList": [
               "Valid"
             ],
-            "nestTypeDocMetaList": []
+            "nestTypeDocMetaList": [
+              {
+                "name": "parkName",
+                "publicName": "parkName",
+                "typeName": "java.lang.String",
+                "simpleTypeName": "String",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Required"
+                ],
+                "nestTypeDocMetaList": []
+              },
+              {
+                "name": "showStages",
+                "publicName": "showStages",
+                "typeName": "java.util.List\u003corg.docksidestage.app.web.wx.remogen.bean.suffix.PartOnlySuffix$ResortParkPart$ShowStagePart\u003e",
+                "simpleTypeName": "List\u003cShowStagePart\u003e",
+                "value": null,
+                "description": null,
+                "comment": null,
+                "annotationList": [
+                  "Valid"
+                ],
+                "nestTypeDocMetaList": [
+                  {
+                    "name": "stageName",
+                    "publicName": "stageName",
+                    "typeName": "java.lang.String",
+                    "simpleTypeName": "String",
+                    "value": null,
+                    "description": null,
+                    "comment": null,
+                    "annotationList": [
+                      "Required"
+                    ],
+                    "nestTypeDocMetaList": []
+                  }
+                ]
+              }
+            ]
           }
         ]
       },

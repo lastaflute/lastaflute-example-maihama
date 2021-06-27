@@ -16,7 +16,9 @@
 package org.docksidestage.app.web;
 
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
+import org.lastaflute.core.message.UserMessages;
 import org.lastaflute.web.Execute;
+import org.lastaflute.web.exception.Forced404NotFoundException;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.HtmlResponse;
 
@@ -28,6 +30,16 @@ public class RootAction extends ShowbaseBaseAction {
 
     @Execute
     public HtmlResponse index() {
-        throw new UnsupportedOperationException();
+        throw new Forced404NotFoundException("no implementation yet", UserMessages.empty());
+    }
+
+    @Execute
+    public HtmlResponse roneman() {
+        throw new Forced404NotFoundException("delete this example method", UserMessages.empty());
+    }
+
+    @Execute
+    public HtmlResponse rshining() {
+        throw new Forced404NotFoundException("delete this example method", UserMessages.empty());
     }
 }
