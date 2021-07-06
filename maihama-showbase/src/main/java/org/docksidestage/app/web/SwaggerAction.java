@@ -77,7 +77,7 @@ public class SwaggerAction extends ShowbaseBaseAction implements LaActionSwagger
                 return resource;
             });
         });
-        return asJson(swaggerMap);
+        return asJson(swaggerMap).switchMappingOption(op -> {}); // not to depend on application settings
     }
 
     private void verifySwaggerAllowed() { // also check in ActionAdjustmentProvider
