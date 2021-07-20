@@ -16,6 +16,11 @@
 	<url>http://dbflute.org/lastaflute</url>
 	<inceptionYear>2015</inceptionYear>
 
+	<properties>
+		<lasta.meta.version>0.5.1-W1-SNAPSHOT</lasta.meta.version>
+		<swagger.ui.version>3.19.0</swagger.ui.version>
+	</properties>
+
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -148,6 +153,15 @@
 			<version>${app.version}</version>
 		</dependency>
 
+		<!-- lastaflute -->
+		<!-- if you use Lasta Meta as compile scope in other applications in the same service,
+		 move this dependency definition to common settings with swagger-ui -->
+		<dependency>
+			<groupId>org.lastaflute.meta</groupId>
+			<artifactId>lasta-meta</artifactId>
+			<version>${lasta.meta.version}</version>
+		</dependency>
+
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 		<!--                                                               Partner Library -->
 		<!--                                                               = = = = = = = = -->
@@ -155,6 +169,14 @@
 		<dependency>
 			<groupId>org.dbflute.tomcat</groupId>
 			<artifactId>tomcat-boot</artifactId>
+		</dependency>
+
+		<!-- swagger -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>swagger-ui</artifactId>
+			<version>${swagger.ui.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 </project>

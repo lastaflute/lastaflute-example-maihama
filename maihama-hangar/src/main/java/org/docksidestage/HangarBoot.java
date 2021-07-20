@@ -22,8 +22,14 @@ import org.dbflute.tomcat.TomcatBoot;
  */
 public class HangarBoot { // #change_it_first
 
+    public static final String CONTEXT = "/hangar";
+
     public static void main(String[] args) { // e.g. java -Dlasta.env=production -jar maihama-hangar.war
-        new TomcatBoot(8092, "/hangar").asDevelopment(isDevelopment()).bootAwait();
+        TomcatBoot boot = new TomcatBoot(8092, CONTEXT).asDevelopment(isDevelopment());
+        boot.useMetaInfoResourceDetect().useWebFragmentsDetect(jarName -> { // both for swagger
+            return jarName.contains("swagger-ui"); // meanwhile, restricted by [app]_env.properties
+        });
+        boot.bootAwait();
     }
 
     private static boolean isDevelopment() {

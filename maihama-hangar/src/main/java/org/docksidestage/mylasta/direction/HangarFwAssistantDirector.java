@@ -17,11 +17,16 @@ package org.docksidestage.mylasta.direction;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
+import org.docksidestage.mylasta.direction.sponsor.HangarActionAdjustmentProvider;
 import org.docksidestage.mylasta.direction.sponsor.HangarApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.HangarListedClassificationProvider;
+import org.docksidestage.mylasta.direction.sponsor.planner.HangarActionOptionPlanner;
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
 import org.lastaflute.web.api.ApiFailureHook;
 import org.lastaflute.web.direction.FwWebDirection;
+import org.lastaflute.web.path.ActionAdjustmentProvider;
 import org.lastaflute.web.servlet.filter.cors.CorsHook;
 
 /**
@@ -29,6 +34,15 @@ import org.lastaflute.web.servlet.filter.cors.CorsHook;
  */
 public class HangarFwAssistantDirector extends MaihamaFwAssistantDirector {
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
+    @Resource
+    private HangarConfig config;
+
+    // ===================================================================================
+    //                                                                              Assist
+    //                                                                              ======
     @Override
     protected void setupAppConfig(List<String> nameList) {
         nameList.add("hangar_config.properties"); // base point
@@ -38,6 +52,11 @@ public class HangarFwAssistantDirector extends MaihamaFwAssistantDirector {
     // ===================================================================================
     //                                                                               Core
     //                                                                              ======
+    @Override
+    protected void setupAppMessage(List<String> nameList) {
+        nameList.add("hangar_message"); // base point
+        nameList.add("hangar_label");
+    }
 
     // ===================================================================================
     //                                                                                 DB
@@ -53,18 +72,25 @@ public class HangarFwAssistantDirector extends MaihamaFwAssistantDirector {
     @Override
     protected void prepareWebDirection(FwWebDirection direction) {
         super.prepareWebDirection(direction);
-        final String allowOrigin = "http://localhost:3000"; // #simple_for_example should be environment configuration
-        direction.directCors(new CorsHook(allowOrigin)); // #change_it
+        direction.directCors(createCorsHook()); // #change_it if you don't use CORS, delete this
     }
 
     @Override
-    protected void setupAppMessage(List<String> nameList) {
-        nameList.add("hangar_message"); // base point
-        nameList.add("hangar_label");
+    protected ActionAdjustmentProvider createActionAdjustmentProvider() {
+        return new HangarActionAdjustmentProvider(createActionOptionPlanner());
+    }
+
+    protected HangarActionOptionPlanner createActionOptionPlanner() {
+        return new HangarActionOptionPlanner(config);
     }
 
     @Override
     protected ApiFailureHook createApiFailureHook() {
         return new HangarApiFailureHook();
+    }
+
+    protected CorsHook createCorsHook() { // #change_it if you don't use CORS, delete this
+        String allowOrigin = "http://localhost:3000"; // #simple_for_example should be environment configuration
+        return new CorsHook(allowOrigin);
     }
 }

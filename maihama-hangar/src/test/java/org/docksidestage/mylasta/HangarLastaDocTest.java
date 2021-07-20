@@ -15,6 +15,8 @@
  */
 package org.docksidestage.mylasta;
 
+import org.docksidestage.HangarBoot;
+import org.docksidestage.app.web.SwaggerAction;
 import org.docksidestage.unit.UnitHangarTestCase;
 
 /**
@@ -22,7 +24,16 @@ import org.docksidestage.unit.UnitHangarTestCase;
  */
 public class HangarLastaDocTest extends UnitHangarTestCase {
 
+    @Override
+    protected String prepareMockContextPath() {
+        return HangarBoot.CONTEXT; // basically for swagger
+    }
+
     public void test_document() throws Exception {
         saveLastaDocMeta();
+    }
+
+    public void test_swaggerJson() throws Exception {
+        saveSwaggerMeta(new SwaggerAction());
     }
 }
