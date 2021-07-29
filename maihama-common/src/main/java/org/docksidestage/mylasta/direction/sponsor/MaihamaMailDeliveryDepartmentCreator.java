@@ -83,8 +83,6 @@ public class MaihamaMailDeliveryDepartmentCreator {
 
     protected SMailDogmaticPostalPersonnel newMailDogmaticPostalPersonnel() { // #ext_point e.g. from database
         final String testPrefix = config.getMailSubjectTestPrefix();
-        final AsyncManager asyncManager = getAsyncManager();
-        final MessageManager messageManager = getMessageManager();
         return new SMailDogmaticPostalPersonnel() {
             @Override
             protected OptionalThing<SMailSubjectFilter> createSubjectFilter() {
@@ -96,7 +94,7 @@ public class MaihamaMailDeliveryDepartmentCreator {
                 return OptionalThing.of(new SMailAsyncStrategy() {
                     @Override
                     public void async(CardView view, Runnable runnable) {
-                        asyncRunnable(asyncManager, runnable);
+                        asyncRunnable(getAsyncManager(), runnable);
                     }
 
                     @Override
@@ -108,7 +106,7 @@ public class MaihamaMailDeliveryDepartmentCreator {
 
             @Override
             protected OptionalThing<SMailLabelStrategy> createLabelStrategy() {
-                return OptionalThing.of((view, locale, label) -> resolveLabelIfNeeds(messageManager, locale, label));
+                return OptionalThing.of((view, locale, label) -> resolveLabelIfNeeds(getMessageManager(), locale, label));
             }
         };
     }
