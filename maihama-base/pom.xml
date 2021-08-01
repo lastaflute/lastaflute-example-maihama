@@ -21,7 +21,7 @@
 		<!-- Main Framework -->
 		<dbflute.version>1.2.5-C-SNAPSHOT</dbflute.version>
 		<mysql.jdbc.version>8.0.16</mysql.jdbc.version>
-		<lastaflute.version>1.2.1-P-SNAPSHOT</lastaflute.version>
+		<lastaflute.version>1.2.1-Q-SNAPSHOT</lastaflute.version>
 
 		<!-- Partner Library -->
 		<slf4j.version>1.7.12</slf4j.version>
