@@ -53,7 +53,7 @@ public class ProductsCrudAssist {
                 });
             }
             if (form.productStatus != null) {
-                cb.query().setProductStatusCode_Equal_AsProductStatus(form.productStatus);
+                cb.query().setProductStatusCode_Equal_AsProductStatus(form.productStatus.toDBCls().get());
             }
             cb.query().addOrderBy_ProductName_Asc();
             cb.query().addOrderBy_ProductId_Asc();

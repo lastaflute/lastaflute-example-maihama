@@ -221,7 +221,7 @@ to showbase
 <p class="sisterneighborlink">
     <a href="#lastadoc_action">to action(84)</a>
     | <a href="#lastadoc_mail">to mail(1)</a>
-    | <a href="#lastadoc_appcls">to appcls(1)</a>
+    | <a href="#lastadoc_appcls">to appcls(3)</a>
 <!-- df:markFreeGenDocNaviLink -->
 </p>
 </div>
@@ -4512,10 +4512,10 @@ to showbase
     <tr>
         <td class="rowcellnum" rowspan="1">2</td>
         <td>productStatus</td>
-        <td><p title="org.docksidestage.dbflute.allcommon.CDef$ProductStatus">CDef.ProductStatus</p></td>
+        <td><p title="org.docksidestage.mylasta.appcls.AppCDef$SearchProductStatus">AppCDef.SearchProductStatus</p></td>
         <td class="fieldcomment">
             <p title="status&nbsp;of&nbsp;product&nbsp;e.g.&nbsp;ONS">status&nbsp;of&nbsp;product&nbsp;e.g.&nbsp;ONS</p>
-            <p>{ONS=OnSaleProduction,&nbsp;PST=ProductionStop,&nbsp;SST=SaleStop}</p>
+            <p>{ONS=OnSaleProduction,&nbsp;PST=ProductionStop,&nbsp;SST=SaleStop,&nbsp;ALL=All&nbsp;Statuses}</p>
         </td>
         <td class="fieldannotations">
         </td>
@@ -4572,10 +4572,10 @@ to showbase
     <tr>
         <td class="rowcellnum" rowspan="1">3</td>
         <td>productStatus</td>
-        <td><p title="java.lang.String">String</p></td>
+        <td><p title="org.docksidestage.mylasta.appcls.AppCDef$PublicProductStatus">AppCDef.PublicProductStatus</p></td>
         <td class="fieldcomment">
             <p title=""></p>
-            <p></p>
+            <p>{ONS=OnSaleProduction,&nbsp;PST=ProductionStop,&nbsp;SST=SaleStop}</p>
         </td>
         <td class="fieldannotations">
             &#64;Required
@@ -4693,7 +4693,31 @@ to showbase
     <tr>
         <td class="rowcellnum" rowspan="1">3</td>
         <td>productStatus</td>
-        <td><p title="java.lang.String">String</p></td>
+        <td><p title="org.docksidestage.mylasta.appcls.AppCDef$PublicProductStatus">AppCDef.PublicProductStatus</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p>{ONS=OnSaleProduction,&nbsp;PST=ProductionStop,&nbsp;SST=SaleStop}</p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">4</td>
+        <td>pastProductStatuses</td>
+        <td><p title="java.util.List&lt;org.docksidestage.mylasta.appcls.AppCDef$PublicProductStatus&gt;">List&lt;AppCDef$PublicProductStatus&gt;</p></td>
+        <td class="fieldcomment">
+            <p title=""></p>
+            <p>{ONS=OnSaleProduction,&nbsp;PST=ProductionStop,&nbsp;SST=SaleStop}</p>
+        </td>
+        <td class="fieldannotations">
+            &#64;Required
+        </td>
+    </tr>
+    <tr>
+        <td class="rowcellnum" rowspan="1">5</td>
+        <td>purchasedMemberIds</td>
+        <td><p title="java.util.List&lt;java.lang.Integer&gt;">List&lt;Integer&gt;</p></td>
         <td class="fieldcomment">
             <p title=""></p>
             <p></p>
@@ -4703,7 +4727,7 @@ to showbase
         </td>
     </tr>
     <tr>
-        <td class="rowcellnum" rowspan="1">4</td>
+        <td class="rowcellnum" rowspan="1">6</td>
         <td>productCategory</td>
         <td><p title="java.lang.String">String</p></td>
         <td class="fieldcomment">
@@ -4715,7 +4739,7 @@ to showbase
         </td>
     </tr>
     <tr>
-        <td class="rowcellnum" rowspan="1">5</td>
+        <td class="rowcellnum" rowspan="1">7</td>
         <td>regularPrice</td>
         <td><p title="java.lang.Integer">Integer</p></td>
         <td class="fieldcomment">
@@ -4727,7 +4751,7 @@ to showbase
         </td>
     </tr>
     <tr>
-        <td class="rowcellnum" rowspan="1">6</td>
+        <td class="rowcellnum" rowspan="1">8</td>
         <td>latestPurchaseDate</td>
         <td><p title="java.time.LocalDate">LocalDate</p></td>
         <td class="fieldcomment">
@@ -11285,6 +11309,69 @@ member/welcome_member.dfmail
                 <td class="commentcell">without&nbsp;status&nbsp;filter</td>
                 <td class="flgcell"> &nbsp;</td>
                 <td class="flgcell"> &nbsp;</td>
+            </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>SearchProductStatus</td>
+        <td class="clstypecell"> implicit</td>
+        <td>ProductStatus&nbsp;for&nbsp;search&nbsp;condition</td>
+        <td>
+            <table class="child">
+            <tr>
+                <th id="SearchProductStatusCls">Code</th>
+                <th>Name</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td>ONS</td>
+                <td>OnSaleProduction</td>
+                <td class="commentcell"> &nbsp;</td>
+            </tr>
+            <tr>
+                <td>PST</td>
+                <td>ProductionStop</td>
+                <td class="commentcell"> &nbsp;</td>
+            </tr>
+            <tr>
+                <td>SST</td>
+                <td>SaleStop</td>
+                <td class="commentcell"> &nbsp;</td>
+            </tr>
+            <tr>
+                <td>ALL</td>
+                <td>All</td>
+                <td class="commentcell">without&nbsp;status&nbsp;filter</td>
+            </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>PublicProductStatus</td>
+        <td class="clstypecell"> implicit</td>
+        <td>ProductStatus&nbsp;for&nbsp;search&nbsp;condition</td>
+        <td>
+            <table class="child">
+            <tr>
+                <th id="PublicProductStatusCls">Code</th>
+                <th>Name</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td>ONS</td>
+                <td>OnSaleProduction</td>
+                <td class="commentcell"> &nbsp;</td>
+            </tr>
+            <tr>
+                <td>PST</td>
+                <td>ProductionStop</td>
+                <td class="commentcell"> &nbsp;</td>
+            </tr>
+            <tr>
+                <td>SST</td>
+                <td>SaleStop</td>
+                <td class="commentcell"> &nbsp;</td>
             </tr>
             </table>
         </td>

@@ -21,6 +21,9 @@ import java.util.stream.Collectors;
 import org.docksidestage.app.web.products.ProductsResult;
 import org.docksidestage.app.web.products.ProductsRowResult;
 import org.docksidestage.dbflute.exentity.Product;
+import org.docksidestage.dbflute.exentity.ProductStatus;
+import org.docksidestage.mylasta.appcls.AppCDef;
+import org.docksidestage.mylasta.appcls.AppCDef.PublicProductStatus;
 
 /**
  * @author jflute
@@ -36,7 +39,7 @@ public class ProductsMappingAssist {
             result.productId = product.getProductId();
             result.productName = product.getProductName();
             product.getProductStatus().alwaysPresent(status -> {
-                result.productStatus = status.getProductStatusName();
+                result.productStatus = toPublicProductStatus(status);
             });
             product.getProductCategory().alwaysPresent(category -> {
                 result.productCategory = category.getProductCategoryName();
@@ -55,7 +58,7 @@ public class ProductsMappingAssist {
         result.productId = product.getProductId();
         result.productName = product.getProductName();
         product.getProductStatus().alwaysPresent(status -> {
-            result.productStatus = status.getProductStatusName();
+            result.productStatus = toPublicProductStatus(status);
         });
         product.getProductCategory().alwaysPresent(category -> {
             result.productCategory = category.getProductCategoryName();
@@ -63,5 +66,12 @@ public class ProductsMappingAssist {
         result.regularPrice = product.getRegularPrice();
         result.latestPurchaseDate = product.getLatestPurchaseDate();
         return result;
+    }
+
+    // ===================================================================================
+    //                                                                        Assist Logic
+    //                                                                        ============
+    private PublicProductStatus toPublicProductStatus(ProductStatus status) {
+        return AppCDef.PublicProductStatus.fromDBCls(status.getProductStatusCodeAsProductStatus()).get();
     }
 }

@@ -16,7 +16,9 @@
 package org.docksidestage.app.web.products;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import org.docksidestage.mylasta.appcls.AppCDef;
 import org.lastaflute.core.util.Lato;
 import org.lastaflute.web.validation.Required;
 
@@ -30,7 +32,11 @@ public class ProductsResult {
     @Required
     public String productName;
     @Required
-    public String productStatus;
+    public AppCDef.PublicProductStatus productStatus;
+    @Required
+    public List<AppCDef.PublicProductStatus> pastProductStatuses;
+    @Required
+    public List<Integer> purchasedMemberIds;
     @Required
     public String productCategory;
     @Required

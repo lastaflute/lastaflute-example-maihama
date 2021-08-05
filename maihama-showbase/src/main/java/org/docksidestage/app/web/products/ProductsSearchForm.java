@@ -15,7 +15,7 @@
  */
 package org.docksidestage.app.web.products;
 
-import org.docksidestage.dbflute.allcommon.CDef;
+import org.docksidestage.mylasta.appcls.AppCDef;
 import org.hibernate.validator.constraints.Length;
 import org.lastaflute.core.util.Lato;
 
@@ -32,7 +32,7 @@ public class ProductsSearchForm {
     public String productName;
 
     /** status of product e.g. ONS */
-    public CDef.ProductStatus productStatus;
+    public AppCDef.SearchProductStatus productStatus;
 
     /** prefix for member name who purchases the product e.g. S */
     @Length(max = 5)

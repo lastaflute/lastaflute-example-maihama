@@ -20,5 +20,14 @@ map:{
         ; map:{ refCls=maihamadb@MemberStatus ; refType=included }
         ; map:{ code=ALL; name=All; alias=All Statuses; comment=without status filter }
     }
+    ; SearchProductStatus = list:{
+        ; map:{ topComment=ProductStatus for search condition ; codeType=String }
+        ; map:{ refCls=maihamadb@ProductStatus ; refType=included }
+        ; map:{ code=ALL; name=All; alias=All Statuses; comment=without status filter }
+    }
+    ; PublicProductStatus = list:{
+        ; map:{ topComment=ProductStatus for search condition ; codeType=String }
+        ; map:{ refCls=maihamadb@ProductStatus ; refType=included }
+    }
 }
 # ----------------/

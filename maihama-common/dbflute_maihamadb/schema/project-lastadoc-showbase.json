@@ -3342,9 +3342,9 @@
           {
             "name": "productStatus",
             "publicName": "productStatus",
-            "typeName": "org.docksidestage.dbflute.allcommon.CDef$ProductStatus",
-            "simpleTypeName": "CDef.ProductStatus",
-            "value": "{ONS\u003dOnSaleProduction, PST\u003dProductionStop, SST\u003dSaleStop}",
+            "typeName": "org.docksidestage.mylasta.appcls.AppCDef$SearchProductStatus",
+            "simpleTypeName": "AppCDef.SearchProductStatus",
+            "value": "{ONS\u003dOnSaleProduction, PST\u003dProductionStop, SST\u003dSaleStop, ALL\u003dAll Statuses}",
             "description": "status of product e.g. ONS",
             "comment": "status of product e.g. ONS",
             "annotationList": [],
@@ -3404,9 +3404,9 @@
           {
             "name": "productStatus",
             "publicName": "productStatus",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
-            "value": null,
+            "typeName": "org.docksidestage.mylasta.appcls.AppCDef$PublicProductStatus",
+            "simpleTypeName": "AppCDef.PublicProductStatus",
+            "value": "{ONS\u003dOnSaleProduction, PST\u003dProductionStop, SST\u003dSaleStop}",
             "description": null,
             "comment": null,
             "annotationList": [
@@ -3550,8 +3550,34 @@
           {
             "name": "productStatus",
             "publicName": "productStatus",
-            "typeName": "java.lang.String",
-            "simpleTypeName": "String",
+            "typeName": "org.docksidestage.mylasta.appcls.AppCDef$PublicProductStatus",
+            "simpleTypeName": "AppCDef.PublicProductStatus",
+            "value": "{ONS\u003dOnSaleProduction, PST\u003dProductionStop, SST\u003dSaleStop}",
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "pastProductStatuses",
+            "publicName": "pastProductStatuses",
+            "typeName": "java.util.List\u003corg.docksidestage.mylasta.appcls.AppCDef$PublicProductStatus\u003e",
+            "simpleTypeName": "List\u003cAppCDef$PublicProductStatus\u003e",
+            "value": "{ONS\u003dOnSaleProduction, PST\u003dProductionStop, SST\u003dSaleStop}",
+            "description": null,
+            "comment": null,
+            "annotationList": [
+              "Required"
+            ],
+            "nestTypeDocMetaList": []
+          },
+          {
+            "name": "purchasedMemberIds",
+            "publicName": "purchasedMemberIds",
+            "typeName": "java.util.List\u003cjava.lang.Integer\u003e",
+            "simpleTypeName": "List\u003cInteger\u003e",
             "value": null,
             "description": null,
             "comment": null,
