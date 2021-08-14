@@ -39,7 +39,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
      * Add the created action message for the key 'constraints.AssertFalse.message' with parameters.
      * <pre>
      * message: ASSERT_FALSE :: must be false
-     * comment: @Override ---------------
+     * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
      * @return this. (NotNull)
@@ -303,7 +303,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
      * Add the created action message for the key 'constraints.CreditCardNumber.message' with parameters.
      * <pre>
      * message: CREDIT_CARD_NUMBER :: invalid credit card number
-     * comment: @Override -------------------
+     * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
      * @return this. (NotNull)
@@ -507,7 +507,7 @@ public class ShowbaseMessages extends ShowbaseLabels {
      * Add the created action message for the key 'constraints.Required.message' with parameters.
      * <pre>
      * message: REQUIRED :: is required
-     * comment: @Override --------------------
+     * comment: @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
      * @return this. (NotNull)
@@ -620,7 +620,11 @@ public class ShowbaseMessages extends ShowbaseLabels {
      * Add the created action message for the key 'errors.login.failure' with parameters.
      * <pre>
      * message: LOGIN_FAILURE :: could not login
-     * comment: @Override - - - - - - - - - -/
+     * comment:
+     * /- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     * six framework-embedded messages (don't change key names)
+     * - - - - - - - - - -/
+     * @Override
      * </pre>
      * @param property The property name for the message. (NotNull)
      * @return this. (NotNull)
