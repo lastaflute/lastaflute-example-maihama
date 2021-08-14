@@ -19,9 +19,9 @@
 		<app.group.id>org.docksidestage</app.group.id>
 
 		<!-- Main Framework -->
-		<dbflute.version>1.2.5-C-SNAPSHOT</dbflute.version>
+		<dbflute.version>1.2.5</dbflute.version>
 		<mysql.jdbc.version>8.0.16</mysql.jdbc.version>
-		<lastaflute.version>1.2.1-R-SNAPSHOT</lastaflute.version>
+		<lastaflute.version>1.2.1</lastaflute.version>
 
 		<!-- Partner Library -->
 		<slf4j.version>1.7.12</slf4j.version>
@@ -35,7 +35,7 @@
 
 		<!-- Testing -->
 		<junit.version>4.8.2</junit.version> <!-- is latest version without hamcrest -->
-		<utflute.version>0.9.3-F-SNAPSHOT</utflute.version>
+		<utflute.version>0.9.3</utflute.version>
 	</properties>
 
 	<modules>

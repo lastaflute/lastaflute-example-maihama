@@ -17,7 +17,7 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.meta.version>0.5.1-W4-SNAPSHOT</lasta.meta.version>
+		<lasta.meta.version>0.5.1</lasta.meta.version>
 		<swagger.ui.version>3.19.0</swagger.ui.version>
 	</properties>
 
