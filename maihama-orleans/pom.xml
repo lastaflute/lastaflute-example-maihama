@@ -84,6 +84,7 @@
 						</goals>
 						<configuration>
 							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
+							<!-- servlet container libraries are located as war resource -->
 							<includeArtifactIds>javax.servlet-api, jetty-boot, jetty-all</includeArtifactIds>
 							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
@@ -95,6 +96,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
+					<!-- servlet container libraries are not in application -->
 					<packagingExcludes>WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/jetty-*.jar</packagingExcludes>
 					<webResources>
 						<resource>
@@ -110,7 +112,7 @@
 						<resource>
 							<directory>${basedir}/../maihama-common/src/main/resources</directory>
 							<includes>
-								<!-- properties may be used by the boot class -->
+								<!-- also common's properties -->
 								<include>*_config.properties</include>
 								<include>*_env*.properties</include>
 								<include>jetty_*.properties</include>

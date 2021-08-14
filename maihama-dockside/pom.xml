@@ -84,6 +84,7 @@
 						</goals>
 						<configuration>
 							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
+							<!-- servlet container libraries are located as war resource -->
 							<includeArtifactIds>
 								javax.servlet-api, javax.servlet.jsp, javax.servlet.jsp-api
 								, tomcat-boot, tomcat-embed-core, tomcat-embed-logging-juli
@@ -99,6 +100,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
+					<!-- servlet container libraries are not in application -->
 					<packagingExcludes>
 						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar
 						, WEB-INF/lib/tomcat-*.jar, WEB-INF/lib/ecj-*.jar
@@ -107,6 +109,7 @@
 						<resource>
 							<directory>${project.build.outputDirectory}</directory>
 							<includes>
+								<!-- boot class is executed by java command directly -->
 								<include>**/*Boot*.class</include>
 								<!-- properties may be used by the boot class -->
 								<include>*_config.properties</include>
@@ -117,17 +120,17 @@
 						<resource>
 							<directory>${basedir}/../maihama-common/src/main/resources</directory>
 							<includes>
-								<!-- properties may be used by the boot class -->
+								<!-- also common's properties -->
 								<include>*_config.properties</include>
 								<include>*_env*.properties</include>
 								<include>tomcat_*.properties</include>
 							</includes>
 						</resource>
-						<resource> 
+						<resource>
 							<directory>${basedir}/target/lastadoc</directory>
 							<targetPath>WEB-INF/classes</targetPath>
 							<includes>
-								<!-- for swagger -->
+								<!-- for swagger UI on deploy environment -->
 								<include>swagger.json</include>
 							</includes>
 						</resource>
