@@ -62,6 +62,7 @@ public class ProductsCrudAssist {
 
     public Product selectProductById(Integer productId) {
         return productBhv.selectEntity(cb -> {
+            cb.setupSelect_ProductStatus();
             cb.setupSelect_ProductCategory();
             cb.query().setProductId_Equal(productId);
         }).get();

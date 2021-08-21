@@ -33,10 +33,10 @@ public class ProductsResult {
     public String productName;
     @Required
     public AppCDef.PublicProductStatus productStatus;
-    @Required
+
     public List<AppCDef.PublicProductStatus> pastProductStatuses;
-    @Required
     public List<Integer> purchasedMemberIds;
+
     @Required
     public String productCategory;
     @Required
