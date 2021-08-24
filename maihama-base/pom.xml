@@ -21,7 +21,7 @@
 		<!-- Main Framework -->
 		<dbflute.version>1.2.5</dbflute.version>
 		<mysql.jdbc.version>8.0.16</mysql.jdbc.version>
-		<lastaflute.version>1.2.1</lastaflute.version>
+		<lastaflute.version>1.2.2-B-SNAPSHOT</lastaflute.version>
 
 		<!-- Partner Library -->
 		<slf4j.version>1.7.12</slf4j.version>
@@ -186,7 +186,7 @@
 			<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 			<!--                                                            Main Framework -->
 			<!--                                                             = = = = = = = -->
-			<!-- dbflute -->
+			<!-- DBFlute -->
 			<dependency>
 				<groupId>org.dbflute</groupId>
 				<artifactId>dbflute-runtime</artifactId>
@@ -198,7 +198,7 @@
 				<version>${mysql.jdbc.version}</version>
 			</dependency>
 
-			<!-- lastaflute -->
+			<!-- LastaFlute -->
 			<dependency>
 				<groupId>org.lastaflute</groupId>
 				<artifactId>lastaflute</artifactId>
@@ -233,8 +233,6 @@
 				<artifactId>javax.servlet-api</artifactId>
 				<version>${servlet.version}</version>
 			</dependency>
-
-			<!-- boot -->
 			<dependency>
 				<groupId>org.dbflute.jetty</groupId>
 				<artifactId>jetty-boot</artifactId>
