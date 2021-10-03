@@ -17,8 +17,8 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.thymeleaf.version>0.4.1</lasta.thymeleaf.version>
-		<lasta.job.version>0.5.4</lasta.job.version>
+		<lasta.thymeleaf.version>0.4.2</lasta.thymeleaf.version>
+		<lasta.job.version>0.5.6</lasta.job.version>
 	</properties>
 
 	<licenses>
