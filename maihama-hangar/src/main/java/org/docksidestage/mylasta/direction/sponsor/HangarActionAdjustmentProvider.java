@@ -19,7 +19,6 @@ import java.util.function.Predicate;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.docksidestage.mylasta.direction.sponsor.MaihamaActionAdjustmentProvider;
 import org.docksidestage.mylasta.direction.sponsor.planner.HangarActionOptionPlanner;
 
 /**
