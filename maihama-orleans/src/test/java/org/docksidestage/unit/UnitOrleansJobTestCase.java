@@ -16,6 +16,7 @@
 package org.docksidestage.unit;
 
 import org.dbflute.utflute.lastaflute.WebContainerTestCase;
+import org.docksidestage.dbflute.allcommon.DBFluteConfig;
 import org.lastaflute.job.LaJob;
 import org.lastaflute.job.mock.MockJobRuntime;
 
@@ -42,6 +43,24 @@ import org.lastaflute.job.mock.MockJobRuntime;
  */
 public abstract class UnitOrleansJobTestCase extends WebContainerTestCase {
 
+    // ===================================================================================
+    //                                                                           Attribute
+    //                                                                           =========
+    private Integer originalCursorSelectFetchSize;
+    private boolean cursorSelectFetchSizeSuppressed;
+
+    // ===================================================================================
+    //                                                                            Settings
+    //                                                                            ========
+    @Override
+    public void tearDown() throws Exception {
+        super.tearDown();
+        putbackCursorSelectFetchSizeIfSuppressed();
+    }
+
+    // ===================================================================================
+    //                                                                         Mock Object
+    //                                                                         ===========
     /**
      * Prepare mock of job runtime.
      * @param job The execution job on the runtime. (NotNull)
@@ -49,5 +68,24 @@ public abstract class UnitOrleansJobTestCase extends WebContainerTestCase {
      */
     protected MockJobRuntime mockRuntime(LaJob job) {
         return MockJobRuntime.of(job.getClass());
+    }
+
+    // ===================================================================================
+    //                                                                       Cursor Select
+    //                                                                       =============
+    protected void suppressCursorSelectFetchSize() {
+        DBFluteConfig.getInstance().unlock();
+        originalCursorSelectFetchSize = DBFluteConfig.getInstance().getCursorSelectFetchSize();
+        cursorSelectFetchSizeSuppressed = true;
+        DBFluteConfig.getInstance().setCursorSelectFetchSize(null); // invalid
+        DBFluteConfig.getInstance().lock();
+    }
+
+    private void putbackCursorSelectFetchSizeIfSuppressed() {
+        if (cursorSelectFetchSizeSuppressed) {
+            DBFluteConfig.getInstance().unlock();
+            DBFluteConfig.getInstance().setCursorSelectFetchSize(originalCursorSelectFetchSize);
+            DBFluteConfig.getInstance().lock();
+        }
     }
 }

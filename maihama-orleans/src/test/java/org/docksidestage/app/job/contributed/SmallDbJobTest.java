@@ -48,6 +48,21 @@ public class SmallDbJobTest extends UnitOrleansJobTestCase {
     //                                                                             =======
     public void test_run_basic() {
         // ## Arrange ##
+        // _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+        // changeRequiresNewToRequired():
+        // Job内のrequiresNewのTransactionでコミットされてしまってテストしづらいので、
+        // requiredに強制変換することでテスト用のTransactionを継承させるようにしてロールバックできるように。
+        // requiresNewを設定していること自体のテストは、test_run_transactionUsed()にて行う。
+        //
+        // suppressCursorSelectFetchSize():
+        // 一方で、MySQLだと、Requiredに変換することで今度はStreaming result setエラーが発生してしまう。
+        // (DBFluteのlittleAdjustmentMap.dfpropでcursorSelectFetchSizeがInteger.MIN_VALUEに設定されていれば)
+        // 本番においてはInteger.MIN_VALUEは重要だがUnitTestでは重要ではないので、一時的にsuppressさせている。
+        // ゆえに、MySQLのときはchangeRequiresNewToRequired()とsuppressCursorSelectFetchSize()がセットとなる。
+        // _/_/_/_/_/_/_/_/_/_/
+        changeRequiresNewToRequired(); // Job内のTransactionをテスト用のTransactionに
+        suppressCursorSelectFetchSize(); // したときのMySQLのStreaming result setエラー回避
+
         SmallDbJob job = new SmallDbJob();
         inject(job);
         MockJobRuntime runtime = mockRuntime(job);
