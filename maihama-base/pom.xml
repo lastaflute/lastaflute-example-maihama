@@ -25,7 +25,7 @@
 
 		<!-- Partner Library -->
 		<slf4j.version>1.7.36</slf4j.version>
-		<logback.version>1.2.11</logback.version>
+		<logback.version>1.2.13</logback.version>
 		<servlet.version>4.0.1</servlet.version>
 		<jetty.boot.version>0.5.1</jetty.boot.version>
 		<tomcat.boot.version>0.8.4</tomcat.boot.version>
