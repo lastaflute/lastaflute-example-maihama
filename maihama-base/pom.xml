@@ -21,21 +21,21 @@
 		<!-- Main Framework -->
 		<dbflute.version>1.2.8</dbflute.version>
 		<mysql.jdbc.version>8.0.33</mysql.jdbc.version>
-		<lastaflute.version>2.0.0-C-SNAPSHOT</lastaflute.version>
+		<lastaflute.version>1.2.7</lastaflute.version>
 
 		<!-- Partner Library -->
 		<slf4j.version>1.7.36</slf4j.version>
 		<logback.version>1.2.13</logback.version>
-		<servlet.version>6.0.0</servlet.version>
-		<jetty.boot.version>2.0.0-A-SNAPSHOT</jetty.boot.version>
-		<tomcat.boot.version>2.0.0-A-SNAPSHOT</tomcat.boot.version>
+		<servlet.version>4.0.1</servlet.version>
+		<jetty.boot.version>0.5.4</jetty.boot.version>
+		<tomcat.boot.version>0.8.5</tomcat.boot.version>
 
 		<!-- GoodNeighbor Library -->
 		<commons.lang.version>3.8.1</commons.lang.version>
 
 		<!-- Testing -->
 		<junit.version>4.8.2</junit.version> <!-- is latest version without hamcrest -->
-		<utflute.version>2.0.0-B-SNAPSHOT</utflute.version>
+		<utflute.version>0.9.8</utflute.version>
 	</properties>
 
 	<modules>
@@ -75,8 +75,8 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.1</version>
 					<configuration>
-						<source>21</source>
-						<target>21</target>
+						<source>1.8</source>
+						<target>1.8</target>
 						<encoding>UTF-8</encoding>
 					</configuration>
 				</plugin>
@@ -205,9 +205,9 @@
 			<!--                                                           = = = = = = = = -->
 			<!-- transaction -->
 			<dependency>
-				<groupId>jakarta.transaction</groupId>
-				<artifactId>jakarta.transaction-api</artifactId>
-				<version>2.0.1</version>
+				<groupId>javax.transaction</groupId>
+				<artifactId>javax.transaction-api</artifactId>
+				<version>1.2</version>
 			</dependency>
 
 			<!-- logging -->
@@ -224,8 +224,8 @@
 
 			<!-- servlet -->
 			<dependency>
-				<groupId>jakarta.servlet</groupId>
-				<artifactId>jakarta.servlet-api</artifactId>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
 				<version>${servlet.version}</version>
 			</dependency>
 			<dependency>
@@ -273,8 +273,8 @@
 		-->
 		<!-- transaction -->
 		<dependency>
-			<groupId>jakarta.transaction</groupId>
-			<artifactId>jakarta.transaction-api</artifactId>
+			<groupId>javax.transaction</groupId>
+			<artifactId>javax.transaction-api</artifactId>
 		</dependency>
 
 		<!-- logging -->
@@ -290,9 +290,9 @@
 
 		<!-- servlet -->
 		<dependency>
-			<groupId>jakarta.servlet</groupId>
-			<artifactId>jakarta.servlet-api</artifactId>
-			<scope>provided</scope> <!-- existing in jetty/tomcat -->
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope> <!-- servlet container provides -->
 		</dependency>
 
 		<!-- unit test -->

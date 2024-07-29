@@ -17,7 +17,7 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.meta.version>2.0.0-A-SNAPSHOT</lasta.meta.version>
+		<lasta.meta.version>0.6.0</lasta.meta.version>
 		<swagger.ui.version>3.19.0</swagger.ui.version>
 	</properties>
 
@@ -86,7 +86,7 @@
 							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
 							<!-- servlet container libraries are located as war resource -->
 							<includeArtifactIds>
-								jakarta.servlet-api, jakarta.servlet.jsp, jakarta.servlet.jsp-api
+								javax.servlet-api, javax.servlet.jsp, javax.servlet.jsp-api
 								, tomcat-boot, tomcat-embed-core, tomcat-embed-logging-juli
 								, tomcat-jasper, tomcat-jasper-el, tomcat-el-api, tomcat-jsp-api, ecj
 							</includeArtifactIds>
@@ -102,7 +102,7 @@
 				<configuration>
 					<!-- servlet container libraries are not in application -->
 					<packagingExcludes>
-						WEB-INF/lib/jakarta.servlet-api-*.jar, WEB-INF/lib/jakarta.servlet.jsp-*.jar
+						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar
 						, WEB-INF/lib/tomcat-*.jar, WEB-INF/lib/ecj-*.jar
 					</packagingExcludes>
 					<webResources>
