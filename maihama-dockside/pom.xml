@@ -17,8 +17,8 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.thymeleaf.version>0.4.1</lasta.thymeleaf.version>
-		<commons.fileupload.version>1.4</commons.fileupload.version>
+		<lasta.thymeleaf.version>2.0.0-A-SNAPSHOT</lasta.thymeleaf.version>
+		<commons.fileupload.version>2.0.0-M2</commons.fileupload.version>
 	</properties>
 
 	<licenses>
@@ -86,7 +86,7 @@
 							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
 							<!-- servlet container libraries are located as war resource -->
 							<includeArtifactIds>
-								javax.servlet-api, javax.servlet.jsp, javax.servlet.jsp-api
+								jakarta.servlet-api, jakarta.servlet.jsp, jakarta.servlet.jsp-api
 								, tomcat-boot, tomcat-embed-core, tomcat-embed-logging-juli
 								, tomcat-jasper, tomcat-jasper-el, tomcat-el-api, tomcat-jsp-api, ecj
 							</includeArtifactIds>
@@ -102,7 +102,7 @@
 				<configuration>
 					<!-- servlet container libraries are not in application -->
 					<packagingExcludes>
-						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar
+						WEB-INF/lib/jakarta.servlet-api-*.jar, WEB-INF/lib/jakarta.servlet.jsp-*.jar
 						, WEB-INF/lib/tomcat-*.jar, WEB-INF/lib/ecj-*.jar
 					</packagingExcludes>
 					<webResources>
@@ -177,8 +177,8 @@
 		<!--                                                           = = = = = = = = = = -->
 		<!-- commons -->
 		<dependency> <!-- used for multipart request -->
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
+			<groupId>org.apache.commons</groupId> <!-- #jakarta -->
+			<artifactId>commons-fileupload2-jakarta-servlet6</artifactId> <!-- #jakarta -->
 			<version>${commons.fileupload.version}</version>
 		</dependency>
 	</dependencies>
