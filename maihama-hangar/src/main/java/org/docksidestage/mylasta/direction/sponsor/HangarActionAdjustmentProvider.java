@@ -17,9 +17,9 @@ package org.docksidestage.mylasta.direction.sponsor;
 
 import java.util.function.Predicate;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.docksidestage.mylasta.direction.sponsor.planner.HangarActionOptionPlanner;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * @author jflute

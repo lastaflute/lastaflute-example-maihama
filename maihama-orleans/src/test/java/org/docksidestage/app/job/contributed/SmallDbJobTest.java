@@ -17,8 +17,6 @@ package org.docksidestage.app.job.contributed;
 
 import java.util.Map;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.bizfw.job.contributed.NxBatchRecorder;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
@@ -26,6 +24,8 @@ import org.docksidestage.unit.UnitOrleansJobTestCase;
 import org.lastaflute.db.jta.stage.BegunTx;
 import org.lastaflute.db.jta.stage.BegunTxContext;
 import org.lastaflute.job.mock.MockJobRuntime;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

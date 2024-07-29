@@ -17,8 +17,6 @@ package org.docksidestage.mylasta.direction;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.mylasta.direction.sponsor.DocksideApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.DocksideListedClassificationProvider;
 import org.docksidestage.mylasta.direction.sponsor.DocksideMultipartRequestHandler;
@@ -28,6 +26,8 @@ import org.lastaflute.web.api.ApiFailureHook;
 import org.lastaflute.web.direction.FwWebDirection;
 import org.lastaflute.web.ruts.multipart.MultipartResourceProvider;
 import org.lastaflute.web.ruts.renderer.HtmlRenderingProvider;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

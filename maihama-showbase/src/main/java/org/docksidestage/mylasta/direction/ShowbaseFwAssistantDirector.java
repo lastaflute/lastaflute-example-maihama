@@ -17,8 +17,6 @@ package org.docksidestage.mylasta.direction;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.mylasta.direction.sponsor.ShowbaseActionAdjustmentProvider;
 import org.docksidestage.mylasta.direction.sponsor.ShowbaseApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.ShowbaseListedClassificationProvider;
@@ -26,6 +24,8 @@ import org.docksidestage.mylasta.direction.sponsor.planner.ShowbaseActionOptionP
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
 import org.lastaflute.web.api.ApiFailureHook;
 import org.lastaflute.web.path.ActionAdjustmentProvider;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

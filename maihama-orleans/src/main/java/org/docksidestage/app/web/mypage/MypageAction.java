@@ -18,14 +18,14 @@ package org.docksidestage.app.web.mypage;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.annotation.Resource;
-
 import org.dbflute.cbean.result.ListResultBean;
 import org.docksidestage.app.web.base.OrleansBaseAction;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

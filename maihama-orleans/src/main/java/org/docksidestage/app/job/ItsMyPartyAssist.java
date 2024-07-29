@@ -15,9 +15,9 @@
  */
 package org.docksidestage.app.job;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.dbflute.exbhv.MemberBhv;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

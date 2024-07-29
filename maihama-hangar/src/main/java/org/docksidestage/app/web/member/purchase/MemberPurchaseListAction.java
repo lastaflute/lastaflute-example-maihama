@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.member.purchase;
 
-import javax.annotation.Resource;
-
 import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.HangarBaseAction;
@@ -27,6 +25,8 @@ import org.docksidestage.dbflute.exbhv.PurchasePaymentBhv;
 import org.docksidestage.dbflute.exentity.Purchase;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

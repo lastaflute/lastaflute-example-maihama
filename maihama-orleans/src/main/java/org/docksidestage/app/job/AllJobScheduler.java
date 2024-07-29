@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.job;
 
-import javax.annotation.Resource;
-
 import org.dbflute.optional.OptionalThing;
 import org.dbflute.util.DfCollectionUtil;
 import org.docksidestage.app.job.challenge.BonvoJob;
@@ -26,6 +24,8 @@ import org.docksidestage.app.logic.context.AccessContextLogic;
 import org.lastaflute.job.LaCron;
 import org.lastaflute.job.LaJobRunner;
 import org.lastaflute.job.LaJobScheduler;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

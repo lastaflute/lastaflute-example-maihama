@@ -1,8 +1,8 @@
 package org.docksidestage.app.web.purchase;
 
-import javax.validation.constraints.Min;
-
 import org.lastaflute.web.validation.Required;
+
+import jakarta.validation.constraints.Min;
 
 /**
  * @author iwamatsu0430

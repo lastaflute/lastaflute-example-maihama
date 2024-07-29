@@ -2,8 +2,6 @@ package org.docksidestage.app.web.purchase;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.DocksideBaseAction;
@@ -12,6 +10,8 @@ import org.docksidestage.dbflute.exbhv.PurchaseBhv;
 import org.docksidestage.dbflute.exentity.Purchase;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * Action class for purchase list page.

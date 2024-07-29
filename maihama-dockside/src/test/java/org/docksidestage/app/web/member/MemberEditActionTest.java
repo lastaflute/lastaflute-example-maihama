@@ -2,8 +2,6 @@ package org.docksidestage.app.web.member;
 
 import java.time.LocalDate;
 
-import javax.annotation.Resource;
-
 import org.dbflute.utflute.lastaflute.mock.TestingHtmlData;
 import org.docksidestage.dbflute.allcommon.CDef;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
@@ -12,6 +10,8 @@ import org.docksidestage.mylasta.action.DocksideHtmlPath;
 import org.docksidestage.unit.UnitDocksideTestCase;
 import org.lastaflute.web.response.HtmlResponse;
 import org.lastaflute.web.token.exception.DoubleSubmittedRequestException;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

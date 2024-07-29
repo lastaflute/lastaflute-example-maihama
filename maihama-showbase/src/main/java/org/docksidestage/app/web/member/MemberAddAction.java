@@ -15,14 +15,14 @@
  */
 package org.docksidestage.app.web.member;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.core.time.TimeManager;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

@@ -17,8 +17,6 @@ package org.docksidestage.app.web.wx.faicli;
 
 import java.util.Map;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.app.web.base.login.HangarLoginAssist;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
@@ -27,6 +25,8 @@ import org.lastaflute.core.exception.LaApplicationException;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

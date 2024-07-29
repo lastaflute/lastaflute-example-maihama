@@ -18,8 +18,6 @@ package org.docksidestage.app.web.mypage;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.annotation.Resource;
-
 import org.dbflute.cbean.result.ListResultBean;
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.app.web.mypage.MypageResult.ProductPart;
@@ -27,6 +25,8 @@ import org.docksidestage.dbflute.exbhv.ProductBhv;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

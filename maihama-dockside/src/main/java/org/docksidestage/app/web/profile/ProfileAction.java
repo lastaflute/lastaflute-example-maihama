@@ -17,14 +17,14 @@ package org.docksidestage.app.web.profile;
 
 import java.util.stream.Collectors;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.DocksideBaseAction;
 import org.docksidestage.app.web.profile.ProfileBean.PurchasedProductBean;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

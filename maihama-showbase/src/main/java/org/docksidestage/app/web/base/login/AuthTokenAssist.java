@@ -18,8 +18,6 @@ package org.docksidestage.app.web.base.login;
 import java.io.IOException;
 import java.util.Random;
 
-import javax.annotation.Resource;
-
 import org.dbflute.helper.filesystem.FileTextIO;
 import org.dbflute.optional.OptionalThing;
 import org.dbflute.util.DfResourceUtil;
@@ -27,6 +25,8 @@ import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

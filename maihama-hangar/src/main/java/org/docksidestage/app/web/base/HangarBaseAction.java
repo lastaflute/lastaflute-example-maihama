@@ -17,8 +17,6 @@ package org.docksidestage.app.web.base;
 
 import java.util.stream.Stream;
 
-import javax.annotation.Resource;
-
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.HangarLoginAssist;
 import org.docksidestage.mylasta.action.HangarMessages;
@@ -30,6 +28,8 @@ import org.lastaflute.web.login.LoginManager;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
 import org.lastaflute.web.validation.LaValidatableApi;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

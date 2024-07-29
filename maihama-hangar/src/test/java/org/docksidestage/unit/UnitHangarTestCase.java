@@ -15,10 +15,10 @@
  */
 package org.docksidestage.unit;
 
-import javax.annotation.Resource;
-
 import org.dbflute.utflute.lastaflute.WebContainerTestCase;
 import org.docksidestage.app.web.base.login.HangarLoginAssist;
+
+import jakarta.annotation.Resource;
 
 /**
  * Use like this:

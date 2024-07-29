@@ -18,8 +18,6 @@ package org.docksidestage.app.web.product;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.annotation.Resource;
-
 import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.DocksideBaseAction;
@@ -29,6 +27,8 @@ import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.HtmlResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

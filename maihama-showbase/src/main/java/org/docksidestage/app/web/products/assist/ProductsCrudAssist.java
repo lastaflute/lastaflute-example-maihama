@@ -17,11 +17,11 @@ package org.docksidestage.app.web.products.assist;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.products.ProductsSearchForm;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
 import org.docksidestage.dbflute.exentity.Product;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

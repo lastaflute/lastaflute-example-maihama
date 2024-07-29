@@ -15,12 +15,12 @@
  */
 package org.docksidestage.app.logic.context;
 
-import javax.annotation.Resource;
-
 import org.dbflute.hook.AccessContext;
 import org.dbflute.optional.OptionalThing;
 import org.lastaflute.core.time.TimeManager;
 import org.lastaflute.db.dbflute.accesscontext.AccessContextResource;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

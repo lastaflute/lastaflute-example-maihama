@@ -17,8 +17,6 @@ package org.docksidestage.mylasta.direction;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.mylasta.direction.sponsor.OrleansApiFailureHook;
 import org.docksidestage.mylasta.direction.sponsor.OrleansListedClassificationProvider;
 import org.lastaflute.db.dbflute.classification.ListedClassificationProvider;
@@ -26,6 +24,8 @@ import org.lastaflute.thymeleaf.ThymeleafRenderingProvider;
 import org.lastaflute.web.api.ApiFailureHook;
 import org.lastaflute.web.direction.FwWebDirection;
 import org.lastaflute.web.ruts.renderer.HtmlRenderingProvider;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

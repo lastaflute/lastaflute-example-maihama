@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import javax.annotation.Resource;
-
 import org.apache.commons.lang3.StringUtils;
 import org.dbflute.helper.HandyDate;
 import org.dbflute.optional.OptionalThing;
@@ -17,6 +15,8 @@ import org.docksidestage.unit.UnitHangarTestCase;
 import org.lastaflute.web.exception.RequestIllegalTransitionException;
 import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.validation.exception.ValidationErrorException;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author black-trooper

@@ -17,8 +17,6 @@ package org.docksidestage.mylasta.direction;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.mylasta.direction.sponsor.MaihamaActionAdjustmentProvider;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaCookieResourceProvider;
 import org.docksidestage.mylasta.direction.sponsor.MaihamaCurtainBeforeHook;
@@ -45,6 +43,8 @@ import org.lastaflute.web.path.ActionAdjustmentProvider;
 import org.lastaflute.web.servlet.cookie.CookieResourceProvider;
 import org.lastaflute.web.servlet.request.UserLocaleProcessProvider;
 import org.lastaflute.web.servlet.request.UserTimeZoneProcessProvider;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

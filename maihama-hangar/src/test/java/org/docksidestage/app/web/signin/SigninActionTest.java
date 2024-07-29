@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.signin;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.login.HangarLoginAssist;
 import org.docksidestage.dbflute.exbhv.MemberLoginBhv;
 import org.docksidestage.mylasta.action.HangarMessages;
@@ -24,6 +22,8 @@ import org.docksidestage.mylasta.action.HangarUserBean;
 import org.docksidestage.unit.UnitHangarTestCase;
 import org.lastaflute.core.time.TimeManager;
 import org.lastaflute.web.validation.Required;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

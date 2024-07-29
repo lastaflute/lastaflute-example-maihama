@@ -15,12 +15,12 @@
  */
 package org.docksidestage.app.web.member.purchase;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.DocksideBaseAction;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
 import org.lastaflute.web.servlet.request.ResponseManager;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

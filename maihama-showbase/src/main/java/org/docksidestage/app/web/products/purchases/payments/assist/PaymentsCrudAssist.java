@@ -17,11 +17,11 @@ package org.docksidestage.app.web.products.purchases.payments.assist;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.products.purchases.payments.PaymentsSearchForm;
 import org.docksidestage.dbflute.exbhv.PurchasePaymentBhv;
 import org.docksidestage.dbflute.exentity.PurchasePayment;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

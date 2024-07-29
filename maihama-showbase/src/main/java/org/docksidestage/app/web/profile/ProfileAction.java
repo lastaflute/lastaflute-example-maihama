@@ -17,14 +17,14 @@ package org.docksidestage.app.web.profile;
 
 import java.util.stream.Collectors;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.app.web.profile.ProfileResult.PurchasedProductPart;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

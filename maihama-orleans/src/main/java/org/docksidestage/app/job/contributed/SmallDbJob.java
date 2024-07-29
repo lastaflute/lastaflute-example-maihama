@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.job.contributed;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.bizfw.job.contributed.NxBatchRecorder;
 import org.docksidestage.bizfw.job.contributed.exception.JobBusinessSkipException;
 import org.docksidestage.dbflute.cbean.MemberCB;
@@ -27,6 +25,8 @@ import org.docksidestage.dbflute.exentity.MemberService;
 import org.lastaflute.db.jta.stage.TransactionStage;
 import org.lastaflute.job.LaJob;
 import org.lastaflute.job.LaJobRuntime;
+
+import jakarta.annotation.Resource;
 
 /*
  * 【JOB設計の基本べき集】

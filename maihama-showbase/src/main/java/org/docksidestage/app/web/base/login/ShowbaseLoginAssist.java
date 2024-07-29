@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.base.login;
 
-import javax.annotation.Resource;
-
 import org.dbflute.optional.OptionalEntity;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.signin.SigninAction;
@@ -35,6 +33,8 @@ import org.lastaflute.web.login.PrimaryLoginManager;
 import org.lastaflute.web.login.credential.UserPasswordCredential;
 import org.lastaflute.web.login.option.LoginSpecifiedOption;
 import org.lastaflute.web.servlet.request.RequestManager;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

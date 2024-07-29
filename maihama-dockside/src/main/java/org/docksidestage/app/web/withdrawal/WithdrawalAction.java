@@ -1,7 +1,5 @@
 package org.docksidestage.app.web.withdrawal;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.DocksideBaseAction;
 import org.docksidestage.app.web.signout.SignoutAction;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
@@ -13,6 +11,8 @@ import org.lastaflute.core.time.TimeManager;
 import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author annie_pocket

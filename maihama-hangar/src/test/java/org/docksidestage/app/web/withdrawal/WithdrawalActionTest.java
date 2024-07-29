@@ -3,8 +3,6 @@ package org.docksidestage.app.web.withdrawal;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.apache.commons.lang3.StringUtils;
 import org.dbflute.utflute.lastaflute.mock.TestingJsonData;
 import org.docksidestage.dbflute.allcommon.CDef;
@@ -15,6 +13,8 @@ import org.docksidestage.dbflute.exentity.MemberWithdrawal;
 import org.docksidestage.unit.UnitHangarTestCase;
 import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.validation.exception.ValidationErrorException;
+
+import jakarta.annotation.Resource;
 
 public class WithdrawalActionTest extends UnitHangarTestCase {
 

@@ -1,7 +1,5 @@
 package org.docksidestage.app.web.member;
 
-import javax.annotation.Resource;
-
 import org.apache.commons.lang3.StringUtils;
 import org.dbflute.helper.HandyDate;
 import org.dbflute.optional.OptionalEntity;
@@ -12,6 +10,8 @@ import org.docksidestage.dbflute.exentity.Member;
 import org.docksidestage.unit.UnitHangarTestCase;
 import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.validation.exception.ValidationErrorException;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author black-trooper

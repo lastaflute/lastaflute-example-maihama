@@ -17,8 +17,6 @@ package org.docksidestage.app.web.ballet.dancers;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.ballet.dancers.assist.BalletDancersCrudAssist;
 import org.docksidestage.app.web.ballet.dancers.assist.BalletDancersMappingAssist;
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
@@ -27,6 +25,8 @@ import org.lastaflute.web.Execute;
 import org.lastaflute.web.RestfulAction;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

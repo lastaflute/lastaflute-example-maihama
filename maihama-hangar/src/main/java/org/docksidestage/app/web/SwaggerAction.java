@@ -17,8 +17,6 @@ package org.docksidestage.app.web;
 
 import java.util.Map;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.mylasta.direction.HangarConfig;
 import org.docksidestage.mylasta.direction.sponsor.HangarApiFailureHook;
@@ -31,6 +29,8 @@ import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.HtmlResponse;
 import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.servlet.request.RequestManager;
+
+import jakarta.annotation.Resource;
 
 /**
  * The action to show swaggar-ui.

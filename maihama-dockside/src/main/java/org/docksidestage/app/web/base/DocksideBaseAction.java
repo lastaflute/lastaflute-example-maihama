@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.base;
 
-import javax.annotation.Resource;
-
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.DocksideLoginAssist;
 import org.docksidestage.app.web.base.view.HeaderBean;
@@ -28,6 +26,8 @@ import org.lastaflute.web.login.LoginManager;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
 import org.lastaflute.web.validation.LaValidatable;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

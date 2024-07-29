@@ -19,13 +19,13 @@ import java.util.AbstractMap.SimpleEntry;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.HangarBaseAction;
 import org.docksidestage.dbflute.allcommon.CDef.MemberStatus;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author iwamatsu0430

@@ -3,14 +3,14 @@ package org.docksidestage.app.web.profile;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-
 import org.docksidestage.dbflute.exentity.Member;
 import org.docksidestage.dbflute.exentity.MemberService;
 import org.docksidestage.dbflute.exentity.Purchase;
 import org.lastaflute.core.util.Lato;
 import org.lastaflute.web.validation.Required;
+
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author deco

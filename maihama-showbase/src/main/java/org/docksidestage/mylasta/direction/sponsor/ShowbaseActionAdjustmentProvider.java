@@ -17,14 +17,14 @@ package org.docksidestage.mylasta.direction.sponsor;
 
 import java.util.function.Predicate;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.docksidestage.mylasta.direction.sponsor.planner.ShowbaseActionOptionPlanner;
 import org.lastaflute.web.path.UrlMappingOption;
 import org.lastaflute.web.path.UrlMappingResource;
 import org.lastaflute.web.path.UrlReverseOption;
 import org.lastaflute.web.path.UrlReverseResource;
 import org.lastaflute.web.path.restful.router.RestfulRouter;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * @author jflute

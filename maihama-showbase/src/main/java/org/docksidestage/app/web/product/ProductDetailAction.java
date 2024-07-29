@@ -15,14 +15,14 @@
  */
 package org.docksidestage.app.web.product;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.JsonResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author iwamatsu0430

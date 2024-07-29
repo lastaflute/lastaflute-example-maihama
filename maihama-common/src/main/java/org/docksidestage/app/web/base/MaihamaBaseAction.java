@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.base;
 
-import javax.annotation.Resource;
-
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.logic.context.AccessContextLogic;
 import org.docksidestage.mylasta.action.MaihamaUserBean;
@@ -25,6 +23,8 @@ import org.lastaflute.web.TypicalAction;
 import org.lastaflute.web.response.ActionResponse;
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.servlet.request.RequestManager;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

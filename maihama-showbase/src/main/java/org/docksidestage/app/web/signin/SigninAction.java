@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.signin;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.app.web.base.login.ShowbaseLoginAssist;
 import org.docksidestage.mylasta.action.ShowbaseMessages;
@@ -24,6 +22,8 @@ import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.credential.UserPasswordCredential;
 import org.lastaflute.web.response.JsonResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

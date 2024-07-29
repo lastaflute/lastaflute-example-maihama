@@ -2,12 +2,12 @@ package org.docksidestage.app.web.mypage;
 
 import java.util.List;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-
 import org.docksidestage.dbflute.exentity.Product;
 import org.lastaflute.core.util.Lato;
 import org.lastaflute.web.validation.Required;
+
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author jflute

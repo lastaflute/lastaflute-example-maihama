@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.base.login;
 
-import javax.annotation.Resource;
-
 import org.dbflute.optional.OptionalEntity;
 import org.dbflute.optional.OptionalThing;
 import org.dbflute.util.DfStringUtil;
@@ -40,6 +38,8 @@ import org.lastaflute.web.servlet.cookie.exception.CookieCipherDecryptFailureExc
 import org.lastaflute.web.servlet.request.RequestManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

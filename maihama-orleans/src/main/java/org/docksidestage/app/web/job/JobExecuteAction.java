@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.job;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.OrleansBaseAction;
 import org.lastaflute.job.JobManager;
 import org.lastaflute.job.LaJobHistory;
@@ -27,6 +25,8 @@ import org.lastaflute.job.subsidiary.LaunchedProcess;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.servlet.request.ResponseManager;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

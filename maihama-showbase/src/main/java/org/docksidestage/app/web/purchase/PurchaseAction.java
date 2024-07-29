@@ -1,7 +1,5 @@
 package org.docksidestage.app.web.purchase;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.ShowbaseBaseAction;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exbhv.ProductBhv;
@@ -10,6 +8,8 @@ import org.docksidestage.dbflute.exentity.Product;
 import org.docksidestage.dbflute.exentity.Purchase;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.JsonResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author iwamatsu0430

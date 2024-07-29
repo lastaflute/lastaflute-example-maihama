@@ -2,8 +2,6 @@ package org.docksidestage.app.web.startup;
 
 import java.io.File;
 
-import javax.annotation.Resource;
-
 import org.dbflute.util.DfResourceUtil;
 import org.dbflute.util.Srl;
 import org.docksidestage.app.logic.startup.StartupLogic;
@@ -11,6 +9,8 @@ import org.docksidestage.app.web.base.DocksideBaseAction;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.HtmlResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.signup;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.OrleansBaseAction;
 import org.docksidestage.app.web.base.login.OrleansLoginAssist;
 import org.docksidestage.app.web.mypage.MypageAction;
@@ -35,6 +33,8 @@ import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.HtmlResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

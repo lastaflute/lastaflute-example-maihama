@@ -15,14 +15,14 @@
  */
 package org.docksidestage.app.job;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.logic.DanceSongLogic;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.db.jta.stage.TransactionStage;
 import org.lastaflute.job.LaJob;
 import org.lastaflute.job.LaJobRuntime;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

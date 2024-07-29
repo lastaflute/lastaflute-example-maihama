@@ -15,13 +15,13 @@
  */
 package org.docksidestage.app.web.signout;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.base.DocksideBaseAction;
 import org.docksidestage.app.web.base.login.DocksideLoginAssist;
 import org.docksidestage.app.web.signin.SigninAction;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author toshiaki.arai

@@ -17,13 +17,13 @@ package org.docksidestage.mylasta.direction.sponsor;
 
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.dbflute.exception.EntityAlreadyDeletedException;
 import org.docksidestage.mylasta.action.ShowbaseMessages;
 import org.lastaflute.web.api.theme.TypicalFaihyApiFailureHook;
 import org.lastaflute.web.exception.AccessTokenUnauthorizedException;
 import org.lastaflute.web.exception.AccessUnderstoodButRefusedException;
+
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * @author jflute

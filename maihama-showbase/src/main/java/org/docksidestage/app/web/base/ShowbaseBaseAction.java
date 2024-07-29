@@ -17,8 +17,6 @@ package org.docksidestage.app.web.base;
 
 import java.util.stream.Stream;
 
-import javax.annotation.Resource;
-
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.login.ShowbaseLoginAssist;
 import org.docksidestage.mylasta.action.ShowbaseMessages;
@@ -32,6 +30,8 @@ import org.lastaflute.web.ruts.config.restful.httpstatus.TypicalStructuredSucces
 import org.lastaflute.web.ruts.process.ActionRuntime;
 import org.lastaflute.web.validation.ActionValidator;
 import org.lastaflute.web.validation.LaValidatableApi;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

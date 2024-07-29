@@ -17,8 +17,6 @@ package org.docksidestage.app.web.member;
 
 import java.time.LocalDateTime;
 
-import javax.annotation.Resource;
-
 import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.optional.OptionalThing;
 import org.docksidestage.app.web.base.DocksideBaseAction;
@@ -28,6 +26,8 @@ import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.core.util.LaStringUtil;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.response.HtmlResponse;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

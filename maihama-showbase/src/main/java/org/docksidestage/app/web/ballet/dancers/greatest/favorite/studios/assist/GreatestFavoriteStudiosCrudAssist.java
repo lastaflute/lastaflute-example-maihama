@@ -17,11 +17,11 @@ package org.docksidestage.app.web.ballet.dancers.greatest.favorite.studios.assis
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.app.web.ballet.dancers.greatest.favorite.studios.GreatestFavoriteStudiosSearchForm;
 import org.docksidestage.dbflute.exbhv.PurchaseBhv;
 import org.docksidestage.dbflute.exentity.Purchase;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

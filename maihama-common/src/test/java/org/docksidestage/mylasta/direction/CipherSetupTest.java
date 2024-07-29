@@ -1,10 +1,10 @@
 package org.docksidestage.mylasta.direction;
 
-import javax.annotation.Resource;
-
 import org.docksidestage.unit.UnitCommonPjTestCase;
 import org.lastaflute.core.security.PrimaryCipher;
 import org.lastaflute.web.servlet.cookie.CookieCipher;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

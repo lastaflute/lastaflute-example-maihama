@@ -21,12 +21,12 @@ import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-import javax.validation.constraints.NotNull;
-
 import org.lastaflute.core.util.Lato;
 import org.lastaflute.job.LaJobHistory;
 import org.lastaflute.job.subsidiary.ExecResultType;
 import org.lastaflute.web.validation.Required;
+
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author jflute

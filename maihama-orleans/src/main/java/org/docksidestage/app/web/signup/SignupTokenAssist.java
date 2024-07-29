@@ -18,12 +18,12 @@ package org.docksidestage.app.web.signup;
 import java.io.IOException;
 import java.util.Random;
 
-import javax.annotation.Resource;
-
 import org.dbflute.helper.filesystem.FileTextIO;
 import org.dbflute.util.DfResourceUtil;
 import org.docksidestage.dbflute.exentity.Member;
 import org.lastaflute.web.servlet.request.ResponseManager;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute

@@ -15,8 +15,6 @@
  */
 package org.docksidestage.app.web.signin;
 
-import javax.annotation.Resource;
-
 import org.dbflute.utflute.lastaflute.mock.TestingJsonData;
 import org.docksidestage.app.web.base.login.ShowbaseLoginAssist;
 import org.docksidestage.dbflute.exbhv.MemberLoginBhv;
@@ -25,6 +23,8 @@ import org.docksidestage.unit.UnitShowbaseTestCase;
 import org.lastaflute.core.time.TimeManager;
 import org.lastaflute.web.response.JsonResponse;
 import org.lastaflute.web.validation.Required;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute
