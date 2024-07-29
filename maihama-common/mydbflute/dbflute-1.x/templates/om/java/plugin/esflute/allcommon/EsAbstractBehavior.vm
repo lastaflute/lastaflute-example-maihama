@@ -1,4 +1,5 @@
 ${manager.allClassCopyright}package ${request.package}.allcommon;
+#set ($jakartaPackage = $manager.currentJakartaPackage)
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.function.Function;
 
-import javax.annotation.Resource;
+import ${jakartaPackage}.annotation.Resource;
 
 import ${request.package}.allcommon.EsAbstractEntity;
 import ${request.package}.allcommon.EsAbstractEntity.DocMeta;
@@ -29,7 +30,6 @@ import org.dbflute.cbean.result.ListResultBean;
 import org.dbflute.exception.FetchingOverSafetySizeException;
 import org.dbflute.exception.IllegalBehaviorStateException;
 import org.dbflute.util.DfTypeUtil;
-import org.opensearch.action.ActionListener;
 import org.opensearch.action.DocWriteResponse.Result;
 import org.opensearch.action.admin.indices.refresh.RefreshResponse;
 import org.opensearch.action.bulk.BulkItemResponse;
@@ -43,6 +43,7 @@ import org.opensearch.action.search.SearchRequestBuilder;
 import org.opensearch.action.search.SearchResponse;
 import org.opensearch.action.update.UpdateRequestBuilder;
 import org.opensearch.client.Client;
+import org.opensearch.core.action.ActionListener;
 import org.opensearch.index.seqno.SequenceNumbers;
 import org.opensearch.search.SearchHit;
 import org.opensearch.search.SearchHits;
