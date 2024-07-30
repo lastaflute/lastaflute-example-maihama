@@ -20,11 +20,11 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.dbflute.infra.manage.refresh.DfRefreshResourceRequest;
 import org.docksidestage.app.logic.startup.StartupLogic;
 import org.docksidestage.unit.UnitShowbaseTestCase;
+
+import jakarta.annotation.Resource;
 
 /**
  * @author jflute
