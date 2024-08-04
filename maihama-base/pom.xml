@@ -22,6 +22,9 @@
 		<dbflute.version>1.2.8</dbflute.version>
 		<mysql.jdbc.version>8.0.33</mysql.jdbc.version>
 		<lastaflute.version>1.2.7</lastaflute.version>
+		<lasta.meta.version>0.6.2</lasta.meta.version>
+		<lasta.thymeleaf.version>0.4.3</lasta.thymeleaf.version>
+		<lasta.job.version>0.5.7</lasta.job.version>
 
 		<!-- Partner Library -->
 		<slf4j.version>1.7.36</slf4j.version>
@@ -29,9 +32,11 @@
 		<servlet.version>4.0.1</servlet.version>
 		<jetty.boot.version>0.5.4</jetty.boot.version>
 		<tomcat.boot.version>0.8.5</tomcat.boot.version>
+		<swagger.ui.version>3.19.0</swagger.ui.version>
 
 		<!-- GoodNeighbor Library -->
 		<commons.lang.version>3.8.1</commons.lang.version>
+		<commons.fileupload.version>1.5</commons.fileupload.version>
 
 		<!-- Testing -->
 		<junit.version>4.8.2</junit.version> <!-- is latest version without hamcrest -->
@@ -199,12 +204,27 @@
 				<artifactId>lastaflute</artifactId>
 				<version>${lastaflute.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.lastaflute.meta</groupId>
+				<artifactId>lasta-meta</artifactId>
+				<version>${lasta.meta.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.lastaflute.html</groupId>
+				<artifactId>lasta-thymeleaf</artifactId>
+				<version>${lasta.thymeleaf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.lastaflute.job</groupId>
+				<artifactId>lasta-job</artifactId>
+				<version>${lasta.job.version}</version>
+			</dependency>
 
 			<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 			<!--                                                           Partner Library -->
 			<!--                                                           = = = = = = = = -->
 			<!-- transaction -->
-			<dependency>
+			<dependency> <!-- Lasta Di uses e.g. TransactionManager -->
 				<groupId>javax.transaction</groupId>
 				<artifactId>javax.transaction-api</artifactId>
 				<version>1.2</version>
@@ -248,6 +268,11 @@
 				<artifactId>commons-lang3</artifactId>
 				<version>${commons.lang.version}</version>
 			</dependency>
+			<dependency> <!-- used for multipart request -->
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons.fileupload.version}</version>
+			</dependency>
 
 			<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 			<!--                                                                   Testing -->
@@ -272,7 +297,7 @@
 		 so you need to define them here for uniform management
 		-->
 		<!-- transaction -->
-		<dependency>
+		<dependency> <!-- Lasta Di uses e.g. TransactionManager -->
 			<groupId>javax.transaction</groupId>
 			<artifactId>javax.transaction-api</artifactId>
 		</dependency>
@@ -292,7 +317,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<scope>provided</scope> <!-- servlet container provides -->
+			<scope>provided</scope> <!-- existing in jetty/tomcat -->
 		</dependency>
 
 		<!-- unit test -->

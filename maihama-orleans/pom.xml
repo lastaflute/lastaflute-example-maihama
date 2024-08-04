@@ -17,8 +17,6 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.thymeleaf.version>0.4.2</lasta.thymeleaf.version>
-		<lasta.job.version>0.5.6</lasta.job.version>
 	</properties>
 
 	<licenses>
@@ -148,16 +146,14 @@
 			<version>${app.version}</version>
 		</dependency>
 
-		<!-- lastaflute -->
+		<!-- LastaFlute -->
 		<dependency>
 			<groupId>org.lastaflute.html</groupId>
 			<artifactId>lasta-thymeleaf</artifactId>
-			<version>${lasta.thymeleaf.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.lastaflute.job</groupId>
 			<artifactId>lasta-job</artifactId>
-			<version>${lasta.job.version}</version>
 		</dependency>
 
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->

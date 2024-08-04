@@ -17,8 +17,6 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.meta.version>0.5.2</lasta.meta.version>
-		<swagger.ui.version>3.19.0</swagger.ui.version>
 	</properties>
 
 	<licenses>
@@ -156,13 +154,12 @@
 			<version>${app.version}</version>
 		</dependency>
 
-		<!-- lastaflute -->
+		<!-- LastaFlute -->
 		<!-- if you use Lasta Meta as compile scope in other applications in the same service,
 		 move this dependency definition to common settings with swagger-ui -->
 		<dependency>
 			<groupId>org.lastaflute.meta</groupId>
 			<artifactId>lasta-meta</artifactId>
-			<version>${lasta.meta.version}</version>
 		</dependency>
 
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->

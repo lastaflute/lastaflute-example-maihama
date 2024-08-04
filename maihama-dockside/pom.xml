@@ -17,8 +17,6 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.thymeleaf.version>0.4.1</lasta.thymeleaf.version>
-		<commons.fileupload.version>1.4</commons.fileupload.version>
 	</properties>
 
 	<licenses>
@@ -156,11 +154,10 @@
 			<version>${app.version}</version>
 		</dependency>
 
-		<!-- lastaflute -->
+		<!-- LastaFlute -->
 		<dependency>
 			<groupId>org.lastaflute.html</groupId>
 			<artifactId>lasta-thymeleaf</artifactId>
-			<version>${lasta.thymeleaf.version}</version>
 		</dependency>
 
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
@@ -179,7 +176,6 @@
 		<dependency> <!-- used for multipart request -->
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
-			<version>${commons.fileupload.version}</version>
 		</dependency>
 	</dependencies>
 </project>
