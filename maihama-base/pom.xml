@@ -311,13 +311,13 @@
 		 so you need to define them here for uniform management
 		-->
 		<!-- transaction -->
-		<dependency>
+		<dependency> <!-- Lasta Di uses e.g. TransactionManager -->
 			<groupId>jakarta.transaction</groupId> <!-- #jakarta -->
 			<artifactId>jakarta.transaction-api</artifactId>
 		</dependency>
 
 		<!-- annotation -->
-		<dependency>
+		<dependency> <!-- Lasta Di uses e.g. @Resource -->
 			<groupId>jakarta.annotation</groupId> <!-- #jakarta -->
 			<artifactId>jakarta.annotation-api</artifactId>
 			<scope>provided</scope> <!-- existing in jetty/tomcat -->
