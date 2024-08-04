@@ -17,8 +17,6 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.meta.version>2.0.0-B-SNAPSHOT</lasta.meta.version>
-		<swagger.ui.version>3.19.0</swagger.ui.version>
 	</properties>
 
 	<licenses>
@@ -161,7 +159,6 @@
 		<dependency>
 			<groupId>org.lastaflute.meta</groupId>
 			<artifactId>lasta-meta</artifactId>
-			<version>${lasta.meta.version}</version>
 		</dependency>
 
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
@@ -177,7 +174,6 @@
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>swagger-ui</artifactId>
-			<version>${swagger.ui.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>

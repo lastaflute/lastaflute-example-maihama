@@ -21,21 +21,26 @@
 		<!-- Main Framework -->
 		<dbflute.version>1.2.8</dbflute.version>
 		<mysql.jdbc.version>8.0.33</mysql.jdbc.version>
-		<lastaflute.version>2.0.0-C-SNAPSHOT</lastaflute.version>
+		<lastaflute.version>2.0.0-C-SNAPSHOT</lastaflute.version> <!-- #jakarta -->
+		<lasta.meta.version>2.0.0-B-SNAPSHOT</lasta.meta.version> <!-- #jakarta -->
+		<lasta.thymeleaf.version>2.0.0-A-SNAPSHOT</lasta.thymeleaf.version> <!-- #jakarta -->
+		<lasta.job.version>2.0.0-A-SNAPSHOT</lasta.job.version> <!-- #jakarta -->
 
 		<!-- Partner Library -->
 		<slf4j.version>1.7.36</slf4j.version>
 		<logback.version>1.2.13</logback.version>
-		<servlet.version>6.0.0</servlet.version>
-		<jetty.boot.version>2.0.0-A-SNAPSHOT</jetty.boot.version>
-		<tomcat.boot.version>2.0.0-A-SNAPSHOT</tomcat.boot.version>
+		<servlet.version>6.0.0</servlet.version> <!-- #jakarta -->
+		<jetty.boot.version>2.0.0-A-SNAPSHOT</jetty.boot.version> <!-- #jakarta -->
+		<tomcat.boot.version>2.0.0-A-SNAPSHOT</tomcat.boot.version> <!-- #jakarta -->
+		<swagger.ui.version>3.19.0</swagger.ui.version>
 
 		<!-- GoodNeighbor Library -->
 		<commons.lang.version>3.8.1</commons.lang.version>
+		<commons.fileupload.version>2.0.0-M2</commons.fileupload.version> <!-- #jakarta -->
 
 		<!-- Testing -->
 		<junit.version>4.8.2</junit.version> <!-- is latest version without hamcrest -->
-		<utflute.version>2.0.0-B-SNAPSHOT</utflute.version>
+		<utflute.version>2.0.0-B-SNAPSHOT</utflute.version> <!-- #jakarta -->
 	</properties>
 
 	<modules>
@@ -199,15 +204,37 @@
 				<artifactId>lastaflute</artifactId>
 				<version>${lastaflute.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.lastaflute.meta</groupId>
+				<artifactId>lasta-meta</artifactId>
+				<version>${lasta.meta.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.lastaflute.html</groupId>
+				<artifactId>lasta-thymeleaf</artifactId>
+				<version>${lasta.thymeleaf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.lastaflute.job</groupId>
+				<artifactId>lasta-job</artifactId>
+				<version>${lasta.job.version}</version>
+			</dependency>
 
 			<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 			<!--                                                           Partner Library -->
 			<!--                                                           = = = = = = = = -->
 			<!-- transaction -->
-			<dependency>
-				<groupId>jakarta.transaction</groupId>
+			<dependency> <!-- Lasta Di uses e.g. TransactionManager -->
+				<groupId>jakarta.transaction</groupId> <!-- #jakarta -->
 				<artifactId>jakarta.transaction-api</artifactId>
 				<version>2.0.1</version>
+			</dependency>
+
+			<!-- annotation -->
+			<dependency> <!-- Lasta Di uses e.g. @Resource -->
+				<groupId>jakarta.annotation</groupId> <!-- #jakarta -->
+				<artifactId>jakarta.annotation-api</artifactId>
+				<version>2.1.1</version>
 			</dependency>
 
 			<!-- logging -->
@@ -239,6 +266,13 @@
 				<version>${tomcat.boot.version}</version>
 			</dependency>
 
+			<!-- swagger -->
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>swagger-ui</artifactId>
+				<version>${swagger.ui.version}</version>
+			</dependency>
+
 			<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 			<!--                                                      GoodNeighbor Library -->
 			<!--                                                       = = = = = = = = = = -->
@@ -247,6 +281,11 @@
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
 				<version>${commons.lang.version}</version>
+			</dependency>
+			<dependency> <!-- used for multipart request -->
+				<groupId>org.apache.commons</groupId> <!-- #jakarta -->
+				<artifactId>commons-fileupload2-jakarta-servlet6</artifactId>
+				<version>${commons.fileupload.version}</version>
 			</dependency>
 
 			<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
@@ -273,8 +312,15 @@
 		-->
 		<!-- transaction -->
 		<dependency>
-			<groupId>jakarta.transaction</groupId>
+			<groupId>jakarta.transaction</groupId> <!-- #jakarta -->
 			<artifactId>jakarta.transaction-api</artifactId>
+		</dependency>
+
+		<!-- annotation -->
+		<dependency>
+			<groupId>jakarta.annotation</groupId> <!-- #jakarta -->
+			<artifactId>jakarta.annotation-api</artifactId>
+			<scope>provided</scope> <!-- existing in jetty/tomcat -->
 		</dependency>
 
 		<!-- logging -->

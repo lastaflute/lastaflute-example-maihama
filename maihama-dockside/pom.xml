@@ -17,8 +17,6 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
-		<lasta.thymeleaf.version>2.0.0-A-SNAPSHOT</lasta.thymeleaf.version>
-		<commons.fileupload.version>2.0.0-M2</commons.fileupload.version>
 	</properties>
 
 	<licenses>
@@ -160,7 +158,6 @@
 		<dependency>
 			<groupId>org.lastaflute.html</groupId>
 			<artifactId>lasta-thymeleaf</artifactId>
-			<version>${lasta.thymeleaf.version}</version>
 		</dependency>
 
 		<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
@@ -178,8 +175,7 @@
 		<!-- commons -->
 		<dependency> <!-- used for multipart request -->
 			<groupId>org.apache.commons</groupId> <!-- #jakarta -->
-			<artifactId>commons-fileupload2-jakarta-servlet6</artifactId> <!-- #jakarta -->
-			<version>${commons.fileupload.version}</version>
+			<artifactId>commons-fileupload2-jakarta-servlet6</artifactId>
 		</dependency>
 	</dependencies>
 </project>
