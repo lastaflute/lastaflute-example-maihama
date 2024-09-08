@@ -84,7 +84,7 @@
 							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
 							<!-- servlet container libraries are located as war resource -->
 							<includeArtifactIds>
-								jakarta.servlet-api, jakarta.servlet.jsp, jakarta.servlet.jsp-api
+								javax.servlet-api, javax.servlet.jsp, javax.servlet.jsp-api
 								, tomcat-boot, tomcat-embed-core, tomcat-embed-logging-juli
 								, tomcat-jasper, tomcat-jasper-el, tomcat-el-api, tomcat-jsp-api, ecj
 							</includeArtifactIds>
@@ -100,7 +100,7 @@
 				<configuration>
 					<!-- servlet container libraries are not in application -->
 					<packagingExcludes>
-						WEB-INF/lib/jakarta.servlet-api-*.jar, WEB-INF/lib/jakarta.servlet.jsp-*.jar
+						WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/javax.servlet.jsp-*.jar
 						, WEB-INF/lib/tomcat-*.jar, WEB-INF/lib/ecj-*.jar
 					</packagingExcludes>
 					<webResources>
@@ -153,7 +153,7 @@
 			<version>${app.version}</version>
 		</dependency>
 
-		<!-- lastaflute -->
+		<!-- LastaFlute -->
 		<!-- if you use Lasta Meta as compile scope in other applications in the same service,
 		 move this dependency definition to common settings with swagger-ui -->
 		<dependency>

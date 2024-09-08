@@ -80,8 +80,8 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.1</version>
 					<configuration>
-						<source>21</source>
-						<target>21</target>
+						<source>1.8</source>
+						<target>1.8</target>
 						<encoding>UTF-8</encoding>
 					</configuration>
 				</plugin>
@@ -251,7 +251,7 @@
 
 			<!-- servlet -->
 			<dependency>
-				<groupId>jakarta.servlet</groupId>
+				<groupId>jakarta.servlet</groupId> <!-- #jakarta -->
 				<artifactId>jakarta.servlet-api</artifactId>
 				<version>${servlet.version}</version>
 			</dependency>
@@ -336,7 +336,7 @@
 
 		<!-- servlet -->
 		<dependency>
-			<groupId>jakarta.servlet</groupId>
+			<groupId>jakarta.servlet</groupId> <!-- #jakarta -->
 			<artifactId>jakarta.servlet-api</artifactId>
 			<scope>provided</scope> <!-- existing in jetty/tomcat -->
 		</dependency>

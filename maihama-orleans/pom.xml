@@ -83,7 +83,7 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
 							<!-- servlet container libraries are located as war resource -->
-							<includeArtifactIds>jakarta.servlet-api, jetty-boot, jetty-all</includeArtifactIds>
+							<includeArtifactIds>javax.servlet-api, jetty-boot, jetty-all</includeArtifactIds>
 							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
 						</configuration>
@@ -95,7 +95,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<!-- servlet container libraries are not in application -->
-					<packagingExcludes>WEB-INF/lib/jakarta.servlet-api-*.jar, WEB-INF/lib/jetty-*.jar</packagingExcludes>
+					<packagingExcludes>WEB-INF/lib/javax.servlet-api-*.jar, WEB-INF/lib/jetty-*.jar</packagingExcludes>
 					<webResources>
 						<resource>
 							<directory>${project.build.outputDirectory}</directory>
@@ -146,7 +146,7 @@
 			<version>${app.version}</version>
 		</dependency>
 
-		<!-- lastaflute -->
+		<!-- LastaFlute -->
 		<dependency>
 			<groupId>org.lastaflute.html</groupId>
 			<artifactId>lasta-thymeleaf</artifactId>
