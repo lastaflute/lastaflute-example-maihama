@@ -6,6 +6,7 @@
 
 # IntelliJ IDEA
 **/.idea/*
+!**/.idea/codeStyles
 !**/.idea/inspectionProfiles
 !**/.idea/codeStyleSettings.xml
 !**/.idea/misc.xml
