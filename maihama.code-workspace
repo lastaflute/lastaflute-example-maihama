@@ -1,0 +1,31 @@
+{
+    "folders": [
+        {
+            "path": "maihama-base"
+        },
+        {
+            "path": "maihama-common"
+        },
+        {
+            "path": "maihama-dockside"
+        },
+        {
+            "path": "maihama-hangar"
+        },
+        {
+            "path": "maihama-magiclamp"
+        },
+        {
+            "path": "maihama-orleans"
+        },
+        {
+            "path": "maihama-showbase"
+        },
+    ],
+    "settings": {
+        "editor.defaultFormatter": "redhat.java",
+        "java.format.settings.url": "",
+        "editor.formatOnSave": true,
+        "java.saveActions.organizeImports": true
+    }
+}
