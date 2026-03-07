@@ -33,7 +33,11 @@ public class ShowbaseLastaDocTest extends UnitShowbaseTestCase {
         saveLastaDocMeta();
     }
 
-    public void test_swaggerJson() throws Exception {
+    public void test_swaggerMeta() throws Exception {
         saveSwaggerMeta(new SwaggerAction());
+    }
+
+    public void test_openapiMeta() throws Exception {
+        saveOpenapiMeta(new SwaggerAction());
     }
 }

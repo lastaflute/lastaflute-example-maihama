@@ -17,6 +17,7 @@
 	<inceptionYear>2015</inceptionYear>
 
 	<properties>
+		<swagger.parser.v2.version>2.1.37</swagger.parser.v2.version> <!-- lasta-meta optional -->
 	</properties>
 
 	<licenses>
@@ -176,6 +177,12 @@
 			<artifactId>swagger-ui</artifactId>
 			<version>${swagger.ui.version}</version>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency> <!-- lasta-meta optional, to save as OpenAPI 3.0 -->
+			<groupId>io.swagger.parser.v3</groupId>
+			<artifactId>swagger-parser-v2-converter</artifactId>
+			<version>${swagger.parser.v2.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>
